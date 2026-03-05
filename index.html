@@ -148,15 +148,9 @@
   .wellness-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.5rem; }
   .wellness-card-text { font-size: 0.85rem; font-weight: 300; color: var(--text-mid); line-height: 1.7; }
 
-  /* INCLUSIONS */
+    /* INCLUSIONS */
   .inclusions-section { background: var(--cream); }
   .inclusions-wrapper { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .inclusion-block { background: var(--white); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(201,169,110,0.1); }
-  .inclusion-heading { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--text-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
-  .inclusion-list { display: flex; flex-direction: column; gap: 0.65rem; }
-  .inclusion-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.93rem; font-weight: 300; color: var(--text-mid); line-height: 1.5; }
-  .inclusion-check { color: var(--ocean); font-weight: 600; flex-shrink: 0; margin-top: 0.05rem; }
-  .exclusion-x { color: var(--rose); font-weight: 600; flex-shrink: 0; margin-top: 0.05rem; font-size: 0.9rem; }
   .inclusion-block { background: var(--white); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(201,169,110,0.1); }
   .inclusion-heading { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--text-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
   .inclusion-list { display: flex; flex-direction: column; gap: 0.65rem; }
@@ -600,34 +594,34 @@
 
 <!-- INCLUSIONS -->
 <section class="inclusions-section" id="inclusions">
-  <div class="section-tag reveal">The Details</div>
-  <h2 class="section-title reveal">What's <em>Included</em></h2>
-  <p class="section-subtitle reveal">We've thought of everything so you don't have to.</p>
+  <div class="section-tag reveal visible">The Details</div>
+  <h2 class="section-title reveal visible">What's <em>Included</em></h2>
+  <p class="section-subtitle reveal visible">We've thought of everything so you don't have to.</p>
   <div class="inclusions-wrapper">
-    <div class="inclusion-block reveal">
+    <div class="inclusion-block reveal visible">
       <div class="inclusion-heading"><span>✓</span> Included</div>
       <div class="inclusion-list">
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>5 nights accommodation in a boutique/luxury hotel</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>5 nights accommodation (boutique hotel + luxury wellness spa hotel)</div>
         <div class="inclusion-item"><span class="inclusion-check">✓</span>3-day, 2-night private liveaboard</div>
         <div class="inclusion-item"><span class="inclusion-check">✓</span>All meals on the liveaboard (private chef)</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Welcome dinner & group meals on land</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>All snorkelling gear & equipment</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Welcome dinner &amp; group meals on land</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>All snorkelling gear &amp; equipment</div>
         <div class="inclusion-item"><span class="inclusion-check">✓</span>Komodo National Park entry fees</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Professional photo & drone documentation (on Day 3)</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Airport pickup & all local transfers</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Professional photo &amp; drone documentation (on Day 3 — the full day when we swim with the mantas, hike Padar &amp; explore Pink Beach)</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Local guides throughout</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Airport pickup &amp; all local transfers</div>
         <div class="inclusion-item"><span class="inclusion-check">✓</span>Massages</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Yoga, pilates & wellness sessions</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Your Dream Life & Vision Board workshop</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Growth workshops & guided sessions</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>SUPs, jacuzzi & sundeck on liveaboard</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Travel planning support</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Access to our trip group chat pre & post girls trip (so you can get to know each other first & stay in touch after!)</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Pre & post trip support</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Yoga, pilates &amp; wellness sessions</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Your Dream Life &amp; Vision Board workshop</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Growth workshops &amp; guided sessions</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>SUPs, jacuzzi &amp; sundeck on liveaboard</div>
       </div>
     </div>
+    <div class="inclusion-block reveal visible">
+      <div class="inclusion-heading"><span>✗</span> Not Included</div>
       <div class="inclusion-list">
-        <div class="inclusion-item"><span class="exclusion-x">✗</span>Flights to & from Labuan Bajo (LBJ)</div>
-        <div class="inclusion-item"><span class="exclusion-x">✗</span>Personal expenses, shopping & alcoholic beverages</div>
+        <div class="inclusion-item"><span class="exclusion-x">✗</span>Flights to &amp; from Labuan Bajo (LBJ)</div>
+        <div class="inclusion-item"><span class="exclusion-x">✗</span>Personal expenses, shopping &amp; alcoholic beverages</div>
         <div class="inclusion-item"><span class="exclusion-x">✗</span>Travel insurance (required)</div>
       </div>
       <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201,169,110,0.12);">
@@ -639,6 +633,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- PRICING -->
 <section class="pricing-section" id="reserve">
