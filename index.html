@@ -112,8 +112,8 @@
 .slideshow-section { background: var(--cream); padding: 3rem 2rem; }
 .slideshow-wrapper { position: relative; max-width: 900px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
 .slideshow-track { display: flex; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
-.slide { min-width: 100%; height: 520px; position: relative; flex-shrink: 0; background: var(--teal-soft); }
-.slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.slide { min-width: 100%; height: auto; position: relative; flex-shrink: 0; background: var(--cream); }
+.slide img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; background: var(--cream); }
 .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 2rem; background: linear-gradient(to top, rgba(44,62,64,0.7), transparent); color: #fff; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; }
 .slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.85); border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.1); color: #2C3E40; z-index: 10; transition: all 0.3s ease; }
 .slide-btn:hover { background: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
@@ -125,19 +125,23 @@
 
 @media (max-width: 768px) {
   .slideshow-section { padding: 2rem 1rem; }
-  .slide { height: 300px; }
+  .slide { height: auto; }
+  .slide img { height: auto; width: 100%; object-fit: contain; }
   .slide-caption { font-size: 0.7rem; padding: 1rem 1.2rem; letter-spacing: 0.1em; }
-  .slide-btn { width: 36px; height: 36px; font-size: 0.9rem; } }
+  .slide-btn { width: 36px; height: 36px; font-size: 0.9rem; }
+}
 
 @media (max-width: 480px) {
   .slideshow-section { padding: 1.5rem 0.75rem; }
   .slideshow-wrapper { border-radius: 16px; }
-  .slide { height: 240px; }
+  .slide { height: auto; }
+  .slide img { height: auto; width: 100%; object-fit: contain; }
   .slide-caption { font-size: 0.65rem; padding: 0.8rem 1rem; }
   .slide-btn { width: 32px; height: 32px; font-size: 0.8rem; }
   .slide-prev { left: 0.5rem; }
   .slide-next { right: 0.5rem; }
   .slide-dot { width: 6px; height: 6px; } }
+  
   
   /* GALLERY (old grid — kept for safety, hidden) */
   .gallery-grid { display: none; }
