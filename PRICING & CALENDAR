@@ -1,2 +1,38 @@
 --- This is the latest code for the Komodo Trip Zero PRICING SECTION (button redirects to wetravel booking link) & WETRAVEL CALENDAR EMBED ---
 ---- add this code to TGE website only when it's ready for instant bookings & not doing waitlist anymore ----
+
+<!-- PRICING -->
+<section class="pricing-section" id="reserve">
+  <div class="section-tag reveal">Secure Your Spot</div>
+  <h2 class="section-title reveal">Your Next Core <em>Memory</em> Awaits</h2>
+  <p class="section-subtitle reveal">Only 7 spots left. This is an intimate experience and we intentionally keep it small.</p>
+  <div class="pricing-card reveal">
+    <div class="pricing-label">All-In Price</div>
+    <div class="pricing-amount" id="pricingAmount" data-price="1799">AUD$1,799</div>
+    <div class="pricing-currency-label" id="pricingCurrencyLabel">AUSTRALIAN DOLLARS (AUD)</div>
+    <div class="pricing-per">6 days · 5 nights · all-inclusive experience</div>
+    <div class="pricing-includes">
+      <div class="pricing-includes-title">Includes</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>Private liveaboard (3D/2N)</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>5 nights luxury accommodation</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>All meals on the liveaboard (breakfast, lunch, dinner & snacks) and daily lunch & dinner on land (day 1 welcome dinner only and day 6 final brunch only)</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>Welcome dinner, girls dress up dinner, final group dinner, final brunch, etc all included</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>Snorkelling gear & Komodo National Park fees</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>Massages, wellness & growth workshops</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>All activities & transfers mentioned above</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>Small & intimate — 8 girls only</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>Private bathrooms & only 2 girls per room</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>Find your new bestie — roommates matched based on your Travel Identity™ so you'll be paired with someone you'll genuinely click with!</div>
+      <div class="pricing-include-item"><span class="pricing-include-check">✓</span>Your best self unlocked</div>
+    </div>
+    <a href="https://tri.ps/hdZTO" target="_blank" class="pricing-cta" id="mainCTA">BOOK NOW</a>
+    <div class="pricing-spots">⚡ Limited to 8 Girls Only · Few spots left!</div>
+  </div>
+</section>
+
+
+  <!-- CALENDAR TRIP AVAILABILITY DATES (WETRAVEL EMBED) -->  
+  <div style="text-align: center; margin: 1.5rem 0 0; justify-content: center;">
+  <script src="https://cdn.wetravel.com/widgets/embed_calendar.js" id="wetravel_embed_calendar" data-env="https://thatgirlexperiences.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="9867630528" data-color="c6aa55" data-text="BOOK NOW" data-title="Select Departure Date"></script>
+</div>
+</section>
