@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>That Girl Experiences — Girls' Travel Experiences</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blush: #F2D7D5; --blush-deep: #E8B4B8; --rose: #C97B84;
+    --gold: #C9A96E; --gold-light: #E8D5A3;
+    --cream: #FDF8F0; --cream-warm: #FAF0E4;
+    --ocean: #4A9BAD; --ocean-deep: #2D7A8C; --ocean-light: #8CC5D0;
+    --teal: #5FB8C4; --teal-soft: #D4EDEF; --lagoon: #B5DDE3;
+    --text-dark: #2C3E40; --text-mid: #5A6B6E; --text-light: #8B9A9D; --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999;
+  }
+
+  /* NAV */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.4s ease; }
+  .nav.scrolled { background: rgba(253,248,240,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,169,110,0.1); padding: 0.7rem 2rem; }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-decoration: none; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-link { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: color 0.3s ease; }
+  .nav-link:hover { color: var(--gold); }
+  .nav-cta { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 0.5rem 1.5rem; font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 50px; cursor: pointer; text-decoration: none; transition: all 0.3s ease; }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,169,110,0.35); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; background: linear-gradient(170deg, var(--cream) 0%, var(--teal-soft) 35%, var(--lagoon) 65%, var(--ocean-light) 100%); overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -10%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 12s ease-in-out infinite; }
+  .hero::after { content: ''; position: absolute; bottom: -5%; left: -8%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(95,184,196,0.15) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 15s ease-in-out infinite reverse; }
+  @keyframes heroFloat { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-40px) scale(1.05);} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(25px);} to{opacity:1;transform:translateY(0);} }
+
+  .hero-content { position: relative; z-index: 1; max-width: 760px; }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,0.6); border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; padding: 0.45rem 1.5rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; backdrop-filter: blur(8px); opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem,7vw,5.5rem); font-weight: 300; line-height: 1.05; color: var(--text-dark); margin-bottom: 1rem; opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards; }
+  .hero-title em { font-style: italic; color: var(--ocean-deep); }
+  .hero-sub { font-size: 1.05rem; font-weight: 300; color: var(--text-mid); line-height: 1.8; max-width: 580px; margin: 0 auto 2rem; opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards; }
+  .hero-sub strong { color: var(--text-dark); font-weight: 500; }
+  .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-bottom: 2.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.85s forwards; }
+  .hero-pill { background: rgba(255,255,255,0.55); border: 1px solid rgba(201,169,110,0.2); border-radius: 50px; padding: 0.4rem 1.1rem; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.1em; color: var(--text-mid); backdrop-filter: blur(6px); }
+  .hero-cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.85rem; opacity: 0; animation: fadeUp 0.8s ease 1s forwards; }
+  .hero-cta { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 1.1rem 3rem; font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3); }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.45); }
+  .hero-note { font-size: 0.78rem; color: var(--text-light); }
+  .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeUp 0.8s ease 1.4s forwards; }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+  @keyframes scrollPulse { 0%,100%{opacity:0.4;} 50%{opacity:1;} }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .section-tag { font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 300; text-align: center; color: var(--text-dark); margin-bottom: 1rem; line-height: 1.2; }
+  .section-title em { font-style: italic; }
+  .section-subtitle { font-size: 1.02rem; font-weight: 300; text-align: center; color: var(--text-mid); max-width: 580px; margin: 0 auto 3.5rem; line-height: 1.7; }
+
+  /* MISSION STRIP */
+  .mission-strip { background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 50%, var(--teal) 100%); padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden; }
+  .mission-strip::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .mission-label { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-light); opacity: 0.9; margin-bottom: 1rem; position: relative; z-index: 1; }
+  .mission-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.35rem,2.8vw,1.9rem); font-weight: 300; color: rgba(255,255,255,0.97); line-height: 1.7; max-width: 750px; margin: 0 auto; position: relative; z-index: 1; font-style: italic; }
+  .mission-text strong { font-style: normal; font-weight: 500; color: var(--gold-light); }
+
+  /* VALUE PROPS */
+  .value-section { background: var(--white); }
+  .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1000px; margin: 0 auto; border: 1px solid rgba(201,169,110,0.12); border-radius: 24px; overflow: hidden; }
+  .value-block { padding: 2.8rem 2rem; position: relative; }
+  .value-block:not(:last-child) { border-right: 1px solid rgba(201,169,110,0.1); }
+  .value-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.4s; }
+  .value-block:hover::before { opacity: 1; }
+  .value-number { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--gold); opacity: 0.25; line-height: 1; margin-bottom: 0.5rem; }
+  .value-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.75rem; }
+  .value-text { font-size: 0.9rem; font-weight: 300; line-height: 1.75; color: var(--text-mid); }
+
+  /* WHY DIFFERENT */
+  .diff-section { background: linear-gradient(180deg, var(--cream) 0%, var(--teal-soft) 100%); }
+  .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; max-width: 1050px; margin: 0 auto; }
+  .diff-card { background: rgba(255,255,255,0.75); backdrop-filter: blur(10px); border: 1px solid rgba(201,169,110,0.12); border-radius: 20px; padding: 2rem; transition: all 0.4s ease; }
+  .diff-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(74,155,173,0.1); background: var(--white); }
+  .diff-card.hero-card { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border-color: rgba(74,155,173,0.18); }
+  .diff-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+  .diff-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.5rem; }
+  .diff-text { font-size: 0.88rem; font-weight: 300; line-height: 1.75; color: var(--text-mid); }
+
+  /* TRIPS */
+  .trips-section { background: var(--cream); }
+  .trips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; max-width: 860px; margin: 0 auto; }
+  .trip-card { background: var(--white); border-radius: 24px; overflow: hidden; border: 1px solid rgba(201,169,110,0.1); transition: all 0.4s ease; text-decoration: none; color: inherit; display: block; }
+  .trip-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(44,62,64,0.1); }
+  .trip-card-img { width: 100%; height: 260px; background: linear-gradient(135deg, var(--teal-soft), var(--lagoon), var(--ocean-light)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .trip-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .trip-card-img-placeholder { font-family: 'Cormorant Garamond', serif; font-size: 4rem; opacity: 0.3; }
+  .trip-badge { position: absolute; top: 1rem; left: 1rem; background: rgba(253,248,240,0.9); border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; padding: 0.35rem 1rem; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); backdrop-filter: blur(8px); }
+  .trip-badge.live { background: rgba(201,123,132,0.12); border-color: rgba(201,123,132,0.25); color: var(--rose); }
+  .trip-card-body { padding: 2rem; }
+  .trip-dest { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ocean); font-weight: 500; margin-bottom: 0.4rem; }
+  .trip-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--text-dark); margin-bottom: 0.25rem; line-height: 1.15; }
+  .trip-name em { font-style: italic; }
+  .trip-meta { display: flex; gap: 1.2rem; margin: 1rem 0; flex-wrap: wrap; }
+  .trip-meta-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--text-light); }
+  .trip-meta-icon { font-size: 0.85rem; }
+  .trip-desc { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: var(--text-mid); margin-bottom: 1.5rem; }
+  .trip-highlights { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.8rem; }
+  .trip-highlight-tag { background: var(--teal-soft); color: var(--ocean-deep); font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.3rem 0.8rem; border-radius: 50px; font-weight: 500; }
+  .trip-btn { display: block; text-align: center; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); padding: 0.9rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(201,169,110,0.25); }
+  .trip-btn:hover { box-shadow: 0 8px 24px rgba(201,169,110,0.4); }
+  .trip-btn.coming-soon { background: var(--cream); color: var(--text-light); border: 1px solid rgba(201,169,110,0.2); box-shadow: none; cursor: default; }
+
+  /* SOCIAL PROOF / EMOTIONAL */
+  .for-you-section { background: var(--white); }
+  .for-you-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .for-you-text .section-tag, .for-you-text .section-title { text-align: left; }
+  .for-you-text .section-title { margin-bottom: 1.2rem; }
+  .for-you-list { display: flex; flex-direction: column; gap: 1rem; }
+  .for-you-item { display: flex; align-items: flex-start; gap: 1rem; }
+  .for-you-check { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; font-size: 0.65rem; color: white; font-weight: 700; }
+  .for-you-item-text { font-size: 0.95rem; font-weight: 300; line-height: 1.65; color: var(--text-mid); }
+  .for-you-item-text strong { color: var(--text-dark); font-weight: 500; }
+  .for-you-visual { background: linear-gradient(135deg, var(--cream-warm) 0%, var(--teal-soft) 100%); border-radius: 24px; padding: 2.5rem; border: 1px solid rgba(74,155,173,0.1); }
+  .for-you-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; font-style: italic; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem; }
+  .for-you-quote strong { font-style: normal; color: var(--ocean-deep); font-weight: 500; }
+  .for-you-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .for-you-tag { background: rgba(255,255,255,0.8); border: 1px solid rgba(201,169,110,0.18); border-radius: 50px; padding: 0.4rem 1rem; font-size: 0.72rem; font-weight: 400; color: var(--text-mid); }
+
+  /* FINAL CTA */
+  .final-cta-section { background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 60%, var(--teal) 100%); text-align: center; padding: 6rem 2rem; position: relative; overflow: hidden; }
+  .final-cta-section::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 12 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+  .final-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 300; color: var(--white); margin-bottom: 1.2rem; position: relative; z-index: 1; line-height: 1.15; }
+  .final-title em { font-style: italic; color: var(--gold-light); }
+  .final-text { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.78); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.75; position: relative; z-index: 1; }
+  .final-btn { display: inline-block; background: var(--white); color: var(--ocean-deep); border: none; padding: 1.1rem 3rem; font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.15); position: relative; z-index: 1; }
+  .final-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
+
+  /* FOOTER */
+  .footer { background: var(--cream); padding: 2rem 1.5rem; text-align: center; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem; }
+  .footer-disclaimer { font-size: 0.68rem; color: var(--text-light); max-width: 500px; margin: 0 auto; line-height: 1.5; }
+
+  /* REVEAL ANIMATIONS */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .value-grid { grid-template-columns: 1fr; }
+    .value-block:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .for-you-inner { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    section { padding: 4rem 1.25rem; }
+    .nav { padding: 0.8rem 1rem; } .nav.scrolled { padding: 0.6rem 1rem; } .nav-cta { display: none; }
+    .nav-links { gap: 1.2rem; }
+    .nav-link { display: none; }
+    .hero { padding: 1.5rem; min-height: 100svh; }
+    .hero-title { font-size: clamp(2.4rem,9vw,3.8rem); }
+    .trips-grid { grid-template-columns: 1fr; max-width: 420px; }
+    .diff-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .for-you-text .section-tag, .for-you-text .section-title { text-align: center; }
+  }
+  @media (max-width: 480px) {
+    section { padding: 3rem 1rem; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-cta { width: 100%; text-align: center; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .hero-pills { gap: 0.4rem; }
+    .hero-pill { font-size: 0.68rem; }
+    .scroll-indicator { display: none; }
+  }
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .footer { padding-bottom: calc(2rem + env(safe-area-inset-bottom)); }
+    .nav { padding-top: calc(0.8rem + env(safe-area-inset-top)); }
+    .nav.scrolled { padding-top: calc(0.5rem + env(safe-area-inset-top)); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <a class="nav-brand" href="#">That Girl Experiences</a>
+  <div class="nav-links">
+    <a href="#trips" class="nav-link">Our Trips</a>
+    <a href="#why" class="nav-link">Why TGE</a>
+    <a href="#trips" class="nav-cta">See Upcoming Trips</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Girls-Only Travel Experiences</div>
+    <h1 class="hero-title">Travel More.<br><em>Become Her.</em></h1>
+    <p class="hero-sub">
+      We don't just plan trips. We create <strong>bucket-list experiences</strong> designed to unlock the best version of you — surrounded by the most incredible women you haven't met yet.
+    </p>
+    <div class="hero-pills">
+      <span class="hero-pill">✈️ Curated Girls-Only Trips</span>
+      <span class="hero-pill">🌊 Bucket-List Experiences</span>
+      <span class="hero-pill">🧘‍♀️ Wellness &amp; Growth</span>
+      <span class="hero-pill">👯‍♀️ Real Female Friendships</span>
+      <span class="hero-pill">✨ Luxe Without the $$$</span>
+    </div>
+    <div class="hero-cta-wrap">
+      <a href="#trips" class="hero-cta">See Our Upcoming Trips</a>
+      <span class="hero-note">Small groups · 8 women max · Designed with intention</span>
+    </div>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-line"></div></div>
+</section>
+
+<!-- MISSION STRIP -->
+<div class="mission-strip">
+  <div class="mission-label">Our Mission</div>
+  <p class="mission-text">
+    We exist to help women <strong>travel the world, grow into their best selves,</strong> and build the kind of female friendships that last a lifetime — all wrapped in bucket-list experiences that become core memories forever.
+  </p>
+</div>
+
+<!-- VALUE PROPS -->
+<section class="value-section" id="why">
+  <div class="section-tag reveal">What We Stand For</div>
+  <h2 class="section-title reveal">Built for <em>That Girl</em></h2>
+  <p class="section-subtitle reveal">Every detail of a TGE trip is designed around one thing — you leaving as a fuller, freer, more connected version of yourself.</p>
+
+  <div class="value-grid reveal">
+    <div class="value-block">
+      <div class="value-number">01</div>
+      <div class="value-title">More Than a Holiday</div>
+      <div class="value-text">Every TGE trip is layered with purpose — growth workshops, wellness rituals, vision-setting sessions, and connection-building moments woven into every single day. You'll come home changed.</div>
+    </div>
+    <div class="value-block">
+      <div class="value-number">02</div>
+      <div class="value-title">Your People Are Here</div>
+      <div class="value-text">Our women are ambitious, warm, growth-minded, and genuinely want to see other women win. Whether you're coming solo or with a friend, you'll leave with a sisterhood that extends well beyond the trip.</div>
+    </div>
+    <div class="value-block">
+      <div class="value-number">03</div>
+      <div class="value-title">Luxury That Doesn't Break You</div>
+      <div class="value-text">Boutique hotels, private liveaboards, curated experiences — always. We refuse to compromise on quality. No bunk beds, no dorms, no 8-person shared bathrooms. Just thoughtful, elevated travel.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DIFFERENT -->
+<section class="diff-section">
+  <div class="section-tag reveal">Why We're Different</div>
+  <h2 class="section-title reveal">Not Your Average <em>Girls Trip</em></h2>
+  <p class="section-subtitle reveal">Anyone can book flights and hotels. We obsess over the details that turn a trip into a turning point.</p>
+
+  <div class="diff-grid">
+    <div class="diff-card hero-card reveal">
+      <span class="diff-icon">👯‍♀️</span>
+      <div class="diff-title">A Community That Has Your Back</div>
+      <div class="diff-text">We carefully curate groups of women who are genuinely aligned — ambitious, warm, and growth-minded. The connections you form here become friendships you'll have for life.</div>
+    </div>
+    <div class="diff-card hero-card reveal">
+      <span class="diff-icon">🎯</span>
+      <div class="diff-title">Travel Identity™ Matching</div>
+      <div class="diff-text">We don't just throw people in a room together. Our signature Travel Identity™ quiz matches you with compatible roommates and future trip companions based on personality and preferences.</div>
+    </div>
+    <div class="diff-card reveal">
+      <span class="diff-icon">🌟</span>
+      <div class="diff-title">Growth Baked In</div>
+      <div class="diff-text">Vision board workshops, "Next-Level You" sessions, ocean ceremonies, and journaling rituals. Real personal development, not a generic seminar — in paradise.</div>
+    </div>
+    <div class="diff-card reveal">
+      <span class="diff-icon">🔒</span>
+      <div class="diff-title">Safe Solo Travel, Sorted</div>
+      <div class="diff-text">Everything is taken care of — transfers, accommodation, activities, meals. You just show up. Travelling solo doesn't have to feel lonely or daunting anymore.</div>
+    </div>
+    <div class="diff-card reveal">
+      <span class="diff-icon">🐋</span>
+      <div class="diff-title">Experiences You Won't Find Anywhere Else</div>
+      <div class="diff-text">Swimming with manta rays. Private liveaboards. Pink beaches at sunrise. We don't do ordinary. Every trip is built around bucket-list moments that become core memories.</div>
+    </div>
+    <div class="diff-card reveal">
+      <span class="diff-icon">💆‍♀️</span>
+      <div class="diff-title">Wellness Built In, Always</div>
+      <div class="diff-text">Massages, yoga, pilates, and intentional downtime — not as extras, but as essentials. You'll return home genuinely restored, not exhausted.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRIPS -->
+<section class="trips-section" id="trips">
+  <div class="section-tag reveal">Upcoming Experiences</div>
+  <h2 class="section-title reveal">Choose Your <em>Next Chapter</em></h2>
+  <p class="section-subtitle reveal">Each trip is a world of its own — different destination, same transformative TGE energy.</p>
+
+  <div class="trips-grid">
+
+    <!-- TRIP 1: KOMODO — UPDATE DETAILS AS NEEDED -->
+    <a class="trip-card reveal" href="komodo.html">
+      <div class="trip-card-img">
+        <!-- If you have a hero image for this trip, replace the div below with: <img src="photo1.jpg" alt="Komodo Islands"> -->
+        <div class="trip-card-img-placeholder">🐋</div>
+        <span class="trip-badge live">⚡ Waitlist Open</span>
+      </div>
+      <div class="trip-card-body">
+        <div class="trip-dest">Komodo Islands &amp; Labuan Bajo, Indonesia</div>
+        <div class="trip-name">Becoming <em>Her</em></div>
+        <div class="trip-meta">
+          <span class="trip-meta-item"><span class="trip-meta-icon">📅</span> July 2026</span>
+          <span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> 6 Days · 5 Nights</span>
+          <span class="trip-meta-item"><span class="trip-meta-icon">👯‍♀️</span> 8 Women Only</span>
+        </div>
+        <div class="trip-desc">Swim with manta rays, sail on a private liveaboard, hike volcanic islands at sunrise, and unlock your next-level self — with 7 incredible women by your side.</div>
+        <div class="trip-highlights">
+          <span class="trip-highlight-tag">🐋 Manta Rays</span>
+          <span class="trip-highlight-tag">⛵ Private Liveaboard</span>
+          <span class="trip-highlight-tag">🧘‍♀️ Yoga &amp; Wellness</span>
+          <span class="trip-highlight-tag">🎯 Vision Board Workshop</span>
+          <span class="trip-highlight-tag">🩷 Pink Beach</span>
+        </div>
+        <span class="trip-btn">View Trip &amp; Join Waitlist →</span>
+      </div>
+    </a>
+
+    <!-- TRIP 2: UPDATE WITH YOUR SECOND TRIP DETAILS -->
+    <a class="trip-card reveal" href="thailand.html">
+      <div class="trip-card-img">
+        <!-- Replace with: <img src="YOUR-IMAGE.jpg" alt="Trip 2"> -->
+        <div class="trip-card-img-placeholder">🌴</div>
+        <!-- Change badge text + class as needed -->
+        <span class="trip-badge">Coming Soon</span>
+      </div>
+      <div class="trip-card-body">
+        <!-- UPDATE ALL OF THIS WITH YOUR SECOND TRIP DETAILS -->
+        <div class="trip-dest">Your Destination, Country</div>
+        <div class="trip-name">Trip <em>Name Here</em></div>
+        <div class="trip-meta">
+          <span class="trip-meta-item"><span class="trip-meta-icon">📅</span> Month Year</span>
+          <span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> X Days · X Nights</span>
+          <span class="trip-meta-item"><span class="trip-meta-icon">👯‍♀️</span> 8 Women Only</span>
+        </div>
+        <div class="trip-desc">Add a short, punchy description of this trip here — what's the one thing that makes it unforgettable? Lead with the emotion and the experience.</div>
+        <div class="trip-highlights">
+          <span class="trip-highlight-tag">✨ Highlight 1</span>
+          <span class="trip-highlight-tag">🌊 Highlight 2</span>
+          <span class="trip-highlight-tag">🧘‍♀️ Wellness</span>
+          <span class="trip-highlight-tag">👯‍♀️ Girls Community</span>
+        </div>
+        <span class="trip-btn coming-soon">Coming Soon</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- FOR YOU — EMOTIONAL SECTION -->
+<section class="for-you-section">
+  <div class="for-you-inner">
+    <div class="for-you-text">
+      <div class="section-tag reveal">Is This You?</div>
+      <h2 class="section-title reveal">You're Ready for <em>More</em></h2>
+      <div class="for-you-list reveal">
+        <div class="for-you-item">
+          <div class="for-you-check">✓</div>
+          <div class="for-you-item-text">You want to travel but hate the idea of going alone — or can't find friends who are as keen as you are</div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-check">✓</div>
+          <div class="for-you-item-text">You crave <strong>real female friendships</strong> — women who are ambitious, supportive, and genuinely want to see you win</div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-check">✓</div>
+          <div class="for-you-item-text">You want to tick off bucket-list experiences but also <strong>come home a better version of yourself</strong></div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-check">✓</div>
+          <div class="for-you-item-text">You believe in <strong>investing in yourself</strong> — your growth, your wellness, your happiness, your experiences</div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-check">✓</div>
+          <div class="for-you-item-text">You're ready to <strong>stop waiting</strong> for the right time, the right person, the right circumstances — and just go</div>
+        </div>
+      </div>
+    </div>
+    <div class="for-you-visual reveal">
+      <div class="for-you-quote">
+        "You deserve a trip that does more than take you somewhere. You deserve one that <strong>takes you further</strong> — into yourself, into your potential, into your people."
+      </div>
+      <div class="for-you-tags">
+        <span class="for-you-tag">Women aged 19–38</span>
+        <span class="for-you-tag">Solo travellers welcome</span>
+        <span class="for-you-tag">Or bring a friend</span>
+        <span class="for-you-tag">Growth-minded</span>
+        <span class="for-you-tag">Wellness lovers</span>
+        <span class="for-you-tag">Bucket-list chasers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta-section">
+  <h2 class="final-title reveal">Your Next Chapter <em>Starts Here.</em></h2>
+  <p class="final-text reveal">The women you'll meet, the places you'll go, the version of yourself you'll discover — it all begins with one decision. Don't wait for the "right time." This is it.</p>
+  <a href="#trips" class="final-btn reveal">See Our Upcoming Trips →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">That Girl Experiences</div>
+  <p class="footer-disclaimer">For all enquiries: thatgirlexperiences@gmail.com &nbsp;·&nbsp; © 2026 That Girl Experiences</p>
+</footer>
+
+<script>
+  // Scroll nav
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
