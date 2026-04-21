@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>That Girl Experiences</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Georgia', serif;
+      background: #fff9f5;
+      color: #2d2d2d;
+      text-align: center;
+    }
+    header {
+      padding: 60px 20px 20px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c97b5a; /* change this to your brand colour */
+    }
+    header p {
+      font-size: 1.1rem;
+      margin-top: 12px;
+      color: #888;
+      letter-spacing: 1px;
+    }
+    .trips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      width: 340px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 24px;
+    }
+    .card-body h2 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: #c97b5a;
+    }
+    .card-body p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 24px;
+      background: #c97b5a;
+      color: white;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    footer {
+      padding: 40px;
+      font-size: 0.8rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>That Girl Experiences</h1>
+    <p>curated 'THAT GIRL' trips for the girls who want more</p>
+  </header>
+
+  <section class="trips">
+
+    <!-- TRIP 1 — update the href, image src, and text -->
+    <a class="card" href="komodo.html">
+      <img src="images/photo1.jpg" alt="Becoming HER - Komodo Islands Trip" />
+      <div class="card-body">
+        <h2>BECOMING HER - Komodo Islands</h2>
+        <p>Manta Rays, Sailing across Komodo on our Private Liveaboard & unlocking Next-Level You — this is you becoming HER.</p>
+        <span class="btn">Learn more →</span>
+      </div>
+    </a>
+
+    <!-- TRIP 2 — update the href, image src, and text -->
+    <a class="card" href="bali.html">
+      <img src="images/photo2.jpg" alt="Bali Island Life Trip" />
+      <div class="card-body">
+        <h2>ISLAND LIFE - Bali, Nusa Lembongan & Nusa Penida</h2>
+        <p>Ocean Therapy & Beach Daze for Days, Unreal Sunsets, Jungle & Good Vibes!</p>
+        <span class="btn">Learn more →</span>
+      </div>
+    </a>
+
+  </section>
+
+  <footer>© 2026 That Girl Experiences</footer>
+
+</body>
+</html>
