@@ -26,7 +26,7 @@
   /* NAV */
   .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.4s ease; }
   .nav.scrolled { background: rgba(253,248,240,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,169,110,0.1); padding: 0.7rem 2rem; }
-  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-decoration: none; }
   .nav-right { display: flex; align-items: center; gap: 1.5rem; }
   .currency-toggle { position: relative; }
   .currency-btn { background: rgba(255,255,255,0.8); border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; padding: 0.4rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; color: var(--text-mid); cursor: pointer; display: flex; align-items: center; gap: 0.4rem; transition: all 0.3s ease; }
@@ -292,7 +292,7 @@
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="nav-brand" href="https://www.thatgirlexperiences.com">That Girl Experiences</div>
+  <a class="nav-brand" href="https://www.thatgirlexperiences.com">That Girl Experiences</a>
   <div class="nav-right">
     <div class="currency-toggle">
       <button class="currency-btn" onclick="toggleCurrencyDropdown()">
