@@ -180,6 +180,39 @@
     .nav { padding-top: calc(0.8rem + env(safe-area-inset-top)); }
     .nav.scrolled { padding-top: calc(0.5rem + env(safe-area-inset-top)); }
   }
+
+/* TRIPS GALLERY SLIDESHOW */
+.days-section { background: var(--cream); padding: 5rem 2rem; }
+.days-section .section-subtitle { margin-bottom: 2.5rem; }
+.slideshow-wrapper { position: relative; max-width: 900px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+.slideshow-track { display: flex; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+.slide { min-width: 100%; position: relative; flex-shrink: 0; background: var(--cream); }
+.slide::before { content: ''; display: block; padding-top: 56.25%; }
+.slide img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.slide-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 2rem; background: linear-gradient(to top, rgba(44,62,64,0.75), transparent); color: var(--white); }
+.slide-caption-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; font-style: italic; margin-bottom: 0.2rem; }
+.slide-caption-sub { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.75; }
+.slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.85); border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.1); color: var(--text-dark); z-index: 10; transition: all 0.3s ease; }
+.slide-btn:hover { background: var(--white); transform: translateY(-50%) scale(1.05); }
+.slide-prev { left: 0.75rem; }
+.slide-next { right: 0.75rem; }
+.slide-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.25rem; }
+.slide-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(201,169,110,0.3); cursor: pointer; border: none; transition: all 0.3s ease; }
+.slide-dot.active { background: var(--gold); transform: scale(1.2); }
+@media (max-width: 768px) {
+  .days-section { padding: 4rem 1.25rem; }
+  .slideshow-wrapper { border-radius: 16px; }
+  .slide-caption-title { font-size: 1.1rem; }
+  .slide-btn { width: 36px; height: 36px; font-size: 0.9rem; }
+}
+@media (max-width: 480px) {
+  .days-section { padding: 3rem 1rem; }
+  .slideshow-wrapper { border-radius: 12px; }
+  .slide-caption { padding: 1rem 1.2rem; }
+  .slide-caption-title { font-size: 1rem; }
+  .slide-btn { width: 30px; height: 30px; font-size: 0.8rem; }
+  .slide-dot { width: 6px; height: 6px; }
+}
 </style>
 </head>
 <body>
@@ -408,6 +441,65 @@
   <a href="#trips" class="final-btn reveal">See Our Upcoming Trips →</a>
 </section>
 
+<!-- TRIPS GALLERY -->
+<section class="days-section">
+  <div class="section-tag reveal">What Your Days <em>Could Look Like</em></div>
+  <h2 class="section-title reveal">A glimpse into your dream life</h2>
+  <p class="section-subtitle reveal">From volcanic views to swimming with manta rays, sailing across the island & private villas with the girls — this is a glimpse into the world waiting for you.</p>
+
+  <div class="slideshow-wrapper reveal">
+    <div class="slideshow-track" id="daysTrack">
+
+      <div class="slide">
+        <img src="photo1.jpg" alt="Padar Island">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Sunrise hikes with the girls</div>
+          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="photo2.jpg" alt="Private Liveaboard">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Sailing our private liveaboard</div>
+          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="photo4.jpg" alt="Manta Rays">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Swimming with manta rays</div>
+          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="photo5.jpg" alt="Pink Beach">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Pink Beach afternoons</div>
+          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="lembongan.jpg" alt="Nusa Lembongan">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Island life & ocean therapy</div>
+          <div class="slide-caption-sub">Bali · Aug–Sep 2026</div>
+        </div>
+      </div>
+
+      <!-- Add more slides here — just copy a <div class="slide"> block and swap the src & text -->
+
+    </div>
+    <button class="slide-btn slide-prev" onclick="daysSlide(-1)">&#8592;</button>
+    <button class="slide-btn slide-next" onclick="daysSlide(1)">&#8594;</button>
+  </div>
+  <div class="slide-dots" id="daysDots"></div>
+</section>
+
+  
 <!-- CONTACT -->
 <section style="background: var(--cream); padding: 3rem 1rem;" id="contact">
   <div class="section-tag reveal">Get In Touch</div>
@@ -471,5 +563,38 @@
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
+<script>
+// Days gallery slideshow
+(function() {
+  let cur = 0;
+  const track = document.getElementById('daysTrack');
+  const slides = track.querySelectorAll('.slide');
+  const dotsEl = document.getElementById('daysDots');
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(n) {
+    cur = (n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dotsEl.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+  }
+  function daysSlide(dir) { goTo(cur + dir); }
+  window.daysSlide = daysSlide;
+  setInterval(() => goTo(cur + 1), 5000);
+
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) goTo(cur + (diff > 0 ? 1 : -1));
+  }, { passive: true });
+})();
+</script>
+  
 </body>
 </html>
