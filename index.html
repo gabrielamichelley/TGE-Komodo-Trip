@@ -469,7 +469,55 @@
   </div>
 </section>
 
-<!-- MISSION STRIP -->
+<!-- REGISTER YOUR INTEREST -->
+<section style="background: linear-gradient(135deg, #ffffff 0%, #D4EDEF 100%); border-top: 1px solid rgba(201,169,110,0.12); border-bottom: 1px solid rgba(201,169,110,0.12); padding: 2.8rem 2rem;">
+  <div style="max-width: 820px; margin: 0 auto;">
+
+    <div style="text-align: center; margin-bottom: 1.6rem;">
+      <div style="font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.5rem;">Be the First to Know</div>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--text-dark); line-height: 1.25;">Register Your <em>Interest</em></h3>
+      <p style="font-size: 0.82rem; font-weight: 300; color: var(--text-light); margin-top: 0.35rem;">Drop your details & we'll reach out directly when spots open up or new trips drop.</p>
+    </div>
+
+    <form action="https://formspree.io/f/mkokzzow" method="POST"
+      style="display: flex; gap: 0.65rem; align-items: flex-end; flex-wrap: wrap;">
+
+      <div style="flex: 1; min-width: 160px; display: flex; flex-direction: column; gap: 0.3rem;">
+        <label style="font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); font-weight: 500; padding-left: 0.2rem;">Your Name</label>
+        <input type="text" name="name" required placeholder="First name"
+          style="padding: 0.75rem 1.1rem; border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.88rem; color: var(--text-dark); background: rgba(255,255,255,0.85); outline: none; width: 100%;"
+          onfocus="this.style.borderColor='var(--ocean)';this.style.boxShadow='0 0 0 3px rgba(74,155,173,0.1)'"
+          onblur="this.style.borderColor='rgba(201,169,110,0.22)';this.style.boxShadow='none'">
+      </div>
+
+      <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 0.3rem;">
+        <label style="font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); font-weight: 500; padding-left: 0.2rem;">Instagram or WhatsApp</label>
+        <input type="text" name="contact" required placeholder="@handle or +61 400 000 000"
+          style="padding: 0.75rem 1.1rem; border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.88rem; color: var(--text-dark); background: rgba(255,255,255,0.85); outline: none; width: 100%;"
+          onfocus="this.style.borderColor='var(--ocean)';this.style.boxShadow='0 0 0 3px rgba(74,155,173,0.1)'"
+          onblur="this.style.borderColor='rgba(201,169,110,0.22)';this.style.boxShadow='none'">
+      </div>
+
+      <input type="hidden" name="_subject" value="New Trip Interest Registration — TGE">
+      <input type="hidden" name="_next" value="https://thatgirlexperiences.com">
+
+      <button type="submit"
+        style="background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; border: none; padding: 0.75rem 1.8rem; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 16px rgba(201,169,110,0.3); white-space: nowrap;"
+        onmouseover="this.style.boxShadow='0 8px 24px rgba(201,169,110,0.45)'"
+        onmouseout="this.style.boxShadow='0 4px 16px rgba(201,169,110,0.3)'">
+        Register My Interest ✦
+      </button>
+
+    </form>
+
+    <p style="text-align: center; margin-top: 1rem; font-size: 0.7rem; color: var(--text-light);">
+      No spam, ever &nbsp;·&nbsp; We'll reach out directly &nbsp;·&nbsp; No commitments
+    </p>
+
+  </div>
+</section>
+  
+  <!-- MISSION STRIP -->
 <div class="mission-strip">
   <div class="mission-label">Our Mission</div>
   <p class="mission-text">
