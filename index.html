@@ -65,7 +65,7 @@
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     text-align: center;
-    padding: 6rem 2rem 2.5rem;
+    padding: 7rem 2rem 4rem;
     position: relative;
     background: linear-gradient(170deg, var(--cream) 0%, var(--teal-soft) 35%, var(--lagoon) 65%, var(--ocean-light) 100%);
     overflow: hidden;
@@ -127,8 +127,8 @@
   .hero-cta {
     display: inline-block;
     background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white); border: none; padding: 1rem 1.6rem;
-    font-family: 'Jost', sans-serif; font-size: 0.88rem;
+    color: var(--white); border: none; padding: 1.3rem 3.75rem;
+    font-family: 'Jost', sans-serif; font-size: 0.96rem;
     font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
     border-radius: 60px; cursor: pointer; text-decoration: none;
     transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3);
@@ -152,7 +152,7 @@
     background: var(--white);
     border-top: 1px solid rgba(201,169,110,0.12);
     border-bottom: 1px solid rgba(201,169,110,0.12);
-    padding: 1rem 0.8rem;
+    padding: 1.1rem 1rem;
   }
   .trust-inner {
     max-width: 800px; margin: 0 auto;
@@ -176,7 +176,8 @@
   }
 
   /* ── SHARED SECTION DEFAULTS ── */
-  section { padding: 3.5rem 2rem; }
+  /* Reduced from 5rem → 4rem */
+  section { padding: 4rem 2rem; }
 
   .section-tag {
     font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase;
@@ -405,12 +406,12 @@
     line-height: 1.7; max-width: 800px; margin: 0 auto;
     position: relative; z-index: 1; font-style: italic;
   }
-  .mission-text strong { font-style: normal; font-weight: 300; color: var(--gold-light); }
+  .mission-text strong { font-style: normal; font-weight: 500; color: var(--gold-light); }
 
   /* ── FINAL CTA ── */
   .final-cta-section {
     background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 60%, var(--teal) 100%);
-    text-align: center; padding: 2rem 2rem; position: relative; overflow: hidden;
+    text-align: center; padding: 3.5rem 2rem; position: relative; overflow: hidden;
   }
   .final-cta-section::before {
     content: ''; position: absolute; inset: 0;
@@ -419,7 +420,7 @@
   .final-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-    font-weight: 500; color: var(--white); margin-bottom: 1.35rem;
+    font-weight: 600; color: var(--white); margin-bottom: 1.35rem;
     position: relative; z-index: 1; line-height: 1.15;
   }
   .final-title em { font-style: italic; color: var(--gold-light); }
@@ -430,7 +431,7 @@
   }
   .final-btn {
     display: inline-block; background: var(--white); color: var(--ocean-deep);
-    border: none; padding: 1.2rem 2rem;
+    border: none; padding: 1.2rem 3.5rem;
     font-family: 'Jost', sans-serif; font-size: 0.88rem;
     font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
     border-radius: 60px; cursor: pointer; text-decoration: none;
@@ -497,8 +498,8 @@
 
   /* Tablet small (≤768px) */
   @media (max-width: 768px) {
-    .nav { padding: 0.8rem 1rem; }
-    .nav.scrolled { padding: 0.6rem 1rem; }
+    .nav { padding: 0.85rem 1.1rem; }
+    .nav.scrolled { padding: 0.65rem 1.1rem; }
     /* Hide text nav links on tablet/mobile — keep only brand + CTA */
     .nav-link { display: none; }
 
@@ -531,11 +532,11 @@
     section { padding: 2.5rem 1rem; }
     .days-section { padding: 2.5rem 1rem; }
     .interest-section { padding: 2.5rem 1rem; }
-    .final-cta-section { padding: 1.8rem 1rem; }
+    .final-cta-section { padding: 2.5rem 1rem; }
     .mission-strip { padding: 2.25rem 1.25rem; }
 
     /* "Girl You Become" section — less top AND much less bottom on mobile */
-    .girl-you-become { padding-top: 2rem !important; padding-bottom: 0.5rem !important; }
+    .girl-you-become { padding-top: 2rem !important; padding-bottom: 0.75rem !important; }
 
     /* Register My Interest button — centred on mobile */
     .interest-form { flex-direction: column; align-items: center; }
@@ -545,20 +546,51 @@
     /* Contact: extra side padding on mobile */
     #contact { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
 
-    /* Diff cards → 1 col */
-    .diff-grid { grid-template-columns: 1fr; gap: 0.85rem; }
-    .diff-card { padding: 1.5rem; border-radius: 16px; }
+    /* ── WHY DIFFERENT: horizontal scroll carousel on mobile ── */
+    #why-tge { overflow: hidden; padding-left: 0; padding-right: 0; }
+    #why-tge .section-tag,
+    #why-tge .section-subtitle,
+    #why-tge h2 { padding-left: 1rem; padding-right: 1rem; }
+    .diff-grid {
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 0.85rem;
+      padding: 0.25rem 1rem 1rem;
+      margin: 0;
+      max-width: none;
+    }
+    .diff-grid::-webkit-scrollbar { display: none; }
+    .diff-card {
+      min-width: 78vw;
+      max-width: 78vw;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      padding: 1.4rem;
+      border-radius: 18px;
+    }
     .diff-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
-    .diff-title { font-size: 1.2rem; }
-    .diff-text { font-size: 0.95rem; }
+    .diff-title { font-size: 1.15rem; }
+    .diff-text { font-size: 0.92rem; }
+    /* Swipe hint for why-different on mobile */
+    .why-swipe-hint { display: block; }
+
+    /* Gallery dots — less gap between slideshow and dots */
+    .slide-dots { margin-top: 0.75rem; }
+
+    /* Final CTA — tighten gap between text and button */
+    .final-text { margin-bottom: 1.5rem !important; }
 
     /* For you */
     .for-you-checklist { padding: 1.5rem; border-radius: 16px; }
     .for-you-checklist-title { font-size: 1.2rem; }
-    .for-you-item-text { font-size: 1rem; }
+    .for-you-item-text { font-size: 0.97rem; }
     .for-you-quote-box { padding: 1.5rem; border-radius: 16px; }
-    .for-you-quote { font-size: 1.5rem; }
-    .for-you-tag { font-size: 0.75rem; }
+    .for-you-quote { font-size: 1.2rem; }
+    .for-you-tag { font-size: 0.72rem; }
 
     /* "See Our Trips" button — perfectly centred */
     .cta-center { display: flex; justify-content: center; }
@@ -595,7 +627,7 @@
     .trip-desc { font-size: 0.95rem; }
 
     /* Final CTA */
-    .final-btn { width: 100%; max-width: 320px; padding: 0.8rem; }
+    .final-btn { width: 100%; max-width: 320px; padding: 1.1rem; }
 
     /* Gallery — BIGGER on mobile */
     .slideshow-wrapper { border-radius: 14px; }
@@ -636,8 +668,8 @@
     <div class="hero-tag">Girls-Only Travel Experiences</div>
     <h1 class="hero-title"><em>THAT GIRL</em> Experiences<br><em>for the girls who want more.</em></h1>
     <p class="hero-sub">
-      We don't just plan trips. We curate 'That Girl' trips for the girls who want to live life to its fullest. Bucket-list experiences designed to unlock the best version of YOU — surrounded by like-minded, supportive women you haven't met <em>yet.</em>
-      <br><strong>This is YOU - unlocked. Want to experience what she's like?</strong>
+      We don't just plan trips. We curate 'That Girl' trips for the girls who want more in life. Bucket-list experiences designed to unlock the best version of YOU — surrounded by like-minded, supportive women you haven't met <em>yet.</em>
+      <strong>This is YOU - unlocked. Want to experience what she's like?</strong>
     </p>
     <div class="hero-pills">
       <span class="hero-pill">✈️ Transformative Girls-Only Trips</span>
@@ -678,56 +710,6 @@
   <p class="section-subtitle subtitle-reveal" id="typingSubtitle" style="opacity:0;">It's the version of yourself you've been putting off meeting. <strong>This is YOU as THAT GIRL.</strong></p>
 </section>
 
-<!-- ⑩ GALLERY -->
-<section class="days-section">
-  <div class="section-tag reveal">A Whole World Waiting For You</div>
-  <h2 class="section-title reveal">A Glimpse Into Your Days</h2>
-  <p class="section-subtitle reveal">Volcanic Sunsets, Swimming with Manta Rays, Sailing across Islands & Private Villas with the girls. <strong>Step into your dream life with us.</strong></p>
-
-  <div class="slideshow-wrapper reveal">
-    <div class="slideshow-track" id="daysTrack">
-      <div class="slide">
-        <img src="lembongan.jpg" alt="Nusa Lembongan">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Island life & ocean therapy</div>
-          <div class="slide-caption-sub">Bali · Aug–Sep 2026</div>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="photo1.jpg" alt="Padar Island">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Sunrise hikes with the girls</div>
-          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="photo2.jpg" alt="Private Liveaboard">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Sailing our private liveaboard</div>
-          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="photo4.jpg" alt="Manta Rays">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Swimming with manta rays</div>
-          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="photo5.jpg" alt="Pink Beach">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Pink Beach afternoons</div>
-          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
-        </div>
-      </div>
-    </div>
-    <button class="slide-btn slide-prev" onclick="daysSlide(-1)">&#8592;</button>
-    <button class="slide-btn slide-next" onclick="daysSlide(1)">&#8594;</button>
-  </div>
-  <div class="slide-dots" id="daysDots"></div>
-</section>
-  
 <!-- ④ THIS IS FOR YOU IF -->
 <section style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%);" id="for-you">
   <div class="section-tag reveal">This Is For You If</div>
@@ -822,6 +804,7 @@
       <div class="diff-text">Everything is taken care of - transfers, accommodation, activities, meals. You just show up. Travelling solo doesn't have to feel lonely or daunting anymore, and you get to meet new friends!</div>
     </div>
   </div>
+  <p class="why-swipe-hint">← Swipe to see all 6 reasons →</p>
 </section>
 
 <!-- ⑥ TRIPS -->
@@ -831,31 +814,6 @@
   <p class="section-subtitle reveal">Each trip is a world of its own — different destination, same transformative TGE energy.</p>
 
   <div class="trips-grid">
-
-       <a class="trip-card reveal" href="bali.html">
-      <div class="trip-card-img">
-        <img src="lembongan.jpg" alt="Nusa Lembongan">
-        <span class="trip-badge live">‼️ LIMITED SPOTS LEFT</span>
-      </div>
-      <div class="trip-card-body">
-        <div class="trip-dest">Bali + Nusa Lembongan + Nusa Penida</div>
-        <div class="trip-name">Island Life</div>
-        <div class="trip-meta">
-          <span class="trip-meta-item"><span class="trip-meta-icon">📅</span> Aug/Sep 2026</span>
-          <span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> 8 Days · 7 Nights</span>
-          <span class="trip-meta-item"><span class="trip-meta-icon">‼️</span> LIMITED SPOTS LEFT ‼️</span>
-        </div>
-        <div class="trip-desc">3 Islands, 1 Trip. Ocean Therapy & Beach Daze for Days, Stunning Rice Terraces & Lush Jungles, Unreal Sunsets, Endless Brunchin', Snorkelling Trips & Good Vibes! This trip is full of adventures while also prioritising connection and rest + restoration for your body and mind.</div>
-        <div class="trip-highlights">
-          <span class="trip-highlight-tag">✨ 3 Islands, 1 Incredible Trip</span>
-          <span class="trip-highlight-tag">🌊 Ocean, Jungle, Beach & Unreal Sunsets</span>
-          <span class="trip-highlight-tag">💃 Adventure-packed + Great Value!</span>
-          <span class="trip-highlight-tag">👯‍♀️ Girls Community</span>
-        </div>
-        <span class="trip-btn">View Trip &amp; Itinerary →</span>
-      </div>
-    </a>
-
     <a class="trip-card reveal" href="komodo.html">
       <div class="trip-card-img">
         <img src="photo1.jpg" alt="Komodo Islands">
@@ -865,14 +823,14 @@
         <div class="trip-dest">Komodo Islands &amp; Labuan Bajo, Indonesia</div>
         <div class="trip-name">Becoming <em>HER</em></div>
         <div class="trip-meta">
-          <span class="trip-meta-item"><span class="trip-meta-icon">📅</span> Jul/Aug/Nov 2026</span>
+          <span class="trip-meta-item"><span class="trip-meta-icon">📅</span> July 2026</span>
           <span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> 6 Days · 5 Nights</span>
           <span class="trip-meta-item"><span class="trip-meta-icon">👯‍♀️</span> 8 GIRLS MAX</span>
         </div>
         <div class="trip-desc">Swim with manta rays, sail across Komodo on our own Private Liveaboard with the girls, hike volcanic islands for sunset & unlock your Next-Level Self — with 7 supportive women by your side. This is you <em>becoming HER.</em></div>
         <div class="trip-highlights">
           <span class="trip-highlight-tag">🐋 Manta Rays & Majestic Views</span>
-          <span class="trip-highlight-tag">⛵ Private Liveaboard Sailing through Islands</span>
+          <span class="trip-highlight-tag">⛵ Private Liveaboard Sailing through Komodo Islands</span>
           <span class="trip-highlight-tag">🧘‍♀️ Yoga, Pilates &amp; Wellness</span>
           <span class="trip-highlight-tag">🎯 Growth & Mindset Workshops</span>
           <span class="trip-highlight-tag">🩷 Pink Beach, Crystal Clear Water & Komodo Dragons</span>
@@ -880,10 +838,34 @@
         <span class="trip-btn">View Trip &amp; Join Waitlist →</span>
       </div>
     </a>
+
+    <a class="trip-card reveal" href="bali.html">
+      <div class="trip-card-img">
+        <img src="lembongan.jpg" alt="Nusa Lembongan">
+        <span class="trip-badge live">‼️ LIMITED SPOTS LEFT</span>
+      </div>
+      <div class="trip-card-body">
+        <div class="trip-dest">Bali + Nusa Lembongan + Nusa Penida</div>
+        <div class="trip-name">Island Life</div>
+        <div class="trip-meta">
+          <span class="trip-meta-item"><span class="trip-meta-icon">📅</span> Aug, Sep 2026</span>
+          <span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> 8 Days · 7 Nights</span>
+          <span class="trip-meta-item"><span class="trip-meta-icon">‼️</span> LIMITED SPOTS LEFT!</span>
+        </div>
+        <div class="trip-desc">3 Islands, 1 Trip. Ocean Therapy & Beach Daze for Days, Stunning Rice Terraces & Lush Jungles, Unreal Sunsets, Endless Brunchin', Snorkelling Trips & Good Vibes! This trip is full of adventures while also prioritising connection and rest + restoration for your body and mind.</div>
+        <div class="trip-highlights">
+          <span class="trip-highlight-tag">✨ 3 Islands, 1 Trip</span>
+          <span class="trip-highlight-tag">🌊 Ocean, Jungle, Beach & Unreal Sunsets</span>
+          <span class="trip-highlight-tag">💃 Adventure-packed + Wellness</span>
+          <span class="trip-highlight-tag">👯‍♀️ Girls Community</span>
+        </div>
+        <span class="trip-btn">View Trip &amp; Join Waitlist →</span>
+      </div>
+    </a>
   </div>
-  
+
   <!-- Swipe hint — only visible on mobile, hidden via CSS on desktop -->
-  <p class="trips-swipe-hint">← Swipe for more trips →</p>
+  <p class="trips-swipe-hint">← Swipe to see more trips →</p>
 </section>
 
 <!-- ⑦ REGISTER YOUR INTEREST -->
@@ -925,11 +907,60 @@
 
 <!-- ⑨ FINAL CTA -->
 <section class="final-cta-section">
-  <h2 class="final-title reveal">Your Dream Life <em>Starts Here.</em></h2>
+  <h2 class="final-title reveal">Your Next Chapter <em>Starts Here.</em></h2>
   <p class="final-text reveal">The friendships & connections you'll make, the surreal memories & feelings you'll experience, the version of yourself you'll discover — it all starts here. Don't wait for the "right time." This is YOUR time now.</p>
   <a href="#trips" class="final-btn reveal">Join Our Trips →</a>
 </section>
 
+<!-- ⑩ GALLERY -->
+<section class="days-section">
+  <div class="section-tag reveal">A Whole World Waiting For You</div>
+  <h2 class="section-title reveal">A Glimpse Into Your Days With Us</h2>
+  <p class="section-subtitle reveal">Volcanic Sunsets, Swimming with Manta Rays, Sailing across Islands & Private Villas with the girls. <strong>Step into your dream life with us.</strong></p>
+
+  <div class="slideshow-wrapper reveal">
+    <div class="slideshow-track" id="daysTrack">
+      <div class="slide">
+        <img src="lembongan.jpg" alt="Nusa Lembongan">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Island life & ocean therapy</div>
+          <div class="slide-caption-sub">Bali · Aug–Sep 2026</div>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="photo1.jpg" alt="Padar Island">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Sunrise hikes with the girls</div>
+          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="photo2.jpg" alt="Private Liveaboard">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Sailing our private liveaboard</div>
+          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="photo4.jpg" alt="Manta Rays">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Swimming with manta rays</div>
+          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="photo5.jpg" alt="Pink Beach">
+        <div class="slide-caption">
+          <div class="slide-caption-title">Pink Beach afternoons</div>
+          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
+        </div>
+      </div>
+    </div>
+    <button class="slide-btn slide-prev" onclick="daysSlide(-1)">&#8592;</button>
+    <button class="slide-btn slide-next" onclick="daysSlide(1)">&#8594;</button>
+  </div>
+  <div class="slide-dots" id="daysDots"></div>
+</section>
 
 <!-- ⑪ CONTACT -->
 <section style="background: var(--cream);" id="contact">
@@ -993,8 +1024,19 @@
     margin-top: 0.5rem;
     text-transform: uppercase;
   }
+  .why-swipe-hint {
+    display: none;
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--text-light);
+    margin-top: 0.4rem;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
   @media (max-width: 540px) {
     .trips-swipe-hint { display: block; }
+    .why-swipe-hint { display: block; }
   }
 </style>
 
