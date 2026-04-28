@@ -176,8 +176,7 @@
   }
 
   /* ── SHARED SECTION DEFAULTS ── */
-  /* Reduced from 5rem → 4rem */
-  section { padding: 4rem 2rem; }
+  section { padding: 3.5rem 2rem; }
 
   .section-tag {
     font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase;
@@ -211,10 +210,35 @@
   .diff-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(74,155,173,0.12); background: var(--white); }
   .diff-card.hero-card { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border-color: rgba(74,155,173,0.2); }
   .diff-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-  /* diff-title → BOLD */
   .diff-title {
     font-family: 'Cormorant Garamond', serif; font-size: 1.35rem;
-    font-weight: 700; color: var(--text-dark); margin-bottom: 0.6rem;
+    font-weight: 500; color: var(--text-dark); margin-bottom: 0.6rem;
+  }
+  /* Bold ONLY in the "Why We're Different" section */
+  #why-tge .diff-title { font-weight: 700; }
+
+  /* ── TYPING ANIMATION for the h2 headline ── */
+  @keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+  .typing-cursor {
+    display: inline-block;
+    width: 2px; margin-left: 2px;
+    vertical-align: text-bottom;
+    background: var(--ocean-deep);
+    border-radius: 1px;
+    animation: cursor-blink 0.8s step-end infinite;
+  }
+
+  /* ── SLEEK subtitle reveal: blur fade-up ── */
+  @keyframes subtitle-reveal {
+    0%   { opacity: 0; filter: blur(6px); transform: translateY(14px) scale(0.98); }
+    100% { opacity: 1; filter: blur(0);   transform: translateY(0)    scale(1);    }
+  }
+  .subtitle-reveal {
+    opacity: 0;
+    animation: subtitle-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
   .diff-text {
     font-size: 0.97rem; font-weight: 400; line-height: 1.8; color: var(--text-dark);
@@ -367,7 +391,7 @@
   /* ── MISSION STRIP ── */
   .mission-strip {
     background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 50%, var(--teal) 100%);
-    padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden;
+    padding: 2.75rem 2rem; text-align: center; position: relative; overflow: hidden;
   }
   .mission-strip::before {
     content: ''; position: absolute; inset: 0;
@@ -386,7 +410,7 @@
   /* ── FINAL CTA ── */
   .final-cta-section {
     background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 60%, var(--teal) 100%);
-    text-align: center; padding: 5rem 2rem; position: relative; overflow: hidden;
+    text-align: center; padding: 3.5rem 2rem; position: relative; overflow: hidden;
   }
   .final-cta-section::before {
     content: ''; position: absolute; inset: 0;
@@ -507,8 +531,16 @@
     section { padding: 2.5rem 1rem; }
     .days-section { padding: 2.5rem 1rem; }
     .interest-section { padding: 2.5rem 1rem; }
-    .final-cta-section { padding: 3.5rem 1rem; }
-    .mission-strip { padding: 3rem 1.25rem; }
+    .final-cta-section { padding: 2.5rem 1rem; }
+    .mission-strip { padding: 2.25rem 1.25rem; }
+
+    /* "Girl You Become" section — less top AND much less bottom on mobile */
+    .girl-you-become { padding-top: 2rem !important; padding-bottom: 0.75rem !important; }
+
+    /* Register My Interest button — centred on mobile */
+    .interest-form { flex-direction: column; align-items: center; }
+    .interest-field { min-width: unset; width: 100%; }
+    .interest-btn { width: 100%; max-width: 320px; text-align: center; padding: 1rem; }
 
     /* Contact: extra side padding on mobile */
     #contact { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
@@ -640,10 +672,10 @@
 </div>
 
 <!-- ③ THE GIRL YOU BECOME — reduced bottom padding -->
-<section style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); padding-bottom: 1.5rem;">
+<section class="girl-you-become" style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); padding-bottom: 1.5rem;">
   <div class="section-tag reveal">THE GIRL YOU <em>BECOME</em> ON OUR TRIPS</div>
-  <h2 class="section-title reveal">You've been waiting for a sign, and maybe <em>this is it.</em></h2>
-  <p class="section-subtitle reveal">It's the version of yourself you've been putting off meeting. <strong>This is YOU as THAT GIRL.</strong></p>
+  <h2 class="section-title" id="typingHeadline" aria-label="You've been waiting for a sign, and maybe this is it."></h2>
+  <p class="section-subtitle subtitle-reveal" id="typingSubtitle" style="opacity:0;">It's the version of yourself you've been putting off meeting. <strong>This is YOU as THAT GIRL.</strong></p>
 </section>
 
 <!-- ④ THIS IS FOR YOU IF -->
@@ -698,7 +730,7 @@
   </div>
 
   <div class="cta-center">
-    <a href="#trips" class="cta-btn reveal">Join Our Trips →</a>
+    <a href="#trips" class="cta-btn reveal">See Our Trips →</a>
   </div>
 </section>
 
@@ -794,7 +826,7 @@
           <span class="trip-highlight-tag">💃 Adventure-packed + Wellness</span>
           <span class="trip-highlight-tag">👯‍♀️ Girls Community</span>
         </div>
-        <span class="trip-btn">View Trip →</span>
+        <span class="trip-btn">View Trip &amp; Join Waitlist →</span>
       </div>
     </a>
   </div>
@@ -999,6 +1031,80 @@
     const diff = touchStartX - e.changedTouches[0].screenX;
     if (Math.abs(diff) > 45) goTo(cur + (diff > 0 ? 1 : -1));
   }, { passive: true });
+})();
+</script>
+
+<!-- Typing animation for "You've been waiting…" headline -->
+<script>
+(function() {
+  const el = document.getElementById('typingHeadline');
+  const sub = document.getElementById('typingSubtitle');
+  if (!el || !sub) return;
+
+  // Full text with an italic span for "this is it."
+  const plainText = "You\u2019ve been waiting for a sign, and maybe ";
+  const italicText = "this is it.";
+  const fullPlain = plainText + italicText;
+
+  // Cursor element
+  const cursor = document.createElement('span');
+  cursor.className = 'typing-cursor';
+  cursor.style.height = '0.85em';
+
+  let charIndex = 0;
+  let started = false;
+
+  // Start when element scrolls into view
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !started) {
+        started = true;
+        io.disconnect();
+        startTyping();
+      }
+    });
+  }, { threshold: 0.4 });
+  io.observe(el);
+
+  function startTyping() {
+    el.textContent = '';
+    el.appendChild(cursor);
+    const speed = 38; // ms per character
+
+    function type() {
+      if (charIndex < fullPlain.length) {
+        const ch = fullPlain[charIndex];
+        charIndex++;
+
+        if (charIndex <= plainText.length) {
+          // plain part — insert text node before cursor
+          const t = document.createTextNode(ch);
+          el.insertBefore(t, cursor);
+        } else {
+          // italic part — build/extend the <em>
+          let em = el.querySelector('em');
+          if (!em) {
+            em = document.createElement('em');
+            em.style.color = 'var(--ocean-deep)';
+            el.insertBefore(em, cursor);
+          }
+          em.textContent += ch;
+        }
+        setTimeout(type, speed);
+      } else {
+        // Typing done — remove cursor after a beat, then reveal subtitle
+        setTimeout(() => {
+          cursor.remove();
+          sub.style.animationDelay = '0s';
+          sub.classList.add('subtitle-reveal');
+          // force reflow so animation fires
+          sub.getBoundingClientRect();
+          sub.style.opacity = '';
+        }, 320);
+      }
+    }
+    type();
+  }
 })();
 </script>
 
