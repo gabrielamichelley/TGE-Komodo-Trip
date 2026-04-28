@@ -12,10 +12,9 @@
     --cream: #FDF8F0; --cream-warm: #FAF0E4;
     --ocean: #4A9BAD; --ocean-deep: #2D7A8C; --ocean-light: #8CC5D0;
     --teal: #5FB8C4; --teal-soft: #D4EDEF; --lagoon: #B5DDE3;
-    /* ALL body text is now full dark for readability */
     --text-dark: #1C2B2D;
-    --text-mid: #1C2B2D;   /* was grey — now full dark */
-    --text-light: #4A5E61; /* was very light — now readable dark */
+    --text-mid: #1C2B2D;
+    --text-light: #4A5E61;
     --white: #FFFFFF;
   }
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -60,41 +59,6 @@
   }
   .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,169,110,0.35); }
 
-  /* Hamburger — hidden on desktop */
-  .nav-hamburger { display: none; }
-
-  /* Mobile dropdown menu — hidden by default */
-  .nav-mobile-menu {
-    display: none;
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(253,248,240,0.98); backdrop-filter: blur(20px);
-    z-index: 999; flex-direction: column;
-    align-items: center; justify-content: center; gap: 2.5rem;
-    opacity: 0; transition: opacity 0.3s ease;
-  }
-  .nav-mobile-menu.open { display: flex; opacity: 1; }
-  .nav-mobile-menu-link {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem; font-weight: 300; letter-spacing: 0.1em;
-    color: var(--text-dark); text-decoration: none;
-    transition: color 0.3s;
-  }
-  .nav-mobile-menu-link:hover { color: var(--gold); }
-  .nav-mobile-menu-cta {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white); padding: 1rem 2.5rem;
-    font-family: 'Jost', sans-serif; font-size: 0.82rem;
-    font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-    border-radius: 60px; text-decoration: none;
-    box-shadow: 0 8px 30px rgba(201,169,110,0.3);
-  }
-  .nav-mobile-menu-close {
-    position: absolute; top: 1.25rem; right: 1.25rem;
-    background: none; border: none; font-size: 1.6rem;
-    color: var(--text-dark); cursor: pointer; line-height: 1;
-    padding: 0.25rem 0.5rem;
-  }
-
   /* ── HERO ── */
   .hero {
     min-height: 100vh; min-height: 100svh;
@@ -134,7 +98,7 @@
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.6rem, 6.5vw, 5rem);
-    font-weight: 300; line-height: 1.05; color: var(--text-dark); margin-bottom: 1.25rem;
+    font-weight: 600; line-height: 1.05; color: var(--text-dark); margin-bottom: 1.25rem;
     opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
   }
   .hero-title em { font-style: italic; color: var(--ocean-deep); }
@@ -188,7 +152,7 @@
     background: var(--white);
     border-top: 1px solid rgba(201,169,110,0.12);
     border-bottom: 1px solid rgba(201,169,110,0.12);
-    padding: 1.25rem 1rem;
+    padding: 1.1rem 1rem;
   }
   .trust-inner {
     max-width: 800px; margin: 0 auto;
@@ -196,7 +160,7 @@
   }
   .trust-item {
     display: flex; flex-direction: column; align-items: center;
-    padding: 0.5rem 1.5rem; flex: 1; min-width: 0;
+    padding: 0.4rem 1.5rem; flex: 1; min-width: 0;
   }
   .trust-item:not(:last-child) { border-right: 1px solid rgba(201,169,110,0.18); }
   .trust-num {
@@ -207,27 +171,30 @@
   .trust-label {
     font-size: clamp(0.6rem, 1.3vw, 0.7rem);
     letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--text-dark); margin-top: 0.3rem;
+    color: var(--text-dark); margin-top: 0.25rem;
     text-align: center; line-height: 1.3; font-weight: 500;
   }
 
   /* ── SHARED SECTION DEFAULTS ── */
-  section { padding: 5rem 2rem; }
+  /* Reduced from 5rem → 4rem */
+  section { padding: 4rem 2rem; }
+
   .section-tag {
     font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase;
     color: var(--gold); text-align: center; margin-bottom: 0.75rem; font-weight: 500;
   }
+  /* h2 → BOLD */
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2rem, 4.5vw, 3.2rem);
-    font-weight: 300; text-align: center; color: var(--text-dark);
-    margin-bottom: 1.25rem; line-height: 1.15;
+    font-weight: 600; text-align: center; color: var(--text-dark);
+    margin-bottom: 1.1rem; line-height: 1.15;
   }
   .section-title em { font-style: italic; }
   .section-subtitle {
     font-size: clamp(1rem, 1.8vw, 1.15rem);
     font-weight: 400; text-align: center; color: var(--text-dark);
-    max-width: 600px; margin: 0 auto 3rem; line-height: 1.75;
+    max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.75;
   }
 
   /* ── DIFF CARDS ── */
@@ -239,14 +206,15 @@
   .diff-card {
     background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
     border: 1px solid rgba(201,169,110,0.15); border-radius: 22px;
-    padding: 2.25rem; transition: all 0.4s ease;
+    padding: 2rem; transition: all 0.4s ease;
   }
   .diff-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(74,155,173,0.12); background: var(--white); }
   .diff-card.hero-card { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border-color: rgba(74,155,173,0.2); }
-  .diff-icon { font-size: 2rem; margin-bottom: 1.1rem; display: block; }
+  .diff-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  /* diff-title → BOLD */
   .diff-title {
     font-family: 'Cormorant Garamond', serif; font-size: 1.35rem;
-    font-weight: 500; color: var(--text-dark); margin-bottom: 0.65rem;
+    font-weight: 700; color: var(--text-dark); margin-bottom: 0.6rem;
   }
   .diff-text {
     font-size: 0.97rem; font-weight: 400; line-height: 1.8; color: var(--text-dark);
@@ -255,7 +223,7 @@
   /* ── FOR YOU SECTION ── */
   .for-you-grid {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 2rem; max-width: 960px; margin: 0 auto 3rem;
+    gap: 2rem; max-width: 960px; margin: 0 auto 2.5rem;
   }
   .for-you-checklist {
     background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.15);
@@ -263,7 +231,7 @@
   }
   .for-you-checklist-title {
     font-family: 'Cormorant Garamond', serif; font-size: 1.35rem;
-    font-weight: 500; font-style: italic; color: var(--ocean-deep);
+    font-weight: 600; font-style: italic; color: var(--ocean-deep);
     margin-bottom: 1.5rem; padding-bottom: 1rem;
     border-bottom: 1px solid rgba(74,155,173,0.18);
   }
@@ -336,7 +304,11 @@
   .trip-badge.live { background: rgba(201,123,132,0.14); border-color: rgba(201,123,132,0.28); color: var(--rose); }
   .trip-card-body { padding: 2rem; }
   .trip-dest { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ocean-deep); font-weight: 600; margin-bottom: 0.45rem; }
-  .trip-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--text-dark); margin-bottom: 0.3rem; line-height: 1.15; }
+  /* trip-name → BOLD */
+  .trip-name {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
+    font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem; line-height: 1.15;
+  }
   .trip-name em { font-style: italic; }
   .trip-meta { display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap; }
   .trip-meta-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--text-dark); font-weight: 400; }
@@ -364,7 +336,7 @@
     background: linear-gradient(135deg, #ffffff 0%, #D4EDEF 100%);
     border-top: 1px solid rgba(201,169,110,0.12);
     border-bottom: 1px solid rgba(201,169,110,0.12);
-    padding: 3.5rem 2rem;
+    padding: 3rem 2rem;
   }
   .interest-inner { max-width: 860px; margin: 0 auto; }
   .interest-form { display: flex; gap: 0.85rem; align-items: flex-end; flex-wrap: wrap; }
@@ -395,7 +367,7 @@
   /* ── MISSION STRIP ── */
   .mission-strip {
     background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 50%, var(--teal) 100%);
-    padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden;
+    padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden;
   }
   .mission-strip::before {
     content: ''; position: absolute; inset: 0;
@@ -414,7 +386,7 @@
   /* ── FINAL CTA ── */
   .final-cta-section {
     background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 60%, var(--teal) 100%);
-    text-align: center; padding: 6rem 2rem; position: relative; overflow: hidden;
+    text-align: center; padding: 5rem 2rem; position: relative; overflow: hidden;
   }
   .final-cta-section::before {
     content: ''; position: absolute; inset: 0;
@@ -423,7 +395,7 @@
   .final-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-    font-weight: 300; color: var(--white); margin-bottom: 1.35rem;
+    font-weight: 600; color: var(--white); margin-bottom: 1.35rem;
     position: relative; z-index: 1; line-height: 1.15;
   }
   .final-title em { font-style: italic; color: var(--gold-light); }
@@ -444,7 +416,7 @@
   .final-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(0,0,0,0.22); }
 
   /* ── GALLERY ── */
-  .days-section { background: var(--cream); padding: 5rem 2rem; }
+  .days-section { background: var(--cream); padding: 4rem 2rem; }
   .slideshow-wrapper {
     position: relative; max-width: 960px; margin: 0 auto;
     border-radius: 22px; overflow: hidden;
@@ -494,28 +466,19 @@
 
   /* Tablet (≤900px) */
   @media (max-width: 900px) {
-    section { padding: 4rem 1.5rem; }
-    .days-section { padding: 4rem 1.5rem; }
+    section { padding: 3.5rem 1.5rem; }
+    .days-section { padding: 3.5rem 1.5rem; }
     .diff-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
   }
 
   /* Tablet small (≤768px) */
   @media (max-width: 768px) {
-    /* Nav: hide text links, show hamburger */
     .nav { padding: 0.85rem 1.1rem; }
     .nav.scrolled { padding: 0.65rem 1.1rem; }
+    /* Hide text nav links on tablet/mobile — keep only brand + CTA */
     .nav-link { display: none; }
-    .nav-hamburger {
-      display: flex; flex-direction: column; justify-content: center;
-      gap: 5px; background: none; border: none; cursor: pointer;
-      padding: 4px 6px; flex-shrink: 0;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--text-dark); border-radius: 2px; transition: all 0.3s;
-    }
 
-    /* For-you grid → single column */
+    /* For-you → single column */
     .for-you-grid { grid-template-columns: 1fr; gap: 1.25rem; }
 
     /* Gallery */
@@ -525,39 +488,39 @@
 
   /* Mobile (≤540px) */
   @media (max-width: 540px) {
-    /* Nav */
+    /* Nav — brand bigger, CTA bigger, no hamburger, no links */
     .nav { padding: 0.75rem 1rem; }
     .nav.scrolled { padding: 0.6rem 1rem; }
-    .nav-brand { font-size: 0.88rem; letter-spacing: 0.2em; } /* slightly bigger on mobile */
-    .nav-cta {
-      font-size: 0.68rem; padding: 0.55rem 1rem;
-      letter-spacing: 0.1em;
-    } /* bigger CTA on mobile */
+    .nav-brand { font-size: 0.9rem; letter-spacing: 0.18em; }
+    .nav-cta { font-size: 0.68rem; padding: 0.58rem 1.05rem; letter-spacing: 0.1em; }
 
     /* Hero */
     .hero { padding: 5.5rem 1rem 2.5rem; }
-    .hero-tag { font-size: 0.62rem; padding: 0.4rem 1rem; margin-bottom: 1.1rem; }
+    .hero-tag { font-size: 0.62rem; padding: 0.4rem 1rem; margin-bottom: 1rem; }
     .hero-title { font-size: clamp(2rem, 9vw, 2.8rem); }
     .hero-sub { font-size: 0.97rem; }
     .hero-pill { font-size: 0.66rem; padding: 0.32rem 0.75rem; }
     .hero-cta { width: 100%; text-align: center; padding: 1rem; }
     .scroll-indicator { display: none; }
 
-    /* Sections */
-    section { padding: 3rem 1rem; }
-    .days-section { padding: 3rem 1rem; }
-    .interest-section { padding: 2.75rem 1rem; }
-    .final-cta-section { padding: 4rem 1rem; }
-    .mission-strip { padding: 3.5rem 1.25rem; }
+    /* All sections reduced further */
+    section { padding: 2.5rem 1rem; }
+    .days-section { padding: 2.5rem 1rem; }
+    .interest-section { padding: 2.5rem 1rem; }
+    .final-cta-section { padding: 3.5rem 1rem; }
+    .mission-strip { padding: 3rem 1.25rem; }
 
-    /* Diff grid → 1 col */
-    .diff-grid { grid-template-columns: 1fr; gap: 0.9rem; }
+    /* Contact: extra side padding on mobile */
+    #contact { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+
+    /* Diff cards → 1 col */
+    .diff-grid { grid-template-columns: 1fr; gap: 0.85rem; }
     .diff-card { padding: 1.5rem; border-radius: 16px; }
     .diff-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
     .diff-title { font-size: 1.2rem; }
     .diff-text { font-size: 0.95rem; }
 
-    /* For you — bigger on mobile too */
+    /* For you */
     .for-you-checklist { padding: 1.5rem; border-radius: 16px; }
     .for-you-checklist-title { font-size: 1.2rem; }
     .for-you-item-text { font-size: 0.97rem; }
@@ -565,28 +528,46 @@
     .for-you-quote { font-size: 1.2rem; }
     .for-you-tag { font-size: 0.72rem; }
 
-    /* "See Our Trips" button — centered on mobile */
+    /* "See Our Trips" button — perfectly centred */
     .cta-center { display: flex; justify-content: center; }
     .cta-btn { width: 100%; max-width: 320px; text-align: center; display: block; }
 
-    /* Trips */
-    .trip-card-img { height: 210px; }
+    /* ── TRIPS SWIPE CAROUSEL (mobile only) ── */
+    .trips-section { overflow: hidden; }
+    .trips-grid {
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 1rem;
+      /* left padding = room for card start, right padding = peek hint */
+      padding: 0.25rem 1.25rem 1.25rem;
+      margin: 0;
+      max-width: none;
+    }
+    .trips-grid::-webkit-scrollbar { display: none; }
+    .trip-card {
+      min-width: 82vw;
+      max-width: 82vw;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      /* disable hover lift on touch */
+      transform: none !important;
+    }
+    .trip-card-img { height: 220px; }
     .trip-card-body { padding: 1.35rem; }
     .trip-name { font-size: 1.5rem; }
     .trip-meta { gap: 0.65rem; }
     .trip-desc { font-size: 0.95rem; }
 
-    /* Interest form stacked */
-    .interest-form { flex-direction: column; align-items: stretch; }
-    .interest-field { min-width: unset; width: 100%; }
-    .interest-btn { width: 100%; text-align: center; padding: 1rem; }
-
     /* Final CTA */
     .final-btn { width: 100%; max-width: 320px; padding: 1.1rem; }
 
-    /* Gallery */
+    /* Gallery — BIGGER on mobile */
     .slideshow-wrapper { border-radius: 14px; }
-    .slide::before { padding-top: 66%; }
+    .slide::before { padding-top: 85%; } /* taller = bigger image */
     .slide-caption { padding: 0.9rem 1rem; }
     .slide-caption-title { font-size: 1rem; }
     .slide-btn { width: 32px; height: 32px; font-size: 0.85rem; }
@@ -596,7 +577,7 @@
     .contact-name-row { grid-template-columns: 1fr !important; }
   }
 
-  /* iOS notch / home bar */
+  /* iOS safe areas */
   @supports (padding-bottom: env(safe-area-inset-bottom)) {
     .nav { padding-top: calc(0.85rem + env(safe-area-inset-top)); }
     .nav.scrolled { padding-top: calc(0.65rem + env(safe-area-inset-top)); }
@@ -607,25 +588,13 @@
 </head>
 <body>
 
-<!-- MOBILE FULLSCREEN MENU -->
-<div class="nav-mobile-menu" id="mobileMenu">
-  <button class="nav-mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">✕</button>
-  <a href="#for-you" class="nav-mobile-menu-link" onclick="closeMobileMenu()">Who is it for?</a>
-  <a href="#why-tge" class="nav-mobile-menu-link" onclick="closeMobileMenu()">Why us?</a>
-  <a href="#trips" class="nav-mobile-menu-cta" onclick="closeMobileMenu()">Our Upcoming Trips</a>
-</div>
-
-<!-- NAV -->
+<!-- NAV — no hamburger, no mobile menu -->
 <nav class="nav" id="mainNav">
   <a class="nav-brand" href="#">That Girl Experiences</a>
   <div class="nav-links">
     <a href="#why-tge" class="nav-link">Why us?</a>
     <a href="#for-you" class="nav-link">Who is it for?</a>
     <a href="#trips" class="nav-cta">Our Upcoming Trips</a>
-    <!-- Hamburger: only visible on mobile via CSS -->
-    <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </nav>
 
@@ -652,14 +621,7 @@
   <div class="scroll-indicator"><div class="scroll-line"></div></div>
 </section>
 
-<!-- THE GIRL YOU BECOME -->
-<section style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%);">
-  <div class="section-tag reveal">THE GIRL YOU <em>BECOME</em> ON OUR TRIPS</div>
-  <h2 class="section-title reveal">You've been waiting for a sign, and maybe <em>this is it.</em></h2>
-  <p class="section-subtitle reveal">It's the version of yourself you've been putting off meeting. <strong>This is YOU as THAT GIRL.</strong></p>
-  </div>
-</section>
-<!-- TRUST BAR -->
+<!-- ② TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-inner">
     <div class="trust-item">
@@ -676,6 +638,13 @@
     </div>
   </div>
 </div>
+
+<!-- ③ THE GIRL YOU BECOME — reduced bottom padding -->
+<section style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); padding-bottom: 1.5rem;">
+  <div class="section-tag reveal">THE GIRL YOU <em>BECOME</em> ON OUR TRIPS</div>
+  <h2 class="section-title reveal">You've been waiting for a sign, and maybe <em>this is it.</em></h2>
+  <p class="section-subtitle reveal">It's the version of yourself you've been putting off meeting. <strong>This is YOU as THAT GIRL.</strong></p>
+</section>
 
 <!-- ④ THIS IS FOR YOU IF -->
 <section style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%);" id="for-you">
@@ -829,6 +798,9 @@
       </div>
     </a>
   </div>
+
+  <!-- Swipe hint — only visible on mobile, hidden via CSS on desktop -->
+  <p class="trips-swipe-hint">← Swipe to see more trips →</p>
 </section>
 
 <!-- ⑦ REGISTER YOUR INTEREST -->
@@ -836,7 +808,7 @@
   <div class="interest-inner">
     <div style="text-align: center; margin-bottom: 1.75rem;">
       <div style="font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.55rem;">Be the First to Know</div>
-      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 4vw, 1.9rem); font-weight: 300; color: var(--text-dark); line-height: 1.25;">Register Your <em>Interest</em></h3>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 4vw, 1.9rem); font-weight: 600; color: var(--text-dark); line-height: 1.25;">Register Your <em>Interest</em></h3>
       <p style="font-size: 0.92rem; font-weight: 400; color: var(--text-dark); margin-top: 0.4rem;">Drop your details & we'll reach out directly when spots open up or new trips drop.</p>
     </div>
 
@@ -976,39 +948,33 @@
   <p class="footer-disclaimer">For all enquiries: thatgirlexperiences@gmail.com &nbsp;·&nbsp; © 2026 That Girl Experiences</p>
 </footer>
 
+<style>
+  /* Swipe hint — only on mobile */
+  .trips-swipe-hint {
+    display: none;
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+  }
+  @media (max-width: 540px) {
+    .trips-swipe-hint { display: block; }
+  }
+</style>
+
 <script>
-  // Nav scroll
   window.addEventListener('scroll', () => {
     document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
   });
-
-  // Reveal on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Mobile menu
-  function openMobileMenu() {
-    const m = document.getElementById('mobileMenu');
-    m.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobileMenu() {
-    const m = document.getElementById('mobileMenu');
-    m.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  // Close on backdrop tap
-  document.getElementById('mobileMenu').addEventListener('click', function(e) {
-    if (e.target === this) closeMobileMenu();
-  });
-  // Close on Escape key
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
 </script>
 
 <script>
-// Gallery slideshow
 (function() {
   let cur = 0;
   const track = document.getElementById('daysTrack');
