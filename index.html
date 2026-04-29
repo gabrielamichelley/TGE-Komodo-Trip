@@ -599,45 +599,6 @@
 
 </body>
 </html>
-/* CHANGE 2: Why Different accordion — mobile only */
-(function() {
-  if (window.innerWidth > 540) return;
-  const cards = document.querySelectorAll('#why-tge .diff-card');
-  cards.forEach((card, i) => {
-    const iconEl  = card.querySelector('.diff-icon');
-    const titleEl = card.querySelector('.diff-title');
-    const textEl  = card.querySelector('.diff-text');
-    if (!iconEl || !titleEl || !textEl) return;
-    const iconText  = iconEl.textContent;
-    const titleText = titleEl.textContent;
-    const bodyText  = textEl.textContent;
-    const trigger = document.createElement('button');
-    trigger.className = 'diff-acc-trigger';
-    trigger.setAttribute('aria-expanded', i === 0 ? 'true' : 'false');
-    const iconSpan = document.createElement('span');
-    iconSpan.className = 'diff-acc-icon';
-    iconSpan.textContent = iconText;
-    const titleSpan = document.createElement('span');
-    titleSpan.className = 'diff-acc-title';
-    titleSpan.textContent = titleText;
-    const chevron = document.createElement('span');
-    chevron.className = 'diff-acc-chevron';
-    chevron.textContent = '\u25be';
-    chevron.setAttribute('aria-hidden', 'true');
-    trigger.append(iconSpan, titleSpan, chevron);
-    const body = document.createElement('div');
-    body.className = 'diff-acc-body';
-    body.textContent = bodyText;
-    card.innerHTML = '';
-    card.append(trigger, body);
-    if (i === 0) { card.classList.add('acc-open'); trigger.setAttribute('aria-expanded', 'true'); }
-    trigger.addEventListener('click', () => {
-      const isOpen = card.classList.contains('acc-open');
-      cards.forEach(c => { c.classList.remove('acc-open'); const t = c.querySelector('.diff-acc-trigger'); if (t) t.setAttribute('aria-expanded', 'false'); });
-      if (!isOpen) { card.classList.add('acc-open'); trigger.setAttribute('aria-expanded', 'true'); }
-    });
-  });
-})();
 </script>
 
 </body>
