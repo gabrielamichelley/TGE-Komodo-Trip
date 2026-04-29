@@ -12,10 +12,7 @@
     --cream: #FDF8F0; --cream-warm: #FAF0E4;
     --ocean: #4A9BAD; --ocean-deep: #2D7A8C; --ocean-light: #8CC5D0;
     --teal: #5FB8C4; --teal-soft: #D4EDEF; --lagoon: #B5DDE3;
-    --text-dark: #1C2B2D;
-    --text-mid: #1C2B2D;
-    --text-light: #4A5E61;
-    --white: #FFFFFF;
+    --text-dark: #1C2B2D; --text-mid: #1C2B2D; --text-light: #4A5E61; --white: #FFFFFF;
   }
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -26,590 +23,246 @@
     pointer-events: none; z-index: 9999;
   }
 
-  /* ── NAV ── */
-  .nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    padding: 1rem 1.5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    transition: all 0.4s ease;
-  }
-  .nav.scrolled {
-    background: rgba(253,248,240,0.97); backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(201,169,110,0.12); padding: 0.65rem 1.5rem;
-  }
-  .nav-brand {
-    font-family: 'Cormorant Garamond', serif; font-size: 0.78rem;
-    letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--gold); font-weight: 500; text-decoration: none; flex-shrink: 0;
-  }
+  /* NAV */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.4s ease; }
+  .nav.scrolled { background: rgba(253,248,240,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,169,110,0.12); padding: 0.65rem 1.5rem; }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-decoration: none; flex-shrink: 0; }
   .nav-links { display: flex; align-items: center; gap: 1.25rem; }
-  .nav-link {
-    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--text-dark);
-    text-decoration: none; transition: color 0.3s ease;
-  }
+  .nav-link { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; transition: color 0.3s ease; }
   .nav-link:hover { color: var(--gold); }
-  .nav-cta {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white); border: none; padding: 0.55rem 1.25rem;
-    font-family: 'Jost', sans-serif; font-size: 0.68rem;
-    font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-    border-radius: 50px; cursor: pointer; text-decoration: none;
-    white-space: nowrap; transition: all 0.3s ease; flex-shrink: 0;
-  }
+  .nav-cta { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 0.55rem 1.25rem; font-family: 'Jost', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 50px; cursor: pointer; text-decoration: none; white-space: nowrap; transition: all 0.3s ease; flex-shrink: 0; }
   .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,169,110,0.35); }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh; min-height: 100svh;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center;
-    padding: 6rem 2rem 2.5rem;
-    position: relative;
-    background: linear-gradient(170deg, var(--cream) 0%, var(--teal-soft) 35%, var(--lagoon) 65%, var(--ocean-light) 100%);
-    overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; top: -10%; right: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
-    border-radius: 50%; animation: heroFloat 12s ease-in-out infinite;
-  }
-  .hero::after {
-    content: ''; position: absolute; bottom: -5%; left: -8%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(95,184,196,0.15) 0%, transparent 70%);
-    border-radius: 50%; animation: heroFloat 15s ease-in-out infinite reverse;
-  }
+  /* HERO */
+  .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem 2.5rem; position: relative; background: linear-gradient(170deg, var(--cream) 0%, var(--teal-soft) 35%, var(--lagoon) 65%, var(--ocean-light) 100%); overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -10%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 12s ease-in-out infinite; }
+  .hero::after { content: ''; position: absolute; bottom: -5%; left: -8%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(95,184,196,0.15) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 15s ease-in-out infinite reverse; }
   @keyframes heroFloat { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-40px) scale(1.05);} }
   @keyframes fadeUp { from{opacity:0;transform:translateY(25px);} to{opacity:1;transform:translateY(0);} }
-
   .hero-content { position: relative; z-index: 1; max-width: 820px; width: 100%; }
-  .hero-tag {
-    display: inline-block;
-    background: rgba(255,255,255,0.65); border: 1px solid rgba(201,169,110,0.3);
-    border-radius: 50px; padding: 0.5rem 1.75rem;
-    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 1.75rem; backdrop-filter: blur(8px);
-    opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
-  }
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.6rem, 6.5vw, 5rem);
-    font-weight: 600; line-height: 1.05; color: var(--text-dark); margin-bottom: 1.25rem;
-    opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
-  }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,0.65); border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; padding: 0.5rem 1.75rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.75rem; backdrop-filter: blur(8px); opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 6.5vw, 5rem); font-weight: 600; line-height: 1.05; color: var(--text-dark); margin-bottom: 1.25rem; opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards; }
   .hero-title em { font-style: italic; color: var(--ocean-deep); }
-  .hero-sub {
-    font-size: clamp(1rem, 2.2vw, 1.2rem);
-    font-weight: 300; color: var(--text-dark); line-height: 1.85;
-    max-width: 640px; margin: 0 auto 2rem;
-    opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
-  }
+  .hero-sub { font-size: clamp(1rem, 2.2vw, 1.2rem); font-weight: 300; color: var(--text-dark); line-height: 1.85; max-width: 640px; margin: 0 auto 2rem; opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards; }
   .hero-sub strong { color: var(--text-dark); font-weight: 600; }
-  .hero-pills {
-    display: flex; flex-wrap: wrap; justify-content: center;
-    gap: 0.6rem; margin-bottom: 2.25rem;
-    opacity: 0; animation: fadeUp 0.8s ease 0.85s forwards;
-  }
-  .hero-pill {
-    background: rgba(255,255,255,0.6); border: 1px solid rgba(201,169,110,0.22);
-    border-radius: 50px; padding: 0.4rem 1.1rem;
-    font-size: 0.74rem; font-weight: 400; letter-spacing: 0.08em;
-    color: var(--text-dark); backdrop-filter: blur(6px);
-  }
-  .hero-cta-wrap {
-    display: flex; flex-direction: column; align-items: center; gap: 0.9rem;
-    opacity: 0; animation: fadeUp 0.8s ease 1s forwards;
-  }
-  .hero-cta {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white); border: none; padding: 1rem 1.6rem;
-    font-family: 'Jost', sans-serif; font-size: 0.88rem;
-    font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
-    border-radius: 60px; cursor: pointer; text-decoration: none;
-    transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3);
-  }
+  .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-bottom: 2.25rem; opacity: 0; animation: fadeUp 0.8s ease 0.85s forwards; }
+  .hero-pill { background: rgba(255,255,255,0.6); border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; padding: 0.4rem 1.1rem; font-size: 0.74rem; font-weight: 400; letter-spacing: 0.08em; color: var(--text-dark); backdrop-filter: blur(6px); }
+  .hero-cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; opacity: 0; animation: fadeUp 0.8s ease 1s forwards; }
+  /* CHANGE 1: Hero CTA bigger on desktop */
+  .hero-cta { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 1.25rem 3.75rem; font-family: 'Jost', sans-serif; font-size: 0.97rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3); }
   .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.45); }
   .hero-note { font-size: 0.8rem; color: var(--white); font-weight: 400; letter-spacing: 0.05em; }
-  .scroll-indicator {
-    position: absolute; bottom: 1.75rem; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    opacity: 0; animation: fadeUp 0.8s ease 1.4s forwards;
-  }
-  .scroll-line {
-    width: 1px; height: 44px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
+  .scroll-indicator { position: absolute; bottom: 1.75rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeUp 0.8s ease 1.4s forwards; }
+  .scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease-in-out infinite; }
   @keyframes scrollPulse { 0%,100%{opacity:0.4;} 50%{opacity:1;} }
 
-  /* ── TRUST BAR ── */
-  .trust-bar {
-    background: var(--white);
-    border-top: 1px solid rgba(201,169,110,0.12);
-    border-bottom: 1px solid rgba(201,169,110,0.12);
-    padding: 1rem 0.8rem;
-  }
-  .trust-inner {
-    max-width: 800px; margin: 0 auto;
-    display: flex; justify-content: center; align-items: stretch;
-  }
-  .trust-item {
-    display: flex; flex-direction: column; align-items: center;
-    padding: 0.4rem 1.5rem; flex: 1; min-width: 0;
-  }
+  /* TRUST BAR */
+  .trust-bar { background: var(--white); border-top: 1px solid rgba(201,169,110,0.12); border-bottom: 1px solid rgba(201,169,110,0.12); padding: 1rem 0.8rem; }
+  .trust-inner { max-width: 800px; margin: 0 auto; display: flex; justify-content: center; align-items: stretch; }
+  .trust-item { display: flex; flex-direction: column; align-items: center; padding: 0.4rem 1.5rem; flex: 1; min-width: 0; }
   .trust-item:not(:last-child) { border-right: 1px solid rgba(201,169,110,0.18); }
-  .trust-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.25rem, 3vw, 1.8rem);
-    font-weight: 400; color: var(--gold); line-height: 1; white-space: nowrap;
-  }
-  .trust-label {
-    font-size: clamp(0.6rem, 1.3vw, 0.7rem);
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--text-dark); margin-top: 0.25rem;
-    text-align: center; line-height: 1.3; font-weight: 500;
-  }
+  .trust-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 3vw, 1.8rem); font-weight: 400; color: var(--gold); line-height: 1; white-space: nowrap; }
+  .trust-label { font-size: clamp(0.6rem, 1.3vw, 0.7rem); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dark); margin-top: 0.25rem; text-align: center; line-height: 1.3; font-weight: 500; }
 
-  /* ── SHARED SECTION DEFAULTS ── */
+  /* SECTIONS */
   section { padding: 3.5rem 2rem; }
-
-  .section-tag {
-    font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase;
-    color: var(--gold); text-align: center; margin-bottom: 0.75rem; font-weight: 500;
-  }
-  /* h2 → BOLD */
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
-    font-weight: 600; text-align: center; color: var(--text-dark);
-    margin-bottom: 1.1rem; line-height: 1.15;
-  }
+  .section-tag { font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 0.75rem; font-weight: 500; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 600; text-align: center; color: var(--text-dark); margin-bottom: 1.1rem; line-height: 1.15; }
   .section-title em { font-style: italic; }
-  .section-subtitle {
-    font-size: clamp(1rem, 1.8vw, 1.15rem);
-    font-weight: 400; text-align: center; color: var(--text-dark);
-    max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.75;
-  }
+  .section-subtitle { font-size: clamp(1rem, 1.8vw, 1.15rem); font-weight: 400; text-align: center; color: var(--text-dark); max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.75; }
 
-  /* ── DIFF CARDS ── */
-  .diff-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: 1.5rem; max-width: 1100px; margin: 0 auto;
-  }
-  .diff-card {
-    background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
-    border: 1px solid rgba(201,169,110,0.15); border-radius: 22px;
-    padding: 2rem; transition: all 0.4s ease;
-  }
+  /* DIFF CARDS */
+  .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .diff-card { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(201,169,110,0.15); border-radius: 22px; padding: 2rem; transition: all 0.4s ease; }
   .diff-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(74,155,173,0.12); background: var(--white); }
   .diff-card.hero-card { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border-color: rgba(74,155,173,0.2); }
   .diff-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-  .diff-title {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.35rem;
-    font-weight: 500; color: var(--text-dark); margin-bottom: 0.6rem;
-  }
-  /* Bold ONLY in the "Why We're Different" section */
+  .diff-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.6rem; }
   #why-tge .diff-title { font-weight: 700; }
+  .diff-text { font-size: 0.97rem; font-weight: 400; line-height: 1.8; color: var(--text-dark); }
 
-  /* ── TYPING ANIMATION for the h2 headline ── */
-  @keyframes cursor-blink {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0; }
-  }
-  .typing-cursor {
-    display: inline-block;
-    width: 2px; margin-left: 2px;
-    vertical-align: text-bottom;
-    background: var(--ocean-deep);
-    border-radius: 1px;
-    animation: cursor-blink 0.8s step-end infinite;
-  }
+  /* TYPING ANIMATION */
+  @keyframes cursor-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  .typing-cursor { display: inline-block; width: 2px; margin-left: 2px; vertical-align: text-bottom; background: var(--ocean-deep); border-radius: 1px; animation: cursor-blink 0.8s step-end infinite; }
+  @keyframes subtitle-reveal { 0% { opacity: 0; filter: blur(6px); transform: translateY(14px) scale(0.98); } 100% { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); } }
+  .subtitle-reveal { opacity: 0; animation: subtitle-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
 
-  /* ── SLEEK subtitle reveal: blur fade-up ── */
-  @keyframes subtitle-reveal {
-    0%   { opacity: 0; filter: blur(6px); transform: translateY(14px) scale(0.98); }
-    100% { opacity: 1; filter: blur(0);   transform: translateY(0)    scale(1);    }
-  }
-  .subtitle-reveal {
-    opacity: 0;
-    animation: subtitle-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-  .diff-text {
-    font-size: 0.97rem; font-weight: 400; line-height: 1.8; color: var(--text-dark);
-  }
-
-  /* ── FOR YOU SECTION ── */
-  .for-you-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 2rem; max-width: 960px; margin: 0 auto 2.5rem;
-  }
-  .for-you-checklist {
-    background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.15);
-    border-radius: 22px; padding: 2.5rem;
-  }
-  .for-you-checklist-title {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.35rem;
-    font-weight: 600; font-style: italic; color: var(--ocean-deep);
-    margin-bottom: 1.5rem; padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(74,155,173,0.18);
-  }
+  /* FOR YOU */
+  .for-you-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 960px; margin: 0 auto 2.5rem; }
+  .for-you-checklist { background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.15); border-radius: 22px; padding: 2.5rem; }
+  .for-you-checklist-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; font-style: italic; color: var(--ocean-deep); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(74,155,173,0.18); }
   .for-you-list { display: flex; flex-direction: column; gap: 1.1rem; }
   .for-you-item { display: flex; align-items: flex-start; gap: 0.9rem; }
-  .for-you-check {
-    width: 23px; height: 23px; border-radius: 50%; flex-shrink: 0;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 0.1rem; font-size: 0.65rem; color: white; font-weight: 700;
-  }
-  .for-you-item-text {
-    font-size: 1rem; font-weight: 400; line-height: 1.65; color: var(--text-dark);
-  }
+  .for-you-check { width: 23px; height: 23px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; margin-top: 0.1rem; font-size: 0.65rem; color: white; font-weight: 700; }
+  .for-you-item-text { font-size: 1rem; font-weight: 400; line-height: 1.65; color: var(--text-dark); }
   .for-you-item-text strong { color: var(--text-dark); font-weight: 600; }
-  .for-you-quote-box {
-    background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft));
-    border: 1px solid rgba(74,155,173,0.18); border-radius: 22px; padding: 2.5rem;
-    display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;
-  }
-  .for-you-quote {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.45rem;
-    font-weight: 300; font-style: italic; color: var(--text-dark); line-height: 1.6;
-  }
+  .for-you-quote-box { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border: 1px solid rgba(74,155,173,0.18); border-radius: 22px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; }
+  .for-you-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 300; font-style: italic; color: var(--text-dark); line-height: 1.6; }
   .for-you-quote strong { font-style: normal; color: var(--ocean-deep); font-weight: 600; }
   .for-you-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .for-you-tag {
-    background: rgba(255,255,255,0.9); border: 1px solid rgba(201,169,110,0.22);
-    border-radius: 50px; padding: 0.35rem 1rem; font-size: 0.76rem;
-    color: var(--text-dark); font-weight: 400;
-  }
+  .for-you-tag { background: rgba(255,255,255,0.9); border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; padding: 0.35rem 1rem; font-size: 0.76rem; color: var(--text-dark); font-weight: 400; }
   .cta-center { text-align: center; }
-  .cta-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white); padding: 1.15rem 3.25rem;
-    font-family: 'Jost', sans-serif; font-size: 0.88rem;
-    font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
-    border-radius: 60px; text-decoration: none;
-    transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3);
-  }
+  .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); padding: 1.15rem 3.25rem; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3); }
   .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.45); }
 
-  /* ── TRIPS ── */
+  /* TRIPS */
   .trips-section { background: var(--cream); }
-  .trips-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
-    gap: 2.25rem; max-width: 920px; margin: 0 auto;
-  }
-  .trip-card {
-    background: var(--white); border-radius: 26px; overflow: hidden;
-    border: 1px solid rgba(201,169,110,0.12);
-    transition: all 0.4s ease; text-decoration: none; color: inherit; display: block;
-  }
+  .trips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 2.25rem; max-width: 920px; margin: 0 auto; }
+  .trip-card { background: var(--white); border-radius: 26px; overflow: hidden; border: 1px solid rgba(201,169,110,0.12); transition: all 0.4s ease; text-decoration: none; color: inherit; display: block; }
   .trip-card:hover { transform: translateY(-6px); box-shadow: 0 24px 64px rgba(44,62,64,0.12); }
-  .trip-card-img {
-    width: 100%; height: 260px;
-    background: linear-gradient(135deg, var(--teal-soft), var(--lagoon), var(--ocean-light));
-    position: relative; overflow: hidden;
-  }
+  .trip-card-img { width: 100%; height: 260px; background: linear-gradient(135deg, var(--teal-soft), var(--lagoon), var(--ocean-light)); position: relative; overflow: hidden; }
   .trip-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .trip-badge {
-    position: absolute; top: 1rem; left: 1rem;
-    background: rgba(253,248,240,0.93); border: 1px solid rgba(201,169,110,0.28);
-    border-radius: 50px; padding: 0.4rem 1.1rem;
-    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--gold); backdrop-filter: blur(8px);
-  }
+  .trip-badge { position: absolute; top: 1rem; left: 1rem; background: rgba(253,248,240,0.93); border: 1px solid rgba(201,169,110,0.28); border-radius: 50px; padding: 0.4rem 1.1rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); backdrop-filter: blur(8px); }
   .trip-badge.live { background: rgba(201,123,132,0.14); border-color: rgba(201,123,132,0.28); color: var(--rose); }
   .trip-card-body { padding: 2rem; }
   .trip-dest { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ocean-deep); font-weight: 600; margin-bottom: 0.45rem; }
-  /* trip-name → BOLD */
-  .trip-name {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
-    font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem; line-height: 1.15;
-  }
+  .trip-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem; line-height: 1.15; }
   .trip-name em { font-style: italic; }
   .trip-meta { display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap; }
   .trip-meta-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--text-dark); font-weight: 400; }
   .trip-meta-icon { font-size: 0.9rem; }
   .trip-desc { font-size: 0.97rem; font-weight: 400; line-height: 1.75; color: var(--text-dark); margin-bottom: 1.5rem; }
   .trip-highlights { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 1.75rem; }
-  .trip-highlight-tag {
-    background: var(--teal-soft); color: var(--ocean-deep);
-    font-size: 0.72rem; letter-spacing: 0.06em;
-    padding: 0.35rem 0.9rem; border-radius: 50px; font-weight: 500;
-  }
-  .trip-btn {
-    display: block; text-align: center;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white); padding: 1rem; border-radius: 50px;
-    font-family: 'Jost', sans-serif; font-size: 0.8rem;
-    font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-    text-decoration: none; transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(201,169,110,0.28);
-  }
+  .trip-highlight-tag { background: var(--teal-soft); color: var(--ocean-deep); font-size: 0.72rem; letter-spacing: 0.06em; padding: 0.35rem 0.9rem; border-radius: 50px; font-weight: 500; }
+  .trip-btn { display: block; text-align: center; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); padding: 1rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(201,169,110,0.28); }
   .trip-btn:hover { box-shadow: 0 8px 24px rgba(201,169,110,0.45); }
 
-  /* ── REGISTER INTEREST ── */
-  .interest-section {
-    background: linear-gradient(135deg, #ffffff 0%, #D4EDEF 100%);
-    border-top: 1px solid rgba(201,169,110,0.12);
-    border-bottom: 1px solid rgba(201,169,110,0.12);
-    padding: 3rem 2rem;
-  }
+  /* INTEREST */
+  .interest-section { background: linear-gradient(135deg, #ffffff 0%, #D4EDEF 100%); border-top: 1px solid rgba(201,169,110,0.12); border-bottom: 1px solid rgba(201,169,110,0.12); padding: 3rem 2rem; }
   .interest-inner { max-width: 860px; margin: 0 auto; }
   .interest-form { display: flex; gap: 0.85rem; align-items: flex-end; flex-wrap: wrap; }
   .interest-field { flex: 1; min-width: min(100%, 160px); display: flex; flex-direction: column; gap: 0.35rem; }
-  .interest-label {
-    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--text-dark); font-weight: 500; padding-left: 0.25rem;
-  }
-  .interest-input {
-    padding: 0.85rem 1.25rem;
-    border: 1px solid rgba(201,169,110,0.25); border-radius: 50px;
-    font-family: 'Jost', sans-serif; font-size: 0.92rem;
-    color: var(--text-dark); background: rgba(255,255,255,0.9);
-    outline: none; width: 100%; transition: border-color 0.3s, box-shadow 0.3s;
-  }
+  .interest-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dark); font-weight: 500; padding-left: 0.25rem; }
+  .interest-input { padding: 0.85rem 1.25rem; border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.92rem; color: var(--text-dark); background: rgba(255,255,255,0.9); outline: none; width: 100%; transition: border-color 0.3s, box-shadow 0.3s; }
   .interest-input:focus { border-color: var(--ocean); box-shadow: 0 0 0 3px rgba(74,155,173,0.12); }
-  .interest-btn {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: #fff; border: none; padding: 0.85rem 1.75rem;
-    font-family: 'Jost', sans-serif; font-size: 0.78rem;
-    font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
-    border-radius: 50px; cursor: pointer;
-    box-shadow: 0 4px 16px rgba(201,169,110,0.3);
-    white-space: nowrap; transition: box-shadow 0.3s; flex-shrink: 0;
-  }
+  .interest-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; border: none; padding: 0.85rem 1.75rem; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 16px rgba(201,169,110,0.3); white-space: nowrap; transition: box-shadow 0.3s; flex-shrink: 0; }
   .interest-btn:hover { box-shadow: 0 8px 24px rgba(201,169,110,0.48); }
 
-  /* ── MISSION STRIP ── */
-  .mission-strip {
-    background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 50%, var(--teal) 100%);
-    padding: 2.75rem 2rem; text-align: center; position: relative; overflow: hidden;
-  }
-  .mission-strip::before {
-    content: ''; position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
+  /* MISSION */
+  .mission-strip { background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 50%, var(--teal) 100%); padding: 2.75rem 2rem; text-align: center; position: relative; overflow: hidden; }
+  .mission-strip::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
   .mission-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-light); opacity: 0.9; margin-bottom: 1.25rem; position: relative; z-index: 1; }
-  .mission-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.25rem, 2.8vw, 2.1rem);
-    font-weight: 300; color: rgba(255,255,255,0.97);
-    line-height: 1.7; max-width: 800px; margin: 0 auto;
-    position: relative; z-index: 1; font-style: italic;
-  }
+  .mission-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.8vw, 2.1rem); font-weight: 300; color: rgba(255,255,255,0.97); line-height: 1.7; max-width: 800px; margin: 0 auto; position: relative; z-index: 1; font-style: italic; }
   .mission-text strong { font-style: normal; font-weight: 300; color: var(--gold-light); }
 
-  /* ── FINAL CTA ── */
-  .final-cta-section {
-    background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 60%, var(--teal) 100%);
-    text-align: center; padding: 2rem 2rem; position: relative; overflow: hidden;
-  }
-  .final-cta-section::before {
-    content: ''; position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 12 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-  }
-  .final-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-    font-weight: 500; color: var(--white); margin-bottom: 1.35rem;
-    position: relative; z-index: 1; line-height: 1.15;
-  }
+  /* FINAL CTA */
+  .final-cta-section { background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 60%, var(--teal) 100%); text-align: center; padding: 2rem 2rem; position: relative; overflow: hidden; }
+  .final-cta-section::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 12 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+  .final-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5.5vw, 4.2rem); font-weight: 500; color: var(--white); margin-bottom: 1.35rem; position: relative; z-index: 1; line-height: 1.15; }
   .final-title em { font-style: italic; color: var(--gold-light); }
-  .final-text {
-    font-size: clamp(1rem, 1.8vw, 1.1rem); font-weight: 300;
-    color: rgba(255,255,255,0.88); max-width: 560px;
-    margin: 0 auto 2.75rem; line-height: 1.8; position: relative; z-index: 1;
-  }
-  .final-btn {
-    display: inline-block; background: var(--white); color: var(--ocean-deep);
-    border: none; padding: 1.2rem 2rem;
-    font-family: 'Jost', sans-serif; font-size: 0.88rem;
-    font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
-    border-radius: 60px; cursor: pointer; text-decoration: none;
-    transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    position: relative; z-index: 1;
-  }
+  .final-text { font-size: clamp(1rem, 1.8vw, 1.1rem); font-weight: 300; color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 2.75rem; line-height: 1.8; position: relative; z-index: 1; }
+  .final-btn { display: inline-block; background: var(--white); color: var(--ocean-deep); border: none; padding: 1.2rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.15); position: relative; z-index: 1; }
   .final-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(0,0,0,0.22); }
 
-  /* ── GALLERY ── */
+  /* GALLERY */
   .days-section { background: var(--cream); padding: 4rem 2rem; }
-  .slideshow-wrapper {
-    position: relative; max-width: 960px; margin: 0 auto;
-    border-radius: 22px; overflow: hidden;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.1);
-  }
+  .slideshow-wrapper { position: relative; max-width: 960px; margin: 0 auto; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.1); }
   .slideshow-track { display: flex; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
   .slide { min-width: 100%; position: relative; flex-shrink: 0; background: var(--cream); }
   .slide::before { content: ''; display: block; padding-top: 55%; }
   .slide img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-  .slide-caption {
-    position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 2rem;
-    background: linear-gradient(to top, rgba(44,62,64,0.78), transparent); color: var(--white);
-  }
+  .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 2rem; background: linear-gradient(to top, rgba(44,62,64,0.78), transparent); color: var(--white); }
   .slide-caption-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; font-style: italic; margin-bottom: 0.25rem; }
   .slide-caption-sub { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.8; }
-  .slide-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(255,255,255,0.88); border: none;
-    width: 46px; height: 46px; border-radius: 50%; font-size: 1.1rem;
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1); color: var(--text-dark);
-    z-index: 10; transition: all 0.3s ease;
-  }
+  .slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.88); border: none; width: 46px; height: 46px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.1); color: var(--text-dark); z-index: 10; transition: all 0.3s ease; }
   .slide-btn:hover { background: var(--white); transform: translateY(-50%) scale(1.05); }
-  .slide-prev { left: 0.85rem; }
-  .slide-next { right: 0.85rem; }
+  .slide-prev { left: 0.85rem; } .slide-next { right: 0.85rem; }
   .slide-dots { display: flex; justify-content: center; gap: 0.6rem; margin-top: 1.4rem; }
-  .slide-dot {
-    width: 9px; height: 9px; border-radius: 50%;
-    background: rgba(201,169,110,0.35); cursor: pointer;
-    border: none; transition: all 0.3s ease;
-  }
+  .slide-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(201,169,110,0.35); cursor: pointer; border: none; transition: all 0.3s ease; }
   .slide-dot.active { background: var(--gold); transform: scale(1.25); }
 
-  /* ── REVEAL ── */
+  /* REVEAL */
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   .footer { background: var(--cream); padding: 2.5rem 2rem; text-align: center; }
   .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.6rem; }
   .footer-disclaimer { font-size: 0.72rem; color: var(--text-dark); max-width: 500px; margin: 0 auto; line-height: 1.6; }
 
-  /* ══════════════════════════════════════════
-     RESPONSIVE
-  ══════════════════════════════════════════ */
-
-  /* Tablet (≤900px) */
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     section { padding: 3.5rem 1.5rem; }
     .days-section { padding: 3.5rem 1.5rem; }
     .diff-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
   }
-
-  /* Tablet small (≤768px) */
   @media (max-width: 768px) {
-    .nav { padding: 0.8rem 1rem; }
-    .nav.scrolled { padding: 0.6rem 1rem; }
-    /* Hide text nav links on tablet/mobile — keep only brand + CTA */
+    .nav { padding: 0.8rem 1rem; } .nav.scrolled { padding: 0.6rem 1rem; }
     .nav-link { display: none; }
-
-    /* For-you → single column */
     .for-you-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-
-    /* Gallery */
     .slide::before { padding-top: 60%; }
     .slide-btn { width: 38px; height: 38px; font-size: 0.95rem; }
   }
-
-  /* Mobile (≤540px) */
   @media (max-width: 540px) {
-    /* Nav — brand bigger, CTA bigger, no hamburger, no links */
-    .nav { padding: 0.75rem 1rem; }
-    .nav.scrolled { padding: 0.6rem 1rem; }
+    .nav { padding: 0.75rem 1rem; } .nav.scrolled { padding: 0.6rem 1rem; }
     .nav-brand { font-size: 0.9rem; letter-spacing: 0.18em; }
     .nav-cta { font-size: 0.68rem; padding: 0.58rem 1.05rem; letter-spacing: 0.1em; }
-
-    /* Hero */
     .hero { padding: 5.5rem 1rem 2.5rem; }
     .hero-tag { font-size: 0.62rem; padding: 0.4rem 1rem; margin-bottom: 1rem; }
     .hero-title { font-size: clamp(2rem, 9vw, 2.8rem); }
     .hero-sub { font-size: 0.97rem; }
     .hero-pill { font-size: 0.66rem; padding: 0.32rem 0.75rem; }
-    .hero-cta { width: 100%; text-align: center; padding: 1rem; }
+    /* CHANGE 1: mobile override keeps CTA at original size */
+    .hero-cta { width: 100%; text-align: center; padding: 1rem; font-size: 0.88rem; }
     .scroll-indicator { display: none; }
-
-    /* All sections reduced further */
     section { padding: 2.5rem 1rem; }
-    .days-section { padding: 2.5rem 1rem; }
+    .days-section { padding: 2rem 1rem; }
     .interest-section { padding: 2.5rem 1rem; }
     .final-cta-section { padding: 1.8rem 1rem; }
     .mission-strip { padding: 2.25rem 1.25rem; }
-
-    /* "Girl You Become" section — less top AND much less bottom on mobile */
     .girl-you-become { padding-top: 2rem !important; padding-bottom: 0.5rem !important; }
-
-    /* Register My Interest button — centred on mobile */
+    /* CHANGE 3: less gap between gallery text and slideshow */
+    .days-section .section-subtitle { margin-bottom: 1.25rem; }
+    /* CHANGE 4: less space between final CTA text and button */
+    .final-text { margin-bottom: 1.25rem !important; }
     .interest-form { flex-direction: column; align-items: center; }
     .interest-field { min-width: unset; width: 100%; }
     .interest-btn { width: 100%; max-width: 320px; text-align: center; padding: 1rem; }
-
-    /* Contact: extra side padding on mobile */
     #contact { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
-
-    /* Diff cards → 1 col */
     .diff-grid { grid-template-columns: 1fr; gap: 0.85rem; }
     .diff-card { padding: 1.5rem; border-radius: 16px; }
     .diff-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
     .diff-title { font-size: 1.2rem; }
     .diff-text { font-size: 0.95rem; }
 
-    /* For you */
+    /* CHANGE 2: Why Different accordion styles */
+    #why-tge .diff-grid { display: flex; flex-direction: column; gap: 0; border-radius: 20px; overflow: hidden; border: 1px solid rgba(201,169,110,0.2); }
+    #why-tge .diff-card { border-radius: 0 !important; border: none !important; border-bottom: 1px solid rgba(201,169,110,0.14) !important; padding: 0 !important; background: var(--white) !important; }
+    #why-tge .diff-card:last-child { border-bottom: none !important; }
+    .diff-acc-trigger { display: flex; align-items: center; gap: 0.75rem; width: 100%; padding: 0.95rem 1.1rem; cursor: pointer; background: transparent; border: none; text-align: left; }
+    .diff-acc-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .diff-acc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--text-dark); flex: 1; line-height: 1.25; }
+    .diff-acc-chevron { font-size: 0.9rem; color: var(--gold); transition: transform 0.3s ease; flex-shrink: 0; margin-left: 0.25rem; }
+    #why-tge .diff-card.acc-open .diff-acc-chevron { transform: rotate(180deg); }
+    .diff-acc-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 1.1rem; font-size: 0.95rem; font-weight: 400; line-height: 1.8; color: var(--text-dark); }
+    #why-tge .diff-card.acc-open .diff-acc-body { max-height: 280px; padding: 0 1.1rem 1rem; }
+
     .for-you-checklist { padding: 1.5rem; border-radius: 16px; }
     .for-you-checklist-title { font-size: 1.2rem; }
     .for-you-item-text { font-size: 1rem; }
     .for-you-quote-box { padding: 1.5rem; border-radius: 16px; }
     .for-you-quote { font-size: 1.5rem; }
     .for-you-tag { font-size: 0.75rem; }
-
-    /* "See Our Trips" button — perfectly centred */
     .cta-center { display: flex; justify-content: center; }
     .cta-btn { width: 100%; max-width: 320px; text-align: center; display: block; }
-
-    /* ── TRIPS SWIPE CAROUSEL (mobile only) ── */
     .trips-section { overflow: hidden; }
-    .trips-grid {
-      display: flex;
-      flex-direction: row;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      gap: 1rem;
-      /* left padding = room for card start, right padding = peek hint */
-      padding: 0.25rem 1.25rem 1.25rem;
-      margin: 0;
-      max-width: none;
-    }
+    .trips-grid { display: flex; flex-direction: row; overflow-x: scroll; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; padding: 0.25rem 1.25rem 1.25rem; margin: 0; max-width: none; }
     .trips-grid::-webkit-scrollbar { display: none; }
-    .trip-card {
-      min-width: 82vw;
-      max-width: 82vw;
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      /* disable hover lift on touch */
-      transform: none !important;
-    }
+    .trip-card { min-width: 82vw; max-width: 82vw; scroll-snap-align: start; flex-shrink: 0; transform: none !important; }
     .trip-card-img { height: 220px; }
     .trip-card-body { padding: 1.35rem; }
     .trip-name { font-size: 1.5rem; }
     .trip-meta { gap: 0.65rem; }
     .trip-desc { font-size: 0.95rem; }
-
-    /* Final CTA */
     .final-btn { width: 100%; max-width: 320px; padding: 0.8rem; }
-
-    /* Gallery — BIGGER on mobile */
     .slideshow-wrapper { border-radius: 14px; }
-    .slide::before { padding-top: 85%; } /* taller = bigger image */
+    .slide::before { padding-top: 85%; }
     .slide-caption { padding: 0.9rem 1rem; }
     .slide-caption-title { font-size: 1rem; }
     .slide-btn { width: 32px; height: 32px; font-size: 0.85rem; }
     .slide-dot { width: 7px; height: 7px; }
-
-    /* Contact form name row → 1 col */
     .contact-name-row { grid-template-columns: 1fr !important; }
   }
-
-  /* iOS safe areas */
   @supports (padding-bottom: env(safe-area-inset-bottom)) {
     .nav { padding-top: calc(0.85rem + env(safe-area-inset-top)); }
     .nav.scrolled { padding-top: calc(0.65rem + env(safe-area-inset-top)); }
@@ -620,7 +273,6 @@
 </head>
 <body>
 
-<!-- NAV — no hamburger, no mobile menu -->
 <nav class="nav" id="mainNav">
   <a class="nav-brand" href="#">That Girl Experiences</a>
   <div class="nav-links">
@@ -630,7 +282,6 @@
   </div>
 </nav>
 
-<!-- ① HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-tag">Girls-Only Travel Experiences</div>
@@ -653,122 +304,56 @@
   <div class="scroll-indicator"><div class="scroll-line"></div></div>
 </section>
 
-<!-- ② TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-inner">
-    <div class="trust-item">
-      <div class="trust-num">95%</div>
-      <div class="trust-label">Come solo & leave with new friends</div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-num">8 Girls Max</div>
-      <div class="trust-label">FEW SPOTS LEFT</div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-num">18–39</div>
-      <div class="trust-label">Girls-Only</div>
-    </div>
+    <div class="trust-item"><div class="trust-num">95%</div><div class="trust-label">Come solo & leave with new friends</div></div>
+    <div class="trust-item"><div class="trust-num">8 Girls Max</div><div class="trust-label">FEW SPOTS LEFT</div></div>
+    <div class="trust-item"><div class="trust-num">18–39</div><div class="trust-label">Girls-Only</div></div>
   </div>
 </div>
 
-<!-- ③ THE GIRL YOU BECOME — reduced bottom padding -->
 <section class="girl-you-become" style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); padding-bottom: 1.5rem;">
   <div class="section-tag reveal">THE GIRL YOU <em>BECOME</em> ON OUR TRIPS</div>
   <h2 class="section-title" id="typingHeadline" aria-label="You've been waiting for a sign, and maybe this is it."></h2>
   <p class="section-subtitle subtitle-reveal" id="typingSubtitle" style="opacity:0;">It's the version of yourself you've been putting off meeting. <strong>This is YOU as THAT GIRL.</strong></p>
 </section>
 
-<!-- ⑩ GALLERY -->
 <section class="days-section">
   <div class="section-tag reveal">A Whole World Waiting For You</div>
   <h2 class="section-title reveal">A Glimpse Into Your Days</h2>
   <p class="section-subtitle reveal">Volcanic Sunsets, Swimming with Manta Rays, Sailing across Islands & Private Villas with the girls. <strong>Step into your dream life with us.</strong></p>
-
   <div class="slideshow-wrapper reveal">
     <div class="slideshow-track" id="daysTrack">
-      <div class="slide">
-        <img src="lembongan.jpg" alt="Nusa Lembongan">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Island life & ocean therapy</div>
-          <div class="slide-caption-sub">Bali · Aug–Sep 2026</div>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="photo1.jpg" alt="Padar Island">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Sunrise hikes with the girls</div>
-          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="photo2.jpg" alt="Private Liveaboard">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Sailing our private liveaboard</div>
-          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="photo4.jpg" alt="Manta Rays">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Swimming with manta rays</div>
-          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="photo5.jpg" alt="Pink Beach">
-        <div class="slide-caption">
-          <div class="slide-caption-title">Pink Beach afternoons</div>
-          <div class="slide-caption-sub">Komodo Islands · July 2026</div>
-        </div>
-      </div>
+      <div class="slide"><img src="lembongan.jpg" alt="Nusa Lembongan"><div class="slide-caption"><div class="slide-caption-title">Island life & ocean therapy</div><div class="slide-caption-sub">Bali · Aug–Sep 2026</div></div></div>
+      <div class="slide"><img src="photo1.jpg" alt="Padar Island"><div class="slide-caption"><div class="slide-caption-title">Sunrise hikes with the girls</div><div class="slide-caption-sub">Komodo Islands · July 2026</div></div></div>
+      <div class="slide"><img src="photo2.jpg" alt="Private Liveaboard"><div class="slide-caption"><div class="slide-caption-title">Sailing our private liveaboard</div><div class="slide-caption-sub">Komodo Islands · July 2026</div></div></div>
+      <div class="slide"><img src="photo4.jpg" alt="Manta Rays"><div class="slide-caption"><div class="slide-caption-title">Swimming with manta rays</div><div class="slide-caption-sub">Komodo Islands · July 2026</div></div></div>
+      <div class="slide"><img src="photo5.jpg" alt="Pink Beach"><div class="slide-caption"><div class="slide-caption-title">Pink Beach afternoons</div><div class="slide-caption-sub">Komodo Islands · July 2026</div></div></div>
     </div>
     <button class="slide-btn slide-prev" onclick="daysSlide(-1)">&#8592;</button>
     <button class="slide-btn slide-next" onclick="daysSlide(1)">&#8594;</button>
   </div>
   <div class="slide-dots" id="daysDots"></div>
 </section>
-  
-<!-- ④ THIS IS FOR YOU IF -->
+
 <section style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%);" id="for-you">
   <div class="section-tag reveal">This Is For You If</div>
   <h2 class="section-title reveal">You're Ready <em>For More</em></h2>
   <p class="section-subtitle reveal">You know you're meant for more — but your life doesn't reflect it yet. Our trips take you further: into yourself, your potential & your people.</p>
-
   <div class="for-you-grid">
     <div class="for-you-checklist reveal">
       <div class="for-you-checklist-title">This is for you if…</div>
       <div class="for-you-list">
-        <div class="for-you-item">
-          <div class="for-you-check">✓</div>
-          <div class="for-you-item-text">You want to travel but don't want to do it alone, or the plans never make it out of the group chat</div>
-        </div>
-        <div class="for-you-item">
-          <div class="for-you-check">✓</div>
-          <div class="for-you-item-text">You crave <strong>real female friendships</strong> with supportive, like-minded girls who genuinely want to see you win</div>
-        </div>
-        <div class="for-you-item">
-          <div class="for-you-check">✓</div>
-          <div class="for-you-item-text">You feel stuck, lost, overwhelmed, or burnt out</div>
-        </div>
-        <div class="for-you-item">
-          <div class="for-you-check">✓</div>
-          <div class="for-you-item-text">You want <strong>more in life</strong>: new experiences, growth & the best version of yourself</div>
-        </div>
-        <div class="for-you-item">
-          <div class="for-you-check">✓</div>
-          <div class="for-you-item-text">You want to <strong>tick off bucket-list experiences</strong> & come home as a <strong>better version of yourself</strong></div>
-        </div>
-        <div class="for-you-item">
-          <div class="for-you-check">✓</div>
-          <div class="for-you-item-text">You're <strong>tired of waiting around</strong> for the right time, the right people or the right circumstances - and you're ready to finally <strong>choose this for yourself</strong></div>
-        </div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want to travel but don't want to do it alone, or the plans never make it out of the group chat</div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You crave <strong>real female friendships</strong> with supportive, like-minded girls who genuinely want to see you win</div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You feel stuck, lost, overwhelmed, or burnt out</div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want <strong>more in life</strong>: new experiences, growth & the best version of yourself</div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want to <strong>tick off bucket-list experiences</strong> & come home as a <strong>better version of yourself</strong></div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You're <strong>tired of waiting around</strong> for the right time, the right people or the right circumstances - and you're ready to finally <strong>choose this for yourself</strong></div></div>
       </div>
     </div>
-
     <div class="for-you-quote-box reveal">
-      <div class="for-you-quote">
-        You'll come home <strong>more aligned, more HER. Maybe it's your spark back. Maybe it's finally finding your purpose & your people.</strong>
-      </div>
+      <div class="for-you-quote">You'll come home <strong>more aligned, more HER. Maybe it's your spark back. Maybe it's finally finding your purpose & your people.</strong></div>
       <div class="for-you-tags">
         <span class="for-you-tag">Women, 18–39</span>
         <span class="for-you-tag">Come solo or bring a friend</span>
@@ -778,65 +363,30 @@
       </div>
     </div>
   </div>
-
-  <div class="cta-center">
-    <a href="#trips" class="cta-btn reveal">See Our Trips →</a>
-  </div>
+  <div class="cta-center"><a href="#trips" class="cta-btn reveal">See Our Trips →</a></div>
 </section>
 
-<!-- ⑤ WHY WE'RE DIFFERENT -->
 <section id="why-tge" style="background: linear-gradient(180deg, var(--cream) 0%, var(--teal-soft) 100%);">
   <div class="section-tag reveal">Why We're Different</div>
   <h2 class="section-title reveal">Not Your <em>Average Girls Trip</em></h2>
   <p class="section-subtitle reveal"><strong>Built for you to become <em>That Girl.</em></strong> Every detail of a TGE trip is designed for you to leave as a <em>better, fuller, freer, more aligned & more connected version of yourself.</em></p>
-
   <div class="diff-grid">
-    <div class="diff-card hero-card reveal">
-      <span class="diff-icon">👯‍♀️</span>
-      <div class="diff-title">Supportive Community That Has Your Back</div>
-      <div class="diff-text">Our trips are curated to help you meet like-minded girls who are genuinely aligned, with connection-building moments seamlessly integrated into your days. The result? Deep, lifelong connections.</div>
-    </div>
-    <div class="diff-card reveal">
-      <span class="diff-icon">🐋</span>
-      <div class="diff-title">Bucket-list Experiences & Core Memories</div>
-      <div class="diff-text">Swimming with manta rays. Private liveaboards. Pink beaches at sunrise. We don't do ordinary. Every trip is built around bucket-list moments that become core memories.</div>
-    </div>
-    <div class="diff-card hero-card reveal">
-      <span class="diff-icon">🌟</span>
-      <div class="diff-title">Growth & Personal Development</div>
-      <div class="diff-text">Growth & Personal Development Workshops, Wellness Rituals, guided Vision-Board Making sessions to unlock "Next-Level You" & help you live your dream life. Real mindset & personal development - in paradise.</div>
-    </div>
-    <div class="diff-card reveal">
-      <span class="diff-icon">💆‍♀️</span>
-      <div class="diff-title">TGE-only Experiences</div>
-      <div class="diff-text">Experiences you won't find anywhere else. Ocean Ceremonies, Sunset Journalling, Pilates by the beach, Private liveaboards, boutique hotels & many more. We refuse to compromise on quality. No bunk beds, no dorms, no 8-person shared bathrooms. Ever.</div>
-    </div>
-    <div class="diff-card hero-card reveal">
-      <span class="diff-icon">🎯</span>
-      <div class="diff-title">Travel Identity™ Matching</div>
-      <div class="diff-text">Our signature Travel Identity™ quiz matches you with compatible roommates and future trip companions based on personality and preferences.</div>
-    </div>
-    <div class="diff-card reveal">
-      <span class="diff-icon">🔒</span>
-      <div class="diff-title">Safe Solo Travel, Sorted</div>
-      <div class="diff-text">Everything is taken care of - transfers, accommodation, activities, meals. You just show up. Travelling solo doesn't have to feel lonely or daunting anymore, and you get to meet new friends!</div>
-    </div>
+    <div class="diff-card hero-card reveal"><span class="diff-icon">👯‍♀️</span><div class="diff-title">Supportive Community That Has Your Back</div><div class="diff-text">Our trips are curated to help you meet like-minded girls who are genuinely aligned, with connection-building moments seamlessly integrated into your days. The result? Deep, lifelong connections.</div></div>
+    <div class="diff-card reveal"><span class="diff-icon">🐋</span><div class="diff-title">Bucket-list Experiences & Core Memories</div><div class="diff-text">Swimming with manta rays. Private liveaboards. Pink beaches at sunrise. We don't do ordinary. Every trip is built around bucket-list moments that become core memories.</div></div>
+    <div class="diff-card hero-card reveal"><span class="diff-icon">🌟</span><div class="diff-title">Growth & Personal Development</div><div class="diff-text">Growth & Personal Development Workshops, Wellness Rituals, guided Vision-Board Making sessions to unlock "Next-Level You" & help you live your dream life. Real mindset & personal development - in paradise.</div></div>
+    <div class="diff-card reveal"><span class="diff-icon">💆‍♀️</span><div class="diff-title">TGE-only Experiences</div><div class="diff-text">Experiences you won't find anywhere else. Ocean Ceremonies, Sunset Journalling, Pilates by the beach, Private liveaboards, boutique hotels & many more. We refuse to compromise on quality. No bunk beds, no dorms, no 8-person shared bathrooms. Ever.</div></div>
+    <div class="diff-card hero-card reveal"><span class="diff-icon">🎯</span><div class="diff-title">Travel Identity™ Matching</div><div class="diff-text">Our signature Travel Identity™ quiz matches you with compatible roommates and future trip companions based on personality and preferences.</div></div>
+    <div class="diff-card reveal"><span class="diff-icon">🔒</span><div class="diff-title">Safe Solo Travel, Sorted</div><div class="diff-text">Everything is taken care of - transfers, accommodation, activities, meals. You just show up. Travelling solo doesn't have to feel lonely or daunting anymore, and you get to meet new friends!</div></div>
   </div>
 </section>
 
-<!-- ⑥ TRIPS -->
 <section class="trips-section" id="trips">
   <div class="section-tag reveal">Upcoming Experiences</div>
   <h2 class="section-title reveal">Choose Your <em>Next Chapter</em></h2>
   <p class="section-subtitle reveal">Each trip is a world of its own — different destination, same transformative TGE energy.</p>
-
   <div class="trips-grid">
-
-       <a class="trip-card reveal" href="bali.html">
-      <div class="trip-card-img">
-        <img src="lembongan.jpg" alt="Nusa Lembongan">
-        <span class="trip-badge live">‼️ LIMITED SPOTS LEFT</span>
-      </div>
+    <a class="trip-card reveal" href="bali.html">
+      <div class="trip-card-img"><img src="lembongan.jpg" alt="Nusa Lembongan"><span class="trip-badge live">‼️ LIMITED SPOTS LEFT</span></div>
       <div class="trip-card-body">
         <div class="trip-dest">Bali + Nusa Lembongan + Nusa Penida</div>
         <div class="trip-name">Island Life</div>
@@ -855,12 +405,8 @@
         <span class="trip-btn">View Trip &amp; Itinerary →</span>
       </div>
     </a>
-
     <a class="trip-card reveal" href="komodo.html">
-      <div class="trip-card-img">
-        <img src="photo1.jpg" alt="Komodo Islands">
-        <span class="trip-badge live">⚡ Waitlist Open</span>
-      </div>
+      <div class="trip-card-img"><img src="photo1.jpg" alt="Komodo Islands"><span class="trip-badge live">⚡ Waitlist Open</span></div>
       <div class="trip-card-body">
         <div class="trip-dest">Komodo Islands &amp; Labuan Bajo, Indonesia</div>
         <div class="trip-name">Becoming <em>HER</em></div>
@@ -881,130 +427,80 @@
       </div>
     </a>
   </div>
-  
-  <!-- Swipe hint — only visible on mobile, hidden via CSS on desktop -->
   <p class="trips-swipe-hint">← Swipe for more trips →</p>
 </section>
 
-<!-- ⑦ REGISTER YOUR INTEREST -->
 <section class="interest-section">
   <div class="interest-inner">
-    <div style="text-align: center; margin-bottom: 1.75rem;">
-      <div style="font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.55rem;">Be the First to Know</div>
-      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 4vw, 1.9rem); font-weight: 600; color: var(--text-dark); line-height: 1.25;">Register Your <em>Interest</em></h3>
-      <p style="font-size: 0.92rem; font-weight: 400; color: var(--text-dark); margin-top: 0.4rem;">Drop your details & we'll reach out directly when spots open up or new trips drop.</p>
+    <div style="text-align:center;margin-bottom:1.75rem;">
+      <div style="font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.55rem;">Be the First to Know</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,4vw,1.9rem);font-weight:600;color:var(--text-dark);line-height:1.25;">Register Your <em>Interest</em></h3>
+      <p style="font-size:0.92rem;font-weight:400;color:var(--text-dark);margin-top:0.4rem;">Drop your details & we'll reach out directly when spots open up or new trips drop.</p>
     </div>
-
     <form action="https://formspree.io/f/mkokzzow" method="POST" class="interest-form">
-      <div class="interest-field">
-        <label class="interest-label">Your Full Name</label>
-        <input type="text" name="name" required placeholder="First name & Last name" class="interest-input">
-      </div>
-      <div class="interest-field">
-        <label class="interest-label">Instagram or WhatsApp</label>
-        <input type="text" name="contact" required placeholder="@handle or +61 400 000 000" class="interest-input">
-      </div>
+      <div class="interest-field"><label class="interest-label">Your Full Name</label><input type="text" name="name" required placeholder="First name & Last name" class="interest-input"></div>
+      <div class="interest-field"><label class="interest-label">Instagram or WhatsApp</label><input type="text" name="contact" required placeholder="@handle or +61 400 000 000" class="interest-input"></div>
       <input type="hidden" name="_subject" value="New Trip Interest Registration — TGE">
       <input type="hidden" name="_next" value="https://thatgirlexperiences.com">
       <button type="submit" class="interest-btn">Register My Interest ✦</button>
     </form>
-
-    <p style="text-align: center; margin-top: 1.1rem; font-size: 0.74rem; color: var(--text-dark);">
-      No spam, ever &nbsp;·&nbsp; We'll reach out directly &nbsp;·&nbsp; No commitments
-    </p>
+    <p style="text-align:center;margin-top:1.1rem;font-size:0.74rem;color:var(--text-dark);">No spam, ever &nbsp;·&nbsp; We'll reach out directly &nbsp;·&nbsp; No commitments</p>
   </div>
 </section>
 
-<!-- ⑧ MISSION STRIP -->
 <div class="mission-strip">
   <div class="mission-label">Our Mission</div>
-  <p class="mission-text">
-    We exist to help women <strong>travel the world, grow into the best version of themselves, step into their dream life,</strong> and experience our amazing, supportive female community that help each other win — all wrapped in bucket-list experiences that become core memories forever.
-  </p>
+  <p class="mission-text">We exist to help women <strong>travel the world, grow into the best version of themselves, step into their dream life,</strong> and experience our amazing, supportive female community that help each other win — all wrapped in bucket-list experiences that become core memories forever.</p>
 </div>
 
-<!-- ⑨ FINAL CTA -->
 <section class="final-cta-section">
   <h2 class="final-title reveal">Your Dream Life <em>Starts Here.</em></h2>
   <p class="final-text reveal">The friendships & connections you'll make, the surreal memories & feelings you'll experience, the version of yourself you'll discover — it all starts here. Don't wait for the "right time." This is YOUR time now.</p>
   <a href="#trips" class="final-btn reveal">Join Our Trips →</a>
 </section>
 
-
-<!-- ⑪ CONTACT -->
-<section style="background: var(--cream);" id="contact">
+<section style="background:var(--cream);" id="contact">
   <div class="section-tag reveal">Get In Touch</div>
   <h2 class="section-title reveal">Have a <em>Question?</em></h2>
   <p class="section-subtitle reveal">We'd love to hear from you! Fill in the form below & we'll get back to you as soon as possible.</p>
-
-  <form action="https://formspree.io/f/xeerjyzr" method="POST"
-    style="max-width: 580px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.35rem;">
-    <div class="contact-name-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
-      <div style="display: flex; flex-direction: column; gap: 0.45rem;">
-        <label style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark); font-weight: 500;">First Name</label>
-        <input type="text" name="first_name" required placeholder="Your first name"
-          style="padding: 0.9rem 1.2rem; border: 1px solid rgba(201,169,110,0.22); border-radius: 12px; font-family: 'Jost', sans-serif; font-size: 0.97rem; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.3s; width: 100%;"
-          onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'">
+  <form action="https://formspree.io/f/xeerjyzr" method="POST" style="max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:1.35rem;">
+    <div class="contact-name-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div style="display:flex;flex-direction:column;gap:0.45rem;">
+        <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">First Name</label>
+        <input type="text" name="first_name" required placeholder="Your first name" style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.3s;width:100%;" onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'">
       </div>
-      <div style="display: flex; flex-direction: column; gap: 0.45rem;">
-        <label style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark); font-weight: 500;">Last Name</label>
-        <input type="text" name="last_name" required placeholder="Your last name"
-          style="padding: 0.9rem 1.2rem; border: 1px solid rgba(201,169,110,0.22); border-radius: 12px; font-family: 'Jost', sans-serif; font-size: 0.97rem; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.3s; width: 100%;"
-          onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'">
+      <div style="display:flex;flex-direction:column;gap:0.45rem;">
+        <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">Last Name</label>
+        <input type="text" name="last_name" required placeholder="Your last name" style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.3s;width:100%;" onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'">
       </div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: 0.45rem;">
-      <label style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark); font-weight: 500;">Email</label>
-      <input type="email" name="email" required placeholder="your@email.com"
-        style="padding: 0.9rem 1.2rem; border: 1px solid rgba(201,169,110,0.22); border-radius: 12px; font-family: 'Jost', sans-serif; font-size: 0.97rem; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.3s;"
-        onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'">
+    <div style="display:flex;flex-direction:column;gap:0.45rem;">
+      <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">Email</label>
+      <input type="email" name="email" required placeholder="your@email.com" style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'">
     </div>
-    <div style="display: flex; flex-direction: column; gap: 0.45rem;">
-      <label style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark); font-weight: 500;">Message</label>
-      <textarea name="message" required rows="5" placeholder="Your message..."
-        style="padding: 0.9rem 1.2rem; border: 1px solid rgba(201,169,110,0.22); border-radius: 12px; font-family: 'Jost', sans-serif; font-size: 0.97rem; color: var(--text-dark); background: var(--white); outline: none; resize: vertical; transition: border-color 0.3s;"
-        onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'"></textarea>
+    <div style="display:flex;flex-direction:column;gap:0.45rem;">
+      <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">Message</label>
+      <textarea name="message" required rows="5" placeholder="Your message..." style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;resize:vertical;transition:border-color 0.3s;" onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'"></textarea>
     </div>
     <input type="hidden" name="_subject" value="New enquiry from That Girl Experiences website">
     <input type="hidden" name="_next" value="https://thatgirlexperiences.com">
-    <button type="submit"
-      style="background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 1.15rem 3rem; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3);"
-      onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(201,169,110,0.45)'"
-      onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 30px rgba(201,169,110,0.3)'">
-      Send Message
-    </button>
+    <button type="submit" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--white);border:none;padding:1.15rem 3rem;font-family:'Jost',sans-serif;font-size:0.88rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;border-radius:60px;cursor:pointer;transition:all 0.4s ease;box-shadow:0 8px 30px rgba(201,169,110,0.3);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(201,169,110,0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 30px rgba(201,169,110,0.3)'">Send Message</button>
   </form>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-brand">That Girl Experiences</div>
   <p class="footer-disclaimer">For all enquiries: thatgirlexperiences@gmail.com &nbsp;·&nbsp; © 2026 That Girl Experiences</p>
 </footer>
 
 <style>
-  /* Swipe hint — only on mobile */
-  .trips-swipe-hint {
-    display: none;
-    text-align: center;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    color: var(--text-light);
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-  }
-  @media (max-width: 540px) {
-    .trips-swipe-hint { display: block; }
-  }
+  .trips-swipe-hint { display: none; text-align: center; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--text-light); margin-top: 0.5rem; text-transform: uppercase; }
+  @media (max-width: 540px) { .trips-swipe-hint { display: block; } }
 </style>
 
 <script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
-  });
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  window.addEventListener('scroll', () => { document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60); });
+  const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
@@ -1014,99 +510,86 @@
   const track = document.getElementById('daysTrack');
   const slides = track.querySelectorAll('.slide');
   const dotsEl = document.getElementById('daysDots');
-  slides.forEach((_, i) => {
-    const d = document.createElement('button');
-    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
-    d.onclick = () => goTo(i);
-    dotsEl.appendChild(d);
-  });
-  function goTo(n) {
-    cur = (n + slides.length) % slides.length;
-    track.style.transform = `translateX(-${cur * 100}%)`;
-    dotsEl.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
-  }
+  slides.forEach((_, i) => { const d = document.createElement('button'); d.className = 'slide-dot' + (i === 0 ? ' active' : ''); d.onclick = () => goTo(i); dotsEl.appendChild(d); });
+  function goTo(n) { cur = (n + slides.length) % slides.length; track.style.transform = 'translateX(-' + (cur * 100) + '%)'; dotsEl.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === cur)); }
   window.daysSlide = dir => goTo(cur + dir);
   setInterval(() => goTo(cur + 1), 5000);
   let touchStartX = 0;
   track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-  track.addEventListener('touchend', e => {
-    const diff = touchStartX - e.changedTouches[0].screenX;
-    if (Math.abs(diff) > 45) goTo(cur + (diff > 0 ? 1 : -1));
-  }, { passive: true });
+  track.addEventListener('touchend', e => { const diff = touchStartX - e.changedTouches[0].screenX; if (Math.abs(diff) > 45) goTo(cur + (diff > 0 ? 1 : -1)); }, { passive: true });
 })();
 </script>
 
-<!-- Typing animation for "You've been waiting…" headline -->
 <script>
 (function() {
   const el = document.getElementById('typingHeadline');
   const sub = document.getElementById('typingSubtitle');
   if (!el || !sub) return;
-
-  // Full text with an italic span for "this is it."
   const plainText = "You\u2019ve been waiting for a sign, and maybe ";
   const italicText = "this is it.";
   const fullPlain = plainText + italicText;
-
-  // Cursor element
   const cursor = document.createElement('span');
   cursor.className = 'typing-cursor';
   cursor.style.height = '0.85em';
-
-  let charIndex = 0;
-  let started = false;
-
-  // Start when element scrolls into view
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !started) {
-        started = true;
-        io.disconnect();
-        startTyping();
-      }
-    });
-  }, { threshold: 0.4 });
+  let charIndex = 0, started = false;
+  const io = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting && !started) { started = true; io.disconnect(); startTyping(); } }); }, { threshold: 0.4 });
   io.observe(el);
-
   function startTyping() {
-    el.textContent = '';
-    el.appendChild(cursor);
-    const speed = 38; // ms per character
-
+    el.textContent = ''; el.appendChild(cursor);
     function type() {
       if (charIndex < fullPlain.length) {
-        const ch = fullPlain[charIndex];
-        charIndex++;
-
-        if (charIndex <= plainText.length) {
-          // plain part — insert text node before cursor
-          const t = document.createTextNode(ch);
-          el.insertBefore(t, cursor);
-        } else {
-          // italic part — build/extend the <em>
-          let em = el.querySelector('em');
-          if (!em) {
-            em = document.createElement('em');
-            em.style.color = 'var(--ocean-deep)';
-            el.insertBefore(em, cursor);
-          }
-          em.textContent += ch;
-        }
-        setTimeout(type, speed);
+        const ch = fullPlain[charIndex]; charIndex++;
+        if (charIndex <= plainText.length) { el.insertBefore(document.createTextNode(ch), cursor); }
+        else { let em = el.querySelector('em'); if (!em) { em = document.createElement('em'); em.style.color = 'var(--ocean-deep)'; el.insertBefore(em, cursor); } em.textContent += ch; }
+        setTimeout(type, 38);
       } else {
-        // Typing done — remove cursor after a beat, then reveal subtitle
-        setTimeout(() => {
-          cursor.remove();
-          sub.style.animationDelay = '0s';
-          sub.classList.add('subtitle-reveal');
-          // force reflow so animation fires
-          sub.getBoundingClientRect();
-          sub.style.opacity = '';
-        }, 320);
+        setTimeout(() => { cursor.remove(); sub.style.animationDelay = '0s'; sub.classList.add('subtitle-reveal'); sub.getBoundingClientRect(); sub.style.opacity = ''; }, 320);
       }
     }
     type();
   }
+})();
+</script>
+
+<script>
+/* CHANGE 2: Why Different accordion — mobile only */
+(function() {
+  if (window.innerWidth > 540) return;
+  const cards = document.querySelectorAll('#why-tge .diff-card');
+  cards.forEach((card, i) => {
+    const iconEl  = card.querySelector('.diff-icon');
+    const titleEl = card.querySelector('.diff-title');
+    const textEl  = card.querySelector('.diff-text');
+    if (!iconEl || !titleEl || !textEl) return;
+    const iconText  = iconEl.textContent;
+    const titleText = titleEl.textContent;
+    const bodyText  = textEl.textContent;
+    const trigger = document.createElement('button');
+    trigger.className = 'diff-acc-trigger';
+    trigger.setAttribute('aria-expanded', i === 0 ? 'true' : 'false');
+    const iconSpan = document.createElement('span');
+    iconSpan.className = 'diff-acc-icon';
+    iconSpan.textContent = iconText;
+    const titleSpan = document.createElement('span');
+    titleSpan.className = 'diff-acc-title';
+    titleSpan.textContent = titleText;
+    const chevron = document.createElement('span');
+    chevron.className = 'diff-acc-chevron';
+    chevron.textContent = '\u25be';
+    chevron.setAttribute('aria-hidden', 'true');
+    trigger.append(iconSpan, titleSpan, chevron);
+    const body = document.createElement('div');
+    body.className = 'diff-acc-body';
+    body.textContent = bodyText;
+    card.innerHTML = '';
+    card.append(trigger, body);
+    if (i === 0) { card.classList.add('acc-open'); trigger.setAttribute('aria-expanded', 'true'); }
+    trigger.addEventListener('click', () => {
+      const isOpen = card.classList.contains('acc-open');
+      cards.forEach(c => { c.classList.remove('acc-open'); const t = c.querySelector('.diff-acc-trigger'); if (t) t.setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) { card.classList.add('acc-open'); trigger.setAttribute('aria-expanded', 'true'); }
+    });
+  });
 })();
 </script>
 
