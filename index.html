@@ -205,6 +205,10 @@
     /* CHANGE 1: mobile override keeps CTA at original size */
     .hero-cta { width: 100%; text-align: center; padding: 1rem; font-size: 0.88rem; }
     .scroll-indicator { display: none; }
+    /* "for the girls who want more." — one line on mobile */
+    .hero-title em:last-of-type { font-size: 0.72em; white-space: nowrap; }
+    /* "This is YOU - unlocked. Want to experience what she's like?" — one sentence flow */
+    .hero-sub br { display: none; }
     section { padding: 2.5rem 1rem; }
     .days-section { padding: 2rem 1rem; }
     .interest-section { padding: 2.5rem 1rem; }
@@ -246,9 +250,9 @@
     .cta-center { display: flex; justify-content: center; }
     .cta-btn { width: 100%; max-width: 320px; text-align: center; display: block; }
     .trips-section { overflow: hidden; }
-    .trips-grid { display: flex; flex-direction: row; overflow-x: scroll; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; padding: 0.25rem 1.25rem 1.25rem; margin: 0; max-width: none; }
+    .trips-grid { display: flex; flex-direction: row; overflow-x: scroll; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 0.85rem; padding: 0.25rem 1.25rem 1.25rem; margin: 0; max-width: none; /* right padding leaves room to peek next card */ padding-right: 3.5rem; }
     .trips-grid::-webkit-scrollbar { display: none; }
-    .trip-card { min-width: 82vw; max-width: 82vw; scroll-snap-align: start; flex-shrink: 0; transform: none !important; }
+    .trip-card { min-width: 78vw; max-width: 78vw; scroll-snap-align: start; flex-shrink: 0; transform: none !important; }
     .trip-card-img { height: 220px; }
     .trip-card-body { padding: 1.35rem; }
     .trip-name { font-size: 1.5rem; }
@@ -552,6 +556,49 @@
 </script>
 
 <script>
+/* CHANGE 2: Why Different accordion — mobile only */
+(function() {
+  if (window.innerWidth > 540) return;
+  const cards = document.querySelectorAll('#why-tge .diff-card');
+  cards.forEach((card, i) => {
+    const iconEl  = card.querySelector('.diff-icon');
+    const titleEl = card.querySelector('.diff-title');
+    const textEl  = card.querySelector('.diff-text');
+    if (!iconEl || !titleEl || !textEl) return;
+    const iconText  = iconEl.textContent;
+    const titleText = titleEl.textContent;
+    const bodyText  = textEl.textContent;
+    const trigger = document.createElement('button');
+    trigger.className = 'diff-acc-trigger';
+    trigger.setAttribute('aria-expanded', i === 0 ? 'true' : 'false');
+    const iconSpan = document.createElement('span');
+    iconSpan.className = 'diff-acc-icon';
+    iconSpan.textContent = iconText;
+    const titleSpan = document.createElement('span');
+    titleSpan.className = 'diff-acc-title';
+    titleSpan.textContent = titleText;
+    const chevron = document.createElement('span');
+    chevron.className = 'diff-acc-chevron';
+    chevron.textContent = '\u25be';
+    chevron.setAttribute('aria-hidden', 'true');
+    trigger.append(iconSpan, titleSpan, chevron);
+    const body = document.createElement('div');
+    body.className = 'diff-acc-body';
+    body.textContent = bodyText;
+    card.innerHTML = '';
+    card.append(trigger, body);
+    if (i === 0) { card.classList.add('acc-open'); trigger.setAttribute('aria-expanded', 'true'); }
+    trigger.addEventListener('click', () => {
+      const isOpen = card.classList.contains('acc-open');
+      cards.forEach(c => { c.classList.remove('acc-open'); const t = c.querySelector('.diff-acc-trigger'); if (t) t.setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) { card.classList.add('acc-open'); trigger.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
 /* CHANGE 2: Why Different accordion — mobile only */
 (function() {
   if (window.innerWidth > 540) return;
