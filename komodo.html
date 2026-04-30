@@ -28,14 +28,8 @@
   .nav.scrolled { background: rgba(253,248,240,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,169,110,0.12); padding: 0.65rem 1.5rem; }
   .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-decoration: none; flex-shrink: 0; }
   .nav-right { display: flex; align-items: center; gap: 1.25rem; }
-  .currency-toggle { position: relative; }
-  .currency-btn { background: rgba(255,255,255,0.8); border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; padding: 0.4rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; color: var(--text-light); cursor: pointer; display: flex; align-items: center; gap: 0.4rem; transition: all 0.3s ease; }
-  .currency-btn:hover { border-color: var(--gold); }
-  .currency-dropdown { position: absolute; top: calc(100% + 6px); right: 0; background: var(--white); border: 1px solid rgba(201,169,110,0.15); border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); overflow: hidden; display: none; min-width: 140px; z-index: 100; }
-  .currency-dropdown.open { display: block; }
-  .currency-option { padding: 0.65rem 1rem; font-size: 0.78rem; font-weight: 400; color: var(--text-mid); cursor: pointer; transition: background 0.2s; display: flex; justify-content: space-between; }
-  .currency-option:hover { background: var(--cream); }
-  .currency-option.active { color: var(--gold); font-weight: 500; }
+  .nav-link { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; transition: color 0.3s ease; }
+  .nav-link:hover { color: var(--gold); }
   .nav-links { display: flex; align-items: center; gap: 1.25rem; }
   .nav-link { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; transition: color 0.3s ease; }
   .nav-link:hover { color: var(--gold); }
@@ -320,24 +314,10 @@
 <!-- NAV -->
 <nav class="nav" id="mainNav">
   <a class="nav-brand" href="https://www.thatgirlexperiences.com">That Girl Experiences</a>
-  <div class="nav-links">
-    <a href="#wellness" class="nav-link">About</a>
+  <div class="nav-right">
+    <a href="#wellness" class="nav-link">The Trip</a>
     <a href="#why" class="nav-link">Why Us?</a>
     <a href="#itinerary" class="nav-link">Itinerary</a>
-  </div>
-  <div class="nav-right">
-    <div class="currency-toggle">
-      <button class="currency-btn" onclick="toggleCurrencyDropdown()">
-        <span id="currencyLabel">AUD A$</span>
-        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-      </button>
-      <div class="currency-dropdown" id="currencyDropdown">
-        <div class="currency-option active" data-currency="AUD" onclick="setCurrency('AUD')"><span>AUD A$</span><span>🇦🇺</span></div>
-        <div class="currency-option" data-currency="USD" onclick="setCurrency('USD')"><span>USD $</span><span>🇺🇸</span></div>
-        <div class="currency-option" data-currency="GBP" onclick="setCurrency('GBP')"><span>GBP £</span><span>🇬🇧</span></div>
-        <div class="currency-option" data-currency="EUR" onclick="setCurrency('EUR')"><span>EUR €</span><span>🇪🇺</span></div>
-      </div>
-    </div>
     <a href="#reserve" class="nav-cta">JOIN THE WAITLIST</a>
   </div>
 </nav>
@@ -347,7 +327,7 @@
   <div class="hero-content">
     <div class="hero-tag">Komodo Islands</div>
     <h1 class="hero-title">Becoming HER<br><em>Girls Trip</em></h1>
-    <p class="hero-location"><strong>Swim with Manta Rays + Growth + Wellness + Deep Connections + Private Liveaboard Experience</strong></p>
+    <p class="hero-location">Swim with Manta Rays + Growth + Wellness + Deep Connections + Private Liveaboard Experience</p>
     <div class="hero-details">
       <div class="hero-detail"><div class="hero-detail-value">6</div><div class="hero-detail-label">Days</div></div>
       <div class="hero-divider"></div>
@@ -356,7 +336,7 @@
       <div class="hero-detail"><div class="hero-detail-value">The Ultimate Glow Up</div><div class="hero-detail-label">Growth, Girls Community, Connection, Wellness</div></div>
     </div>
     <div class="hero-for">
-      <strong>This trip is for:</strong> Women aged 19–38 who love travel & wellness (yoga, pilates), want lifelong female friendships & have a supportive girls community that wants to see you succeed, want to live life to its fullest, seek growth & personal development - all while ticking off bucket-list experiences. <strong>Whether you're coming solo or with a friend, we'd love for you to join us and help you live your dream life!</strong>
+      <strong>This trip is for:</strong> Women aged 19–38 who love travel, want more in life, love growth, personal development & wellness (yoga, pilates), want lifelong female friendships & a supportive girls community that builds you up and wants to see you succeed, and tick off bucket-list experiences. Whether you're coming solo or with a friend, we'd love for you to join us and help you live your dream life!
     </div>
     <div class="hero-spots">⚡ Limited spots, 8 Women Only</div>
     <a href="https://waitlister.me/p/becoming-her-komodo-trip" target="_blank" class="hero-cta">JOIN THE WAITLIST</a>
@@ -731,23 +711,6 @@
 </footer>
 
 <script>
-  const RATES = {
-    AUD: { rate: 1, symbol: 'A$', label: 'AUD', name: 'AUD' },
-    USD: { rate: 0.71, symbol: '$', label: 'USD', name: 'USD' },
-    GBP: { rate: 0.53, symbol: '£', label: 'GBP', name: 'GBP' },
-    EUR: { rate: 0.61, symbol: '€', label: 'EUR', name: 'EUR' }
-  };
-  let currentCurrency = 'AUD';
-  function toggleCurrencyDropdown() { document.getElementById('currencyDropdown').classList.toggle('open'); }
-  function setCurrency(code) {
-    currentCurrency = code; const r = RATES[code];
-    document.querySelectorAll('.currency-option').forEach(el => el.classList.toggle('active', el.dataset.currency === code));
-    document.getElementById('currencyLabel').textContent = `${r.label} ${r.symbol}`;
-    document.getElementById('currencyDropdown').classList.remove('open');
-    document.querySelectorAll('[data-price]').forEach(el => { el.textContent = `${r.symbol}${Math.round(parseFloat(el.dataset.price) * r.rate).toLocaleString()}`; });
-    const label = document.getElementById('pricingCurrencyLabel'); if (label) label.textContent = r.name;
-  }
-  document.addEventListener('click', e => { if (!e.target.closest('.currency-toggle')) document.getElementById('currencyDropdown').classList.remove('open'); });
   window.addEventListener('scroll', () => {
     document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
     const m = document.getElementById('mobileCta'); if (m) m.classList.toggle('visible', window.scrollY > window.innerHeight * 0.6);
@@ -758,8 +721,6 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  setCurrency('AUD');
 </script>
 
 <script>
