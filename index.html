@@ -59,7 +59,6 @@
   .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-bottom: 2.25rem; opacity: 0; animation: fadeUp 0.8s ease 0.85s forwards; }
   .hero-pill { background: rgba(255,255,255,0.6); border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; padding: 0.4rem 1.1rem; font-size: 0.74rem; font-weight: 400; letter-spacing: 0.08em; color: var(--text-dark); backdrop-filter: blur(6px); }
   .hero-cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; opacity: 0; animation: fadeUp 0.8s ease 1s forwards; }
-  /* CHANGE 1: Hero CTA bigger on desktop */
   .hero-cta { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 1rem 2.5rem; font-family: 'Jost', sans-serif; font-size: 0.97rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3); }
   .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.45); }
   .hero-note { font-size: 0.8rem; color: var(--white); font-weight: 400; letter-spacing: 0.05em; }
@@ -191,6 +190,42 @@
   .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.6rem; }
   .footer-disclaimer { font-size: 0.72rem; color: var(--text-dark); max-width: 500px; margin: 0 auto; line-height: 1.6; }
 
+  /* ============================================ */
+  /* GIVEAWAY POPUP                               */
+  /* ============================================ */
+  .giveaway-popup { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 1rem; }
+  .giveaway-popup.show { display: flex; animation: popupFadeIn 0.4s ease forwards; }
+  .giveaway-popup-overlay { position: absolute; inset: 0; background: rgba(28,43,45,0.72); backdrop-filter: blur(4px); cursor: pointer; }
+  .giveaway-popup-card { position: relative; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 100%); border-radius: 24px; padding: 2.25rem 1.75rem 1.6rem; max-width: 440px; width: 100%; max-height: 92vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.3); border: 1px solid rgba(201,169,110,0.25); animation: popupSlideUp 0.5s cubic-bezier(0.22,1,0.36,1) forwards; }
+  @keyframes popupFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes popupSlideUp { from { opacity: 0; transform: translateY(40px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  .giveaway-popup-close { position: absolute; top: 0.85rem; right: 0.95rem; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.18); font-size: 1.5rem; line-height: 1; cursor: pointer; color: var(--text-dark); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; padding: 0; z-index: 2; }
+  .giveaway-popup-close:hover { background: var(--white); transform: scale(1.05); }
+  .giveaway-popup-tag { font-size: 0.66rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-align: center; margin-bottom: 0.85rem; }
+  .giveaway-popup-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 5vw, 2.1rem); font-weight: 600; text-align: center; color: var(--text-dark); line-height: 1.15; margin-bottom: 0.65rem; }
+  .giveaway-popup-title em { font-style: italic; color: var(--ocean-deep); }
+  .giveaway-popup-subtitle { font-size: 0.95rem; line-height: 1.6; text-align: center; color: var(--text-dark); margin-bottom: 1.4rem; }
+  .giveaway-popup-subtitle strong { font-weight: 600; }
+  .giveaway-popup-steps { background: rgba(255,255,255,0.7); border: 1px solid rgba(201,169,110,0.18); border-radius: 16px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .giveaway-popup-step { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-dark); }
+  .giveaway-popup-step-num { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: white; font-size: 0.72rem; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.05rem; }
+  .giveaway-popup-form { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 0.6rem; }
+  .giveaway-popup-input { padding: 0.85rem 1.15rem; border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.92rem; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.3s, box-shadow 0.3s; width: 100%; }
+  .giveaway-popup-input:focus { border-color: var(--ocean); box-shadow: 0 0 0 3px rgba(74,155,173,0.12); }
+  .giveaway-popup-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: white; border: none; padding: 1rem 1.5rem; font-family: 'Jost', sans-serif; font-size: 0.84rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 20px rgba(201,169,110,0.35); transition: all 0.3s ease; margin-top: 0.25rem; }
+  .giveaway-popup-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(201,169,110,0.45); }
+  .giveaway-popup-note { font-size: 0.7rem; text-align: center; color: var(--text-light); margin-top: 0.4rem; }
+
+  /* ============================================ */
+  /* STICKY MOBILE CTA BAR                        */
+  /* ============================================ */
+  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: rgba(253,248,240,0.97); backdrop-filter: blur(16px); border-top: 1px solid rgba(201,169,110,0.2); padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom)); box-shadow: 0 -4px 20px rgba(0,0,0,0.08); transform: translateY(100%); transition: transform 0.4s ease; }
+  .sticky-cta.show { transform: translateY(0); }
+  .sticky-cta-inner { display: flex; gap: 0.6rem; align-items: center; max-width: 500px; margin: 0 auto; }
+  .sticky-cta-text { flex: 1; font-size: 0.78rem; line-height: 1.3; color: var(--text-dark); font-weight: 500; }
+  .sticky-cta-text strong { color: var(--ocean-deep); }
+  .sticky-cta-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 0.75rem 1.2rem; font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 50px; cursor: pointer; text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(201,169,110,0.32); flex-shrink: 0; }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     section { padding: 3.5rem 1.5rem; }
@@ -213,12 +248,9 @@
     .hero-title { font-size: clamp(2rem, 9vw, 2.8rem); }
     .hero-sub { font-size: 0.97rem; }
     .hero-pill { font-size: 0.66rem; padding: 0.32rem 0.75rem; }
-    /* CHANGE 1: mobile override keeps CTA at original size */
     .hero-cta { width: 100%; text-align: center; padding: 1rem; font-size: 0.88rem; }
     .scroll-indicator { display: none; }
-    /* "for the girls who want more." — one line on mobile */
     .hero-title em:last-of-type { font-size: 0.72em; white-space: nowrap; }
-    /* "This is YOU - unlocked. Want to experience what she's like?" — one sentence flow */
     .hero-sub br { display: none; }
     section { padding: 2.5rem 1rem; }
     .days-section { padding: 2rem 1rem; }
@@ -227,9 +259,7 @@
     .mission-strip { padding: 2rem 1.15rem; }
     .mission-text { font-size: 1.15rem; }
     .girl-you-become { padding-top: 2rem !important; padding-bottom: 0.5rem !important; }
-    /* CHANGE 3: less gap between gallery text and slideshow */
     .days-section .section-subtitle { margin-bottom: 1rem; }
-    /* CHANGE 4: less space between final CTA text and button */
     .final-text { margin-bottom: 1rem !important; }
     .interest-form { flex-direction: column; align-items: center; }
     .interest-field { min-width: unset; width: 100%; }
@@ -241,7 +271,7 @@
     .diff-title { font-size: 1.4rem; }
     .diff-text { font-size: 0.95rem; }
 
-    /* CHANGE 2: Why Different accordion styles */
+    /* Why Different accordion */
     #why-tge .diff-grid { display: flex; flex-direction: column; gap: 0; border-radius: 20px; overflow: hidden; border: 1px solid rgba(201,169,110,0.2); }
     #why-tge .diff-card { border-radius: 0 !important; border: none !important; border-bottom: 1px solid rgba(201,169,110,0.14) !important; padding: 0 !important; background: var(--white) !important; }
     #why-tge .diff-card:last-child { border-bottom: none !important; }
@@ -261,15 +291,19 @@
     .for-you-tag { font-size: 0.8rem; }
     .cta-center { display: flex; justify-content: center; }
     .cta-btn { width: 100%; max-width: 320px; text-align: center; display: block; }
-    .trips-section { overflow: hidden; }
-    .trips-grid { display: flex; flex-direction: row; overflow-x: scroll; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 0.85rem; padding: 0.25rem 1.25rem 1.25rem; margin: 0; max-width: none; /* right padding leaves room to peek next card */ padding-right: 3.5rem; }
-    .trips-grid::-webkit-scrollbar { display: none; }
-    .trip-card { min-width: 78vw; max-width: 78vw; scroll-snap-align: start; flex-shrink: 0; transform: none !important; }
+
+    /* ===== TRIP CARDS — STACK VERTICALLY ON MOBILE ===== */
+    /* Both Bali AND Komodo cards fully visible — no swiping required */
+    .trips-section { overflow: visible; }
+    .trips-grid { display: flex; flex-direction: column; gap: 1.1rem; padding: 0 0.25rem; max-width: 100%; overflow: visible; }
+    .trip-card { min-width: 100%; max-width: 100%; flex-shrink: 0; transform: none !important; scroll-snap-align: none; }
     .trip-card-img { height: 220px; }
     .trip-card-body { padding: 1.3rem; }
     .trip-name { font-size: 1.5rem; }
     .trip-meta { gap: 0.65rem; }
     .trip-desc { font-size: 0.95rem; }
+    .trips-swipe-hint { display: none !important; }
+
     .final-btn { width: 100%; max-width: 320px; padding: 0.8rem; }
     .slideshow-wrapper { border-radius: 14px; }
     .slide::before { padding-top: 85%; }
@@ -278,6 +312,17 @@
     .slide-btn { width: 32px; height: 32px; font-size: 0.85rem; }
     .slide-dot { width: 7px; height: 7px; }
     .contact-name-row { grid-template-columns: 1fr !important; }
+
+    /* Popup mobile tweaks — bottom sheet style */
+    .giveaway-popup { padding: 0; align-items: flex-end; }
+    .giveaway-popup-card { border-radius: 24px 24px 0 0; max-height: 90vh; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)); animation: popupSlideUpMobile 0.5s cubic-bezier(0.22,1,0.36,1) forwards; }
+    @keyframes popupSlideUpMobile { from { opacity: 0; transform: translateY(100%); } to { opacity: 1; transform: translateY(0); } }
+    .giveaway-popup-title { font-size: 1.65rem; }
+
+    /* Show sticky CTA on mobile only */
+    .sticky-cta { display: block; }
+    /* Add bottom padding to footer so sticky CTA doesn't cover content */
+    .footer { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
   }
   @supports (padding-bottom: env(safe-area-inset-bottom)) {
     .nav { padding-top: calc(0.85rem + env(safe-area-inset-top)); }
@@ -319,6 +364,14 @@
   </div>
   <div class="scroll-indicator"><div class="scroll-line"></div></div>
 </section>
+
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-num">95% Come Solo</div><div class="trust-label">& leave with new friends</div></div>
+    <div class="trust-item"><div class="trust-num">8 Girls Max</div><div class="trust-label">FEW SPOTS LEFT</div></div>
+    <div class="trust-item"><div class="trust-num">18–39</div><div class="trust-label">Girls-Only</div></div>
+  </div>
+</div>
 
 <section class="girl-you-become" style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); padding-bottom: 1.5rem;">
   <div class="section-tag reveal">THE GIRL YOU <em>BECOME</em> ON OUR TRIPS</div>
@@ -438,7 +491,6 @@
       </div>
     </a>
   </div>
-  <p class="trips-swipe-hint">← Swipe for more trips →</p>
 </section>
 
 <section class="interest-section">
@@ -459,25 +511,17 @@
   </div>
 </section>
 
+<div class="mission-strip">
+  <div class="mission-label">Our Mission</div>
+  <p class="mission-text">We exist to help women <strong>travel the world, grow into the best version of themselves, step into their dream life,</strong> and experience our amazing, supportive female community that help each other win — all wrapped in bucket-list experiences that become core memories forever.</p>
+</div>
+
 <section class="final-cta-section">
   <h2 class="final-title reveal">Your Dream Life <em>Starts Here.</em></h2>
   <p class="final-text reveal">The friendships & connections you'll make, the surreal memories & feelings you'll experience, the version of yourself you'll discover — it all starts here. Don't wait for the "right time." This is YOUR time now.</p>
   <a href="#trips" class="final-btn reveal">Join Our Trips →</a>
 </section>
-    
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item"><div class="trust-num">95% Come Solo</div><div class="trust-label">& leave with new friends</div></div>
-    <div class="trust-item"><div class="trust-num">8 Girls Max</div><div class="trust-label">FEW SPOTS LEFT</div></div>
-    <div class="trust-item"><div class="trust-num">18–39</div><div class="trust-label">Girls-Only</div></div>
-  </div>
-</div>
 
-<div class="mission-strip">
-  <div class="mission-label">Our Mission</div>
-  <p class="mission-text">We exist to help women <strong>travel the world, grow into the best version of themselves, step into their dream life,</strong> and experience our amazing, supportive female community that help each other win — all wrapped in bucket-list experiences that become core memories forever.</p>
-</div>
-    
 <section style="background:var(--cream);" id="contact">
   <div class="section-tag reveal">Get In Touch</div>
   <h2 class="section-title reveal">Have a <em>Question?</em></h2>
@@ -512,10 +556,47 @@
   <p class="footer-disclaimer">For all enquiries: thatgirlexperiences@gmail.com &nbsp;·&nbsp; © 2026 That Girl Experiences</p>
 </footer>
 
-<style>
-  .trips-swipe-hint { display: none; text-align: center; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--text-light); margin-top: 0.5rem; text-transform: uppercase; }
-  @media (max-width: 540px) { .trips-swipe-hint { display: block; } }
-</style>
+<!-- ============================================ -->
+<!-- STICKY MOBILE CTA BAR                        -->
+<!-- ============================================ -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-inner">
+    <div class="sticky-cta-text">✨ <strong>Limited spots left</strong><br>8 girls max per trip</div>
+    <a href="#trips" class="sticky-cta-btn">See Trips →</a>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GIVEAWAY POPUP                               -->
+<!-- ============================================ -->
+<div class="giveaway-popup" id="giveawayPopup" aria-hidden="true">
+  <div class="giveaway-popup-overlay" id="popupOverlay"></div>
+  <div class="giveaway-popup-card" role="dialog" aria-labelledby="popupTitle">
+    <button class="giveaway-popup-close" id="popupClose" aria-label="Close giveaway">&times;</button>
+    <div class="giveaway-popup-tag">✦ Giveaway Alert ✦</div>
+    <h2 class="giveaway-popup-title" id="popupTitle">Win a <em>FREE</em> ISLAND LIFE Girls Trip</h2>
+    <p class="giveaway-popup-subtitle"><strong>8 Days, 3 Islands - One trip of a Lifetime.</strong> Bali + Nusa Lembongan + Nusa Penida with the girls. Your bucket-list trip - on us. ✨</p>
+    <div class="giveaway-popup-steps">
+      <div class="giveaway-popup-step">
+        <span class="giveaway-popup-step-num">1</span>
+        <span>Follow <strong>@thatgirlexperiences</strong> on TikTok <em>and</em> Instagram</span>
+      </div>
+      <div class="giveaway-popup-step">
+        <span class="giveaway-popup-step-num">2</span>
+        <span>Drop your IG handle &amp; WhatsApp below — that's it ✨</span>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/mkokzzow" method="POST" class="giveaway-popup-form" id="giveawayForm">
+      <input type="text" name="instagram" placeholder="@your_instagram_handle" required class="giveaway-popup-input">
+      <input type="text" name="whatsapp" placeholder="WhatsApp (e.g. +61 400 000 000)" required class="giveaway-popup-input">
+      <input type="hidden" name="_subject" value="🎁 GIVEAWAY ENTRY — Island Life Trip">
+      <input type="hidden" name="entry_type" value="Giveaway popup">
+      <input type="hidden" name="_next" value="https://thatgirlexperiences.com/?giveaway=entered">
+      <button type="submit" class="giveaway-popup-btn">Enter the Giveaway ✨</button>
+    </form>
+    <p class="giveaway-popup-note">Winner will be announced on our Instagram on 30 June 2026. We'll also DM you on WhatsApp if you win. No spam, ever.</p>
+  </div>
+</div>
 
 <script>
   window.addEventListener('scroll', () => { document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60); });
@@ -571,7 +652,7 @@
 </script>
 
 <script>
-/* CHANGE 2: Why Different accordion — mobile only */
+/* Why Different accordion — mobile only */
 (function() {
   if (window.innerWidth > 540) return;
   const cards = document.querySelectorAll('#why-tge .diff-card');
@@ -609,6 +690,72 @@
       if (!isOpen) { card.classList.add('acc-open'); trigger.setAttribute('aria-expanded', 'true'); }
     });
   });
+})();
+</script>
+
+<!-- ============================================ -->
+<!-- GIVEAWAY POPUP LOGIC                         -->
+<!-- ============================================ -->
+<script>
+(function() {
+  const popup = document.getElementById('giveawayPopup');
+  const overlay = document.getElementById('popupOverlay');
+  const closeBtn = document.getElementById('popupClose');
+  const form = document.getElementById('giveawayForm');
+  if (!popup) return;
+
+  // Don't re-show in same browser session if dismissed/submitted
+  const STORAGE_KEY = 'tge_giveaway_seen';
+  if (sessionStorage.getItem(STORAGE_KEY)) return;
+
+  let shown = false;
+
+  function showPopup() {
+    if (shown) return;
+    shown = true;
+    popup.classList.add('show');
+    popup.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function hidePopup() {
+    popup.classList.remove('show');
+    popup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    sessionStorage.setItem(STORAGE_KEY, '1');
+  }
+
+  // Trigger 1: after 10 seconds
+  setTimeout(showPopup, 10000);
+
+  // Trigger 2: when scrolled past 20% of page
+  function onScroll() {
+    if (shown) { window.removeEventListener('scroll', onScroll); return; }
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0 && window.scrollY / docHeight > 0.2) showPopup();
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  closeBtn.addEventListener('click', hidePopup);
+  overlay.addEventListener('click', hidePopup);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup.classList.contains('show')) hidePopup(); });
+  if (form) form.addEventListener('submit', () => sessionStorage.setItem(STORAGE_KEY, '1'));
+})();
+</script>
+
+<!-- ============================================ -->
+<!-- STICKY MOBILE CTA — show after hero scroll   -->
+<!-- ============================================ -->
+<script>
+(function() {
+  const sticky = document.getElementById('stickyCta');
+  if (!sticky) return;
+  function onScroll() {
+    // Show after user has scrolled past first viewport (i.e. past hero)
+    if (window.scrollY > window.innerHeight * 0.6) sticky.classList.add('show');
+    else sticky.classList.remove('show');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
 </script>
 
