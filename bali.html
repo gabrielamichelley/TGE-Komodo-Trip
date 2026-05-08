@@ -866,6 +866,48 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
 </section>
 
+<!-- GIVEAWAY POPUP -->
+<div class="giveaway-popup" id="giveawayPopup" aria-hidden="true">
+  <div class="giveaway-popup-overlay" id="popupOverlay"></div>
+  <div class="giveaway-popup-card" role="dialog" aria-labelledby="popupTitle">
+    <button class="giveaway-popup-close" id="popupClose" aria-label="Close">&times;</button>
+    <div id="giveawayInitial">
+      <div class="giveaway-popup-tag">✦ ENTER OUR GIVEAWAY ✦</div>
+      <h2 class="giveaway-popup-title" id="popupTitle">Win a <em>FREE</em> Island Life Trip</h2>
+      <p class="giveaway-popup-subtitle"><strong>8 Days, 3 Islands — One Trip of a Lifetime.</strong> Bali + Nusa Lembongan + Nusa Penida. Your bucket-list trip, on us. ✨</p>
+      <div class="giveaway-popup-bonus">💸 <strong>EVERY ENTRANT</strong> also gets an INSTANT <strong>AUD$100 OFF</strong> any trip.</div>
+      <div class="giveaway-popup-steps">
+        <div class="giveaway-popup-step"><span class="giveaway-popup-step-num">1</span><span>Follow <a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener">@thatgirl.experiences on Instagram</a> &amp; <a href="https://www.tiktok.com/@thatgirl.experiences" target="_blank" rel="noopener">TikTok</a></span></div>
+        <div class="giveaway-popup-step"><span class="giveaway-popup-step-num">2</span><span>Drop your IG handle &amp; WhatsApp below ✨</span></div>
+      </div>
+      <form class="giveaway-popup-form" id="giveawayForm" novalidate>
+        <input type="text" name="instagram" placeholder="@your_instagram_handle" required class="giveaway-popup-input">
+        <input type="text" name="whatsapp" placeholder="WhatsApp (e.g. +61 400 000 000)" required class="giveaway-popup-input">
+        <button type="submit" class="giveaway-popup-btn" id="giveawaySubmitBtn">Enter & Get $100 OFF ✨</button>
+      </form>
+      <p class="giveaway-popup-note">⏳ Winner announced 30 June 2026. We'll DM via WhatsApp. No spam, ever.</p>
+    </div>
+    <div class="giveaway-success" id="giveawaySuccess">
+      <span class="giveaway-success-emoji">🎉</span>
+      <h2 class="giveaway-success-title">You're <em>IN</em>, babe!</h2>
+      <p class="giveaway-success-text">You're entered to win the <strong>Island Life trip!</strong> Here's your code for <strong>AUD$100 OFF ANY TRIP:</strong></p>
+      <div class="discount-code-box">
+        <div class="discount-code-label">YOUR $100 OFF CODE</div>
+        <div class="discount-code-display">
+          <span class="discount-code-text" id="discountCodeText">TGE100GA</span>
+          <button type="button" class="discount-copy-btn" id="copyCodeBtn">Copy</button>
+        </div>
+        <div class="discount-expiry">⏰ Use by 30 June 2026 · valid on ANY trip!</div>
+      </div>
+      <div class="success-cta-row">
+        <a href="https://tri.ps/wrAyT" target="_blank" class="success-cta-primary">Book Now & Use Code →</a>
+        <a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener" class="success-cta-secondary">📸 Follow our Instagram</a>
+        <a href="https://www.tiktok.com/@thatgirl.experiences" target="_blank" rel="noopener" class="success-cta-secondary">🎵 Follow our TikTok</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
 <!-- MOBILE STICKY CTA -->
 <div class="mobile-cta-bar" id="mobileCta">
   <a href="https://tri.ps/wrAyT" target="_blank">BOOK NOW</a>
@@ -1023,6 +1065,74 @@ Tawk_API.customStyle = {
 })();
 </script>
 <!--End of Tawk.to Script-->
+
+<script>
+(function() {
+  const popup = document.getElementById('giveawayPopup');
+  const overlay = document.getElementById('popupOverlay');
+  const closeBtn = document.getElementById('popupClose');
+  const form = document.getElementById('giveawayForm');
+  const initial = document.getElementById('giveawayInitial');
+  const success = document.getElementById('giveawaySuccess');
+  const submitBtn = document.getElementById('giveawaySubmitBtn');
+  const copyBtn = document.getElementById('copyCodeBtn');
+  const codeText = document.getElementById('discountCodeText');
+  if (!popup) return;
+  const STORAGE_KEY = 'tge_giveaway_seen';
+  const SUCCESS_KEY = 'tge_giveaway_entered';
+  if (sessionStorage.getItem(STORAGE_KEY) && !sessionStorage.getItem(SUCCESS_KEY)) return;
+  let shown = false;
+  function showPopup() {
+    if (shown) return; shown = true;
+    popup.classList.add('show'); popup.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (sessionStorage.getItem(SUCCESS_KEY)) { initial.style.display = 'none'; success.classList.add('show'); }
+  }
+  function hidePopup() {
+    popup.classList.remove('show'); popup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; sessionStorage.setItem(STORAGE_KEY, '1');
+  }
+  setTimeout(showPopup, 25000);
+  function onScroll() {
+    if (shown) { window.removeEventListener('scroll', onScroll); return; }
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    if (docH > 0 && window.scrollY / docH > 0.25) showPopup();
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  closeBtn.addEventListener('click', hidePopup);
+  overlay.addEventListener('click', hidePopup);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup.classList.contains('show')) hidePopup(); });
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true; submitBtn.textContent = 'Entering...';
+      const formData = new FormData(form);
+      formData.append('_subject', '🎁 GIVEAWAY ENTRY — Island Life Trip + $100 code (Bali Page)');
+      formData.append('entry_type', 'Giveaway popup — Bali trip page');
+      try {
+        const res = await fetch('https://formspree.io/f/mkokzzow', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          sessionStorage.setItem(SUCCESS_KEY, '1'); sessionStorage.setItem(STORAGE_KEY, '1');
+          initial.style.display = 'none'; success.classList.add('show');
+          if (window.fbq) fbq('track', 'Lead');
+          if (window.ttq && typeof window.ttq.track === 'function') window.ttq.track('CompleteRegistration', { content_name: 'Giveaway Entry - Bali' });
+        } else { throw new Error(); }
+      } catch(err) {
+        submitBtn.disabled = false; submitBtn.textContent = 'Enter & Get $100 OFF ✨';
+        alert('Something went wrong — please DM us on Instagram or try again.');
+      }
+    });
+  }
+  if (copyBtn && codeText) {
+    copyBtn.addEventListener('click', function() {
+      const code = codeText.textContent.trim();
+      if (navigator.clipboard) { navigator.clipboard.writeText(code).catch(() => {}); }
+      copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied');
+      setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 2200);
+    });
+  }
+})();
+</script>
   
 </body>
 </html>
