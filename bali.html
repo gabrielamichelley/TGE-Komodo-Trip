@@ -96,18 +96,18 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   @keyframes heroFloat { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-40px) scale(1.05);} }
   @keyframes fadeUp { from{opacity:0;transform:translateY(25px);} to{opacity:1;transform:translateY(0);} }
   .hero-content { position: relative; z-index: 1; max-width: 760px; width: 100%; }
-  .hero-tag { display: inline-block; background: rgba(255,255,255,0.65); border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; padding: 0.5rem 1.75rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.75rem; backdrop-filter: blur(8px); opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,0.65); border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; padding: 0.5rem 1.75rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; backdrop-filter: blur(8px); opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
   .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 6.5vw, 5rem); font-weight: 600; line-height: 1.05; color: var(--text-dark); margin-bottom: 1rem; opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards; }
   .hero-title em { font-style: italic; color: var(--ocean-deep); }
-  .hero-location { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2vw, 1.35rem); font-weight: 700; color: var(--ocean-deep); margin-bottom: 1.5rem; letter-spacing: 0.04em; opacity: 0; animation: fadeUp 0.8s ease 0.65s forwards; }
+  .hero-location { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2vw, 1.35rem); font-weight: 700; color: var(--ocean-deep); margin-bottom: 1.2rem; letter-spacing: 0.04em; opacity: 0; animation: fadeUp 0.8s ease 0.65s forwards; }
   .hero-details { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards; }
   .hero-detail { text-align: center; }
   .hero-detail-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; color: var(--text-dark); }
   .hero-detail-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); margin-top: 0.15rem; }
   .hero-divider { width: 1px; height: 40px; background: rgba(201,169,110,0.3); align-self: center; }
-  .hero-for { font-size: clamp(0.92rem, 1.8vw, 1rem); font-weight: 400; line-height: 1.8; color: var(--text-dark); max-width: 620px; margin: 0 auto 1.25rem; opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards; background: rgba(255,255,255,0.6); border: 1px solid rgba(201,169,110,0.2); border-radius: 20px; padding: 1.25rem 1.75rem; backdrop-filter: blur(8px); }
+  .hero-for { font-size: clamp(0.92rem, 1.8vw, 1rem); font-weight: 400; line-height: 1.8; color: var(--text-dark); max-width: 620px; margin: 0 auto 1rem; opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards; background: rgba(255,255,255,0.6); border: 1px solid rgba(201,169,110,0.2); border-radius: 20px; padding: 1.25rem 1.75rem; backdrop-filter: blur(8px); }
   .hero-for strong { color: var(--text-dark); font-weight: 600; }
-  .hero-spots { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-bottom: 1.75rem; opacity: 0; animation: fadeUp 0.8s ease 0.95s forwards; }
+  .hero-spots { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.95s forwards; }
   .hero-cta { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 1rem 2.5rem; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3); opacity: 0; animation: fadeUp 0.8s ease 1.05s forwards; }
   .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.45); }
   .scroll-indicator { position: absolute; bottom: 1.75rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeUp 0.8s ease 1.4s forwards; }
@@ -340,8 +340,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .deposit-bubble {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: linear-gradient(135deg, rgba(201,169,110,0.18), rgba(232,213,163,0.22));
-    border: 1.5px solid rgba(201,169,110,0.45); border-radius: 50px;
-    padding: 0.55rem 1.4rem; font-size: 0.78rem; font-weight: 600;
+    border: 1.6px solid rgba(201,169,110,0.45); border-radius: 40px;
+    padding: 0.25rem 1.2rem; font-size: 0.78rem; font-weight: 600;
     letter-spacing: 0.08em; color: var(--text-dark);
     backdrop-filter: blur(8px); margin: 0.5rem auto 1.25rem;
   }
