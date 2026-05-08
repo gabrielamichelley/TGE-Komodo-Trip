@@ -892,12 +892,12 @@ src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
     sessionStorage.setItem(STORAGE_KEY, '1');
   }
 
-  // Triggers: 20 seconds OR 20% scroll
-  setTimeout(showPopup, 20000);
+  // Triggers: 25 seconds OR 25% scroll
+  setTimeout(showPopup, 25000);
   function onScroll() {
     if (shown) { window.removeEventListener('scroll', onScroll); return; }
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    if (docHeight > 0 && window.scrollY / docHeight > 0.2) showPopup();
+    if (docHeight > 0 && window.scrollY / docHeight > 0.25) showPopup();
   }
   window.addEventListener('scroll', onScroll, { passive: true });
 
