@@ -1162,7 +1162,7 @@ Tawk_API.customStyle = {
   function onScroll() {
     if (shown) { window.removeEventListener('scroll', onScroll); return; }
     const docH = document.documentElement.scrollHeight - window.innerHeight;
-    if (docH > 0 && window.scrollY / docH > 0.25) showPopup();
+    if (docH > 0 && window.scrollY / docH > 0.30) showPopup();
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   closeBtn.addEventListener('click', hidePopup);
