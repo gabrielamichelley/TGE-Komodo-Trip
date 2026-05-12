@@ -279,6 +279,14 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .hero-divider { height: 26px; }
     .hero-for { font-size: 0.93rem; padding: 1rem 1.25rem; border-radius: 14px; }
     .hero-cta { width: 100%; text-align: center; padding: 1rem; font-size: 0.88rem; }
+    #wetravel_button_widget {
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+    padding: 1rem !important;
+    font-size: 0.88rem !important;
+    box-sizing: border-box !important;
+    }
     .scroll-indicator { display: none; }
     section { padding: 2.5rem 1rem; }
     .slideshow-section { padding: 2rem 1rem; }
@@ -400,6 +408,28 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .interest-btn { width: 100%; max-width: 320px; text-align: center; padding: 1rem; }
   }
 
+ /* WeTravel embedded checkout — hero button style override */
+#wetravel_button_widget {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+  color: var(--white) !important;
+  border: none !important;
+  padding: 1rem 2.5rem !important;
+  font-family: 'Jost', sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  border-radius: 60px !important;
+  cursor: pointer !important;
+  transition: all 0.4s ease !important;
+  box-shadow: 0 8px 30px rgba(201,169,110,0.3) !important;
+  line-height: normal !important;
+}
+#wetravel_button_widget:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 40px rgba(201,169,110,0.45) !important;
+}
+  
   /* ── GIVEAWAY POPUP ── */
   .giveaway-popup { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 1rem; }
   .giveaway-popup.show { display: flex; animation: popupFadeIn 0.4s ease forwards; }
@@ -488,9 +518,14 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="deposit-bubble">ONLY <span class="dep-highlight">$50 DEPOSIT</span> to secure your spot</div>
 </div>
 <div class="hero-spots">‼️ FEW SPOTS LEFT ‼️ <br> From $499 · Pay in 4, interest-free</div>
-    <a href="https://tri.ps/wrAyT" target="_blank" 
-   class="hero-cta"
-   onclick="fbq('track', 'InitiateCheckout')">BOOK NOW</a>
+    <button class="wtrvl-checkout_button hero-cta" id="wetravel_button_widget"
+  data-env="https://www.wetravel.com"
+  data-version="v0.4"
+  data-uid="2374713"
+  data-uuid="6779947278"
+  href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+  onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button>
+<script src="https://cdn.wetravel.com/widgets/embed_checkout.js"></script>
   </div>
   <div class="scroll-indicator"><div class="scroll-line"></div></div>
 </section>
@@ -1202,6 +1237,25 @@ Tawk_API.customStyle = {
     });
   }
 })();
+</script>
+
+<script>
+  /* WeTravel embedded checkout — conversion tracking */
+  window.addEventListener('message', function(e) {
+    if (!e.data || typeof e.data !== 'object') return;
+    const d = e.data;
+    // WeTravel fires this on successful booking completion
+    if (
+      d.type === 'wetravel:checkout:complete' ||
+      d.event === 'booking_complete' ||
+      d.status === 'success' ||
+      d.action === 'purchase'
+    ) {
+      if (window.fbq) fbq('track', 'Purchase', { value: 499.00, currency: 'USD' });
+      if (window.ttq) ttq.track('CompletePayment', { value: 499, currency: 'USD' });
+      if (window.gtag) gtag('event', 'purchase', { currency: 'USD', value: 499 });
+    }
+  });
 </script>
   
 </body>
