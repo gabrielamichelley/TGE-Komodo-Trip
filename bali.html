@@ -6,10 +6,7 @@
 <title>That Girl Experiences — ISLAND LIFE - Bali, Nusa Lembongan & Nusa Penida</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- ============================================ -->
-<!-- GOOGLE ANALYTICS 4                          -->
-<!-- Replace G-XXXXXXXXXX with your Measurement ID -->
-<!-- ============================================ -->
+<!-- GOOGLE ANALYTICS 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -18,8 +15,7 @@
   gtag('config', 'G-XXXXXXXXXX');
 </script>
 
-<!-- ============================================ -->
-<!-- MICROSOFT CLARITY (heatmaps + recordings)    -->
+<!-- MICROSOFT CLARITY -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -27,7 +23,7 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wk5vnqvlwl");
 </script>
-  
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -44,21 +40,17 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1713039786496101&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
-  
-<!-- TikTok Pixel Code Start -->
+
+<!-- TikTok Pixel Code -->
 <script>
 !function (w, d, t) {
   w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
 var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
 ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
   ttq.load('D7S3IFBC77U07JNLHN80');
   ttq.page();
 }(window, document, 'ttq');
 </script>
-<!-- TikTok Pixel Code End -->
 
 <style>
   :root {
@@ -86,8 +78,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .nav-links { display: flex; align-items: center; gap: 1.25rem; }
   .nav-link { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; transition: color 0.3s ease; }
   .nav-link:hover { color: var(--gold); }
-  .nav-cta { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 0.55rem 1.25rem; font-family: 'Jost', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 50px; cursor: pointer; text-decoration: none; white-space: nowrap; transition: all 0.3s ease; flex-shrink: 0; }
-  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,169,110,0.35); }
+  /* nav-cta — !important overrides WeTravel inline styles */
+  .nav-cta { background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: var(--white) !important; border: none !important; padding: 0.55rem 1.25rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.68rem !important; font-weight: 500 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; border-radius: 50px !important; cursor: pointer !important; text-decoration: none !important; white-space: nowrap !important; transition: all 0.3s ease !important; flex-shrink: 0 !important; line-height: normal !important; display: inline-block !important; }
+  .nav-cta:hover { transform: translateY(-1px) !important; box-shadow: 0 4px 16px rgba(201,169,110,0.35) !important; }
 
   /* HERO */
   .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem 2.5rem; position: relative; background: linear-gradient(170deg, var(--cream) 0%, var(--teal-soft) 35%, var(--lagoon) 65%, var(--ocean-light) 100%); overflow: hidden; }
@@ -108,8 +101,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .hero-for { font-size: clamp(0.92rem, 1.8vw, 1rem); font-weight: 400; line-height: 1.8; color: var(--text-dark); max-width: 620px; margin: 0 auto 1rem; opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards; background: rgba(255,255,255,0.6); border: 1px solid rgba(201,169,110,0.2); border-radius: 20px; padding: 1.25rem 1.75rem; backdrop-filter: blur(8px); }
   .hero-for strong { color: var(--text-dark); font-weight: 600; }
   .hero-spots { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.95s forwards; }
-  .hero-cta { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 1rem 2.5rem; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3); opacity: 0; animation: fadeUp 0.8s ease 1.05s forwards; }
-  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.45); }
+  /* hero-cta — !important overrides WeTravel inline styles; animation kept without !important */
+  .hero-cta { display: inline-block !important; background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: var(--white) !important; border: none !important; padding: 1rem 2.5rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.88rem !important; font-weight: 500 !important; letter-spacing: 0.25em !important; text-transform: uppercase !important; border-radius: 60px !important; cursor: pointer !important; text-decoration: none !important; transition: all 0.4s ease !important; box-shadow: 0 8px 30px rgba(201,169,110,0.3) !important; line-height: normal !important; opacity: 0; animation: fadeUp 0.8s ease 1.05s forwards; }
+  .hero-cta:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 40px rgba(201,169,110,0.45) !important; }
   .scroll-indicator { position: absolute; bottom: 1.75rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeUp 0.8s ease 1.4s forwards; }
   .scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease-in-out infinite; }
   @keyframes scrollPulse { 0%,100%{opacity:0.4;} 50%{opacity:1;} }
@@ -162,9 +156,10 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .for-you-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .for-you-tag { background: rgba(255,255,255,0.9); border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; padding: 0.35rem 1rem; font-size: 0.76rem; color: var(--text-dark); font-weight: 400; }
   .cta-center { text-align: center; }
-  .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); padding: 1.15rem 3.25rem; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.3); }
-  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.45); }
-  
+  /* cta-btn — !important overrides WeTravel inline styles */
+  .cta-btn { display: inline-block !important; background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: var(--white) !important; padding: 1.15rem 3.25rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.88rem !important; font-weight: 500 !important; letter-spacing: 0.25em !important; text-transform: uppercase !important; border-radius: 60px !important; text-decoration: none !important; transition: all 0.4s ease !important; box-shadow: 0 8px 30px rgba(201,169,110,0.3) !important; border: none !important; cursor: pointer !important; line-height: normal !important; }
+  .cta-btn:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 40px rgba(201,169,110,0.45) !important; }
+
   /* WHY TGE */
   .why-section { background: linear-gradient(180deg, var(--cream) 0%, var(--teal-soft) 100%); }
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
@@ -226,8 +221,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .final-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5.5vw, 4.2rem); font-weight: 500; color: var(--white); margin-bottom: 1.35rem; position: relative; z-index: 1; line-height: 1.15; }
   .final-title em { font-style: italic; color: var(--gold-light); }
   .final-text { font-size: clamp(1rem, 1.8vw, 1.1rem); font-weight: 300; color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 2rem; line-height: 1.8; position: relative; z-index: 1; }
-  .final-btn { display: inline-block; background: var(--white); color: var(--ocean-deep); border: none; padding: 1.2rem 2.5rem; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.15); position: relative; z-index: 1; }
-  .final-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(0,0,0,0.22); }
+  /* final-btn — !important overrides WeTravel inline styles */
+  .final-btn { display: inline-block !important; background: var(--white) !important; color: var(--ocean-deep) !important; border: none !important; padding: 1.2rem 2.5rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.88rem !important; font-weight: 500 !important; letter-spacing: 0.25em !important; text-transform: uppercase !important; border-radius: 60px !important; cursor: pointer !important; text-decoration: none !important; transition: all 0.4s ease !important; box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important; position: relative !important; z-index: 1 !important; line-height: normal !important; }
+  .final-btn:hover { transform: translateY(-2px) !important; box-shadow: 0 14px 44px rgba(0,0,0,0.22) !important; }
 
   /* FOOTER */
   .footer { background: var(--cream); padding: 2.5rem 2rem; text-align: center; }
@@ -245,6 +241,35 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* ── WETRAVEL DOWNLOAD BROCHURE BUTTONS — TGE styled ── */
+  .wtrvl-download_brochure_button {
+    background: rgba(255,255,255,0.92) !important;
+    color: var(--text-dark) !important;
+    border: 1.5px solid rgba(201,169,110,0.5) !important;
+    border-radius: 60px !important;
+    padding: 0.85rem 2rem !important;
+    font-family: 'Jost', sans-serif !important;
+    font-size: 0.78rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 14px rgba(201,169,110,0.18) !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    line-height: normal !important;
+    -webkit-font-smoothing: antialiased !important;
+    margin-top: 0.5rem !important;
+  }
+  .wtrvl-download_brochure_button:hover {
+    background: var(--white) !important;
+    border-color: rgba(201,169,110,0.8) !important;
+    box-shadow: 0 4px 22px rgba(201,169,110,0.32) !important;
+    transform: translateY(-1px) !important;
+    color: var(--gold) !important;
+  }
+
   /* TABLET 900px */
   @media (max-width: 900px) {
     section { padding: 3.5rem 1.5rem; }
@@ -257,7 +282,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   @media (max-width: 768px) {
     .nav { padding: 0.8rem 1rem; } .nav.scrolled { padding: 0.6rem 1rem; }
     .nav-link { display: none; }
-    .nav-cta { display: none; }
+    .nav-cta { display: none !important; }
     .for-you-grid { grid-template-columns: 1fr; gap: 1.25rem; }
     .itinerary-timeline::before { left: 24px; }
     .day-card { padding-left: 62px; margin-bottom: 1.25rem; }
@@ -278,37 +303,24 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .hero-detail-value { font-size: 1.3rem; }
     .hero-divider { height: 26px; }
     .hero-for { font-size: 0.93rem; padding: 1rem 1.25rem; border-radius: 14px; }
-    .hero-cta { width: 100%; text-align: center; padding: 1rem; font-size: 0.88rem; }
-    #wetravel_button_widget {
-    width: 100% !important;
-    display: block !important;
-    text-align: center !important;
-    padding: 1rem !important;
-    font-size: 0.88rem !important;
-    box-sizing: border-box !important;
-    }
+    /* hero-cta mobile — !important needed to override WeTravel inline styles */
+    .hero-cta { width: 100% !important; text-align: center !important; padding: 1rem !important; font-size: 0.88rem !important; display: block !important; box-sizing: border-box !important; }
     .scroll-indicator { display: none; }
     section { padding: 2.5rem 1rem; }
     .slideshow-section { padding: 2rem 1rem; }
     .final-cta-section { padding: 2.5rem 1rem; }
     .faq-section { padding: 2.5rem 1rem; }
 
-    .for-you-checklist { padding: 1rem; border-radius: 16px; }
+    .for-you-checklist { padding: 1.5rem; border-radius: 16px; }
     .for-you-checklist-title { font-size: 1.35rem; }
     .for-you-item-text { font-size: 1rem; }
-    .for-you-quote-box { padding: 1.6rem; border-radius: 16px; }
-    .for-you-quote-box {justify-content: flex-start;
-    gap: 1.25rem;
-    }
-    .for-you-checklist {
-      padding: 1.5rem;
-    }
+    .for-you-quote-box { padding: 1.6rem; border-radius: 16px; justify-content: flex-start; gap: 1.25rem; }
     .for-you-quote { font-size: 1.3rem; }
     .for-you-tag { font-size: 0.8rem; }
     .cta-center { display: flex; justify-content: center; }
-    .cta-btn { width: 100%; max-width: 320px; text-align: center; display: block; }
+    /* cta-btn mobile — !important needed to override WeTravel inline styles */
+    .cta-btn { width: 100% !important; max-width: 320px !important; text-align: center !important; display: block !important; padding: 1rem 1.5rem !important; box-sizing: border-box !important; }
 
-    
     /* Why grid → accordion on mobile */
     .why-grid { grid-template-columns: 1fr; gap: 0; border-radius: 20px; overflow: hidden; border: 1px solid rgba(201,169,110,0.2); }
     .why-card { border-radius: 0 !important; border: none !important; border-bottom: 1px solid rgba(201,169,110,0.14) !important; padding: 0 !important; background: var(--white) !important; }
@@ -353,11 +365,14 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .faq-answer-text { font-size: 0.93rem; }
 
     /* Final CTA */
-    .final-btn { width: 100%; max-width: 320px; padding: 0.9rem; text-align: center; }
+    .final-btn { width: 100% !important; max-width: 320px !important; padding: 0.9rem !important; text-align: center !important; display: block !important; margin: 0 auto !important; box-sizing: border-box !important; }
     .final-text { margin-bottom: 1.25rem; }
 
     /* Contact */
     .contact-name-row { grid-template-columns: 1fr !important; }
+
+    /* Download brochure mobile */
+    .wtrvl-download_brochure_button { width: 100% !important; max-width: 320px !important; text-align: center !important; padding: 1rem !important; box-sizing: border-box !important; }
 
     /* Push live chat above mobile sticky CTA */
     #tawkchat-container, .tawk-min-container, iframe[title*="chat" i] { bottom: 70px !important; }
@@ -379,7 +394,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .faq-question, .currency-option, .currency-btn { min-height: 44px; }
     .faq-item { padding: 1.1rem 0; }
   }
-/* ── $50 DEPOSIT BUBBLE ── */
+
+  /* ── $50 DEPOSIT BUBBLE ── */
   .deposit-bubble {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: linear-gradient(135deg, rgba(201,169,110,0.18), rgba(232,213,163,0.22));
@@ -408,28 +424,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .interest-btn { width: 100%; max-width: 320px; text-align: center; padding: 1rem; }
   }
 
- /* WeTravel embedded checkout — hero button style override */
-#wetravel_button_widget {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
-  color: var(--white) !important;
-  border: none !important;
-  padding: 1rem 2.5rem !important;
-  font-family: 'Jost', sans-serif !important;
-  font-size: 0.88rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.25em !important;
-  text-transform: uppercase !important;
-  border-radius: 60px !important;
-  cursor: pointer !important;
-  transition: all 0.4s ease !important;
-  box-shadow: 0 8px 30px rgba(201,169,110,0.3) !important;
-  line-height: normal !important;
-}
-#wetravel_button_widget:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 12px 40px rgba(201,169,110,0.45) !important;
-}
-  
   /* ── GIVEAWAY POPUP ── */
   .giveaway-popup { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 1rem; }
   .giveaway-popup.show { display: flex; animation: popupFadeIn 0.4s ease forwards; }
@@ -492,9 +486,14 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <a href="#why" class="nav-link">Why Us</a>
       <a href="#itinerary" class="nav-link">Itinerary</a>
     </nav>
-    <a href="https://tri.ps/wrAyT" target="_blank" 
-   class="nav-cta"
-   onclick="fbq('track', 'InitiateCheckout')">BOOK NOW</a>
+    <!-- WeTravel embed — Nav Book Now -->
+    <button class="wtrvl-checkout_button nav-cta" id="wt-btn-nav"
+      data-env="https://www.wetravel.com"
+      data-version="v0.4"
+      data-uid="2374713"
+      data-uuid="6779947278"
+      href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+      onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button>
   </div>
 </nav>
 
@@ -515,17 +514,17 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <strong>This trip is for:</strong> Women aged 18–39 who love travel & adventures, want more female friendships & a supportive girls community that builds you up - while ticking off bucket-list experiences. Come solo or with a friend - 3 ISLANDS, ONE TRIP OF A LIFETIME.
     </div>
     <div class="deposit-bubble-wrap">
-  <div class="deposit-bubble">ONLY <span class="dep-highlight">$50 DEPOSIT</span> to secure your spot</div>
-</div>
-<div class="hero-spots">‼️ FEW SPOTS LEFT ‼️ <br> From $499 · Pay in 4, interest-free</div>
+      <div class="deposit-bubble">ONLY <span class="dep-highlight">$50 DEPOSIT</span> to secure your spot</div>
+    </div>
+    <div class="hero-spots">‼️ FEW SPOTS LEFT ‼️ <br> From $499 · Pay in 4, interest-free</div>
+    <!-- WeTravel embed — Hero Book Now -->
     <button class="wtrvl-checkout_button hero-cta" id="wetravel_button_widget"
-  data-env="https://www.wetravel.com"
-  data-version="v0.4"
-  data-uid="2374713"
-  data-uuid="6779947278"
-  href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
-  onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button>
-<script src="https://cdn.wetravel.com/widgets/embed_checkout.js"></script>
+      data-env="https://www.wetravel.com"
+      data-version="v0.4"
+      data-uid="2374713"
+      data-uuid="6779947278"
+      href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+      onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button>
   </div>
   <div class="scroll-indicator"><div class="scroll-line"></div></div>
 </section>
@@ -563,18 +562,24 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
   <div class="slide-dots" id="slideDots"></div>
   <br>
-  <div style="text-align: center;"> <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278" href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278" style="background-color:#5fb8c4;color:#ffffff;border: 0px;border-radius: 5px;font-family: 'Poppins', sans-serif;font-weight: 400;font-size: 14px;-webkit-font-smoothing: antialiased;text-transform: capitalize;padding: 13px 24px;text-decoration: none;text-align: center;line-height: 14px;display: inline-block; cursor: pointer;">Download Brochure</button> </div> <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> <script src="https://cdn.wetravel.com/widgets/embed_download_brochure.js"></script>
-  </section>
+  <div style="text-align: center;">
+    <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget"
+      data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278"
+      href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278">Download Brochure</button>
+  </div>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <script src="https://cdn.wetravel.com/widgets/embed_download_brochure.js"></script>
+</section>
 
 <!-- THIS IS FOR YOU -->
 <section style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); padding-bottom: 2rem;" id="for-you">
   <div class="section-tag reveal">This Is For You If</div>
   <h2 class="section-title reveal">You Want To <em>Live Life To Its Fullest</em></h2>
-    <div class="for-you-grid" style="margin-bottom: 0;">
+  <div class="for-you-grid" style="margin-bottom: 0;">
     <div class="for-you-checklist reveal">
       <div class="for-you-checklist-title">This is for you if…</div>
       <div class="for-you-list">
-        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You're a girl in your <STRONG>20s or 30s</STRONG> wanting to travel but don't want to do it alone</div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You're a girl in your <strong>20s or 30s</strong> wanting to travel but don't want to do it alone</div></div>
         <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want to find <strong>your people & meet like-minded girls in their 20s/30s</strong> who genuinely want to see you win</div></div>
         <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You feel stuck, lost, overwhelmed, or burnt out</div></div>
         <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want <strong>more in life</strong>: new experiences, growth & the best version of yourself</div></div>
@@ -582,7 +587,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You're <strong>tired of waiting around</strong> for the right time, the right people or the right circumstances - and you're ready to finally <strong>choose this for yourself</strong></div></div>
       </div>
     </div>
-  
     <div class="for-you-quote-box reveal">
       <div class="for-you-quote">You'll come home <strong>more aligned, more HER. Maybe it's your spark back. Maybe it's finally finding your purpose & your people.</strong></div>
       <div class="for-you-tags">
@@ -593,18 +597,24 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <span class="for-you-tag">Core Memories you'll remember forever</span>
       </div>
     </div>
- </div>
-<div class="cta-center reveal" style="margin: 0.8rem auto 0; text-align: center; justify-content: center;">
-  <a href="https://tri.ps/wrAyT" target="_blank" class="cta-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">✦ Book Now ✦</a>
-</div>
+  </div>
+  <div class="cta-center reveal" style="margin: 0.8rem auto 0; text-align: center; justify-content: center;">
+    <!-- WeTravel embed — For You Book Now -->
+    <button class="wtrvl-checkout_button cta-btn" id="wt-btn-foryou"
+      data-env="https://www.wetravel.com"
+      data-version="v0.4"
+      data-uid="2374713"
+      data-uuid="6779947278"
+      href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+      onclick="if(window.fbq){fbq('track','InitiateCheckout');}">✦ Book Now ✦</button>
+  </div>
 </section>
-  
+
 <!-- WHY TGE -->
 <section class="why-section" id="why">
   <div class="section-tag reveal">Why TGE?</div>
   <h2 class="section-title reveal">More Than Just a <em>Girls Trip</em></h2>
   <p class="section-subtitle reveal"></p>
-
   <div class="why-grid">
     <div class="why-card featured reveal">
       <div class="why-icon">👯‍♀️</div>
@@ -663,13 +673,18 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
 </section>
 
-<!-- CTA -->
+<!-- FINAL CTA -->
 <section class="final-cta-section">
   <h2 class="final-title reveal">Come Solo. Leave <em>Transformed.</em></h2>
   <p class="final-text reveal">This isn't just a regular trip. It's you connecting with like-minded girls you never knew you needed, livin' the island life together, ticking off bucket-list experiences & creating once-in-a-lifetime memories that you'll never forget.</p>
- <a href="https://tri.ps/wrAyT" target="_blank" 
-   class="final-btn reveal"
-   onclick="fbq('track', 'InitiateCheckout')">VIEW DETAILS →</a>
+  <!-- WeTravel embed — Final CTA -->
+  <button class="wtrvl-checkout_button final-btn reveal" id="wt-btn-final"
+    data-env="https://www.wetravel.com"
+    data-version="v0.4"
+    data-uid="2374713"
+    data-uuid="6779947278"
+    href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+    onclick="if(window.fbq){fbq('track','InitiateCheckout');}">VIEW DETAILS →</button>
 </section>
 
 <!-- ITINERARY -->
@@ -677,7 +692,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="section-tag reveal">The Itinerary</div>
   <h2 class="section-title reveal">8 Days of <em>Magic</em></h2>
   <p class="section-subtitle reveal">Every day designed with intention — adventure, connection & the space to simply be.</p>
-
   <div class="itinerary-timeline">
     <!-- DAY 1 -->
     <div class="day-card reveal">
@@ -690,7 +704,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="day-highlights">
           <div class="highlight-item"><span class="highlight-icon">🛬</span>Airport pickup & welcome to our own Private Villa (with Private Pool)!</div>
           <div class="highlight-item"><span class="highlight-icon">👯‍♀️</span>Meet the girls! Girls ice-breaker circle & connections - meet your new girlfriends</div>
-          <div class="highlight-item"><span class="highlight-icon">🧘‍♀️</span>‘What I want from this trip’ & intention-setting </div>
+          <div class="highlight-item"><span class="highlight-icon">🧘‍♀️</span>'What I want from this trip' & intention-setting</div>
           <div class="highlight-item"><span class="highlight-icon">🌅</span>Sunset & ocean "letting go" ceremony</div>
           <div class="highlight-item"><span class="highlight-icon">🍽️</span>Girls Welcome Dinner</div>
         </div>
@@ -699,7 +713,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <span class="day-tag tag-wellness">Wellness</span>
       </div>
     </div>
-
     <!-- DAY 2 -->
     <div class="day-card reveal">
       <div class="day-marker">DAY 2</div>
@@ -722,7 +735,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <span class="day-tag tag-connection">Connection</span>
       </div>
     </div>
-
     <!-- DAY 3 -->
     <div class="day-card reveal">
       <div class="day-marker">DAY 3</div>
@@ -744,7 +756,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <span class="day-tag tag-connection">Connection</span>
       </div>
     </div>
-
     <!-- DAY 4 -->
     <div class="day-card reveal">
       <div class="day-marker">DAY 4</div>
@@ -760,14 +771,13 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           <div class="highlight-item"><span class="highlight-icon">🌴</span>Check into our Ubud villa</div>
           <div class="highlight-item"><span class="highlight-icon">🌾</span>Exploring the stunning rice terraces & ricefields</div>
           <div class="highlight-item"><span class="highlight-icon">🏍️</span>ATV/Quad-Biking Adventures going through ricefields, jungles & waterfalls</div>
-           <div class="highlight-item"><span class="highlight-icon">🌊</span>Relax, swim, enjoy all the facilities</div>
+          <div class="highlight-item"><span class="highlight-icon">🌊</span>Relax, swim, enjoy all the facilities</div>
           <div class="highlight-item"><span class="highlight-icon">🍽️</span>Dinner included</div>
         </div>
         <span class="day-tag tag-adventure">Adventure</span>
         <span class="day-tag tag-connection">Connection</span>
       </div>
     </div>
-
     <!-- DAY 5 -->
     <div class="day-card reveal">
       <div class="day-marker">DAY 5</div>
@@ -789,7 +799,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <span class="day-tag tag-adventure">Adventure</span>
       </div>
     </div>
-
     <!-- DAY 6 -->
     <div class="day-card reveal">
       <div class="day-marker">DAY 6</div>
@@ -810,8 +819,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <span class="day-tag tag-connection">Connection</span>
       </div>
     </div>
-
-     <!-- DAY 7 -->
+    <!-- DAY 7 -->
     <div class="day-card reveal">
       <div class="day-marker">DAY 7</div>
       <div class="day-content">
@@ -831,7 +839,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <span class="day-tag tag-adventure">Adventure</span>
       </div>
     </div>
-    
     <!-- DAY 8 -->
     <div class="day-card reveal">
       <div class="day-marker">DAY 8</div>
@@ -854,14 +861,13 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
 </section>
 
-
 <!-- INCLUSIONS -->
 <section class="inclusions-section" id="inclusions">
   <div class="deposit-bubble-wrap reveal">
-  <div class="deposit-bubble">💳 <span class="dep-highlight">ONLY $50 DEPOSIT</span> to secure your slot &nbsp;</div>
-</div>
+    <div class="deposit-bubble">💳 <span class="dep-highlight">ONLY $50 DEPOSIT</span> to secure your slot &nbsp;</div>
+  </div>
   <h2 class="section-title reveal">What's <em>Included</em></h2>
-  <p class="section-subtitle reveal">8 Days · From $499 · Pay in 4 instalments</div></p>
+  <p class="section-subtitle reveal">8 Days · From $499 · Pay in 4 instalments</p>
   <div class="inclusions-wrapper">
     <div class="inclusion-block reveal">
       <div class="inclusion-heading"><span>✓</span> Included</div>
@@ -869,8 +875,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="inclusion-item"><span class="inclusion-check">✓</span>7 nights twin-share accommodation (private villa + hotels)</div>
         <div class="inclusion-item"><span class="inclusion-check">✓</span>Our Own Private Villa with Private Pool just for us girls!</div>
         <div class="inclusion-item"><span class="inclusion-check">✓</span>6 Brunches, 6 Dinners</div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Travel, ferries & transfers to and from Nusa Lembongan </div>
-        <div class="inclusion-item"><span class="inclusion-check">✓</span>Travel, ferries & transfers to and from Nusa Penida </div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Travel, ferries & transfers to and from Nusa Lembongan</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Travel, ferries & transfers to and from Nusa Penida</div>
         <div class="inclusion-item"><span class="inclusion-check">✓</span>Massage</div>
         <div class="inclusion-item"><span class="inclusion-check">✓</span>ATV Quad Biking Adventure</div>
         <div class="inclusion-item"><span class="inclusion-check">✓</span>Snorkelling trip &amp; All snorkelling gear &amp; equipment</div>
@@ -898,15 +904,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         </div>
       </div>
     </div>
-    </div>
+  </div>
   <br>
   <div style="padding: 2.5px; align-items: center; justify-content: center; text-align: center;">
     <p></p>
-  <div class="hero-spots">‼️ FEW SPOTS LEFT ‼️ <br> ONLY $50 DEPOSIT TO SECURE YOUR SLOT</div>
-   <a href="https://tri.ps/wrAyT" target="_blank" 
-   class="hero-cta"
-   onclick="fbq('track', 'InitiateCheckout')">BOOK NOW</a>
-    </div>
+    <div class="hero-spots">‼️ FEW SPOTS LEFT ‼️ <br> ONLY $50 DEPOSIT TO SECURE YOUR SLOT</div>
+    <!-- Kept as regular link per your instructions — last Book Now in inclusions -->
+    <a href="https://tri.ps/wrAyT" target="_blank"
+      class="hero-cta"
+      onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</a>
+  </div>
 </section>
 
 <!-- REGISTER INTEREST -->
@@ -924,16 +931,22 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <input type="hidden" name="trip" value="Island Life — Bali, Nusa Lembongan & Nusa Penida">
       <input type="hidden" name="_next" value="https://thatgirlexperiences.com/bali.html">
       <button type="submit" class="interest-btn">Save My Spot ✦</button>
-      </form>
-   <p style="text-align:center;margin-top:1.1rem;font-size:0.74rem;color:var(--text-dark);">No spam, ever &nbsp;·&nbsp; Be in the know &nbsp;·&nbsp; No commitments</p>
-   <div style="text-align: center;"> <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278" href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278" style="background-color:#c9a96e;color:#ffffff;border: 0px;border-radius: 5px;font-family: 'Poppins', sans-serif;font-weight: 400;font-size: 14px;-webkit-font-smoothing: antialiased;text-transform: capitalize;padding: 13px 24px;text-decoration: none;text-align: center;line-height: 14px;display: inline-block; cursor: pointer;">Download Itinerary</button> </div> <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> <script src="https://cdn.wetravel.com/widgets/embed_download_brochure.js"></script>
+    </form>
+    <p style="text-align:center;margin-top:1.1rem;font-size:0.74rem;color:var(--text-dark);">No spam, ever &nbsp;·&nbsp; Be in the know &nbsp;·&nbsp; No commitments</p>
+    <div style="text-align: center; margin-top: 0.75rem;">
+      <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget"
+        data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278"
+        href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278">Download Itinerary</button>
+    </div>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <script src="https://cdn.wetravel.com/widgets/embed_download_brochure.js"></script>
   </div>
 </section>
-  
+
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="section-tag reveal"></div>
-  <h2 class="section-title reveal"> <em>FAQs</em></h2>
+  <h2 class="section-title reveal"><em>FAQs</em></h2>
   <p class="section-subtitle reveal">Everything you need to know before joining the trip.</p>
   <div class="faq-wrapper">
     <div class="faq-item reveal" onclick="this.classList.toggle('open')">
@@ -1011,11 +1024,11 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </div>
   </div>
 </div>
-  
-<!-- MOBILE STICKY CTA -->
+
+<!-- MOBILE STICKY CTA — kept as regular link per instructions -->
 <div class="mobile-cta-bar" id="mobileCta">
-  <a href="https://tri.ps/wrAyT" target="_blank" 
-   onclick="fbq('track', 'InitiateCheckout')">BOOK NOW</a>
+  <a href="https://tri.ps/wrAyT" target="_blank"
+    onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</a>
 </div>
 
 <!-- CONTACT -->
@@ -1023,8 +1036,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="section-tag reveal">Get In Touch</div>
   <h2 class="section-title reveal">Have a <em>Question?</em></h2>
   <p class="section-subtitle reveal">We'd love to hear from you! Fill in the form below & we'll get back to you as soon as possible.</p>
-
- <form action="https://formspree.io/f/xeerjyzr" method="POST" style="max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:1.35rem;" class="reveal">
+  <form action="https://formspree.io/f/xeerjyzr" method="POST" style="max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:1.35rem;" class="reveal">
     <div class="contact-name-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
       <div style="display:flex;flex-direction:column;gap:0.45rem;">
         <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">First Name</label>
@@ -1051,7 +1063,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;resize:vertical;transition:border-color 0.3s;"
         onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'"></textarea>
     </div>
-    <input type="hidden" name="_subject" value="New enquiry from That Girl Experiences website (Bali Island Life Trip)">
+    <input type="hidden" name="_subject" value="New enquiry from TGE ISLAND LIFE TRIP WEBSITE (Bali Island Life Trip)">
     <input type="hidden" name="_next" value="https://thatgirlexperiences.com">
     <button type="submit"
       style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--white);border:none;padding:1.15rem 3rem;font-family:'Jost',sans-serif;font-size:0.88rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;border-radius:60px;cursor:pointer;transition:all 0.4s ease;box-shadow:0 8px 30px rgba(201,169,110,0.3);"
@@ -1062,12 +1074,17 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </form>
 </section>
 
-  
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-brand">That Girl Experiences</div>
-  <p class="footer-disclaimer">Travel insurance is mandatory for all participants. For all enquiries please contact thatgirlexperiences@gmail.com </p>
+  <p class="footer-disclaimer">For all enquiries please contact thatgirlexperiences@gmail.com</p>
 </footer>
+
+<!-- ============================================================ -->
+<!-- WETRAVEL CHECKOUT EMBED — loaded once, initialises all       -->
+<!-- .wtrvl-checkout_button elements on the page                  -->
+<!-- ============================================================ -->
+<script src="https://cdn.wetravel.com/widgets/embed_checkout.js"></script>
 
 <script>
   /* Nav scroll + mobile sticky CTA */
@@ -1089,14 +1106,12 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   const track = document.getElementById('slideshowTrack');
   const slides = track.querySelectorAll('.slide');
   const dotsEl = document.getElementById('slideDots');
-
   slides.forEach((_, i) => {
     const d = document.createElement('button');
     d.className = 'slide-dot' + (i === 0 ? ' active' : '');
     d.onclick = () => goTo(i);
     dotsEl.appendChild(d);
   });
-
   function goTo(n) {
     cur = (n + slides.length) % slides.length;
     track.style.transform = `translateX(-${cur * 100}%)`;
@@ -1104,10 +1119,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   }
   function moveSlide(dir) { goTo(cur + dir); }
   setInterval(() => moveSlide(1), 5000);
-
-  /* Swipe support for mobile */
-  let touchStartX = 0;
-  let touchEndX = 0;
+  let touchStartX = 0, touchEndX = 0;
   track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
   track.addEventListener('touchend', e => {
     touchEndX = e.changedTouches[0].screenX;
@@ -1172,79 +1184,79 @@ Tawk_API.customStyle = {
 <!--End of Tawk.to Script-->
 
 <script>
-(function() {
-  const popup = document.getElementById('giveawayPopup');
-  const overlay = document.getElementById('popupOverlay');
-  const closeBtn = document.getElementById('popupClose');
-  const form = document.getElementById('giveawayForm');
-  const initial = document.getElementById('giveawayInitial');
-  const success = document.getElementById('giveawaySuccess');
-  const submitBtn = document.getElementById('giveawaySubmitBtn');
-  const copyBtn = document.getElementById('copyCodeBtn');
-  const codeText = document.getElementById('discountCodeText');
-  if (!popup) return;
-  const STORAGE_KEY = 'tge_giveaway_seen';
-  const SUCCESS_KEY = 'tge_giveaway_entered';
-  if (sessionStorage.getItem(STORAGE_KEY) && !sessionStorage.getItem(SUCCESS_KEY)) return;
-  let shown = false;
-  function showPopup() {
-    if (shown) return; shown = true;
-    popup.classList.add('show'); popup.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    if (sessionStorage.getItem(SUCCESS_KEY)) { initial.style.display = 'none'; success.classList.add('show'); }
-  }
-  function hidePopup() {
-    popup.classList.remove('show'); popup.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = ''; sessionStorage.setItem(STORAGE_KEY, '1');
-  }
-  setTimeout(showPopup, 25000);
-  function onScroll() {
-    if (shown) { window.removeEventListener('scroll', onScroll); return; }
-    const docH = document.documentElement.scrollHeight - window.innerHeight;
-    if (docH > 0 && window.scrollY / docH > 0.30) showPopup();
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  closeBtn.addEventListener('click', hidePopup);
-  overlay.addEventListener('click', hidePopup);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup.classList.contains('show')) hidePopup(); });
-  if (form) {
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      submitBtn.disabled = true; submitBtn.textContent = 'Entering...';
-      const formData = new FormData(form);
-      formData.append('_subject', '🎁 GIVEAWAY ENTRY — Island Life Trip + $100 code (Bali Page)');
-      formData.append('entry_type', 'Giveaway popup — Bali trip page');
-      try {
-        const res = await fetch('https://formspree.io/f/mkokzzow', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
-        if (res.ok) {
-          sessionStorage.setItem(SUCCESS_KEY, '1'); sessionStorage.setItem(STORAGE_KEY, '1');
-          initial.style.display = 'none'; success.classList.add('show');
-          if (window.fbq) fbq('track', 'Lead');
-          if (window.ttq && typeof window.ttq.track === 'function') window.ttq.track('CompleteRegistration', { content_name: 'Giveaway Entry - Bali' });
-        } else { throw new Error(); }
-      } catch(err) {
-        submitBtn.disabled = false; submitBtn.textContent = 'Enter & Get $100 OFF ✨';
-        alert('Something went wrong — please DM us on Instagram or try again.');
-      }
-    });
-  }
-  if (copyBtn && codeText) {
-    copyBtn.addEventListener('click', function() {
-      const code = codeText.textContent.trim();
-      if (navigator.clipboard) { navigator.clipboard.writeText(code).catch(() => {}); }
-      copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied');
-      setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 2200);
-    });
-  }
-})();
+  /* Giveaway popup */
+  (function() {
+    const popup = document.getElementById('giveawayPopup');
+    const overlay = document.getElementById('popupOverlay');
+    const closeBtn = document.getElementById('popupClose');
+    const form = document.getElementById('giveawayForm');
+    const initial = document.getElementById('giveawayInitial');
+    const success = document.getElementById('giveawaySuccess');
+    const submitBtn = document.getElementById('giveawaySubmitBtn');
+    const copyBtn = document.getElementById('copyCodeBtn');
+    const codeText = document.getElementById('discountCodeText');
+    if (!popup) return;
+    const STORAGE_KEY = 'tge_giveaway_seen';
+    const SUCCESS_KEY = 'tge_giveaway_entered';
+    if (sessionStorage.getItem(STORAGE_KEY) && !sessionStorage.getItem(SUCCESS_KEY)) return;
+    let shown = false;
+    function showPopup() {
+      if (shown) return; shown = true;
+      popup.classList.add('show'); popup.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (sessionStorage.getItem(SUCCESS_KEY)) { initial.style.display = 'none'; success.classList.add('show'); }
+    }
+    function hidePopup() {
+      popup.classList.remove('show'); popup.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; sessionStorage.setItem(STORAGE_KEY, '1');
+    }
+    setTimeout(showPopup, 25000);
+    function onScroll() {
+      if (shown) { window.removeEventListener('scroll', onScroll); return; }
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      if (docH > 0 && window.scrollY / docH > 0.30) showPopup();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    closeBtn.addEventListener('click', hidePopup);
+    overlay.addEventListener('click', hidePopup);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup.classList.contains('show')) hidePopup(); });
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true; submitBtn.textContent = 'Entering...';
+        const formData = new FormData(form);
+        formData.append('_subject', '🎁 GIVEAWAY ENTRY — Island Life Trip + AUD$100 code (Bali Page)');
+        formData.append('entry_type', 'Giveaway popup — Bali trip page');
+        try {
+          const res = await fetch('https://formspree.io/f/mkokzzow', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+          if (res.ok) {
+            sessionStorage.setItem(SUCCESS_KEY, '1'); sessionStorage.setItem(STORAGE_KEY, '1');
+            initial.style.display = 'none'; success.classList.add('show');
+            if (window.fbq) fbq('track', 'Lead');
+            if (window.ttq && typeof window.ttq.track === 'function') window.ttq.track('CompleteRegistration', { content_name: 'Giveaway Entry - Bali' });
+          } else { throw new Error(); }
+        } catch(err) {
+          submitBtn.disabled = false; submitBtn.textContent = 'Enter & Get AUD$100 OFF ✨';
+          alert('Something went wrong — please DM us on Instagram or try again.');
+        }
+      });
+    }
+    if (copyBtn && codeText) {
+      copyBtn.addEventListener('click', function() {
+        const code = codeText.textContent.trim();
+        if (navigator.clipboard) { navigator.clipboard.writeText(code).catch(() => {}); }
+        copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied');
+        setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 2200);
+      });
+    }
+  })();
 </script>
 
 <script>
-  /* WeTravel embedded checkout — conversion tracking */
+  /* WeTravel embedded checkout — Purchase conversion tracking */
   window.addEventListener('message', function(e) {
     if (!e.data || typeof e.data !== 'object') return;
     const d = e.data;
-    // WeTravel fires this on successful booking completion
     if (
       d.type === 'wetravel:checkout:complete' ||
       d.event === 'booking_complete' ||
@@ -1257,6 +1269,6 @@ Tawk_API.customStyle = {
     }
   });
 </script>
-  
+
 </body>
 </html>
