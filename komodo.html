@@ -231,6 +231,23 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .final-btn { display: inline-block; background: var(--white); color: var(--ocean-deep); border: none; padding: 1.2rem 2.5rem; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.15); position: relative; z-index: 1; }
   .final-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(0,0,0,0.22); }
 
+   /* ── REGISTER YOUR INTEREST SECTION ── */
+  .interest-section { background: linear-gradient(135deg, #ffffff 0%, #D4EDEF 100%); border-top: 1px solid rgba(201,169,110,0.12); border-bottom: 1px solid rgba(201,169,110,0.12); padding: 2rem 1.5rem; }
+  .interest-inner { max-width: 860px; margin: 0 auto; }
+  .interest-form { display: flex; gap: 0.85rem; align-items: flex-end; flex-wrap: wrap; }
+  .interest-field { flex: 1; min-width: min(100%, 160px); display: flex; flex-direction: column; gap: 0.35rem; }
+  .interest-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dark); font-weight: 500; padding-left: 0.25rem; }
+  .interest-input { padding: 0.85rem 1.25rem; border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.92rem; color: var(--text-dark); background: rgba(255,255,255,0.9); outline: none; width: 100%; transition: border-color 0.3s, box-shadow 0.3s; }
+  .interest-input:focus { border-color: var(--ocean); box-shadow: 0 0 0 3px rgba(74,155,173,0.12); }
+  .interest-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; border: none; padding: 0.85rem 1.75rem; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 16px rgba(201,169,110,0.3); white-space: nowrap; transition: box-shadow 0.3s; flex-shrink: 0; }
+  .interest-btn:hover { box-shadow: 0 8px 24px rgba(201,169,110,0.48); }
+  @media (max-width: 540px) {
+    .interest-section { padding: 2.5rem 1rem; }
+    .interest-form { flex-direction: column; align-items: center; }
+    .interest-field { min-width: unset; width: 100%; }
+    .interest-btn { width: 100%; max-width: 320px; text-align: center; padding: 1rem; }
+  }
+  
   /* FOOTER */
   .footer { background: var(--cream); padding: 2.5rem 2rem; text-align: center; }
   .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.6rem; }
