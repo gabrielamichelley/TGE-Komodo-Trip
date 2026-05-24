@@ -1172,7 +1172,55 @@ function renderReveal({ booked }) {
 
   if (window.fbq) try { fbq('track', 'CompleteRegistration', { content_name: primary.name }); } catch(e) {}
 }
-
+  
+/* ============ EMAIL ME MY REPORT ============ */
+async function emailMyReport() {
+  if (state.emailSent) {
+    toast("Already sent to " + state.details.email + " ✨");
+    return;
+  }
+  const btn = $("emailMeBtn");
+  const primary = IDENTITIES[state.result.primaryKey];
+  const secondary = state.result.secondaryKey ? IDENTITIES[state.result.secondaryKey] : null;
+ 
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+ 
+  const fd = new FormData();
+  fd.append("email", state.details.email);
+  fd.append("name", state.details.name || "babe");
+  fd.append("_subject", "Your Travel Identity ✨ — " + primary.name);
+  fd.append("identity_name", primary.name);
+  fd.append("identity_emoji", primary.emoji);
+  fd.append("identity_tagline", primary.tagline);
+  fd.append("identity_description", primary.desc.join("\n\n").replace(/<\/?em>/g, "").replace(/<\/?p>/g, ""));
+  fd.append("identity_keywords", primary.keywords.join(" · "));
+  fd.append("secondary_name", secondary ? secondary.name : "");
+  fd.append("secondary_emoji", secondary ? secondary.emoji : "");
+  fd.append("top_5", state.result.top5.map(r => `${IDENTITIES[r.key].name}: ${r.pct}%`).join("\n"));
+  fd.append("dna_breakdown", state.result.dnaBreakdown.map(d => `${d.label}: ${d.pct}%`).join("\n"));
+ 
+  if (FORMSPREE_REPORT && FORMSPREE_REPORT.startsWith("https://formspree.io/")) {
+    try {
+      const res = await fetch(FORMSPREE_REPORT, { method: "POST", body: fd, headers: { Accept: "application/json" } });
+      if (res.ok) {
+        state.emailSent = true;
+        btn.textContent = "✓ Sent to " + state.details.email;
+        btn.classList.add("sent");
+        toast("Report sent! Check your inbox ✨");
+      } else throw new Error("send failed");
+    } catch (err) {
+      btn.textContent = "📧 Email me my full report";
+      btn.disabled = false;
+      toast("Couldn't send right now — try again");
+    }
+  } else {
+    btn.textContent = "📧 Email me my full report";
+    btn.disabled = false;
+    toast("Email feature not configured yet — please notify Gabs");
+  }
+}
+ 
 /* ============ RESET ============ */
 function resetAll() {
   state.currentQuestion = 0;
