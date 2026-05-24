@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
+<title>Travel Identity — That Girl Experiences</title>
+<meta name="description" content="Discover your unique Travel Identity & the version of you that shows up on a TGE trip.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap"></noscript>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1464656837954144');
+fbq('track', 'PageView');
+</script>
+
+<style>
+  :root {
+    --gold: #C9A96E; --gold-light: #E8D5A3; --rose: #C97B84;
+    --cream: #FDF8F0; --cream-warm: #FAF0E4;
+    --ocean: #4A9BAD; --ocean-deep: #2D7A8C; --ocean-light: #8CC5D0;
+    --teal: #5FB8C4; --teal-soft: #D4EDEF; --lagoon: #B5DDE3;
+    --text-dark: #1C2B2D; --text-light: #4A5E61; --white: #FFFFFF;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(170deg, var(--cream) 0%, var(--teal-soft) 60%, var(--lagoon) 100%);
+    background-attachment: fixed;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    min-height: 100vh; min-height: 100svh;
+  }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999;
+  }
+
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(253,248,240,0.85); backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(201,169,110,0.12);
+  }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-decoration: none; }
+  .nav-back { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; transition: color 0.3s; }
+  .nav-back:hover { color: var(--gold); }
+
+  .wrap {
+    padding-top: calc(4rem + env(safe-area-inset-top));
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+    min-height: 100vh; min-height: 100svh;
+    display: flex; flex-direction: column;
+    position: relative; z-index: 1;
+  }
+  .screen { display: none; padding: 1.5rem 1.5rem; flex: 1; }
+  .screen.active { display: flex; flex-direction: column; }
+  @keyframes fadeInRight { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes barFill { from { width: 0; } }
+
+  /* INTRO */
+  .intro { text-align: center; max-width: 640px; margin: 0 auto; align-items: center; justify-content: center; flex: 1; padding-top: 2rem; padding-bottom: 2rem; }
+  .tag { display: inline-block; background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; padding: 0.5rem 1.4rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; backdrop-filter: blur(8px); }
+  .intro-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 9vw, 4rem); font-weight: 600; line-height: 1.05; color: var(--text-dark); margin-bottom: 1.25rem; }
+  .intro-title em { font-style: italic; color: var(--ocean-deep); }
+  .intro-sub { font-size: clamp(1rem, 2.2vw, 1.12rem); line-height: 1.75; color: var(--text-dark); margin-bottom: 1.5rem; max-width: 540px; }
+  .intro-sub strong { font-weight: 600; }
+  .intro-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.55rem; margin-bottom: 2.25rem; }
+  .intro-meta-pill { background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; padding: 0.45rem 1.1rem; font-size: 0.74rem; font-weight: 500; color: var(--text-dark); backdrop-filter: blur(6px); }
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--white); border: none;
+    padding: 1.1rem 2.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.92rem; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase; border-radius: 60px; cursor: pointer;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 30px rgba(201,169,110,0.4);
+    width: 100%; max-width: 340px;
+    text-align: center;
+  }
+  .btn-primary:hover, .btn-primary:focus { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.55); }
+  .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .btn-secondary {
+    display: inline-block;
+    background: rgba(255,255,255,0.9);
+    color: var(--text-dark);
+    border: 1px solid rgba(201,169,110,0.3);
+    padding: 0.9rem 1.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; border-radius: 60px;
+    text-decoration: none; cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%; max-width: 340px; text-align: center;
+  }
+  .btn-secondary:hover { background: var(--white); border-color: var(--gold); }
+  .intro-note { margin-top: 1.25rem; font-size: 0.78rem; color: var(--text-light); line-height: 1.5; }
+
+  /* QUIZ */
+  .quiz { max-width: 640px; margin: 0 auto; width: 100%; padding-top: 0.5rem; }
+  .progress-wrap { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+  .progress-back { background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.22); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--text-dark); cursor: pointer; flex-shrink: 0; transition: all 0.3s ease; }
+  .progress-back:hover:not(:disabled) { background: var(--white); }
+  .progress-back:disabled { opacity: 0.35; cursor: not-allowed; }
+  .progress-bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.6); border-radius: 10px; overflow: hidden; border: 1px solid rgba(201,169,110,0.15); }
+  .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 10px; transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1); width: 0%; }
+  .progress-count { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 500; color: var(--text-light); flex-shrink: 0; min-width: 42px; text-align: right; }
+  .progress-count strong { color: var(--gold); font-weight: 600; }
+  .q-number { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-align: center; margin-bottom: 0.65rem; }
+  .q-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.55rem, 5.2vw, 2.3rem); font-weight: 600; line-height: 1.2; color: var(--text-dark); text-align: center; margin-bottom: 1.75rem; padding: 0 0.5rem; }
+  .q-text em { font-style: italic; color: var(--ocean-deep); }
+  .options { display: flex; flex-direction: column; gap: 0.65rem; }
+  .option {
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(201,169,110,0.2);
+    border-radius: 18px;
+    padding: 0.95rem 1.1rem;
+    display: flex; align-items: center; gap: 0.85rem;
+    cursor: pointer; transition: all 0.25s ease;
+    text-align: left;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.97rem; font-weight: 400; line-height: 1.4;
+    color: var(--text-dark);
+    min-height: 56px; width: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .option:hover, .option:focus { border-color: var(--gold); background: var(--white); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,169,110,0.18); outline: none; }
+  .option.selected { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border-color: var(--ocean); box-shadow: 0 8px 24px rgba(74,155,173,0.18); }
+  .option-emoji { font-size: 1.5rem; flex-shrink: 0; line-height: 1; display: flex; align-items: center; justify-content: center; width: 30px; }
+  .option-text { flex: 1; }
+
+  /* FORM SCREENS */
+  .form-screen { max-width: 560px; margin: 0 auto; width: 100%; }
+  .form-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 7vw, 2.8rem); font-weight: 600; line-height: 1.1; color: var(--text-dark); text-align: center; margin-bottom: 0.65rem; }
+  .form-title em { font-style: italic; color: var(--ocean-deep); }
+  .form-sub { font-size: 1rem; line-height: 1.65; color: var(--text-dark); text-align: center; margin-bottom: 2rem; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .form-card { background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); border: 1px solid rgba(201,169,110,0.22); border-radius: 26px; padding: 1.5rem 1.25rem; box-shadow: 0 20px 60px rgba(74,155,173,0.10); }
+  .form-fields { display: flex; flex-direction: column; gap: 0.85rem; }
+  .field { display: flex; flex-direction: column; gap: 0.35rem; }
+  .field-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dark); font-weight: 500; padding-left: 0.4rem; }
+  .field-label .req { color: var(--rose); margin-left: 0.2rem; }
+  .field-label .opt { color: var(--text-light); font-weight: 400; text-transform: none; letter-spacing: normal; font-size: 0.75rem; margin-left: 0.4rem; }
+  .field-input, .field-textarea { padding: 0.85rem 1.15rem; border: 1px solid rgba(201,169,110,0.28); border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 16px; color: var(--text-dark); background: rgba(255,255,255,0.95); outline: none; width: 100%; transition: border-color 0.3s, box-shadow 0.3s; }
+  .field-textarea { border-radius: 18px; min-height: 88px; resize: vertical; }
+  .field-input:focus, .field-textarea:focus { border-color: var(--ocean); box-shadow: 0 0 0 3px rgba(74,155,173,0.12); }
+  .radio-group { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 0.2rem; }
+  .radio-option {
+    display: flex; align-items: center; gap: 0.85rem;
+    padding: 0.95rem 1.1rem;
+    background: rgba(255,255,255,0.7);
+    border: 1.5px solid rgba(201,169,110,0.25);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 0.97rem;
+    color: var(--text-dark);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .radio-option:hover { border-color: var(--gold); background: var(--white); }
+  .radio-dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid rgba(201,169,110,0.4); flex-shrink: 0; position: relative; transition: all 0.25s ease; }
+  .radio-option.checked { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border-color: var(--ocean); box-shadow: 0 4px 16px rgba(74,155,173,0.15); }
+  .radio-option.checked .radio-dot { border-color: var(--ocean); background: var(--ocean); }
+  .radio-option.checked .radio-dot::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 8px; height: 8px; border-radius: 50%; background: var(--white); }
+  .radio-label { flex: 1; font-weight: 400; }
+  .radio-label strong { font-weight: 600; }
+  .radio-label .radio-sub { display: block; font-size: 0.8rem; color: var(--text-light); margin-top: 0.15rem; }
+  .radio-emoji { font-size: 1.4rem; flex-shrink: 0; }
+  .form-cta-wrap { margin-top: 1.5rem; display: flex; justify-content: center; }
+
+  /* REVEAL */
+  .reveal-screen { max-width: 680px; margin: 0 auto; width: 100%; }
+  .reveal-tag-wrap { text-align: center; margin-bottom: 0.5rem; }
+  .result-intro { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 3.5vw, 1.5rem); font-style: italic; color: var(--text-dark); margin-bottom: 0.4rem; }
+  .result-card { background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); border: 1px solid rgba(201,169,110,0.22); border-radius: 26px; padding: 2rem 1.5rem; text-align: center; margin-bottom: 1.25rem; box-shadow: 0 20px 60px rgba(74,155,173,0.12); }
+  .result-emoji { font-size: 3.2rem; line-height: 1; margin-bottom: 0.6rem; display: block; }
+  .result-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 6.5vw, 2.8rem); font-weight: 600; line-height: 1.1; color: var(--text-dark); margin-bottom: 0.4rem; }
+  .result-name em { font-style: italic; color: var(--ocean-deep); }
+  .result-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--gold); margin-bottom: 1.25rem; font-weight: 500; }
+  .result-desc { font-size: 1rem; line-height: 1.8; color: var(--text-dark); text-align: left; margin-bottom: 1.25rem; }
+  .result-desc p { margin-bottom: 0.85rem; }
+  .result-desc p:last-child { margin-bottom: 0; }
+  .result-desc em { font-style: italic; color: var(--ocean-deep); font-weight: 500; }
+  .result-keywords { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; margin-top: 1rem; padding-top: 1.25rem; border-top: 1px dashed rgba(201,169,110,0.25); }
+  .result-keyword { background: var(--teal-soft); color: var(--ocean-deep); font-size: 0.74rem; letter-spacing: 0.04em; padding: 0.34rem 0.85rem; border-radius: 50px; font-weight: 500; }
+
+  /* Secondary card */
+  .secondary-card { background: rgba(255,255,255,0.65); backdrop-filter: blur(10px); border: 1px dashed rgba(201,169,110,0.3); border-radius: 20px; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; text-align: center; }
+  .secondary-label { font-size: 0.66rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.45rem; }
+  .secondary-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--text-dark); }
+  .secondary-name em { font-style: italic; }
+
+  /* Trip CTA */
+  .trip-cta-card { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border: 1px solid rgba(74,155,173,0.2); border-radius: 26px; padding: 1.5rem 1.25rem; margin-bottom: 1.25rem; text-align: center; }
+  .trip-cta-tag { font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.5rem; }
+  .trip-cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; line-height: 1.2; }
+  .trip-cta-title em { font-style: italic; color: var(--ocean-deep); }
+  .trip-cta-sub { font-size: 0.95rem; line-height: 1.65; color: var(--text-dark); margin-bottom: 1.25rem; text-align: left; }
+  .trip-cta-buttons { display: flex; flex-direction: column; gap: 0.65rem; align-items: center; }
+
+  /* Top 5 identities ranking */
+  .breakdown-card { background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); border: 1px solid rgba(201,169,110,0.22); border-radius: 26px; padding: 1.5rem 1.25rem; margin-bottom: 1.25rem; }
+  .breakdown-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--text-dark); text-align: center; margin-bottom: 0.3rem; line-height: 1.2; }
+  .breakdown-title em { font-style: italic; color: var(--ocean-deep); }
+  .breakdown-sub { font-size: 0.85rem; color: var(--text-light); text-align: center; margin-bottom: 1.25rem; }
+  .rank-row { display: flex; align-items: center; gap: 0.8rem; padding: 0.5rem 0; }
+  .rank-emoji { font-size: 1.3rem; width: 28px; text-align: center; flex-shrink: 0; }
+  .rank-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: var(--text-dark); flex-shrink: 0; min-width: 28%; max-width: 38%; }
+  .rank-name em { font-style: italic; }
+  .rank-bar { flex: 1; height: 8px; background: rgba(201,169,110,0.12); border-radius: 10px; overflow: hidden; }
+  .rank-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 10px; transform-origin: left; animation: barFill 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .rank-row.primary .rank-fill { background: linear-gradient(90deg, var(--ocean-deep), var(--ocean)); }
+  .rank-pct { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 600; color: var(--text-dark); min-width: 38px; text-align: right; flex-shrink: 0; }
+  .rank-row.primary .rank-pct { color: var(--ocean-deep); }
+
+  /* DNA breakdown */
+  .dna-row { display: flex; align-items: center; gap: 0.8rem; padding: 0.5rem 0; }
+  .dna-label { font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-dark); min-width: 28%; max-width: 30%; flex-shrink: 0; letter-spacing: 0.02em; }
+  .dna-bar { flex: 1; height: 10px; background: rgba(201,169,110,0.12); border-radius: 10px; overflow: hidden; }
+  .dna-fill { height: 100%; border-radius: 10px; animation: barFill 1s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .dna-fill.adventure { background: linear-gradient(90deg, #C97B84, #E8B4B8); }
+  .dna-fill.culture { background: linear-gradient(90deg, #C9A96E, #E8D5A3); }
+  .dna-fill.luxury { background: linear-gradient(90deg, #2D7A8C, #5FB8C4); }
+  .dna-fill.social { background: linear-gradient(90deg, #E8B4B8, #F2D7D5); }
+  .dna-fill.wellness { background: linear-gradient(90deg, #5FB8C4, #8CC5D0); }
+  .dna-pct { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 600; color: var(--text-dark); min-width: 38px; text-align: right; flex-shrink: 0; }
+
+  /* Reveal actions */
+  .reveal-actions { display: flex; flex-direction: column; gap: 0.55rem; align-items: center; margin-top: 0.5rem; padding-top: 0.75rem; }
+  .text-link { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding: 0.5rem 1rem; font-weight: 500; transition: color 0.3s; cursor: pointer; background: none; border: none; font-family: 'Jost', sans-serif; }
+  .text-link:hover { color: var(--gold); }
+  .text-link.sent { color: #4caf50; }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: calc(1rem + env(safe-area-inset-bottom));
+    left: 50%; transform: translateX(-50%) translateY(120%);
+    background: var(--text-dark); color: var(--white);
+    padding: 0.85rem 1.4rem; border-radius: 50px;
+    font-size: 0.84rem; font-weight: 500;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    z-index: 10000;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    max-width: 92%; text-align: center;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* RESPONSIVE */
+  @media (min-width: 540px) {
+    .screen { padding: 2rem; }
+    .options { gap: 0.8rem; }
+    .option { padding: 1.1rem 1.3rem; font-size: 1.04rem; }
+    .option-emoji { font-size: 1.7rem; }
+    .result-card { padding: 2.5rem 2rem; }
+    .form-card { padding: 2rem 1.75rem; }
+    .trip-cta-card { padding: 2rem 1.75rem; }
+    .breakdown-card { padding: 2rem 1.75rem; }
+  }
+  @media (min-width: 768px) {
+    .nav { padding: 1.1rem 2rem; }
+    .wrap { padding-top: calc(5rem + env(safe-area-inset-top)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="https://thatgirlexperiences.com">That Girl Experiences</a>
+  <a class="nav-back" href="https://thatgirlexperiences.com">← Back to site</a>
+</nav>
+
+<main class="wrap">
+
+  <!-- INTRO -->
+  <section class="screen intro active" id="screenIntro">
+    <div class="tag">Travel Identity</div>
+    <h1 class="intro-title">Discover Your <em>Travel Identity</em></h1>
+    <p class="intro-sub">
+      Answer 12 questions and we'll uncover your unique <strong>travel personality &amp; identity</strong>: the experiences you crave, the energy you bring, and the destinations that call to you. Discover the version of you that shows up on a TGE trip.
+    </p>
+    <div class="intro-meta">
+      <span class="intro-meta-pill">✨ 14 Travel Identities</span>
+      <span class="intro-meta-pill">⏱ ~3 minutes</span>
+      <span class="intro-meta-pill">🤍 Used for matching</span>
+    </div>
+    <button class="btn-primary" id="startBtn" type="button">Begin Your Journey ✦</button>
+    <p class="intro-note">Used to match you with like-minded girls &amp; dream roommates on your TGE trip.</p>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="screen quiz" id="screenQuiz">
+    <div class="progress-wrap">
+      <button class="progress-back" id="backBtn" type="button" aria-label="Previous" disabled>←</button>
+      <div class="progress-bar-track"><div class="progress-bar-fill" id="progressFill"></div></div>
+      <div class="progress-count"><strong id="qCurrent">1</strong>/<span id="qTotal">12</span></div>
+    </div>
+    <div class="q-number" id="qNumber">Question 01</div>
+    <h2 class="q-text" id="qText">Loading...</h2>
+    <div class="options" id="qOptions"></div>
+  </section>
+
+  <!-- DETAILS CAPTURE -->
+  <section class="screen form-screen" id="screenDetails">
+    <h2 class="form-title">You're <em>almost there</em> ✨</h2>
+    <p class="form-sub">A few quick details before we reveal who you become on a TGE trip — used to match you with your dream roommates &amp; trip soulmates.</p>
+    <div class="form-card">
+      <form id="detailsForm" novalidate>
+        <div class="form-fields">
+          <div class="field">
+            <label class="field-label">Full Name <span class="req">*</span></label>
+            <input type="text" name="name" required placeholder="First &amp; last name" class="field-input" autocomplete="name" id="d_name">
+          </div>
+          <div class="field">
+            <label class="field-label">Email <span class="req">*</span></label>
+            <input type="email" name="email" required placeholder="your@email.com" class="field-input" autocomplete="email" id="d_email">
+          </div>
+          <div class="field">
+            <label class="field-label">WhatsApp Number <span class="req">*</span></label>
+            <input type="tel" name="whatsapp" required placeholder="+61 400 000 000" class="field-input" autocomplete="tel" id="d_whatsapp">
+          </div>
+          <div class="field" style="margin-top: 0.5rem;">
+            <label class="field-label">Have you booked your TGE trip? <span class="req">*</span></label>
+            <div class="radio-group" id="bookedRadios">
+              <label class="radio-option" data-value="yes"><span class="radio-dot"></span><span class="radio-label"><strong>Yes</strong><span class="radio-sub">I've paid my deposit ✨</span></span></label>
+              <label class="radio-option" data-value="not-yet"><span class="radio-dot"></span><span class="radio-label"><strong>Not yet</strong><span class="radio-sub">But I'm seriously considering it</span></span></label>
+              <label class="radio-option" data-value="no"><span class="radio-dot"></span><span class="radio-label"><strong>No</strong><span class="radio-sub">Just exploring for now</span></span></label>
+            </div>
+          </div>
+        </div>
+        <div class="form-cta-wrap">
+          <button type="submit" class="btn-primary">Continue →</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- BOOKED FOLLOW-UP -->
+  <section class="screen form-screen" id="screenBooked">
+    <h2 class="form-title">You're <em>in</em> ✨</h2>
+    <p class="form-sub">We'll use this to match you with your roommate &amp; trip soulmates based on your Travel Identity.</p>
+    <div class="form-card">
+      <form id="bookedForm" novalidate>
+        <div class="form-fields">
+          <div class="field">
+            <label class="field-label">Which trip are you joining? <span class="opt">(optional)</span></label>
+            <input type="text" name="trip_joining" placeholder="e.g. Island Life Bali — Feb 2026" class="field-input" id="b_trip">
+          </div>
+          <div class="field">
+            <label class="field-label">Anything else? <span class="opt">(roommate prefs, dietary, etc. — optional)</span></label>
+            <textarea name="preferences" placeholder="Roommate preferences, dietary needs, accessibility, anything you'd like Gabs to know..." class="field-textarea" id="b_prefs"></textarea>
+          </div>
+        </div>
+        <div class="form-cta-wrap">
+          <button type="submit" class="btn-primary" id="bookedSubmit">Reveal My Identity ✦</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- NOT-BOOKED FOLLOW-UP -->
+  <section class="screen form-screen" id="screenNotBooked">
+    <h2 class="form-title">Let's find <em>your trip</em> ✨</h2>
+    <p class="form-sub">Which trip is calling your name? If you're not sure, we'll recommend one based on your Travel Identity.</p>
+    <div class="form-card">
+      <form id="notBookedForm" novalidate>
+        <div class="form-fields">
+          <div class="field">
+            <label class="field-label">Which trip are you interested in? <span class="req">*</span></label>
+            <div class="radio-group" id="tripRadios">
+              <label class="radio-option" data-value="island-life">
+                <span class="radio-emoji">🌴</span>
+                <span class="radio-dot"></span>
+                <span class="radio-label"><strong>Island Life — Bali</strong><span class="radio-sub">Bali + Nusa Lembongan + Nusa Penida · 8 days</span></span>
+              </label>
+              <label class="radio-option" data-value="becoming-her">
+                <span class="radio-emoji">🐋</span>
+                <span class="radio-dot"></span>
+                <span class="radio-label"><strong>Becoming HER — Komodo</strong><span class="radio-sub">Komodo Islands + Labuan Bajo · 6 days</span></span>
+              </label>
+              <label class="radio-option" data-value="not-sure">
+                <span class="radio-emoji">✨</span>
+                <span class="radio-dot"></span>
+                <span class="radio-label"><strong>Not sure yet</strong><span class="radio-sub">Recommend one for me based on my identity</span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-cta-wrap">
+          <button type="submit" class="btn-primary" id="notBookedSubmit">Reveal My Identity ✦</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- REVEAL -->
+  <section class="screen reveal-screen" id="screenReveal">
+    <div class="reveal-tag-wrap"><div class="tag">Your Travel Identity</div></div>
+    <p class="result-intro">You are…</p>
+    <div class="result-card">
+      <span class="result-emoji" id="resultEmoji">🌙</span>
+      <h2 class="result-name" id="resultName">The Soul Wanderer</h2>
+      <div class="result-tagline" id="resultTagline"></div>
+      <div class="result-desc" id="resultDesc"></div>
+      <div class="result-keywords" id="resultKeywords"></div>
+    </div>
+    <div class="secondary-card" id="secondaryCard" style="display:none;">
+      <div class="secondary-label">With a hint of</div>
+      <div class="secondary-name" id="secondaryName"></div>
+    </div>
+
+    <!-- Trip CTA (dynamic) -->
+    <div class="trip-cta-card" id="tripCtaCard" style="display:none;">
+      <div class="trip-cta-tag" id="tripCtaTag">Recommended for you</div>
+      <h3 class="trip-cta-title" id="tripCtaTitle"></h3>
+      <p class="trip-cta-sub" id="tripCtaSub"></p>
+      <div class="trip-cta-buttons" id="tripCtaButtons"></div>
+    </div>
+
+    <!-- Booked confirmation -->
+    <div class="trip-cta-card" id="bookedConfirmCard" style="display:none;">
+      <h3 class="trip-cta-title">See you in <em>paradise</em> ✨</h3>
+      <p class="trip-cta-sub">Gabs has your Travel Identity &amp; will use it to match you with your trip soulmates &amp; dream roommates. Expect a personal message from her soon.</p>
+      <div class="trip-cta-buttons">
+        <a href="https://thatgirlexperiences.com" class="btn-secondary">← Back to TGE</a>
+      </div>
+    </div>
+
+    <!-- Top 5 -->
+    <div class="breakdown-card">
+      <h3 class="breakdown-title">Your <em>Top 5</em> Travel Identities</h3>
+      <p class="breakdown-sub">How strongly each identity shows up in your answers</p>
+      <div id="top5List"></div>
+    </div>
+
+    <!-- DNA -->
+    <div class="breakdown-card">
+      <h3 class="breakdown-title">Your <em>Travel DNA</em></h3>
+      <p class="breakdown-sub">The 5 forces driving how you travel</p>
+      <div id="dnaList"></div>
+    </div>
+
+    <div class="reveal-actions">
+      <button class="text-link" type="button" id="emailMeBtn">📧 Email me my full report</button>
+      <button class="text-link" type="button" id="retakeBtn">↺ Start again</button>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===========================================================
+   TGE TRAVEL IDENTITY — 14 identities, 12 questions
+   Branched lead capture + trip recommendation
+   =========================================================== */
+
+const FORMSPREE_BOOKED   = "https://formspree.io/f/mojbwoyj";
+const FORMSPREE_LEADS    = "https://formspree.io/f/xgoqyjra";
+const FORMSPREE_REPORT   = "REPLACE_WITH_REPORT_FORMSPREE_ID"; // ⚠️ See setup notes
+
+const URL_ISLAND_LIFE    = "https://thatgirlexperiences.com/bali.html";
+const URL_BECOMING_HER   = "https://thatgirlexperiences.com/komodo.html";
+const URL_TGE_HOME       = "https://thatgirlexperiences.com";
+
+/* ============ IDENTITIES (14) ============ */
+const IDENTITIES = {
+  adventurer: {
+    name: "The Adventurer", emoji: "🏔",
+    tagline: "Thrill-seeking, adrenaline-driven",
+    desc: [
+      "You are made of motion. While others are deciding which beach to lounge on, you're already scoping out the next ridge or asking the guide if the snorkel trip is too tame. <em>The Adventurer doesn't go on holiday to recover — she goes to come alive.</em>",
+      "You're drawn to the edges: the sunrise hike, the boat at 5am to chase manta rays, the volcanic ridge that requires a real climb. You measure trips not by what you saw, but by what you survived — and by how different you feel coming home.",
+      "On a TGE trip, you're first off the boat, last off the trail, and the one in the photos with the wildest hair and the biggest grin. You don't travel to escape life — you travel to find out what you're really made of."
+    ],
+    keywords: ["Bold", "Adrenaline", "Fearless", "Edge-seeker", "Untameable", "Brave"],
+    recommendedTrip: "becoming-her"
+  },
+  culture: {
+    name: "The Culture Seeker", emoji: "🏛",
+    tagline: "History, art, and deep immersion",
+    desc: [
+      "You travel to <em>understand</em>. While others snap a photo at the temple and move on, you're the one hanging back to read every plaque, ask every question, and learn the meaning behind the offerings on the doorstep. The Culture Seeker collects context, not souvenirs.",
+      "You're drawn to depth — the local market over the tourist street, the conversation with the auntie over the package tour, the ceremony you stumbled into and didn't post about because some moments aren't for the algorithm. You want to know <em>why</em>, not just <em>what</em>.",
+      "On a TGE trip, you're the one asking the boat captain about his family, learning the Balinese names for everything, and coming home with a notebook full of phrases, recipes, and a deeper sense of where you've been. You travel to expand — and you always do."
+    ],
+    keywords: ["Curious", "Reverent", "Story-led", "Thoughtful", "Local-loving", "Intentional"],
+    recommendedTrip: "island-life"
+  },
+  luxe: {
+    name: "The Luxe Queen", emoji: "👑",
+    tagline: "Five-star everything, refined taste",
+    desc: [
+      "You don't apologise for what you like — and what you like is <em>good</em>. The Luxe Queen knows that quality over quantity isn't snobbery, it's clarity. You'd rather take one beautifully done trip than five mediocre ones. You travel to be restored, not depleted.",
+      "You're drawn to boutique stays, slow service, beautiful bathrooms, a glass of something decent at sunset. You know that linen sheets, a thoughtfully-poured wine, and an unhurried morning aren't extras — they're the whole point. You've worked too hard for the basic version.",
+      "On a TGE trip, you notice the details — the towel folds, the dinner setting, the way the host says hello. You came to be treated <em>exactly</em> the way you deserve. And you should be."
+    ],
+    keywords: ["Refined", "Elevated", "Discerning", "Self-honouring", "Quality-led", "Polished"],
+    recommendedTrip: "becoming-her"
+  },
+  social: {
+    name: "The Social Butterfly", emoji: "🦋",
+    tagline: "Connection is the destination",
+    desc: [
+      "For you, the destination isn't a place — it's the <em>people</em> you meet there. The Social Butterfly travels for the friendships, the late-night conversations, the inside jokes that turn strangers into chosen family.",
+      "You know everyone's name by day two. You're the one who plans the dinner, starts the group chat, and makes the shy girl feel at home. You don't just make friends — you collect lifelong ones, and you stay in touch.",
+      "On a TGE trip, you're the heart. By day three you've photographed every girl, started a Spotify playlist for the group, and decided which of them you're flying to see next year. You travel to expand your circle — and you always come home with it bigger, brighter, richer."
+    ],
+    keywords: ["Warm", "Magnetic", "Open-hearted", "Friendship-first", "Light-bringing", "Connector"],
+    recommendedTrip: "island-life"
+  },
+  wellness: {
+    name: "The Wellness Goddess", emoji: "🧘‍♀️",
+    tagline: "Mind-body-soul reset",
+    desc: [
+      "For you, the body is the holy place — and travel is one of the most sacred rituals. The Wellness Goddess doesn't go on holiday <em>from</em> her routine; she takes her routine <em>on</em> holiday. Yoga mat? Packed. Magnesium? Packed.",
+      "You travel to <em>reset</em>, not to escape. Sunrise yoga, sound baths at sunset, breathwork on the boat, slow mornings with journals and lemon water — these aren't extras for you, they're the trip. You leave more aligned than you arrived, every single time.",
+      "On a TGE trip, you're the one stretching on the deck while everyone else is hungover. You'll find the best yoga studio in Ubud, the best smoothie bowl on Nusa, the best spa in Bali — and quietly invite the other girls. Your glow is contagious."
+    ],
+    keywords: ["Mindful", "Glowy", "Aligned", "Restorative", "Embodied", "Soft"],
+    recommendedTrip: "island-life"
+  },
+  golden: {
+    name: "The Golden Explorer", emoji: "✨",
+    tagline: "Adventure meets luxury",
+    desc: [
+      "You refuse to choose between the volcano hike and the boutique villa. The Golden Explorer wants the bucket-list <em>and</em> the bedding, the trekking <em>and</em> the truffle pasta after. You've decided adventure shouldn't cost you comfort — and you're not negotiating.",
+      "You're drawn to elevated experiences — private liveaboards instead of group boats, curated hikes instead of crowded tours, beautiful stays in remote places. Adventure with intention. Wildness with refinement. You don't slum it for the story.",
+      "On a TGE trip, you're the one who books the spa for after the manta ray swim. You came for the bucket-list moments — but you also brought your silk pyjamas, and you'll be drinking wine on deck while everyone else recovers. You're proof you can have it all."
+    ],
+    keywords: ["Refined-but-wild", "Elevated", "Boutique adventurer", "Have-it-all", "Intentional", "Iconic"],
+    recommendedTrip: "becoming-her"
+  },
+  soul: {
+    name: "The Soul Wanderer", emoji: "🌙",
+    tagline: "Spiritual + cultural depth",
+    desc: [
+      "You travel inward as much as outward. The Soul Wanderer is here for the temples at dawn, the silent walk through the rice terraces, the ocean ceremony that broke something open and put it back together better. You don't take trips — you take <em>pilgrimages</em>.",
+      "You're drawn to meaning. Sacred sites, ceremonies, traditions, the kind of conversations that go from 'where are you from?' to 'what are you healing?' in 20 minutes flat. You travel to understand yourself in new ways — and you always come home different.",
+      "On a TGE trip, you're the one journalling at sunrise, lighting incense in the cabin, and finding the local healer the rest of us didn't know existed. You came to be moved. And you always are."
+    ],
+    keywords: ["Reflective", "Sacred", "Searching", "Quiet", "Soulful", "Wise"],
+    recommendedTrip: "becoming-her"
+  },
+  bonvivant: {
+    name: "The Bon Vivant", emoji: "🥂",
+    tagline: "Food, wine, and celebration",
+    desc: [
+      "For you, the dinner table is the destination. The Bon Vivant lives by the philosophy that a perfectly poured glass of wine, a beautifully laid table, and the right company are <em>the meaning of life</em>. You don't apologise for indulging — you celebrate it.",
+      "You're drawn to long dinners, candle-lit everything, food that took 12 hours to prepare. You'll fly across the world for the wine, the truffle, the family-run restaurant nobody knows about. You believe in slow meals, real conversations, and zero rushing.",
+      "On a TGE trip, you find the best restaurant on the island within 24 hours. You'll order the cocktails for the table, pour everyone's wine, and propose the toast that makes someone cry. You travel to feast, to celebrate, to feel fully alive."
+    ],
+    keywords: ["Indulgent", "Joyful", "Generous", "Connoisseur", "Celebratory", "Alive"],
+    recommendedTrip: "island-life"
+  },
+  freespirit: {
+    name: "The Free Spirit", emoji: "🌿",
+    tagline: "Off-the-beaten-path wanderer",
+    desc: [
+      "You don't do tourist traps. The Free Spirit drives the scooter to the unmarked beach, befriends the local who shows her the hidden waterfall, says yes to the boat invitation at midnight, and has the wildest stories at the end of every trip.",
+      "You're allergic to itineraries that feel like itineraries. The schedule is a vague suggestion, the plan is to follow your nose, and the best moments are always unscheduled. You travel without expectations because that's where the magic lives — in the <em>unscripted</em>.",
+      "On a TGE trip, you're the one who convinces the group to take the boat detour, chats up the captain and finds the hidden lagoon, and returns with stories nobody else has. You travel to be free — and you always come home wilder than you left."
+    ],
+    keywords: ["Spontaneous", "Wild", "Yes-girl", "Unscripted", "Curious", "Untameable"],
+    recommendedTrip: "becoming-her"
+  },
+  party: {
+    name: "The Life of the Party", emoji: "💃",
+    tagline: "Energy, nightlife, highlight-reel maker",
+    desc: [
+      "You <em>bring</em> the energy. The Life of the Party is the reason the trip becomes a story — the dance floor at the beach club, the spontaneous after-party at the villa, the moment everyone is laughing so hard nobody can breathe. You make the trip the trip.",
+      "You're drawn to vibes, music, dancing, every moment with the volume turned up. Beach clubs, full-moon parties, rooftop dinners, dancing barefoot in the sand. You don't just go to the party — you <em>are</em> the party.",
+      "On a TGE trip, your camera roll is 80% other girls dancing. You'll DJ the boat, instigate the cocktail round, and turn a quiet dinner into the night everyone is still talking about three years later. You don't go home tired — you go home full."
+    ],
+    keywords: ["Magnetic", "Fun-bringing", "High-vibe", "Spontaneous", "Memory-maker", "Iconic"],
+    recommendedTrip: "island-life"
+  },
+  /* NEW */
+  foodie: {
+    name: "The Foodie", emoji: "🍴",
+    tagline: "Local cuisine, food-led travel",
+    desc: [
+      "You plan trips around dinner reservations. The Foodie books the cooking class before the hotel, hunts down the warung the locals love, and remembers every single trip by what she tasted there. Food isn't an experience — it's <em>the</em> experience.",
+      "You're drawn to flavour, story, and slow eating. The grandmother's recipe, the street vendor with the line, the dish you'd cross an ocean for. You're not picky — you're <em>curious</em>. You'll try anything. You travel with your appetite leading the way.",
+      "On a TGE trip, you find the legendary nasi campur stall, organise the cooking class, and bring home recipes you actually cook. By day three, the group has put you in charge of restaurant picks — and they should."
+    ],
+    keywords: ["Curious", "Discerning", "Local-loving", "Adventurous palate", "Slow eater", "Greedy (in the best way)"],
+    recommendedTrip: "island-life"
+  },
+  water: {
+    name: "The Water Baby", emoji: "🌊",
+    tagline: "Ocean lover, marine-life obsessed",
+    desc: [
+      "You're not happy unless you can see the ocean. The Water Baby books trips by checking the snorkel quality, knows the tide tables, and feels physically better the longer she's in salt water. The ocean is your love language, your therapy, your <em>home</em>.",
+      "You're drawn to reefs, swims, beaches at all hours, marine life that takes your breath away. Manta rays, sea turtles, coral, sunrise dips, sunset floats. You measure a trip by water minutes. If the destination doesn't have ocean access, it doesn't have you.",
+      "On a TGE trip, you're the first in and the last out. You'll snorkel for 4 hours straight, befriend the manta ray, photograph every fish, and come home tanned, salty, and at peace."
+    ],
+    keywords: ["Salty", "Aquatic", "Sun-kissed", "Ocean-souled", "Tide-driven", "Free"],
+    recommendedTrip: "becoming-her"
+  },
+  chill: {
+    name: "The Chill Babe", emoji: "🌴",
+    tagline: "Slow, soft, go-with-the-flow",
+    desc: [
+      "You don't optimise your holiday. The Chill Babe is here for slow mornings, soft afternoons, and the version of travel where you actually <em>relax</em>. No 6am alarms, no 12-stop itinerary, no FOMO. Your idea of a perfect day is one where the biggest decision is which beach.",
+      "You're drawn to soft pace, low-pressure days, and the freedom to do absolutely nothing if that's what feels right. You don't need to see everything — you just want to <em>feel</em> everything. Slow lunches, hammock afternoons, sunset swims, no schedule.",
+      "On a TGE trip, you're the one who reminds everyone that doing nothing IS the activity. While everyone else needs a holiday from their holiday, you're glowing. That's the Chill Babe difference."
+    ],
+    keywords: ["Easygoing", "Present", "Unhurried", "Soft", "Grounded", "Low-pressure"],
+    recommendedTrip: "island-life"
+  },
+  growth: {
+    name: "The Growth Girl", emoji: "🌱",
+    tagline: "Self-development, becoming HER",
+    desc: [
+      "You don't take trips — you take <em>leaps</em>. The Growth Girl knows that travel is one of the most powerful tools for transformation, and she uses it. Vision boards on the boat, journalling at sunrise, mindset shifts at sunset. You came to <em>change</em>.",
+      "You're drawn to workshops, deep conversations, journalling prompts — anything that helps you become a fuller version of yourself. You measure a trip not by photos but by how different you feel coming home. You're here for the version of you that's waiting on the other side.",
+      "On a TGE trip, you show up to every workshop, your notebook is full by day four, and you come home with new clarity, new boundaries, new vision. You came to step into HER — and you always do."
+    ],
+    keywords: ["Intentional", "Becoming", "Evolving", "Self-aware", "Ambitious", "Vision-led"],
+    recommendedTrip: "becoming-her"
+  }
+};
+
+/* ============ TRIP DEFINITIONS ============ */
+const TRIPS = {
+  "island-life": {
+    name: "Island Life",
+    fullName: "Island Life — Bali",
+    url: URL_ISLAND_LIFE,
+    emoji: "🌴",
+    blurb: "8 days, 3 islands — Bali + Nusa Lembongan + Nusa Penida. Ocean therapy, jungle wellness, slow brunches, snorkel adventures, sunset cliff bars & 8 girls who become your soul sisters."
+  },
+  "becoming-her": {
+    name: "Becoming HER",
+    fullName: "Becoming HER — Komodo",
+    url: URL_BECOMING_HER,
+    emoji: "🐋",
+    blurb: "6 days on a private liveaboard across Komodo. Manta ray swims, volcanic island hikes, pink beaches, ocean ceremonies, vision board workshops & 7 supportive women becoming HER alongside you."
+  }
+};
+
+/* ============ TRIP RECOMMENDATION REASONS (per identity) ============ */
+const TRIP_REASONS = {
+  adventurer:   "Built for you. Manta ray swims, volcanic ridge hikes, sailing across Komodo on a private liveaboard, snorkelling untouched reefs — Becoming HER is bucket-list after bucket-list. This is your trip.",
+  culture:      "Bali is layered with culture — temples, ceremonies, rice terraces, ancient rituals. Island Life takes you across 3 islands so you can soak in the depth, not just the surface.",
+  luxe:         "Becoming HER's private liveaboard is all-inclusive elevated — your own boat, your own crew, untouched islands. Five-star quality, bucket-list scenery, no compromise.",
+  social:       "8 days, 8 girls, 3 islands. Island Life is the perfect length and pace for real friendships to form. By day 3, you'll already feel like you've known these girls forever.",
+  wellness:     "Yoga with ocean views, sound baths, jungle wellness rituals, restorative beach days — Island Life weaves wellness into every single day. The mind-body-soul reset you've been craving.",
+  golden:       "Adventure with a private liveaboard. Becoming HER is YOUR trip — bucket-list moments (manta rays, volcanic hikes, pink beach) wrapped in the elevated comfort of a private boat with the girls.",
+  soul:         "Komodo holds something ancient. Becoming HER weaves ocean ceremonies, sacred reflections, sunrise journalling, and quiet boat mornings into 6 days of deep connection — to self, to ocean, to spirit.",
+  bonvivant:    "Bali's food scene was made for you — long brunches, sunset cocktails, candle-lit dinners by the ocean. Island Life is one continuous celebration with the girls who get it.",
+  freespirit:   "Komodo is genuinely off-the-beaten-path. Becoming HER takes you sailing into remote islands, swimming with dragons, hiking unmarked ridges. Pure freedom, pure wildness, pure you.",
+  party:        "Beach clubs in Bali at sunset, group dinners that turn into dance floors, a tight-knit crew of 8 girls who say yes to everything — Island Life is one extended highlight reel.",
+  foodie:       "Bali is one of the world's great food destinations — and Island Life is a moving feast. From hidden warungs in Ubud to seaside seafood in Nusa Lembongan, this trip was made for your palate.",
+  water:        "With the ocean as your love language, Island Life is your dream — 3 islands of crystal-clear water, snorkelling trips to Nusa Penida, swimming with sea turtles, beach days sunrise to sunset.",
+  chill:        "Slow mornings, soft afternoons, no agenda — Island Life is calibrated exactly to your pace. 8 days of island time, ocean dips, jungle yoga, and exactly zero pressure. Your kind of perfect.",
+  growth:       "This trip was made for you. Vision board workshops on the boat, mindset sessions at sunrise, ocean ceremonies, journalling overlooking pink beaches — Becoming HER is where you literally become HER. Step in."
+};
+
+/* ============ QUESTIONS (12 questions, 5-7 options each) ============ */
+const QUESTIONS = [
+  {
+    q: "Your ideal trip morning is…",
+    options: [
+      { emoji: "🧘‍♀️", text: "Sunrise yoga or breathwork", ids: ["wellness", "soul", "growth"], dna: ["wellness"] },
+      { emoji: "🛌", text: "Sleep in, then beach time", ids: ["chill", "water"], dna: ["wellness", "adventure"] },
+      { emoji: "🥾", text: "Sunrise hike to a viewpoint", ids: ["adventurer", "freespirit"], dna: ["adventure"] },
+      { emoji: "🥐", text: "Slow brunch with the girls", ids: ["foodie", "social", "bonvivant"], dna: ["social", "culture"] },
+      { emoji: "🛕", text: "Local temple before the crowds", ids: ["culture", "soul"], dna: ["culture"] },
+      { emoji: "🍵", text: "Room service in your robe", ids: ["luxe", "golden"], dna: ["luxury"] }
+    ]
+  },
+  {
+    q: "Pick your <em>bucket-list</em> moment…",
+    options: [
+      { emoji: "🐋", text: "Swimming with manta rays", ids: ["water", "adventurer", "golden"], dna: ["adventure"] },
+      { emoji: "🌅", text: "Sunset yoga on a clifftop", ids: ["wellness", "soul"], dna: ["wellness"] },
+      { emoji: "📓", text: "Vision board workshop over the ocean", ids: ["growth", "soul"], dna: ["wellness"] },
+      { emoji: "🍷", text: "Wine-soaked storytelling with the girls", ids: ["bonvivant", "social"], dna: ["social", "culture"] },
+      { emoji: "🥥", text: "Floating in your villa's infinity pool", ids: ["chill", "luxe"], dna: ["luxury", "wellness"] },
+      { emoji: "🛕", text: "Sunrise temple ceremony", ids: ["culture", "soul"], dna: ["culture"] },
+      { emoji: "🛥️", text: "Yacht day with sunset cocktails", ids: ["golden", "luxe", "party"], dna: ["luxury"] }
+    ]
+  },
+  {
+    q: "What are you <em>craving most</em> from this trip?",
+    options: [
+      { emoji: "🌙", text: "Reconnection with yourself", ids: ["soul", "growth"], dna: ["wellness"] },
+      { emoji: "⚡", text: "Adrenaline & new experiences", ids: ["adventurer", "freespirit"], dna: ["adventure"] },
+      { emoji: "💞", text: "Real, deep female friendships", ids: ["social"], dna: ["social"] },
+      { emoji: "🌱", text: "Becoming the next-level you", ids: ["growth"], dna: ["wellness"] },
+      { emoji: "🌴", text: "Rest, restoration & beach days", ids: ["chill", "wellness", "water"], dna: ["wellness"] },
+      { emoji: "🍴", text: "Incredible food & wine", ids: ["foodie", "bonvivant"], dna: ["culture", "luxury"] }
+    ]
+  },
+  {
+    q: "Your travel <em>non-negotiable?</em>",
+    options: [
+      { emoji: "🍝", text: "Incredible food everywhere", ids: ["foodie", "bonvivant"], dna: ["culture"] },
+      { emoji: "🌊", text: "Ocean access daily", ids: ["water"], dna: ["adventure"] },
+      { emoji: "🧘‍♀️", text: "A solid wellness routine", ids: ["wellness", "growth"], dna: ["wellness"] },
+      { emoji: "👑", text: "Beautiful, boutique stays", ids: ["luxe", "golden"], dna: ["luxury"] },
+      { emoji: "🌬️", text: "Zero itinerary pressure", ids: ["chill", "freespirit"], dna: ["wellness"] },
+      { emoji: "🏛", text: "Cultural depth & local immersion", ids: ["culture", "soul"], dna: ["culture"] }
+    ]
+  },
+  {
+    q: "After a long day exploring, you…",
+    options: [
+      { emoji: "📓", text: "Journal & reflect", ids: ["soul", "growth"], dna: ["wellness"] },
+      { emoji: "🍸", text: "Cocktails & dancing — let's go", ids: ["party", "bonvivant"], dna: ["social"] },
+      { emoji: "💆‍♀️", text: "Sound bath or spa", ids: ["wellness", "luxe"], dna: ["wellness", "luxury"] },
+      { emoji: "😴", text: "Long shower, in bed by 10", ids: ["chill", "wellness"], dna: ["wellness"] },
+      { emoji: "🍷", text: "Long lingering dinner with the girls", ids: ["bonvivant", "foodie", "social"], dna: ["social", "culture"] }
+    ]
+  },
+  {
+    q: "The version of you you're <em>hoping to meet</em> on this trip is…",
+    options: [
+      { emoji: "🌿", text: "Calmer & more present", ids: ["chill", "wellness"], dna: ["wellness"] },
+      { emoji: "🔥", text: "Bolder & more fearless", ids: ["adventurer", "freespirit"], dna: ["adventure"] },
+      { emoji: "🌟", text: "Aligned with her purpose", ids: ["soul", "growth"], dna: ["wellness"] },
+      { emoji: "🤍", text: "Open-hearted & deeply connected", ids: ["social", "soul"], dna: ["social"] },
+      { emoji: "👑", text: "Treated like the queen she is", ids: ["luxe", "golden"], dna: ["luxury"] },
+      { emoji: "💃", text: "Carefree & fully alive", ids: ["party", "freespirit"], dna: ["social", "adventure"] }
+    ]
+  },
+  {
+    q: "Your dream <em>free-day activity</em> in Bali is…",
+    options: [
+      { emoji: "🐢", text: "Snorkel trip to Nusa Penida", ids: ["water", "adventurer"], dna: ["adventure"] },
+      { emoji: "🍳", text: "Cooking class with a local family", ids: ["foodie", "culture"], dna: ["culture"] },
+      { emoji: "💆‍♀️", text: "Spa day & sound healing", ids: ["wellness", "luxe"], dna: ["wellness", "luxury"] },
+      { emoji: "🌴", text: "Beach club from sunrise to sunset", ids: ["chill", "party", "social"], dna: ["social", "wellness"] },
+      { emoji: "💧", text: "Sacred waterfall ceremony", ids: ["soul", "growth", "culture"], dna: ["culture", "wellness"] },
+      { emoji: "🛵", text: "Scooter ride through rice terraces", ids: ["freespirit", "adventurer", "culture"], dna: ["adventure", "culture"] },
+      { emoji: "🛥️", text: "Catamaran trip with sunset cocktails", ids: ["golden", "luxe", "bonvivant"], dna: ["luxury"] }
+    ]
+  },
+  {
+    q: "The <em>first thing</em> you research before a trip?",
+    options: [
+      { emoji: "🍴", text: "Best restaurants & food scenes", ids: ["foodie", "bonvivant"], dna: ["culture"] },
+      { emoji: "🐠", text: "Best snorkel & dive spots", ids: ["water", "adventurer"], dna: ["adventure"] },
+      { emoji: "🧘‍♀️", text: "Best wellness retreats & yoga studios", ids: ["wellness", "growth"], dna: ["wellness"] },
+      { emoji: "💎", text: "Best boutique hotels", ids: ["luxe", "golden"], dna: ["luxury"] },
+      { emoji: "💃", text: "Best nightlife & beach clubs", ids: ["party", "social"], dna: ["social"] },
+      { emoji: "🛕", text: "Local culture & historical sites", ids: ["culture", "soul"], dna: ["culture"] },
+      { emoji: "🗺️", text: "Off-the-beaten-path experiences", ids: ["freespirit", "adventurer"], dna: ["adventure", "culture"] }
+    ]
+  },
+  {
+    q: "Your idea of a <em>perfect group dinner</em>…",
+    options: [
+      { emoji: "🍝", text: "Family-style feast at a hidden warung", ids: ["foodie", "culture", "freespirit"], dna: ["culture"] },
+      { emoji: "🕯️", text: "Long candle-lit dinner with deep convos", ids: ["soul", "social", "growth"], dna: ["social", "wellness"] },
+      { emoji: "🥂", text: "Trendy spot with cocktails & great vibes", ids: ["party", "bonvivant", "social"], dna: ["social"] },
+      { emoji: "🍷", text: "Wine tasting & charcuterie boards", ids: ["bonvivant", "luxe"], dna: ["luxury", "culture"] },
+      { emoji: "🥗", text: "Vegan, fresh, beautifully plated", ids: ["wellness", "chill"], dna: ["wellness"] },
+      { emoji: "🌅", text: "Beachfront sunset dinner, barefoot", ids: ["chill", "water", "soul"], dna: ["wellness"] }
+    ]
+  },
+  {
+    q: "When you imagine the <em>most peaceful</em> version of your trip, you're…",
+    options: [
+      { emoji: "🐠", text: "Underwater, swimming with fish", ids: ["water", "chill"], dna: ["adventure", "wellness"] },
+      { emoji: "🌴", text: "In a hammock, no phone", ids: ["chill", "wellness"], dna: ["wellness"] },
+      { emoji: "🧘‍♀️", text: "In a yin yoga shavasana", ids: ["wellness", "growth"], dna: ["wellness"] },
+      { emoji: "📓", text: "Journalling in the morning light", ids: ["soul", "growth"], dna: ["wellness"] },
+      { emoji: "🛕", text: "In a quiet temple courtyard", ids: ["culture", "soul"], dna: ["culture"] },
+      { emoji: "🛌", text: "In your boutique suite, room service", ids: ["luxe", "golden"], dna: ["luxury"] },
+      { emoji: "🍷", text: "Eating a slow, long lunch", ids: ["bonvivant", "foodie"], dna: ["culture", "luxury"] }
+    ]
+  },
+  {
+    q: "At the <em>end of the trip</em>, you want to come home…",
+    options: [
+      { emoji: "🌊", text: "Tanned, salty, glowing", ids: ["water", "chill"], dna: ["adventure", "wellness"] },
+      { emoji: "🌱", text: "Energised, inspired, changed", ids: ["growth", "soul"], dna: ["wellness"] },
+      { emoji: "💞", text: "With your new best friends", ids: ["social"], dna: ["social"] },
+      { emoji: "🍴", text: "With food intel & recipes for life", ids: ["foodie", "bonvivant"], dna: ["culture"] },
+      { emoji: "🗺️", text: "With wild stories no one else has", ids: ["freespirit", "adventurer", "party"], dna: ["adventure"] },
+      { emoji: "👑", text: "Pampered & restored", ids: ["luxe", "golden", "wellness"], dna: ["luxury", "wellness"] },
+      { emoji: "🏛", text: "Smarter, deeper, wiser", ids: ["culture", "soul"], dna: ["culture"] }
+    ]
+  },
+  {
+    q: "Your <em>one-word</em> trip vibe is…",
+    options: [
+      { emoji: "🌿", text: "Reset", ids: ["wellness", "chill"], dna: ["wellness"] },
+      { emoji: "🌙", text: "Magic", ids: ["soul"], dna: ["wellness", "culture"] },
+      { emoji: "🦋", text: "Unhinged (in the best way)", ids: ["freespirit", "party"], dna: ["social", "adventure"] },
+      { emoji: "💞", text: "Connection", ids: ["social"], dna: ["social"] },
+      { emoji: "🌱", text: "Growth", ids: ["growth"], dna: ["wellness"] },
+      { emoji: "🥂", text: "Indulgence", ids: ["bonvivant", "foodie", "luxe"], dna: ["luxury", "culture"] },
+      { emoji: "⚡", text: "Adventure", ids: ["adventurer"], dna: ["adventure"] },
+      { emoji: "👑", text: "Elevated", ids: ["luxe", "golden"], dna: ["luxury"] },
+      { emoji: "🌊", text: "Ocean", ids: ["water"], dna: ["adventure"] }
+    ]
+  }
+];
+
+const DNA_DIMENSIONS = [
+  { key: "adventure", label: "Adventure" },
+  { key: "culture",   label: "Culture" },
+  { key: "luxury",    label: "Luxury" },
+  { key: "social",    label: "Social / Connection" },
+  { key: "wellness",  label: "Wellness" }
+];
+
+/* ============ STATE ============ */
+const state = {
+  currentQuestion: 0,
+  answers: [],
+  scores: {},          // identity scores
+  dnaScores: {},       // dna scores
+  details: { name: "", email: "", whatsapp: "", booked: "" },
+  followUp: { trip_joining: "", preferences: "", trip_interested: "" },
+  result: { primaryKey: "", secondaryKey: "", top5: [], dnaBreakdown: [] },
+  emailSent: false
+};
+
+/* ============ DOM ============ */
+const $ = (id) => document.getElementById(id);
+const screens = {
+  intro:      $("screenIntro"),
+  quiz:       $("screenQuiz"),
+  details:    $("screenDetails"),
+  booked:     $("screenBooked"),
+  notBooked:  $("screenNotBooked"),
+  reveal:     $("screenReveal")
+};
+
+function showScreen(name) {
+  Object.entries(screens).forEach(([k, el]) => el.classList.toggle("active", k === name));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+function toast(msg, ms = 3000) {
+  const t = $("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove("show"), ms);
+}
+
+/* ============ INIT ============ */
+$("qTotal").textContent = QUESTIONS.length;
+$("startBtn").addEventListener("click", startQuiz);
+$("backBtn").addEventListener("click", goBack);
+$("retakeBtn").addEventListener("click", resetAll);
+$("emailMeBtn").addEventListener("click", emailMyReport);
+
+document.querySelectorAll("#bookedRadios .radio-option").forEach(opt => {
+  opt.addEventListener("click", () => {
+    document.querySelectorAll("#bookedRadios .radio-option").forEach(o => o.classList.remove("checked"));
+    opt.classList.add("checked");
+    state.details.booked = opt.dataset.value;
+  });
+});
+document.querySelectorAll("#tripRadios .radio-option").forEach(opt => {
+  opt.addEventListener("click", () => {
+    document.querySelectorAll("#tripRadios .radio-option").forEach(o => o.classList.remove("checked"));
+    opt.classList.add("checked");
+    state.followUp.trip_interested = opt.dataset.value;
+  });
+});
+
+$("detailsForm").addEventListener("submit", handleDetailsSubmit);
+$("bookedForm").addEventListener("submit", handleBookedSubmit);
+$("notBookedForm").addEventListener("submit", handleNotBookedSubmit);
+
+/* ============ QUIZ LOGIC ============ */
+function startQuiz() {
+  state.currentQuestion = 0;
+  state.answers = [];
+  state.scores = {};
+  state.dnaScores = {};
+  showScreen("quiz");
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[state.currentQuestion];
+  const num = state.currentQuestion + 1;
+  $("qCurrent").textContent = num;
+  $("qNumber").textContent = "Question " + String(num).padStart(2, "0");
+  $("qText").innerHTML = q.q;
+  $("progressFill").style.width = ((num - 1) / QUESTIONS.length * 100) + "%";
+  $("backBtn").disabled = state.currentQuestion === 0;
+
+  const qText = $("qText");
+  qText.style.animation = "none"; qText.offsetHeight;
+  qText.style.animation = "fadeInRight 0.4s ease";
+
+  const opts = $("qOptions");
+  opts.innerHTML = "";
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "option";
+    btn.style.animation = `fadeInRight 0.4s ease ${0.04 + idx * 0.04}s both`;
+    btn.innerHTML = `<span class="option-emoji">${opt.emoji}</span><span class="option-text">${opt.text}</span>`;
+    btn.addEventListener("click", () => selectOption(idx));
+    opts.appendChild(btn);
+  });
+}
+
+function selectOption(optionIdx) {
+  const q = QUESTIONS[state.currentQuestion];
+  const chosen = q.options[optionIdx];
+
+  document.querySelectorAll(".option").forEach((el, i) => {
+    el.classList.toggle("selected", i === optionIdx);
+    el.style.pointerEvents = "none";
+  });
+
+  chosen.ids.forEach(id => { state.scores[id] = (state.scores[id] || 0) + 1; });
+  chosen.dna.forEach(d => { state.dnaScores[d] = (state.dnaScores[d] || 0) + 1; });
+  state.answers[state.currentQuestion] = optionIdx;
+  $("progressFill").style.width = ((state.currentQuestion + 1) / QUESTIONS.length * 100) + "%";
+
+  setTimeout(() => {
+    if (state.currentQuestion < QUESTIONS.length - 1) {
+      state.currentQuestion++;
+      renderQuestion();
+    } else {
+      computeResult();
+      showScreen("details");
+    }
+  }, 300);
+}
+
+function goBack() {
+  if (state.currentQuestion === 0) return;
+  const prevAnswer = state.answers[state.currentQuestion - 1];
+  if (prevAnswer !== undefined) {
+    const opt = QUESTIONS[state.currentQuestion - 1].options[prevAnswer];
+    opt.ids.forEach(id => {
+      state.scores[id] = (state.scores[id] || 1) - 1;
+      if (state.scores[id] <= 0) delete state.scores[id];
+    });
+    opt.dna.forEach(d => {
+      state.dnaScores[d] = (state.dnaScores[d] || 1) - 1;
+      if (state.dnaScores[d] <= 0) delete state.dnaScores[d];
+    });
+  }
+  state.currentQuestion--;
+  renderQuestion();
+}
+
+/* ============ COMPUTE RESULT ============ */
+function getMaxIdentityScore(idKey) {
+  return QUESTIONS.filter(q => q.options.some(o => o.ids.includes(idKey))).length;
+}
+function getMaxDnaScore(dnaKey) {
+  return QUESTIONS.filter(q => q.options.some(o => o.dna.includes(dnaKey))).length;
+}
+
+function computeResult() {
+  // Compute identity rankings with percentages (relative to each identity's max possible)
+  const allIdentities = Object.keys(IDENTITIES);
+  const ranked = allIdentities.map(key => {
+    const score = state.scores[key] || 0;
+    const max = getMaxIdentityScore(key);
+    const pct = max > 0 ? Math.round((score / max) * 100) : 0;
+    return { key, score, max, pct };
+  }).sort((a, b) => b.pct - a.pct || b.score - a.score);
+
+  state.result.primaryKey = ranked[0].key;
+
+  // Secondary: only if next is close (within 20 percentage points) AND has at least 1 score
+  const second = ranked[1];
+  state.result.secondaryKey = (second && second.score > 0 && (ranked[0].pct - second.pct) <= 25)
+    ? second.key : "";
+
+  state.result.top5 = ranked.slice(0, 5);
+
+  // DNA breakdown
+  state.result.dnaBreakdown = DNA_DIMENSIONS.map(d => {
+    const score = state.dnaScores[d.key] || 0;
+    const max = getMaxDnaScore(d.key);
+    const pct = max > 0 ? Math.round((score / max) * 100) : 0;
+    return { key: d.key, label: d.label, pct };
+  });
+}
+
+/* ============ DETAILS FORM ============ */
+function handleDetailsSubmit(e) {
+  e.preventDefault();
+  state.details.name = $("d_name").value.trim();
+  state.details.email = $("d_email").value.trim();
+  state.details.whatsapp = $("d_whatsapp").value.trim();
+  if (!state.details.name || !state.details.email || !state.details.whatsapp) {
+    toast("Please fill in all required fields"); return;
+  }
+  if (!state.details.booked) {
+    toast("Please select if you've booked your trip"); return;
+  }
+  if (state.details.booked === "yes") showScreen("booked");
+  else showScreen("notBooked");
+}
+
+/* ============ BOOKED SUBMIT ============ */
+function handleBookedSubmit(e) {
+  e.preventDefault();
+  state.followUp.trip_joining = $("b_trip").value.trim();
+  state.followUp.preferences = $("b_prefs").value.trim();
+
+  const btn = $("bookedSubmit");
+  btn.disabled = true; btn.textContent = "Revealing...";
+
+  const primary = IDENTITIES[state.result.primaryKey];
+  const secondary = state.result.secondaryKey ? IDENTITIES[state.result.secondaryKey] : null;
+
+  const fd = new FormData();
+  fd.append("_subject", "✨ Booked Guest — Travel Identity: " + primary.name);
+  fd.append("name", state.details.name);
+  fd.append("email", state.details.email);
+  fd.append("whatsapp", state.details.whatsapp);
+  fd.append("booked", "Yes");
+  fd.append("trip_joining", state.followUp.trip_joining || "(not specified)");
+  fd.append("preferences", state.followUp.preferences || "(none)");
+  fd.append("identity_primary", primary.name);
+  fd.append("identity_secondary", secondary ? secondary.name : "");
+  fd.append("identity_emoji", primary.emoji);
+  fd.append("identity_tagline", primary.tagline);
+  fd.append("identity_keywords", primary.keywords.join(", "));
+  fd.append("top_5", state.result.top5.map(r => `${IDENTITIES[r.key].name} (${r.pct}%)`).join(" | "));
+  fd.append("dna_breakdown", state.result.dnaBreakdown.map(d => `${d.label}: ${d.pct}%`).join(" | "));
+
+  fetch(FORMSPREE_BOOKED, { method: "POST", body: fd, headers: { Accept: "application/json" } }).catch(() => {});
+  renderReveal({ booked: true });
+}
+
+/* ============ NOT-BOOKED SUBMIT ============ */
+function handleNotBookedSubmit(e) {
+  e.preventDefault();
+  if (!state.followUp.trip_interested) { toast("Please pick an option"); return; }
+
+  const btn = $("notBookedSubmit");
+  btn.disabled = true; btn.textContent = "Revealing...";
+
+  const primary = IDENTITIES[state.result.primaryKey];
+  const secondary = state.result.secondaryKey ? IDENTITIES[state.result.secondaryKey] : null;
+
+  let tripLabel;
+  if (state.followUp.trip_interested === "island-life") tripLabel = "Island Life Bali";
+  else if (state.followUp.trip_interested === "becoming-her") tripLabel = "Becoming HER — Komodo";
+  else tripLabel = "Not sure — recommended: " + TRIPS[primary.recommendedTrip].fullName;
+
+  const fd = new FormData();
+  fd.append("_subject", "🌱 Lead — " + primary.name + " · " + tripLabel);
+  fd.append("name", state.details.name);
+  fd.append("email", state.details.email);
+  fd.append("whatsapp", state.details.whatsapp);
+  fd.append("booked", state.details.booked === "no" ? "No" : "Not yet");
+  fd.append("trip_interested_in", tripLabel);
+  fd.append("identity_primary", primary.name);
+  fd.append("identity_secondary", secondary ? secondary.name : "");
+  fd.append("identity_emoji", primary.emoji);
+  fd.append("identity_tagline", primary.tagline);
+  fd.append("identity_keywords", primary.keywords.join(", "));
+  fd.append("top_5", state.result.top5.map(r => `${IDENTITIES[r.key].name} (${r.pct}%)`).join(" | "));
+  fd.append("dna_breakdown", state.result.dnaBreakdown.map(d => `${d.label}: ${d.pct}%`).join(" | "));
+
+  fetch(FORMSPREE_LEADS, { method: "POST", body: fd, headers: { Accept: "application/json" } }).catch(() => {});
+  renderReveal({ booked: false });
+}
+
+/* ============ RENDER REVEAL ============ */
+function renderReveal({ booked }) {
+  const primary = IDENTITIES[state.result.primaryKey];
+  const secondary = state.result.secondaryKey ? IDENTITIES[state.result.secondaryKey] : null;
+
+  $("resultEmoji").textContent = primary.emoji;
+  $("resultName").innerHTML = primary.name.replace(/^(The )(.+)$/, "$1<em>$2</em>");
+  $("resultTagline").textContent = primary.tagline;
+  $("resultDesc").innerHTML = primary.desc.map(p => `<p>${p}</p>`).join("");
+  $("resultKeywords").innerHTML = primary.keywords.map(k => `<span class="result-keyword">${k}</span>`).join("");
+
+  if (secondary) {
+    $("secondaryCard").style.display = "block";
+    $("secondaryName").innerHTML = `${secondary.emoji} ${secondary.name.replace(/^(The )(.+)$/, "$1<em>$2</em>")}`;
+  } else {
+    $("secondaryCard").style.display = "none";
+  }
+
+  // Trip CTA logic
+  $("tripCtaCard").style.display = "none";
+  $("bookedConfirmCard").style.display = "none";
+
+  if (booked) {
+    $("bookedConfirmCard").style.display = "block";
+  } else {
+    // Determine which trip to show
+    let tripKey, tagText;
+    const chosen = state.followUp.trip_interested;
+    if (chosen === "island-life") {
+      tripKey = "island-life"; tagText = "Your Trip";
+    } else if (chosen === "becoming-her") {
+      tripKey = "becoming-her"; tagText = "Your Trip";
+    } else {
+      // Not sure — use primary's recommended trip
+      tripKey = primary.recommendedTrip;
+      tagText = "Recommended for " + primary.name;
+    }
+    const trip = TRIPS[tripKey];
+
+    $("tripCtaCard").style.display = "block";
+    $("tripCtaTag").textContent = tagText;
+    $("tripCtaTitle").innerHTML = `${trip.emoji} ${trip.fullName.split(" — ")[0]} <em>${trip.fullName.includes(" — ") ? "— " + trip.fullName.split(" — ")[1] : ""}</em>`;
+
+    // For "not sure", show the personalised reason. For chosen trips, show the trip blurb.
+    if (chosen === "not-sure") {
+      $("tripCtaSub").textContent = TRIP_REASONS[state.result.primaryKey];
+    } else {
+      $("tripCtaSub").textContent = trip.blurb;
+    }
+
+    const btns = $("tripCtaButtons");
+    btns.innerHTML = `
+      <a href="${trip.url}" class="btn-primary">View ${trip.name} →</a>
+      <a href="${URL_TGE_HOME}" class="btn-secondary">Or browse all TGE trips</a>
+    `;
+  }
+
+  // Top 5
+  $("top5List").innerHTML = state.result.top5.map((r, i) => {
+    const id = IDENTITIES[r.key];
+    const isPrimary = i === 0;
+    return `
+      <div class="rank-row ${isPrimary ? 'primary' : ''}">
+        <span class="rank-emoji">${id.emoji}</span>
+        <span class="rank-name">${id.name.replace(/^(The )(.+)$/, "$1<em>$2</em>")}</span>
+        <div class="rank-bar"><div class="rank-fill" style="width:${r.pct}%"></div></div>
+        <span class="rank-pct">${r.pct}%</span>
+      </div>`;
+  }).join("");
+
+  // DNA
+  $("dnaList").innerHTML = state.result.dnaBreakdown.map(d => `
+    <div class="dna-row">
+      <span class="dna-label">${d.label}</span>
+      <div class="dna-bar"><div class="dna-fill ${d.key}" style="width:${d.pct}%"></div></div>
+      <span class="dna-pct">${d.pct}%</span>
+    </div>
+  `).join("");
+
+  showScreen("reveal");
+
+  if (window.fbq) try { fbq('track', 'CompleteRegistration', { content_name: primary.name }); } catch(e) {}
+}
+
+/* ============ EMAIL ME MY REPORT ============ */
+async function emailMyReport() {
+  if (state.emailSent) {
+    toast("Already sent to " + state.details.email + " ✨");
+    return;
+  }
+  const btn = $("emailMeBtn");
+  const primary = IDENTITIES[state.result.primaryKey];
+  const secondary = state.result.secondaryKey ? IDENTITIES[state.result.secondaryKey] : null;
+
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+
+  const fd = new FormData();
+  fd.append("email", state.details.email);
+  fd.append("name", state.details.name || "babe");
+  fd.append("_subject", "Your Travel Identity ✨ — " + primary.name);
+  fd.append("identity_name", primary.name);
+  fd.append("identity_emoji", primary.emoji);
+  fd.append("identity_tagline", primary.tagline);
+  fd.append("identity_description", primary.desc.join("\n\n").replace(/<\/?em>/g, "").replace(/<\/?p>/g, ""));
+  fd.append("identity_keywords", primary.keywords.join(" · "));
+  fd.append("secondary_name", secondary ? secondary.name : "");
+  fd.append("secondary_emoji", secondary ? secondary.emoji : "");
+  fd.append("top_5", state.result.top5.map(r => `${IDENTITIES[r.key].name}: ${r.pct}%`).join("\n"));
+  fd.append("dna_breakdown", state.result.dnaBreakdown.map(d => `${d.label}: ${d.pct}%`).join("\n"));
+
+  if (FORMSPREE_REPORT && FORMSPREE_REPORT.startsWith("https://formspree.io/")) {
+    try {
+      const res = await fetch(FORMSPREE_REPORT, { method: "POST", body: fd, headers: { Accept: "application/json" } });
+      if (res.ok) {
+        state.emailSent = true;
+        btn.textContent = "✓ Sent to " + state.details.email;
+        btn.classList.add("sent");
+        toast("Report sent! Check your inbox ✨");
+      } else throw new Error("send failed");
+    } catch (err) {
+      btn.textContent = "📧 Email me my full report";
+      btn.disabled = false;
+      toast("Couldn't send right now — try again");
+    }
+  } else {
+    btn.textContent = "📧 Email me my full report";
+    btn.disabled = false;
+    toast("Email feature not configured yet — please notify us");
+  }
+}
+
+/* ============ RESET ============ */
+function resetAll() {
+  state.currentQuestion = 0;
+  state.answers = [];
+  state.scores = {};
+  state.dnaScores = {};
+  state.details = { name: "", email: "", whatsapp: "", booked: "" };
+  state.followUp = { trip_joining: "", preferences: "", trip_interested: "" };
+  state.result = { primaryKey: "", secondaryKey: "", top5: [], dnaBreakdown: [] };
+  state.emailSent = false;
+  document.querySelectorAll(".radio-option").forEach(o => o.classList.remove("checked"));
+  $("detailsForm").reset();
+  $("bookedForm").reset();
+  $("notBookedForm").reset();
+  const emailBtn = $("emailMeBtn");
+  emailBtn.textContent = "📧 Email me my full report";
+  emailBtn.classList.remove("sent");
+  emailBtn.disabled = false;
+  $("bookedSubmit").disabled = false; $("bookedSubmit").textContent = "Reveal My Identity ✦";
+  $("notBookedSubmit").disabled = false; $("notBookedSubmit").textContent = "Reveal My Identity ✦";
+  showScreen("intro");
+}
+</script>
+
+</body>
+</html>
