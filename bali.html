@@ -199,6 +199,24 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .inclusion-check { color: var(--ocean); font-weight: 600; flex-shrink: 0; margin-top: 0.05rem; }
   .exclusion-x { color: var(--rose); font-weight: 600; flex-shrink: 0; margin-top: 0.05rem; font-size: 0.9rem; }
 
+  /* SOCIAL SECTION (TikTok + Instagram tiles) */
+  .social-section { background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%); padding: 2.5rem 1.5rem; }
+  .social-handle { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.3rem, 3vw, 1.7rem); color: var(--ocean-deep); font-weight: 600; text-align: center; margin-bottom: 0.5rem; }
+  .social-handle a { color: inherit; text-decoration: none; }
+  .social-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; max-width: 800px; margin: 0 auto 1.75rem; }
+  .social-tile { position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; background: var(--teal-soft); display: block; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .social-tile:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
+  .social-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .social-tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.4), transparent 60%); }
+  .social-tile-icon { position: absolute; bottom: 0.6rem; left: 0.6rem; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; z-index: 2; }
+  .social-tile-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: rgba(255,255,255,0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2; opacity: 0.85; }
+  .social-tile-play::before { content: ''; border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent var(--text-dark); margin-left: 3px; }
+  .social-cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+  .social-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; }
+  .social-btn-ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; box-shadow: 0 6px 20px rgba(220,39,67,0.3); }
+  .social-btn-tt { background: var(--text-dark); color: white; box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+  .social-btn:hover { transform: translateY(-2px); }
+
   /* FAQ */
   .faq-section { background: var(--white); padding: 3.5rem 2rem; }
   .faq-wrapper { max-width: 700px; margin: 0 auto; }
@@ -1176,6 +1194,35 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</a>
 </div>
 
+<!-- SOCIAL SECTION (TikTok + Instagram links) -->
+<section class="social-section">
+  <div class="section-tag reveal">Bucket-list inspo, new trip drops & all the updates</div>
+  <h2 class="section-title reveal">See More on Insta & TikTok✨</h2>
+  <div class="social-handle reveal"><a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener">@thatgirl.experiences</a></div>
+  <div class="social-grid reveal">
+    <a class="social-tile" href="https://www.instagram.com/p/DYdiRfmiafp/?img_index=1" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="28.png" alt="Instagram post" loading="lazy" decoding="async" width="300" height="533">
+      <span class="social-tile-play"></span>
+    </a>
+    <a class="social-tile" href="https://www.tiktok.com/@thatgirl.experiences/video/7630670752043355412" target="_blank" rel="noopener" aria-label="TikTok">
+      <img src="30.png" alt="TikTok video" loading="lazy" decoding="async" width="300" height="533">
+      <span class="social-tile-play"></span>
+    </a>
+    <a class="social-tile" href="https://www.instagram.com/p/DX34_6uxuVz/" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="25.png" alt="Instagram post" loading="lazy" decoding="async" width="300" height="533">
+      <span class="social-tile-play"></span>
+    </a>
+    <a class="social-tile" href="https://www.tiktok.com/@thatgirl.experiences/video/7634058450003086612" target="_blank" rel="noopener" aria-label="TikTok">
+      <img src="35.png" alt="TikTok video" loading="lazy" decoding="async" width="300" height="533">
+      <span class="social-tile-play"></span>
+    </a>
+  </div>
+  <div class="social-cta-row reveal">
+    <a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener" class="social-btn social-btn-ig">Follow us on Instagram</a>
+    <a href="https://www.tiktok.com/@thatgirl.experiences" target="_blank" rel="noopener" class="social-btn social-btn-tt">Follow us on TikTok</a>
+  </div>
+</section>
+  
 <!-- CONTACT -->
 <section style="background: var(--cream); padding: 3.5rem 2rem;" id="contact">
   <div class="section-tag reveal">Get In Touch</div>
