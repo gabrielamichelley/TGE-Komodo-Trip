@@ -112,9 +112,6 @@ window.addEventListener('load', function() {
   .hero-cta { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 1rem 2.5rem; font-family: 'Jost', sans-serif; font-size: 0.97rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(201,169,110,0.45); }
   .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.55); }
   .hero-note { font-size: 0.68rem; color: var(--text-dark); font-weight: 500; letter-spacing: 0.05em; background: rgba(255,255,255,0.7); padding: 0.4rem 0.9rem; border-radius: 50px; backdrop-filter: blur(6px); }
-  .scroll-indicator { position: absolute; bottom: 1.75rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeUp 0.8s ease 1.4s forwards; z-index: 2; }
-  .scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease-in-out infinite; }
-  @keyframes scrollPulse { 0%,100%{opacity:0.4;} 50%{opacity:1;} }
 
   /* TRUST BAR */
   .trust-bar { background: var(--white); border-top: 1px solid rgba(201,169,110,0.12); border-bottom: 1px solid rgba(201,169,110,0.12); padding: 1rem 0.8rem; }
@@ -347,7 +344,6 @@ window.addEventListener('load', function() {
     .hero-sub { font-size: 0.97rem; }
     .hero-pill { font-size: 0.66rem; padding: 0.32rem 0.75rem; }
     .hero-cta { width: 100%; text-align: center; padding: 1rem; font-size: 0.88rem; }
-    .scroll-indicator { display: none; }
     .hero-title em:last-of-type { font-size: 0.72em; white-space: nowrap; }
     .hero-sub br { display: none; }
     section { padding: 2.5rem 1rem; }
@@ -498,7 +494,6 @@ src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
       <span class="hero-note">8 GIRLS MAX · PAY IN 4 INTEREST-FREE · LIMITED SPOTS LEFT</span>
     </div>
   </div>
-  <div class="scroll-indicator"><div class="scroll-line"></div></div>
 </section>
 
 <div class="trust-bar">
