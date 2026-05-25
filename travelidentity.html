@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
-<title>Travel Identity Quiz — That Girl Experiences</title>
+<title>Travel Identity — That Girl Experiences</title>
 <meta name="description" content="Discover your unique Travel Identity & the version of you that shows up on a TGE trip.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -249,6 +249,130 @@ fbq('track', 'PageView');
   .text-link:hover { color: var(--gold); }
   .text-link.sent { color: #4caf50; }
 
+  /* SHARE BUTTONS */
+  .reveal-share-row {
+    display: flex; flex-direction: column; gap: 0.65rem; align-items: center;
+    margin-top: 0.25rem; margin-bottom: 0.5rem;
+  }
+  .btn-share {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    background: linear-gradient(135deg, var(--ocean-deep), var(--ocean));
+    color: var(--white); border: none;
+    padding: 1rem 1.75rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; border-radius: 60px; cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 22px rgba(45,122,140,0.32);
+    width: 100%; max-width: 340px;
+    text-align: center; min-height: 54px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn-share:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(45,122,140,0.42); }
+  .btn-share:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+  .btn-share-secondary {
+    background: rgba(255,255,255,0.92);
+    color: var(--text-dark);
+    border: 1.5px solid var(--gold);
+    box-shadow: 0 4px 16px rgba(201,169,110,0.18);
+  }
+  .btn-share-secondary:hover { background: var(--cream); box-shadow: 0 8px 24px rgba(201,169,110,0.3); }
+
+  /* SHARE MODAL */
+  .share-modal {
+    position: fixed; inset: 0;
+    background: rgba(28,43,45,0.55);
+    backdrop-filter: blur(8px);
+    z-index: 10001;
+    display: none;
+    align-items: flex-end; justify-content: center;
+    padding: 1rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+  .share-modal.open { display: flex; animation: fadeUp 0.3s ease; }
+  .share-modal-inner {
+    background: var(--cream);
+    border-radius: 28px;
+    padding: 1.75rem 1.5rem 1.25rem;
+    width: 100%; max-width: 480px;
+    position: relative;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
+  }
+  .share-modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
+  }
+  .share-modal-title em { font-style: italic; color: var(--ocean-deep); }
+  .share-modal-sub {
+    font-size: 0.85rem; color: var(--text-light);
+    text-align: center; margin-bottom: 1.25rem;
+  }
+  .share-modal-sub strong { color: var(--gold); font-weight: 600; }
+  .share-close {
+    position: absolute; top: 0.65rem; right: 0.9rem;
+    background: none; border: none;
+    font-size: 1.6rem; line-height: 1;
+    color: var(--text-light); cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 50%;
+    transition: color 0.2s;
+  }
+  .share-close:hover { color: var(--text-dark); }
+  .share-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .share-btn {
+    background: var(--white);
+    border: 1px solid rgba(201,169,110,0.22);
+    border-radius: 16px;
+    padding: 0.95rem 0.4rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.35rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .share-btn:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .share-btn-emoji { font-size: 1.6rem; line-height: 1; }
+  .share-copy-row {
+    margin-top: 0.5rem; display: flex; gap: 0.5rem; align-items: stretch;
+    background: var(--white);
+    border: 1px solid rgba(201,169,110,0.22);
+    border-radius: 50px;
+    padding: 0.45rem 0.45rem 0.45rem 1rem;
+  }
+  .share-copy-input {
+    flex: 1; border: none; background: none;
+    font-size: 0.82rem; color: var(--text-dark);
+    font-family: 'Jost', sans-serif;
+    outline: none; min-width: 0;
+  }
+  .share-copy-btn {
+    background: var(--text-dark); color: var(--white);
+    border: none; padding: 0.5rem 1rem; border-radius: 50px;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .share-copy-btn:hover { background: var(--ocean-deep); }
+  .share-copy-btn.copied { background: #4caf50; }
+
+  @media (min-width: 768px) {
+    .share-modal { align-items: center; }
+    .share-modal-inner { padding: 2.25rem 2rem 1.75rem; }
+  }
+
   /* TOAST */
   .toast {
     position: fixed; bottom: calc(1rem + env(safe-area-inset-bottom));
@@ -258,10 +382,18 @@ fbq('track', 'PageView');
     font-size: 0.84rem; font-weight: 500;
     box-shadow: 0 12px 32px rgba(0,0,0,0.25);
     z-index: 10000;
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0.3s;
     max-width: 92%; text-align: center;
   }
-  .toast.show { transform: translateX(-50%) translateY(0); }
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 
   /* RESPONSIVE */
   @media (min-width: 540px) {
@@ -298,14 +430,14 @@ fbq('track', 'PageView');
     <h1 class="intro-title">Discover Your <em>Travel Identity™</em></h1>
     <p class="intro-sub">
       Answer 12 questions and we'll uncover your unique <strong>travel personality &amp; identity</strong>: the experiences you crave, the energy you bring, and the destinations that call to you. Discover the version of you that shows up on a TGE trip.
-     </p>
+    </p>
     <div class="intro-meta">
       <span class="intro-meta-pill">✨ 14 Travel Identities</span>
       <span class="intro-meta-pill">⏱ ~3 minutes</span>
       <span class="intro-meta-pill">🤍 Used for matching</span>
     </div>
     <button class="btn-primary" id="startBtn" type="button">Begin Your Journey ✦</button>
-    <p class="intro-note">Your Travel Identity™ helps us tailor your trip experience & pair you with like-minded girls on your trip.</p>
+    <p class="intro-note">Your Travel Identity™ helps us tailor your trip experience &amp; pair you with like-minded girls on your trip.</p>
   </section>
 
   <!-- QUIZ -->
@@ -460,13 +592,37 @@ fbq('track', 'PageView');
       <div id="dnaList"></div>
     </div>
 
+    <div class="reveal-share-row">
+      <button class="btn-share" type="button" id="shareBtn">📤 Share Your Travel Identity</button>
+      <button class="btn-share btn-share-secondary" type="button" id="downloadBtn">📥 Download story image</button>
+    </div>
     <div class="reveal-actions">
-      <button class="text-link" type="button" id="emailMeBtn">📧 Email me my full report</button>
       <button class="text-link" type="button" id="retakeBtn">↺ Start again</button>
     </div>
   </section>
 
 </main>
+
+<!-- SHARE MODAL (desktop fallback / extra options) -->
+<div class="share-modal" id="shareModal" role="dialog" aria-modal="true">
+  <div class="share-modal-inner">
+    <button class="share-close" id="shareClose" aria-label="Close">×</button>
+    <h3 class="share-modal-title">Share your <em>Travel Identity</em></h3>
+    <p class="share-modal-sub">Tag <strong>@thatgirl.experiences</strong> when you post ✨</p>
+    <div class="share-grid">
+      <a class="share-btn" id="shareWhatsapp" target="_blank" rel="noopener"><span class="share-btn-emoji">💬</span>WhatsApp</a>
+      <a class="share-btn" id="shareInstagram" target="_blank" rel="noopener"><span class="share-btn-emoji">📸</span>Instagram</a>
+      <a class="share-btn" id="shareTikTok" target="_blank" rel="noopener"><span class="share-btn-emoji">🎵</span>TikTok</a>
+      <a class="share-btn" id="shareFacebook" target="_blank" rel="noopener"><span class="share-btn-emoji">📘</span>Facebook</a>
+      <a class="share-btn" id="shareTwitter" target="_blank" rel="noopener"><span class="share-btn-emoji">𝕏</span>X / Twitter</a>
+      <a class="share-btn" id="shareEmail"><span class="share-btn-emoji">✉️</span>Email</a>
+    </div>
+    <div class="share-copy-row">
+      <input type="text" class="share-copy-input" id="shareCopyInput" readonly>
+      <button class="share-copy-btn" id="shareCopyBtn">Copy</button>
+    </div>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
 
@@ -478,7 +634,6 @@ fbq('track', 'PageView');
 
 const FORMSPREE_BOOKED   = "https://formspree.io/f/mojbwoyj";
 const FORMSPREE_LEADS    = "https://formspree.io/f/xgoqyjra";
-const FORMSPREE_REPORT   = "REPLACE_WITH_REPORT_FORMSPREE_ID"; // ⚠️ See setup notes
 
 const URL_ISLAND_LIFE    = "https://thatgirlexperiences.com/bali.html";
 const URL_BECOMING_HER   = "https://thatgirlexperiences.com/komodo.html";
@@ -870,7 +1025,11 @@ $("qTotal").textContent = QUESTIONS.length;
 $("startBtn").addEventListener("click", startQuiz);
 $("backBtn").addEventListener("click", goBack);
 $("retakeBtn").addEventListener("click", resetAll);
-$("emailMeBtn").addEventListener("click", emailMyReport);
+$("shareBtn").addEventListener("click", shareResults);
+$("downloadBtn").addEventListener("click", downloadShareImage);
+$("shareClose").addEventListener("click", closeShareModal);
+$("shareModal").addEventListener("click", (e) => { if (e.target.id === "shareModal") closeShareModal(); });
+$("shareCopyBtn").addEventListener("click", copyShareLink);
 
 document.querySelectorAll("#bookedRadios .radio-option").forEach(opt => {
   opt.addEventListener("click", () => {
@@ -1172,55 +1331,229 @@ function renderReveal({ booked }) {
 
   if (window.fbq) try { fbq('track', 'CompleteRegistration', { content_name: primary.name }); } catch(e) {}
 }
-  
-/* ============ EMAIL ME MY REPORT ============ */
-async function emailMyReport() {
-  if (state.emailSent) {
-    toast("Already sent to " + state.details.email + " ✨");
-    return;
-  }
-  const btn = $("emailMeBtn");
+
+/* ============ SHARE RESULTS ============ */
+function getShareContent() {
   const primary = IDENTITIES[state.result.primaryKey];
-  const secondary = state.result.secondaryKey ? IDENTITIES[state.result.secondaryKey] : null;
- 
-  btn.textContent = "Sending...";
-  btn.disabled = true;
- 
-  const fd = new FormData();
-  fd.append("email", state.details.email);
-  fd.append("name", state.details.name || "babe");
-  fd.append("_subject", "Your Travel Identity ✨ — " + primary.name);
-  fd.append("identity_name", primary.name);
-  fd.append("identity_emoji", primary.emoji);
-  fd.append("identity_tagline", primary.tagline);
-  fd.append("identity_description", primary.desc.join("\n\n").replace(/<\/?em>/g, "").replace(/<\/?p>/g, ""));
-  fd.append("identity_keywords", primary.keywords.join(" · "));
-  fd.append("secondary_name", secondary ? secondary.name : "");
-  fd.append("secondary_emoji", secondary ? secondary.emoji : "");
-  fd.append("top_5", state.result.top5.map(r => `${IDENTITIES[r.key].name}: ${r.pct}%`).join("\n"));
-  fd.append("dna_breakdown", state.result.dnaBreakdown.map(d => `${d.label}: ${d.pct}%`).join("\n"));
- 
-  if (FORMSPREE_REPORT && FORMSPREE_REPORT.startsWith("https://formspree.io/")) {
+  const url = window.location.origin + window.location.pathname;
+  const text = `I'm ${primary.emoji} ${primary.name} — ${primary.tagline}.\n\nDiscover your TGE Travel Identity ✨`;
+  return { primary, url, text };
+}
+
+async function shareResults() {
+  const { primary, url, text } = getShareContent();
+  if (navigator.share) {
     try {
-      const res = await fetch(FORMSPREE_REPORT, { method: "POST", body: fd, headers: { Accept: "application/json" } });
-      if (res.ok) {
-        state.emailSent = true;
-        btn.textContent = "✓ Sent to " + state.details.email;
-        btn.classList.add("sent");
-        toast("Report sent! Check your inbox ✨");
-      } else throw new Error("send failed");
+      await navigator.share({ title: `I'm ${primary.name}`, text, url });
+      return;
     } catch (err) {
-      btn.textContent = "📧 Email me my full report";
-      btn.disabled = false;
-      toast("Couldn't send right now — try again");
+      if (err.name === 'AbortError') return; // user cancelled
+      // fall through to modal
     }
-  } else {
-    btn.textContent = "📧 Email me my full report";
-    btn.disabled = false;
-    toast("Sorry we couldn't send it to you — please notify us");
+  }
+  openShareModal();
+}
+
+function openShareModal() {
+  const { url, text } = getShareContent();
+  const enc = encodeURIComponent;
+  const fullShare = `${text} ${url}`;
+  $("shareWhatsapp").href = `https://wa.me/?text=${enc(fullShare)}`;
+  $("shareFacebook").href = `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}&quote=${enc(text)}`;
+  $("shareTwitter").href = `https://twitter.com/intent/tweet?text=${enc(text)}&url=${enc(url)}`;
+  $("shareEmail").href = `mailto:?subject=${enc("My Travel Identity ✨")}&body=${enc(fullShare)}`;
+  // Instagram & TikTok don't accept web text shares — trigger the image download instead
+  $("shareInstagram").onclick = (e) => { e.preventDefault(); closeShareModal(); toast("Downloading image — open IG to add to your story ✨", 4000); setTimeout(downloadShareImage, 400); };
+  $("shareTikTok").onclick = (e) => { e.preventDefault(); closeShareModal(); toast("Downloading image — open TikTok to share ✨", 4000); setTimeout(downloadShareImage, 400); };
+  $("shareCopyInput").value = fullShare;
+  $("shareModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeShareModal() {
+  $("shareModal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+async function copyShareLink() {
+  const input = $("shareCopyInput");
+  const btn = $("shareCopyBtn");
+  const reset = () => { setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("copied"); }, 2000); };
+  try {
+    await navigator.clipboard.writeText(input.value);
+    btn.textContent = "✓ Copied"; btn.classList.add("copied"); reset();
+  } catch (err) {
+    input.select();
+    try { document.execCommand('copy'); btn.textContent = "✓ Copied"; btn.classList.add("copied"); reset(); }
+    catch (e) { toast("Couldn't copy — please select & copy manually"); }
   }
 }
- 
+
+/* ============ DOWNLOAD SHARE IMAGE (1080×1920 story format) ============ */
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+  ctx.fill();
+}
+
+async function buildShareImageBlob() {
+  try { await document.fonts.ready; } catch (e) {}
+
+  const primary = IDENTITIES[state.result.primaryKey];
+  const canvas = document.createElement('canvas');
+  canvas.width = 1080;
+  canvas.height = 1920;
+  const ctx = canvas.getContext('2d');
+
+  // Background gradient
+  const grad = ctx.createLinearGradient(0, 0, 0, 1920);
+  grad.addColorStop(0, '#FDF8F0');
+  grad.addColorStop(0.55, '#D4EDEF');
+  grad.addColorStop(1, '#B5DDE3');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, 1080, 1920);
+
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'alphabetic';
+
+  // Top divider
+  ctx.fillStyle = '#C9A96E';
+  ctx.fillRect(440, 175, 200, 2);
+
+  // Brand
+  ctx.font = 'italic 500 38px "Cormorant Garamond", Georgia, serif';
+  ctx.fillStyle = '#1C2B2D';
+  ctx.fillText('that girl experiences', 540, 240);
+
+  // Tag
+  ctx.font = '500 26px "Jost", Helvetica, sans-serif';
+  ctx.fillStyle = '#C9A96E';
+  ctx.fillText('— TRAVEL IDENTITY —', 540, 290);
+
+  // "You are…"
+  ctx.font = 'italic 56px "Cormorant Garamond", Georgia, serif';
+  ctx.fillStyle = '#1C2B2D';
+  ctx.fillText('You are…', 540, 460);
+
+  // Big emoji
+  ctx.font = '270px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif';
+  ctx.fillText(primary.emoji, 540, 810);
+
+  // Identity name (auto-shrink if too long)
+  let nameSize = 102;
+  ctx.font = `italic 600 ${nameSize}px "Cormorant Garamond", Georgia, serif`;
+  while (ctx.measureText(primary.name).width > 960 && nameSize > 70) {
+    nameSize -= 6;
+    ctx.font = `italic 600 ${nameSize}px "Cormorant Garamond", Georgia, serif`;
+  }
+  ctx.fillStyle = '#2D7A8C';
+  ctx.fillText(primary.name, 540, 960);
+
+  // Tagline (wrap if needed)
+  ctx.font = 'italic 500 42px "Cormorant Garamond", Georgia, serif';
+  ctx.fillStyle = '#C9A96E';
+  if (ctx.measureText(primary.tagline).width > 920) {
+    const mid = Math.floor(primary.tagline.length / 2);
+    let splitIdx = primary.tagline.indexOf(',', mid - 8);
+    if (splitIdx === -1) splitIdx = primary.tagline.indexOf(' ', mid);
+    if (splitIdx === -1) splitIdx = mid;
+    const punct = primary.tagline[splitIdx] === ',' ? 1 : 0;
+    const line1 = primary.tagline.slice(0, splitIdx + punct).trim();
+    const line2 = primary.tagline.slice(splitIdx + 1).trim();
+    ctx.fillText(line1, 540, 1040);
+    ctx.fillText(line2, 540, 1095);
+  } else {
+    ctx.fillText(primary.tagline, 540, 1055);
+  }
+
+  // Keywords as pills (auto-flow, max 6)
+  const keywords = primary.keywords.slice(0, 6);
+  ctx.font = '500 28px "Jost", Helvetica, sans-serif';
+  const padX = 36, pillH = 58, gap = 14, maxRowWidth = 1000;
+  const pills = keywords.map(k => ({ text: k, width: ctx.measureText(k).width + padX * 2 }));
+  const rows = [];
+  let row = [], rowWidth = 0;
+  pills.forEach(p => {
+    const widthIfAdded = rowWidth + p.width + (row.length > 0 ? gap : 0);
+    if (row.length >= 3 || widthIfAdded > maxRowWidth) {
+      rows.push(row); row = [p]; rowWidth = p.width;
+    } else {
+      row.push(p); rowWidth = widthIfAdded;
+    }
+  });
+  if (row.length) rows.push(row);
+
+  let startY = 1200;
+  rows.forEach((rw, rIdx) => {
+    const total = rw.reduce((s, p) => s + p.width, 0) + gap * (rw.length - 1);
+    let x = (1080 - total) / 2;
+    const y = startY + rIdx * (pillH + gap);
+    rw.forEach(p => {
+      ctx.fillStyle = '#D4EDEF';
+      roundRect(ctx, x, y, p.width, pillH, 29);
+      ctx.fillStyle = '#2D7A8C';
+      ctx.fillText(p.text, x + p.width / 2, y + 39);
+      x += p.width + gap;
+    });
+  });
+
+  // Bottom CTA section
+  ctx.fillStyle = '#C9A96E';
+  ctx.fillRect(440, 1490, 200, 2);
+
+  ctx.font = '500 32px "Jost", Helvetica, sans-serif';
+  ctx.fillStyle = '#1C2B2D';
+  ctx.fillText("WHAT'S YOURS?", 540, 1570);
+
+  ctx.font = '500 32px "Jost", Helvetica, sans-serif';
+  ctx.fillStyle = '#1C2B2D';
+  ctx.fillText('Take the finder at', 540, 1650);
+
+  ctx.font = '600 38px "Jost", Helvetica, sans-serif';
+  ctx.fillStyle = '#2D7A8C';
+  ctx.fillText('thatgirlexperiences.com/travel-identity', 540, 1715);
+
+  ctx.font = '500 30px "Jost", Helvetica, sans-serif';
+  ctx.fillStyle = '#C9A96E';
+  ctx.fillText('@thatgirl.experiences', 540, 1790);
+
+  ctx.font = '36px sans-serif';
+  ctx.fillStyle = '#C9A96E';
+  ctx.fillText('✦  ✧  ✦', 540, 1855);
+
+  return new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+}
+
+async function downloadShareImage() {
+  const btn = $("downloadBtn");
+  const originalText = btn.innerHTML;
+  btn.textContent = "Generating image…";
+  btn.disabled = true;
+  try {
+    const blob = await buildShareImageBlob();
+    const primary = IDENTITIES[state.result.primaryKey];
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `tge-travel-identity-${primary.name.toLowerCase().replace(/\s+/g, '-')}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 200);
+    btn.innerHTML = "✓ Downloaded — share to your story!";
+    setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; }, 3500);
+  } catch (err) {
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+    toast("Couldn't generate image — try again");
+  }
+}
+
 /* ============ RESET ============ */
 function resetAll() {
   state.currentQuestion = 0;
@@ -1235,10 +1568,7 @@ function resetAll() {
   $("detailsForm").reset();
   $("bookedForm").reset();
   $("notBookedForm").reset();
-  const emailBtn = $("emailMeBtn");
-  emailBtn.textContent = "📧 Email me my full report";
-  emailBtn.classList.remove("sent");
-  emailBtn.disabled = false;
+  closeShareModal();
   $("bookedSubmit").disabled = false; $("bookedSubmit").textContent = "Reveal My Identity ✦";
   $("notBookedSubmit").disabled = false; $("notBookedSubmit").textContent = "Reveal My Identity ✦";
   showScreen("intro");
