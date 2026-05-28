@@ -1475,23 +1475,5 @@ Tawk_API.customStyle = {
   })();
 </script>
 
-<script>
-  /* WeTravel embedded checkout — Purchase conversion tracking */
-  window.addEventListener('message', function(e) {
-    if (!e.data || typeof e.data !== 'object') return;
-    const d = e.data;
-    if (
-      d.type === 'wetravel:checkout:complete' ||
-      d.event === 'booking_complete' ||
-      d.status === 'success' ||
-      d.action === 'purchase'
-    ) {
-      if (window.fbq) fbq('track', 'Purchase', { value: 499.00, currency: 'USD' });
-      if (window.ttq) ttq.track('CompletePayment', { value: 499, currency: 'USD' });
-      if (window.gtag) gtag('event', 'purchase', { currency: 'USD', value: 499 });
-    }
-  });
-</script>
-
 </body>
 </html>
