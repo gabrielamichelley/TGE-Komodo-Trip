@@ -32,14 +32,32 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+s.parentNode.insertBefore(t,s)}(window,document,'script');
 fbq('init', '1713039786496101');
 fbq('track', 'PageView');
+window.addEventListener('message', (e) => {
+  const data = e.data;
+  if (data.type === 'bookingConfirmed') {
+    fbq('track', 'Purchase', {
+      content_ids: [data.trip_uuid],
+      content_name: data.trip_title,
+      value: data.total_amount,
+      currency: data.currency,
+    });
+  }
+  if (data.type === 'bookNowClicked') {
+    fbq('trackCustom', 'Book Now Button Click', {
+      source: data.source,
+      content_name: data.trip_title
+    });
+  }
+});
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1713039786496101&ev=PageView&noscript=1"
-/></noscript>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1713039786496101&ev=PageView&noscript=1"
+    alt="Facebook Pixel" />
+</noscript>  
 
 <!-- TikTok Pixel Code -->
 <script>
