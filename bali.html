@@ -562,7 +562,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget"
       data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278"
       href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278"
-       href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278"
         onclick="if(window.fbq){fbq('track', 'Lead', { content_name: 'ISLAND LIFE Brochure Download', value: 0.00, currency:
 'AUD' });}">Download Itinerary</button>
     </div>
@@ -605,10 +604,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="slide-dots" id="slideDots"></div>
   <br>
   <div style="text-align: center;">
-    <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget"
+    <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget_2"
       data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278"
       href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278"
-       href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278"
         onclick="if(window.fbq){fbq('track', 'Lead', { content_name: 'ISLAND LIFE Brochure Download', value: 0.00, currency:
 'AUD' });}">Download Brochure</button>
     </div>
@@ -1122,7 +1120,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </form>
     <p style="text-align:center;margin-top:1.1rem;font-size:0.74rem;color:var(--text-dark);">No spam, ever &nbsp;·&nbsp; Be in the know &nbsp;·&nbsp; No commitments</p>
     <div style="text-align: center; margin-top: 0.75rem;">
-      <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget"
+      <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget_3"
         data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278"
         href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278">Download Itinerary</button>
     </div>
@@ -1225,6 +1223,40 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
 </div>
 
+<!-- ============================================ -->
+<!-- WHATSAPP COMMUNITY — Join the girls community -->
+<!-- ============================================ -->
+<style>
+  .wa-join-section { padding: 3.5rem 1.5rem; background: var(--cream); display: flex; justify-content: center; }
+  .wa-join-card { position: relative; width: 100%; max-width: 680px; background: linear-gradient(135deg, var(--cream-warm) 0%, var(--teal-soft) 100%); border: 1px solid rgba(201,169,110,0.25); border-radius: 28px; padding: 2.75rem 2rem; text-align: center; box-shadow: 0 20px 60px rgba(74,155,173,0.12); overflow: hidden; }
+  .wa-join-card::before { content: ''; position: absolute; top: -30%; right: -15%; width: 320px; height: 320px; background: radial-gradient(circle, rgba(37,211,102,0.16) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+  .wa-join-icon { width: 58px; height: 58px; margin: 0 auto 1.1rem; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 8px 24px rgba(37,211,102,0.4); position: relative; }
+  .wa-join-tag { display: inline-block; background: rgba(255,255,255,0.8); border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; padding: 0.4rem 1.1rem; font-family: 'Jost', sans-serif; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; position: relative; }
+  .wa-join-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 600; line-height: 1.12; color: var(--text-dark); margin-bottom: 0.85rem; position: relative; }
+  .wa-join-title em { font-style: italic; color: var(--ocean-deep); }
+  .wa-join-sub { font-family: 'Jost', sans-serif; font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.7; color: var(--text-dark); max-width: 480px; margin: 0 auto 1.6rem; position: relative; }
+  .wa-join-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: #25D366; color: #fff; padding: 1rem 2.1rem; font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 60px; text-decoration: none; box-shadow: 0 8px 26px rgba(37,211,102,0.4); transition: all 0.3s ease; position: relative; }
+  .wa-join-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(37,211,102,0.55); background: #1ebe5b; }
+  .wa-join-btn svg { width: 22px; height: 22px; }
+  .wa-join-note { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-light); margin-top: 1rem; position: relative; }
+  @media (max-width: 540px) {
+    .wa-join-section { padding: 2.5rem 1rem; }
+    .wa-join-card { padding: 2.25rem 1.4rem; border-radius: 20px; }
+    .wa-join-btn { width: 100%; max-width: 320px; justify-content: center; }
+  }
+</style>
+<section class="wa-join-section">
+  <div class="wa-join-card">
+    <div class="wa-join-tag">Join our FREE WhatsApp Girls Community</div>
+    <h2 class="wa-join-title">Join the <em>Girls Travel Community</em></h2>
+    <p class="wa-join-sub">Be the first to know when new trips drop, exclusive moments, travel tips, the latest trip updates & special discounts. Our WhatsApp Girls Travel community is where it all happens✨</p>
+    <a href="https://chat.whatsapp.com/Hr1drTOB4wj8vKOVcLDvaB" target="_blank" rel="noopener" class="wa-join-btn">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.003 2.667C8.643 2.667 2.67 8.64 2.67 16c0 2.35.616 4.65 1.786 6.677L2.667 29.333l6.83-1.79A13.27 13.27 0 0 0 16.003 29.3C23.36 29.3 29.333 23.327 29.333 16S23.36 2.667 16.003 2.667zm0 24.06a11.03 11.03 0 0 1-5.62-1.54l-.403-.24-4.054 1.063 1.08-3.95-.262-.406A10.98 10.98 0 0 1 5.07 16c0-6.03 4.905-10.933 10.934-10.933 2.92 0 5.664 1.138 7.73 3.205a10.86 10.86 0 0 1 3.2 7.73c0 6.03-4.904 10.725-10.93 10.725zm6.003-8.18c-.328-.165-1.946-.96-2.247-1.07-.3-.11-.52-.165-.74.165-.218.328-.848 1.07-1.04 1.29-.19.218-.383.246-.71.082-.328-.165-1.388-.512-2.644-1.632-.977-.872-1.637-1.948-1.83-2.276-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.575.165-.192.218-.328.328-.547.11-.218.055-.41-.027-.575-.082-.165-.74-1.785-1.014-2.443-.267-.642-.538-.555-.74-.565l-.63-.011c-.218 0-.575.082-.876.41-.3.328-1.15 1.124-1.15 2.744 0 1.62 1.177 3.185 1.342 3.404.165.218 2.318 3.54 5.616 4.965.785.34 1.397.543 1.874.695.787.25 1.503.215 2.07.13.632-.094 1.946-.795 2.22-1.563.273-.767.273-1.425.19-1.563-.082-.137-.3-.218-.628-.382z"/></svg>
+      Join the Girls Travel Community
+    </a>
+  </div>
+</section>
+  
 <!-- MOBILE STICKY CTA — kept as regular link per instructions -->
 <div class="mobile-cta-bar" id="mobileCta">
   <a href="https://tri.ps/wrAyT" target="_blank"
@@ -1485,6 +1517,31 @@ Tawk_API.customStyle = {
     }
   })();
 </script>
+
+<!-- ============================================ -->
+<!-- WHATSAPP DIRECT CHAT — floating button (FAB)  -->
+<!-- ============================================ -->
+<style>
+  .tge-wa-fab { position: fixed; left: 20px; bottom: 24px; z-index: 998; display: inline-flex; align-items: center; background: #25D366; color: #fff; height: 56px; border-radius: 50px; padding: 0 16px; text-decoration: none; box-shadow: 0 6px 20px rgba(37,211,102,0.45); transition: all 0.35s cubic-bezier(0.22,1,0.36,1); overflow: hidden; max-width: 56px; }
+  .tge-wa-fab svg { width: 28px; height: 28px; flex-shrink: 0; }
+  .tge-wa-fab-label { font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; max-width: 0; opacity: 0; margin-left: 0; transition: all 0.35s cubic-bezier(0.22,1,0.36,1); }
+  .tge-wa-fab:hover { max-width: 240px; box-shadow: 0 10px 28px rgba(37,211,102,0.6); }
+  .tge-wa-fab:hover .tge-wa-fab-label { max-width: 160px; opacity: 1; margin-left: 10px; }
+  @media (max-width: 540px) {
+    .tge-wa-fab { bottom: 88px; left: 16px; height: 52px; padding: 0 13px; max-width: 52px; }
+    .tge-wa-fab svg { width: 26px; height: 26px; }
+    .tge-wa-fab:hover { max-width: 52px; }
+    .tge-wa-fab:hover .tge-wa-fab-label { max-width: 0; opacity: 0; margin-left: 0; }
+  }
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    @media (max-width: 540px) { .tge-wa-fab { bottom: calc(88px + env(safe-area-inset-bottom)); } }
+  }
+</style>
+<a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener" class="tge-wa-fab" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.003 2.667C8.643 2.667 2.67 8.64 2.67 16c0 2.35.616 4.65 1.786 6.677L2.667 29.333l6.83-1.79A13.27 13.27 0 0 0 16.003 29.3C23.36 29.3 29.333 23.327 29.333 16S23.36 2.667 16.003 2.667zm0 24.06a11.03 11.03 0 0 1-5.62-1.54l-.403-.24-4.054 1.063 1.08-3.95-.262-.406A10.98 10.98 0 0 1 5.07 16c0-6.03 4.905-10.933 10.934-10.933 2.92 0 5.664 1.138 7.73 3.205a10.86 10.86 0 0 1 3.2 7.73c0 6.03-4.904 10.725-10.93 10.725zm6.003-8.18c-.328-.165-1.946-.96-2.247-1.07-.3-.11-.52-.165-.74.165-.218.328-.848 1.07-1.04 1.29-.19.218-.383.246-.71.082-.328-.165-1.388-.512-2.644-1.632-.977-.872-1.637-1.948-1.83-2.276-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.575.165-.192.218-.328.328-.547.11-.218.055-.41-.027-.575-.082-.165-.74-1.785-1.014-2.443-.267-.642-.538-.555-.74-.565l-.63-.011c-.218 0-.575.082-.876.41-.3.328-1.15 1.124-1.15 2.744 0 1.62 1.177 3.185 1.342 3.404.165.218 2.318 3.54 5.616 4.965.785.34 1.397.543 1.874.695.787.25 1.503.215 2.07.13.632-.094 1.946-.795 2.22-1.563.273-.767.273-1.425.19-1.563-.082-.137-.3-.218-.628-.382z"/></svg>
+  <span class="tge-wa-fab-label">Message us!</span>
+</a>
+
 
 </body>
 </html>
