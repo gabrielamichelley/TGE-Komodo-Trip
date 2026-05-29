@@ -102,8 +102,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   /* HERO */
   .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem 2.5rem; position: relative; background: linear-gradient(170deg, var(--cream) 0%, var(--teal-soft) 35%, var(--lagoon) 65%, var(--ocean-light) 100%); overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -10%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 12s ease-in-out infinite; }
-  .hero::after { content: ''; position: absolute; bottom: -5%; left: -8%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(95,184,196,0.15) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 15s ease-in-out infinite reverse; }
+  .hero::before { content: ''; position: absolute; top: -10%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 12s ease-in-out infinite; pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -5%; left: -8%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(95,184,196,0.15) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 15s ease-in-out infinite reverse; pointer-events: none; }
   @keyframes heroFloat { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-40px) scale(1.05);} }
   @keyframes fadeUp { from{opacity:0;transform:translateY(25px);} to{opacity:1;transform:translateY(0);} }
   .hero-content { position: relative; z-index: 1; max-width: 760px; width: 100%; }
