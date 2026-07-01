@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>That Girl Experiences — ISLAND LIFE - Bali, Nusa Lembongan & Nusa Penida</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- GOOGLE ANALYTICS 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- MICROSOFT CLARITY -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wk5vnqvlwl");
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1713039786496101');
+fbq('track', 'PageView');
+window.addEventListener('message', (e) => {
+  const data = e.data;
+  if (!data || typeof data !== 'object') return;
+  if (data.type === 'bookingConfirmed') {
+    fbq('track', 'Purchase', {
+      content_ids: [data.trip_uuid],
+      content_name: data.trip_title,
+      value: data.total_amount,
+      currency: data.currency,
+    });
+  }
+  if (data.type === 'bookNowClicked') {
+    fbq('trackCustom', 'Book Now Button Click', {
+      source: data.source,
+      content_name: data.trip_title
+    });
+  }
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1713039786496101&ev=PageView&noscript=1"
+alt="Facebook Pixel" /></noscript>
+
+<!-- TikTok Pixel Code -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D7S3IFBC77U07JNLHN80');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+
+<style>
+  :root {
+    --blush: #F2D7D5; --blush-deep: #E8B4B8; --rose: #C97B84;
+    --gold: #C9A96E; --gold-light: #E8D5A3;
+    --cream: #FDF8F0; --cream-warm: #FAF0E4;
+    --ocean: #4A9BAD; --ocean-deep: #2D7A8C; --ocean-light: #8CC5D0;
+    --teal: #5FB8C4; --teal-soft: #D4EDEF; --lagoon: #B5DDE3;
+    --text-dark: #1C2B2D; --text-mid: #1C2B2D; --text-light: #4A5E61; --white: #FFFFFF;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999;
+  }
+
+  /* NAV */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.4s ease; }
+  .nav.scrolled { background: rgba(253,248,240,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,169,110,0.12); padding: 0.65rem 1.5rem; }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-decoration: none; flex-shrink: 0; }
+  .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+  .nav-links { display: flex; align-items: center; gap: 1.25rem; }
+  .nav-link { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; transition: color 0.3s ease; }
+  .nav-link:hover { color: var(--gold); }
+  /* nav-cta — !important overrides WeTravel inline styles */
+  .nav-cta { background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: var(--white) !important; border: none !important; padding: 0.55rem 1.25rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.68rem !important; font-weight: 500 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; border-radius: 50px !important; cursor: pointer !important; text-decoration: none !important; white-space: nowrap !important; transition: all 0.3s ease !important; flex-shrink: 0 !important; line-height: normal !important; display: inline-block !important; }
+  .nav-cta:hover { transform: translateY(-1px) !important; box-shadow: 0 4px 16px rgba(201,169,110,0.35) !important; }
+
+  /* HERO */
+  .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem 2.5rem; position: relative; background: linear-gradient(170deg, var(--cream) 0%, var(--teal-soft) 35%, var(--lagoon) 65%, var(--ocean-light) 100%); overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -10%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 12s ease-in-out infinite; pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -5%; left: -8%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(95,184,196,0.15) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 15s ease-in-out infinite reverse; pointer-events: none; }
+  @keyframes heroFloat { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-40px) scale(1.05);} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(25px);} to{opacity:1;transform:translateY(0);} }
+  .hero-content { position: relative; z-index: 1; max-width: 760px; width: 100%; }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,0.65); border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; padding: 0.5rem 1.75rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; backdrop-filter: blur(8px); opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 6.5vw, 5rem); font-weight: 600; line-height: 1.05; color: var(--text-dark); margin-bottom: 1rem; opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards; }
+  .hero-title em { font-style: italic; color: var(--ocean-deep); }
+  .hero-location { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2vw, 1.35rem); font-weight: 700; color: var(--ocean-deep); margin-bottom: 1.2rem; letter-spacing: 0.04em; opacity: 0; animation: fadeUp 0.8s ease 0.65s forwards; }
+  .hero-details { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards; }
+  .hero-detail { text-align: center; }
+  .hero-detail-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; color: var(--text-dark); }
+  .hero-detail-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); margin-top: 0.15rem; }
+  .hero-divider { width: 1px; height: 40px; background: rgba(201,169,110,0.3); align-self: center; }
+  .hero-for { font-size: clamp(0.92rem, 1.8vw, 1rem); font-weight: 400; line-height: 1.8; color: var(--text-dark); max-width: 620px; margin: 0 auto 1rem; opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards; background: rgba(255,255,255,0.6); border: 1px solid rgba(201,169,110,0.2); border-radius: 20px; padding: 1.25rem 1.75rem; backdrop-filter: blur(8px); }
+  .hero-for strong { color: var(--text-dark); font-weight: 600; }
+  .hero-spots { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.95s forwards; }
+  /* hero-cta — !important overrides WeTravel inline styles; animation kept without !important */
+  .hero-cta { display: inline-block !important; background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: var(--white) !important; border: none !important; padding: 1rem 2.5rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.88rem !important; font-weight: 500 !important; letter-spacing: 0.25em !important; text-transform: uppercase !important; border-radius: 60px !important; cursor: pointer !important; text-decoration: none !important; transition: all 0.4s ease !important; box-shadow: 0 8px 30px rgba(201,169,110,0.3) !important; line-height: normal !important; opacity: 0; animation: fadeUp 0.8s ease 1.05s forwards; }
+  .hero-cta:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 40px rgba(201,169,110,0.45) !important; }
+
+  /* SECTION COMMONS */
+  section { padding: 3.5rem 2rem; }
+  .section-tag { font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 0.75rem; font-weight: 500; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 600; text-align: center; color: var(--text-dark); margin-bottom: 1.1rem; line-height: 1.15; }
+  .section-title em { font-style: italic; }
+  .section-subtitle { font-size: clamp(1rem, 1.8vw, 1.1rem); font-weight: 400; text-align: center; color: var(--text-dark); max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.75; }
+
+  /* WELLNESS / ADVENTURES */
+  .wellness-section { background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); }
+  .wellness-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .wellness-card { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(201,169,110,0.15); border-radius: 22px; padding: 2rem; transition: all 0.4s ease; position: relative; overflow: hidden; }
+  .wellness-card::after { content: ''; position: absolute; bottom: -30px; right: -30px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%); border-radius: 50%; }
+  .wellness-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(74,155,173,0.12); background: var(--white); }
+  .wellness-emoji { font-size: 2rem; margin-bottom: 1rem; }
+  .wellness-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.6rem; }
+  .wellness-card-text { font-size: 0.97rem; font-weight: 400; color: var(--text-dark); line-height: 1.8; }
+
+  /* SLIDESHOW */
+  .slideshow-section { background: var(--cream); padding: 3.5rem 2rem; }
+  .slideshow-wrapper { position: relative; max-width: 960px; margin: 0 auto; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.1); }
+  .slideshow-track { display: flex; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+  .slide { min-width: 100%; position: relative; flex-shrink: 0; background: var(--cream); }
+  .slide::before { content: ''; display: block; padding-top: 56.25%; }
+  .slide img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 2rem; background: linear-gradient(to top, rgba(44,62,64,0.78), transparent); color: var(--white); }
+  .slide-caption-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; font-style: italic; }
+  .slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.88); border: none; width: 46px; height: 46px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.1); color: var(--text-dark); z-index: 10; transition: all 0.3s ease; }
+  .slide-btn:hover { background: var(--white); transform: translateY(-50%) scale(1.05); }
+  .slide-prev { left: 0.85rem; } .slide-next { right: 0.85rem; }
+  .slide-dots { display: flex; justify-content: center; gap: 0.6rem; margin-top: 1.4rem; }
+  .slide-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(201,169,110,0.35); cursor: pointer; border: none; transition: all 0.3s ease; }
+  .slide-dot.active { background: var(--gold); transform: scale(1.25); }
+
+  /* FOR YOU */
+  .for-you-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 960px; margin: 0 auto 2.5rem; }
+  .for-you-checklist { background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.15); border-radius: 22px; padding: 2.5rem; }
+  .for-you-checklist-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; font-style: italic; color: var(--ocean-deep); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(74,155,173,0.18); }
+  .for-you-list { display: flex; flex-direction: column; gap: 1.1rem; }
+  .for-you-item { display: flex; align-items: flex-start; gap: 0.9rem; }
+  .for-you-check { width: 23px; height: 23px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; margin-top: 0.1rem; font-size: 0.65rem; color: white; font-weight: 700; }
+  .for-you-item-text { font-size: 1rem; font-weight: 400; line-height: 1.65; color: var(--text-dark); }
+  .for-you-item-text strong { color: var(--text-dark); font-weight: 600; }
+  .for-you-quote-box { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border: 1px solid rgba(74,155,173,0.18); border-radius: 22px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; }
+  .for-you-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400; font-style: italic; color: var(--text-dark); line-height: 1.6; }
+  .for-you-quote strong { font-style: normal; color: var(--ocean-deep); font-weight: 600; }
+  .for-you-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .for-you-tag { background: rgba(255,255,255,0.9); border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; padding: 0.35rem 1rem; font-size: 0.76rem; color: var(--text-dark); font-weight: 400; }
+  .cta-center { text-align: center; }
+  /* cta-btn — !important overrides WeTravel inline styles */
+  .cta-btn { display: inline-block !important; background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: var(--white) !important; padding: 1.15rem 3.25rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.88rem !important; font-weight: 500 !important; letter-spacing: 0.25em !important; text-transform: uppercase !important; border-radius: 60px !important; text-decoration: none !important; transition: all 0.4s ease !important; box-shadow: 0 8px 30px rgba(201,169,110,0.3) !important; border: none !important; cursor: pointer !important; line-height: normal !important; }
+  .cta-btn:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 40px rgba(201,169,110,0.45) !important; }
+
+  /* WHY TGE */
+  .why-section { background: linear-gradient(180deg, var(--cream) 0%, var(--teal-soft) 100%); }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .why-card { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(201,169,110,0.15); border-radius: 22px; padding: 2rem; transition: all 0.4s ease; }
+  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(74,155,173,0.12); background: var(--white); }
+  .why-card.featured { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border-color: rgba(74,155,173,0.2); }
+  .why-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .why-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.6rem; }
+  .why-card-text { font-size: 0.97rem; font-weight: 400; line-height: 1.8; color: var(--text-dark); }
+
+  /* ITINERARY */
+  .itinerary-section { background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); }
+  .itinerary-timeline { max-width: 720px; margin: 0 auto; position: relative; }
+  .itinerary-timeline::before { content: ''; position: absolute; left: 34px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold-light), var(--ocean-light), var(--blush-deep)); }
+  .day-card { position: relative; margin-bottom: 1.75rem; padding-left: 82px; }
+  .day-marker { position: absolute; left: 6px; top: 0; width: 58px; height: 28px; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--ocean)); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.6rem; font-weight: 600; z-index: 2; box-shadow: 0 2px 10px rgba(74,155,173,0.3); letter-spacing: 0.05em; }
+  .day-content { background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border: 1px solid rgba(201,169,110,0.15); border-radius: 22px; padding: 2rem; transition: all 0.4s ease; }
+  .day-content:hover { box-shadow: 0 16px 48px rgba(74,155,173,0.1); background: var(--white); }
+  .day-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+  .day-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--text-dark); }
+  .day-date { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ocean-deep); background: var(--teal-soft); padding: 0.35rem 0.9rem; border-radius: 50px; font-weight: 500; }
+  .day-highlights { display: flex; flex-direction: column; gap: 0.5rem; }
+  .highlight-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.97rem; font-weight: 400; color: var(--text-dark); line-height: 1.65; }
+  .highlight-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .day-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 50px; margin-top: 1rem; font-weight: 500; }
+  .tag-adventure { background: rgba(74,155,173,0.1); color: var(--ocean); }
+  .tag-wellness { background: rgba(143,188,143,0.15); color: #6B9F6B; }
+  .tag-luxe { background: rgba(201,169,110,0.12); color: var(--gold); }
+  .tag-connection { background: rgba(201,123,132,0.12); color: var(--rose); }
+  .tag-growth { background: rgba(160,130,200,0.12); color: #8B6FB0; }
+
+  /* INCLUSIONS */
+  .inclusions-section { background: var(--cream); }
+  .inclusions-wrapper { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .inclusion-block { background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border-radius: 22px; padding: 2.5rem; border: 1px solid rgba(201,169,110,0.15); transition: all 0.4s ease; }
+  .inclusion-block:hover { box-shadow: 0 16px 48px rgba(74,155,173,0.08); background: var(--white); }
+  .inclusion-heading { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--text-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
+  .inclusion-list { display: flex; flex-direction: column; gap: 0.65rem; }
+  .inclusion-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.97rem; font-weight: 400; color: var(--text-dark); line-height: 1.55; }
+  .inclusion-check { color: var(--ocean); font-weight: 600; flex-shrink: 0; margin-top: 0.05rem; }
+  .exclusion-x { color: var(--rose); font-weight: 600; flex-shrink: 0; margin-top: 0.05rem; font-size: 0.9rem; }
+
+  /* SOCIAL SECTION (TikTok + Instagram tiles) */
+  .social-section { background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%); padding: 2.5rem 1.5rem; }
+  .social-handle { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.3rem, 3vw, 1.7rem); color: var(--ocean-deep); font-weight: 600; text-align: center; margin-bottom: 0.5rem; }
+  .social-handle a { color: inherit; text-decoration: none; }
+  .social-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; max-width: 800px; margin: 0 auto 1.75rem; }
+  .social-tile { position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; background: var(--teal-soft); display: block; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .social-tile:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
+  .social-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .social-tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.4), transparent 60%); }
+  .social-tile-icon { position: absolute; bottom: 0.6rem; left: 0.6rem; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; z-index: 2; }
+  .social-tile-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: rgba(255,255,255,0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2; opacity: 0.85; }
+  .social-tile-play::before { content: ''; border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent var(--text-dark); margin-left: 3px; }
+  .social-cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+  .social-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; }
+  .social-btn-ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; box-shadow: 0 6px 20px rgba(220,39,67,0.3); }
+  .social-btn-tt { background: var(--text-dark); color: white; box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+  .social-btn:hover { transform: translateY(-2px); }
+
+  /* FAQ */
+  .faq-section { background: var(--white); padding: 3.5rem 2rem; }
+  .faq-wrapper { max-width: 700px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid rgba(201,169,110,0.15); padding: 1.4rem 0; }
+  .faq-question { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--text-dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .faq-arrow { transition: transform 0.3s ease; flex-shrink: 0; color: var(--gold); }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+  .faq-item.open .faq-answer { max-height: 400px; padding-top: 1rem; }
+  .faq-answer-text { font-size: 0.97rem; font-weight: 400; color: var(--text-dark); line-height: 1.75; }
+  .faq-disclaimer { margin-top: 2rem; padding: 1.2rem 1.5rem; background: var(--teal-soft); border-radius: 16px; border: 1px solid rgba(74,155,173,0.15); }
+  .faq-disclaimer-text { font-size: 0.88rem; font-weight: 400; color: var(--text-dark); line-height: 1.65; font-style: italic; }
+
+  /* FINAL CTA */
+  .final-cta-section { background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 60%, var(--teal) 100%); text-align: center; padding: 3.5rem 2rem; position: relative; overflow: hidden; }
+  .final-cta-section::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+  .final-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5.5vw, 4.2rem); font-weight: 500; color: var(--white); margin-bottom: 1.35rem; position: relative; z-index: 1; line-height: 1.15; }
+  .final-title em { font-style: italic; color: var(--gold-light); }
+  .final-text { font-size: clamp(1rem, 1.8vw, 1.1rem); font-weight: 300; color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 2rem; line-height: 1.8; position: relative; z-index: 1; }
+  /* final-btn — !important overrides WeTravel inline styles */
+  .final-btn { display: inline-block !important; background: var(--white) !important; color: var(--ocean-deep) !important; border: none !important; padding: 1.2rem 2.5rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.88rem !important; font-weight: 500 !important; letter-spacing: 0.25em !important; text-transform: uppercase !important; border-radius: 60px !important; cursor: pointer !important; text-decoration: none !important; transition: all 0.4s ease !important; box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important; position: relative !important; z-index: 1 !important; line-height: normal !important; }
+  .final-btn:hover { transform: translateY(-2px) !important; box-shadow: 0 14px 44px rgba(0,0,0,0.22) !important; }
+
+  /* FOOTER */
+  .footer { background: var(--cream); padding: 2.5rem 2rem; text-align: center; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.6rem; }
+  .footer-disclaimer { font-size: 0.72rem; color: var(--text-light); max-width: 500px; margin: 0 auto; line-height: 1.6; }
+
+  /* MOBILE STICKY CTA */
+  .mobile-cta-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: rgba(253,248,240,0.95); backdrop-filter: blur(16px); padding: 0.75rem 1rem; border-top: 1px solid rgba(201,169,110,0.15); transform: translateY(100%); transition: transform 0.4s ease; }
+  .mobile-cta-bar.visible { transform: translateY(0); }
+  .mobile-cta-bar a { display: block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); text-align: center; padding: 0.9rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 16px rgba(201,169,110,0.3); }
+  @media (max-width: 768px) { .mobile-cta-bar { display: block; } }
+  @supports (padding-bottom: env(safe-area-inset-bottom)) { .mobile-cta-bar { padding-bottom: calc(0.75rem + env(safe-area-inset-bottom)); } }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── WETRAVEL DOWNLOAD BROCHURE BUTTONS — TGE styled ── */
+  .wtrvl-download_brochure_button {
+    background: rgba(255,255,255,0.92) !important;
+    color: var(--text-dark) !important;
+    border: 1.5px solid rgba(201,169,110,0.5) !important;
+    border-radius: 60px !important;
+    padding: 0.85rem 2rem !important;
+    font-family: 'Jost', sans-serif !important;
+    font-size: 0.78rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 14px rgba(201,169,110,0.18) !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    line-height: normal !important;
+    -webkit-font-smoothing: antialiased !important;
+    margin-top: 0.5rem !important;
+  }
+  .wtrvl-download_brochure_button:hover {
+    background: var(--white) !important;
+    border-color: rgba(201,169,110,0.8) !important;
+    box-shadow: 0 4px 22px rgba(201,169,110,0.32) !important;
+    transform: translateY(-1px) !important;
+    color: var(--gold) !important;
+  }
+
+  /* ── NEW TRUST SECTIONS (added) ── */
+  .trust-section { background: linear-gradient(180deg, var(--cream) 0%, var(--teal-soft) 100%); }
+  .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,250px),1fr)); gap: 1.25rem; max-width: 1080px; margin: 0 auto; }
+  .trust-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border: 1px solid rgba(201,169,110,0.18); border-radius: 22px; padding: 1.9rem 1.6rem; transition: all 0.4s ease; }
+  .trust-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(74,155,173,0.12); background: var(--white); }
+  .trust-icon { font-size: 1.9rem; margin-bottom: 0.85rem; display: block; }
+  .trust-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; }
+  .trust-card-text { font-size: 0.95rem; line-height: 1.7; color: var(--text-dark); }
+  .trust-card-text strong { font-weight: 600; }
+  .trust-badge-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; max-width: 760px; margin: 2rem auto 0; }
+  .trust-badge { background: rgba(255,255,255,0.9); border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; padding: 0.5rem 1.1rem; font-size: 0.76rem; font-weight: 500; color: var(--text-dark); display: inline-flex; align-items: center; gap: 0.45rem; }
+
+  .stay-section { background: var(--cream); }
+  .stay-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,280px),1fr)); gap: 1.5rem; max-width: 1080px; margin: 0 auto; }
+  .stay-card { background: rgba(255,255,255,0.9); border: 1px solid rgba(201,169,110,0.18); border-radius: 22px; overflow: hidden; transition: all 0.4s ease; }
+  .stay-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(74,155,173,0.12); }
+  .stay-photo { position: relative; width: 100%; background: var(--teal-soft); overflow: hidden; }
+  .stay-photo::before { content: ''; display: block; padding-top: 66%; }
+  .stay-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .stay-photo-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ocean-deep); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.95rem; text-align: center; padding: 1rem; background: linear-gradient(135deg, var(--teal-soft), var(--lagoon)); }
+  .stay-body { padding: 1.5rem 1.6rem 1.75rem; }
+  .stay-island { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.4rem; }
+  .stay-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; line-height: 1.2; }
+  .stay-desc { font-size: 0.93rem; line-height: 1.65; color: var(--text-dark); margin-bottom: 0.85rem; }
+  .stay-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .stay-tag { background: rgba(255,255,255,0.9); border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; padding: 0.28rem 0.8rem; font-size: 0.72rem; color: var(--text-dark); }
+  .stay-note { max-width: 760px; margin: 2rem auto 0; text-align: center; font-size: 0.85rem; font-style: italic; color: var(--text-light); line-height: 1.6; }
+
+  .founder-section { background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); }
+  .founder-wrap { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 2.5rem; align-items: center; }
+  .founder-photo { position: relative; width: 100%; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 64px rgba(74,155,173,0.18); background: var(--teal-soft); }
+  .founder-photo::before { content: ''; display: block; padding-top: 120%; }
+  .founder-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .founder-photo-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; color: var(--ocean-deep); font-family: 'Cormorant Garamond', serif; font-style: italic; background: linear-gradient(135deg, var(--teal-soft), var(--lagoon)); }
+  .founder-photo-tag { position: absolute; bottom: 1rem; left: 1rem; right: 1rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-radius: 14px; padding: 0.7rem 1rem; text-align: center; z-index: 2; }
+  .founder-photo-tag strong { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-dark); display: block; }
+  .founder-photo-tag span { font-size: 0.72rem; letter-spacing: 0.1em; color: var(--text-light); }
+  .founder-photo-tag a { color: var(--ocean-deep); text-decoration: none; font-weight: 600; }
+  .founder-eyebrow { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.7rem; }
+  .founder-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 600; color: var(--text-dark); line-height: 1.1; margin-bottom: 1rem; }
+  .founder-name em { font-style: italic; color: var(--ocean-deep); }
+  .founder-text { font-size: 1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1rem; }
+  .founder-text strong { font-weight: 600; color: var(--text-dark); }
+  .founder-points { display: flex; flex-direction: column; gap: 0.7rem; margin: 1.25rem 0 1.5rem; }
+  .founder-point { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.97rem; line-height: 1.55; color: var(--text-dark); }
+  .founder-point span { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+  .founder-ig { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); color: #fff; padding: 0.7rem 1.4rem; border-radius: 50px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; box-shadow: 0 6px 20px rgba(220,39,67,0.3); transition: transform 0.3s ease; }
+  .founder-ig:hover { transform: translateY(-2px); }
+  .founder-sign { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: var(--ocean-deep); margin-top: 1.25rem; }
+  @media (max-width: 768px) { .founder-wrap { grid-template-columns: 1fr; gap: 1.75rem; } .founder-photo { max-width: 340px; margin: 0 auto; } }
+
+  .bookflow-section { background: var(--cream); }
+  .bookflow-steps { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+  .bookflow-step { display: flex; gap: 1.1rem; align-items: flex-start; background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.18); border-radius: 18px; padding: 1.4rem 1.6rem; transition: all 0.3s ease; }
+  .bookflow-step:hover { box-shadow: 0 12px 36px rgba(74,155,173,0.1); background: var(--white); }
+  .bookflow-num { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--ocean)); color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .bookflow-step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem; }
+  .bookflow-step-text { font-size: 0.93rem; line-height: 1.6; color: var(--text-dark); }
+  .bookflow-cancel { max-width: 760px; margin: 2rem auto 0; background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border: 1px solid rgba(74,155,173,0.18); border-radius: 18px; padding: 1.5rem 1.75rem; text-align: center; }
+  .bookflow-cancel-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; }
+  .bookflow-cancel-text { font-size: 0.93rem; line-height: 1.7; color: var(--text-dark); }
+  .bookflow-cancel-text a { color: var(--ocean-deep); font-weight: 600; text-decoration: underline; }
+
+  .callbook-section { background: linear-gradient(135deg, var(--cream-warm) 0%, var(--teal-soft) 100%); }
+  .callbook-wrap { max-width: 880px; margin: 0 auto; background: rgba(255,255,255,0.7); border: 1px solid rgba(201,169,110,0.22); border-radius: 28px; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 20px 60px rgba(74,155,173,0.1); }
+  .callbook-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 600; color: var(--text-dark); line-height: 1.15; margin-bottom: 0.75rem; }
+  .callbook-title em { font-style: italic; color: var(--ocean-deep); }
+  .callbook-sub { font-size: 1rem; line-height: 1.7; color: var(--text-dark); max-width: 540px; margin: 0 auto 1.75rem; }
+  .callbook-btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+  .callbook-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.7rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; }
+  .callbook-btn-call { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; box-shadow: 0 6px 20px rgba(201,169,110,0.32); }
+  .callbook-btn-wa { background: #25D366; color: #fff; box-shadow: 0 6px 20px rgba(37,211,102,0.32); }
+  .callbook-btn-email { background: var(--white); color: var(--text-dark); border: 1px solid rgba(201,169,110,0.3); }
+  .callbook-btn:hover { transform: translateY(-2px); }
+  .callbook-note { font-size: 0.78rem; color: var(--text-light); margin-top: 1.1rem; }
+
+  /* TABLET 900px */
+  @media (max-width: 900px) {
+    section { padding: 3.5rem 1.5rem; }
+    .slideshow-section { padding: 3.5rem 1.5rem; }
+    .why-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    .wellness-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  }
+
+  /* TABLET 768px */
+  @media (max-width: 768px) {
+    .nav { padding: 0.8rem 1rem; } .nav.scrolled { padding: 0.6rem 1rem; }
+    .nav-link { display: none; }
+    .nav-cta { display: none !important; }
+    .for-you-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .itinerary-timeline::before { left: 24px; }
+    .day-card { padding-left: 62px; margin-bottom: 1.25rem; }
+    .day-marker { left: 0; width: 50px; height: 26px; font-size: 0.52rem; }
+    .day-content { padding: 1.5rem; }
+    .inclusions-wrapper { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+
+  /* MOBILE 540px */
+  @media (max-width: 540px) {
+    .nav { padding: 0.75rem 1rem; } .nav.scrolled { padding: 0.6rem 1rem; }
+    .nav-brand { font-size: 0.9rem; letter-spacing: 0.18em; }
+    .hero { padding: 2.5rem 1rem 1.5rem; }
+    .hero-tag { font-size: 0.62rem; padding: 0.4rem 1rem; margin-bottom: 1rem; }
+    .hero-title { font-size: clamp(2.2rem, 9vw, 2.8rem); }
+    .hero-location { font-size: 1.1rem; }
+    .hero-details { gap: 0.5rem; }
+    .hero-detail-value { font-size: 1.3rem; }
+    .hero-divider { height: 26px; }
+    .hero-for { font-size: 0.93rem; padding: 1rem 1.25rem; border-radius: 14px; }
+    /* hero-cta mobile — !important needed to override WeTravel inline styles */
+    .hero-cta { width: 100% !important; text-align: center !important; padding: 1rem !important; font-size: 0.88rem !important; display: block !important; box-sizing: border-box !important; }
+    section { padding: 2.5rem 1rem; }
+    .slideshow-section { padding: 2rem 1rem; }
+    .final-cta-section { padding: 2.5rem 1rem; }
+    .faq-section { padding: 2.5rem 1rem; }
+
+    .for-you-checklist { padding: 1.5rem; border-radius: 16px; }
+    .for-you-checklist-title { font-size: 1.35rem; }
+    .for-you-item-text { font-size: 1rem; }
+    .for-you-quote-box { padding: 1.6rem; border-radius: 16px; justify-content: flex-start; gap: 1.25rem; }
+    .for-you-quote { font-size: 1.3rem; }
+    .for-you-tag { font-size: 0.8rem; }
+    .cta-center { display: flex; justify-content: center; }
+    /* cta-btn mobile — !important needed to override WeTravel inline styles */
+    .cta-btn { width: 100% !important; max-width: 320px !important; text-align: center !important; display: block !important; padding: 1rem 1.5rem !important; box-sizing: border-box !important; }
+
+    /* Why grid → accordion on mobile */
+    .why-grid { grid-template-columns: 1fr; gap: 0; border-radius: 20px; overflow: hidden; border: 1px solid rgba(201,169,110,0.2); }
+    .why-card { border-radius: 0 !important; border: none !important; border-bottom: 1px solid rgba(201,169,110,0.14) !important; padding: 0 !important; background: var(--white) !important; }
+    .why-card:last-child { border-bottom: none !important; }
+    .why-acc-trigger { display: flex; align-items: center; gap: 0.75rem; width: 100%; padding: 0.95rem 1.1rem; cursor: pointer; background: transparent; border: none; text-align: left; }
+    .why-acc-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .why-acc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--text-dark); flex: 1; line-height: 1.25; }
+    .why-acc-chevron { font-size: 0.9rem; color: var(--gold); transition: transform 0.3s ease; flex-shrink: 0; margin-left: 0.25rem; }
+    .why-card.acc-open .why-acc-chevron { transform: rotate(180deg); }
+    .why-acc-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 1.1rem; font-size: 0.95rem; font-weight: 400; line-height: 1.8; color: var(--text-dark); }
+    .why-card.acc-open .why-acc-body { max-height: 600px; padding: 0 1.1rem 1rem; }
+
+    /* Wellness 1-col */
+    .wellness-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+    .wellness-card { border-radius: 16px; padding: 1.5rem; }
+    .wellness-emoji { font-size: 1.6rem; margin-bottom: 0.75rem; }
+    .wellness-card-title { font-size: 1.2rem; }
+    .wellness-card-text { font-size: 0.95rem; }
+
+    /* Itinerary */
+    .itinerary-timeline::before { left: 20px; }
+    .day-card { padding-left: 52px; margin-bottom: 1rem; }
+    .day-marker { left: 0; width: 42px; height: 24px; font-size: 0.48rem; }
+    .day-content { padding: 1.25rem; border-radius: 16px; }
+    .day-title { font-size: 1.2rem; }
+    .highlight-item { font-size: 0.93rem; gap: 0.55rem; }
+
+    /* Inclusions */
+    .inclusion-block { padding: 1.5rem; border-radius: 16px; }
+    .inclusion-item { font-size: 0.93rem; }
+
+    /* Slideshow */
+    .slide::before { padding-top: 85%; }
+    .slideshow-wrapper { border-radius: 14px; }
+    .slide-caption { padding: 0.9rem 1rem; }
+    .slide-caption-title { font-size: 1rem; }
+    .slide-btn { width: 32px; height: 32px; font-size: 0.85rem; }
+    .slide-dot { width: 7px; height: 7px; }
+
+    /* FAQ */
+    .faq-question { font-size: 1.05rem; }
+    .faq-answer-text { font-size: 0.93rem; }
+
+    /* Final CTA */
+    .final-btn { width: 100% !important; max-width: 320px !important; padding: 0.9rem !important; text-align: center !important; display: block !important; margin: 0 auto !important; box-sizing: border-box !important; }
+    .final-text { margin-bottom: 1.25rem; }
+
+    /* Contact */
+    .contact-name-row { grid-template-columns: 1fr !important; }
+
+    /* Download brochure mobile */
+    .wtrvl-download_brochure_button { width: 100% !important; max-width: 320px !important; text-align: center !important; padding: 1rem !important; box-sizing: border-box !important; }
+
+    /* Push live chat above mobile sticky CTA */
+    #tawkchat-container, .tawk-min-container, iframe[title*="chat" i] { bottom: 70px !important; }
+  }
+
+  @media (max-width: 360px) {
+    .hero-title { font-size: 1.95rem; }
+    .day-marker { width: 38px; font-size: 0.45rem; } .day-card { padding-left: 48px; }
+  }
+
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .nav { padding-top: calc(0.85rem + env(safe-area-inset-top)); }
+    .nav.scrolled { padding-top: calc(0.65rem + env(safe-area-inset-top)); }
+    .hero { padding-top: calc(5.5rem + env(safe-area-inset-top)); }
+    .footer { padding-bottom: calc(2rem + env(safe-area-inset-bottom)); }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    .faq-question, .currency-option, .currency-btn { min-height: 44px; }
+    .faq-item { padding: 1.1rem 0; }
+  }
+
+  /* ── $50 DEPOSIT BUBBLE ── */
+  .deposit-bubble {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(201,169,110,0.18), rgba(232,213,163,0.22));
+    border: 1.6px solid rgba(201,169,110,0.45); border-radius: 40px;
+    padding: 0.25rem 1.2rem; font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.08em; color: var(--text-dark);
+    backdrop-filter: blur(8px); margin: 0.5rem auto 1.25rem;
+  }
+  .deposit-bubble .dep-highlight { color: var(--ocean-deep); font-weight: 700; }
+  .deposit-bubble-wrap { text-align: center; }
+
+  /* ── REGISTER YOUR INTEREST SECTION ── */
+  .interest-section { background: linear-gradient(135deg, #ffffff 0%, #D4EDEF 100%); border-top: 1px solid rgba(201,169,110,0.12); border-bottom: 1px solid rgba(201,169,110,0.12); padding: 2rem 1.5rem; }
+  .interest-inner { max-width: 860px; margin: 0 auto; }
+  .interest-form { display: flex; gap: 0.85rem; align-items: flex-end; flex-wrap: wrap; }
+  .interest-field { flex: 1; min-width: min(100%, 160px); display: flex; flex-direction: column; gap: 0.35rem; }
+  .interest-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dark); font-weight: 500; padding-left: 0.25rem; }
+  .interest-input { padding: 0.85rem 1.25rem; border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.92rem; color: var(--text-dark); background: rgba(255,255,255,0.9); outline: none; width: 100%; transition: border-color 0.3s, box-shadow 0.3s; }
+  .interest-input:focus { border-color: var(--ocean); box-shadow: 0 0 0 3px rgba(74,155,173,0.12); }
+  .interest-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; border: none; padding: 0.85rem 1.75rem; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 16px rgba(201,169,110,0.3); white-space: nowrap; transition: box-shadow 0.3s; flex-shrink: 0; }
+  .interest-btn:hover { box-shadow: 0 8px 24px rgba(201,169,110,0.48); }
+  @media (max-width: 540px) {
+    .interest-section { padding: 2.5rem 1rem; }
+    .interest-form { flex-direction: column; align-items: center; }
+    .interest-field { min-width: unset; width: 100%; }
+    .interest-btn { width: 100%; max-width: 320px; text-align: center; padding: 1rem; }
+  }
+
+  /* ── GIVEAWAY POPUP ── */
+  .giveaway-popup { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 1rem; }
+  .giveaway-popup.show { display: flex; animation: popupFadeIn 0.4s ease forwards; }
+  .giveaway-popup-overlay { position: absolute; inset: 0; background: rgba(28,43,45,0.72); backdrop-filter: blur(4px); cursor: pointer; }
+  .giveaway-popup-card { position: relative; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 100%); border-radius: 24px; padding: 2.25rem 1.75rem 1.6rem; max-width: 460px; width: 100%; max-height: 92vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.3); border: 1px solid rgba(201,169,110,0.25); animation: popupSlideUp 0.5s cubic-bezier(0.22,1,0.36,1) forwards; }
+  @keyframes popupFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes popupSlideUp { from { opacity: 0; transform: translateY(40px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  .giveaway-popup-close { position: absolute; top: 0.85rem; right: 0.95rem; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.18); font-size: 1.5rem; line-height: 1; cursor: pointer; color: var(--text-dark); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; padding: 0; z-index: 2; }
+  .giveaway-popup-close:hover { background: var(--white); transform: scale(1.05); }
+  .giveaway-popup-tag { font-size: 0.66rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-align: center; margin-bottom: 0.6rem; }
+  .giveaway-popup-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 5vw, 2rem); font-weight: 600; text-align: center; color: var(--text-dark); line-height: 1.15; margin-bottom: 0.5rem; }
+  .giveaway-popup-title em { font-style: italic; color: var(--ocean-deep); }
+  .giveaway-popup-subtitle { font-size: 0.92rem; line-height: 1.55; text-align: center; color: var(--text-dark); margin-bottom: 0.75rem; }
+  .giveaway-popup-subtitle strong { font-weight: 600; }
+  .giveaway-popup-bonus { background: linear-gradient(135deg, rgba(201,169,110,0.15), rgba(232,213,163,0.18)); border: 1px dashed rgba(201,169,110,0.4); border-radius: 12px; padding: 0.65rem 0.9rem; font-size: 0.82rem; text-align: center; color: var(--text-dark); margin-bottom: 1rem; line-height: 1.45; }
+  .giveaway-popup-bonus strong { color: var(--gold); font-weight: 700; letter-spacing: 0.04em; }
+  .giveaway-popup-steps { background: rgba(255,255,255,0.7); border: 1px solid rgba(201,169,110,0.18); border-radius: 16px; padding: 0.9rem 1rem; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .giveaway-popup-step { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.88rem; line-height: 1.45; color: var(--text-dark); }
+  .giveaway-popup-step-num { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: white; font-size: 0.72rem; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.05rem; }
+  .giveaway-popup-step a { color: var(--ocean-deep); font-weight: 600; text-decoration: underline; }
+  .giveaway-popup-form { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.5rem; }
+  .giveaway-popup-input { padding: 0.85rem 1.15rem; border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.92rem; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.3s, box-shadow 0.3s; width: 100%; }
+  .giveaway-popup-input:focus { border-color: var(--ocean); box-shadow: 0 0 0 3px rgba(74,155,173,0.12); }
+  .giveaway-popup-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: white; border: none; padding: 1rem 1.5rem; font-family: 'Jost', sans-serif; font-size: 0.84rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 20px rgba(201,169,110,0.35); transition: all 0.3s ease; margin-top: 0.25rem; }
+  .giveaway-popup-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(201,169,110,0.45); }
+  .giveaway-popup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .giveaway-popup-note { font-size: 0.7rem; text-align: center; color: var(--text-light); margin-top: 0.4rem; line-height: 1.5; }
+  .giveaway-success { display: none; text-align: center; }
+  .giveaway-success.show { display: block; }
+  .giveaway-success-emoji { font-size: 3rem; margin-bottom: 0.5rem; display: block; }
+  .giveaway-success-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 5vw, 2rem); font-weight: 600; color: var(--text-dark); line-height: 1.15; margin-bottom: 0.55rem; }
+  .giveaway-success-title em { font-style: italic; color: var(--ocean-deep); }
+  .giveaway-success-text { font-size: 0.94rem; line-height: 1.6; color: var(--text-dark); margin-bottom: 1.1rem; }
+  .giveaway-success-text strong { font-weight: 700; color: var(--ocean-deep); }
+  .discount-code-box { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border: 2px dashed var(--gold); border-radius: 16px; padding: 1.1rem 1rem; margin-bottom: 0.85rem; }
+  .discount-code-label { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.4rem; }
+  .discount-code-display { display: flex; align-items: center; justify-content: center; gap: 0.6rem; flex-wrap: wrap; }
+  .discount-code-text { font-family: 'Jost', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.18em; color: var(--text-dark); padding: 0.4rem 1rem; background: white; border-radius: 12px; border: 1px solid rgba(201,169,110,0.3); user-select: all; }
+  .discount-copy-btn { background: var(--gold); color: white; border: none; padding: 0.55rem 1rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s ease; }
+  .discount-copy-btn.copied { background: #4caf50; }
+  .discount-expiry { font-size: 0.72rem; color: var(--text-light); margin-top: 0.55rem; font-style: italic; }
+  .success-cta-row { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 1rem; }
+  .success-cta-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: white; padding: 0.9rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; text-align: center; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(201,169,110,0.32); }
+  .success-cta-secondary { background: white; color: var(--text-dark); padding: 0.85rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; text-align: center; border: 1px solid rgba(201,169,110,0.3); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; }
+  @media (max-width: 540px) {
+    .giveaway-popup { padding: 0; align-items: flex-end; }
+    .giveaway-popup-card { border-radius: 24px 24px 0 0; max-height: 92vh; padding: 1.75rem 1.4rem calc(1.4rem + env(safe-area-inset-bottom)); }
+    .discount-code-text { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <a class="nav-brand" href="https://www.thatgirlexperiences.com">That Girl Experiences</a>
+  <div class="nav-right">
+    <nav class="nav-links">
+      <a href="#wellness" class="nav-link">The Trip</a>
+      <a href="#why" class="nav-link">Why Us</a>
+      <a href="#itinerary" class="nav-link">Itinerary</a>
+    </nav>
+    <!-- WeTravel embed — Nav Book Now -->
+    <button class="wtrvl-checkout_button nav-cta" id="wt-btn-nav"
+      data-env="https://www.wetravel.com"
+      data-version="v0.4"
+      data-uid="2374713"
+      data-uuid="6779947278"
+      href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+      onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">BALI + NUSA LEMBONGAN + NUSA PENIDA</div>
+    <h1 class="hero-title">ISLAND LIFE<br><em>Girls Trip</em></h1>
+    <p class="hero-location"><strong>Connection, Island Hopping & Adventures · Swim with Manta Rays · Private Villas</strong></p>
+    <div class="hero-details">
+      <div class="hero-detail"><div class="hero-detail-value">8</div><div class="hero-detail-label">Days</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-detail"><div class="hero-detail-value">7</div><div class="hero-detail-label">Nights</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-detail"><div class="hero-detail-value">3</div><div class="hero-detail-label">Islands</div></div>
+    </div>
+    <div class="hero-for">
+      <strong>This trip is for:</strong> Girls in their 20s & 30s who love travel, bucket-list adventures, female friendships & a supportive girls community that builds you up. Come solo or with a friend! <STRONG>3 ISLANDS, ONE TRIP OF A LIFETIME.</STRONG>
+    </div>
+    <div class="deposit-bubble-wrap">
+      <div class="deposit-bubble"><span class="dep-highlight">‼️ 2 SPOTS LEFT ‼️ · </span>From $599 USD</div>
+    </div>
+    <div class="hero-spots"></div>
+    <!-- WeTravel embed — Hero Book Now -->
+    <button class="wtrvl-checkout_button hero-cta" id="wetravel_button_widget"
+      data-env="https://www.wetravel.com"
+      data-version="v0.4"
+      data-uid="2374713"
+      data-uuid="6779947278"
+      href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+      onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button>
+  </div>
+    <div style="text-align: center; margin-top: 0.75rem;">
+    <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget"
+      data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278"
+      href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278"
+        onclick="if(window.fbq){fbq('track', 'Lead', { content_name: 'ISLAND LIFE Brochure Download', value: 0.00, currency:
+'AUD' });}">Download Itinerary</button>
+    </div>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <script src="https://cdn.wetravel.com/widgets/embed_download_brochure.js"></script>
+</section>
+
+<!-- ADVENTURES -->
+<section class="wellness-section" id="wellness">
+  <div class="section-tag reveal">Adventures</div>
+  <h2 class="section-title reveal">This Trip <em>Has It All</em></h2>
+  <p class="section-subtitle reveal">Where the land, sea & sky meet. <strong>Ocean therapy, connections, swimming with Manta Rays, massage, beach days, lush jungle & rice terraces, surreal sunsets & snorkelling trips.</strong> You'll heal, have the time of your life, form new connections & leave with core memories you'll remember forever.</p>
+  <div class="wellness-grid">
+    <div class="wellness-card reveal"><div class="wellness-emoji">💃</div><div class="wellness-card-title">Adventures</div><div class="wellness-card-text">Quad-biking (ATV) over the jungle & ricefields? ✅ <p></p>Kelingking Beach, Manta Point, Waterfalls & Rice Terraces? ✅ <p></p>Beach club hoppin' & girls night out dancing? ✅</div></div>
+    <div class="wellness-card reveal"><div class="wellness-emoji">🌊</div><div class="wellness-card-title">Bucket-list Experiences</div><div class="wellness-card-text">Swim with Manta Rays & see the beautiful underwater world.</div></div>
+    <div class="wellness-card reveal"><div class="wellness-emoji">💫</div><div class="wellness-card-title">Girls-Only & Community</div><div class="wellness-card-text">Small groups, deeper & intentional connections, Girls-Only. You'll leave with your own supportive girls community that builds you up & wants to see you succeed. </div></div>
+    <div class="wellness-card reveal"><div class="wellness-emoji">💆‍♀️</div><div class="wellness-card-title">Reset & Restoration</div><div class="wellness-card-text">Included massage, ocean healing & intentional downtime. Going on this trip means choosing yourself & giving yourself full permission to rest, reset & restore so you can function your best after.</div></div>
+    <div class="wellness-card reveal"><div class="wellness-emoji">🫶</div><div class="wellness-card-title">Friendships & Connections</div><div class="wellness-card-text">Meet and connect with like-minded girls in their 20s & 30s. Small groups to create deeper bonds and stronger connections with yourself and the girls.</div></div>
+  </div>
+</section>
+
+<!-- GALLERY / SLIDESHOW -->
+<section class="slideshow-section">
+  <div class="section-tag reveal"><strong>3 ISLANDS. 7 AREAS. ONE TRIP OF A LIFETIME.</strong></div>
+  <h2 class="section-title reveal">Your Paradise <em>Awaits</em></h2>
+  <p class="section-subtitle reveal">From lush ricefields to manta rays & the endless ocean — this is a glimpse into what's waiting for you.</p>
+  <div class="slideshow-wrapper reveal">
+    <div class="slideshow-track" id="slideshowTrack">
+      <div class="slide"><img src="lembongan.jpg" alt="Nusa Lembongan"><div class="slide-caption"><div class="slide-caption-title">Nusa Lembongan</div></div></div>
+      <div class="slide"><img src="crystalbay1.jpg" alt="Nusa Penida"><div class="slide-caption"><div class="slide-caption-title"></div></div></div>
+      <div class="slide"><img src="manta2.jpg" alt="Manta Rays"><div class="slide-caption"><div class="slide-caption-title">Swimming with Manta Rays</div></div></div>
+      <div class="slide"><img src="ubud.jpg" alt="Rice Terraces"><div class="slide-caption"><div class="slide-caption-title">Lush Views in Bali</div></div></div>
+      <div class="slide"><img src="34.png" alt=""><div class="slide-caption"><div class="slide-caption-title"></div></div></div>
+      <div class="slide"><img src="kelingkingbeach.jpg" alt="Kelingking Beach"><div class="slide-caption"><div class="slide-caption-title">Nusa Penida</div></div></div>
+      <div class="slide"><img src="photo7.jpg" alt="Manta Point"><div class="slide-caption"><div class="slide-caption-title">Manta Point</div></div></div>
+    </div>
+    <button class="slide-btn slide-prev" onclick="moveSlide(-1)">&#8592;</button>
+    <button class="slide-btn slide-next" onclick="moveSlide(1)">&#8594;</button>
+  </div>
+  <div class="slide-dots" id="slideDots"></div>
+  <br>
+  <div style="text-align: center;">
+    <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget_2"
+      data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278"
+      href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278"
+        onclick="if(window.fbq){fbq('track', 'Lead', { content_name: 'ISLAND LIFE Brochure Download', value: 0.00, currency:
+'AUD' });}">Download Brochure</button>
+    </div>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <script src="https://cdn.wetravel.com/widgets/embed_download_brochure.js"></script>
+</section>
+
+<!-- THIS IS FOR YOU -->
+<section style="background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); padding-bottom: 2rem;" id="for-you">
+  <div class="section-tag reveal">This Is For You If</div>
+  <h2 class="section-title reveal">You Want To <em>Live Life To Its Fullest</em></h2>
+  <div class="for-you-grid" style="margin-bottom: 0;">
+    <div class="for-you-checklist reveal">
+      <div class="for-you-checklist-title">This is for you if…</div>
+      <div class="for-you-list">
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You're a girl in your <strong>20s or 30s</strong> wanting to travel but don't want to do it alone</div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want to find <strong>your people & meet like-minded girls in their 20s/30s</strong> who genuinely want to see you win</div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You feel stuck, lost, overwhelmed, or burnt out</div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want to <strong>live life to the fullest</strong>: new experiences, growth & the best version of yourself</div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want to <strong>tick off bucket-list experiences</strong> & come home as a <strong>better version of yourself</strong></div></div>
+        <div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You're <strong>tired of waiting around</strong> for the right time, the right people or the right circumstances - and you're ready to finally <strong>choose this for yourself</strong></div></div>
+      </div>
+    </div>
+    <div class="for-you-quote-box reveal">
+      <div class="for-you-quote">You'll come home <strong>more aligned, more HER. Maybe it's your spark back. Maybe it's finally finding your purpose & your people.</strong></div>
+      <div class="for-you-tags">
+        <span class="for-you-tag">Women, 18–39</span>
+        <span class="for-you-tag">Affordable Luxe Travel without the compromise</span>
+        <span class="for-you-tag">Connections & Friendships</span>
+        <span class="for-you-tag">Travel, Ocean & Adventures</span>
+        <span class="for-you-tag">Core Memories you'll remember forever</span>
+      </div>
+    </div>
+  </div>
+  <div class="cta-center reveal" style="margin: 0.8rem auto 0; text-align: center; justify-content: center;">
+    <!-- WeTravel embed — For You Book Now -->
+    <button class="wtrvl-checkout_button cta-btn" id="wt-btn-foryou"
+      data-env="https://www.wetravel.com"
+      data-version="v0.4"
+      data-uid="2374713"
+      data-uuid="6779947278"
+      href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+      onclick="if(window.fbq){fbq('track','InitiateCheckout');}">✦ Book Now ✦</button>
+  </div>
+</section>
+
+<!-- INCLUSIONS -->
+<section class="inclusions-section" id="inclusions">
+  <div class="deposit-bubble-wrap reveal">
+    <div class="deposit-bubble">‼️ 2 SPOTS LEFT ‼️<span class="dep-highlight">FROM $599 USD</div>
+  </div>
+  <h2 class="section-title reveal">What's <em>Included</em></h2>
+  <p class="section-subtitle reveal">8 Days · Total Cost From $599 USD · $50 USD Deposit</p>
+  <div class="inclusions-wrapper">
+    <div class="inclusion-block reveal">
+      <div class="inclusion-heading"><span>✓</span> Included</div>
+      <div class="inclusion-list">
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>7 nights twin-share accommodation (private pool villa + hotels)</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Our Own Private Villa with Private Pool just for us girls!</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Hotels (no hostels, bunk beds or dorms ever), twin-share</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>3 ISLANDS: Bali, Nusa Lembongan & Nusa Penida</div>
+         <div class="inclusion-item"><span class="inclusion-check">✓</span>Waterfalls, Temples, Rice Terraces</div>
+         <div class="inclusion-item"><span class="inclusion-check">✓</span>Epic View of Mount Batur Volcano & Kintamani</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>11 meals (brunches & dinners)</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Travel, ferries & transfers to and from Nusa Lembongan</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Travel, ferries & transfers to and from Nusa Penida</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Massage</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>ATV Quad Biking Adventure</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Snorkelling trip &amp; All snorkelling gear &amp; equipment</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Underwater documentation on our snorkelling trip</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Girls Dinner</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Wellness activities</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Airport pickup</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Transfers to & from Ubud and Kintamani</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Travel planning support</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Access to our trip group chat pre & post girls trip (so you can get to know each other first & stay in touch after!)</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Pre &amp; post trip support</div>
+        <div class="inclusion-item"><span class="inclusion-check">✓</span>Everything in the itinerary is included</div>
+      </div>
+    </div>
+    <div class="inclusion-block reveal">
+      <div class="inclusion-heading"><span>✗</span> Not Included</div>
+      <div class="inclusion-list">
+        <div class="inclusion-item"><span class="exclusion-x">✗</span>Flights to &amp; from Bali (DPS), Indonesia</div>
+        <div class="inclusion-item"><span class="exclusion-x">✗</span>Personal expenses, shopping &amp; alcoholic beverages</div>
+        <div class="inclusion-item"><span class="exclusion-x">✗</span>Travel insurance (required)</div>
+      </div>
+      <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201,169,110,0.15);">
+        <div class="inclusion-heading" style="font-size: 1.1rem;"><span>✈️</span> Getting There</div>
+        <div class="inclusion-list">
+          <div class="inclusion-item" style="flex-direction: column; gap: 0.3rem;"><span>Fly into Denpasar (DPS), Indonesia. We'll arrange airport transfers to pick you up from the airport to our Private Villa where you'll meet the rest of the girls & get to know each other more over dinner! We recommend booking early for the best fares.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div style="padding: 2.5px; align-items: center; justify-content: center; text-align: center;">
+    <p></p>
+    <div class="hero-spots"></div>
+    <!-- WeTravel embed — Hero Book Now -->
+    <button class="wtrvl-checkout_button hero-cta" id="wetravel_button_widget"
+      data-env="https://www.wetravel.com"
+      data-version="v0.4"
+      data-uid="2374713"
+      data-uuid="6779947278"
+      href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+      onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button>
+  </div>
+</section>
+  
+<!-- WHERE YOU'LL STAY (accommodation showcase) — ISLAND LIFE ONLY -->
+<!-- FILL IN: swap the placeholders for real <img> photos + names -->
+<!-- ============================================================ -->
+<section class="stay-section" id="where-you-stay">
+  <div class="section-tag reveal">Where You'll Stay</div>
+  <h2 class="section-title reveal">Your Home For <em>8 Days</em></h2>
+  <p class="section-subtitle reveal">Private pool villas & hotels (twin-share, 2 girls max per room). No hostels, bunk beds or dorms — ever.</p>
+  <div class="stay-grid">
+
+    <div class="stay-card reveal">
+      <div class="stay-photo">
+        <!-- FILL IN: <img src="villa-uluwatu.jpg" alt="Private pool villa in Bali"> -->
+        <div class="stay-photo-placeholder">📸 Add your villa photo here<br>(swap the placeholder for &lt;img&gt;)</div>
+      </div>
+      <div class="stay-body">
+        <div class="stay-island">Bali · Days 1–3</div>
+        <div class="stay-name">Our Private Girls Pool Villa</div>
+        <div class="stay-desc">Our own private villa with a private pool, just for us girls — where we'll meet, do icebreakers and have our welcome dinner. (Final villa for the August trip being confirmed now.)</div>
+        <div class="stay-tags"><span class="stay-tag">Private pool</span><span class="stay-tag">Twin-share</span><span class="stay-tag">Just us girls</span></div>
+      </div>
+    </div>
+
+    <div class="stay-card reveal">
+      <div class="stay-photo">
+        <!-- FILL IN: <img src="ubud-stay.jpg" alt="Ubud jungle retreat"> -->
+        <div class="stay-photo-placeholder">📸 Add your Ubud stay photo + real name</div>
+      </div>
+      <div class="stay-body">
+        <div class="stay-island">Ubud · Days 4–5</div>
+        <div class="stay-name">Ubud Jungle Retreat</div>
+        <div class="stay-desc">Surrounded by ricefields & jungle — your base for ATV adventures, waterfalls and the Kintamani volcano views.</div>
+        <div class="stay-tags"><span class="stay-tag">Jungle views</span><span class="stay-tag">Pool</span><span class="stay-tag">4-star+</span></div>
+      </div>
+    </div>
+
+    <div class="stay-card reveal">
+      <div class="stay-photo">
+        <!-- FILL IN: <img src="lembongan-hotel.jpg" alt="Nusa Lembongan hotel"> -->
+        <div class="stay-photo-placeholder">📸 Add your Nusa Lembongan hotel photo + real name</div>
+      </div>
+      <div class="stay-body">
+        <div class="stay-island">Nusa Lembongan · Days 6–8</div>
+        <div class="stay-name">Island Beach Hotel</div>
+        <div class="stay-desc">Steps from the beach with a pool to yap by at sunset — our island-life base for the final stretch.</div>
+        <div class="stay-tags"><span class="stay-tag">Beachside</span><span class="stay-tag">Pool</span><span class="stay-tag">4-star+</span></div>
+      </div>
+    </div>
+
+  </div>
+  <p class="stay-note reveal">Every stay has been carefully hand-picked and curated to provide you with luxury and comfort at our affordable trip price with lots of inclusions, without compromise — no hostels, bunk beds or dorms, ever. (Future departures may use equivalent properties of the same standard.)</p>
+</section>
+
+<!-- SECURE BOOKING & PEACE OF MIND — added                       -->
+<!-- ============================================================ -->
+<section class="trust-section" id="secure-booking">
+  <div class="section-tag reveal">Book With Confidence</div>
+  <h2 class="section-title reveal">Your Booking Is <em>Protected</em></h2>
+  <p class="section-subtitle reveal">As a new travel brand, we know trust is everything — so here's exactly how your everything is handled and how we keep you safe every step of the way.</p>
+  <div class="trust-grid">
+    <div class="trust-card reveal">
+      <span class="trust-icon">🔒</span>
+      <div class="trust-card-title">Secure Payments via WeTravel</div>
+      <div class="trust-card-text">Every booking is processed through <strong>WeTravel</strong> — the trusted booking & payments platform used by thousands of travel companies worldwide. Payments run on <strong>bank-level encryption via Stripe</strong>, never a direct transfer to a personal account.</div>
+    </div>
+    <div class="trust-card reveal">
+      <span class="trust-icon">🤍</span>
+      <div class="trust-card-title">We Don't Get Paid Until You've Travelled</div>
+      <div class="trust-card-text"><strong>WeTravel holds your payment securely and releases nothing to us until after your trip is completed</strong>. Your money stays protected the entire time.</div>
+    </div>
+    <div class="trust-card reveal">
+      <span class="trust-icon">🧾</span>
+      <div class="trust-card-title">Instant Confirmation</div>
+      <div class="trust-card-text">The moment you book, you'll get an <strong>official WeTravel confirmation & receipt</strong> by email, plus a welcome message from me personally. Your spot is locked in — in writing.</div>
+    </div>
+    <div class="trust-card reveal">
+      <span class="trust-icon">📄</span>
+      <div class="trust-card-title">Clear Terms & Cancellation</div>
+      <div class="trust-card-text">You'll agree to our full <strong>terms & cancellation policy at checkout</strong> — so you always know exactly where you stand. No surprises, no fine print.</div>
+    </div>
+  </div>
+  <div class="trust-badge-row reveal">
+    <span class="trust-badge">🛡️ Bank-level encryption</span>
+    <span class="trust-badge">🇦🇺 Registered Australian business</span>
+    <span class="trust-badge">💬 Real human support</span>
+    <span class="trust-badge">↩️ Free refunds processed via WeTravel</span>
+  </div>
+  <!-- OPTIONAL: to show your ABN, replace the badge above with:
+       <span class="trust-badge">🇦🇺 Registered Australian business · ABN 44228347673</span>
+</section>
+
+<!-- HOW BOOKING WORKS + CANCELLATION — added                     -->
+<!-- ============================================================ -->
+<section class="bookflow-section" id="how-booking-works">
+  <div class="section-tag reveal">Simple & Safe</div>
+  <h2 class="section-title reveal">How Booking <em>Works</em></h2>
+  <p class="section-subtitle reveal">From deposit to take-off — here's exactly what happens, so there are no surprises.</p>
+  <div class="bookflow-steps">
+    <div class="bookflow-step reveal"><div class="bookflow-num">1</div><div><div class="bookflow-step-title">Secure your spot</div><div class="bookflow-step-text">Pay a $50 USD deposit through WeTravel's secure checkout. You'll instantly get an official confirmation & receipt by email.</div></div></div>
+    <div class="bookflow-step reveal"><div class="bookflow-num">2</div><div><div class="bookflow-step-title">I'll personally welcome you</div><div class="bookflow-step-text">You'll hear from me directly, get added to our private trip group chat, and meet the other girls before you fly.</div></div></div>
+    <div class="bookflow-step reveal"><div class="bookflow-num">3</div><div><div class="bookflow-step-title">Pay in 4, interest-free</div><div class="bookflow-step-text">Split the balance into 4 interest-free instalments before departure. Pay it off whenever suits you, no extra fees.</div></div></div>
+    <div class="bookflow-step reveal"><div class="bookflow-num">4</div><div><div class="bookflow-step-title">Show up & glow</div><div class="bookflow-step-text">We pick you up from the airport and take care of everything in the itinerary. You just have to be present.</div></div></div>
+  </div>
+  <div class="bookflow-cancel reveal">
+    <div class="bookflow-cancel-title">🛟 Changed your mind?</div>
+    <div class="bookflow-cancel-text">We keep our terms clear and fair. You can read our <a href="cancellation-policy.html" target="_blank" rel="noopener">full cancellation policy &amp; terms here</a> — and you'll always agree to them upfront at checkout, never buried in fine print.</div>
+  </div>
+</section>
+
+<!-- WHY TGE -->
+<section class="why-section" id="why">
+  <div class="section-tag reveal">Why TGE?</div>
+  <h2 class="section-title reveal">More Than Just a <em>Girls Trip</em></h2>
+  <p class="section-subtitle reveal"></p>
+  <div class="why-grid">
+    <div class="why-card featured reveal">
+      <div class="why-icon">👯‍♀️</div>
+      <div class="why-card-title">Female Friendships</div>
+      <div class="why-card-text">Girls-only trips. Female friendships, deeper connections & a supportive girls community who backs you, lifts you up and wants to see you succeed!</div>
+    </div>
+    <div class="why-card featured reveal">
+      <div class="why-icon">🤝</div>
+      <div class="why-card-title">Small Groups, Super Private</div>
+      <div class="why-card-text">Small groups - more intimate, more intentional, closer friendships & better connections!</div>
+    </div>
+    <div class="why-card featured reveal">
+      <div class="why-icon">🐋</div>
+      <div class="why-card-title">Snorkel with Manta Rays</div>
+      <div class="why-card-text">Tick off the ultimate bucket-list experience — snorkel alongside majestic manta rays and incredible marine life.</div>
+    </div>
+    <div class="why-card featured reveal">
+      <div class="why-icon">🌊</div>
+      <div class="why-card-title">Bucket-List Experiences</div>
+      <div class="why-card-text">Quad-biking in the middle of the jungle, go through rice terraces & waterfalls, explore the underwater marine life & beach days with the girls. Experience these core memories together with your new girlies!</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🦋</div>
+      <div class="why-card-title">Growth & Personal Development</div>
+      <div class="why-card-text">Bespoke experiences with a strong focus on self-awareness, growth, personal development & helping you live your best life.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🛡️</div>
+      <div class="why-card-title">Safe Solo Travel</div>
+      <div class="why-card-text">A safe solo-travelling experience with everything planned & taken care of for you so you can reset, relax, glow and come out as a better version of yourself.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">✨</div>
+      <div class="why-card-title">Affordable Luxe</div>
+      <div class="why-card-text">Private villas, private pools & unique, memorable experiences for an affordable price, without compromise — always. No 8-person dorms, bunk beds or mixed-gender shared bathrooms. Ever.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🎯</div>
+      <div class="why-card-title">Travel Identity™ Matching</div>
+      <div class="why-card-text">Our personalised Travel Identity™ system matches you with roommates and future trip companions based on your travel style, personality, and preferences — through a fun quiz you'll take when you sign up.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🌟</div>
+      <div class="why-card-title">What You Get Out of the Experience</div>
+      <div class="why-card-text">
+        <span style="color: var(--gold); margin: 0 0.4rem;">+</span>
+        A Supportive Female Community that builds you up & wants to see you succeed <p> </p>
+        <span style="color: var(--gold); margin: 0 0.4rem;">+</span>
+        Bucketlist Adventures: Swimming with manta rays, Girls Dinner by the ocean & ticking off bucket-list experiences <p> </p>
+        <span style="color: var(--gold); margin: 0 0.4rem;">+</span>
+        Surreal sunsets, Bespoke Experiences & Core Memories unlocked - only on TGE trips! <p> </p>
+        <span style="color: var(--gold); margin: 0 0.4rem;">+</span>
+        An Unforgettable Travel Experience with your new girlies!
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+  ============================================================
+  TGE TRAVEL IDENTITY CALLOUT — drop-in snippet
+  ============================================================
+  Paste the whole block. The CSS is scoped to .ti-callout so
+  it won't clash with anything else on the page.
+  ============================================================
+-->
+
+<style>
+  .ti-callout-wrap {
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .ti-callout {
+    width: 100%;
+    max-width: 720px;
+    background: linear-gradient(135deg, #FDF8F0 0%, #D4EDEF 60%, #B5DDE3 100%);
+    border: 1px solid rgba(201,169,110,0.28);
+    border-radius: 28px;
+    padding: 2.25rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(74,155,173,0.12);
+    text-decoration: none;
+    color: #1C2B2D;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .ti-callout::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(201,169,110,0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .ti-callout:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 70px rgba(74,155,173,0.2);
+    border-color: rgba(201,169,110,0.5);
+  }
+  .ti-callout-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(201,169,110,0.3);
+    border-radius: 50px;
+    padding: 0.4rem 1.1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.66rem; font-weight: 500; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #C9A96E;
+    margin-bottom: 1.1rem;
+    backdrop-filter: blur(8px);
+    position: relative;
+  }
+  .ti-callout-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.7rem, 5.5vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: #1C2B2D;
+    margin-bottom: 0.85rem;
+    position: relative;
+  }
+  .ti-callout-title em {
+    font-style: italic;
+    color: #2D7A8C;
+  }
+  .ti-callout-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    line-height: 1.65;
+    color: #1C2B2D;
+    margin-bottom: 1.5rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .ti-callout-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, #C9A96E, #E8D5A3);
+    color: #FFFFFF;
+    padding: 0.95rem 2.2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.84rem; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-radius: 60px;
+    box-shadow: 0 6px 22px rgba(201,169,110,0.4);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .ti-callout:hover .ti-callout-cta {
+    box-shadow: 0 10px 30px rgba(201,169,110,0.55);
+  }
+  .ti-callout-meta {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 0.45rem; margin-top: 1.1rem;
+    position: relative;
+  }
+  .ti-callout-meta span {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(201,169,110,0.22);
+    border-radius: 50px;
+    padding: 0.32rem 0.85rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem; font-weight: 500;
+    color: #1C2B2D;
+    backdrop-filter: blur(6px);
+  }
+  @media (min-width: 768px) {
+    .ti-callout { padding: 3rem 2.5rem; }
+    .ti-callout-wrap { padding: 4rem 1.5rem; }
+  }
+</style>
+
+<section class="ti-callout-wrap">
+  <a href="/travel-identity.html" target="_blank" rel="noopener" class="ti-callout">
+    <div class="ti-callout-tag">TRAVEL IDENTITY™ QUIZ</div>
+    <h2 class="ti-callout-title">Discover Your Unique <em>Travel Identity™</em></h2>
+    <p class="ti-callout-sub">Learn more about how you travel & uncover your unique Travel Identity — who you are & what you're like when you travel, your travel DNA, the experiences you crave, the energy you bring, and the trip that's calling your name.</p>
+    <span class="ti-callout-cta">Uncover my Travel Identity™</span>
+    <div class="ti-callout-meta">
+      <span>14 Travel Identities</span>
+      <span>FREE, ~3 minutes</span>
+      <span>Personalised result</span>
+    </div>
+  </a>
+</section>
+  
+  
+<!-- ITINERARY -->
+<section class="itinerary-section" id="itinerary">
+  <div class="section-tag reveal">The Itinerary</div>
+  <h2 class="section-title reveal">8 Days of <em>Magic</em></h2>
+  <p class="section-subtitle reveal"><strong>3 ISLANDS. 7 AREAS</strong>: <em>Uluwatu, Canggu, Seminyak, Ubud, Kintamani (Mount Batur Volcano), Nusa Lembongan & Nusa Penida.</em> Adventure, connection & the space to simply be.</p>
+  <div class="itinerary-timeline">
+    <!-- DAY 1 -->
+    <div class="day-card reveal">
+      <div class="day-marker">DAY 1</div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Arrival Day, Forming Connections & Girls Dinner</div>
+          <span class="day-date">DAY 1</span>
+        </div>
+        <div class="day-highlights">
+          <div class="highlight-item"><span class="highlight-icon">🛬</span>Airport pickup & welcome to our own Private Girls Villa (with Private Pool)!</div>
+          <div class="highlight-item"><span class="highlight-icon">👯‍♀️</span>Meet the girls! Girls ice-breaker circle & connections - meet your new girlfriends</div>
+          <div class="highlight-item"><span class="highlight-icon">🧘‍♀️</span>'What I want from this trip' & intention-setting</div>
+          <div class="highlight-item"><span class="highlight-icon">🌅</span>Sunset & ocean "letting go" ceremony</div>
+          <div class="highlight-item"><span class="highlight-icon">🍽️</span>Girls Welcome Dinner</div>
+        </div>
+        <span class="day-tag tag-connection">Connection</span>
+        <span class="day-tag tag-luxe">Luxe</span>
+        <span class="day-tag tag-wellness">Wellness</span>
+      </div>
+    </div>
+    <!-- DAY 2 -->
+    <div class="day-card reveal">
+      <div class="day-marker">DAY 2</div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Brunchin', Temples, Beach Day & Sunsets</div>
+          <span class="day-date">DAY 2</span>
+        </div>
+        <div class="day-highlights">
+          <div class="highlight-item"><span class="highlight-icon">👙</span>Morning swim & chillin' in our own very own private pool, yapping with the girls, card games & connection cards</div>
+          <div class="highlight-item"><span class="highlight-icon">🍽️</span>Brunch with the girlies</div>
+          <div class="highlight-item"><span class="highlight-icon">🛕</span>Visiting the Balinese temples</div>
+          <div class="highlight-item"><span class="highlight-icon">🏝️</span>Beach Day with the girls & exploring the different beaches in Uluwatu</div>
+          <div class="highlight-item"><span class="highlight-icon">💬</span>Getting to know each other on a deeper level & forming stronger connections</div>
+          <div class="highlight-item"><span class="highlight-icon">🌅</span>Sunset watching</div>
+          <div class="highlight-item"><span class="highlight-icon">👗</span>Girls "Dress Up" dinner night out</div>
+        </div>
+        <span class="day-tag tag-adventure">Adventure</span>
+        <span class="day-tag tag-luxe">Luxe</span>
+        <span class="day-tag tag-connection">Connection</span>
+      </div>
+    </div>
+    <!-- DAY 3 -->
+    <div class="day-card reveal">
+      <div class="day-marker">DAY 3</div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Markets, Connections & Beach Clubs</div>
+          <span class="day-date">DAY 3</span>
+        </div>
+        <div class="day-highlights">
+          <div class="highlight-item"><span class="highlight-icon">🎀</span>Girls Brunch</div>
+          <div class="highlight-item"><span class="highlight-icon">📸</span>Markets</div>
+          <div class="highlight-item"><span class="highlight-icon">💆‍♀️</span>Massage included</div>
+          <div class="highlight-item"><span class="highlight-icon">🩷</span>Connections & Games</div>
+          <div class="highlight-item"><span class="highlight-icon">🌅</span>Going to some of the best sunset spots with the girls</div>
+          <div class="highlight-item"><span class="highlight-icon">💃</span>Hoppin' around different beach clubs & dancin' with the girls</div>
+        </div>
+        <span class="day-tag tag-wellness">Wellness</span>
+        <span class="day-tag tag-adventure">Adventure</span>
+        <span class="day-tag tag-connection">Connection</span>
+      </div>
+    </div>
+    <!-- DAY 4 -->
+    <div class="day-card reveal">
+      <div class="day-marker">DAY 4</div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Girls Road Trip to Ubud & ATV Adventures</div>
+          <span class="day-date">DAY 4</span>
+        </div>
+        <div class="day-highlights">
+          <div class="highlight-item"><span class="highlight-icon">🚌</span>Get picked up from our villa</div>
+          <div class="highlight-item"><span class="highlight-icon">🍽️</span>Breakfast included</div>
+          <div class="highlight-item"><span class="highlight-icon">🛣️</span>Girls Road Trip to Ubud (think: jungles, ricefields & terraces, waterfalls!)</div>
+          <div class="highlight-item"><span class="highlight-icon">🌴</span>Check into our Ubud accommodation</div>
+          <div class="highlight-item"><span class="highlight-icon">🏍️</span>ATV/Quad-Biking Adventures going through ricefields, jungles & waterfalls</div>
+          <div class="highlight-item"><span class="highlight-icon">🌊</span>Relax, swim, enjoy all the facilities</div>
+          <div class="highlight-item"><span class="highlight-icon">🍽️</span>Dinner included</div>
+        </div>
+        <span class="day-tag tag-adventure">Adventure</span>
+        <span class="day-tag tag-connection">Connection</span>
+      </div>
+    </div>
+    <!-- DAY 5 -->
+    <div class="day-card reveal">
+      <div class="day-marker">DAY 5</div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Mount Kintamani, Rice Terraces & Waterfall Day</div>
+          <span class="day-date">DAY 5</span>
+        </div>
+        <div class="day-highlights">
+          <div class="highlight-item"><span class="highlight-icon">🍽️</span>Breakfast/Brunch included</div>
+          <div class="highlight-item"><span class="highlight-icon">🌾</span>Exploring & taking in the view of some of the best rice terraces & rice fields in Bali</div>
+          <div class="highlight-item"><span class="highlight-icon">💫</span>Road Trip to Kintamani with our own Private Driver</div>
+          <div class="highlight-item"><span class="highlight-icon">🌋</span>Beautiful scenic views of Mount Batur Volcano!</div>
+          <div class="highlight-item"><span class="highlight-icon">🌊</span>Chasing waterfalls, pics & more</div>
+          <div class="highlight-item"><span class="highlight-icon">🍽️</span>Dinner included</div>
+        </div>
+        <span class="day-tag tag-wellness">Wellness</span>
+        <span class="day-tag tag-adventure">Adventure</span>
+      </div>
+    </div>
+    <!-- DAY 6 -->
+    <div class="day-card reveal">
+      <div class="day-marker">DAY 6</div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">ISLAND 2: Nusa Lembongan</div>
+          <span class="day-date">DAY 6</span>
+        </div>
+        <div class="day-highlights">
+          <div class="highlight-item"><span class="highlight-icon">🏝️</span>ISLAND HOPPING! Time to get to Island 2</div>
+          <div class="highlight-item"><span class="highlight-icon">🛳️</span>Travel & Ferry to Nusa Lembongan included</div>
+          <div class="highlight-item"><span class="highlight-icon">🛀</span>Check into our hotel in Nusa Lembongan</div>
+          <div class="highlight-item"><span class="highlight-icon">🏖️</span>Explore the beach with the girls</div>
+          <div class="highlight-item"><span class="highlight-icon">🌅</span>Chill & yap by the pool, connections & sunsets</div>
+          <div class="highlight-item"><span class="highlight-icon">🍷</span>Girls Dinner in Island 2!</div>
+        </div>
+        <span class="day-tag tag-adventure">Adventure</span>
+        <span class="day-tag tag-connection">Connection</span>
+      </div>
+    </div>
+    <!-- DAY 7 -->
+    <div class="day-card reveal">
+      <div class="day-marker">DAY 7</div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">ISLAND 3: Nusa Penida</div>
+          <span class="day-date">DAY 7</span>
+        </div>
+        <div class="day-highlights">
+          <div class="highlight-item"><span class="highlight-icon">🏝️</span>Time to explore Island 3: Nusa Penida!</div>
+          <div class="highlight-item"><span class="highlight-icon">🚤</span>Travel & Day Trip to Nusa Penida included</div>
+          <div class="highlight-item"><span class="highlight-icon">🤿</span>Snorkelling time!</div>
+          <div class="highlight-item"><span class="highlight-icon">🐠</span>Swim with Manta Rays & other marine life</div>
+          <div class="highlight-item"><span class="highlight-icon">🍽️</span>Lunch included</div>
+          <div class="highlight-item"><span class="highlight-icon">🧘‍♀️</span>Go to Kelingking Beach & see the famous T-Rex limestone cliff formation</div>
+          <div class="highlight-item"><span class="highlight-icon">🌊</span>Hop around different beaches & islands - turquoise waters!!</div>
+        </div>
+        <span class="day-tag tag-adventure">Adventure</span>
+      </div>
+    </div>
+    <!-- DAY 8 -->
+    <div class="day-card reveal">
+      <div class="day-marker">DAY 8</div>
+      <div class="day-content">
+        <div class="day-header">
+          <div class="day-title">Final Day in Nusa Lembongan & Farewell (For Now)</div>
+          <span class="day-date">DAY 8</span>
+        </div>
+        <div class="day-highlights">
+          <div class="highlight-item"><span class="highlight-icon">☀️</span>Morning swim, relaxing & enjoying your final day in paradise</div>
+          <div class="highlight-item"><span class="highlight-icon">🍽️</span>Final brunch together</div>
+          <div class="highlight-item"><span class="highlight-icon">🔑</span>Chilled check out & leaving Nusa Lembongan</div>
+          <div class="highlight-item"><span class="highlight-icon">🚤</span>Travel & Ferry back to Bali included</div>
+          <div class="highlight-item"><span class="highlight-icon">🤍</span>Back in Bali by the evening & final goodbyes</div>
+          <div class="highlight-item"><span class="highlight-icon">🫶</span>Leave with core memories & adventures you'll remember forever AND your new girlies!</div>
+        </div>
+        <span class="day-tag tag-connection">Connection</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEET YOUR FOUNDER & GUIDE (GABS) — added                     -->
+<!-- FILL IN: swap the placeholder for <img src="gabs.jpg" ...>   -->
+<!-- ============================================================ -->
+<section class="founder-section" id="meet-gabs">
+  <div class="section-tag reveal">Meet Your Founder & Host</div>
+  <h2 class="section-title reveal">Hi, I'm <em>Gabs</em> 🤍</h2>
+  <div class="founder-wrap" style="margin-top:0.5rem;">
+    <div class="reveal">
+      <div class="founder-photo">
+        <!-- FILL IN: <img src="gabs.jpg" alt="Gabs, founder of That Girl Experiences"> -->
+        <div class="founder-photo-placeholder">📸 Add a warm, smiling photo of you here</div>
+        <div class="founder-photo-tag">
+          <strong>Gabriela Michelle</strong>
+          <span>Founder & your host · <a href="https://instagram.com/ggabrielamichelle" target="_blank" rel="noopener">@ggabrielamichelle</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="founder-eyebrow">The girl behind TGE</div>
+      <div class="founder-name">A real girl, planning a <em>real trip</em> — with you</div>
+      <p class="founder-text">I started That Girl Experiences because I wanted the kind of girls' trip I always wished existed — <strong>intentional, safe, and genuinely transformative</strong>, with a community of women who actually build each other up.</p>
+      <p class="founder-text">And here's the part I want you to know: <strong>I'm Indonesian — I was born and raised there and lived in Indonesia for 16 years</strong> before moving to Sydney. I've been back to Bali <strong>10+ times</strong>, I know the islands, the people and the hidden spots, and I'll be <strong>personally hosting this trip with you</strong> from arrival to farewell.</p>
+      <div class="founder-points">
+        <div class="founder-point"><span>✓</span>Indonesian, born &amp; raised — Bali isn't a bucket-list guess for me, it's home</div>
+        <div class="founder-point"><span>✓</span>I host every trip personally — you'll know my face before you land</div>
+        <div class="founder-point"><span>✓</span>Real name, real face, real socials — DM me anytime, I always reply</div>
+      </div>
+      <a href="https://instagram.com/ggabrielamichelle" target="_blank" rel="noopener" class="founder-ig">📸 Follow me @ggabrielamichelle</a>
+      <div class="founder-sign">Can't wait to meet you, xx Gabs</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta-section">
+  <h2 class="final-title reveal">Come Solo. Leave <em>Transformed.</em></h2>
+  <p class="final-text reveal">This isn't just a regular trip. <Strong>It's you connecting with like-minded girls you never knew you needed, livin' the island life together, ticking off bucket-list experiences & creating once-in-a-lifetime memories that you'll never forget.</Strong></p>
+  <!-- WeTravel embed — Final CTA -->
+  <button class="wtrvl-checkout_button final-btn reveal" id="wt-btn-final"
+    data-env="https://www.wetravel.com"
+    data-version="v0.4"
+    data-uid="2374713"
+    data-uuid="6779947278"
+    href="https://www.wetravel.com/checkout_embed?uuid=6779947278"
+    onclick="if(window.fbq){fbq('track','InitiateCheckout');}">VIEW DETAILS →</button>
+</section>
+
+<!-- REGISTER INTEREST -->
+<section class="interest-section">
+  <div class="interest-inner">
+    <div style="text-align:center;margin-bottom:1.75rem;">
+      <div style="font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.55rem;">Not Ready to Book Yet?</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,4vw,1.9rem);font-weight:600;color:var(--text-dark);line-height:1.25;">Register Your <em>Interest</em></h3>
+      <p style="font-size:0.92rem;font-weight:400;color:var(--text-dark);margin-top:0.4rem;">Be the first to know - we'll reach out directly when spots open up or new trips drop.</p>
+    </div>
+    <form action="https://formspree.io/f/mkokzzow" method="POST" class="interest-form" onsubmit="if(window.fbq){fbq('track','Lead');}">
+      <div class="interest-field"><label class="interest-label">Your Full Name</label><input type="text" name="name" required placeholder="First & Last name" class="interest-input"></div>
+      <div class="interest-field"><label class="interest-label">WhatsApp</label><input type="text" name="contact" required placeholder="+61 400 000 000" class="interest-input"></div>
+      <div class="interest-field"><label class="interest-label">Email</label><input type="text" name="email" required placeholder="Your Email" class="interest-input"></div>
+      <input type="hidden" name="_subject" value="New ISLAND LIFE Trip Interest Registration — Island Life Bali Trip Page">
+      <input type="hidden" name="trip" value="Island Life — Bali, Nusa Lembongan & Nusa Penida">
+      <input type="hidden" name="_next" value="https://thatgirlexperiences.com/bali.html">
+      <button type="submit" class="interest-btn">Save My Spot ✦</button>
+    </form>
+    <p style="text-align:center;margin-top:1.1rem;font-size:0.74rem;color:var(--text-dark);">No spam, ever &nbsp;·&nbsp; Be in the know &nbsp;·&nbsp; No commitments</p>
+    <div style="text-align: center; margin-top: 0.75rem;">
+      <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget_3"
+        data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278"
+        href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278">Download Itinerary</button>
+    </div>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <script src="https://cdn.wetravel.com/widgets/embed_download_brochure.js"></script>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-tag reveal"></div>
+  <h2 class="section-title reveal"><em>FAQs</em></h2>
+  <p class="section-subtitle reveal">Everything you need to know before joining the trip.</p>
+  <div class="faq-wrapper">
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">Is TGE legit? How do I know my money is safe?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">Totally fair question — and we'd rather be upfront than vague. TGE is a registered Australian business run by me, Gabs (that's my real face & socials above!). Every booking is processed securely through <strong>WeTravel</strong>, the booking platform used by thousands of travel companies, with bank-level encryption via Stripe — never a transfer to a personal account. And because we're a new operator, WeTravel holds your payment and releases nothing to us until after your trip is completed. You'll also get an official confirmation & receipt the moment you book, and you can message or video-call me before paying a cent. We're new, we're real, and we're not hiding anything. 🤍</div></div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">How much is the trip all-in?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">The total cost for the ISLAND LIFE Girls Trip is $499 USD ($699 AUD / £369) and includes everything in the itinerary and all the inclusions listed above. The deposit to secure your spot is only $50 USD / $70 AUD / £37. You can pay the remainder in 4 payments/instalments at no additional costs before your trip departure.</div></div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">Where do I fly into and fly out of?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">You'll fly into and out of Denpasar (DPS), Bali. Once you land, we'll handle your airport pickup & take you to our private villa! We'll also be going to 2 other islands (Nusa Lembongan & Nusa Penida), but we'll take care of everything for you! The trip will finish back in Bali (aka Denpasar (DPS)). We recommend booking your flights early for the best fares.</div></div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">Who is this trip for?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">Women aged 18–39 who love travel, adventures, connect with like-minded girls, want to live life to its fullest & have a supportive girls community that builds you up - all while ticking off bucket-list experiences. Whether you're coming solo or with a friend, we'd love for you to join us and help you live your dream life!</div></div>
+    </div>
+     <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">What kind of accommodation will we be staying at?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">You'll be staying in luxe private villas with a private pool (2 girls max per room) & 4-star or above hotels (twin-share). No hostels, bunk beds or backpacker dorms ever.</div></div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">What is the Travel Identity™ matching system?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">Your unique Travel Identity™ showcases who you are when you travel, the way you travel, the experiences you crave, the energy you bring, and your travel DNA (what guides your travels). Your Travel Identity™ helps us tailor your trip experience, pair you with like-minded girls on your trip and match you with roommates and future trip companions based on similar interests, personalities, and travel preferences — so you're paired with someone you'll genuinely click with.  <a href="travel-identity.html" target="_blank" rel="noopener">Uncover your Travel Identity™ here.</a></div></div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">Do I need to be an experienced snorkeller?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">Not at all! All snorkelling equipment is provided and our local guides will be with you the whole time. Basic swimming ability is recommended, but beginners are absolutely welcome — we'll make sure you feel comfortable and safe. You also don't need any prior scuba diving or snorkelling experience!</div></div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">What's the room situation?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">All the accommodation will be twin-share with only 2 girls max per room (twin beds). We'll stay in both luxe private pool villas and 4-star or above hotels. No hostels, bunk beds or backpacker dorms ever.</div></div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">Will I definitely see manta rays & sea turtles?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">As they are wild animals, sightings cannot be 100% guaranteed, but we'll try our best to help you see them!</div></div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">What if I have dietary requirements?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">If you have any dietary requirements, please let us know as soon as you book so we can accommodate and prepare for it. We'd love for you to join us and we want to make sure everyone is well taken care of!</div></div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-question">What is your cancellation policy?<svg class="faq-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-text">You can find our <a href="cancellation-policy.html" target="_blank" rel="noopener">full cancellation policy and terms & conditions here.</a></div></div>
+    </div>
+    <div class="faq-disclaimer reveal">
+      <div class="faq-disclaimer-text">Wildlife sightings including manta rays, turtles, etc cannot be guaranteed as they are wild animals, but the likelihood is high & we'll try our best to help you see them!</div>
+    </div>
+  </div>
+</section>
+
+<!-- GIVEAWAY POPUP -->
+<div class="giveaway-popup" id="giveawayPopup" aria-hidden="true">
+  <div class="giveaway-popup-overlay" id="popupOverlay"></div>
+  <div class="giveaway-popup-card" role="dialog" aria-labelledby="popupTitle">
+    <button class="giveaway-popup-close" id="popupClose" aria-label="Close">&times;</button>
+    <div id="giveawayInitial">
+      <div class="giveaway-popup-tag">✦ ENTER OUR GIVEAWAY ✦</div>
+      <h2 class="giveaway-popup-title" id="popupTitle">Win a <em>FREE</em> Island Life Trip</h2>
+      <p class="giveaway-popup-subtitle"><strong>8 Days, 3 Islands — One Trip of a Lifetime.</strong> Bali + Nusa Lembongan + Nusa Penida. Your bucket-list trip, on us. ✨</p>
+      <div class="giveaway-popup-bonus">💸 <strong>EVERY ENTRANT</strong> also gets an INSTANT <strong>AUD$100 OFF</strong> any trip.</div>
+      <div class="giveaway-popup-steps">
+        <div class="giveaway-popup-step"><span class="giveaway-popup-step-num">1</span><span>Follow <a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener">@thatgirl.experiences on Instagram</a> &amp; <a href="https://www.tiktok.com/@thatgirl.experiences" target="_blank" rel="noopener">TikTok</a></span></div>
+        <div class="giveaway-popup-step"><span class="giveaway-popup-step-num">2</span><span>Drop your IG handle &amp; WhatsApp below ✨</span></div>
+      </div>
+      <form class="giveaway-popup-form" id="giveawayForm" novalidate>
+        <input type="text" name="instagram" placeholder="@your_instagram_handle" required class="giveaway-popup-input">
+        <input type="text" name="whatsapp" placeholder="WhatsApp (e.g. +61 400 000 000)" required class="giveaway-popup-input">
+        <button type="submit" class="giveaway-popup-btn" id="giveawaySubmitBtn">Enter & Get $100 OFF ✨</button>
+      </form>
+      <p class="giveaway-popup-note">⏳ Winner announced 30 June 2026. We'll DM via WhatsApp. No spam, ever.</p>
+    </div>
+    <div class="giveaway-success" id="giveawaySuccess">
+      <span class="giveaway-success-emoji">🎉</span>
+      <h2 class="giveaway-success-title">You're <em>IN</em>, babe!</h2>
+      <p class="giveaway-success-text">You're entered to win the <strong>Island Life trip!</strong> Here's your code for <strong>AUD$100 OFF ANY TRIP:</strong></p>
+      <div class="discount-code-box">
+        <div class="discount-code-label">YOUR $100 OFF CODE</div>
+        <div class="discount-code-display">
+          <span class="discount-code-text" id="discountCodeText">TGE100GA</span>
+          <button type="button" class="discount-copy-btn" id="copyCodeBtn">Copy</button>
+        </div>
+        <div class="discount-expiry">⏰ Use by 30 June 2026 · valid on ANY trip!</div>
+      </div>
+      <div class="success-cta-row">
+        <a href="https://tri.ps/wrAyT" target="_blank" class="success-cta-primary">Book Now & Use Code →</a>
+        <a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener" class="success-cta-secondary">📸 Follow our Instagram</a>
+        <a href="https://www.tiktok.com/@thatgirl.experiences" target="_blank" rel="noopener" class="success-cta-secondary">🎵 Follow our TikTok</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- WHATSAPP COMMUNITY — Join the girls community -->
+<!-- ============================================ -->
+<style>
+  .wa-join-section { padding: 3.5rem 1.5rem; background: var(--cream); display: flex; justify-content: center; }
+  .wa-join-card { position: relative; width: 100%; max-width: 680px; background: linear-gradient(135deg, var(--cream-warm) 0%, var(--teal-soft) 100%); border: 1px solid rgba(201,169,110,0.25); border-radius: 28px; padding: 2.75rem 2rem; text-align: center; box-shadow: 0 20px 60px rgba(74,155,173,0.12); overflow: hidden; }
+  .wa-join-card::before { content: ''; position: absolute; top: -30%; right: -15%; width: 320px; height: 320px; background: radial-gradient(circle, rgba(37,211,102,0.16) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+  .wa-join-icon { width: 58px; height: 58px; margin: 0 auto 1.1rem; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 8px 24px rgba(37,211,102,0.4); position: relative; }
+  .wa-join-tag { display: inline-block; background: rgba(255,255,255,0.8); border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; padding: 0.4rem 1.1rem; font-family: 'Jost', sans-serif; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; position: relative; }
+  .wa-join-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 600; line-height: 1.12; color: var(--text-dark); margin-bottom: 0.85rem; position: relative; }
+  .wa-join-title em { font-style: italic; color: var(--ocean-deep); }
+  .wa-join-sub { font-family: 'Jost', sans-serif; font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.7; color: var(--text-dark); max-width: 480px; margin: 0 auto 1.6rem; position: relative; }
+  .wa-join-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: #25D366; color: #fff; padding: 1rem 2.1rem; font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 60px; text-decoration: none; box-shadow: 0 8px 26px rgba(37,211,102,0.4); transition: all 0.3s ease; position: relative; }
+  .wa-join-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(37,211,102,0.55); background: #1ebe5b; }
+  .wa-join-btn svg { width: 22px; height: 22px; }
+  .wa-join-note { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-light); margin-top: 1rem; position: relative; }
+  @media (max-width: 540px) {
+    .wa-join-section { padding: 2.5rem 1rem; }
+    .wa-join-card { padding: 2.25rem 1.4rem; border-radius: 20px; }
+    .wa-join-btn { width: 100%; max-width: 320px; justify-content: center; }
+  }
+</style>
+<section class="wa-join-section">
+  <div class="wa-join-card">
+    <div class="wa-join-tag">Join our FREE WhatsApp Girls Community</div>
+    <h2 class="wa-join-title">Join the <em>Girls Travel Community</em></h2>
+    <p class="wa-join-sub">Be the first to know when new trips drop, exclusive moments, travel tips, the latest trip updates & special discounts. Our WhatsApp Girls Travel community is where it all happens✨</p>
+    <a href="https://chat.whatsapp.com/Hr1drTOB4wj8vKOVcLDvaB" target="_blank" rel="noopener" class="wa-join-btn">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.003 2.667C8.643 2.667 2.67 8.64 2.67 16c0 2.35.616 4.65 1.786 6.677L2.667 29.333l6.83-1.79A13.27 13.27 0 0 0 16.003 29.3C23.36 29.3 29.333 23.327 29.333 16S23.36 2.667 16.003 2.667zm0 24.06a11.03 11.03 0 0 1-5.62-1.54l-.403-.24-4.054 1.063 1.08-3.95-.262-.406A10.98 10.98 0 0 1 5.07 16c0-6.03 4.905-10.933 10.934-10.933 2.92 0 5.664 1.138 7.73 3.205a10.86 10.86 0 0 1 3.2 7.73c0 6.03-4.904 10.725-10.93 10.725zm6.003-8.18c-.328-.165-1.946-.96-2.247-1.07-.3-.11-.52-.165-.74.165-.218.328-.848 1.07-1.04 1.29-.19.218-.383.246-.71.082-.328-.165-1.388-.512-2.644-1.632-.977-.872-1.637-1.948-1.83-2.276-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.575.165-.192.218-.328.328-.547.11-.218.055-.41-.027-.575-.082-.165-.74-1.785-1.014-2.443-.267-.642-.538-.555-.74-.565l-.63-.011c-.218 0-.575.082-.876.41-.3.328-1.15 1.124-1.15 2.744 0 1.62 1.177 3.185 1.342 3.404.165.218 2.318 3.54 5.616 4.965.785.34 1.397.543 1.874.695.787.25 1.503.215 2.07.13.632-.094 1.946-.795 2.22-1.563.273-.767.273-1.425.19-1.563-.082-.137-.3-.218-.628-.382z"/></svg>
+      Girls Travel Community🤍
+    </a>
+  </div>
+</section>
+  
+<!-- MOBILE STICKY CTA — kept as regular link per instructions -->
+<div class="mobile-cta-bar" id="mobileCta">
+  <a href="https://tri.ps/wrAyT" target="_blank"
+    onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</a>
+</div>
+
+<!-- SOCIAL SECTION (TikTok + Instagram links) -->
+<section class="social-section">
+  <div class="section-tag reveal">Bucket-list inspo, new trip drops & all the updates</div>
+  <h2 class="section-title reveal">See More on Insta & TikTok✨</h2>
+  <div class="social-handle reveal"><a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener">@thatgirl.experiences</a></div>
+  <div class="social-grid reveal">
+    <a class="social-tile" href="https://www.instagram.com/p/DYdiRfmiafp/?img_index=1" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="nusapenida.jpg" alt="Instagram post" loading="lazy" decoding="async" width="300" height="533">
+      <span class="social-tile-play"></span>
+    </a>
+    <a class="social-tile" href="https://www.tiktok.com/@thatgirl.experiences/video/7630670752043355412" target="_blank" rel="noopener" aria-label="TikTok">
+      <img src="ubud.webp" alt="TikTok video" loading="lazy" decoding="async" width="300" height="533">
+      <span class="social-tile-play"></span>
+    </a>
+    <a class="social-tile" href="https://www.instagram.com/p/DX34_6uxuVz/" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="25.png" alt="Instagram post" loading="lazy" decoding="async" width="300" height="533">
+      <span class="social-tile-play"></span>
+    </a>
+    <a class="social-tile" href="https://www.tiktok.com/@thatgirl.experiences/video/7634058450003086612" target="_blank" rel="noopener" aria-label="TikTok">
+      <img src="crystalbay1.webp" alt="TikTok video" loading="lazy" decoding="async" width="300" height="533">
+      <span class="social-tile-play"></span>
+    </a>
+  </div>
+  <div class="social-cta-row reveal">
+    <a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener" class="social-btn social-btn-ig">Follow us on Instagram</a>
+    <a href="https://www.tiktok.com/@thatgirl.experiences" target="_blank" rel="noopener" class="social-btn social-btn-tt">Follow us on TikTok</a>
+  </div>
+</section>
+  
+<section class="callbook-section" id="book-a-call">
+  <div class="section-tag reveal">Still Deciding?</div>
+  <h2 class="section-title reveal">Talk To Me <em>First</em></h2>
+  <div class="callbook-wrap reveal">
+    <div class="callbook-title">Hop on a quick call before you book 🤍</div>
+    <p class="callbook-sub">No pressure, no sales pitch — just me, answering every question you have so you feel 100% sure before you commit a cent. Message me, email me, or book a free 15-min call.</p>
+    <div class="callbook-btns">
+      <!-- FILL IN: replace # with your Calendly / booking link -->
+      <a href="#" target="_blank" rel="noopener" class="callbook-btn callbook-btn-call">📞 Book a free 15-min call</a>
+      <a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener" class="callbook-btn callbook-btn-wa">💬 WhatsApp me</a>
+      <a href="mailto:thatgirlexperiences@gmail.com" class="callbook-btn callbook-btn-email">✉️ Email me</a>
+    </div>
+    <!-- FILL IN (optional): show your WhatsApp number as text, e.g. "+61 4XX XXX XXX" -->
+    <p class="callbook-note">I personally reply to every message — usually within a few hours 🤍</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section style="background: var(--cream); padding: 3.5rem 2rem;" id="contact">
+  <div class="section-tag reveal">Get In Touch</div>
+  <h2 class="section-title reveal">Have a <em>Question?</em></h2>
+  <p class="section-subtitle reveal">We'd love to hear from you! Fill in the form below & we'll get back to you as soon as possible.</p>
+  <form action="https://formspree.io/f/xeerjyzr" method="POST" style="max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:1.35rem;" class="reveal">
+    <div class="contact-name-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div style="display:flex;flex-direction:column;gap:0.45rem;">
+        <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">First Name</label>
+        <input type="text" name="first_name" required placeholder="Your first name"
+          style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.3s;width:100%;"
+          onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.45rem;">
+        <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">Last Name</label>
+        <input type="text" name="last_name" required placeholder="Your last name"
+          style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.3s;width:100%;"
+          onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'">
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.45rem;">
+      <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">Email</label>
+      <input type="email" name="email" required placeholder="your@email.com"
+        style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.3s;"
+        onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.45rem;">
+      <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">Message</label>
+      <textarea name="message" required rows="5" placeholder="Your message..."
+        style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;resize:vertical;transition:border-color 0.3s;"
+        onfocus="this.style.borderColor='var(--ocean)'" onblur="this.style.borderColor='rgba(201,169,110,0.22)'"></textarea>
+    </div>
+    <input type="hidden" name="_subject" value="New enquiry from TGE ISLAND LIFE TRIP WEBSITE (Bali Island Life Trip)">
+    <input type="hidden" name="_next" value="https://thatgirlexperiences.com">
+    <button type="submit"
+      style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--white);border:none;padding:1.15rem 3rem;font-family:'Jost',sans-serif;font-size:0.88rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;border-radius:60px;cursor:pointer;transition:all 0.4s ease;box-shadow:0 8px 30px rgba(201,169,110,0.3);"
+      onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(201,169,110,0.45)'"
+      onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 30px rgba(201,169,110,0.3)'">
+      Send Message
+    </button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">That Girl Experiences</div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.4rem 1.5rem;margin-bottom:1.1rem;">
+    <a href="index.html" style="font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;font-weight:500;">ALL TRIPS</a>
+    <a href="travel-identity.html" target="_blank" rel="noopener" style="font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;font-weight:500;">Discover Your Travel Identity™️</a>
+    <a href="cancellation-policy.html" target="_blank" rel="noopener" style="font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;font-weight:500;">Cancellation Policy</a>
+  </div>
+  <p class="footer-disclaimer">For all enquiries, please contact thatgirlexperiences@gmail.com &nbsp;·&nbsp; All prices are in USD($) &nbsp;·&nbsp; © 2026 That Girl Experiences </p>
+</footer>
+
+<!-- ============================================================ -->
+<!-- WETRAVEL CHECKOUT EMBED — loaded once, initialises all       -->
+<!-- .wtrvl-checkout_button elements on the page                  -->
+<!-- ============================================================ -->
+<script src="https://cdn.wetravel.com/widgets/embed_checkout.js"></script>
+
+<script>
+  /* Nav scroll + mobile sticky CTA */
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
+    const m = document.getElementById('mobileCta'); if (m) m.classList.toggle('visible', window.scrollY > window.innerHeight * 0.6);
+  });
+
+  /* Reveal */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<script>
+  /* Slideshow */
+  let cur = 0;
+  const track = document.getElementById('slideshowTrack');
+  const slides = track.querySelectorAll('.slide');
+  const dotsEl = document.getElementById('slideDots');
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  });
+  function goTo(n) {
+    cur = (n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dotsEl.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+  }
+  function moveSlide(dir) { goTo(cur + dir); }
+  setInterval(() => moveSlide(1), 5000);
+  let touchStartX = 0, touchEndX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) moveSlide(diff > 0 ? 1 : -1);
+  }, { passive: true });
+</script>
+
+<script>
+  /* Why cards → accordion on mobile */
+  (function() {
+    if (window.innerWidth > 540) return;
+    const cards = document.querySelectorAll('.why-card');
+    cards.forEach((card, i) => {
+      const iconEl  = card.querySelector('.why-icon');
+      const titleEl = card.querySelector('.why-card-title');
+      const textEl  = card.querySelector('.why-card-text');
+      if (!iconEl || !titleEl || !textEl) return;
+      const iconText  = iconEl.textContent;
+      const titleText = titleEl.textContent;
+      const bodyHTML  = textEl.innerHTML;
+      const trigger = document.createElement('button');
+      trigger.className = 'why-acc-trigger';
+      trigger.setAttribute('aria-expanded', i === 0 ? 'true' : 'false');
+      const iconSpan = document.createElement('span'); iconSpan.className = 'why-acc-icon'; iconSpan.textContent = iconText;
+      const titleSpan = document.createElement('span'); titleSpan.className = 'why-acc-title'; titleSpan.textContent = titleText;
+      const chevron = document.createElement('span'); chevron.className = 'why-acc-chevron'; chevron.textContent = '▾'; chevron.setAttribute('aria-hidden', 'true');
+      trigger.append(iconSpan, titleSpan, chevron);
+      const body = document.createElement('div');
+      body.className = 'why-acc-body';
+      body.innerHTML = bodyHTML;
+      card.innerHTML = '';
+      card.append(trigger, body);
+      if (i === 0) { card.classList.add('acc-open'); trigger.setAttribute('aria-expanded', 'true'); }
+      trigger.addEventListener('click', () => {
+        const isOpen = card.classList.contains('acc-open');
+        cards.forEach(c => { c.classList.remove('acc-open'); const t = c.querySelector('.why-acc-trigger'); if (t) t.setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { card.classList.add('acc-open'); trigger.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+  })();
+</script>
+
+<!--Start of Tawk.to LIVE CHAT Script-->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+Tawk_API.customStyle = {
+  visibility: {
+    desktop: { position: 'br', xOffset: 15, yOffset: 15 },
+    mobile:  { position: 'br', xOffset: 10, yOffset: 100 }
+  }
+};
+(function(){
+  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/69f404ce5ac9531c37ee0999/1jngj5hmq';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<script>
+  /* Giveaway popup */
+  (function() {
+    const popup = document.getElementById('giveawayPopup');
+    const overlay = document.getElementById('popupOverlay');
+    const closeBtn = document.getElementById('popupClose');
+    const form = document.getElementById('giveawayForm');
+    const initial = document.getElementById('giveawayInitial');
+    const success = document.getElementById('giveawaySuccess');
+    const submitBtn = document.getElementById('giveawaySubmitBtn');
+    const copyBtn = document.getElementById('copyCodeBtn');
+    const codeText = document.getElementById('discountCodeText');
+    if (!popup) return;
+    const STORAGE_KEY = 'tge_giveaway_seen';
+    const SUCCESS_KEY = 'tge_giveaway_entered';
+    if (sessionStorage.getItem(STORAGE_KEY) && !sessionStorage.getItem(SUCCESS_KEY)) return;
+    let shown = false;
+    function showPopup() {
+      if (shown) return; shown = true;
+      popup.classList.add('show'); popup.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (sessionStorage.getItem(SUCCESS_KEY)) { initial.style.display = 'none'; success.classList.add('show'); }
+    }
+    function hidePopup() {
+      popup.classList.remove('show'); popup.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; sessionStorage.setItem(STORAGE_KEY, '1');
+    }
+    setTimeout(showPopup, 25000);
+    function onScroll() {
+      if (shown) { window.removeEventListener('scroll', onScroll); return; }
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      if (docH > 0 && window.scrollY / docH > 0.30) showPopup();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    closeBtn.addEventListener('click', hidePopup);
+    overlay.addEventListener('click', hidePopup);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup.classList.contains('show')) hidePopup(); });
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true; submitBtn.textContent = 'Entering...';
+        const formData = new FormData(form);
+        formData.append('_subject', '🎁 GIVEAWAY ENTRY — Island Life Trip + AUD$100 code (Bali Page)');
+        formData.append('entry_type', 'Giveaway popup — Bali trip page');
+        try {
+          const res = await fetch('https://formspree.io/f/mkokzzow', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+          if (res.ok) {
+            sessionStorage.setItem(SUCCESS_KEY, '1'); sessionStorage.setItem(STORAGE_KEY, '1');
+            initial.style.display = 'none'; success.classList.add('show');
+            if (window.fbq) fbq('track', 'Lead');
+            if (window.ttq && typeof window.ttq.track === 'function') window.ttq.track('CompleteRegistration', { content_name: 'Giveaway Entry - Bali' });
+          } else { throw new Error(); }
+        } catch(err) {
+          submitBtn.disabled = false; submitBtn.textContent = 'Enter & Get AUD$100 OFF ✨';
+          alert('Something went wrong — please DM us on Instagram or try again.');
+        }
+      });
+    }
+    if (copyBtn && codeText) {
+      copyBtn.addEventListener('click', function() {
+        const code = codeText.textContent.trim();
+        if (navigator.clipboard) { navigator.clipboard.writeText(code).catch(() => {}); }
+        copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied');
+        setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 2200);
+      });
+    }
+  })();
+</script>
+
+<!-- ============================================ -->
+<!-- WHATSAPP DIRECT CHAT — floating button (FAB)  -->
+<!-- ============================================ -->
+<style>
+  .tge-wa-fab { position: fixed; left: 20px; bottom: 24px; z-index: 998; display: inline-flex; align-items: center; background: #25D366; color: #fff; height: 56px; border-radius: 50px; padding: 0 16px; text-decoration: none; box-shadow: 0 6px 20px rgba(37,211,102,0.45); transition: all 0.35s cubic-bezier(0.22,1,0.36,1); overflow: hidden; max-width: 56px; }
+  .tge-wa-fab svg { width: 28px; height: 28px; flex-shrink: 0; }
+  .tge-wa-fab-label { font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; max-width: 0; opacity: 0; margin-left: 0; transition: all 0.35s cubic-bezier(0.22,1,0.36,1); }
+  .tge-wa-fab:hover { max-width: 240px; box-shadow: 0 10px 28px rgba(37,211,102,0.6); }
+  .tge-wa-fab:hover .tge-wa-fab-label { max-width: 160px; opacity: 1; margin-left: 10px; }
+  @media (max-width: 540px) {
+    .tge-wa-fab { bottom: 88px; left: 16px; height: 52px; padding: 0 13px; max-width: 52px; }
+    .tge-wa-fab svg { width: 26px; height: 26px; }
+    .tge-wa-fab:hover { max-width: 52px; }
+    .tge-wa-fab:hover .tge-wa-fab-label { max-width: 0; opacity: 0; margin-left: 0; }
+  }
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    @media (max-width: 540px) { .tge-wa-fab { bottom: calc(88px + env(safe-area-inset-bottom)); } }
+  }
+</style>
+<a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener" class="tge-wa-fab" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.003 2.667C8.643 2.667 2.67 8.64 2.67 16c0 2.35.616 4.65 1.786 6.677L2.667 29.333l6.83-1.79A13.27 13.27 0 0 0 16.003 29.3C23.36 29.3 29.333 23.327 29.333 16S23.36 2.667 16.003 2.667zm0 24.06a11.03 11.03 0 0 1-5.62-1.54l-.403-.24-4.054 1.063 1.08-3.95-.262-.406A10.98 10.98 0 0 1 5.07 16c0-6.03 4.905-10.933 10.934-10.933 2.92 0 5.664 1.138 7.73 3.205a10.86 10.86 0 0 1 3.2 7.73c0 6.03-4.904 10.725-10.93 10.725zm6.003-8.18c-.328-.165-1.946-.96-2.247-1.07-.3-.11-.52-.165-.74.165-.218.328-.848 1.07-1.04 1.29-.19.218-.383.246-.71.082-.328-.165-1.388-.512-2.644-1.632-.977-.872-1.637-1.948-1.83-2.276-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.575.165-.192.218-.328.328-.547.11-.218.055-.41-.027-.575-.082-.165-.74-1.785-1.014-2.443-.267-.642-.538-.555-.74-.565l-.63-.011c-.218 0-.575.082-.876.41-.3.328-1.15 1.124-1.15 2.744 0 1.62 1.177 3.185 1.342 3.404.165.218 2.318 3.54 5.616 4.965.785.34 1.397.543 1.874.695.787.25 1.503.215 2.07.13.632-.094 1.946-.795 2.22-1.563.273-.767.273-1.425.19-1.563-.082-.137-.3-.218-.628-.382z"/></svg>
+  <span class="tge-wa-fab-label">Message us!</span>
+</a>
+
+
+</body>
+</html>
