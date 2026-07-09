@@ -91,6 +91,41 @@ window.addEventListener('load', function() {
   .nav-cta { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); border: none; padding: 0.55rem 1.25rem; font-family: 'Jost', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 50px; cursor: pointer; text-decoration: none; white-space: nowrap; transition: all 0.3s ease; flex-shrink: 0; }
   .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,169,110,0.35); }
 
+  /* ── NAV DROPDOWN MENU (added) — mobile + desktop ── */
+  .nav-menu { position: relative; display: flex; align-items: center; }
+  .nav-menu-btn {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    background: rgba(255,255,255,0.72); border: 1px solid rgba(201,169,110,0.32);
+    border-radius: 50px; padding: 0.55rem 1.1rem; font-family: 'Jost', sans-serif;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-dark); cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(8px);
+    white-space: nowrap; line-height: normal; min-height: 40px;
+  }
+  .nav-menu-btn:hover { border-color: rgba(201,169,110,0.6); color: var(--gold); }
+  .nav-menu-btn-lines { display: flex; flex-direction: column; gap: 3px; }
+  .nav-menu-btn-lines span { display: block; width: 16px; height: 1.6px; background: currentColor; border-radius: 2px; transition: all 0.3s ease; }
+  .nav-menu.open .nav-menu-btn-lines span:nth-child(1) { transform: translateY(4.6px) rotate(45deg); }
+  .nav-menu.open .nav-menu-btn-lines span:nth-child(2) { opacity: 0; }
+  .nav-menu.open .nav-menu-btn-lines span:nth-child(3) { transform: translateY(-4.6px) rotate(-45deg); }
+  .nav-menu-panel {
+    position: absolute; top: calc(100% + 0.65rem); right: 0; min-width: 252px;
+    background: rgba(253,248,240,0.98); backdrop-filter: blur(16px);
+    border: 1px solid rgba(201,169,110,0.2); border-radius: 18px;
+    box-shadow: 0 16px 48px rgba(74,155,173,0.18); padding: 0.55rem;
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; z-index: 1001;
+  }
+  .nav-menu.open .nav-menu-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-menu-link {
+    display: flex; align-items: center; gap: 0.8rem; padding: 0.85rem 1rem; min-height: 48px;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+    color: var(--text-dark); text-decoration: none; border-radius: 12px; transition: all 0.25s ease;
+  }
+  .nav-menu-link:hover { background: rgba(201,169,110,0.12); color: var(--gold); padding-left: 1.25rem; }
+  .nav-menu-link-icon { font-size: 1.05rem; flex-shrink: 0; width: 1.2rem; text-align: center; }
+  /* offset anchor landings so the fixed nav doesn't cover section tops */
+  #trips, #why-tge, #for-you, #meet-gabs, #secure-booking, #contact { scroll-margin-top: 84px; }
+
   /* ============================================ */
   /* HERO with VIDEO BACKGROUND                   */
   /* ============================================ */
@@ -514,24 +549,100 @@ window.addEventListener('load', function() {
     .hero-video { display: none; }
   }
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1464656837954144');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  
+  /* NOTE (fix): a duplicate Meta Pixel tracking script had been pasted inside
+     this stylesheet. Everything inside a style element is parsed as CSS text,
+     so that copy never executed — it was dead weight. The working Meta Pixel
+     already lives in the page head above (with the domain-verification meta
+     tag), so the stray duplicate has been removed. No tracking was lost. */
+
+  /* ══════════════════════════════════════════════════════════ */
+  /* MOBILE UX + READABILITY REFINEMENTS (added)                */
+  /* Appended last so these win over earlier rules.             */
+  /* Desktop is untouched — everything here is inside a query.  */
+  /* ══════════════════════════════════════════════════════════ */
+
+  /* iOS zooms the page in when you focus an input under 16px.  */
+  /* Locking inputs to 16px on mobile stops that jarring jump.  */
+  @media (max-width: 768px) {
+    .giveaway-popup-input,
+    #contact input, #contact textarea,
+    input[type="text"], input[type="email"], textarea { font-size: 16px !important; }
+  }
+
+  /* Nothing should ever scroll sideways on a phone */
+  @media (max-width: 768px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img, iframe { max-width: 100%; }
+  }
+
+  @media (max-width: 540px) {
+
+    /* ── NAV: brand + Menu + CTA must fit one line ─────────── */
+    .nav-links { gap: 0.6rem; }
+    .nav-menu-btn { min-height: 44px; padding: 0.6rem 0.9rem; letter-spacing: 0.1em; }
+    .nav-menu-link { min-height: 50px; font-size: 0.92rem; }
+    .nav-menu-panel { min-width: 236px; }
+
+    /* ── READABILITY: body copy ───────────────────────────── */
+    /* Slightly larger text + more line-height = far less eye  */
+    /* strain on a small screen held at arm's length.          */
+    .section-subtitle { font-size: 1rem; line-height: 1.7; margin-bottom: 1.75rem; }
+    .founder-text, .founder-point,
+    .trust-card-text, .bookflow-step-text,
+    .callbook-sub { font-size: 1rem; line-height: 1.75; }
+
+    /* Tiny uppercase labels: heavy letter-spacing hurts at    */
+    /* small sizes. Loosen the size, tighten the tracking.     */
+    .section-tag { font-size: 0.68rem; letter-spacing: 0.2em; margin-bottom: 0.6rem; }
+    .founder-eyebrow { letter-spacing: 0.18em; }
+
+    /* Headlines: a touch smaller so they never wrap awkwardly */
+    .section-title { font-size: clamp(1.75rem, 7.5vw, 2.15rem); margin-bottom: 0.9rem; }
+
+    /* ── VERTICAL RHYTHM ──────────────────────────────────── */
+    section { padding: 2.25rem 1.1rem; }
+
+    /* ── TAP TARGETS (Apple/Google guideline: 44px min) ───── */
+    .callbook-btn, .founder-ig { min-height: 46px; padding: 0.85rem 1.4rem; }
+    .discount-copy-btn { min-height: 44px; }
+    .nav-cta { min-height: 44px; display: inline-flex; align-items: center; }
+
+    /* ── CARDS: tighter, calmer padding ───────────────────── */
+    .trust-card { padding: 1.5rem 1.35rem; border-radius: 18px; }
+    .bookflow-step { padding: 1.2rem 1.25rem; gap: 0.9rem; border-radius: 16px; }
+    .callbook-wrap { padding: 1.9rem 1.25rem; border-radius: 22px; }
+    .trust-badge { font-size: 0.74rem; padding: 0.5rem 0.95rem; }
+    .trust-grid { gap: 1rem; }
+    .bookflow-steps { gap: 0.85rem; }
+
+    /* ── FOUNDER ──────────────────────────────────────────── */
+    .founder-points { gap: 0.85rem; }
+    .founder-sign { font-size: 1.25rem; }
+
+    /* ── POPUP: 4 fields now, keep it comfortable ─────────── */
+    .giveaway-popup-input { padding: 0.95rem 1.2rem; }
+    .giveaway-popup-form { gap: 0.65rem; }
+    .giveaway-popup-subtitle { font-size: 0.9rem; line-height: 1.6; }
+
+    /* ── BOTTOM COLLISION ZONE ────────────────────────────── */
+    /* WhatsApp FAB + live chat sit at the bottom of the page. */
+    /* Pad the footer so nothing gets buried underneath them.  */
+    .footer { padding-bottom: 6.5rem; }
+  }
+
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    @media (max-width: 540px) {
+      .footer { padding-bottom: calc(6.5rem + env(safe-area-inset-bottom)); }
+    }
+  }
+
+  /* Very small phones (iPhone SE and similar) */
+  @media (max-width: 380px) {
+    .nav-brand { font-size: 0.78rem; letter-spacing: 0.12em; }
+    .nav-menu-btn { padding: 0.55rem 0.75rem; }
+    .nav-cta { font-size: 0.62rem; padding: 0.55rem 0.85rem; letter-spacing: 0.06em; }
+    .nav-menu-panel { min-width: 214px; }
+  }
 </style>
 </head>
 <body>
@@ -539,8 +650,21 @@ src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
 <nav class="nav" id="mainNav">
   <a class="nav-brand" href="#">That Girl Experiences</a>
   <div class="nav-links">
-    <a href="#why-tge" class="nav-link">Why us?</a>
-    <a href="#for-you" class="nav-link">Who is it for?</a>
+    <!-- DROPDOWN MENU (added) — mobile + desktop -->
+    <div class="nav-menu" id="navMenu">
+      <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false" aria-controls="navMenuPanel" aria-label="Open menu">
+        <span class="nav-menu-btn-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        Menu
+      </button>
+      <div class="nav-menu-panel" id="navMenuPanel" role="menu">
+        <a href="#trips" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">🌏</span>Our Trips</a>
+        <a href="#why-tge" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">✨</span>Why TGE</a>
+        <a href="#for-you" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">💫</span>Who It's For</a>
+        <a href="#meet-gabs" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">🤍</span>Our Story</a>
+        <a href="#secure-booking" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">🔒</span>Book With Confidence</a>
+        <a href="#contact" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">💬</span>Contact</a>
+      </div>
+    </div>
     <a href="#trips" class="nav-cta">Our Upcoming Trips</a>
   </div>
 </nav>
@@ -1069,40 +1193,31 @@ src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
 
     <!-- INITIAL ENTRY STATE -->
     <div id="giveawayInitial">
-      <div class="giveaway-popup-tag">✦ ENTER OUR GIVEAWAY ✦</div>
-      <h2 class="giveaway-popup-title" id="popupTitle">Win a <em>FREE</em> Island Life Trip</h2>
-      <p class="giveaway-popup-subtitle"><strong>8 Days, 3 Islands - One Trip of a Lifetime.</strong> Bali + Nusa Lembongan + Nusa Penida. Your bucket-list trip - on us. ✨</p>
-      <div class="giveaway-popup-bonus">💸 <strong>EVERY ENTRANT</strong> also gets an INSTANT <strong>AUD$100 OFF</strong> any trip.</div>
-      <div class="giveaway-popup-steps">
-        <div class="giveaway-popup-step">
-          <span class="giveaway-popup-step-num">1</span>
-          <span>Follow <a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener">@thatgirl.experiences on Instagram</a> &amp; <a href="https://www.tiktok.com/@thatgirl.experiences" target="_blank" rel="noopener">TikTok</a></span>
-        </div>
-        <div class="giveaway-popup-step">
-          <span class="giveaway-popup-step-num">2</span>
-          <span>Drop your IG handle &amp; WhatsApp below✨</span>
-        </div>
-      </div>
+      <div class="giveaway-popup-tag">✦ GET $100 USD OFF OUR TRIPS ✦</div>
+      <h2 class="giveaway-popup-title" id="popupTitle">GET <em>$100 USD OFF</em> ANY TRIP</h2>
+      <p class="giveaway-popup-subtitle"><strong>Core Memories you'll remember forever, livin' the Island Life with like-minded girls. 8 Days, 3 Islands — One Trip of a Lifetime.</strong> Bali + Nusa Lembongan + Nusa Penida ✨</p>
       <form class="giveaway-popup-form" id="giveawayForm" novalidate>
-        <input type="text" name="instagram" placeholder="@your_instagram_handle" required class="giveaway-popup-input">
+        <input type="text" name="name" placeholder="First & last name" required class="giveaway-popup-input">
+        <input type="text" name="email address" placeholder="Your email address" required class="giveaway-popup-input">
         <input type="text" name="whatsapp" placeholder="WhatsApp (e.g. +61 400 000 000)" required class="giveaway-popup-input">
-        <button type="submit" class="giveaway-popup-btn" id="giveawaySubmitBtn">Enter & Get $100 OFF ✨</button>
+        <input type="text" name="destinations & experiences you want to see" placeholder="Destinations/trips/experiences you want to see next?" required class="giveaway-popup-input">
+        <button type="submit" class="giveaway-popup-btn" id="giveawaySubmitBtn">Get $100 USD OFF ✨</button>
       </form>
-      <p class="giveaway-popup-note">⏳ Winner announced on 30 June 2026. We'll DM via WhatsApp if you win. No spam, ever.</p>
+      <p class="giveaway-popup-note">No spam, ever.</p>
     </div>
 
     <!-- SUCCESS STATE -->
     <div class="giveaway-success" id="giveawaySuccess">
       <span class="giveaway-success-emoji">🎉</span>
-      <h2 class="giveaway-success-title">You're <em>IN</em>, babe!</h2>
-      <p class="giveaway-success-text">You're entered to win the <strong>Island Life trip</strong>! Plus, here's your code for<strong>AUD$100 OFF ANY TRIP</strong>:</p>
+      <h2 class="giveaway-success-title">Here's <em>$100 USD OFF</em> OUR TRIPS!</h2>
+      <p class="giveaway-success-text">Here's your <strong>discount code</strong> for <strong>$100 USD OFF ANY OF OUR TRIPS:</strong></p>
       <div class="discount-code-box">
-        <div class="discount-code-label">YOUR $100 OFF CODE</div>
+        <div class="discount-code-label">YOUR $100 USD OFF CODE</div>
         <div class="discount-code-display">
-          <span class="discount-code-text" id="discountCodeText">TGE100GA</span>
+          <span class="discount-code-text" id="discountCodeText">TGE100PUML31826</span>
           <button type="button" class="discount-copy-btn" id="copyCodeBtn">Copy</button>
         </div>
-        <div class="discount-expiry">⏰ Use by 30 June 2026 · valid on ANY trip!</div>
+        <div class="discount-expiry">⏰ Use by 31 Aug 2026 · valid on ANY trip!</div>
       </div>
       <div class="success-cta-row">
         <a href="#trips" class="success-cta-primary" id="successCloseAndScroll">Browse Trips & Use Code →</a>
@@ -1114,6 +1229,22 @@ src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
 </div>
 
 <script>
+  /* Nav dropdown menu (added) — mobile + desktop */
+  (function() {
+    const menu = document.getElementById('navMenu');
+    const btn = document.getElementById('navMenuBtn');
+    if (!menu || !btn) return;
+    function close() { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('.nav-menu-link').forEach(a => a.addEventListener('click', close));
+    document.addEventListener('click', function(e) { if (menu.classList.contains('open') && !menu.contains(e.target)) close(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+  })();
+
   window.addEventListener('scroll', () => { document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
   const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
@@ -1260,8 +1391,8 @@ src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
       submitBtn.disabled = true;
       submitBtn.textContent = 'Entering...';
       const formData = new FormData(form);
-      formData.append('_subject', '🎁 GIVEAWAY ENTRY — Island Life Trip + $100 code claimed');
-      formData.append('entry_type', 'Giveaway popup + $100 discount claim');
+      formData.append('_subject', 'POPUP FORM MAILING LIST - $100 USD off code (Homepage)');
+      formData.append('entry_type', 'Giveaway popup — TGE homepage');
       try {
         const response = await fetch('https://formspree.io/f/mkokzzow', {
           method: 'POST',
@@ -1277,6 +1408,8 @@ src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
           if (window.ttq && typeof window.ttq.track === 'function') {
             window.ttq.track('CompleteRegistration', { content_name: 'Giveaway Entry' });
           }
+          // Track conversion in Meta pixel if available
+          if (window.fbq) { fbq('track', 'Lead'); }
         } else {
           throw new Error('Submission failed');
         }
@@ -1284,8 +1417,8 @@ src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
         // Fallback: show success anyway so user gets discount code (form data is lost but UX preserved)
         // Better: alert user to try again
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Enter & Get $100 OFF ✨';
-        alert('Something went wrong. Please try again or DM us on Instagram.');
+        submitBtn.textContent = 'Get $100 USD OFF ✨';
+        alert('Something went wrong — please email us at thatgirlexperiences@gmail.com or try again.');
       }
     });
   }
