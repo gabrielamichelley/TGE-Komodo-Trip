@@ -100,6 +100,41 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .nav-cta { background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: var(--white) !important; border: none !important; padding: 0.55rem 1.25rem !important; font-family: 'Jost', sans-serif !important; font-size: 0.68rem !important; font-weight: 500 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; border-radius: 50px !important; cursor: pointer !important; text-decoration: none !important; white-space: nowrap !important; transition: all 0.3s ease !important; flex-shrink: 0 !important; line-height: normal !important; display: inline-block !important; }
   .nav-cta:hover { transform: translateY(-1px) !important; box-shadow: 0 4px 16px rgba(201,169,110,0.35) !important; }
 
+  /* ── NAV DROPDOWN MENU (added) — mobile + desktop ── */
+  .nav-menu { position: relative; display: flex; align-items: center; }
+  .nav-menu-btn {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    background: rgba(255,255,255,0.72); border: 1px solid rgba(201,169,110,0.32);
+    border-radius: 50px; padding: 0.55rem 1.1rem; font-family: 'Jost', sans-serif;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-dark); cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(8px);
+    white-space: nowrap; line-height: normal; min-height: 40px;
+  }
+  .nav-menu-btn:hover { border-color: rgba(201,169,110,0.6); color: var(--gold); }
+  .nav-menu-btn-lines { display: flex; flex-direction: column; gap: 3px; }
+  .nav-menu-btn-lines span { display: block; width: 16px; height: 1.6px; background: currentColor; border-radius: 2px; transition: all 0.3s ease; }
+  .nav-menu.open .nav-menu-btn-lines span:nth-child(1) { transform: translateY(4.6px) rotate(45deg); }
+  .nav-menu.open .nav-menu-btn-lines span:nth-child(2) { opacity: 0; }
+  .nav-menu.open .nav-menu-btn-lines span:nth-child(3) { transform: translateY(-4.6px) rotate(-45deg); }
+  .nav-menu-panel {
+    position: absolute; top: calc(100% + 0.65rem); right: 0; min-width: 252px;
+    background: rgba(253,248,240,0.98); backdrop-filter: blur(16px);
+    border: 1px solid rgba(201,169,110,0.2); border-radius: 18px;
+    box-shadow: 0 16px 48px rgba(74,155,173,0.18); padding: 0.55rem;
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; z-index: 1001;
+  }
+  .nav-menu.open .nav-menu-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-menu-link {
+    display: flex; align-items: center; gap: 0.8rem; padding: 0.85rem 1rem; min-height: 48px;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+    color: var(--text-dark); text-decoration: none; border-radius: 12px; transition: all 0.25s ease;
+  }
+  .nav-menu-link:hover { background: rgba(201,169,110,0.12); color: var(--gold); padding-left: 1.25rem; }
+  .nav-menu-link-icon { font-size: 1.05rem; flex-shrink: 0; width: 1.2rem; text-align: center; }
+  /* offset anchor landings so the fixed nav doesn't cover section tops */
+  #meet-gabs, #itinerary, #inclusions, #where-you-stay, #wellness, #why { scroll-margin-top: 84px; }
+
   /* HERO */
   .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem 2.5rem; position: relative; background: linear-gradient(170deg, var(--cream) 0%, var(--teal-soft) 35%, var(--lagoon) 65%, var(--ocean-light) 100%); overflow: hidden; }
   .hero::before { content: ''; position: absolute; top: -10%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%); border-radius: 50%; animation: heroFloat 12s ease-in-out infinite; pointer-events: none; }
@@ -581,6 +616,136 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .giveaway-popup-card { border-radius: 24px 24px 0 0; max-height: 92vh; padding: 1.75rem 1.4rem calc(1.4rem + env(safe-area-inset-bottom)); }
     .discount-code-text { font-size: 1.2rem; }
   }
+
+  /* ══════════════════════════════════════════════════════════ */
+  /* MOBILE UX + READABILITY REFINEMENTS (added)                */
+  /* Appended last so these win over earlier rules.             */
+  /* Desktop is untouched — everything here is inside a query.  */
+  /* ══════════════════════════════════════════════════════════ */
+
+  /* iOS zooms the page in when you focus an input under 16px.  */
+  /* Locking inputs to 16px on mobile stops that jarring jump.  */
+  @media (max-width: 768px) {
+    .interest-input, .giveaway-popup-input,
+    #contact input, #contact textarea { font-size: 16px !important; }
+  }
+
+  /* Nothing should ever scroll sideways on a phone */
+  @media (max-width: 768px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img, iframe { max-width: 100%; }
+  }
+
+  @media (max-width: 540px) {
+
+    /* ── READABILITY: body copy ───────────────────────────── */
+    /* Slightly larger text + more line-height = far less eye  */
+    /* strain on a small screen held at arm's length.          */
+    .wellness-card-text, .why-card-text, .trust-card-text,
+    .stay-desc, .bookflow-step-text, .faq-answer-text,
+    .founder-text, .founder-point, .inclusion-item,
+    .highlight-item, .for-you-item-text {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .section-subtitle { font-size: 1rem; line-height: 1.7; margin-bottom: 1.75rem; }
+    .founder-text { line-height: 1.8; }
+
+    /* Tiny uppercase labels: heavy letter-spacing hurts at    */
+    /* small sizes. Loosen the size, tighten the tracking.     */
+    .section-tag { font-size: 0.68rem; letter-spacing: 0.2em; margin-bottom: 0.6rem; }
+    .stay-island { letter-spacing: 0.14em; font-size: 0.68rem; }
+    .founder-eyebrow { letter-spacing: 0.18em; }
+
+    /* Headlines: a touch smaller so they never wrap awkwardly */
+    .section-title { font-size: clamp(1.75rem, 7.5vw, 2.15rem); margin-bottom: 0.9rem; }
+
+    /* ── VERTICAL RHYTHM ──────────────────────────────────── */
+    /* Consistent breathing room between sections.            */
+    section { padding: 2.25rem 1.1rem; }
+    .trust-section, .stay-section, .bookflow-section,
+    .callbook-section, .founder-section { padding: 2.25rem 1.1rem; }
+
+    /* ── TAP TARGETS (Apple/Google guideline: 44px min) ───── */
+    .nav-menu-btn { min-height: 44px; padding: 0.6rem 1rem; }
+    .nav-menu-link { min-height: 50px; font-size: 0.92rem; }
+    .faq-question { min-height: 48px; padding: 0.25rem 0; }
+    .social-btn, .callbook-btn, .founder-ig { min-height: 46px; padding: 0.85rem 1.4rem; }
+    .slide-btn { width: 40px; height: 40px; font-size: 1rem; }
+    .slide-dot { width: 10px; height: 10px; }
+    .slide-dots { gap: 0.75rem; margin-top: 1.1rem; }
+    .discount-copy-btn { min-height: 44px; }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero-details { gap: 1.1rem; }
+    .hero-for { line-height: 1.75; }
+
+    /* Deposit bubble: long text ("2 SPOTS LEFT · From $599")  */
+    /* overflowed as a single inline-flex line. Let it wrap.   */
+    .deposit-bubble {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 0.3rem; padding: 0.55rem 1rem; line-height: 1.5;
+      font-size: 0.76rem; max-width: 100%; text-align: center;
+    }
+
+    /* ── CARDS: tighter, calmer padding ───────────────────── */
+    .trust-card { padding: 1.5rem 1.35rem; border-radius: 18px; }
+    .stay-body { padding: 1.35rem 1.35rem 1.5rem; }
+    .stay-card { border-radius: 18px; }
+    .stay-name { font-size: 1.28rem; }
+    .bookflow-step { padding: 1.2rem 1.25rem; gap: 0.9rem; border-radius: 16px; }
+    .bookflow-cancel { padding: 1.35rem 1.25rem; }
+    .callbook-wrap { padding: 1.9rem 1.25rem; border-radius: 22px; }
+    .callbook-sub { font-size: 0.97rem; line-height: 1.7; }
+    .trust-badge { font-size: 0.74rem; padding: 0.5rem 0.95rem; }
+    .trust-badge-row { gap: 0.5rem; margin-top: 1.5rem; }
+
+    /* Grids stack with a comfortable gap rather than crowding */
+    .trust-grid, .stay-grid { gap: 1rem; }
+    .bookflow-steps { gap: 0.85rem; }
+
+    /* ── ITINERARY: the densest section on mobile ─────────── */
+    .day-highlights { gap: 0.65rem; }
+    .highlight-item { align-items: flex-start; }
+    .day-tag { margin-top: 0.75rem; margin-right: 0.3rem; }
+    .day-header { margin-bottom: 0.85rem; }
+    /* The duplicate "DAY 1" pill next to the marker is noise  */
+    /* on a narrow screen — the marker already says it.        */
+    .day-date { display: none; }
+
+    /* ── INCLUSIONS ───────────────────────────────────────── */
+    .inclusion-list { gap: 0.8rem; }
+    .inclusion-heading { font-size: 1.2rem; margin-bottom: 1.15rem; }
+
+    /* ── FOUNDER ──────────────────────────────────────────── */
+    .founder-points { gap: 0.85rem; }
+    .founder-sign { font-size: 1.25rem; }
+
+    /* ── FORMS ────────────────────────────────────────────── */
+    .interest-input, .giveaway-popup-input { padding: 0.95rem 1.2rem; }
+    .interest-form { gap: 0.7rem; }
+
+    /* ── BOTTOM COLLISION ZONE ────────────────────────────── */
+    /* Sticky CTA bar + WhatsApp FAB + live chat all sit at    */
+    /* the bottom. Pad the footer so nothing hides under them. */
+    .footer { padding-bottom: 6.5rem; }
+    .social-cta-row { gap: 0.6rem; }
+  }
+
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    @media (max-width: 540px) {
+      .footer { padding-bottom: calc(6.5rem + env(safe-area-inset-bottom)); }
+    }
+  }
+
+  /* Very small phones (iPhone SE and similar) */
+  @media (max-width: 380px) {
+    .nav-menu-btn { padding: 0.55rem 0.8rem; letter-spacing: 0.1em; }
+    .nav-brand { font-size: 0.8rem; letter-spacing: 0.14em; }
+    .nav-menu-panel { min-width: 220px; }
+    .deposit-bubble { font-size: 0.72rem; }
+    .stay-name { font-size: 1.18rem; }
+  }
 </style>
 </head>
 <body>
@@ -589,11 +754,21 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <nav class="nav" id="mainNav">
   <a class="nav-brand" href="https://www.thatgirlexperiences.com">That Girl Experiences</a>
   <div class="nav-right">
-    <nav class="nav-links">
-      <a href="#wellness" class="nav-link">The Trip</a>
-      <a href="#why" class="nav-link">Why TGE</a>
-      <a href="#itinerary" class="nav-link">Itinerary</a>
-    </nav>
+    <!-- DROPDOWN MENU (added) — mobile + desktop -->
+    <div class="nav-menu" id="navMenu">
+      <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false" aria-controls="navMenuPanel" aria-label="Open menu">
+        <span class="nav-menu-btn-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        Menu
+      </button>
+      <div class="nav-menu-panel" id="navMenuPanel" role="menu">
+        <a href="#inclusions" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">✓</span>Inclusions</a>
+        <a href="#itinerary" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">🗺️</span>Itinerary</a>
+        <a href="#wellness" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">🌊</span>The Trip</a>
+        <a href="#meet-gabs" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">🤍</span>Our Story</a>
+        <a href="#why" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">✨</span>Why TGE</a>
+        <a href="#where-you-stay" class="nav-menu-link" role="menuitem"><span class="nav-menu-link-icon">🏝️</span>Where You'll Stay</a>
+      </div>
+    </div>
     <!-- WeTravel embed — Nav Book Now -->
     <button class="wtrvl-checkout_button nav-cta" id="wt-btn-nav"
       data-env="https://www.wetravel.com"
@@ -1543,6 +1718,22 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <script src="https://cdn.wetravel.com/widgets/embed_checkout.js"></script>
 
 <script>
+  /* Nav dropdown menu (added) — mobile + desktop */
+  (function() {
+    const menu = document.getElementById('navMenu');
+    const btn = document.getElementById('navMenuBtn');
+    if (!menu || !btn) return;
+    function close() { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('.nav-menu-link').forEach(a => a.addEventListener('click', close));
+    document.addEventListener('click', function(e) { if (menu.classList.contains('open') && !menu.contains(e.target)) close(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+  })();
+
   /* Nav scroll + mobile sticky CTA */
   window.addEventListener('scroll', () => {
     document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
