@@ -349,6 +349,40 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .trust-card-text strong { font-weight: 600; }
   .trust-badge-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; max-width: 760px; margin: 2rem auto 0; }
   .trust-badge { background: rgba(255,255,255,0.9); border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; padding: 0.5rem 1.1rem; font-size: 0.76rem; font-weight: 500; color: var(--text-dark); display: inline-flex; align-items: center; gap: 0.45rem; }
+
+
+.stay-photo .stay-slides { position:absolute; inset:0; display:flex; transition:transform .5s cubic-bezier(.4,0,.2,1); }
+.stay-photo .stay-slides img { position:relative; inset:auto; min-width:100%; width:100%; height:100%; object-fit:cover; flex-shrink:0; display:block; }
+.stay-slider-btn { position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border:none; border-radius:50%; background:rgba(255,255,255,0.9); color:var(--text-dark); font-size:1.1rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 10px rgba(0,0,0,0.15); z-index:2; transition:all .3s ease; }
+.stay-slider-btn:hover { background:#fff; }
+.stay-slider-prev { left:8px; } .stay-slider-next { right:8px; }
+.stay-slider-dots { position:absolute; bottom:8px; left:0; right:0; display:flex; justify-content:center; gap:5px; z-index:2; }
+.stay-slider-dot { width:7px; height:7px; border-radius:50%; border:none; background:rgba(255,255,255,0.55); cursor:pointer; padding:0; transition:all .3s ease; }
+.stay-slider-dot.active { background:#fff; transform:scale(1.3); }
+.stay-slider[data-single] .stay-slider-btn,
+.stay-slider[data-single] .stay-slider-dots { display:none; }
+
+  /* ── DEPARTURE DATE SELECTOR (accommodation) — added ── */
+  .dep-tabs { display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem; max-width:820px; margin:0 auto 2.25rem; }
+  .dep-tab { display:flex; flex-direction:column; align-items:center; gap:0.12rem; background:rgba(255,255,255,0.85); border:1.5px solid rgba(201,169,110,0.3); border-radius:16px; padding:0.65rem 1.15rem; font-family:'Jost',sans-serif; cursor:pointer; color:var(--text-dark); transition:all .3s ease; min-width:120px; }
+  .dep-tab:hover { border-color:rgba(201,169,110,0.65); transform:translateY(-1px); }
+  .dep-tab.active { background:linear-gradient(135deg,var(--gold),var(--gold-light)); border-color:transparent; color:#fff; box-shadow:0 6px 20px rgba(201,169,110,0.35); }
+  .dep-tab-date { font-size:0.82rem; font-weight:600; letter-spacing:0.01em; white-space:nowrap; }
+  .dep-tab-status { font-size:0.6rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; opacity:0.85; }
+  .dep-panel { display:none; }
+  .dep-panel.active { display:block; animation:depFade .45s ease; }
+  @keyframes depFade { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+  .stay-tbc { max-width:640px; margin:0 auto; background:rgba(255,255,255,0.85); border:1px dashed rgba(201,169,110,0.5); border-radius:22px; padding:2.5rem 1.75rem; text-align:center; }
+  .stay-tbc-emoji { font-size:2.2rem; margin-bottom:0.6rem; }
+  .stay-tbc-title { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--text-dark); margin-bottom:0.6rem; }
+  .stay-tbc-text { font-size:0.97rem; line-height:1.7; color:var(--text-dark); max-width:480px; margin:0 auto 1.35rem; }
+  .stay-tbc-btn { display:inline-flex; align-items:center; gap:0.5rem; background:#25D366; color:#fff; padding:0.85rem 1.6rem; border-radius:50px; font-family:'Jost',sans-serif; font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; box-shadow:0 6px 20px rgba(37,211,102,0.3); transition:transform .3s ease; }
+  .stay-tbc-btn:hover { transform:translateY(-2px); }
+  @media (max-width:540px){
+    .dep-tabs { gap:0.45rem; }
+    .dep-tab { min-width:0; flex:1 1 calc(50% - 0.45rem); padding:0.6rem 0.5rem; }
+    .dep-tab-date { font-size:0.76rem; }
+  }
   
   .stay-section { background: var(--cream); }
   .stay-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,280px),1fr)); gap: 1.5rem; max-width: 1080px; margin: 0 auto; }
@@ -366,18 +400,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   .stay-tag { background: rgba(255,255,255,0.9); border: 1px solid rgba(201,169,110,0.22); border-radius: 50px; padding: 0.28rem 0.8rem; font-size: 0.72rem; color: var(--text-dark); }
   .stay-note { max-width: 760px; margin: 2rem auto 0; text-align: center; font-size: 0.85rem; font-style: italic; color: var(--text-light); line-height: 1.6; }
 
-
-.stay-photo .stay-slides { position:absolute; inset:0; display:flex; transition:transform .5s cubic-bezier(.4,0,.2,1); }
-.stay-photo .stay-slides img { position:relative; inset:auto; min-width:100%; width:100%; height:100%; object-fit:cover; flex-shrink:0; display:block; }
-.stay-slider-btn { position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border:none; border-radius:50%; background:rgba(255,255,255,0.9); color:var(--text-dark); font-size:1.1rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 10px rgba(0,0,0,0.15); z-index:2; transition:all .3s ease; }
-.stay-slider-btn:hover { background:#fff; }
-.stay-slider-prev { left:8px; } .stay-slider-next { right:8px; }
-.stay-slider-dots { position:absolute; bottom:8px; left:0; right:0; display:flex; justify-content:center; gap:5px; z-index:2; }
-.stay-slider-dot { width:7px; height:7px; border-radius:50%; border:none; background:rgba(255,255,255,0.55); cursor:pointer; padding:0; transition:all .3s ease; }
-.stay-slider-dot.active { background:#fff; transform:scale(1.3); }
-.stay-slider[data-single] .stay-slider-btn,
-.stay-slider[data-single] .stay-slider-dots { display:none; }
-  
   .founder-section { background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); }
   .founder-wrap { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 2.5rem; align-items: center; }
   .founder-photo { position: relative; width: 100%; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 64px rgba(74,155,173,0.18); background: var(--teal-soft); }
@@ -979,69 +1001,221 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
 </section>
   
-<!-- WHERE YOU'LL STAY (accommodation showcase) — ISLAND LIFE ONLY -->
+<!-- WHERE YOU'LL STAY (accommodation showcase) — date-based -->
+<!-- ============================================================ -->
+<!-- Add photos per hotel: inside each <div class="stay-slides">, -->
+<!-- swap the placeholder line for as many <img> tags as you like.-->
+<!-- 1 photo = static image · 2+ photos = auto mini-slideshow.    -->
 <!-- ============================================================ -->
 <section class="stay-section" id="where-you-stay">
   <div class="section-tag reveal">Where You'll Stay</div>
   <h2 class="section-title reveal">Your Home For <em>8 Days</em></h2>
-  <p class="section-subtitle reveal">Private Pool Villas & Hotels (twin-share, 2 girls max per room). No hostels or dorms — ever.</p>
- 
-  <div class="stay-grid">
+  <p class="section-subtitle reveal">Private Pool Villas &amp; Hotels (twin-share, 2 girls max per room). No hostels or dorms — ever. Pick your departure to see the exact stays.</p>
 
-    <div class="stay-card reveal">
-        <!-- FILL IN: <div class="stay-photo">
-      <div class="stay-photo-placeholder"><img src="villa-uluwatu.jpg" alt="Private pool villa in Bali"></div>
-      </div> -->
-      
-      <div class="stay-body">
-        <div class="stay-island">Bali</div>
-        <div class="stay-name">Hotel / Villa</div>
-        <div class="stay-desc">Hotel or villa in Bali</div>
-        <div class="stay-tags"><span class="stay-tag">Twin-share</span><span class="stay-tag">2 girls max per room</span></div>
+  <!-- DATE SELECTOR -->
+  <div class="dep-tabs reveal" role="tablist" aria-label="Choose your departure date">
+    <button class="dep-tab" data-dep="aug26" type="button" role="tab" aria-selected="false">
+      <span class="dep-tab-date">7–14 Aug 2026</span><span class="dep-tab-status">Sold out</span>
+    </button>
+    <button class="dep-tab active" data-dep="nov26" type="button" role="tab" aria-selected="true">
+      <span class="dep-tab-date">6–13 Nov 2026</span><span class="dep-tab-status">Few spots left</span>
+    </button>
+    <button class="dep-tab" data-dep="jan27" type="button" role="tab" aria-selected="false">
+      <span class="dep-tab-date">29 Jan–5 Feb 2027</span><span class="dep-tab-status">Open</span>
+    </button>
+    <button class="dep-tab" data-dep="apr27" type="button" role="tab" aria-selected="false">
+      <span class="dep-tab-date">8–15 Apr 2027</span><span class="dep-tab-status">Coming soon</span>
+    </button>
+  </div>
+
+  <!-- ── 7–14 AUG 2026 ── -->
+  <div class="dep-panel" data-dep="aug26">
+    <div class="stay-grid">
+      <div class="stay-card reveal">
+        <div class="stay-photo stay-slider">
+          <div class="stay-slides">
+        <div class="stay-photo-placeholder">📸 Add photos of Aruni Jimbaran<br><span style="font-size:0.82em;opacity:0.75">(swap this line for &lt;img&gt; tags)</span></div>
+          </div>
+          <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
+          <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
+          <div class="stay-slider-dots"></div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-island">Jimbaran, Bali · 3 nights</div>
+          <div class="stay-name">Aruni Jimbaran Boutique Villa</div>
+          <div class="stay-desc">A luxe boutique villa in Jimbaran with a private pool — our home base for the first stretch of island life.</div>
+          <div class="stay-tags"><span class="stay-tag">Luxe boutique villa</span><span class="stay-tag">Private pool</span><span class="stay-tag">Twin-share</span></div>
+        </div>
+      </div>
+
+      <div class="stay-card reveal">
+        <div class="stay-photo stay-slider">
+          <div class="stay-slides">
+        <div class="stay-photo-placeholder">📸 Add photos of Alam Kawi Resort &amp; Spa<br><span style="font-size:0.82em;opacity:0.75">(swap this line for &lt;img&gt; tags)</span></div>
+          </div>
+          <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
+          <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
+          <div class="stay-slider-dots"></div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-island">Ubud · 2 nights</div>
+          <div class="stay-name">Alam Kawi Resort &amp; Spa</div>
+          <div class="stay-desc">A serene Ubud resort &amp; spa surrounded by jungle &amp; ricefields — the perfect reset in the heart of Bali.</div>
+          <div class="stay-tags"><span class="stay-tag">Resort &amp; spa</span><span class="stay-tag">Ubud</span><span class="stay-tag">Twin-share</span></div>
+        </div>
+      </div>
+
+      <div class="stay-card reveal">
+        <div class="stay-photo stay-slider">
+          <div class="stay-slides">
+        <img src="lembonganRRvillas.webp" alt="Royal Retreat Villas, Nusa Lembongan">
+        <img src="RRvillas.webp" alt="Royal Retreat Villas pool">
+        <img src="RRvillarooms.webp" alt="Royal Retreat Villas room">
+          </div>
+          <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
+          <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
+          <div class="stay-slider-dots"></div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-island">Nusa Lembongan · 2 nights</div>
+          <div class="stay-name">Royal Retreat Villas, Nusa Lembongan</div>
+          <div class="stay-desc">Near Mushroom Bay with a pool &amp; private balcony — swim, relax &amp; live the island life with the girls.</div>
+          <div class="stay-tags"><span class="stay-tag">Near Mushroom Bay</span><span class="stay-tag">Pool</span><span class="stay-tag">Private balcony</span></div>
+        </div>
       </div>
     </div>
+  </div>
 
-  <div class="stay-body">
-  <div class="stay-photo stay-slider">
-  <div class="stay-slides">
-    <img src="villadune.webp" alt="Private Pool Villa in Ubud"> 
-    <img src="villaduneubud.webp" alt="Private Pool Villa">
-    <img src="villaduneinterior.webp" alt="Interior">
-  </div>
-  <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
-  <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
-  <div class="stay-slider-dots"></div>
-  </div>
-    
-        <div class="stay-island">Ubud</div>
-        <div class="stay-name">Our Private Pool Villa in Ubud</div>
-        <div class="stay-desc">Our own luxe private villa with a private pool - just for us girls. Our private sanctuary surrounded by lush jungles, ricefields, nature & tranquility.</div>
-        <div class="stay-tags"><span class="stay-tag">Luxe Private Pool Villa</span><span class="stay-tag">Surrounded by nature</span><span class="stay-tag">Peaceful & Serene</span></div>
+  <!-- ── 6–13 NOV 2026 ── -->
+  <div class="dep-panel active" data-dep="nov26">
+    <div class="stay-grid">
+      <div class="stay-card reveal">
+        <div class="stay-photo stay-slider">
+          <div class="stay-slides">
+        <div class="stay-photo-placeholder">📸 Add photos of Langma Villa<br><span style="font-size:0.82em;opacity:0.75">(swap this line for &lt;img&gt; tags)</span></div>
+          </div>
+          <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
+          <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
+          <div class="stay-slider-dots"></div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-island">Canggu · 3 nights</div>
+          <div class="stay-name">Langma Villa, Canggu</div>
+          <div class="stay-desc">A private villa in buzzy Canggu with a private pool — close to the beach clubs, cafés &amp; sunsets.</div>
+          <div class="stay-tags"><span class="stay-tag">Private villa</span><span class="stay-tag">Private pool</span><span class="stay-tag">Canggu</span></div>
+        </div>
       </div>
-   </div>
 
-  <div class="stay-body">
-  <div class="stay-photo stay-slider">
-  <div class="stay-slides">
-    <img src="lembonganRRvillas.webp" alt="Nusa Lembongan Accommodation">
-    <img src="RRvillas.webp" alt="Ubud Villa">
-    <img src="RRvillarooms.webp" alt="Your Room">
-  </div>
-  <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
-  <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
-  <div class="stay-slider-dots"></div>
-  </div>
-        <div class="stay-island">Nusa Lembongan</div>
-        <div class="stay-name">Royal Retreat Villas, Nusa Lembongan</div>
-        <div class="stay-desc">Swim in the pool, relax & live the island life with the girls.</div>
-        <div class="stay-tags"><span class="stay-tag">Near Mushroom Bay</span><span class="stay-tag">Pool</span><span class="stay-tag">Private Balcony</span></div>
+      <div class="stay-card reveal">
+        <div class="stay-photo stay-slider">
+          <div class="stay-slides">
+        <img src="villadune.webp" alt="Villa Dune, Ubud">
+        <img src="villaduneubud.webp" alt="Villa Dune pool, Ubud">
+        <img src="villaduneinterior.webp" alt="Villa Dune interior">
+          </div>
+          <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
+          <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
+          <div class="stay-slider-dots"></div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-island">Ubud · 2 nights</div>
+          <div class="stay-name">Villa Dune, Ubud</div>
+          <div class="stay-desc">Our own luxe private villa with a private pool — surrounded by lush jungle, ricefields, nature &amp; tranquility.</div>
+          <div class="stay-tags"><span class="stay-tag">Luxe jungle villa</span><span class="stay-tag">Private pool</span></div>
+        </div>
       </div>
-   </div>
 
+      <div class="stay-card reveal">
+        <div class="stay-photo stay-slider">
+          <div class="stay-slides">
+        <img src="lembonganRRvillas.webp" alt="Royal Retreat Villas, Nusa Lembongan">
+        <img src="RRvillas.webp" alt="Royal Retreat Villas pool">
+        <img src="RRvillarooms.webp" alt="Royal Retreat Villas room">
+          </div>
+          <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
+          <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
+          <div class="stay-slider-dots"></div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-island">Nusa Lembongan · 2 nights</div>
+          <div class="stay-name">Royal Retreat Villas, Nusa Lembongan</div>
+          <div class="stay-desc">Near Mushroom Bay with a pool &amp; private balcony — swim, relax &amp; live the island life with the girls.</div>
+          <div class="stay-tags"><span class="stay-tag">Near Mushroom Bay</span><span class="stay-tag">Pool</span><span class="stay-tag">Private balcony</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <p class="stay-note reveal">Every stay has been carefully hand-picked and curated to provide you with luxury and comfort at our affordable trip price with lots of inclusions, without compromise — no hostels or dorms, ever. Please note that the accommodation for future departures is subject to change.</p>
+
+  <!-- ── 29 JAN–5 FEB 2027 ── -->
+  <div class="dep-panel" data-dep="jan27">
+    <div class="stay-grid">
+      <div class="stay-card reveal">
+        <div class="stay-photo stay-slider">
+          <div class="stay-slides">
+        <div class="stay-photo-placeholder">📸 Add photos of your Bali stay<br><span style="font-size:0.82em;opacity:0.75">(swap this line for &lt;img&gt; tags)</span></div>
+          </div>
+          <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
+          <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
+          <div class="stay-slider-dots"></div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-island">Bali · 3 nights</div>
+          <div class="stay-name">Hotel / Villa — being confirmed</div>
+          <div class="stay-desc">Final villa being confirmed now — always hand-picked to our luxe, twin-share standard (no hostels or dorms, ever).</div>
+          <div class="stay-tags"><span class="stay-tag">Hand-picked</span><span class="stay-tag">Twin-share</span></div>
+        </div>
+      </div>
+
+      <div class="stay-card reveal">
+        <div class="stay-photo stay-slider">
+          <div class="stay-slides">
+        <div class="stay-photo-placeholder">📸 Add photos of Tavisha Infinity Pool Villa<br><span style="font-size:0.82em;opacity:0.75">(swap this line for &lt;img&gt; tags)</span></div>
+          </div>
+          <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
+          <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
+          <div class="stay-slider-dots"></div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-island">Ubud · 2 nights</div>
+          <div class="stay-name">Tavisha Infinity Pool Villa, Ubud</div>
+          <div class="stay-desc">A luxe jungle villa with a stunning infinity pool overlooking the Ubud greenery.</div>
+          <div class="stay-tags"><span class="stay-tag">Luxe jungle villa</span><span class="stay-tag">Private pool</span><span class="stay-tag">Infinity pool</span></div>
+        </div>
+      </div>
+
+      <div class="stay-card reveal">
+        <div class="stay-photo stay-slider">
+          <div class="stay-slides">
+        <img src="lembonganRRvillas.webp" alt="Royal Retreat Villas, Nusa Lembongan">
+        <img src="RRvillas.webp" alt="Royal Retreat Villas pool">
+        <img src="RRvillarooms.webp" alt="Royal Retreat Villas room">
+          </div>
+          <button class="stay-slider-btn stay-slider-prev" aria-label="Previous">‹</button>
+          <button class="stay-slider-btn stay-slider-next" aria-label="Next">›</button>
+          <div class="stay-slider-dots"></div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-island">Nusa Lembongan · 2 nights</div>
+          <div class="stay-name">Royal Retreat Villas, Nusa Lembongan</div>
+          <div class="stay-desc">Near Mushroom Bay with a pool &amp; private balcony — swim, relax &amp; live the island life with the girls.</div>
+          <div class="stay-tags"><span class="stay-tag">Near Mushroom Bay</span><span class="stay-tag">Pool</span><span class="stay-tag">Private balcony</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 8–15 APR 2027 (nothing booked yet) ── -->
+  <div class="dep-panel" data-dep="apr27">
+    <div class="stay-tbc reveal">
+      <div class="stay-tbc-emoji">🌴</div>
+      <div class="stay-tbc-title">Accommodation being finalised</div>
+      <div class="stay-tbc-text">This departure is being planned right now. Every stay is hand-picked to our luxe, twin-share standard — no hostels or dorms, ever. Message us to be first to know where you'll be staying.</div>
+      <a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener" class="stay-tbc-btn">💬 Ask about April 2027</a>
+    </div>
+  </div>
+
+  <p class="stay-note reveal">Every stay has been carefully hand-picked and curated to provide you with luxury and comfort at our affordable trip price with lots of inclusions, without compromise — no hostels or dorms, ever. Accommodation may vary between departures &amp; is subject to change.</p>
 </section>
-
 <!-- WHY TGE -->
 <section class="why-section" id="why">
   <div class="section-tag reveal">Why TGE?</div>
@@ -1402,7 +1576,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="founder-wrap" style="margin-top:0.5rem;">
     <div class="reveal">
       <div class="founder-photo">
-        <div class="founder-photo-placeholder"><img src="gabs.webp" alt="Gabs, founder of That Girl Experiences"> --></div>
+        <div class="founder-photo-placeholder"><img src="gabs.webp" alt="Gabs, founder of That Girl Experiences"></div>
         <div class="founder-photo-tag">
           <strong>Gabriela (Gabs)</strong>
           <span>Our Founder & Your Host · <a href="https://instagram.com/ggabrielamichelle" target="_blank" rel="noopener">@ggabrielamichelle</a></span>
@@ -1915,26 +2089,31 @@ Tawk_API.customStyle = {
 </script>
 
 <script>
-  /* Accommodation card mini-slideshows — independent per card */
+  /* Accommodation mini-slideshows + departure-date selector */
   (function(){
-    document.querySelectorAll('.stay-slider').forEach(function(slider){
+    function initSlider(slider){
       var track = slider.querySelector('.stay-slides');
       var imgs  = track ? track.querySelectorAll('img') : [];
       var dotsWrap = slider.querySelector('.stay-slider-dots');
-      if(!track || imgs.length <= 1){ slider.setAttribute('data-single',''); return; }
+      if(!track || imgs.length <= 1){ slider.setAttribute('data-single',''); slider._reset = function(){}; return; }
+      slider.removeAttribute('data-single');
       var i = 0;
-      imgs.forEach(function(_, n){
-        var d = document.createElement('button');
-        d.className = 'stay-slider-dot' + (n===0 ? ' active' : '');
-        d.setAttribute('aria-label','Go to photo ' + (n+1));
-        d.addEventListener('click', function(e){ e.stopPropagation(); go(n); });
-        dotsWrap.appendChild(d);
-      });
+      if(dotsWrap){
+        dotsWrap.innerHTML = '';
+        imgs.forEach(function(_, n){
+          var d = document.createElement('button');
+          d.className = 'stay-slider-dot' + (n===0 ? ' active' : '');
+          d.setAttribute('aria-label','Photo ' + (n+1));
+          d.addEventListener('click', function(e){ e.stopPropagation(); go(n); });
+          dotsWrap.appendChild(d);
+        });
+      }
       function go(n){
         i = (n + imgs.length) % imgs.length;
         track.style.transform = 'translateX(-' + (i*100) + '%)';
-        dotsWrap.querySelectorAll('.stay-slider-dot').forEach(function(d,k){ d.classList.toggle('active', k===i); });
+        if(dotsWrap) dotsWrap.querySelectorAll('.stay-slider-dot').forEach(function(d,k){ d.classList.toggle('active', k===i); });
       }
+      slider._reset = function(){ go(0); };
       var prev = slider.querySelector('.stay-slider-prev');
       var next = slider.querySelector('.stay-slider-next');
       if(prev) prev.addEventListener('click', function(e){ e.stopPropagation(); go(i-1); });
@@ -1947,11 +2126,26 @@ Tawk_API.customStyle = {
         if(Math.abs(dx) > 40) go(dx>0 ? i+1 : i-1);
         x0 = null;
       }, {passive:true});
-      setInterval(function(){ go(i+1); }, 5000); // auto-advance; delete this line to turn off
+    }
+    document.querySelectorAll('.stay-slider').forEach(initSlider);
+
+    /* Departure-date tabs → swap accommodation panels */
+    var tabs = document.querySelectorAll('.dep-tab');
+    var panels = document.querySelectorAll('.dep-panel');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        var id = tab.getAttribute('data-dep');
+        tabs.forEach(function(t){ var on = t===tab; t.classList.toggle('active', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+        panels.forEach(function(p){
+          var on = p.getAttribute('data-dep')===id;
+          p.classList.toggle('active', on);
+          if(on) p.querySelectorAll('.stay-slider').forEach(function(s){ if(s._reset) s._reset(); });
+        });
+      });
     });
   })();
 </script>
-  
+
 <!-- ============================================ -->
 <!-- WHATSAPP DIRECT CHAT — floating button (FAB)  -->
 <!-- ============================================ -->
