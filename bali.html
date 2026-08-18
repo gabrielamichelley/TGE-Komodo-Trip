@@ -601,56 +601,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .interest-btn { width: 100%; max-width: 320px; text-align: center; padding: 1rem; }
   }
 
-  /* ── GIVEAWAY POPUP ── */
-  .giveaway-popup { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 1rem; }
-  .giveaway-popup.show { display: flex; animation: popupFadeIn 0.4s ease forwards; }
-  .giveaway-popup-overlay { position: absolute; inset: 0; background: rgba(28,43,45,0.72); backdrop-filter: blur(4px); cursor: pointer; }
-  .giveaway-popup-card { position: relative; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 100%); border-radius: 24px; padding: 2.25rem 1.75rem 1.6rem; max-width: 460px; width: 100%; max-height: 92vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.3); border: 1px solid rgba(201,169,110,0.25); animation: popupSlideUp 0.5s cubic-bezier(0.22,1,0.36,1) forwards; }
-  @keyframes popupFadeIn { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes popupSlideUp { from { opacity: 0; transform: translateY(40px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
-  .giveaway-popup-close { position: absolute; top: 0.85rem; right: 0.95rem; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.18); font-size: 1.5rem; line-height: 1; cursor: pointer; color: var(--text-dark); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; padding: 0; z-index: 2; }
-  .giveaway-popup-close:hover { background: var(--white); transform: scale(1.05); }
-  .giveaway-popup-tag { font-size: 0.66rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-align: center; margin-bottom: 0.6rem; }
-  .giveaway-popup-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 5vw, 2rem); font-weight: 600; text-align: center; color: var(--text-dark); line-height: 1.15; margin-bottom: 0.5rem; }
-  .giveaway-popup-title em { font-style: italic; color: var(--ocean-deep); }
-  .giveaway-popup-subtitle { font-size: 0.92rem; line-height: 1.55; text-align: center; color: var(--text-dark); margin-bottom: 0.75rem; }
-  .giveaway-popup-subtitle strong { font-weight: 600; }
-  .giveaway-popup-bonus { background: linear-gradient(135deg, rgba(201,169,110,0.15), rgba(232,213,163,0.18)); border: 1px dashed rgba(201,169,110,0.4); border-radius: 12px; padding: 0.65rem 0.9rem; font-size: 0.82rem; text-align: center; color: var(--text-dark); margin-bottom: 1rem; line-height: 1.45; }
-  .giveaway-popup-bonus strong { color: var(--gold); font-weight: 700; letter-spacing: 0.04em; }
-  .giveaway-popup-steps { background: rgba(255,255,255,0.7); border: 1px solid rgba(201,169,110,0.18); border-radius: 16px; padding: 0.9rem 1rem; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
-  .giveaway-popup-step { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.88rem; line-height: 1.45; color: var(--text-dark); }
-  .giveaway-popup-step-num { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: white; font-size: 0.72rem; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.05rem; }
-  .giveaway-popup-step a { color: var(--ocean-deep); font-weight: 600; text-decoration: underline; }
-  .giveaway-popup-form { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.5rem; }
-  .giveaway-popup-input { padding: 0.85rem 1.15rem; border: 1px solid rgba(201,169,110,0.3); border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.92rem; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.3s, box-shadow 0.3s; width: 100%; }
-  .giveaway-popup-input:focus { border-color: var(--ocean); box-shadow: 0 0 0 3px rgba(74,155,173,0.12); }
-  .giveaway-popup-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: white; border: none; padding: 1rem 1.5rem; font-family: 'Jost', sans-serif; font-size: 0.84rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 20px rgba(201,169,110,0.35); transition: all 0.3s ease; margin-top: 0.25rem; }
-  .giveaway-popup-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(201,169,110,0.45); }
-  .giveaway-popup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-  .giveaway-popup-note { font-size: 0.7rem; text-align: center; color: var(--text-light); margin-top: 0.4rem; line-height: 1.5; }
-  .giveaway-success { display: none; text-align: center; }
-  .giveaway-success.show { display: block; }
-  .giveaway-success-emoji { font-size: 3rem; margin-bottom: 0.5rem; display: block; }
-  .giveaway-success-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 5vw, 2rem); font-weight: 600; color: var(--text-dark); line-height: 1.15; margin-bottom: 0.55rem; }
-  .giveaway-success-title em { font-style: italic; color: var(--ocean-deep); }
-  .giveaway-success-text { font-size: 0.94rem; line-height: 1.6; color: var(--text-dark); margin-bottom: 1.1rem; }
-  .giveaway-success-text strong { font-weight: 700; color: var(--ocean-deep); }
-  .discount-code-box { background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border: 2px dashed var(--gold); border-radius: 16px; padding: 1.1rem 1rem; margin-bottom: 0.85rem; }
-  .discount-code-label { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.4rem; }
-  .discount-code-display { display: flex; align-items: center; justify-content: center; gap: 0.6rem; flex-wrap: wrap; }
-  .discount-code-text { font-family: 'Jost', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.18em; color: var(--text-dark); padding: 0.4rem 1rem; background: white; border-radius: 12px; border: 1px solid rgba(201,169,110,0.3); user-select: all; }
-  .discount-copy-btn { background: var(--gold); color: white; border: none; padding: 0.55rem 1rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s ease; }
-  .discount-copy-btn.copied { background: #4caf50; }
-  .discount-expiry { font-size: 0.72rem; color: var(--text-light); margin-top: 0.55rem; font-style: italic; }
-  .success-cta-row { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 1rem; }
-  .success-cta-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: white; padding: 0.9rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; text-align: center; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(201,169,110,0.32); }
-  .success-cta-secondary { background: white; color: var(--text-dark); padding: 0.85rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; text-align: center; border: 1px solid rgba(201,169,110,0.3); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; }
-  @media (max-width: 540px) {
-    .giveaway-popup { padding: 0; align-items: flex-end; }
-    .giveaway-popup-card { border-radius: 24px 24px 0 0; max-height: 92vh; padding: 1.75rem 1.4rem calc(1.4rem + env(safe-area-inset-bottom)); }
-    .discount-code-text { font-size: 1.2rem; }
-  }
-
   /* ══════════════════════════════════════════════════════════ */
   /* MOBILE UX + READABILITY REFINEMENTS (added)                */
   /* Appended last so these win over earlier rules.             */
@@ -660,7 +610,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   /* iOS zooms the page in when you focus an input under 16px.  */
   /* Locking inputs to 16px on mobile stops that jarring jump.  */
   @media (max-width: 768px) {
-    .interest-input, .giveaway-popup-input,
+    .interest-input,
     #contact input, #contact textarea { font-size: 16px !important; }
   }
 
@@ -708,7 +658,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .slide-btn { width: 40px; height: 40px; font-size: 1rem; }
     .slide-dot { width: 10px; height: 10px; }
     .slide-dots { gap: 0.75rem; margin-top: 1.1rem; }
-    .discount-copy-btn { min-height: 44px; }
 
     /* ── HERO ─────────────────────────────────────────────── */
     .hero-details { gap: 1.1rem; }
@@ -756,7 +705,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     .founder-sign { font-size: 1.25rem; }
 
     /* ── FORMS ────────────────────────────────────────────── */
-    .interest-input, .giveaway-popup-input { padding: 0.95rem 1.2rem; }
+    .interest-input { padding: 0.95rem 1.2rem; }
     .interest-form { gap: 0.7rem; }
 
     /* ── BOTTOM COLLISION ZONE ────────────────────────────── */
@@ -1881,44 +1830,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
 </section>
 
-<!-- GIVEAWAY POPUP -->
-<div class="giveaway-popup" id="giveawayPopup" aria-hidden="true">
-  <div class="giveaway-popup-overlay" id="popupOverlay"></div>
-  <div class="giveaway-popup-card" role="dialog" aria-labelledby="popupTitle">
-    <button class="giveaway-popup-close" id="popupClose" aria-label="Close">&times;</button>
-    <div id="giveawayInitial">
-      <div class="giveaway-popup-tag">✦ GET $100 USD OFF OUR TRIPS ✦</div>
-      <h2 class="giveaway-popup-title" id="popupTitle">GET <em>$100 USD OFF</em> ANY TRIP</h2>
-      <p class="giveaway-popup-subtitle"><strong>Core Memories you'll remember forever, livin' the Island Life with like-minded girls. 8 Days, 3 Islands — One Trip of a Lifetime.</strong> Bali + Nusa Lembongan + Nusa Penida ✨</p>
-      <form class="giveaway-popup-form" id="giveawayForm" novalidate>
-        <input type="text" name="name" placeholder="First & last name" required class="giveaway-popup-input">
-        <input type="text" name="email address" placeholder="Your email address" required class="giveaway-popup-input">
-        <input type="text" name="whatsapp" placeholder="WhatsApp (e.g. +61 400 000 000)" required class="giveaway-popup-input">
-        <input type="text" name="destinations & experiences you want to see" placeholder="Destinations/trips/experiences you want to see next?" required class="giveaway-popup-input">
-        <button type="submit" class="giveaway-popup-btn" id="giveawaySubmitBtn">Get $100 USD OFF ✨</button>
-      </form>
-      <p class="giveaway-popup-note">No spam, ever.</p>
-    </div>
-    <div class="giveaway-success" id="giveawaySuccess">
-      <span class="giveaway-success-emoji">🎉</span>
-      <h2 class="giveaway-success-title">Here's <em>$100 USD OFF</em> OUR TRIPS!</h2>
-      <p class="giveaway-success-text">Here's your <strong>discount code</strong> for <strong>$100 USD OFF ANY OF OUR TRIPS:</strong></p>
-      <div class="discount-code-box">
-        <div class="discount-code-label">YOUR $100 USD OFF CODE</div>
-        <div class="discount-code-display">
-          <span class="discount-code-text" id="discountCodeText">TGE100PUML31826</span>
-          <button type="button" class="discount-copy-btn" id="copyCodeBtn">Copy</button>
-        </div>
-        <div class="discount-expiry">⏰ Use by 31 Aug 2026 · valid on ANY trip!</div>
-      </div>
-      <div class="success-cta-row">
-        <a href="https://tri.ps/wrAyT" target="_blank" class="success-cta-primary">Book Now & Use Code →</a>
-        <a href="https://instagram.com/thatgirl.experiences" target="_blank" rel="noopener" class="success-cta-secondary">📸 Follow our Instagram</a>
-        <a href="https://www.tiktok.com/@thatgirl.experiences" target="_blank" rel="noopener" class="success-cta-secondary">🎵 Follow our TikTok</a>
-      </div>
-    </div>
-  </div>
-</div>
   
 <!-- MOBILE STICKY CTA — kept as regular link per instructions -->
 <div class="mobile-cta-bar" id="mobileCta">
@@ -2127,75 +2038,6 @@ Tawk_API.customStyle = {
 })();
 </script>
 <!--End of Tawk.to Script-->
-
-<script>
-  /* Giveaway popup */
-  (function() {
-    const popup = document.getElementById('giveawayPopup');
-    const overlay = document.getElementById('popupOverlay');
-    const closeBtn = document.getElementById('popupClose');
-    const form = document.getElementById('giveawayForm');
-    const initial = document.getElementById('giveawayInitial');
-    const success = document.getElementById('giveawaySuccess');
-    const submitBtn = document.getElementById('giveawaySubmitBtn');
-    const copyBtn = document.getElementById('copyCodeBtn');
-    const codeText = document.getElementById('discountCodeText');
-    if (!popup) return;
-    const STORAGE_KEY = 'tge_giveaway_seen';
-    const SUCCESS_KEY = 'tge_giveaway_entered';
-    if (sessionStorage.getItem(STORAGE_KEY) && !sessionStorage.getItem(SUCCESS_KEY)) return;
-    let shown = false;
-    function showPopup() {
-      if (shown) return; shown = true;
-      popup.classList.add('show'); popup.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      if (sessionStorage.getItem(SUCCESS_KEY)) { initial.style.display = 'none'; success.classList.add('show'); }
-    }
-    function hidePopup() {
-      popup.classList.remove('show'); popup.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = ''; sessionStorage.setItem(STORAGE_KEY, '1');
-    }
-    setTimeout(showPopup, 25000);
-    function onScroll() {
-      if (shown) { window.removeEventListener('scroll', onScroll); return; }
-      const docH = document.documentElement.scrollHeight - window.innerHeight;
-      if (docH > 0 && window.scrollY / docH > 0.30) showPopup();
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    closeBtn.addEventListener('click', hidePopup);
-    overlay.addEventListener('click', hidePopup);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup.classList.contains('show')) hidePopup(); });
-    if (form) {
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        submitBtn.disabled = true; submitBtn.textContent = 'Entering...';
-        const formData = new FormData(form);
-        formData.append('_subject', 'POPUP FORM MAILING LIST - AUD$100 code (Bali Page)');
-        formData.append('entry_type', 'Giveaway popup — Bali trip page');
-        try {
-          const res = await fetch('https://formspree.io/f/mkokzzow', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
-          if (res.ok) {
-            sessionStorage.setItem(SUCCESS_KEY, '1'); sessionStorage.setItem(STORAGE_KEY, '1');
-            initial.style.display = 'none'; success.classList.add('show');
-            if (window.fbq) fbq('track', 'Lead');
-            if (window.ttq && typeof window.ttq.track === 'function') window.ttq.track('CompleteRegistration', { content_name: 'Giveaway Entry - Bali' });
-          } else { throw new Error(); }
-        } catch(err) {
-          submitBtn.disabled = false; submitBtn.textContent = 'Get AUD$100 OFF ✨';
-          alert('Something went wrong — please email us at thatgirlexperiences@gmail.com or try again.');
-        }
-      });
-    }
-    if (copyBtn && codeText) {
-      copyBtn.addEventListener('click', function() {
-        const code = codeText.textContent.trim();
-        if (navigator.clipboard) { navigator.clipboard.writeText(code).catch(() => {}); }
-        copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied');
-        setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 2200);
-      });
-    }
-  })();
-</script>
 
 <script>
   /* Accommodation mini-slideshows + departure-date selector */
