@@ -2856,7 +2856,7 @@ Tawk_API.customStyle = {
   .moments-grid { --per-view: 4.4; }
   @media (max-width: 900px) { .moments-grid { --per-view: 3.4; } }
   @media (max-width: 700px) { .moments-grid { --per-view: 2.6; } }
-  @media (max-width: 540px) { .moments-grid { --per-view: 2.3; --tile-gap: 0.55rem; } }
+  @media (max-width: 600px) { .moments-grid { --per-view: 2.15; --tile-gap: 0.55rem; } .moment-tile { aspect-ratio: 2/3; } }
 </style>
 <!-- ✦ TGE MOBILE POLISH (added) — phone-only layout tidy-up; desktop and all content unchanged ✦ -->
 <style>
@@ -2939,6 +2939,13 @@ Tawk_API.customStyle = {
   /* ── Round 2 ── */
   /* Hero: reviews widget at half size */
   .hero .tge-reviews { zoom: 0.55; margin: 0.5rem auto 0; max-width: 100%; }
+  /* No empty strip under the reviews: hero ends where its content ends */
+  .hero { min-height: 0 !important; padding-bottom: 1.5rem !important; }
+  .hero .tge-reviews { line-height: 0; }
+  .hero .tge-reviews iframe { background: transparent !important; display: block; margin: 0 auto; }
+
+  /* This Trip Has It All: bold card headings */
+  .wellness-card-title { font-weight: 700 !important; }
 
   /* Why travel with us: tidy tap-to-open dropdowns (no slideshow on phones) */
   .why-card .why-acc-body p, .why-card .why-acc-body { font-size: 0.92rem; line-height: 1.7; }
