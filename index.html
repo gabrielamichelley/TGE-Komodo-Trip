@@ -2025,7 +2025,8 @@ window.addEventListener('load', function() {
   .moments-grid { --per-view: 4.4; }
   @media (max-width: 900px) { .moments-grid { --per-view: 3.4; } }
   @media (max-width: 700px) { .moments-grid { --per-view: 2.6; } }
-  @media (max-width: 600px) { .moments-grid { --per-view: 2.15; --tile-gap: 0.55rem; } .moment-tile { aspect-ratio: 8/15; } }
+  /* PHONES — raw trip photos size: change 40vh (% of screen height) to make them taller/shorter, and 1.6 (photos across) to make them wider/narrower */
+  @media (max-width: 600px) { .moments-grid { --per-view: 1.6 !important; --tile-gap: 0.55rem !important; align-items: flex-start; } .moment-tile { aspect-ratio: auto !important; height: 40vh !important; max-height: 520px; } }
 
   /* WeTravel reviews badge: half size on phones, empty white strip trimmed (same as the Bali page) */
   @media (max-width: 600px) { .hero .tge-reviews { zoom: 0.55; margin: 0.2rem auto 0; max-width: 100%; height: 112px; overflow: hidden; } }
