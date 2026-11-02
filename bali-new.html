@@ -2321,7 +2321,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <!-- MOBILE STICKY CTA — kept as regular link per instructions -->
 <div class="mobile-cta-bar" id="mobileCta">
   <div class="tge-bar-inner">
-    <div class="tge-bar-text">‼️ 1 SPOT LEFT ‼️ $50 USD deposit to book</div>
+    <div class="tge-bar-text">‼️ 1 SPOT LEFT ‼️</div>
     <a href="https://tri.ps/wrAyT" target="_blank"
       onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</a>
   </div>
@@ -2590,54 +2590,6 @@ Tawk_API.customStyle = {
 <script>
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* 1 ─ Section chip bar: copies your existing menu links, highlights the section you're reading */
-  (function chipBar() {
-    var links = document.querySelectorAll('.nav-menu-panel .nav-menu-link');
-    var nav = document.querySelector('.nav');
-    if (!links.length || !nav) return;
-    var bar = document.createElement('div');
-    bar.className = 'tge-chipbar';
-    bar.setAttribute('aria-label', 'Page sections');
-    var row = document.createElement('nav');
-    row.className = 'tge-chipbar-row';
-    var items = [];
-    links.forEach(function (l) {
-      var id = (l.getAttribute('href') || '').replace('#', '');
-      var target = id && document.getElementById(id);
-      if (!target) return;
-      var a = document.createElement('a');
-      a.className = 'tge-chip';
-      a.href = '#' + id;
-      a.innerHTML = l.innerHTML;
-      row.appendChild(a);
-      items.push({ el: a, target: target });
-    });
-    if (!items.length) return;
-    bar.appendChild(row);
-    document.body.appendChild(bar);
-    var last = '';
-    function update() {
-      bar.style.top = Math.max(0, nav.getBoundingClientRect().bottom) + 'px';
-      bar.classList.toggle('show', window.scrollY > window.innerHeight * 0.6);
-      var current = null, best = -Infinity;
-      items.forEach(function (it) {
-        var top = it.target.getBoundingClientRect().top;
-        if (top < 160 && top > best) { best = top; current = it; }
-      });
-      var key = current ? current.target.id : '';
-      if (key === last) return;
-      last = key;
-      items.forEach(function (it) { it.el.classList.toggle('active', it === current); });
-      if (current) {
-        var c = current.el;
-        row.scrollTo({ left: c.offsetLeft - (row.clientWidth - c.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
-      }
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    update();
-  })();
 
   /* 2 ─ Story-style slideshow (progress segments, pause, thumbnails) — replaces the old autoplay */
   function tgeStory(trackId, dotsId, duration) {
