@@ -629,6 +629,111 @@ window.addEventListener('load', function() {
     .nav-cta { font-size: 0.68rem; padding: 0.62rem 1rem; letter-spacing: 0.08em; }
   }
 </style>
+<!-- ✦ TGE ENHANCEMENTS (added) — interactive upgrades; no content changed ✦ -->
+<style>
+  /* Section chip bar (appears under the nav once you scroll; uses your existing menu labels) */
+  .tge-chipbar { position: fixed; left: 0; right: 0; z-index: 999; background: rgba(253,248,240,0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(201,169,110,0.15); transform: translateY(-120%); opacity: 0; transition: transform .35s ease, opacity .35s ease; }
+  .tge-chipbar.show { transform: translateY(0); opacity: 1; }
+  .tge-chipbar-row { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.4rem; overflow-x: auto; padding: 0.5rem 1rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .tge-chipbar-row::-webkit-scrollbar { display: none; }
+  .tge-chip { flex: none; display: inline-flex; align-items: center; gap: 0.35rem; min-height: 36px; padding: 0 0.95rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; color: var(--text-dark); background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.28); text-decoration: none; white-space: nowrap; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+  .tge-chip:hover { border-color: rgba(201,169,110,0.6); }
+  .tge-chip.active { background: var(--ocean-deep); color: #fff; border-color: var(--ocean-deep); }
+  .tge-chip .nav-menu-link-icon { font-size: 0.9rem; width: auto; }
+  #trips, #why-tge, #for-you, #meet-gabs, #secure-booking, #contact, #why, #where-you-stay, #inclusions, #itinerary, #real-moments { scroll-margin-top: 130px; }
+
+  /* Story-style slideshow: progress segments, pause button, thumbnail strip */
+  .tge-segs { position: absolute; top: 12px; left: 14px; right: 14px; display: flex; gap: 4px; z-index: 6; pointer-events: none; }
+  .tge-seg { flex: 1; height: 3px; border-radius: 3px; background: rgba(255,255,255,0.45); overflow: hidden; }
+  .tge-seg i { display: block; height: 100%; width: 0; background: #fff; }
+  .tge-seg.done i { width: 100%; }
+  .tge-seg.active i { animation: tgeSeg var(--tge-dur, 5s) linear forwards; }
+  .tge-story-paused .tge-seg.active i { animation-play-state: paused; }
+  @keyframes tgeSeg { from { width: 0; } to { width: 100%; } }
+  .tge-pause { position: absolute; top: 26px; right: 14px; z-index: 7; width: 44px; height: 44px; border-radius: 50%; border: none; background: rgba(255,255,255,0.88); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .tge-thumbs { display: flex; gap: 8px; overflow-x: auto; max-width: 960px; margin: 1rem auto 0; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .tge-thumbs::-webkit-scrollbar { display: none; }
+  .tge-thumb { flex: none; width: 88px; height: 58px; padding: 0; border-radius: 10px; overflow: hidden; cursor: pointer; border: 2.5px solid transparent; opacity: 0.55; background: var(--teal-soft); transition: opacity .2s ease, transform .2s ease, border-color .2s ease; }
+  .tge-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tge-thumb.active { border-color: var(--ocean-deep); opacity: 1; transform: translateY(-2px); }
+  .tge-story-dots-hidden { display: none !important; }
+  @media (max-width: 540px) { .tge-thumb { width: 68px; height: 46px; } .tge-pause { width: 38px; height: 38px; top: 22px; } }
+
+  /* Hero pills: slow drifting row (pauses on hover) */
+  .hero-pills.tge-marquee { display: block; overflow: hidden; flex-wrap: nowrap; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .tge-marquee-track { display: flex; gap: 0.6rem; width: max-content; animation: tgeDrift 34s linear infinite; }
+  .hero-pills.tge-marquee:hover .tge-marquee-track { animation-play-state: paused; }
+  .tge-marquee-track .hero-pill { flex: none; white-space: nowrap; }
+
+  /* Why Travel With Us: slow slideshow, stops on hover */
+  .why-grid.tge-drift { display: block !important; max-width: none !important; overflow: hidden; border: none !important; border-radius: 0 !important; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+  .tge-drift-track { display: flex; gap: 1.1rem; width: max-content; padding: 6px 0 18px; animation: tgeDrift 95s linear infinite; }
+  .why-grid.tge-drift:hover .tge-drift-track, .why-grid.tge-drift:focus-within .tge-drift-track { animation-play-state: paused; }
+  .tge-drift-track .why-card { flex: 0 0 320px; box-sizing: border-box; opacity: 1 !important; transform: none !important; }
+  @media (max-width: 540px) { .tge-drift-track .why-card { flex-basis: 270px; } }
+  @keyframes tgeDrift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .tge-marquee-track, .tge-drift-track { animation: none; } .why-grid.tge-drift, .hero-pills.tge-marquee { overflow-x: auto; } }
+
+  /* Itinerary explorer: route + day pills + mood filter, one day at a time */
+  .tge-itin { max-width: 760px; margin: 0 auto 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .tge-route { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; row-gap: 0.75rem; }
+  .tge-route-stop { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; color: var(--text-dark); }
+  .tge-route-name { display: inline-flex; align-items: center; min-height: 40px; padding: 0 1rem; border-radius: 50px; font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.3); transition: all .3s ease; }
+  .tge-route-stop.active .tge-route-name { background: var(--ocean-deep); color: #fff; border-color: var(--ocean-deep); box-shadow: 0 6px 18px rgba(45,122,140,0.3); }
+  .tge-route-days { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-light); }
+  .tge-route-arrow { display: flex; align-items: center; height: 40px; padding: 0 0.3rem; }
+  .tge-daypills, .tge-moods { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; }
+  .tge-daypill { min-width: 62px; min-height: 42px; padding: 0 0.85rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; cursor: pointer; background: #fff; color: var(--text-dark); border: 1.5px solid rgba(201,169,110,0.3); transition: all .25s ease; }
+  .tge-daypill.active { background: linear-gradient(135deg, var(--gold), var(--ocean)); color: #fff; border-color: transparent; box-shadow: 0 4px 14px rgba(74,155,173,0.3); }
+  .tge-daypill.dim { opacity: 0.35; }
+  .tge-daypill.match { border-color: var(--ocean-deep); }
+  .tge-mood { min-height: 34px; padding: 0 0.9rem; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; cursor: pointer; border: 1.5px solid transparent; }
+  .tge-mood.active { border-color: currentColor; }
+  .tge-daynav { display: flex; justify-content: space-between; align-items: center; max-width: 720px; margin: 0.25rem auto 0; gap: 1rem; }
+  .tge-daynav button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(201,169,110,0.5); background: #fff; cursor: pointer; font-size: 1.05rem; color: var(--text-dark); }
+  .tge-daynav-count { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); }
+  .itinerary-timeline.tge-one .day-card { display: none; }
+  .itinerary-timeline.tge-one .day-card.tge-show { display: block; opacity: 1; transform: none; animation: tgeDayIn .35s ease; margin-bottom: 0; }
+  .itinerary-timeline.tge-one::before { display: none; }
+  @keyframes tgeDayIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  /* How Booking Works stepper */
+  .tge-steps { position: relative; max-width: 760px; margin: 0 auto 1.25rem; display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 0.5rem; }
+  .tge-steps-line, .tge-steps-fill { position: absolute; top: 25px; height: 2px; left: calc(50% / var(--n, 4)); }
+  .tge-steps-line { right: calc(50% / var(--n, 4)); background: var(--teal-soft); }
+  .tge-steps-fill { width: 0; background: linear-gradient(90deg, var(--gold), var(--ocean)); transition: width .4s ease; }
+  .tge-step-btn { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; color: var(--text-dark); min-height: 44px; }
+  .tge-step-dot { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; background: #fff; color: var(--text-light); border: 2px solid var(--teal-soft); transition: all .3s ease; }
+  .tge-step-btn.reached .tge-step-dot { background: linear-gradient(135deg, var(--gold), var(--ocean)); color: #fff; border-color: transparent; box-shadow: 0 6px 18px rgba(74,155,173,0.3); }
+  .tge-step-btn.active .tge-step-dot { transform: scale(1.12); }
+  .tge-step-label { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; line-height: 1.2; text-align: center; }
+  .bookflow-steps.tge-stepper .bookflow-step { display: none; }
+  .bookflow-steps.tge-stepper .bookflow-step.tge-show { display: flex; opacity: 1; transform: none; animation: tgeDayIn .35s ease; }
+  .tge-stepnav { max-width: 760px; margin: 0.75rem auto 0; }
+  @media (max-width: 540px) { .tge-step-dot { width: 42px; height: 42px; font-size: 1.15rem; } .tge-steps-line, .tge-steps-fill { top: 20px; } .tge-step-label { font-size: 0.86rem; } }
+
+  /* Inclusions (Bali): everything listed at once in two neat columns, with Not Included + Getting There beside it */
+  @media (min-width: 900px) {
+    .inclusions-wrapper { max-width: 1100px; grid-template-columns: 1.7fr 1fr; align-items: start; }
+    .inclusions-wrapper > .inclusion-block:first-child .inclusion-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem 1.6rem; }
+    .inclusions-wrapper > .inclusion-block:last-child { position: sticky; top: 140px; }
+  }
+
+  /* Hero stat count-up keeps final numbers; trip badge gentle pulse */
+  .trip-badge.live::before { animation: tgePulse 2s ease infinite; }
+  @keyframes tgePulse { 0%,100% { box-shadow: 0 0 0 0 rgba(201,123,132,0.45); } 50% { box-shadow: 0 0 0 7px rgba(201,123,132,0); } }
+
+  /* Booking bar (Bali): full-width on mobile, floating pill on desktop */
+  .mobile-cta-bar .tge-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+  .mobile-cta-bar .tge-bar-text { font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--text-dark); line-height: 1.35; }
+  .mobile-cta-bar .tge-bar-inner a { flex: none; padding: 0.8rem 1.4rem; }
+  @media (min-width: 769px) {
+    .mobile-cta-bar { display: block; left: 50%; right: auto; bottom: 18px; width: auto; max-width: 560px; transform: translate(-50%, 160%); border: 1px solid rgba(201,169,110,0.25); border-radius: 50px; padding: 0.45rem 0.5rem 0.45rem 1.4rem; box-shadow: 0 12px 40px rgba(74,155,173,0.18); }
+    .mobile-cta-bar.visible { transform: translate(-50%, 0); }
+  }
+  @media (max-width: 540px) { .tge-route { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem 0.5rem; width: 100%; } .tge-route-arrow { display: none; } .tge-route-name { font-size: 1.02rem; padding: 0 0.85rem; width: 100%; justify-content: center; } .tge-route-stop { width: 100%; } .tge-daypill { min-width: 0; flex: 1 1 calc(25% - 0.45rem); } }
+</style>
+
 </head>
 <body>
 
@@ -725,7 +830,7 @@ window.addEventListener('load', function() {
 </section>
   
 <section id="why-tge" style="background: linear-gradient(180deg, var(--cream) 0%, var(--teal-soft) 100%);">
-  <div class="section-tag reveal">Why We're Different</div>
+  <div class="section-tag reveal">Why Travel With Us?</div>
   <h2 class="section-title reveal">Not Your <em>Average Girls Trip</em></h2>
   <p class="section-subtitle reveal"><strong>Built for you to become <em>That Girl.</em></strong> Every detail is designed for you to leave as a <em>better, fuller, freer, more aligned & more connected version of yourself.</em></p>
   <div class="diff-grid">
@@ -797,7 +902,7 @@ window.addEventListener('load', function() {
       <div class="trip-card-body">
         <div class="trip-dest">Komodo Islands &amp; Labuan Bajo, Indonesia</div>
         <div class="trip-name">Becoming <em>HER</em> - Sailing Komodo Islands</div>
-        <div class="trip-price-pill"><strong>ALL-INCLUSIVE</strong> <span class="price-divider">·</span> Private Sailing & Boat <span class="price-divider">·</span> Wellness & Growth</div>
+        <div class="trip-price-pill"><strong>ALL-INCLUSIVE</strong> <span class="price-divider">·</span> Private Boat <span class="price-divider">·</span> Wellness & Growth</div>
         <div class="trip-meta">
           <span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> 6 Days · 5 Nights</span>
           <span class="trip-meta-item"><span class="trip-meta-icon">🎀</span> ALL-INCLUSIVE, 21-49</span>
@@ -935,12 +1040,12 @@ window.addEventListener('load', function() {
 <section class="ti-callout-wrap">
   <a href="/travel-identity.html" target="_blank" rel="noopener" class="ti-callout">
     <div class="ti-callout-tag">TRAVEL IDENTITY™ QUIZ</div>
-    <h2 class="ti-callout-title">What's Your Unique <em>Travel Identity™?</em></h2>
-    <p class="ti-callout-sub">Learn more about how you travel & uncover your unique Travel Identity — who you are & what you're like when you travel, your travel DNA, the experiences you crave, the energy you bring, and the trip that's calling your name.</p>
+    <h2 class="ti-callout-title">Discover Your Unique <em>Travel Identity™</em></h2>
+    <p class="ti-callout-sub">Uncover your unique Travel Identity — how you travel, your travel DNA, the experiences you crave, the energy you bring, and the trip that's calling your name.</p>
     <span class="ti-callout-cta">Discover my Travel Identity™</span>
     <div class="ti-callout-meta">
       <span>14 Travel Identities</span>
-      <span>FREE, ~3 minutes</span>
+      <span>FREE, ~2 minutes</span>
       <span>Personalised result</span>
     </div>
   </a>
@@ -1190,21 +1295,7 @@ window.addEventListener('load', function() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
-<script>
-(function() {
-  let cur = 0;
-  const track = document.getElementById('daysTrack');
-  const slides = track.querySelectorAll('.slide');
-  const dotsEl = document.getElementById('daysDots');
-  slides.forEach((_, i) => { const d = document.createElement('button'); d.className = 'slide-dot' + (i === 0 ? ' active' : ''); d.onclick = () => goTo(i); dotsEl.appendChild(d); });
-  function goTo(n) { cur = (n + slides.length) % slides.length; track.style.transform = 'translateX(-' + (cur * 100) + '%)'; dotsEl.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === cur)); }
-  window.daysSlide = dir => goTo(cur + dir);
-  setInterval(() => goTo(cur + 1), 5000);
-  let touchStartX = 0;
-  track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-  track.addEventListener('touchend', e => { const diff = touchStartX - e.changedTouches[0].screenX; if (Math.abs(diff) > 45) goTo(cur + (diff > 0 ? 1 : -1)); }, { passive: true });
-})();
-</script>
+<!-- (Glimpse slideshow is now driven by the TGE ENHANCEMENTS script at the end of the page) -->
 
 <script>
 (function() {
@@ -1329,6 +1420,319 @@ window.addEventListener('load', function() {
   <span class="tge-wa-fab-label">Message us on WhatsApp!</span>
 </a>
 
+
+<!-- ✦ TGE ENHANCEMENTS (added) — interactive upgrades; no content changed ✦ -->
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 1 ─ Section chip bar: copies your existing menu links, highlights the section you're reading */
+  (function chipBar() {
+    var links = document.querySelectorAll('.nav-menu-panel .nav-menu-link');
+    var nav = document.querySelector('.nav');
+    if (!links.length || !nav) return;
+    var bar = document.createElement('div');
+    bar.className = 'tge-chipbar';
+    bar.setAttribute('aria-label', 'Page sections');
+    var row = document.createElement('nav');
+    row.className = 'tge-chipbar-row';
+    var items = [];
+    links.forEach(function (l) {
+      var id = (l.getAttribute('href') || '').replace('#', '');
+      var target = id && document.getElementById(id);
+      if (!target) return;
+      var a = document.createElement('a');
+      a.className = 'tge-chip';
+      a.href = '#' + id;
+      a.innerHTML = l.innerHTML;
+      row.appendChild(a);
+      items.push({ el: a, target: target });
+    });
+    if (!items.length) return;
+    bar.appendChild(row);
+    document.body.appendChild(bar);
+    var last = '';
+    function update() {
+      bar.style.top = Math.max(0, nav.getBoundingClientRect().bottom) + 'px';
+      bar.classList.toggle('show', window.scrollY > window.innerHeight * 0.6);
+      var current = null, best = -Infinity;
+      items.forEach(function (it) {
+        var top = it.target.getBoundingClientRect().top;
+        if (top < 160 && top > best) { best = top; current = it; }
+      });
+      var key = current ? current.target.id : '';
+      if (key === last) return;
+      last = key;
+      items.forEach(function (it) { it.el.classList.toggle('active', it === current); });
+      if (current) {
+        var c = current.el;
+        row.scrollTo({ left: c.offsetLeft - (row.clientWidth - c.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+      }
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  /* 2 ─ Story-style slideshow (progress segments, pause, thumbnails) — replaces the old autoplay */
+  function tgeStory(trackId, dotsId, duration) {
+    var track = document.getElementById(trackId);
+    if (!track) return null;
+    var slides = track.querySelectorAll('.slide');
+    var wrapper = track.parentElement;
+    var dots = document.getElementById(dotsId);
+    var cur = 0, timer = null, paused = false, hover = false;
+    wrapper.style.setProperty('--tge-dur', duration + 'ms');
+
+    var segs = document.createElement('div');
+    segs.className = 'tge-segs';
+    slides.forEach(function () { var s = document.createElement('div'); s.className = 'tge-seg'; s.appendChild(document.createElement('i')); segs.appendChild(s); });
+    wrapper.appendChild(segs);
+
+    var pause = document.createElement('button');
+    pause.type = 'button';
+    pause.className = 'tge-pause';
+    var PAUSE = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="#1C2B2D" stroke-width="2.4" stroke-linecap="round"/></svg>';
+    var PLAY = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5l9 5.5-9 5.5z" fill="#1C2B2D"/></svg>';
+    wrapper.appendChild(pause);
+
+    var thumbs = document.createElement('div');
+    thumbs.className = 'tge-thumbs';
+    slides.forEach(function (sl, i) {
+      var img = sl.querySelector('img');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tge-thumb';
+      b.setAttribute('aria-label', (img && img.alt) || ('Photo ' + (i + 1)));
+      if (img) { var t = document.createElement('img'); t.src = img.getAttribute('src'); t.alt = ''; t.loading = 'lazy'; t.decoding = 'async'; b.appendChild(t); }
+      b.addEventListener('click', function () { goTo(i); });
+      thumbs.appendChild(b);
+    });
+    if (dots) { dots.classList.add('tge-story-dots-hidden'); dots.parentNode.insertBefore(thumbs, dots); }
+    else { wrapper.parentNode.insertBefore(thumbs, wrapper.nextSibling); }
+
+    function schedule() {
+      clearTimeout(timer);
+      if (!paused && !hover && !reduce) timer = setTimeout(function () { goTo(cur + 1); }, duration);
+    }
+    function render() {
+      track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+      segs.querySelectorAll('.tge-seg').forEach(function (s, i) {
+        s.classList.remove('active');
+        s.classList.toggle('done', i < cur);
+      });
+      var act = segs.children[cur];
+      void act.offsetWidth;
+      act.classList.add('active');
+      thumbs.querySelectorAll('.tge-thumb').forEach(function (t, i) { t.classList.toggle('active', i === cur); });
+      var th = thumbs.children[cur];
+      if (th) thumbs.scrollTo({ left: th.offsetLeft - (thumbs.clientWidth - th.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+      pause.innerHTML = paused ? PLAY : PAUSE;
+      pause.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+      wrapper.classList.toggle('tge-story-paused', paused || hover);
+    }
+    function goTo(n) { cur = (n + slides.length) % slides.length; render(); schedule(); }
+    pause.addEventListener('click', function () { paused = !paused; render(); schedule(); });
+    wrapper.addEventListener('mouseenter', function () { hover = true; wrapper.classList.add('tge-story-paused'); clearTimeout(timer); });
+    wrapper.addEventListener('mouseleave', function () { hover = false; wrapper.classList.toggle('tge-story-paused', paused); schedule(); });
+    var sx = 0;
+    track.addEventListener('touchstart', function (e) { sx = e.changedTouches[0].screenX; }, { passive: true });
+    track.addEventListener('touchend', function (e) { var d = sx - e.changedTouches[0].screenX; if (Math.abs(d) > 45) goTo(cur + (d > 0 ? 1 : -1)); }, { passive: true });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) clearTimeout(timer); else schedule(); });
+    goTo(0);
+    return { move: function (d) { goTo(cur + d); }, goTo: goTo };
+  }
+  var daysStory = tgeStory('daysTrack', 'daysDots', 5000);
+  if (daysStory) window.daysSlide = daysStory.move;
+  var baliStory = tgeStory('slideshowTrack', 'slideDots', 5000);
+  if (baliStory) window.moveSlide = baliStory.move;
+
+  /* 3 ─ Hero pills drift slowly (homepage) */
+  (function heroPills() {
+    var box = document.querySelector('.hero-pills');
+    if (!box || reduce) return;
+    var pills = Array.prototype.slice.call(box.children);
+    var track = document.createElement('div');
+    track.className = 'tge-marquee-track';
+    pills.forEach(function (p) { track.appendChild(p); });
+    pills.forEach(function (p) { var c = p.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); });
+    box.appendChild(track);
+    box.classList.add('tge-marquee');
+  })();
+
+  /* 4 ─ Hero stats count up (trip pages) */
+  (function countUp() {
+    var vals = document.querySelectorAll('.hero-detail-value');
+    if (!vals.length || reduce) return;
+    vals.forEach(function (el) {
+      var target = parseInt(el.textContent, 10);
+      if (isNaN(target) || String(target) !== el.textContent.trim()) return;
+      var start = null;
+      el.textContent = '0';
+      function step(ts) {
+        if (!start) start = ts;
+        var t = Math.min(1, (ts - start) / 1200);
+        el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
+        if (t < 1) requestAnimationFrame(step); else el.textContent = String(target);
+      }
+      setTimeout(function () { requestAnimationFrame(step); }, 800);
+    });
+  })();
+
+  /* 5 ─ Why Travel With Us: slow slideshow that stops on hover */
+  (function whyDrift() {
+    var grid = document.querySelector('.why-grid');
+    if (!grid || reduce) return;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll(':scope > .why-card'));
+    if (!cards.length) return;
+    var track = document.createElement('div');
+    track.className = 'tge-drift-track';
+    cards.forEach(function (c) { c.classList.add('visible'); track.appendChild(c); });
+    cards.forEach(function (c) { var k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.classList.add('visible'); track.appendChild(k); });
+    grid.appendChild(track);
+    grid.classList.add('tge-drift');
+  })();
+
+  /* 6 ─ Itinerary explorer: Bali → Ubud → Nusa Lembongan → Nusa Penida, day pills, mood filter */
+  (function itinerary() {
+    var tl = document.querySelector('.itinerary-timeline');
+    if (!tl) return;
+    var cards = Array.prototype.slice.call(tl.querySelectorAll('.day-card'));
+    if (cards.length !== 8) return;
+    var route = [['Bali', 'DAY 1–3', [0, 1, 2]], ['Ubud', 'DAY 4 & 5', [3, 4]], ['Nusa Lembongan', 'DAY 6 & 8', [5, 7]], ['Nusa Penida', 'DAY 7', [6]]];
+    var moodDefs = [['Connection', 'tag-connection'], ['Luxe', 'tag-luxe'], ['Wellness', 'tag-wellness'], ['Adventure', 'tag-adventure']];
+    var cur = 0, mood = '';
+    var box = document.createElement('div');
+    box.className = 'tge-itin';
+
+    var routeEl = document.createElement('div');
+    routeEl.className = 'tge-route';
+    var stops = route.map(function (r, i) {
+      if (i > 0) {
+        var ar = document.createElement('span');
+        ar.className = 'tge-route-arrow';
+        ar.setAttribute('aria-hidden', 'true');
+        ar.innerHTML = '<svg width="46" height="12" viewBox="0 0 46 12"><path d="M2 6h36" stroke="#4A9BAD" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round"/><path d="M36 1.5l6 4.5-6 4.5" fill="none" stroke="#4A9BAD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        routeEl.appendChild(ar);
+      }
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tge-route-stop';
+      b.innerHTML = '<span class="tge-route-name"></span>';
+      b.children[0].textContent = r[0];
+      b.addEventListener('click', function () { show(r[2][0]); });
+      routeEl.appendChild(b);
+      return b;
+    });
+
+    var pillsEl = document.createElement('div');
+    pillsEl.className = 'tge-daypills';
+    var pills = cards.map(function (c, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tge-daypill';
+      b.textContent = 'DAY ' + (i + 1);
+      b.addEventListener('click', function () { show(i); });
+      pillsEl.appendChild(b);
+      return b;
+    });
+
+    var moodsEl = document.createElement('div');
+    moodsEl.className = 'tge-moods';
+    var moodBtns = moodDefs.map(function (m) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tge-mood day-tag ' + m[1];
+      b.style.marginTop = '0';
+      b.textContent = m[0];
+      b.addEventListener('click', function () {
+        mood = mood === m[1] ? '' : m[1];
+        var first = cards.findIndex(function (c) { return mood && c.querySelector('.' + mood); });
+        if (first >= 0 && !cards[cur].querySelector('.' + mood)) show(first); else paint();
+      });
+      moodsEl.appendChild(b);
+      return b;
+    });
+
+    box.appendChild(routeEl);
+    box.appendChild(pillsEl);
+    tl.parentNode.insertBefore(box, tl);
+
+    var nav = document.createElement('div');
+    nav.className = 'tge-daynav';
+    nav.innerHTML = '<button type="button" aria-label="Previous day">&#8592;</button><span class="tge-daynav-count"></span><button type="button" aria-label="Next day">&#8594;</button>';
+    nav.children[0].addEventListener('click', function () { show(Math.max(0, cur - 1)); });
+    nav.children[2].addEventListener('click', function () { show(Math.min(cards.length - 1, cur + 1)); });
+    tl.parentNode.insertBefore(nav, tl.nextSibling);
+
+    function paint() {
+      cards.forEach(function (c, i) { c.classList.add('visible'); c.classList.toggle('tge-show', i === cur); });
+      pills.forEach(function (p, i) {
+        var has = !mood || !!cards[i].querySelector('.' + mood);
+        p.classList.toggle('active', i === cur);
+        p.classList.toggle('dim', !has);
+        p.classList.toggle('match', !!mood && has);
+        p.setAttribute('aria-pressed', i === cur ? 'true' : 'false');
+      });
+      stops.forEach(function (s, i) { s.classList.toggle('active', route[i][2].indexOf(cur) >= 0); });
+      moodBtns.forEach(function (b, i) { b.classList.toggle('active', mood === moodDefs[i][1]); b.setAttribute('aria-pressed', mood === moodDefs[i][1] ? 'true' : 'false'); });
+      nav.children[1].textContent = 'DAY ' + (cur + 1) + ' / ' + cards.length;
+    }
+    function show(i) { cur = i; paint(); }
+    tl.classList.add('tge-one');
+    paint();
+  })();
+
+
+  /* 8 ─ How Booking Works: clickable 4-step stepper (all original text kept) */
+  (function bookflow() {
+    var wrap = document.querySelector('.bookflow-steps');
+    if (!wrap) return;
+    var steps = Array.prototype.slice.call(wrap.querySelectorAll('.bookflow-step'));
+    if (steps.length < 2) return;
+    var cur = 0;
+    var head = document.createElement('div');
+    head.className = 'tge-steps';
+    head.style.setProperty('--n', steps.length);
+    head.innerHTML = '<span class="tge-steps-line"></span><span class="tge-steps-fill"></span>';
+    var btns = steps.map(function (st, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tge-step-btn';
+      var num = st.querySelector('.bookflow-num'), title = st.querySelector('.bookflow-step-title');
+      b.innerHTML = '<span class="tge-step-dot"></span><span class="tge-step-label"></span>';
+      b.children[0].textContent = num ? num.textContent : String(i + 1);
+      b.children[1].textContent = title ? title.textContent : '';
+      b.addEventListener('click', function () { show(i); });
+      head.appendChild(b);
+      return b;
+    });
+    wrap.parentNode.insertBefore(head, wrap);
+    var nav = document.createElement('div');
+    nav.className = 'tge-daynav tge-stepnav';
+    nav.innerHTML = '<button type="button" aria-label="Previous step">&#8592;</button><button type="button" aria-label="Next step">&#8594;</button>';
+    nav.children[0].addEventListener('click', function () { show(Math.max(0, cur - 1)); });
+    nav.children[1].addEventListener('click', function () { show(Math.min(steps.length - 1, cur + 1)); });
+    wrap.parentNode.insertBefore(nav, wrap.nextSibling);
+    function show(i) {
+      cur = i;
+      steps.forEach(function (st, k) { st.classList.add('visible'); st.classList.toggle('tge-show', k === cur); });
+      btns.forEach(function (b, k) { b.classList.toggle('reached', k <= cur); b.classList.toggle('active', k === cur); b.setAttribute('aria-pressed', k === cur ? 'true' : 'false'); });
+      head.querySelector('.tge-steps-fill').style.width = 'calc((100% - 100% / ' + steps.length + ') * ' + (cur / (steps.length - 1)) + ')';
+    }
+    wrap.classList.add('tge-stepper');
+    show(0);
+  })();
+
+  /* 7 ─ FAQs: opening one closes the others */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      if (!item.classList.contains('open')) return;
+      document.querySelectorAll('.faq-item.open').forEach(function (o) { if (o !== item) o.classList.remove('open'); });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
