@@ -784,6 +784,8 @@ window.addEventListener('load', function() {
     <div class="hero-cta-wrap">
       <a href="#trips" class="hero-cta">See Our Upcoming Trips</a>
       <span class="hero-note">LIMITED SPOTS LEFT · AFFORDABLE LUXE TRAVEL</span>
+      <!-- WE TRAVEL REVIEWS SCRIPT EMBED (added — same as the Bali page) -->
+      <div class="tge-reviews"><script src="https://cdn.wetravel.com/widgets/embed_reviews.js" id="wetravel_review_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-userslug="that-girl-experiences" data-uid="2374713" data-showstars="true" data-showcount="false" data-name="WeTravel Review Widget"></script></div>
     </div>
   </div>
 </section>
@@ -2027,6 +2029,9 @@ window.addEventListener('load', function() {
   @media (max-width: 900px) { .moments-grid { --per-view: 3.4; } }
   @media (max-width: 700px) { .moments-grid { --per-view: 2.6; } }
   @media (max-width: 600px) { .moments-grid { --per-view: 2.15; --tile-gap: 0.55rem; } .moment-tile { aspect-ratio: 2/3; } }
+
+  /* WeTravel reviews badge: half size on phones, empty white strip trimmed (same as the Bali page) */
+  @media (max-width: 600px) { .hero .tge-reviews { zoom: 0.55; margin: 0.2rem auto 0; max-width: 100%; height: 97px; overflow: hidden; } }
 
   /* Our story on phones: same as the Bali page */
   @media (max-width: 600px) {
