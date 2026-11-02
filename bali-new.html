@@ -2851,5 +2851,111 @@ Tawk_API.customStyle = {
 })();
 </script>
 
+<!-- ✦ TGE MOBILE POLISH (added) — phone-only layout tidy-up; desktop and all content unchanged ✦ -->
+<style>
+@media (max-width: 600px) {
+  /* Calmer reading rhythm */
+  section { padding: 2.4rem 1.1rem; }
+  .section-tag { font-size: 0.64rem; letter-spacing: 0.24em; margin-bottom: 0.5rem; }
+  .section-title { font-size: 1.85rem; line-height: 1.15; margin-bottom: 0.75rem; }
+  .section-subtitle { font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  /* Hero: tighter, easier to scan */
+  .hero { padding: 5.25rem 1.1rem 2rem; }
+  .hero-tag { font-size: 0.6rem; letter-spacing: 0.18em; padding: 0.4rem 1rem; margin-bottom: 1rem; }
+  .hero-title { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  .hero-location { font-size: 0.98rem; line-height: 1.45; margin-bottom: 0.9rem; }
+  .hero-details { gap: 1.25rem; margin-bottom: 1rem; }
+  .hero-detail-value { font-size: 1.45rem; }
+  .hero-for { font-size: 0.9rem; line-height: 1.65; padding: 1rem 1.1rem; border-radius: 16px; }
+
+  /* Swipe rows instead of long stacks (every card still shows its full text) */
+  .wellness-grid.tge-swipe, .trust-grid.tge-swipe { display: flex !important; grid-template-columns: none !important; gap: 0.8rem !important; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -1.1rem; padding: 4px 1.1rem 6px; max-width: none; }
+  .tge-swipe::-webkit-scrollbar { display: none; }
+  .tge-swipe > .wellness-card, .tge-swipe > .trust-card { flex: 0 0 84%; scroll-snap-align: center; opacity: 1 !important; transform: none !important; padding: 1.35rem 1.25rem; border-radius: 18px; }
+  .tge-swipe-dots { display: flex; justify-content: center; gap: 6px; margin: 0.9rem 0 0.25rem; }
+  .tge-swipe-dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(201,169,110,0.35); transition: all .25s ease; }
+  .tge-swipe-dots span.on { width: 18px; border-radius: 6px; background: var(--gold); }
+
+  /* Card text a touch smaller with tighter line height */
+  .wellness-emoji, .why-icon, .trust-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+  .wellness-card-title, .why-card-title, .trust-card-title { font-size: 1.18rem; margin-bottom: 0.4rem; }
+  .wellness-card-text, .why-card-text, .trust-card-text { font-size: 0.92rem; line-height: 1.65; }
+
+  /* This is for you if */
+  .for-you-checklist, .for-you-quote-box { padding: 1.4rem 1.2rem; border-radius: 18px; }
+  .for-you-list { gap: 0.85rem; }
+  .for-you-item-text { font-size: 0.93rem; line-height: 1.6; }
+  .for-you-quote { font-size: 1.2rem; line-height: 1.5; }
+  .for-you-tag { font-size: 0.72rem; padding: 0.3rem 0.8rem; }
+
+  /* Stays */
+  .stay-body { padding: 1.1rem 1.15rem 1.25rem; }
+  .stay-name { font-size: 1.15rem; }
+  .stay-desc { font-size: 0.88rem; line-height: 1.6; }
+  .stay-note { font-size: 0.8rem; }
+
+  /* Why: compact cards in the slow slideshow */
+  .tge-drift-track { align-items: flex-start; }
+  .tge-drift-track .why-card { flex-basis: 250px; padding: 1.3rem 1.2rem; }
+
+  /* Inclusions: compact list */
+  .inclusion-block { padding: 1.25rem 1.15rem; }
+  .inclusion-heading { font-size: 1.15rem; margin-bottom: 0.9rem; }
+  .inclusion-list { gap: 0.5rem; }
+  .inclusion-item { font-size: 0.88rem; line-height: 1.5; gap: 0.6rem; }
+
+  /* Itinerary day card */
+  .day-content { padding: 1.2rem 1.1rem; }
+  .day-title { font-size: 1.15rem; }
+  .highlight-item { font-size: 0.9rem; line-height: 1.55; gap: 0.55rem; }
+
+  /* Combo, founder, booking */
+  .combo-card { padding: 1.75rem 1.15rem; }
+  .combo-sub { font-size: 0.92rem; }
+  .founder-photo { max-width: 250px; }
+  .founder-text { font-size: 0.93rem; line-height: 1.7; }
+  .founder-point { font-size: 0.9rem; }
+  .bookflow-step { padding: 1.1rem 1.15rem; }
+  .bookflow-step-text { font-size: 0.88rem; }
+  .callbook-wrap { padding: 1.75rem 1.15rem; border-radius: 20px; }
+  .trust-badge { font-size: 0.7rem; }
+
+  /* FAQs */
+  .faq-item { padding: 1.05rem 0; }
+  .faq-question { font-size: 1.02rem; }
+  .faq-answer-text { font-size: 0.9rem; line-height: 1.65; }
+
+  /* Floating WhatsApp button a little smaller so it covers less */
+  .tge-wa-fab { height: 46px; max-width: 46px; padding: 0 10px; }
+  .tge-wa-fab svg { width: 24px; height: 24px; }
+}
+</style>
+<script>
+(function () {
+  if (!window.matchMedia('(max-width: 600px)').matches) return;
+  ['.wellness-grid', '.trust-grid'].forEach(function (sel) {
+    var row = document.querySelector(sel);
+    if (!row) return;
+    var cards = Array.prototype.slice.call(row.children);
+    if (cards.length < 2) return;
+    cards.forEach(function (c) { c.classList.add('visible'); });
+    row.classList.add('tge-swipe');
+    var dots = document.createElement('div');
+    dots.className = 'tge-swipe-dots';
+    dots.setAttribute('aria-hidden', 'true');
+    cards.forEach(function () { dots.appendChild(document.createElement('span')); });
+    row.parentNode.insertBefore(dots, row.nextSibling);
+    function update() {
+      var mid = row.scrollLeft + row.clientWidth / 2, best = 0, bd = Infinity;
+      cards.forEach(function (c, i) { var d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
+      Array.prototype.forEach.call(dots.children, function (d, i) { d.classList.toggle('on', i === best); });
+    }
+    row.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+})();
+</script>
+
 </body>
 </html>
