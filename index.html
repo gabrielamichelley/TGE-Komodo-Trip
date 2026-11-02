@@ -2003,5 +2003,89 @@ window.addEventListener('load', function() {
 })();
 </script>
 
+<!-- ✦ TGE HOMEPAGE POLISH (added) — layout only; all content, photos and links unchanged ✦ -->
+<style>
+  /* Section menu chips: a slim rail on the right on desktop (labels slide out on hover) */
+  @media (min-width: 769px) {
+    .tge-chipbar { left: auto !important; right: 14px; top: 50% !important; background: transparent; border: 0; backdrop-filter: none; -webkit-backdrop-filter: none; transform: translate(150%, -50%); }
+    .tge-chipbar.show { transform: translate(0, -50%); }
+    .tge-chipbar-row { flex-direction: column; align-items: flex-end; overflow: visible; padding: 0; gap: 0.45rem; max-width: none; margin: 0; }
+    .tge-chip { max-width: 40px; min-height: 40px; padding: 0 14px 0 11px; gap: 0.55rem; overflow: hidden; justify-content: flex-start; box-shadow: 0 4px 14px rgba(28,43,45,0.08); transition: max-width .35s ease, background .25s ease, color .25s ease, border-color .25s ease; }
+    .tge-chip:hover, .tge-chip:focus-visible { max-width: 260px; }
+    .tge-chip .nav-menu-link-icon { flex: none; width: 18px; text-align: center; }
+  }
+  /* Phones: no section bar at the top */
+  @media (max-width: 768px) { .tge-chipbar { display: none !important; } }
+
+  /* Hero: never show a play button when there's no video */
+  .hero-video.tge-novideo { display: none !important; }
+  .hero-video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
+  .hero-video::-webkit-media-controls { display: none !important; }
+
+  /* Raw trip photos: bigger (same 4:5 shape) — same as the Bali page */
+  .moments-grid { --per-view: 4.4; }
+  @media (max-width: 900px) { .moments-grid { --per-view: 3.4; } }
+  @media (max-width: 700px) { .moments-grid { --per-view: 2.6; } }
+  @media (max-width: 600px) { .moments-grid { --per-view: 2.15; --tile-gap: 0.55rem; } .moment-tile { aspect-ratio: 2/3; } }
+
+  /* Our story on phones: same as the Bali page */
+  @media (max-width: 600px) {
+    .founder-photo { max-width: 250px; }
+    .founder-text { font-size: 0.93rem; line-height: 1.7; }
+    .founder-point { font-size: 0.9rem; }
+    .founder-wrap > div { min-width: 0; }
+    .tge-story-row { display: flex; gap: 0.8rem; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -1.1rem; padding: 4px 1.1rem 6px; align-items: stretch; }
+    .tge-story-row::-webkit-scrollbar { display: none; }
+    .tge-story-row > .founder-text { flex: 0 0 86%; scroll-snap-align: center; margin: 0; background: #fff; border: 1px solid rgba(201,169,110,0.22); border-radius: 18px; padding: 1.2rem 1.15rem; box-shadow: 0 6px 18px rgba(0,0,0,0.05); font-size: 0.92rem; line-height: 1.7; }
+    .tge-swipe-dots { display: flex; justify-content: center; gap: 6px; margin: 0.9rem 0 0.25rem; }
+    .tge-swipe-dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(201,169,110,0.35); transition: all .25s ease; }
+    .tge-swipe-dots span.on { width: 18px; border-radius: 6px; background: var(--gold); }
+  }
+</style>
+<script>
+(function () {
+  /* Hero video: hide it if the video file can't load, so no play button shows */
+  var v = document.querySelector('.hero-video');
+  if (v) {
+    var hide = function () { v.classList.add('tge-novideo'); };
+    var srcs = v.querySelectorAll('source');
+    if (srcs.length) srcs[srcs.length - 1].addEventListener('error', hide); else v.addEventListener('error', hide);
+    if (v.networkState === 3) hide();
+  }
+
+  if (!window.matchMedia('(max-width: 600px)').matches) return;
+  /* Our story: split into 3 swipeable cards (same words, same bold) */
+  var paras = document.querySelectorAll('.founder-wrap .founder-text');
+  if (paras.length < 2) return;
+  var p1 = paras[0], p2 = paras[1];
+  /* start the 2nd card at the bold "I genuinely believe…" line */
+  var start = null;
+  Array.prototype.forEach.call(p1.childNodes, function (n) {
+    if (!start && n.nodeType === 1 && /^\s*I genuinely believe/.test(n.textContent)) start = n;
+  });
+  var cards = [p1];
+  if (start) {
+    var p1b = document.createElement('p'); p1b.className = 'founder-text';
+    var rest = start;
+    while (rest) { var nx = rest.nextSibling; p1b.appendChild(rest); rest = nx; }
+    var t = p1.lastChild; if (t && t.nodeType === 3) t.nodeValue = t.nodeValue.replace(/\s+$/, '');
+    cards.push(p1b);
+  }
+  cards.push(p2);
+  var row = document.createElement('div'); row.className = 'tge-story-row';
+  p1.parentNode.insertBefore(row, p1);
+  cards.forEach(function (c) { row.appendChild(c); });
+  var dots = document.createElement('div'); dots.className = 'tge-swipe-dots'; dots.setAttribute('aria-hidden', 'true');
+  cards.forEach(function () { dots.appendChild(document.createElement('span')); });
+  row.parentNode.insertBefore(dots, row.nextSibling);
+  function update() {
+    var mid = row.scrollLeft + row.clientWidth / 2, best = 0, bd = Infinity;
+    cards.forEach(function (c, i) { var d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
+    Array.prototype.forEach.call(dots.children, function (d, i) { d.classList.toggle('on', i === best); });
+  }
+  row.addEventListener('scroll', update, { passive: true }); update();
+})();
+</script>
+
 </body>
 </html>
