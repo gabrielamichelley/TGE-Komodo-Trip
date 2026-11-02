@@ -2855,7 +2855,8 @@ Tawk_API.customStyle = {
   .moments-grid { --per-view: 4.4; }
   @media (max-width: 900px) { .moments-grid { --per-view: 3.4; } }
   @media (max-width: 700px) { .moments-grid { --per-view: 2.6; } }
-  @media (max-width: 600px) { .moments-grid { --per-view: 2.15; --tile-gap: 0.55rem; } .moment-tile { aspect-ratio: 9/16; } }
+  /* PHONES — raw trip photos size: change 60vh (% of screen height) to make them taller/shorter, and 1.6 (photos across) to make them wider/narrower */
+  @media (max-width: 600px) { .moments-grid { --per-view: 1.6 !important; --tile-gap: 0.55rem !important; align-items: flex-start; } .moment-tile { aspect-ratio: auto !important; height: 60vh !important; max-height: 520px; } }
 </style>
 <!-- ✦ TGE MOBILE POLISH (added) — phone-only layout tidy-up; desktop and all content unchanged ✦ -->
 <style>
