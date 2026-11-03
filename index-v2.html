@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>That Girl Experiences — Girls' Travel Experiences</title>
+
+<!-- ============================================ -->
+<!-- PERFORMANCE: Preconnect + async font loading -->
+<!-- ============================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="hero-poster.jpg" fetchpriority="high">
+
+<!-- Reduced font weights — only what's actually used -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@400;500;600&display=swap"></noscript>
+
+<!-- Microsoft Clarity (heatmaps + recordings) — deferred via setTimeout to not block LCP -->
+<script type="text/javascript">
+window.addEventListener('load', function() {
+  setTimeout(function(){
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wk5vnqvlwl");
+  }, 2000);
+});
+</script>
+  
+<!-- Meta Pixel Code -->
+<meta name="facebook-domain-verification" content="l78jv97zofd8gjk4gv62flfoc5h556" />
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1464656837954144');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  
+<!-- TikTok Pixel — deferred to not block LCP -->
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+      ttq.load('D7S3IFBC77U07JNLHN80');
+      ttq.page();
+    }(window, document, 'ttq');
+  }, 1500);
+});
+</script>
+
+
+<style>
+/* =====================================================================
+   THAT GIRL EXPERIENCES — site styles (Nov 2026, Arrival-style redesign)
+   Shared by index.html and every trip page. Colours/fonts = TGE brand.
+   ===================================================================== */
+:root {
+  --gold: #C9A96E; --gold-light: #E8D5A3; --gold-text: #8A6A32;
+  --cream: #FDF8F0; --cream-warm: #FAF0E4;
+  --ocean: #4A9BAD; --ocean-deep: #2D7A8C; --ocean-light: #8CC5D0;
+  --teal: #5FB8C4; --teal-soft: #D4EDEF; --lagoon: #B5DDE3;
+  --blush: #F2D7D5; --blush-deep: #E8B4B8; --rose: #C97B84; --rose-text: #A5576A;
+  --text-dark: #1C2B2D; --text-mid: #1C2B2D; --text-light: #4A5E61; --white: #FFFFFF;
+  --glass: rgba(255,255,255,0.85); --hair: rgba(201,169,110,0.15); --hair-2: rgba(201,169,110,0.3);
+  --r-card: 22px; --r-big: 28px;
+  --shadow-hover: 0 16px 48px rgba(74,155,173,0.12);
+  --shadow-cta: 0 8px 30px rgba(201,169,110,0.3);
+  --header-h: 68px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--cream); color: var(--text-dark); font-family: 'Jost', system-ui, sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::after { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.025; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+img { max-width: 100%; display: block; }
+a { color: var(--ocean-deep); }
+a:hover { color: var(--text-dark); }
+button { font-family: inherit; }
+strong { font-weight: 600; }
+:focus-visible { outline: 2px solid var(--ocean-deep); outline-offset: 3px; }
+section { padding: 4.5rem 2rem; position: relative; }
+@media (max-width: 640px) { section { padding: 3rem 1.15rem; } }
+[id] { scroll-margin-top: calc(var(--header-h) + 64px); }
+
+/* ---------- Reveal ---------- */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Section headings ---------- */
+.section-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-text); text-align: center; margin: 0 0 0.85rem; }
+.section-tag:empty { display: none; }
+.section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2.1rem, 4.5vw, 3.2rem); font-weight: 600; line-height: 1.12; text-align: center; margin: 0 auto 1rem; max-width: 900px; color: var(--text-dark); }
+.section-title em { font-style: italic; color: var(--ocean-deep); }
+.section-subtitle { font-size: 1.08rem; line-height: 1.75; color: var(--text-light); text-align: center; max-width: 640px; margin: 0 auto 2.75rem; }
+.section-subtitle:empty { display: none; }
+.section-subtitle strong { color: var(--text-dark); }
+.align-left .section-tag, .align-left .section-title, .align-left .section-subtitle { text-align: left; margin-left: 0; }
+
+/* ---------- Buttons (WeTravel embeds included) ---------- */
+.btn-gold, .hero-cta, .cta-btn, .wtrvl-checkout_button.tge-gold {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 0.5rem !important;
+  min-height: 52px !important; padding: 0 2.25rem !important; border: 0 !important; border-radius: 60px !important; cursor: pointer !important;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: #fff !important;
+  font-family: 'Jost', sans-serif !important; font-size: 0.86rem !important; font-weight: 500 !important; letter-spacing: 0.22em !important; text-transform: uppercase !important;
+  text-decoration: none !important; line-height: 1.2 !important; box-shadow: var(--shadow-cta) !important; transition: transform .3s ease, box-shadow .3s ease !important; white-space: nowrap;
+}
+.btn-gold:hover, .hero-cta:hover, .cta-btn:hover, .wtrvl-checkout_button.tge-gold:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 40px rgba(201,169,110,0.45) !important; color: #fff !important; }
+.btn-line, .wtrvl-download_brochure_button {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important; min-height: 48px !important; padding: 0 1.75rem !important; margin: 0 !important;
+  border-radius: 60px !important; border: 1px solid rgba(201,169,110,0.5) !important; background: rgba(255,255,255,0.9) !important; color: var(--text-dark) !important;
+  font-family: 'Jost', sans-serif !important; font-size: 0.76rem !important; font-weight: 500 !important; letter-spacing: 0.18em !important; text-transform: uppercase !important;
+  text-decoration: none !important; cursor: pointer !important; box-shadow: none !important; line-height: 1.2 !important; transition: background .25s ease, border-color .25s ease !important;
+}
+.btn-line:hover, .wtrvl-download_brochure_button:hover { background: #fff !important; border-color: var(--gold) !important; color: var(--text-dark) !important; transform: none !important; }
+.final-btn { display: inline-flex !important; align-items: center !important; min-height: 52px !important; padding: 0 2.25rem !important; border: 0 !important; border-radius: 60px !important; background: #fff !important; color: var(--ocean-deep) !important; font-family: 'Jost', sans-serif !important; font-size: 0.86rem !important; font-weight: 500 !important; letter-spacing: 0.22em !important; text-transform: uppercase !important; text-decoration: none !important; cursor: pointer !important; box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important; transition: transform .3s ease !important; line-height: 1.2 !important; }
+.final-btn:hover { transform: translateY(-2px) !important; }
+.trust-section .final-btn, .cta-center .final-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: #fff !important; box-shadow: var(--shadow-cta) !important; }
+.cta-center { display: flex; justify-content: center; margin: 2rem auto 0; }
+
+/* ---------- Announcement bar ---------- */
+.tge-announce { background: linear-gradient(90deg, var(--ocean-deep), var(--ocean), var(--teal)); color: #fff; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; text-align: center; padding: 0.6rem 1rem; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0.35rem 1rem; }
+.tge-announce strong { font-weight: 600; }
+.tge-announce a { color: #fff; font-weight: 600; text-underline-offset: 4px; }
+.tge-announce .dot { opacity: 0.6; }
+@media (max-width: 640px) { .tge-announce { font-size: 0.6rem; letter-spacing: 0.12em; } .tge-announce .hide-sm { display: none; } }
+
+/* ---------- Header ---------- */
+.nav { position: sticky; top: 0; z-index: 1000; background: rgba(253,248,240,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--hair); transition: box-shadow .3s ease; }
+.nav.scrolled { box-shadow: 0 6px 24px rgba(74,155,173,0.08); }
+.nav-inner { max-width: 1320px; margin: 0 auto; min-height: var(--header-h); padding: 0.5rem 2rem; display: flex; align-items: center; gap: 1.5rem; }
+.nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.02rem; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-text); text-decoration: none; white-space: nowrap; }
+.nav-brand:hover { color: var(--gold-text); }
+.nav-links { flex: 1; display: flex; justify-content: center; flex-wrap: nowrap; gap: 1.1rem; }
+.nav-links a { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; padding: 0.4rem 0; border-bottom: 1.5px solid transparent; white-space: nowrap; }
+.nav-links a:hover { color: var(--ocean-deep); border-bottom-color: var(--gold); }
+.nav-crumb { flex: 1; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-light); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-crumb a { color: var(--text-light); text-decoration: none; }
+.nav-crumb a:hover { color: var(--ocean-deep); }
+.nav-crumb b { color: var(--text-dark); font-weight: 500; }
+.nav-right { display: flex; align-items: center; gap: 0.6rem; margin-left: auto; }
+.nav-cta { display: inline-flex !important; align-items: center !important; min-height: 44px !important; padding: 0 1.3rem !important; border: 0 !important; border-radius: 50px !important; background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: #fff !important; font-family: 'Jost', sans-serif !important; font-size: 0.68rem !important; font-weight: 500 !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; text-decoration: none !important; cursor: pointer !important; white-space: nowrap !important; box-shadow: none !important; line-height: 1.2 !important; }
+.nav-cta:hover { color: #fff !important; box-shadow: 0 4px 16px rgba(201,169,110,0.35) !important; }
+.nav-menu { position: relative; }
+.nav-menu-btn { display: inline-flex; align-items: center; gap: 0.55rem; min-height: 44px; padding: 0 1.1rem; border-radius: 50px; border: 1px solid var(--hair-2); background: #fff; color: var(--text-dark); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; }
+.nav-menu-btn-lines { display: inline-flex; flex-direction: column; gap: 3.5px; }
+.nav-menu-btn-lines span { width: 16px; height: 1.5px; background: currentColor; border-radius: 2px; }
+.nav-menu-panel { position: absolute; right: 0; top: calc(100% + 10px); min-width: 250px; padding: 0.5rem; background: #fff; border: 1px solid var(--hair); border-radius: 18px; box-shadow: 0 16px 48px rgba(74,155,173,0.18); opacity: 0; transform: translateY(-6px); pointer-events: none; transition: opacity .25s ease, transform .25s ease; z-index: 20; }
+.nav-menu.open .nav-menu-panel { opacity: 1; transform: none; pointer-events: auto; }
+.nav-menu-link { display: flex; align-items: center; gap: 0.6rem; min-height: 44px; padding: 0 0.9rem; border-radius: 12px; font-size: 0.86rem; color: var(--text-dark); text-decoration: none; }
+.nav-menu-link:hover { background: var(--teal-soft); color: var(--text-dark); }
+.nav-menu-link-icon { width: 1.3rem; text-align: center; }
+.nav-menu.desktop-hidden { display: none; }
+@media (max-width: 1360px) { .nav-links { display: none; } .nav-menu.desktop-hidden { display: block; } }
+@media (max-width: 760px) { .nav-crumb { display: none; } }
+@media (max-width: 640px) {
+  :root { --header-h: 60px; }
+  .nav-inner { padding: 0.4rem 1rem; gap: 0.6rem; }
+  .nav-brand { font-size: 0.78rem; letter-spacing: 0.2em; }
+  .nav-right .nav-cta { display: none !important; }
+  .nav-menu-btn { padding: 0 0.85rem; }
+}
+
+/* ---------- HOME HERO ---------- */
+.home-hero { position: relative; min-height: min(88vh, 860px); display: flex; align-items: flex-end; overflow: hidden; padding: 0; background: linear-gradient(160deg, var(--ocean) 0%, var(--ocean-deep) 55%, #1C3A40 100%); isolation: isolate; }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.hero-scrim { position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(28,43,45,0.82) 0%, rgba(28,43,45,0.45) 45%, rgba(28,43,45,0.1) 100%); }
+.home-hero-inner { width: 100%; max-width: 1280px; margin: 0 auto; padding: 7rem 2rem 3.5rem; display: flex; flex-direction: column; gap: 1.25rem; color: #fff; }
+.home-hero .hero-tag { align-self: flex-start; padding: 0.45rem 1.1rem; border: 1px solid rgba(232,213,163,0.6); border-radius: 50px; color: var(--gold-light); font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; animation: fadeUp .8s ease .2s both; }
+.home-hero .hero-title { margin: 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.9rem, 7vw, 6rem); font-weight: 600; line-height: 1.0; max-width: 950px; color: #fff; animation: fadeUp .8s ease .35s both; }
+.home-hero .hero-title em { font-style: italic; color: var(--gold-light); }
+.home-hero .hero-sub { margin: 0; max-width: 640px; font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.93); animation: fadeUp .8s ease .5s both; }
+.home-hero .hero-sub strong, .home-hero .hero-sub em { color: #fff; }
+.hero-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; animation: fadeUp .8s ease .8s both; }
+.hero-pill { padding: 0.4rem 0.9rem; border-radius: 50px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 0.78rem; backdrop-filter: blur(6px); }
+.hero-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; animation: fadeUp .8s ease .9s both; }
+.hero-note { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; background: rgba(201,123,132,0.35); border: 1px solid rgba(255,255,255,0.25); padding: 0.4rem 0.9rem; border-radius: 50px; }
+.tge-reviews { min-height: 24px; }
+.home-hero .tge-reviews { background: rgba(255,255,255,0.92); border-radius: 14px; padding: 4px 10px; }
+@media (max-width: 640px) {
+  .home-hero { min-height: auto; }
+  .home-hero-inner { padding: 5.5rem 1.15rem 2rem; gap: 1rem; }
+  .home-hero .hero-title { font-size: clamp(2.5rem, 12vw, 3.2rem); }
+  .home-hero .hero-sub { font-size: 0.93rem; }
+  .hero-pill { font-size: 0.7rem; padding: 0.32rem 0.7rem; }
+}
+
+/* Trip finder */
+.tgx-finder { display: flex; align-items: stretch; background: #fff; border-radius: 60px; padding: 7px; box-shadow: 0 24px 64px rgba(0,0,0,0.2); max-width: 820px; color: var(--text-dark); animation: fadeUp .8s ease .65s both; }
+.tgx-field { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 0.3rem 1.5rem; cursor: pointer; border-radius: 40px; }
+.tgx-field + .tgx-field { border-left: 1px solid rgba(201,169,110,0.25); }
+.tgx-field-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); }
+.tgx-field select { -webkit-appearance: none; appearance: none; width: 100%; border: 0; background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C9A96E' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right center; padding: 0.1rem 1.4rem 0.1rem 0; font-family: 'Jost', sans-serif; font-size: 0.97rem; font-weight: 500; color: var(--text-dark); cursor: pointer; text-overflow: ellipsis; }
+.tgx-field select:focus { outline: none; }
+.tgx-field:focus-within { box-shadow: inset 0 0 0 2px var(--ocean-deep); }
+.tgx-finder .hero-cta { flex: none; }
+@media (max-width: 640px) {
+  .tgx-finder { flex-direction: column; border-radius: 22px; padding: 6px; }
+  .tgx-field { padding: 0.55rem 1rem; border-radius: 16px; }
+  .tgx-field + .tgx-field { border-left: 0; border-top: 1px solid rgba(201,169,110,0.25); }
+  .tgx-finder .hero-cta { width: 100%; margin-top: 4px; padding: 0 1rem !important; }
+}
+
+/* Stat strip */
+.trust-bar { background: #fff; border-bottom: 1px solid var(--hair); }
+.trust-inner { max-width: 1280px; margin: 0 auto; padding: 1.4rem 2rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; text-align: center; }
+.trust-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; line-height: 1.2; color: var(--ocean-deep); }
+.trust-label { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-light); }
+@media (max-width: 640px) { .trust-inner { padding: 1rem; gap: 0.5rem; } .trust-num { font-size: 1.05rem; } .trust-label { font-size: 0.56rem; letter-spacing: 0.08em; } }
+
+/* ---------- Trip cards ---------- */
+.trips-section { padding-top: 5rem; }
+.trips-head { max-width: 1280px; margin: 0 auto 2rem; display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; }
+.trips-head .section-tag, .trips-head .section-title { text-align: left; margin-left: 0; margin-bottom: 0.4rem; }
+.tgx-vibes { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tgx-vibe { flex: none; min-height: 44px; padding: 0 1.1rem; border-radius: 50px; border: 1px solid var(--hair-2); background: #fff; font-size: 0.8rem; font-weight: 500; color: var(--text-dark); cursor: pointer; transition: all .25s ease; white-space: nowrap; }
+.tgx-vibe:hover { border-color: var(--gold); }
+.tgx-vibe.active { background: var(--ocean-deep); border-color: var(--ocean-deep); color: #fff; }
+.trips-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.trip-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--hair); border-radius: var(--r-card); overflow: hidden; text-decoration: none; color: inherit; transition: transform .35s ease, box-shadow .35s ease; }
+.trip-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); color: inherit; }
+.trip-card.tgx-hide { display: none; }
+.trip-card-img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: linear-gradient(160deg, var(--teal-soft), var(--lagoon), var(--ocean-light)); }
+.trip-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s ease; }
+.trip-card:hover .trip-card-img img { transform: scale(1.05); }
+.trip-badge { position: absolute; top: 14px; left: 14px; z-index: 3; padding: 0.42rem 0.95rem; border-radius: 50px; background: #fff; color: var(--rose-text); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+.trip-on-photo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 5rem 1.5rem 1.35rem; background: linear-gradient(to top, rgba(44,62,64,0.85), rgba(44,62,64,0.35) 60%, rgba(44,62,64,0)); color: #fff; }
+.trip-dest { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.35rem; }
+.trip-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 2.4vw, 2.1rem); font-weight: 600; line-height: 1.1; }
+.trip-name em { font-style: italic; }
+.trip-meta { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin-top: 0.5rem; font-size: 0.82rem; opacity: 0.95; }
+.trip-card-body { padding: 1.35rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
+.trip-desc { font-size: 0.92rem; line-height: 1.65; color: var(--text-light); }
+.trip-highlights { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.trip-highlight-tag { padding: 0.3rem 0.7rem; border-radius: 50px; background: var(--teal-soft); font-size: 0.74rem; line-height: 1.4; }
+.trip-card-foot { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--hair); display: flex; justify-content: space-between; align-items: flex-end; gap: 0.75rem; }
+.trip-price-pill { font-size: 0.78rem; color: var(--text-light); line-height: 1.5; }
+.trip-price-pill strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; line-height: 1.05; color: var(--ocean-deep); font-weight: 600; }
+.price-divider { opacity: 0.5; }
+.trip-btn { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; color: var(--ocean-deep); white-space: nowrap; padding: 0.6rem 0; }
+@media (max-width: 1024px) { .trips-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .tgx-vibes { flex-wrap: nowrap; overflow-x: auto; margin: 0 -1.15rem; padding: 0 1.15rem 4px; scrollbar-width: none; }
+  .tgx-vibes::-webkit-scrollbar { display: none; }
+  .trips-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 0.9rem; margin: 0 -1.15rem; padding: 0 1.15rem 10px; scrollbar-width: none; }
+  .trips-grid::-webkit-scrollbar { display: none; }
+  .trips-grid > .trip-card { flex: 0 0 84%; scroll-snap-align: center; }
+  .trip-card-img { aspect-ratio: 5 / 6; }
+}
+
+/* ---------- Horizontal photo scrollers (Glimpse, camera roll) ---------- */
+.scroll-head { max-width: 1280px; margin: 0 auto 2rem; display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; }
+.scroll-head .section-tag, .scroll-head .section-title, .scroll-head .section-subtitle { text-align: left; margin-left: 0; margin-bottom: 0.4rem; }
+.scroll-arrows { display: flex; gap: 0.5rem; }
+.scroll-arrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(201,169,110,0.5); background: #fff; color: var(--text-dark); font-size: 1.05rem; cursor: pointer; }
+.scroll-arrow:hover { border-color: var(--gold); }
+.scroll-arrow:disabled { opacity: 0.35; cursor: default; }
+.hscroll { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 0 max(2rem, calc((100% - 1280px) / 2)) 10px; scroll-padding-inline: max(2rem, calc((100% - 1280px) / 2)); scrollbar-width: none; }
+.hscroll::-webkit-scrollbar { display: none; }
+.hscroll > * { scroll-snap-align: start; flex: 0 0 auto; }
+.days-section, .moments-section { padding-left: 0; padding-right: 0; }
+.days-section .scroll-head, .moments-section .scroll-head { padding: 0 2rem; }
+.glimpse-tile { position: relative; width: 290px; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; margin: 0; background: linear-gradient(160deg, var(--teal-soft), var(--ocean-light)); }
+.glimpse-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s ease; }
+.glimpse-tile:hover img { transform: scale(1.05); }
+.glimpse-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 4rem 1.1rem 1rem; color: #fff; background: linear-gradient(to top, rgba(44,62,64,0.8), rgba(44,62,64,0)); }
+.glimpse-cap small { display: block; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); }
+.glimpse-cap span { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; line-height: 1.2; }
+@media (max-width: 640px) { .days-section .scroll-head, .moments-section .scroll-head { padding: 0 1.15rem; } .hscroll { padding: 0 1.15rem 10px; scroll-padding-inline: 1.15rem; gap: 12px; } .glimpse-tile { width: 72vw; } .scroll-arrows { display: none; } }
+
+/* Camera roll */
+.moment-tile { position: relative; width: calc((min(100vw, 1280px) - 4rem - 4 * 16px) / 4.4); aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; border: 0; padding: 0; cursor: zoom-in; background: var(--teal-soft); }
+.moment-tile img, .moment-tile video { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.moment-tile:hover img { transform: scale(1.04); }
+.moment-tile .play { position: absolute; inset: 0; margin: auto; width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.85); display: grid; place-items: center; }
+.moments-footnote { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--ocean-deep); margin: 1rem 0 0; }
+@media (max-width: 640px) { .moment-tile { width: calc((100vw - 2.3rem - 12px) / 2); aspect-ratio: 8 / 15; } }
+.moments-lb { position: fixed; inset: 0; z-index: 10000; background: rgba(15,25,26,0.94); display: none; align-items: center; justify-content: center; padding: 1.5rem; }
+.moments-lb.open { display: flex; }
+.moments-lb-stage img, .moments-lb-stage video { max-width: min(92vw, 1100px); max-height: 84vh; border-radius: 12px; object-fit: contain; }
+.moments-lb-btn { position: absolute; width: 48px; height: 48px; border-radius: 50%; border: 0; background: rgba(255,255,255,0.15); color: #fff; font-size: 1.2rem; cursor: pointer; }
+.moments-lb-btn:hover { background: rgba(255,255,255,0.28); }
+.moments-lb-close { top: 18px; right: 18px; }
+.moments-lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+.moments-lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+
+/* ---------- The girl you become ---------- */
+.girl-you-become { text-align: center; background: #fff; }
+.girl-you-become .section-title { font-weight: 500; font-size: clamp(2rem, 4vw, 2.8rem); min-height: 1.2em; }
+.typing-cursor { display: inline-block; width: 2px; background: var(--ocean-deep); margin-left: 3px; vertical-align: -0.1em; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.girl-you-become .section-subtitle { margin-bottom: 0; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--text-dark); transition: opacity .8s ease; }
+.girl-you-become .section-subtitle strong { font-style: normal; color: var(--ocean-deep); }
+
+/* ---------- Glass cards (shared) ---------- */
+.glass, .diff-card, .wellness-card, .why-card, .trust-card, .for-you-checklist, .for-you-quote-box, .inclusion-block { background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--hair); border-radius: var(--r-card); }
+.wash { background: linear-gradient(180deg, var(--cream-warm) 0%, var(--teal-soft) 100%); }
+
+/* Why TGE (home) bento */
+.diff-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.25rem; }
+.diff-card { grid-column: span 3; padding: 2rem; display: flex; flex-direction: column; gap: 0.75rem; transition: transform .35s ease, box-shadow .35s ease, background .35s ease; }
+.diff-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); background: #fff; }
+.diff-card.has-photo { grid-column: span 6; display: grid; grid-template-columns: 1fr 1fr; padding: 0; overflow: hidden; }
+.diff-card.has-photo .diff-body { padding: 2.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.diff-card.has-photo .diff-photo { min-height: 100%; background: var(--teal-soft); }
+.diff-card.has-photo .diff-photo img { width: 100%; height: 100%; object-fit: cover; }
+.diff-icon { font-size: 1.8rem; line-height: 1; }
+.diff-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; line-height: 1.2; }
+.diff-text { font-size: 0.93rem; line-height: 1.7; color: var(--text-light); }
+@media (max-width: 1024px) { .diff-card, .diff-card.has-photo { grid-column: span 6; } }
+@media (max-width: 640px) {
+  .diff-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .diff-card, .diff-card.has-photo { grid-column: auto; }
+  .diff-card.has-photo { grid-template-columns: 1fr; }
+  .diff-card.has-photo .diff-photo { height: 180px; order: -1; }
+}
+
+/* This is for you */
+.for-you-grid { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1.25fr 1fr; gap: 1.25rem; align-items: stretch; }
+.for-you-checklist { padding: 2.25rem; }
+.for-you-checklist-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; margin-bottom: 1rem; }
+.for-you-list { display: flex; flex-direction: column; gap: 0.85rem; }
+.for-you-item { display: flex; gap: 0.85rem; align-items: flex-start; font-size: 0.97rem; line-height: 1.6; }
+.for-you-check { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; font-size: 0.8rem; margin-top: 1px; }
+.for-you-quote-box { padding: 2.25rem; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; background: linear-gradient(135deg, rgba(250,240,228,0.9), rgba(212,237,239,0.9)); }
+.for-you-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; line-height: 1.5; font-style: italic; }
+.for-you-quote strong { color: var(--ocean-deep); font-weight: 600; }
+.for-you-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.for-you-tag { padding: 0.35rem 0.85rem; border-radius: 50px; background: #fff; border: 1px solid var(--hair-2); font-size: 0.78rem; }
+@media (max-width: 760px) { .for-you-grid { grid-template-columns: 1fr; } .for-you-checklist, .for-you-quote-box { padding: 1.5rem; } }
+
+/* Travel Identity callout */
+.ti-callout-wrap { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+.ti-callout { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 1fr; border-radius: var(--r-big); overflow: hidden; text-decoration: none; color: var(--text-dark); background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft) 60%, var(--lagoon)); box-shadow: 0 20px 60px rgba(74,155,173,0.1); transition: transform .35s ease; }
+.ti-callout:hover { transform: translateY(-3px); color: var(--text-dark); }
+.ti-callout-body { padding: 3.25rem; display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
+.ti-callout-tag { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-text); font-weight: 500; }
+.ti-callout-title { margin: 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.6vw, 2.7rem); font-weight: 600; line-height: 1.12; }
+.ti-callout-title em { color: var(--ocean-deep); }
+.ti-callout-sub { margin: 0; font-size: 1rem; line-height: 1.75; color: var(--text-light); }
+.ti-callout-cta { align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 2rem; border-radius: 60px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; box-shadow: var(--shadow-cta); }
+.ti-callout-meta { display: none; }
+.ti-callout-photo { position: relative; min-height: 340px; background: var(--teal-soft); }
+.ti-callout-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 760px) { .ti-callout { grid-template-columns: 1fr; } .ti-callout-body { padding: 2rem 1.5rem; } .ti-callout-photo { min-height: 200px; order: -1; } .ti-callout-cta { align-self: stretch; justify-content: center; } }
+
+/* Founder */
+.founder-section { background: #fff; }
+.founder-wrap { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 400px 1fr; gap: 3.5rem; align-items: start; }
+.founder-photo { position: relative; }
+.founder-photo-placeholder { aspect-ratio: 4 / 5; border-radius: var(--r-big); overflow: hidden; background: var(--blush); box-shadow: 0 16px 48px rgba(74,155,173,0.18); }
+.founder-photo-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.founder-photo-tag { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.15rem; }
+.founder-photo-tag strong { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; }
+.founder-photo-tag span { font-size: 0.74rem; letter-spacing: 0.1em; color: var(--text-light); }
+.founder-name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; line-height: 1.2; margin-bottom: 1rem; }
+.founder-name em { color: var(--ocean-deep); }
+.founder-cards { display: flex; flex-direction: column; gap: 1rem; }
+.founder-text { margin: 0; font-size: 0.98rem; line-height: 1.85; }
+.founder-points { display: flex; flex-direction: column; gap: 0.6rem; }
+.founder-point { display: flex; gap: 0.6rem; font-size: 0.93rem; line-height: 1.6; }
+.founder-point span { color: var(--gold-text); font-weight: 600; }
+.founder-ig { align-self: flex-start; font-size: 0.85rem; font-weight: 500; }
+.founder-sign { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.45rem; color: var(--ocean-deep); }
+.swipe-dots { display: none; justify-content: center; gap: 6px; margin-top: 0.75rem; }
+.swipe-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 7px; background: rgba(201,169,110,0.35); cursor: pointer; transition: width .25s ease, background .25s ease; }
+.swipe-dots button.on { width: 20px; background: var(--gold); }
+@media (max-width: 860px) {
+  .founder-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+  .founder-photo { max-width: 320px; margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .founder-cards { flex-direction: row; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 0 -1.15rem; padding: 0 1.15rem 6px; scrollbar-width: none; }
+  .founder-cards::-webkit-scrollbar { display: none; }
+  .founder-card { flex: 0 0 86%; scroll-snap-align: center; background: var(--glass); border: 1px solid var(--hair); border-radius: var(--r-card); padding: 1.35rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .founder-text { font-size: 0.9rem; line-height: 1.75; }
+  .swipe-dots { display: flex; }
+}
+.founder-card { display: flex; flex-direction: column; gap: 1rem; }
+
+/* WhatsApp community */
+.wa-join-section { display: flex; justify-content: center; }
+.wa-join-card { position: relative; width: 100%; max-width: 720px; overflow: hidden; text-align: center; padding: 2.75rem 2rem; border-radius: var(--r-big); border: 1px solid rgba(201,169,110,0.25); background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); }
+.wa-join-tag { display: inline-block; padding: 0.4rem 1.1rem; border-radius: 50px; background: rgba(255,255,255,0.85); border: 1px solid var(--hair-2); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 1rem; }
+.wa-join-title { margin: 0 0 0.85rem; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 600; line-height: 1.12; }
+.wa-join-title em { color: var(--ocean-deep); }
+.wa-join-sub { margin: 0 auto 1.6rem; max-width: 500px; font-size: 1rem; line-height: 1.7; }
+.wa-join-btn { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 52px; padding: 0 2rem; border-radius: 50px; background: #25D366; color: #fff; text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; box-shadow: 0 8px 26px rgba(37,211,102,0.4); }
+.wa-join-btn:hover { color: #fff; background: #1ebe5b; }
+.wa-join-btn svg { width: 22px; height: 22px; }
+
+/* Trust */
+.trust-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.trust-card { padding: 1.6rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.trust-icon { font-size: 1.5rem; }
+.trust-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.22rem; font-weight: 700; line-height: 1.2; }
+.trust-card-text { font-size: 0.86rem; line-height: 1.65; color: var(--text-light); }
+.trust-card-text strong { color: var(--text-dark); }
+.trust-badge-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem auto 0; }
+.trust-badge { padding: 0.4rem 0.9rem; border-radius: 50px; background: #fff; border: 1px solid var(--hair-2); font-size: 0.78rem; }
+@media (max-width: 1024px) { .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .trust-grid, .wellness-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 0 -1.15rem; padding: 0 1.15rem 6px; scrollbar-width: none; }
+  .trust-grid::-webkit-scrollbar, .wellness-grid::-webkit-scrollbar { display: none; }
+  .trust-card, .wellness-card { flex: 0 0 82%; scroll-snap-align: center; }
+  .trust-section .swipe-dots, .wellness-section .swipe-dots { display: flex; }
+}
+
+/* How booking works stepper */
+.bookflow-section .section-title { margin-bottom: 2rem; }
+.tge-steps { max-width: 820px; margin: 0 auto 1rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.6rem; }
+.tge-step-btn { min-height: 92px; padding: 1rem; border-radius: 18px; border: 1px solid var(--hair-2); background: #fff; color: var(--text-dark); text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 0.3rem; transition: all .25s ease; }
+.tge-step-btn .n { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; line-height: 1; }
+.tge-step-btn .t { font-size: 0.86rem; font-weight: 500; line-height: 1.3; }
+.tge-step-btn.active { background: linear-gradient(135deg, var(--ocean-deep), var(--ocean)); border-color: transparent; color: #fff; box-shadow: 0 10px 28px rgba(74,155,173,0.25); }
+.bookflow-steps { max-width: 820px; margin: 0 auto; }
+.bookflow-step { display: none; gap: 1rem; padding: 1.5rem 1.75rem; border-radius: 18px; background: var(--glass); border: 1px solid var(--hair); }
+.bookflow-step.tge-show { display: flex; animation: fadeUp .35s ease; }
+.bookflow-num { display: none; }
+.bookflow-step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem; }
+.bookflow-step-text { font-size: 0.95rem; line-height: 1.7; }
+.bookflow-cancel { max-width: 820px; margin: 1.25rem auto 0; padding: 1.25rem 1.5rem; border-radius: 16px; background: var(--teal-soft); font-size: 0.9rem; }
+.bookflow-cancel-title { font-weight: 600; margin-bottom: 0.2rem; }
+@media (max-width: 640px) { .tge-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tge-step-btn { min-height: 76px; } .bookflow-step { padding: 1.25rem; } }
+
+/* Final CTA band */
+.final-cta-section { text-align: center; padding: 6rem 2rem; color: #fff; background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 55%, var(--teal) 100%); overflow: hidden; }
+.final-cta-section::before { content: ''; position: absolute; inset: 0; opacity: 0.6; background: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"); pointer-events: none; }
+.final-title { position: relative; margin: 0 auto 1.25rem; max-width: 820px; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.3rem, 5.5vw, 4.2rem); font-weight: 500; line-height: 1.12; }
+.final-title em { color: var(--gold-light); }
+.final-text { position: relative; margin: 0 auto 2rem; max-width: 720px; font-size: 1.05rem; line-height: 1.8; }
+.final-cta-section .final-btn, .final-cta-section .wtrvl-checkout_button { position: relative; }
+@media (max-width: 640px) { .final-cta-section { padding: 4rem 1.25rem; } }
+
+/* Book a call */
+.callbook-wrap { max-width: 720px; margin: 0 auto; text-align: center; padding: 2.5rem 2rem; border-radius: var(--r-big); background: var(--glass); border: 1px solid var(--hair); }
+.callbook-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; margin-bottom: 0.5rem; }
+.callbook-sub { margin: 0 auto 1.5rem; max-width: 560px; line-height: 1.7; }
+.callbook-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
+.callbook-btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.5rem; border-radius: 50px; text-decoration: none; font-size: 0.86rem; font-weight: 500; }
+.callbook-btn-wa { background: #25D366; color: #fff; }
+.callbook-btn-wa:hover { color: #fff; background: #1ebe5b; }
+.callbook-btn-email { border: 1px solid rgba(201,169,110,0.5); color: var(--text-dark); background: #fff; }
+.callbook-note { font-size: 0.78rem; color: var(--text-light); margin-top: 1rem; }
+
+/* Register interest */
+.interest-section { background: var(--cream); }
+.interest-inner { max-width: 860px; margin: 0 auto; padding: 2.5rem; border-radius: var(--r-big); background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border: 1px solid var(--hair); }
+.interest-form { display: flex; gap: 0.75rem; align-items: flex-end; flex-wrap: wrap; justify-content: center; }
+.interest-field { flex: 1 1 200px; display: flex; flex-direction: column; gap: 0.35rem; }
+.interest-label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; }
+.interest-input { min-height: 48px; padding: 0 1rem; border: 1px solid rgba(201,169,110,0.3); border-radius: 12px; font-family: inherit; font-size: 0.95rem; background: #fff; color: var(--text-dark); }
+.interest-btn { min-height: 48px; padding: 0 1.75rem; border: 0; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; box-shadow: var(--shadow-cta); }
+@media (max-width: 640px) { .interest-inner { padding: 1.75rem 1.15rem; } .interest-btn { width: 100%; } }
+
+/* Social */
+.social-section { text-align: center; background: #fff; }
+.social-handle { margin-bottom: 1.75rem; font-size: 0.95rem; }
+.social-grid { max-width: 900px; margin: 0 auto 1.5rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+.social-tile { position: relative; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: var(--teal-soft); }
+.social-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.social-tile:hover img { transform: scale(1.04); }
+.social-tile-play { position: absolute; right: 10px; bottom: 10px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.85); }
+.social-tile-play::after { content: ''; position: absolute; left: 13px; top: 10px; border-left: 11px solid var(--text-dark); border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+.social-cta-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; }
+.social-btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.5rem; border-radius: 50px; color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; }
+.social-btn:hover { color: #fff; opacity: 0.92; }
+.social-btn-ig { background: linear-gradient(90deg, #f09433, #dc2743, #bc1888); }
+.social-btn-tt { background: #1C2B2D; }
+@media (max-width: 640px) { .social-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.mission-strip { padding: 2.5rem 2rem; text-align: center; background: linear-gradient(180deg, #fff, var(--cream)); }
+.mission-label { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 0.6rem; }
+.mission-text { max-width: 760px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.6; }
+
+/* Contact */
+#contact form input, #contact form textarea { width: 100%; }
+@media (max-width: 640px) { .contact-name-row { grid-template-columns: 1fr !important; } }
+
+/* Footer */
+.footer { padding: 3.5rem 2rem 2.5rem; background: var(--cream); border-top: 1px solid var(--hair); }
+.footer-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
+.footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 0.75rem; }
+.footer-col { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col h4 { margin: 0 0 0.2rem; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-text); }
+.footer-col a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; font-weight: 500; }
+.footer-col a:hover { color: var(--ocean-deep); }
+.footer-blurb { font-size: 0.86rem; line-height: 1.7; color: var(--text-light); margin: 0; }
+.footer-disclaimer { max-width: 1180px; margin: 2rem auto 0; font-size: 0.72rem; line-height: 1.6; color: var(--text-light); }
+@media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; } .footer { padding-bottom: 7rem; } }
+
+/* WhatsApp floating button */
+.tge-wa-fab { position: fixed; left: 20px; bottom: 24px; z-index: 998; display: inline-flex; align-items: center; height: 56px; max-width: 56px; padding: 0 16px; overflow: hidden; border-radius: 50px; background: #25D366; color: #fff; text-decoration: none; box-shadow: 0 6px 20px rgba(37,211,102,0.45); transition: all .35s cubic-bezier(0.22,1,0.36,1); }
+.tge-wa-fab svg { width: 26px; height: 26px; flex-shrink: 0; }
+.tge-wa-fab-label { max-width: 0; opacity: 0; margin-left: 0; white-space: nowrap; font-size: 0.8rem; font-weight: 600; transition: all .35s ease; }
+.tge-wa-fab:hover { max-width: 240px; color: #fff; }
+.tge-wa-fab:hover .tge-wa-fab-label { max-width: 160px; opacity: 1; margin-left: 10px; }
+@media (max-width: 1099px) { body.has-bottom-bar .tge-wa-fab { bottom: calc(92px + env(safe-area-inset-bottom)); left: 14px; height: 50px; max-width: 50px; padding: 0 12px; } }
+
+/* =====================================================================
+   TRIP PAGES
+   ===================================================================== */
+.trip-mosaic-wrap { padding: 1.5rem 2rem 0; }
+.trip-mosaic { position: relative; max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 250px 250px; gap: 10px; border-radius: var(--r-big); overflow: hidden; }
+.mosaic-tile { position: relative; padding: 0; border: 0; cursor: pointer; overflow: hidden; background: linear-gradient(160deg, var(--teal-soft), var(--ocean-light)); }
+.mosaic-tile:first-child { grid-row: span 2; }
+.mosaic-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s ease; }
+.mosaic-tile:hover img { transform: scale(1.05); }
+.mosaic-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 3rem 1rem 0.85rem; text-align: left; color: #fff; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; line-height: 1.25; background: linear-gradient(to top, rgba(44,62,64,0.78), rgba(44,62,64,0)); }
+.mosaic-tile:first-child .mosaic-cap { font-size: 1.45rem; padding: 4rem 1.4rem 1.2rem; }
+.mosaic-all { position: absolute; right: 16px; top: 16px; z-index: 2; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 1.1rem; border-radius: 50px; border: 0; background: #fff; color: var(--text-dark); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+.mosaic-count { display: none; }
+@media (max-width: 760px) {
+  .trip-mosaic-wrap { padding: 0; }
+  .trip-mosaic { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; border-radius: 0; gap: 0; height: 62vh; max-height: 480px; scrollbar-width: none; }
+  .trip-mosaic::-webkit-scrollbar { display: none; }
+  .mosaic-tile { flex: 0 0 100%; scroll-snap-align: start; }
+  .mosaic-all { display: none; }
+  .mosaic-count { display: block; position: absolute; right: 14px; bottom: 14px; z-index: 3; padding: 0.3rem 0.7rem; border-radius: 50px; background: rgba(0,0,0,0.4); color: #fff; font-size: 0.72rem; }
+  .mosaic-wrap-rel { position: relative; }
+}
+
+/* Section tabs bar */
+.trip-tabs { position: sticky; top: var(--header-h); z-index: 900; background: rgba(253,248,240,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,169,110,0.2); margin-top: 1.75rem; }
+.trip-tabs-row { max-width: 1320px; margin: 0 auto; padding: 0 2rem; display: flex; gap: 1.75rem; overflow-x: auto; scrollbar-width: none; }
+.trip-tabs-row::-webkit-scrollbar { display: none; }
+.trip-tabs a { flex: none; padding: 1rem 0 0.9rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; }
+.trip-tabs a:hover { color: var(--ocean-deep); }
+.trip-tabs a.active { color: var(--ocean-deep); border-bottom-color: var(--gold); }
+@media (max-width: 760px) { .trip-tabs { display: none; } }
+
+/* Layout: main column + booking card */
+.trip-layout { max-width: 1320px; margin: 0 auto; padding: 2.5rem 2rem 0; display: flex; align-items: flex-start; gap: 3rem; }
+.trip-main { flex: 1 1 auto; min-width: 0; }
+.trip-main > section { padding: 0 0 5rem; }
+.trip-main .section-tag, .trip-main .section-title, .trip-main .section-subtitle { text-align: left; margin-left: 0; }
+.trip-main .section-title { font-size: clamp(2rem, 3.6vw, 2.8rem); }
+.trip-main .section-subtitle { margin-bottom: 1.75rem; }
+.trip-aside { flex: 0 0 360px; position: sticky; top: calc(var(--header-h) + 72px); }
+@media (max-width: 1099px) { .trip-layout { display: block; padding: 2rem 1.15rem 0; } .trip-aside { display: none; } .trip-main > section { padding-bottom: 3.5rem; } }
+
+/* Overview */
+.trip-overview .hero-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 0.75rem; }
+.trip-overview .hero-title { margin: 0 0 0.75rem; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5.5vw, 4.6rem); font-weight: 600; line-height: 1.0; }
+.trip-overview .hero-title em { color: var(--ocean-deep); }
+.trip-overview .hero-location { margin: 0 0 1.25rem; font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; line-height: 1.4; color: var(--ocean-deep); }
+.hero-details { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem; max-width: 560px; }
+.hero-detail { background: var(--glass); border: 1px solid var(--hair); border-radius: 18px; padding: 1rem 1.2rem; }
+.hero-detail-value { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; line-height: 1; color: var(--ocean-deep); }
+.hero-detail-label { margin-top: 0.35rem; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); }
+.hero-divider { display: none; }
+.hero-for { position: relative; margin: 0 0 1.25rem; padding: 1.35rem 1.5rem 1.35rem 4.1rem; border-radius: 22px; background: linear-gradient(135deg, #fff 0%, var(--cream-warm) 50%, var(--teal-soft) 100%); border: 1.5px solid rgba(201,169,110,0.45); box-shadow: 0 10px 34px rgba(201,169,110,0.16); font-size: 0.98rem; line-height: 1.75; }
+.hero-for::before { content: '✦'; position: absolute; left: 1.2rem; top: 1.2rem; width: 2.1rem; height: 2.1rem; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; font-size: 0.95rem; box-shadow: var(--shadow-cta); }
+.hero-for > strong:first-child { display: inline-block; margin-right: 0.35rem; padding: 0.12rem 0.7rem; border-radius: 50px; background: var(--ocean-deep); color: #fff; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; vertical-align: 0.1em; }
+.deposit-bubble-wrap { margin-bottom: 1.25rem; }
+.deposit-bubble { display: inline-block; padding: 0.55rem 1.1rem; border-radius: 50px; background: #fff; border: 1px solid rgba(201,123,132,0.35); font-size: 0.86rem; font-weight: 500; }
+.dep-highlight { color: var(--rose-text); font-weight: 600; }
+.overview-ctas { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 1.25rem; }
+.overview-reviews { margin-top: 0.25rem; }
+@media (max-width: 640px) {
+  .trip-overview .hero-location { font-size: 1.15rem; }
+  .hero-detail { padding: 0.8rem; text-align: center; }
+  .hero-detail-value { font-size: 2rem; }
+  .hero-for { padding: 3.6rem 1.15rem 1.2rem; }
+  .hero-for::before { left: 1.15rem; top: 1.1rem; }
+  .overview-ctas > * { flex: 1 1 100%; }
+  .overview-reviews { transform: scale(0.5); transform-origin: left top; height: 40px; overflow: hidden; }
+}
+
+/* Pick your dates */
+.tgx-deps { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid var(--hair); border-radius: var(--r-card); overflow: hidden; }
+.tgx-dep { display: grid; grid-template-columns: 1.5fr 1fr 1fr auto; gap: 1rem; align-items: center; padding: 0.9rem 1.5rem; border-bottom: 1px solid var(--hair); }
+.tgx-dep:last-child { border-bottom: 0; }
+.tgx-dep.active { background: #fff; box-shadow: inset 3px 0 0 var(--ocean-deep); }
+.tgx-dep.is-out { opacity: 0.65; }
+.tgx-dep-date { background: none; border: 0; padding: 0; min-height: 44px; text-align: left; cursor: pointer; color: inherit; font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; line-height: 1.2; }
+.tgx-dep-date:hover { color: var(--ocean-deep); }
+.tgx-dep-len { font-size: 0.86rem; color: var(--text-light); }
+.tgx-dep-status { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ocean-deep); }
+.tgx-dep-status.hot { color: var(--rose-text); }
+.tgx-dep-status.out { color: var(--text-light); font-weight: 500; text-decoration: line-through; }
+.tgx-dep-cta { min-height: 44px; padding: 0 1.3rem; border-radius: 50px; border: 0; cursor: pointer; white-space: nowrap; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gold), var(--gold-light)); box-shadow: 0 6px 20px rgba(201,169,110,0.3); }
+.tgx-dep-cta.alt { background: transparent; color: var(--text-dark); border: 1px solid rgba(201,169,110,0.5); box-shadow: none; }
+@media (max-width: 640px) {
+  .tgx-dep { grid-template-columns: 1fr auto; gap: 0.15rem 0.75rem; padding: 0.85rem 1rem; }
+  .tgx-dep-date { font-size: 1.15rem; min-height: 0; }
+  .tgx-dep-status { grid-column: 2; grid-row: 1; text-align: right; font-size: 0.6rem; letter-spacing: 0.08em; }
+  .tgx-dep-len { font-size: 0.78rem; }
+  .tgx-dep-cta { grid-column: 2; grid-row: 2; padding: 0 1rem; font-size: 0.64rem; letter-spacing: 0.12em; }
+}
+
+/* Paradise slideshow */
+.slideshow-wrapper { position: relative; border-radius: var(--r-card); overflow: hidden; background: var(--teal-soft); box-shadow: 0 24px 64px rgba(0,0,0,0.1); }
+.slideshow-track { display: flex; transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.slide { flex: 0 0 100%; position: relative; aspect-ratio: 16 / 9; }
+.slide img { width: 100%; height: 100%; object-fit: cover; }
+.slide-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 4rem 1.5rem 1.25rem; color: #fff; background: linear-gradient(to top, rgba(44,62,64,0.75), rgba(44,62,64,0)); }
+.slide-caption-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; line-height: 1.25; }
+.slide-caption-title:empty, .slide-caption-sub:empty { display: none; }
+.slide-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255,255,255,0.9); color: var(--text-dark); font-size: 1.05rem; cursor: pointer; z-index: 2; }
+.slide-prev { left: 14px; } .slide-next { right: 14px; }
+.slide-dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 0.9rem; }
+.slide-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 7px; background: rgba(201,169,110,0.35); cursor: pointer; }
+.slide-dots button.on { width: 20px; background: var(--gold); }
+.slideshow-after { display: flex; justify-content: flex-start; margin-top: 1.25rem; }
+@media (max-width: 640px) { .slide { aspect-ratio: 4 / 5; } .slide-btn { width: 40px; height: 40px; } .slideshow-wrapper { margin: 0 -1.15rem; border-radius: 0; } }
+
+/* This trip has it all */
+.wellness-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+.wellness-card { padding: 1.5rem; display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.9rem; transition: transform .35s ease, box-shadow .35s ease; }
+.wellness-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.wellness-emoji { grid-row: span 2; font-size: 1.6rem; line-height: 1.2; }
+.wellness-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; line-height: 1.2; }
+.wellness-card-text { font-size: 0.88rem; line-height: 1.65; color: var(--text-light); }
+.wellness-card-text strong { color: var(--text-dark); }
+
+/* Where you'll stay */
+.dep-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+.dep-tab { min-height: 56px; padding: 0.45rem 1rem; border-radius: 16px; border: 1px solid var(--hair-2); background: transparent; cursor: pointer; text-align: left; color: var(--text-dark); display: flex; flex-direction: column; justify-content: center; transition: all .2s ease; }
+.dep-tab:hover { border-color: var(--gold); }
+.dep-tab.active { background: #fff; border: 1.5px solid var(--ocean-deep); box-shadow: 0 8px 24px rgba(74,155,173,0.15); }
+.dep-tab-date { font-weight: 600; font-size: 0.88rem; }
+.dep-tab-status { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--rose-text); }
+.dep-tab[data-status="out"] .dep-tab-status { color: var(--text-light); }
+.dep-tab[data-status="calm"] .dep-tab-status { color: var(--ocean-deep); }
+.dep-tab.is-past { display: none; }
+.dep-panel { display: none; }
+.dep-panel.active { display: block; animation: fadeUp .4s ease; }
+.stay-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.stay-card { border-radius: var(--r-card); overflow: hidden; background: #fff; border: 1px solid var(--hair); display: flex; flex-direction: column; transition: transform .35s ease, box-shadow .35s ease; }
+.stay-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.stay-photo { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: linear-gradient(160deg, var(--teal-soft), var(--lagoon)); }
+.stay-slides { display: flex; height: 100%; transition: transform .5s ease; }
+.stay-slides img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
+.stay-slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(255,255,255,0.9); cursor: pointer; font-size: 1.05rem; color: var(--text-dark); z-index: 2; opacity: 0; transition: opacity .25s ease; }
+.stay-card:hover .stay-slider-btn, .stay-slider-btn:focus-visible { opacity: 1; }
+.stay-slider-prev { left: 8px; } .stay-slider-next { right: 8px; }
+.stay-slider[data-single] .stay-slider-btn, .stay-slider[data-single] .stay-slider-dots { display: none; }
+.stay-slider-dots { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px; z-index: 2; }
+.stay-slider-dot { width: 6px; height: 6px; padding: 0; border: 0; border-radius: 6px; background: rgba(255,255,255,0.6); cursor: pointer; }
+.stay-slider-dot.active { width: 16px; background: #fff; }
+.stay-body { padding: 1.1rem 1.15rem 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.stay-island { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-text); }
+.stay-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; line-height: 1.2; }
+.stay-desc { font-size: 0.84rem; line-height: 1.6; color: var(--text-light); }
+.stay-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.2rem; }
+.stay-tag { padding: 0.25rem 0.65rem; border-radius: 50px; background: var(--teal-soft); font-size: 0.72rem; }
+.stay-note { margin: 1rem 0 0; font-size: 0.8rem; font-style: italic; line-height: 1.6; color: var(--text-light); }
+@media (max-width: 1240px) and (min-width: 1100px) { .stay-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .dep-tabs { flex-wrap: nowrap; overflow-x: auto; margin: 0 -1.15rem 1rem; padding: 0 1.15rem 4px; scrollbar-width: none; }
+  .dep-tabs::-webkit-scrollbar { display: none; }
+  .dep-tab { flex: none; }
+  .stay-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 0 -1.15rem; padding: 0 1.15rem 6px; scrollbar-width: none; }
+  .stay-grid::-webkit-scrollbar { display: none; }
+  .stay-card { flex: 0 0 80%; scroll-snap-align: center; }
+  .stay-slider-btn { opacity: 1; }
+}
+
+/* Itinerary viewer */
+.itin { display: grid; grid-template-columns: 240px 1fr; border-radius: var(--r-card); overflow: hidden; border: 1px solid var(--hair); background: #fff; }
+.itin-rail { background: linear-gradient(180deg, var(--cream-warm), var(--teal-soft)); padding: 0.85rem; display: flex; flex-direction: column; gap: 4px; }
+.itin-rail button { min-height: 48px; padding: 0.55rem 0.85rem; border: 0; border-radius: 14px; background: transparent; text-align: left; cursor: pointer; color: var(--text-dark); }
+.itin-rail button small { display: block; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); }
+.itin-rail button span { display: block; font-family: 'Cormorant Garamond', serif; font-size: 0.98rem; font-weight: 600; line-height: 1.25; }
+.itin-rail button.on { background: linear-gradient(135deg, var(--gold), var(--ocean)); color: #fff; }
+.itin-rail button.on small { color: rgba(255,255,255,0.85); }
+.itin-view { display: flex; flex-direction: column; min-width: 0; }
+.itin-photo { position: relative; height: 250px; background: linear-gradient(160deg, var(--teal-soft), var(--ocean-light), var(--ocean)); overflow: hidden; }
+.itin-photo img { width: 100%; height: 100%; object-fit: cover; }
+.itin-head { position: absolute; left: 0; right: 0; bottom: 0; padding: 4rem 1.75rem 1.25rem; display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; color: #fff; background: linear-gradient(to top, rgba(44,62,64,0.8), rgba(44,62,64,0)); }
+.itin-count { font-size: 0.7rem; letter-spacing: 0.22em; color: var(--gold-light); }
+.itin-title { margin: 0.15rem 0 0; font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; line-height: 1.15; }
+.itin-arrows { display: flex; gap: 0.5rem; flex: none; }
+.itin-arrows button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.6); background: rgba(255,255,255,0.15); color: #fff; font-size: 1rem; cursor: pointer; }
+.itin-arrows button:hover { background: rgba(255,255,255,0.3); }
+.itin-body { padding: 1.4rem 1.75rem 1.6rem; animation: fadeUp .35s ease; }
+.itin-body .highlight-item { display: flex; gap: 0.6rem; padding: 0.55rem 0; border-bottom: 1px solid rgba(201,169,110,0.12); font-size: 0.95rem; line-height: 1.6; }
+.itin-body .highlight-item:last-child { border-bottom: 0; }
+.itin-body .highlight-icon { flex: none; }
+.itin-body .day-tag, .itinerary-timeline { display: none; }
+.itin-route { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.9rem; }
+.itin-route button { min-height: 40px; padding: 0 1rem; border-radius: 50px; border: 1px solid var(--hair-2); background: #fff; color: var(--text-dark); font-size: 0.78rem; font-weight: 500; cursor: pointer; }
+.itin-route button.on { background: var(--ocean-deep); border-color: var(--ocean-deep); color: #fff; }
+.itin-route .arrow { align-self: center; color: var(--gold); font-size: 0.8rem; }
+.itin-mnav { display: none; }
+.itin-note { margin: 0.9rem 0 0; font-size: 0.8rem; color: var(--text-light); }
+@media (max-width: 760px) {
+  .itin { grid-template-columns: 1fr; }
+  .itin-rail { display: none; }
+  .itin-photo { height: 200px; }
+  .itin-head { padding: 3rem 1.1rem 1rem; }
+  .itin-head .itin-arrows { display: none; }
+  .itin-title { font-size: 1.4rem; }
+  .itin-body { padding: 1.1rem 1.15rem 0.5rem; }
+  .itin-mnav { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem 1rem; }
+  .itin-mnav button { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(201,169,110,0.5); background: #fff; font-size: 1rem; cursor: pointer; }
+  .itin-mnav button.next { border: 0; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; }
+  .itin-mnav span { font-size: 0.72rem; letter-spacing: 0.2em; color: var(--text-light); }
+  .itin-route .arrow { display: none; }
+}
+
+/* Inclusions */
+.inclusions-wrapper { display: grid; grid-template-columns: 1.6fr 1fr; gap: 1rem; align-items: start; }
+.inclusion-block { padding: 1.75rem; }
+.inclusion-heading { font-weight: 600; margin-bottom: 0.9rem; display: flex; gap: 0.5rem; align-items: center; }
+.inclusion-block:first-child .inclusion-heading { color: var(--ocean-deep); }
+.inclusion-block:nth-child(2) > .inclusion-heading { color: var(--rose-text); }
+.inclusion-block:first-child .inclusion-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.25rem; }
+.inclusion-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.inclusion-item { display: flex; gap: 0.5rem; font-size: 0.86rem; line-height: 1.5; }
+.inclusion-check { color: var(--ocean-deep); font-weight: 600; }
+.exclusion-x { color: var(--rose-text); font-weight: 600; }
+.inclusions-cta { margin-top: 1.25rem; display: flex; }
+@media (max-width: 760px) { .inclusions-wrapper { grid-template-columns: 1fr; } .inclusion-block:first-child .inclusion-list { grid-template-columns: 1fr; } .inclusion-block { padding: 1.35rem; } }
+
+/* Combo */
+.combo-card { padding: 2.5rem; border-radius: var(--r-big); background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft) 55%, var(--lagoon)); box-shadow: 0 20px 60px rgba(74,155,173,0.1); display: flex; flex-direction: column; gap: 0.9rem; }
+.combo-tag { align-self: flex-start; padding: 0.35rem 0.9rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.45); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-text); }
+.combo-title { margin: 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 600; line-height: 1.15; }
+.combo-title em { color: var(--ocean-deep); }
+.combo-sub { margin: 0; font-size: 0.95rem; line-height: 1.75; }
+.combo-dates { font-size: 0.84rem; }
+.combo-legs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.combo-leg { background: var(--glass); border: 1px solid var(--hair); border-radius: 18px; padding: 1.1rem 1.25rem; }
+.combo-leg-num { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); }
+.combo-leg-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; margin: 0.2rem 0; }
+.combo-leg-meta { font-size: 0.8rem; color: var(--text-light); }
+.combo-price { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 600; line-height: 1; color: var(--ocean-deep); }
+.combo-price-usd { font-family: 'Jost', sans-serif; font-size: 0.8rem; color: var(--text-light); margin-left: 0.3rem; }
+.combo-note { font-size: 0.8rem; color: var(--text-light); max-width: 520px; }
+.combo-btns { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.combo-btn-primary { display: inline-flex; align-items: center; min-height: 52px; padding: 0 1.8rem; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; box-shadow: var(--shadow-cta); }
+.combo-btn-primary:hover { color: #fff; }
+.combo-btn-secondary { display: inline-flex; align-items: center; min-height: 52px; padding: 0 1.6rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.5); color: var(--text-dark); text-decoration: none; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; background: rgba(255,255,255,0.6); }
+.combo-how { font-size: 0.82rem; line-height: 1.65; }
+@media (max-width: 640px) { .combo-card { padding: 1.5rem; } .combo-legs { grid-template-columns: 1fr; } .combo-btns > a { flex: 1 1 100%; justify-content: center; } }
+
+/* Why travel with us (trip pages) */
+.why-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+.why-card { padding: 1.4rem 1.5rem; }
+.why-card-head { display: flex; align-items: center; gap: 0.6rem; width: 100%; padding: 0; border: 0; background: none; text-align: left; color: inherit; cursor: default; font: inherit; }
+.why-icon { font-size: 1.3rem; }
+.why-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-weight: 700; line-height: 1.25; flex: 1; }
+.why-caret { display: none; color: var(--gold); transition: transform .3s ease; }
+.why-card-text { margin-top: 0.5rem; font-size: 0.86rem; line-height: 1.65; color: var(--text-light); }
+.why-card-text p { margin: 0.2rem 0; }
+.why-card.why-wide { grid-column: 1 / -1; background: linear-gradient(135deg, rgba(250,240,228,0.9), rgba(212,237,239,0.9)); }
+@media (max-width: 640px) {
+  .why-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+  .why-card { padding: 0.25rem 1.1rem; }
+  .why-card-head { min-height: 56px; cursor: pointer; }
+  .why-caret { display: inline-block; }
+  .why-card .why-card-text { display: none; padding-bottom: 1rem; margin-top: 0; }
+  .why-card.open .why-card-text { display: block; }
+  .why-card.open .why-caret { transform: rotate(180deg); }
+}
+
+/* FAQ */
+.faq-wrapper { background: var(--glass); border: 1px solid var(--hair); border-radius: var(--r-card); padding: 0.4rem 1.6rem; }
+.faq-item { border-bottom: 1px solid var(--hair); }
+.faq-item:last-child { border-bottom: 0; }
+.faq-question { display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 60px; padding: 0.9rem 0; cursor: pointer; font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; line-height: 1.3; }
+.faq-arrow { flex: none; color: var(--gold); transition: transform .3s ease; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-answer { display: none; padding: 0 0 1.2rem; }
+.faq-item.open .faq-answer { display: block; animation: fadeUp .3s ease; }
+.faq-answer-text { font-size: 0.92rem; line-height: 1.75; color: var(--text-light); }
+.faq-disclaimer { margin-top: 1rem; padding: 1rem 1.2rem; border-radius: 14px; background: var(--teal-soft); font-size: 0.8rem; }
+.faq-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1.25rem; }
+@media (max-width: 640px) { .faq-wrapper { padding: 0.2rem 1rem; } .faq-question { font-size: 1.05rem; } }
+
+/* Booking card */
+.book-card { background: #fff; border: 1px solid rgba(201,169,110,0.25); border-radius: var(--r-big); box-shadow: 0 20px 60px rgba(74,155,173,0.14); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; max-height: calc(100vh - var(--header-h) - 100px); overflow-y: auto; }
+.book-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.book-kicker { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); }
+.book-status { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose-text); text-align: right; }
+.book-status.calm { color: var(--ocean-deep); } .book-status.out { color: var(--text-light); }
+.book-price { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; line-height: 1; color: var(--ocean-deep); }
+.book-price span { font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 400; color: var(--text-light); }
+.book-note { margin-top: -0.35rem; font-size: 0.8rem; color: var(--text-light); }
+.book-label { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); margin-top: 0.2rem; }
+.book-deps { display: flex; flex-direction: column; gap: 0.4rem; }
+.book-dep { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; min-height: 46px; padding: 0.4rem 0.9rem; border-radius: 14px; border: 1px solid rgba(201,169,110,0.25); background: #fff; cursor: pointer; text-align: left; font-size: 0.86rem; font-weight: 500; color: var(--text-dark); }
+.book-dep:hover { border-color: var(--gold); }
+.book-dep.active { background: var(--teal-soft); border: 1.5px solid var(--ocean-deep); }
+.book-dep small { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-text); white-space: nowrap; }
+.book-dep small.calm { color: var(--ocean-deep); } .book-dep small.out { color: var(--text-light); }
+.book-dep.is-out > span { color: var(--text-light); text-decoration: line-through; }
+.book-card .wtrvl-checkout_button, .book-card .wtrvl-download_brochure_button, .book-card .btn-line { width: 100% !important; }
+.book-trust { list-style: none; margin: 0.2rem 0 0; padding: 0.85rem 0 0; border-top: 1px solid var(--hair); display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.78rem; color: var(--text-light); }
+
+/* Mobile/tablet bottom booking bar */
+.book-bar { display: none; }
+@media (max-width: 1099px) {
+  .book-bar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 995; align-items: center; gap: 0.75rem; padding: 0.7rem 1rem calc(0.75rem + env(safe-area-inset-bottom)); background: rgba(255,255,255,0.97); backdrop-filter: blur(14px); border-top: 1px solid rgba(201,169,110,0.25); box-shadow: 0 -10px 40px rgba(74,155,173,0.15); transform: translateY(110%); transition: transform .35s ease; }
+  .book-bar.visible { transform: none; }
+  .book-bar-info { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.25; }
+  .book-bar-top { font-size: 0.7rem; color: var(--text-light); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .book-bar-top b { color: var(--rose-text); font-weight: 600; }
+  .book-bar-price { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 600; color: var(--ocean-deep); }
+  .book-bar-price span { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; color: var(--text-light); }
+  .book-bar a { flex: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.4rem; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; box-shadow: var(--shadow-cta); }
+  #tawkchat-container, .tawk-min-container { bottom: 84px !important; }
+}
+
+/* Full-width sections after the main column */
+.trip-after > section { padding-left: 2rem; padding-right: 2rem; }
+@media (max-width: 640px) { .trip-after > section { padding-left: 1.15rem; padding-right: 1.15rem; } }
+
+/* Missing photo fallback (e.g. new trip photos not uploaded yet) */
+img.img-missing { visibility: hidden; }
+
+/* ---------- Trip page main-column tweaks ---------- */
+.trip-main > section { background: transparent !important; }
+.trip-main .moments-section .scroll-head, .trip-main .days-section .scroll-head { padding: 0; }
+.trip-main .hscroll { padding-left: 0; padding-right: 0; scroll-padding-inline: 0; }
+.trip-main .moment-tile { width: calc((min(100vw - 4rem, 1320px - 4rem) - 360px - 3rem - 3 * 16px) / 3.3); }
+.trip-main .moments-footnote { text-align: left; }
+.trip-main .founder-wrap { grid-template-columns: 240px 1fr; gap: 2rem; }
+.trip-main .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.trip-main .trust-badge-row, .trip-main .cta-center { justify-content: flex-start; }
+.trip-main .tge-steps, .trip-main .bookflow-steps, .trip-main .bookflow-cancel { margin-left: 0; }
+.trip-main .ti-callout-wrap { padding-left: 0; padding-right: 0; padding-top: 0; }
+.trip-main .ti-callout { grid-template-columns: 1.3fr 1fr; }
+.trip-main .ti-callout-body { padding: 2.5rem; }
+.wellness-card { align-content: start; }
+.flight-note { border: 1px solid rgba(201,123,132,0.35); background: #fff; }
+.dates-section .flight-note { margin-top: 1rem; font-size: 0.86rem; line-height: 1.65; }
+.inclusion-item.flight-note { padding: 0.85rem 1rem; border-radius: 12px; font-size: 0.84rem; }
+@media (max-width: 1099px) { .trip-main .moment-tile { width: calc((100vw - 4rem - 3 * 16px) / 3.3); } }
+@media (max-width: 860px) { .trip-main .founder-wrap { grid-template-columns: 1fr; } .trip-main .ti-callout { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .trip-main .moment-tile { width: calc((100vw - 2.3rem - 12px) / 2); } .trip-main .trust-grid { display: flex; } .trip-main .hscroll { margin: 0 -1.15rem; padding: 0 1.15rem 10px; scroll-padding-inline: 1.15rem; } .trip-main .ti-callout-body { padding: 1.75rem 1.35rem; } }
+
+</style>
+</head>
+<body class="home">
+
+<div class="tge-announce" role="note"><span>✨ TRAVEL FOR LESS - <strong>FROM $599</strong></span><span class="dot hide-sm" aria-hidden="true">·</span><span class="hide-sm">SMALL GROUPS · FEW SPOTS LEFT</span><a href="#trips">SEE TRIPS</a></div>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#">That Girl Experiences</a>
+    <div class="nav-links"><a class="nav-l" href="#trips"><span class="nav-l-icon">🌏</span>Our Trips</a><a class="nav-l" href="#why-tge"><span class="nav-l-icon">✨</span>Why TGE</a><a class="nav-l" href="#for-you"><span class="nav-l-icon">💫</span>Who It's For</a><a class="nav-l" href="#meet-gabs"><span class="nav-l-icon">🤍</span>Our Story</a><a class="nav-l" href="#secure-booking"><span class="nav-l-icon">🔒</span>Book With Confidence</a><a class="nav-l" href="#contact"><span class="nav-l-icon">💬</span>Contact</a></div>
+    <div class="nav-right">
+      <div class="nav-menu desktop-hidden" id="navMenu">
+        <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false" aria-controls="navMenuPanel" aria-label="Open menu"><span class="nav-menu-btn-lines" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
+        <div class="nav-menu-panel" id="navMenuPanel" role="menu"><a class="nav-menu-link" href="#trips" role="menuitem"><span class="nav-menu-link-icon">🌏</span>Our Trips</a><a class="nav-menu-link" href="#why-tge" role="menuitem"><span class="nav-menu-link-icon">✨</span>Why TGE</a><a class="nav-menu-link" href="#for-you" role="menuitem"><span class="nav-menu-link-icon">💫</span>Who It's For</a><a class="nav-menu-link" href="#meet-gabs" role="menuitem"><span class="nav-menu-link-icon">🤍</span>Our Story</a><a class="nav-menu-link" href="#secure-booking" role="menuitem"><span class="nav-menu-link-icon">🔒</span>Book With Confidence</a><a class="nav-menu-link" href="#contact" role="menuitem"><span class="nav-menu-link-icon">💬</span>Contact</a></div>
+      </div>
+      <a href="#trips" class="nav-cta">Our Upcoming Trips</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero home-hero">
+  <!-- HERO VIDEO: replace hero-video.mp4 + hero-poster.jpg with your video files -->
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="hero-poster.jpg" aria-hidden="true"><source src="hero-video.mp4" type="video/mp4"></video>
+  <div class="hero-scrim"></div>
+  <div class="home-hero-inner">
+    <div class="hero-tag">Girls-Only Travel Experiences</div>
+    <h1 class="hero-title"><em>THAT GIRL</em> Experiences<br/><em>for the girls who want more.</em></h1>
+    <p class="hero-sub">
+    Ocean, Connections, Adventures, Wellness &amp; Growth. 'That Girl' experiences for the girls who want to live life to its fullest - designed to unlock the best version of YOU, surrounded by like-minded, supportive women you haven't met <em>yet.</em>
+<br/><strong>This is YOU - as <em>THAT GIRL</em>. Want to experience what she's like?</strong>
+</p>
+    <form class="tgx-finder" id="tgxFinder" role="search" aria-label="Find your trip">
+      <label class="tgx-field"><span class="tgx-field-label">Where</span><select id="tgxWhere"><option value="all">All destinations</option></select></label>
+      <label class="tgx-field"><span class="tgx-field-label">Vibe</span><select id="tgxVibe"><option value="all">Any vibe</option><option value="ocean">🌊 Ocean</option><option value="adventure">🏝️ Adventure</option><option value="wellness">🧘‍♀️ Wellness &amp; Growth</option><option value="luxe">✨ Luxe</option></select></label>
+      <button type="submit" class="hero-cta">See Our Upcoming Trips</button>
+    </form>
+    <div class="hero-pills">
+<span class="hero-pill">🌺 Transformative Girls-Only Trips</span>
+<span class="hero-pill">🌊 Bucket-List Experiences</span>
+<span class="hero-pill">🌴 Affordable Luxe Travel &amp; Adventures</span>
+<span class="hero-pill">✨ Small Groups</span>
+<span class="hero-pill">👯‍♀️ Female Friendships &amp; Connections</span>
+<span class="hero-pill">🧘‍♀️ Wellness &amp; Growth</span>
+</div>
+    <div class="hero-foot"><span class="hero-note">LIMITED SPOTS LEFT · AFFORDABLE LUXE TRAVEL</span><div class="tge-reviews"><script data-env="https://www.wetravel.com" data-name="WeTravel Review Widget" data-showcount="false" data-showstars="true" data-uid="2374713" data-userslug="that-girl-experiences" data-version="v0.3" id="wetravel_review_widget" src="https://cdn.wetravel.com/widgets/embed_reviews.js"></script></div></div>
+  </div>
+</section>
+
+<div class="trust-bar">
+<div class="trust-inner">
+<div class="trust-item"><div class="trust-num">95% Come Solo</div><div class="trust-label">&amp; leave with new friends</div></div>
+<div class="trust-item"><div class="trust-num">Luxe Travel</div><div class="trust-label">AFFORDABLE PRICE</div></div>
+<div class="trust-item"><div class="trust-num">Small Groups</div><div class="trust-label">INTEREST-FREE PAYMENT PLANS</div></div>
+</div>
+</div>
+
+<section class="trips-section" id="trips">
+  <div class="trips-head">
+    <div><div class="section-tag reveal">Upcoming Trips</div><h2 class="section-title reveal">Choose Your <em>Experience</em></h2></div>
+    <div class="tgx-vibes reveal" role="group" aria-label="Filter trips by vibe"><button class="tgx-vibe active" type="button" data-vibe="all" aria-pressed="true">All trips</button><button class="tgx-vibe" type="button" data-vibe="ocean" aria-pressed="false">🌊 Ocean</button><button class="tgx-vibe" type="button" data-vibe="adventure" aria-pressed="false">🏝️ Adventure</button><button class="tgx-vibe" type="button" data-vibe="wellness" aria-pressed="false">🧘‍♀️ Wellness &amp; Growth</button><button class="tgx-vibe" type="button" data-vibe="luxe" aria-pressed="false">✨ Luxe</button></div>
+  </div>
+  <div class="trips-grid">
+    <a class="trip-card reveal" href="bali.html" data-vibes="ocean adventure luxe" data-where="Bali + Nusa Lembongan + Nusa Penida">
+      <div class="trip-card-img"><img alt="Nusa Lembongan" decoding="async" height="750" loading="lazy" src="lembongan.webp" width="600"/><span class="trip-badge live">‼️ FEW SPOTS LEFT</span>
+        <div class="trip-on-photo"><div class="trip-dest">Bali + Nusa Lembongan + Nusa Penida</div><div class="trip-name">Island Life</div><div class="trip-meta">
+<span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> 8 Days · 7 Nights</span>
+<span class="trip-meta-item"><span class="trip-meta-icon">🎀</span> EXCEPTIONAL VALUE</span>
+</div></div>
+      </div>
+      <div class="trip-card-body">
+        <div class="trip-desc">3 Islands, 1 Trip. Luxe Pool Villas, Bucket-list Adventures, Ocean Therapy &amp; Beach Days, Swim with Manta Rays &amp; Turtles, Unreal Sunsets, Lush Rice Terraces, Jungles &amp; Good Vibes! This trip is full of adventures while also prioritising connection and luxury.</div>
+        <div class="trip-highlights">
+<span class="trip-highlight-tag">✨ 3 Islands, 1 Incredible Trip</span>
+<span class="trip-highlight-tag">🌊 Ocean, Jungle, Beach &amp; Unreal Sunsets</span>
+<span class="trip-highlight-tag">💃 Adventure-packed + Sooo Many Inclusions!</span>
+<span class="trip-highlight-tag">👯‍♀️ 20-40, Girls Community</span>
+</div>
+        <div class="trip-card-foot"><div class="trip-price-pill"><strong>From $599 USD</strong> <span class="price-divider">·</span> $50 USD Deposit <span class="price-divider">·</span> Pay in 4</div><span class="trip-btn">View Trip &amp; Itinerary →</span></div>
+      </div>
+    </a>
+    <a class="trip-card reveal" href="komodo.html" data-vibes="ocean adventure wellness luxe" data-where="Komodo Islands & Labuan Bajo, Indonesia">
+      <div class="trip-card-img"><img alt="Komodo Islands" decoding="async" height="750" loading="lazy" src="photo1.jpg" width="600"/><span class="trip-badge live">⚡ Almost gone</span>
+        <div class="trip-on-photo"><div class="trip-dest">Komodo Islands &amp; Labuan Bajo, Indonesia</div><div class="trip-name">Becoming <em>HER</em> - Sailing Komodo Islands</div><div class="trip-meta">
+<span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> 6 Days · 5 Nights</span>
+<span class="trip-meta-item"><span class="trip-meta-icon">🎀</span> ALL-INCLUSIVE, 21-49</span>
+</div></div>
+      </div>
+      <div class="trip-card-body">
+        <div class="trip-desc">Swim with manta rays, sail across Komodo on our own Private Liveaboard with the girls, hike volcanic islands for sunset &amp; unlock your Next-Level Self — with 7 supportive women by your side. This is you <em>becoming HER.</em></div>
+        <div class="trip-highlights">
+<span class="trip-highlight-tag">🐋 Manta Rays &amp; Majestic Views</span>
+<span class="trip-highlight-tag">⛵ Private Liveaboard Sailing, whole boat just for us girls</span>
+<span class="trip-highlight-tag">🧘‍♀️ Yoga, Pilates &amp; Wellness</span>
+<span class="trip-highlight-tag">🎯 Growth &amp; Mindset Workshops</span>
+<span class="trip-highlight-tag">🩷 Pink Beach &amp; Komodo Dragons</span>
+</div>
+        <div class="trip-card-foot"><div class="trip-price-pill"><strong>ALL-INCLUSIVE</strong> <span class="price-divider">·</span> Private Boat <span class="price-divider">·</span> Wellness &amp; Growth</div><span class="trip-btn">View Trip &amp; Itinerary →</span></div>
+      </div>
+    </a>
+    <a class="trip-card reveal" href="maldives.html" data-vibes="ocean adventure luxe" data-where="South Ari Atoll, Maldives">
+      <div class="trip-card-img"><img alt="Whale shark, South Ari Atoll" decoding="async" height="750" loading="lazy" src="maldives/whale-shark.webp" width="600"/><span class="trip-badge live">✨ NEW TRIP</span>
+        <div class="trip-on-photo"><div class="trip-dest">South Ari Atoll, Maldives</div><div class="trip-name">Maldives <em>Girls Trip</em></div><div class="trip-meta">
+<span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> 10 Days · 9 Nights</span>
+<span class="trip-meta-item"><span class="trip-meta-icon">🎀</span> NEW FOR 2027</span>
+</div></div>
+      </div>
+      <div class="trip-card-body">
+        <div class="trip-desc">Swim with whale sharks &amp; manta rays, snorkel with turtles, watch dolphins at sunset &amp; live your best island life on Dhigurah with the girls. Garden villas, half board &amp; a luxury resort day - this is the Maldives, girls trip style.</div>
+        <div class="trip-highlights">
+<span class="trip-highlight-tag">🦈 Swim with Whale Sharks</span>
+<span class="trip-highlight-tag">𓆉 Manta Rays, Turtles &amp; Dolphins</span>
+<span class="trip-highlight-tag">🏝️ Luxury Resort Day</span>
+<span class="trip-highlight-tag">👯‍♀️ 20-40, Girls Community</span>
+</div>
+        <div class="trip-card-foot"><div class="trip-price-pill"><strong>From $1,999 USD</strong> <span class="price-divider">·</span> Small Deposit <span class="price-divider">·</span> Pay in 4</div><span class="trip-btn">View Trip &amp; Itinerary →</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="days-section" data-scroller>
+  <div class="scroll-head">
+    <div><div class="section-tag reveal">A Whole World Waiting For You</div><h2 class="section-title reveal">A Glimpse Into Your Days</h2><p class="section-subtitle reveal">Volcanic Sunsets, Swimming with Manta Rays, Sailing across Islands &amp; Private Villas. <strong>Step into your dream life now.</strong></p></div>
+    <div class="scroll-arrows"><button class="scroll-arrow scroll-prev" type="button" aria-label="Previous">&#8592;</button><button class="scroll-arrow scroll-next" type="button" aria-label="Next">&#8594;</button></div>
+  </div>
+  <div class="hscroll"><figure class="glimpse-tile"><img alt="Nusa Lembongan" decoding="async" height="528" loading="lazy" src="lembongan.webp" width="960"/><figcaption class="glimpse-cap"><small>Bali</small><span>Island life &amp; ocean therapy</span></figcaption></figure><figure class="glimpse-tile"><img alt="Komodo Island" decoding="async" height="528" loading="lazy" src="komodo.jpg" width="960"/><figcaption class="glimpse-cap"><small>Komodo Islands</small><span>Your POV in Becoming HER - Komodo</span></figcaption></figure><figure class="glimpse-tile"><img alt="" decoding="async" height="528" loading="lazy" src="28.png" width="960"/><figcaption class="glimpse-cap"><small></small><span>Swim with Sea Turtles</span></figcaption></figure><figure class="glimpse-tile"><img alt="Padar Island" decoding="async" height="528" loading="lazy" src="photo1.jpg" width="960"/><figcaption class="glimpse-cap"><small>Komodo Islands</small><span>Viewpoint hikes with the girls</span></figcaption></figure><figure class="glimpse-tile"><img alt="Manta Rays" decoding="async" height="528" loading="lazy" src="manta2.jpg" width="960"/><figcaption class="glimpse-cap"><small>Island Life Girls Trip</small><span>Swim with Manta Rays</span></figcaption></figure><figure class="glimpse-tile"><img alt="Pink Beach" decoding="async" height="528" loading="lazy" src="photo5.jpg" width="960"/><figcaption class="glimpse-cap"><small>Komodo Islands</small><span>Pink Beach afternoons</span></figcaption></figure><figure class="glimpse-tile"><img alt="Rice Terraces" decoding="async" height="528" loading="lazy" src="ubud.webp" width="960"/><figcaption class="glimpse-cap"><small>Island Life Girls Trip</small><span>Lush views in Bali</span></figcaption></figure><figure class="glimpse-tile"><img alt="" decoding="async" height="528" loading="lazy" src="27.png" width="960"/><figcaption class="glimpse-cap"><small>Komodo Islands</small><span>Iconic Viewpoint Hike overlooking Pink Beaches</span></figcaption></figure><figure class="glimpse-tile"><img alt="" decoding="async" height="528" loading="lazy" src="lannaland_villa.webp" width="960"/><figcaption class="glimpse-cap"><small>Villa from Previous Trips</small><span>Stay in Luxe Private Pool Villas</span></figcaption></figure><figure class="glimpse-tile"><img alt="Nusa Penida" decoding="async" height="528" loading="lazy" src="crystalbay1.webp" width="960"/><figcaption class="glimpse-cap"><small>Island Life Girls Trip</small><span>3 Islands - One Trip of a Lifetime</span></figcaption></figure><figure class="glimpse-tile"><img alt="" decoding="async" height="528" loading="lazy" src="aug26/islandlife_sunset.webp" width="960"/><figcaption class="glimpse-cap"><small>Previous Trips</small><span>Experience Unreal Sunsets &amp; Core Memories Unlocked</span></figcaption></figure><figure class="glimpse-tile"><img alt="" decoding="async" height="528" loading="lazy" src="aug26/ATV1.webp" width="960"/><figcaption class="glimpse-cap"><small>Previous Trips</small><span>Live your Best Island Life</span></figcaption></figure><figure class="glimpse-tile"><img alt="" decoding="async" height="528" loading="lazy" src="aug26/batursunrise.webp" width="960"/><figcaption class="glimpse-cap"><small>Previous Trips</small><span>Bucket-list Adventures with the Girls</span></figcaption></figure><figure class="glimpse-tile"><img alt="Private Liveaboard" decoding="async" height="528" loading="lazy" src="photo2.jpg" width="960"/><figcaption class="glimpse-cap"><small>Komodo Islands</small><span>Sailing our private liveaboard</span></figcaption></figure><figure class="glimpse-tile"><img alt="Manta Rays" decoding="async" height="528" loading="lazy" src="photo4.jpg" width="960"/><figcaption class="glimpse-cap"><small>Komodo Islands</small><span>Manta Rays</span></figcaption></figure><figure class="glimpse-tile"><img alt="" decoding="async" height="528" loading="lazy" src="photo8.jpg" width="960"/><figcaption class="glimpse-cap"><small>Previous Trips</small><span>Snorkel with Manta Rays</span></figcaption></figure><figure class="glimpse-tile"><img alt="" decoding="async" height="528" loading="lazy" src="30.png" width="960"/><figcaption class="glimpse-cap"><small>Komodo Islands</small><span>Stunning Underwater World &amp; Marine Life</span></figcaption></figure></div>
+</section>
+
+<section class="girl-you-become">
+  <div class="section-tag reveal">THE GIRL YOU <em>BECOME</em> ON OUR TRIPS</div>
+  <h2 class="section-title" id="typingHeadline" data-plain="You’ve been waiting for a sign, and maybe " data-italic="this is it." aria-label="You've been waiting for a sign, and maybe this is it."></h2>
+  <p class="section-subtitle" id="typingSubtitle" style="opacity:0;">It's the version of yourself you've been putting off meeting.<br/><strong>This is YOU as THAT GIRL.</strong></p>
+</section>
+
+<section id="why-tge" class="wash">
+  <div class="section-tag reveal">Why Travel With Us?</div><h2 class="section-title reveal">Not Your <em>Average Girls Trip</em></h2><p class="section-subtitle reveal"><strong>Built for you to become <em>That Girl.</em></strong> Every detail is designed for you to leave as a <em>better, fuller, freer, more aligned &amp; more connected version of yourself.</em></p>
+  <div class="diff-grid"><div class="diff-card has-photo reveal"><div class="diff-body"><span class="diff-icon">👯‍♀️</span><div class="diff-title">Supportive Community That Has Your Back</div><div class="diff-text">Our trips are curated to help you meet like-minded girls who are genuinely aligned, with connection-building moments seamlessly integrated into your days. The result? Deep, lifelong connections.</div></div><div class="diff-photo"><img src="aug26/grouppic.webp" alt="" loading="lazy"></div></div><div class="diff-card has-photo reveal"><div class="diff-body"><span class="diff-icon">🐋</span><div class="diff-title">Bucket-list Experiences &amp; Core Memories</div><div class="diff-text">Swimming with manta rays. Private liveaboards. Pink beaches at sunrise. We don't do ordinary. Every trip is built around bucket-list moments that become core memories.</div></div><div class="diff-photo"><img src="manta2.jpg" alt="" loading="lazy"></div></div><div class="diff-card reveal"><span class="diff-icon">🌟</span><div class="diff-title">Growth &amp; Personal Development</div><div class="diff-text">Growth &amp; Personal Development Workshops, Wellness Rituals, guided Vision-Board Making sessions to unlock "Next-Level You" &amp; help you live your dream life. Real mindset &amp; personal development - in paradise.</div></div><div class="diff-card reveal"><span class="diff-icon">💆‍♀️</span><div class="diff-title">TGE-only Experiences</div><div class="diff-text">Experiences you won't find anywhere else. Ocean Ceremonies, Sunset Journalling, Pilates by the beach, Private liveaboards, boutique hotels &amp; many more. We refuse to compromise on quality. No bunk beds, no dorms, no 8-person shared bathrooms. Ever.</div></div><div class="diff-card reveal"><span class="diff-icon">🎯</span><div class="diff-title">Travel Identity™ Matching</div><div class="diff-text">Our signature Travel Identity™ quiz matches you with compatible roommates and future trip companions based on personality and preferences.</div></div><div class="diff-card reveal"><span class="diff-icon">🔒</span><div class="diff-title">Safe Solo Travel, Sorted</div><div class="diff-text">Everything is taken care of - transfers, accommodation, activities, meals. You just show up. Travelling solo doesn't have to feel lonely or daunting anymore, and you get to meet new friends!</div></div></div>
+</section>
+
+<section id="for-you" class="wash">
+<div class="section-tag reveal">This Is For You If</div>
+<h2 class="section-title reveal">You're Ready <em>For More</em></h2>
+<p class="section-subtitle reveal">You know you're meant for more — but your life doesn't reflect it yet. Our trips take you further: into yourself, your potential &amp; your people.</p>
+<div class="for-you-grid">
+<div class="for-you-checklist reveal">
+<div class="for-you-checklist-title">This is for you if…</div>
+<div class="for-you-list">
+<div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want to travel but don't want to do it alone, or the plans never make it out of the group chat</div></div>
+<div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You crave <strong>real female friendships</strong> with supportive, like-minded girls who genuinely want to see you win</div></div>
+<div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You feel stuck, lost, overwhelmed, or burnt out</div></div>
+<div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want <strong>more in life</strong>: new experiences, growth &amp; the best version of yourself</div></div>
+<div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You want to <strong>tick off bucket-list experiences</strong> &amp; come home as a <strong>better version of yourself</strong></div></div>
+<div class="for-you-item"><div class="for-you-check">✓</div><div class="for-you-item-text">You're <strong>tired of waiting around</strong> for the right time, the right people or the right circumstances - and you're ready to finally <strong>choose this for yourself</strong></div></div>
+</div>
+</div>
+<div class="for-you-quote-box reveal">
+<div class="for-you-quote">You'll come home <strong>more aligned, more HER. Maybe it's your spark back. Maybe it's finally finding your purpose &amp; your people.</strong></div>
+<div class="for-you-tags">
+<span class="for-you-tag">Women only</span>
+<span class="for-you-tag">Come solo or bring a friend</span>
+<span class="for-you-tag">Growth-minded girlies</span>
+<span class="for-you-tag">Wellness lovers</span>
+<span class="for-you-tag">Transformative &amp; Unforgettable</span>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="moments-section" id="real-moments" data-scroller>
+  <div class="scroll-head">
+    <div><div class="section-tag reveal">THIS COULD BE YOUR CAMERA ROLL</div><h2 class="section-title reveal">See our <em>Previous Trips</em></h2><p class="section-subtitle reveal">Raw, unedited photos from our previous trips.</p></div>
+    <div class="scroll-arrows"><button class="scroll-arrow scroll-prev" type="button" aria-label="Scroll left">&#8592;</button><button class="scroll-arrow scroll-next" type="button" aria-label="Scroll right">&#8594;</button></div>
+  </div>
+  <div class="hscroll" id="momentsGrid"></div>
+  <div class="cta-center"><a class="cta-btn reveal" href="#trips">Join Our Trips →</a></div>
+  <p class="moments-footnote reveal">You, me &amp; the girls - core memories unlocked.</p>
+</section>
+
+
+<section class="ti-callout-wrap">
+  <a href="/travel-identity.html" target="_blank" rel="noopener" class="ti-callout reveal">
+    <div class="ti-callout-body"><div class="ti-callout-tag">TRAVEL IDENTITY™ QUIZ</div><h2 class="ti-callout-title">Discover Your Unique <em>Travel Identity™</em></h2><p class="ti-callout-sub">Uncover your unique Travel Identity — how you travel, your travel DNA, the experiences you crave, the energy you bring, and the trip that's calling your name.</p><span class="ti-callout-cta">Discover my Travel Identity™</span></div>
+    <div class="ti-callout-photo"><img src="aug26/girlsconnections.webp" alt="" loading="lazy"></div>
+  </a>
+</section>
+
+
+<section class="founder-section" id="meet-gabs">
+  <div class="section-tag reveal">Meet Your Founder &amp; Host</div><h2 class="section-title reveal">Hi, I'm <em>Gabs</em> 🤍</h2>
+  <div class="founder-wrap">
+    <div class="reveal"><div class="founder-photo">
+<div class="founder-photo-placeholder"><img alt="Gabs, founder of That Girl Experiences" src="gabs.webp"/></div>
+<div class="founder-photo-tag">
+<strong>Gabriela (Gabs)</strong>
+<span>Our Founder &amp; Your Host · <a href="https://instagram.com/ggabrielamichelle" rel="noopener" target="_blank">@ggabrielamichelle</a></span>
+</div>
+</div></div>
+    <div class="reveal">
+      <div class="founder-cards" data-dots="founderDots">
+        <div class="founder-card"><div class="founder-name"><em>The Story Behind</em> That Girl Experiences</div><p class="founder-text">I started That Girl Experiences because I wanted the kind of girls trip I always wished existed: <strong>for ocean lovers &amp; adventurers, with a strong focus on friendships &amp; community, lifemaxxing together, wellness &amp; growth - one that's genuinely transformative.</strong> I've always had a strong vision of helping people become the best version of themselves, living life to the fullest and building a supportive community of women who build each other up &amp; want to see each other succeed. <strong>I genuinely believe that my true, core purpose is to build a supportive female travel community to help women see the world, become the best version of themselves and live our lives to the fullest together.</strong></p></div>
+        <div class="founder-card"><p class="founder-text">My story: <strong>I'm Indonesian — born, raised &amp; lived there for 16 years</strong> before moving to Sydney, Australia. I've been to Bali more than <strong>12+ times</strong>, I know the best places, the local &amp; hidden spots, and we'll be with you every step of the way.</p></div>
+        <div class="founder-card"><div class="founder-points">
+<div class="founder-point"><span>✓</span>Indonesian, born &amp; raised, super passionate about travel, helping others &amp; building a supportive female community </div>
+<div class="founder-point"><span>✓</span>I'm a Pisces, ocean &amp; marine life lover, massive foodie, gym &amp; wellness girlie, massive girls' girl &amp; scuba diver </div>
+<div class="founder-point"><span>✓</span>I truly care about providing you with the best experience on every trip</div>
+</div><a class="founder-ig" href="https://instagram.com/ggabrielamichelle" rel="noopener" target="_blank">📸 Follow me @ggabrielamichelle</a><div class="founder-sign">I can't wait to meet you, xx Gabs</div></div>
+      </div>
+      <div class="swipe-dots" id="founderDots"></div>
+    </div>
+  </div>
+</section>
+
+<section class="wa-join-section">
+<div class="wa-join-card">
+<div class="wa-join-tag">Join our WhatsApp Girls Community</div>
+<h2 class="wa-join-title">Join the <em>Girls Travel Community</em></h2>
+<p class="wa-join-sub">Be the first to know when new trips drop, exclusive moments, travel tips, the latest trip updates &amp; special discounts. Our WhatsApp Girls Travel community is where it all happens✨</p>
+<a class="wa-join-btn" href="https://chat.whatsapp.com/Hr1drTOB4wj8vKOVcLDvaB" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 32 32"><path d="M16.003 2.667C8.643 2.667 2.67 8.64 2.67 16c0 2.35.616 4.65 1.786 6.677L2.667 29.333l6.83-1.79A13.27 13.27 0 0 0 16.003 29.3C23.36 29.3 29.333 23.327 29.333 16S23.36 2.667 16.003 2.667zm0 24.06a11.03 11.03 0 0 1-5.62-1.54l-.403-.24-4.054 1.063 1.08-3.95-.262-.406A10.98 10.98 0 0 1 5.07 16c0-6.03 4.905-10.933 10.934-10.933 2.92 0 5.664 1.138 7.73 3.205a10.86 10.86 0 0 1 3.2 7.73c0 6.03-4.904 10.725-10.93 10.725zm6.003-8.18c-.328-.165-1.946-.96-2.247-1.07-.3-.11-.52-.165-.74.165-.218.328-.848 1.07-1.04 1.29-.19.218-.383.246-.71.082-.328-.165-1.388-.512-2.644-1.632-.977-.872-1.637-1.948-1.83-2.276-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.575.165-.192.218-.328.328-.547.11-.218.055-.41-.027-.575-.082-.165-.74-1.785-1.014-2.443-.267-.642-.538-.555-.74-.565l-.63-.011c-.218 0-.575.082-.876.41-.3.328-1.15 1.124-1.15 2.744 0 1.62 1.177 3.185 1.342 3.404.165.218 2.318 3.54 5.616 4.965.785.34 1.397.543 1.874.695.787.25 1.503.215 2.07.13.632-.094 1.946-.795 2.22-1.563.273-.767.273-1.425.19-1.563-.082-.137-.3-.218-.628-.382z"></path></svg>
+      Join The Community🤍
+    </a>
+</div>
+</section>
+
+<section class="trust-section wash" id="secure-booking">
+<div class="section-tag reveal">Book With Confidence</div>
+<h2 class="section-title reveal">Your Booking Is <em>Protected</em></h2>
+<p class="section-subtitle reveal">As a new travel brand, we know trust is everything — so here's exactly how your everything is handled and how we keep you safe every step of the way.</p>
+<div class="trust-grid" data-dots="trustDots">
+<div class="trust-card reveal">
+<span class="trust-icon">🔒</span>
+<div class="trust-card-title">Secure Payments via WeTravel</div>
+<div class="trust-card-text">Every booking is processed through <strong>WeTravel</strong> — the trusted third-party booking &amp; payments platform used by thousands of travel companies worldwide. Payments run on <strong>bank-level encryption via Stripe.</strong></div>
+</div>
+<div class="trust-card reveal">
+<span class="trust-icon">🤍</span>
+<div class="trust-card-title">We Don't Get Paid Until You've Travelled</div>
+<div class="trust-card-text"><strong>WeTravel holds your payment securely and releases nothing to us until after your trip is completed</strong>. Your money stays protected the entire time.</div>
+</div>
+<div class="trust-card reveal">
+<span class="trust-icon">🧾</span>
+<div class="trust-card-title">Instant Confirmation</div>
+<div class="trust-card-text">The moment you book, you'll get an <strong>official WeTravel confirmation &amp; receipt instantly</strong> via email, plus a booking confirmation and welcome message from us. Your spot is locked in - in writing.</div>
+</div>
+<div class="trust-card reveal">
+<span class="trust-icon">📄</span>
+<div class="trust-card-title">Clear Terms &amp; Cancellation</div>
+<div class="trust-card-text">We have a clear &amp; transparent<strong> cancellation policy</strong> so you always know exactly where you stand. No surprises, no fine print.</div>
+</div>
+</div><div class="swipe-dots" id="trustDots"></div>
+<div class="trust-badge-row reveal">
+<span class="trust-badge">🛡️ Bank-level encryption</span>
+<span class="trust-badge">🇦🇺 Registered Australian business · ABN 44228347673</span>
+</div>
+<div class="cta-center reveal" style="margin: 0.8rem auto 0; text-align: center; justify-content: center;">
+<a class="final-btn reveal" href="#trips">Upcoming Trips →</a>
+</div>
+</section>
+
+<section class="bookflow-section" id="how-booking-works">
+<h2 class="section-title reveal">How Booking <em>Works</em></h2>
+<div class="bookflow-steps">
+<div class="bookflow-step reveal"><div class="bookflow-num">1</div><div><div class="bookflow-step-title">Small Deposit</div><div class="bookflow-step-text">Book Now &amp; secure your spot with a small deposit through WeTravel's secure checkout. You'll instantly get a booking confirmation &amp; receipt via email that confirms your spot.</div></div></div>
+<div class="bookflow-step reveal"><div class="bookflow-num">2</div><div><div class="bookflow-step-title">I'll personally be your host</div><div class="bookflow-step-text">You'll hear from me directly, get added to our girls trip group chat so you can meet the other girls &amp; we'll send you all the info you need to know and packing list before you fly.</div></div></div>
+<div class="bookflow-step reveal"><div class="bookflow-num">3</div><div><div class="bookflow-step-title">Pay in 4, interest-free</div><div class="bookflow-step-text">Pay the remaining in 4 interest-free instalments before departure, at no additional costs.</div></div></div>
+<div class="bookflow-step reveal"><div class="bookflow-num">4</div><div><div class="bookflow-step-title">Just pack your bags &amp; go!</div><div class="bookflow-step-text">We'll pick you up from the airport straight to our accommodation, meet the girls and take care of everything for you!</div></div></div>
+</div>
+<div class="bookflow-cancel reveal">
+<div class="bookflow-cancel-title">Changed your mind?</div>
+<div class="bookflow-cancel-text">Our cancellation policy is clear, transparent &amp; fair. You can read our <a href="cancellation-policy.html" rel="noopener" target="_blank">full cancellation policy here</a></div>
+</div>
+</section>
+
+<section class="final-cta-section">
+<h2 class="final-title reveal">Your Dream Life <em>Starts Here.</em></h2>
+<p class="final-text reveal">The friendships &amp; connections you'll make, the surreal memories &amp; feelings you'll experience, the version of yourself you'll discover — it all starts here. Don't wait for the "right time." This is YOUR time now.</p>
+<a class="final-btn reveal" href="#trips">Join Our Trips →</a>
+</section>
+
+<section class="callbook-section" id="book-a-call">
+<div class="section-tag reveal">Still Deciding?</div>
+<h2 class="section-title reveal">Talk To Us <em>First</em></h2>
+<div class="callbook-wrap reveal">
+<div class="callbook-title">Ask us anything🤍</div>
+<p class="callbook-sub">No pressure, no sales pitch — just answering every question you have so you feel 100% sure before you book. Message us on WhatsApp to book in a free 10-min call with Gabs, no commitment or obligations.</p>
+<div class="callbook-btns">
+<a class="callbook-btn callbook-btn-wa" href="https://wa.me/message/NSTR4FXYSZKTJ1" rel="noopener" target="_blank">💬 Ask us anything / book a call</a>
+<a class="callbook-btn callbook-btn-email" href="mailto:thatgirlexperiences@gmail.com">✉️ Email us</a>
+</div>
+</div>
+</section>
+
+<section class="social-section">
+<div class="section-tag reveal">Bucket-list inspo &amp; the latest updates</div>
+<h2 class="section-title reveal">See More on Insta &amp; TikTok✨</h2>
+<div class="social-handle reveal"><a href="https://instagram.com/thatgirl.experiences" rel="noopener" target="_blank">@thatgirl.experiences</a></div>
+<div class="social-grid reveal">
+<a aria-label="Instagram" class="social-tile" href="https://www.instagram.com/p/DYdiRfmiafp/?img_index=1" rel="noopener" target="_blank">
+<img alt="Instagram post" decoding="async" height="533" loading="lazy" src="28.png" width="300"/>
+<span class="social-tile-play"></span>
+</a>
+<a aria-label="TikTok" class="social-tile" href="https://www.tiktok.com/@thatgirl.experiences/video/7630670752043355412" rel="noopener" target="_blank">
+<img alt="TikTok video" decoding="async" height="533" loading="lazy" src="30.png" width="300"/>
+<span class="social-tile-play"></span>
+</a>
+<a aria-label="Instagram" class="social-tile" href="https://www.instagram.com/p/DX34_6uxuVz/" rel="noopener" target="_blank">
+<img alt="Instagram post" decoding="async" height="533" loading="lazy" src="25.png" width="300"/>
+<span class="social-tile-play"></span>
+</a>
+<a aria-label="TikTok" class="social-tile" href="https://www.tiktok.com/@thatgirl.experiences/video/7634058450003086612" rel="noopener" target="_blank">
+<img alt="TikTok video" decoding="async" height="533" loading="lazy" src="35.png" width="300"/>
+<span class="social-tile-play"></span>
+</a>
+</div>
+<div class="social-cta-row reveal">
+<a class="social-btn social-btn-ig" href="https://instagram.com/thatgirl.experiences" rel="noopener" target="_blank">Follow us on Instagram</a>
+<a class="social-btn social-btn-tt" href="https://www.tiktok.com/@thatgirl.experiences" rel="noopener" target="_blank">Follow us on TikTok</a>
+</div>
+</section>
+<div class="mission-strip">
+<div class="mission-label">Our Mission</div>
+<p class="mission-text">Our mission is to help women <strong>travel the world, grow into the best version of themselves, step into their dream life, and have an amazing, supportive female community that help each other win </strong> — all while experiencing bucket-list experiences that become our core memories forever.</p>
+</div>
+
+<section id="contact" style="background:var(--cream);">
+<div class="section-tag reveal">Get In Touch</div>
+<h2 class="section-title reveal">Have a <em>Question?</em></h2>
+<p class="section-subtitle reveal">We'd love to hear from you! Fill in the form below &amp; we'll get back to you as soon as possible.</p>
+<form action="https://formspree.io/f/xeerjyzr" method="POST" style="max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:1.35rem;">
+<div class="contact-name-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+<div style="display:flex;flex-direction:column;gap:0.45rem;">
+<label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">First Name</label>
+<input name="first_name" onblur="this.style.borderColor='rgba(201,169,110,0.22)'" onfocus="this.style.borderColor='var(--ocean)'" placeholder="Your first name" required="" style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.3s;width:100%;" type="text"/>
+</div>
+<div style="display:flex;flex-direction:column;gap:0.45rem;">
+<label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">Last Name</label>
+<input name="last_name" onblur="this.style.borderColor='rgba(201,169,110,0.22)'" onfocus="this.style.borderColor='var(--ocean)'" placeholder="Your last name" required="" style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.3s;width:100%;" type="text"/>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:0.45rem;">
+<label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">Email</label>
+<input name="email" onblur="this.style.borderColor='rgba(201,169,110,0.22)'" onfocus="this.style.borderColor='var(--ocean)'" placeholder="your@email.com" required="" style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.3s;" type="email"/>
+</div>
+<div style="display:flex;flex-direction:column;gap:0.45rem;">
+<label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">Message</label>
+<textarea name="message" onblur="this.style.borderColor='rgba(201,169,110,0.22)'" onfocus="this.style.borderColor='var(--ocean)'" placeholder="Your message..." required="" rows="5" style="padding:0.9rem 1.2rem;border:1px solid rgba(201,169,110,0.22);border-radius:12px;font-family:'Jost',sans-serif;font-size:0.97rem;color:var(--text-dark);background:var(--white);outline:none;resize:vertical;transition:border-color 0.3s;"></textarea>
+</div>
+<input name="_subject" type="hidden" value="New enquiry from That Girl Experiences website"/>
+<input name="_next" type="hidden" value="https://thatgirlexperiences.com"/>
+<button style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--white);border:none;padding:1.15rem 3rem;font-family:'Jost',sans-serif;font-size:0.88rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;border-radius:60px;cursor:pointer;transition:all 0.4s ease;box-shadow:0 8px 30px rgba(201,169,110,0.3);" type="submit">Send Message</button>
+</form>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col"><div class="footer-brand">That Girl Experiences</div></div>
+    <div class="footer-col"><h4>Trips</h4>
+      <a href="bali.html">ISLAND LIFE Girls Trip</a>
+      <a href="komodo.html">BECOMING HER - KOMODO ISLANDS</a>
+      <a href="maldives.html">MALDIVES Girls Trip</a>
+    </div>
+    <div class="footer-col"><h4>More</h4>
+      <a href="travel-identity.html" target="_blank" rel="noopener">DISCOVER YOUR TRAVEL IDENTITY™</a>
+      <a href="cancellation-policy.html" target="_blank" rel="noopener">TERMS &amp; CONDITIONS</a>
+    </div>
+  </div>
+  <p class="footer-disclaimer">For all enquiries: thatgirlexperiences@gmail.com · All prices are in USD($) unless indicated otherwise. Exchange rates are indicative only and subject to change · © 2026 That Girl Experiences</p>
+</footer>
+<div class="moments-lb" id="momentsLb" role="dialog" aria-modal="true" aria-label="Trip photo viewer">
+  <button class="moments-lb-btn moments-lb-close" id="momentsLbClose" type="button" aria-label="Close">&#10005;</button>
+  <button class="moments-lb-btn moments-lb-prev" id="momentsLbPrev" type="button" aria-label="Previous">&#8592;</button>
+  <div class="moments-lb-stage" id="momentsLbStage"></div>
+  <button class="moments-lb-btn moments-lb-next" id="momentsLbNext" type="button" aria-label="Next">&#8594;</button>
+</div>
+
+<script>
+/* CAMERA ROLL — add one line per photo/video (same as before). Order = order on the page. */
+window.TGE_MOMENTS = [
+    { src: 'aug26/islandlife_sunset.webp' },
+    { src: 'aug26/girls.webp' },
+    { src: 'aug26/batursunrise.webp' },
+    { src: 'aug26/ATV1.webp' },
+    { src: 'aug26/LFS.webp' },
+    { src: 'aug26/girlsconnections.webp' },
+    { src: 'aug26/pic.webp' },
+    { src: 'aug26/grouppic.webp' },
+    { src: 'aug26/ATV2.webp' },
+    { src: 'aug26/ATV.webp' },
+  ];
+</script>
+<!-- Tawk.to LIVE CHAT — heavily deferred to not impact LCP -->
+<script type="text/javascript">
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var Tawk_API=window.Tawk_API||{}, Tawk_LoadStart=new Date();
+    window.Tawk_API = Tawk_API;
+    Tawk_API.customStyle = {
+      visibility: {
+        desktop: { position: 'br', xOffset: 15, yOffset: 15 },
+        mobile:  { position: 'br', xOffset: 10, yOffset: 75 }
+      }
+    };
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/69f404ce5ac9531c37ee0999/1jngj5hmq';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  }, 4000);
+});
+</script>
+<a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener" class="tge-wa-fab" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.003 2.667C8.643 2.667 2.67 8.64 2.67 16c0 2.35.616 4.65 1.786 6.677L2.667 29.333l6.83-1.79A13.27 13.27 0 0 0 16.003 29.3C23.36 29.3 29.333 23.327 29.333 16S23.36 2.667 16.003 2.667zm0 24.06a11.03 11.03 0 0 1-5.62-1.54l-.403-.24-4.054 1.063 1.08-3.95-.262-.406A10.98 10.98 0 0 1 5.07 16c0-6.03 4.905-10.933 10.934-10.933 2.92 0 5.664 1.138 7.73 3.205a10.86 10.86 0 0 1 3.2 7.73c0 6.03-4.904 10.725-10.93 10.725zm6.003-8.18c-.328-.165-1.946-.96-2.247-1.07-.3-.11-.52-.165-.74.165-.218.328-.848 1.07-1.04 1.29-.19.218-.383.246-.71.082-.328-.165-1.388-.512-2.644-1.632-.977-.872-1.637-1.948-1.83-2.276-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.575.165-.192.218-.328.328-.547.11-.218.055-.41-.027-.575-.082-.165-.74-1.785-1.014-2.443-.267-.642-.538-.555-.74-.565l-.63-.011c-.218 0-.575.082-.876.41-.3.328-1.15 1.124-1.15 2.744 0 1.62 1.177 3.185 1.342 3.404.165.218 2.318 3.54 5.616 4.965.785.34 1.397.543 1.874.695.787.25 1.503.215 2.07.13.632-.094 1.946-.795 2.22-1.563.273-.767.273-1.425.19-1.563-.082-.137-.3-.218-.628-.382z"/></svg>
+  <span class="tge-wa-fab-label">Message us on WhatsApp!</span>
+</a>
+<script>
+/* =====================================================================
+   THAT GIRL EXPERIENCES — site behaviour (Nov 2026 redesign)
+   Shared by index.html and every trip page. Nothing here changes your
+   wording — it only adds the interactive bits.
+   ===================================================================== */
+(function () {
+  'use strict';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function txt(el, s) { var x = el && (s ? el.querySelector(s) : el); return x ? x.textContent.trim() : ''; }
+  function statusClass(s) {
+    var u = (s || '').toUpperCase();
+    if (u.indexOf('SOLD OUT') > -1) return 'out';
+    if (u.indexOf('LEFT') > -1 || u.indexOf('ALMOST') > -1 || u.indexOf('LAST') > -1) return 'hot';
+    return 'calm';
+  }
+  var MONTHS = { jan:0, feb:1, mar:2, apr:3, may:4, jun:5, jul:6, aug:7, sep:8, oct:9, nov:10, dec:11 };
+  function endDate(t) {
+    var m = /(\d{1,2})\s+([A-Za-z]{3})[a-z]*\s+(\d{4})\s*$/.exec((t || '').trim());
+    if (!m) return null;
+    var mo = MONTHS[m[2].toLowerCase()];
+    return mo == null ? null : new Date(+m[3], mo, +m[1], 23, 59);
+  }
+  function smooth(el) { if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }
+
+  /* ---------- Header + menu ---------- */
+  var nav = $('#mainNav');
+  window.addEventListener('scroll', function () { if (nav) nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  var menu = $('#navMenu'), menuBtn = $('#navMenuBtn');
+  if (menu && menuBtn) {
+    var closeMenu = function () { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
+    menuBtn.addEventListener('click', function (e) { e.stopPropagation(); var o = menu.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+    $$('.nav-menu-link', menu).forEach(function (a) { a.addEventListener('click', closeMenu); });
+    document.addEventListener('click', function (e) { if (!menu.contains(e.target)) closeMenu(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+    $$('.reveal').forEach(function (el) { io.observe(el); });
+  } else { $$('.reveal').forEach(function (el) { el.classList.add('visible'); }); }
+
+  /* ---------- Photos that haven't been uploaded yet: hide the broken icon ---------- */
+  document.addEventListener('error', function (e) { if (e.target && e.target.tagName === 'IMG') e.target.classList.add('img-missing'); }, true);
+  $$('img').forEach(function (img) { if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) img.classList.add('img-missing'); });
+
+  /* ---------- Hero video: hide if the file can't load ---------- */
+  var vid = $('.hero-video');
+  if (vid) {
+    var hideVid = function () { vid.style.display = 'none'; };
+    vid.addEventListener('error', hideVid, true);
+    var src = $('source', vid); if (src) src.addEventListener('error', hideVid);
+  }
+
+  /* ---------- Typing headline (homepage) ---------- */
+  var th = $('#typingHeadline'), ts = $('#typingSubtitle');
+  if (th) {
+    var plain = th.getAttribute('data-plain') || '', ital = th.getAttribute('data-italic') || '';
+    var finish = function () { if (ts) ts.style.opacity = '1'; };
+    if (reduce || !('IntersectionObserver' in window)) { th.innerHTML = ''; th.appendChild(document.createTextNode(plain)); var em0 = document.createElement('em'); em0.textContent = ital; th.appendChild(em0); finish(); }
+    else {
+      var tio = new IntersectionObserver(function (es) {
+        if (!es[0].isIntersecting) return; tio.disconnect();
+        var full = plain + ital, i = 0, cur = document.createElement('span'); cur.className = 'typing-cursor'; cur.style.height = '0.85em';
+        th.textContent = ''; th.appendChild(cur);
+        (function type() {
+          if (i < full.length) {
+            var ch = full[i++];
+            if (i <= plain.length) th.insertBefore(document.createTextNode(ch), cur);
+            else { var em = $('em', th); if (!em) { em = document.createElement('em'); th.insertBefore(em, cur); } em.textContent += ch; }
+            setTimeout(type, 38);
+          } else { setTimeout(function () { cur.remove(); finish(); }, 500); }
+        })();
+      }, { threshold: 0.4 });
+      tio.observe(th);
+    }
+  }
+
+  /* ---------- Homepage: trip finder + vibe filter ---------- */
+  var cards = $$('.trips-grid .trip-card');
+  if (cards.length) {
+    var state = { vibe: 'all', where: 'all' };
+    var whereSel = $('#tgxWhere'), vibeSel = $('#tgxVibe');
+    if (whereSel) cards.forEach(function (c) { var o = document.createElement('option'); o.value = c.getAttribute('data-where'); o.textContent = o.value; whereSel.appendChild(o); });
+    var apply = function () {
+      cards.forEach(function (c) {
+        var v = (c.getAttribute('data-vibes') || '').split(' ');
+        var ok = (state.vibe === 'all' || v.indexOf(state.vibe) > -1) && (state.where === 'all' || c.getAttribute('data-where') === state.where);
+        c.classList.toggle('tgx-hide', !ok); if (ok) c.classList.add('visible');
+      });
+      $$('.tgx-vibe').forEach(function (b) { var on = b.getAttribute('data-vibe') === state.vibe; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      if (vibeSel) vibeSel.value = state.vibe;
+    };
+    $$('.tgx-vibe').forEach(function (b) { b.addEventListener('click', function () { state.vibe = b.getAttribute('data-vibe'); apply(); }); });
+    var finder = $('#tgxFinder');
+    if (finder) finder.addEventListener('submit', function (e) { e.preventDefault(); state.where = whereSel ? whereSel.value : 'all'; state.vibe = vibeSel ? vibeSel.value : 'all'; apply(); smooth($('#trips')); });
+  }
+
+  /* ---------- Horizontal scrollers with arrows ---------- */
+  $$('[data-scroller]').forEach(function (wrap) {
+    var track = $('.hscroll', wrap), prev = $('.scroll-prev', wrap), next = $('.scroll-next', wrap);
+    if (!track) return;
+    var step = function () { return Math.max(260, track.clientWidth * 0.8); };
+    var upd = function () { if (prev) prev.disabled = track.scrollLeft < 8; if (next) next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8; };
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); setTimeout(upd, 300);
+  });
+
+  /* ---------- Camera roll + lightbox ---------- */
+  var mg = $('#momentsGrid'), list = window.TGE_MOMENTS || [];
+  if (mg && list.length) {
+    var isVid = function (s) { return /\.(mp4|webm|m4v|mov|ogv)$/i.test(s); };
+    list.forEach(function (m, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'moment-tile'; b.setAttribute('aria-label', 'Open photo ' + (i + 1));
+      if (isVid(m.src)) { var v = document.createElement('video'); v.src = m.src; v.muted = true; v.playsInline = true; v.preload = 'metadata'; b.appendChild(v); var p = document.createElement('span'); p.className = 'play'; p.innerHTML = '&#9658;'; b.appendChild(p); }
+      else { var im = document.createElement('img'); im.src = m.src; im.alt = m.caption || ''; im.loading = 'lazy'; im.decoding = 'async'; b.appendChild(im); }
+      b.addEventListener('click', function () { openLb(i); });
+      mg.appendChild(b);
+    });
+    var lb = $('#momentsLb'), stage = $('#momentsLbStage'), lbI = 0;
+    var show = function () {
+      var m = list[lbI]; stage.innerHTML = '';
+      var el = isVid(m.src) ? document.createElement('video') : document.createElement('img');
+      el.src = m.src; if (isVid(m.src)) { el.controls = true; el.autoplay = true; el.playsInline = true; } else el.alt = m.caption || '';
+      stage.appendChild(el);
+    };
+    var openLb = function (i) { lbI = i; show(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; $('#momentsLbClose').focus(); };
+    var closeLb = function () { lb.classList.remove('open'); stage.innerHTML = ''; document.body.style.overflow = ''; };
+    $('#momentsLbClose').addEventListener('click', closeLb);
+    $('#momentsLbPrev').addEventListener('click', function () { lbI = (lbI - 1 + list.length) % list.length; show(); });
+    $('#momentsLbNext').addEventListener('click', function () { lbI = (lbI + 1) % list.length; show(); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', function (e) { if (!lb.classList.contains('open')) return; if (e.key === 'Escape') closeLb(); if (e.key === 'ArrowLeft') $('#momentsLbPrev').click(); if (e.key === 'ArrowRight') $('#momentsLbNext').click(); });
+  }
+
+  /* ---------- Dots under swipe rows (phones) ---------- */
+  $$('[data-dots]').forEach(function (row) {
+    var dots = document.getElementById(row.getAttribute('data-dots')); if (!dots) return;
+    var items = Array.prototype.slice.call(row.children);
+    items.forEach(function (it, i) { var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Card ' + (i + 1)); d.addEventListener('click', function () { row.scrollTo({ left: it.offsetLeft - row.offsetLeft - 18, behavior: 'smooth' }); }); dots.appendChild(d); });
+    var upd = function () { var c = row.scrollLeft + row.clientWidth / 2, best = 0, bd = 1e9; items.forEach(function (it, i) { var d = Math.abs(it.offsetLeft - row.offsetLeft + it.offsetWidth / 2 - c); if (d < bd) { bd = d; best = i; } }); $$('button', dots).forEach(function (b, i) { b.classList.toggle('on', i === best); }); };
+    row.addEventListener('scroll', upd, { passive: true }); upd();
+  });
+
+  /* ---------- How booking works: clickable steps ---------- */
+  $$('.bookflow-section').forEach(function (sec) {
+    var wrap = $('.bookflow-steps', sec); if (!wrap) return;
+    var steps = $$('.bookflow-step', wrap); if (!steps.length) return;
+    var bar = document.createElement('div'); bar.className = 'tge-steps'; bar.setAttribute('role', 'tablist');
+    var btns = steps.map(function (st, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'tge-step-btn'; b.setAttribute('role', 'tab');
+      b.innerHTML = '<span class="n">' + (i + 1) + '</span><span class="t"></span>';
+      $('.t', b).textContent = txt(st, '.bookflow-step-title');
+      b.addEventListener('click', function () { go(i); });
+      bar.appendChild(b); return b;
+    });
+    var go = function (i) { steps.forEach(function (s, k) { s.classList.toggle('tge-show', k === i); }); btns.forEach(function (b, k) { b.classList.toggle('active', k === i); b.setAttribute('aria-selected', k === i ? 'true' : 'false'); }); };
+    wrap.parentNode.insertBefore(bar, wrap); go(0);
+  });
+
+  /* ---------- FAQs: one open at a time ---------- */
+  $$('.faq-item').forEach(function (item) {
+    var q = $('.faq-question', item); if (!q) return;
+    q.setAttribute('role', 'button'); q.setAttribute('tabindex', '0'); q.setAttribute('aria-expanded', 'false');
+    var toggle = function () { var open = !item.classList.contains('open'); $$('.faq-item.open').forEach(function (o) { o.classList.remove('open'); $('.faq-question', o).setAttribute('aria-expanded', 'false'); }); item.classList.toggle('open', open); q.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  /* ---------- Why travel with us: tap-to-open on phones ---------- */
+  $$('.why-card-head').forEach(function (h) {
+    h.addEventListener('click', function () { if (window.innerWidth > 640) return; var c = h.parentNode, o = !c.classList.contains('open'); c.classList.toggle('open', o); h.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+  });
+
+  /* ---------- Hero stats count up ---------- */
+  $$('.hero-detail-value').forEach(function (el) {
+    var end = parseInt(el.textContent, 10); if (isNaN(end) || reduce) return;
+    var t0 = null; el.textContent = '0';
+    var tick = function (t) { if (!t0) t0 = t; var p = Math.min(1, (t - t0) / 1200); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); };
+    setTimeout(function () { requestAnimationFrame(tick); }, 400);
+  });
+
+  /* =================== TRIP PAGES =================== */
+
+  /* Gallery mosaic → scroll to the slideshow; mobile photo counter */
+  $$('[data-goto]').forEach(function (b) { b.addEventListener('click', function () { smooth(document.getElementById(b.getAttribute('data-goto'))); }); });
+  var mos = $('.trip-mosaic'), mcount = $('.mosaic-count');
+  if (mos && mcount) { var tiles = $$('.mosaic-tile', mos); var mu = function () { var i = Math.round(mos.scrollLeft / Math.max(1, mos.clientWidth)); mcount.textContent = (i + 1) + ' / ' + tiles.length; }; mos.addEventListener('scroll', mu, { passive: true }); mu(); }
+
+  /* Paradise slideshow */
+  var track = $('#slideshowTrack');
+  if (track) {
+    var slides = $$('.slide', track), wrapS = track.parentNode, dotsS = $('#slideDots'), cur = 0, timer = null, hover = false;
+    var goS = function (i) { cur = (i + slides.length) % slides.length; track.style.transform = 'translateX(' + (-100 * cur) + '%)'; if (dotsS) $$('button', dotsS).forEach(function (d, k) { d.classList.toggle('on', k === cur); }); };
+    if (dotsS) slides.forEach(function (s, i) { var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Photo ' + (i + 1)); d.addEventListener('click', function () { goS(i); }); dotsS.appendChild(d); });
+    var prevS = $('.slide-prev', wrapS), nextS = $('.slide-next', wrapS);
+    if (prevS) prevS.addEventListener('click', function () { goS(cur - 1); });
+    if (nextS) nextS.addEventListener('click', function () { goS(cur + 1); });
+    wrapS.addEventListener('mouseenter', function () { hover = true; }); wrapS.addEventListener('mouseleave', function () { hover = false; });
+    var x0 = null; wrapS.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    wrapS.addEventListener('touchend', function (e) { if (x0 == null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) goS(cur + (dx < 0 ? 1 : -1)); x0 = null; });
+    if (!reduce) timer = setInterval(function () { if (!hover && !document.hidden) goS(cur + 1); }, 5000);
+    goS(0);
+  }
+
+  /* Accommodation mini-sliders */
+  $$('.stay-slider').forEach(function (sl) {
+    var tr = $('.stay-slides', sl), imgs = tr ? $$('img', tr) : [], dots = $('.stay-slider-dots', sl), i = 0;
+    if (imgs.length <= 1) { sl.setAttribute('data-single', ''); return; }
+    var go = function (n) { i = (n + imgs.length) % imgs.length; tr.style.transform = 'translateX(' + (-100 * i) + '%)'; if (dots) $$('button', dots).forEach(function (d, k) { d.classList.toggle('active', k === i); }); };
+    if (dots) imgs.forEach(function (_, n) { var d = document.createElement('button'); d.type = 'button'; d.className = 'stay-slider-dot'; d.setAttribute('aria-label', 'Photo ' + (n + 1)); d.addEventListener('click', function () { go(n); }); dots.appendChild(d); });
+    var p = $('.stay-slider-prev', sl), n2 = $('.stay-slider-next', sl);
+    if (p) p.addEventListener('click', function () { go(i - 1); }); if (n2) n2.addEventListener('click', function () { go(i + 1); });
+    var x0 = null; sl.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    sl.addEventListener('touchend', function (e) { if (x0 == null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 35) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
+    go(0);
+  });
+
+  /* Departures: date tabs, Pick your dates board, booking card, bottom bar — all kept in sync */
+  var tabs = $$('.dep-tab'), now = new Date();
+  tabs.forEach(function (t) { t.setAttribute('data-status', statusClass(txt(t, '.dep-tab-status'))); var e = endDate(txt(t, '.dep-tab-date')); if (e && e < now) t.classList.add('is-past'); });
+  var live = tabs.filter(function (t) { return !t.classList.contains('is-past'); });
+  var activeTab = function () { return tabs.filter(function (t) { return t.classList.contains('active'); })[0]; };
+  var listeners = [];
+  var select = function (t) {
+    if (!t) return;
+    tabs.forEach(function (x) { var on = x === t; x.classList.toggle('active', on); x.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    $$('.dep-panel').forEach(function (p) { p.classList.toggle('active', p.getAttribute('data-dep') === t.getAttribute('data-dep')); });
+    listeners.forEach(function (f) { f(t); });
+  };
+  tabs.forEach(function (t) { t.addEventListener('click', function () { select(t); }); });
+  var pressBook = function () { var b = $('#wt-btn-nav') || $('.wtrvl-checkout_button'); if (b) b.click(); };
+  var goInterest = function () { smooth($('.interest-section')); };
+
+  var board = $('#tgxDeps'), len = board ? board.getAttribute('data-length') || '' : '';
+  if (board) live.forEach(function (t) {
+    var d = txt(t, '.dep-tab-date'), s = txt(t, '.dep-tab-status'), cls = statusClass(s);
+    var r = document.createElement('div'); r.className = 'tgx-dep' + (cls === 'out' ? ' is-out' : ''); r.setAttribute('role', 'listitem');
+    var db = document.createElement('button'); db.type = 'button'; db.className = 'tgx-dep-date'; db.textContent = d;
+    db.addEventListener('click', function () { select(t); smooth($('#where-you-stay')); });
+    var l = document.createElement('span'); l.className = 'tgx-dep-len'; l.textContent = len;
+    var st = document.createElement('span'); st.className = 'tgx-dep-status ' + (cls === 'calm' ? '' : cls); st.textContent = s;
+    var c = document.createElement('button'); c.type = 'button';
+    if (cls === 'out') { c.className = 'tgx-dep-cta alt'; c.textContent = 'Register Interest ✦'; c.addEventListener('click', goInterest); }
+    else { c.className = 'tgx-dep-cta'; c.textContent = 'BOOK NOW'; c.addEventListener('click', function () { select(t); pressBook(); }); }
+    r.appendChild(db); r.appendChild(l); r.appendChild(st); r.appendChild(c); board.appendChild(r);
+    listeners.push(function (a) { r.classList.toggle('active', a === t); });
+  });
+
+  var bookDeps = $('#bookDeps');
+  if (bookDeps) live.forEach(function (t) {
+    var s = txt(t, '.dep-tab-status'), cls = statusClass(s);
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'book-dep' + (cls === 'out' ? ' is-out' : '');
+    var a = document.createElement('span'); a.textContent = txt(t, '.dep-tab-date');
+    var c = document.createElement('small'); c.className = cls; c.textContent = s;
+    b.appendChild(a); b.appendChild(c); b.addEventListener('click', function () { select(t); });
+    bookDeps.appendChild(b);
+    listeners.push(function (x) { b.classList.toggle('active', x === t); b.setAttribute('aria-pressed', x === t ? 'true' : 'false'); });
+  });
+  var bStatus = $('#bookStatus'), bInterest = $('#bookInterest'), barTop = $('#bookBarTop');
+  listeners.push(function (t) {
+    var s = txt(t, '.dep-tab-status'), cls = statusClass(s);
+    if (bStatus) { bStatus.textContent = s; bStatus.className = 'book-status ' + cls; }
+    if (bInterest) bInterest.hidden = cls !== 'out';
+    if (barTop) { barTop.innerHTML = ''; barTop.appendChild(document.createTextNode(txt(t, '.dep-tab-date') + ' · ')); var bb = document.createElement('b'); bb.textContent = s; barTop.appendChild(bb); }
+  });
+  if (bInterest) bInterest.addEventListener('click', goInterest);
+  if (tabs.length) {
+    var want = null; try { want = new URLSearchParams(location.search).get('dep'); } catch (e) {}
+    var first = (want && $('.dep-tab[data-dep="' + want + '"]')) || (activeTab() && !activeTab().classList.contains('is-past') ? activeTab() : null) || live.filter(function (t) { return statusClass(txt(t, '.dep-tab-status')) !== 'out'; })[0] || live[0] || tabs[0];
+    select(first);
+  }
+
+  /* Itinerary: one day at a time (desktop day list on the left, phones use arrows + island pills) */
+  var tl = $('.itinerary-timeline'), itin = $('#itin');
+  if (tl && itin) {
+    var days = $$('.day-card', tl), photos = []; try { photos = JSON.parse(itin.getAttribute('data-photos') || '[]'); } catch (e) {}
+    var route = []; try { route = JSON.parse(itin.getAttribute('data-route') || '[]'); } catch (e) {}
+    var rail = $('.itin-rail', itin), body = $('.itin-body', itin), title = $('.itin-title', itin), count = $$('.itin-count-n', itin), img = $('.itin-photo img', itin), rbox = $('.itin-route');
+    var di = 0, total = days.length;
+    var railBtns = days.map(function (d, i) {
+      var b = document.createElement('button'); b.type = 'button';
+      b.innerHTML = '<small></small><span></span>'; $('small', b).textContent = txt(d, '.day-marker'); $('span', b).textContent = txt(d, '.day-title');
+      b.addEventListener('click', function () { goD(i); }); rail.appendChild(b); return b;
+    });
+    var routeBtns = route.map(function (r, k) {
+      if (k) { var ar = document.createElement('span'); ar.className = 'arrow'; ar.setAttribute('aria-hidden', 'true'); ar.textContent = '→'; rbox.appendChild(ar); }
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = r.label;
+      b.addEventListener('click', function () { goD(r.days[0] - 1); }); rbox.appendChild(b); return { b: b, days: r.days };
+    });
+    var goD = function (i) {
+      di = (i + total) % total; var d = days[di];
+      title.textContent = txt(d, '.day-title'); count.forEach(function (c) { c.textContent = 'DAY ' + (di + 1) + '/' + total; });
+      body.innerHTML = ''; var hl = $('.day-highlights', d); if (hl) body.appendChild(hl.cloneNode(true));
+      body.style.animation = 'none'; body.offsetHeight; body.style.animation = '';
+      if (img) { var p = photos[di] || ''; if (p) { img.classList.remove('img-missing'); img.src = p; img.style.display = ''; } else img.style.display = 'none'; }
+      railBtns.forEach(function (b, k) { b.classList.toggle('on', k === di); b.setAttribute('aria-current', k === di ? 'true' : 'false'); });
+      routeBtns.forEach(function (r) { r.b.classList.toggle('on', r.days.indexOf(di + 1) > -1); });
+    };
+    $$('[data-itin="prev"]', itin).forEach(function (b) { b.addEventListener('click', function () { goD(di - 1); }); });
+    $$('[data-itin="next"]', itin).forEach(function (b) { b.addEventListener('click', function () { goD(di + 1); }); });
+    goD(0);
+  }
+
+  /* Section tabs: highlight the section you're reading */
+  var tabLinks = $$('.trip-tabs a');
+  if (tabLinks.length && 'IntersectionObserver' in window) {
+    var map = {}; tabLinks.forEach(function (a) { var id = a.getAttribute('href').slice(1); var s = document.getElementById(id); if (s) map[id] = a; });
+    var sio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { tabLinks.forEach(function (a) { a.classList.remove('active'); }); var a = map[e.target.id]; if (a) { a.classList.add('active'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); } } });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) { sio.observe(document.getElementById(id)); });
+  }
+
+  /* Bottom booking bar on phones/tablets: shows after the overview */
+  var bar = $('#bookBar'), ov = $('#overview'), endSec = $('.final-cta-section');
+  if (bar && ov) {
+    document.body.classList.add('has-bottom-bar');
+    var chk = function () { var past = ov.getBoundingClientRect().bottom < 80; var notEnd = !endSec || endSec.getBoundingClientRect().top > window.innerHeight; bar.classList.toggle('visible', past && notEnd); };
+    window.addEventListener('scroll', chk, { passive: true }); chk();
+  }
+})();
+
+</script>
+</body>
+</html>
