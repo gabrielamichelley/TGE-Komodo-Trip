@@ -873,6 +873,19 @@ html, body { overflow-x: hidden; }
   .wellness-card { flex: 0 0 82%; scroll-snap-align: center; }
   .wellness-section .swipe-dots { display: flex; }
 }
+
+/* ---- Fixes (Nov 4) ---- */
+.inclusion-item { align-items: flex-start; text-align: left; }
+.inclusion-item > .inclusion-check, .inclusion-item > .exclusion-x { flex: 0 0 auto; }
+.inclusion-item > span:last-child:not(.inclusion-check):not(.exclusion-x) { flex: 1; min-width: 0; text-align: left; }
+.hero-for::before { content: none !important; display: none !important; }
+.hero-for { padding: 1.35rem 1.5rem !important; }
+@media (max-width: 640px) { .hero-for { padding: 1.2rem 1.15rem !important; } }
+.slideshow-after { justify-content: center !important; }
+@media (max-width: 640px) {
+  .overview-reviews { transform: none !important; height: auto !important; overflow: visible !important; width: 100%; max-width: 100%; }
+  .overview-reviews .tge-rev-inner { transform-origin: left top; }
+}
 </style>
 </head>
 <body class="trip">
@@ -1454,36 +1467,36 @@ html, body { overflow-x: hidden; }
 <div class="inclusion-block reveal">
 <div class="inclusion-heading"><span>✓</span> Included</div>
 <div class="inclusion-list">
-<div class="inclusion-item"><span class="inclusion-check">✓</span>8 days twin-share accommodation (private pool villa + bungalows/hotels)</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Our Own Private Villa with Private Pool - the whole villa just for us girls!</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Hotels (no hostels, bunk beds or dorms ever), twin-share</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>3 ISLANDS: Bali, Nusa Lembongan &amp; Nusa Penida</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Swimming with Manta Rays</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Sunsets, Waterfalls, Temple &amp; Rice Terraces</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Massage</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Girls "Dress Up" Dinner</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Airport pickup</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Girls Trip to Ubud (including transfers to &amp; from Ubud)</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Some meals included (food-only)</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Island Hopping, speedboat &amp; transfers to and from Nusa Lembongan</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Island Hopping, speedboat &amp; transfers to and from Nusa Penida</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Snorkelling trip &amp; All snorkelling gear &amp; equipment</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Underwater documentation on our snorkelling trip</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Entry/retribution fees into Nusa Lembongan &amp; Nusa Penida</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Connections &amp; bond with like-minded girls</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Access to our Supportive Female Travel Community</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Travel planning support</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Access to our trip group chat pre &amp; post girls trip (so you can get to know each other first &amp; stay in touch after!)</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Pre &amp; post trip support</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Everything on the itinerary is included</div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>8 days twin-share accommodation (private pool villa + bungalows/hotels)</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Our Own Private Villa with Private Pool - the whole villa just for us girls!</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Hotels (no hostels, bunk beds or dorms ever), twin-share</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>3 ISLANDS: Bali, Nusa Lembongan &amp; Nusa Penida</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Swimming with Manta Rays</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Sunsets, Waterfalls, Temple &amp; Rice Terraces</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Massage</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Girls "Dress Up" Dinner</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Airport pickup</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Girls Trip to Ubud (including transfers to &amp; from Ubud)</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Some meals included (food-only)</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Island Hopping, speedboat &amp; transfers to and from Nusa Lembongan</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Island Hopping, speedboat &amp; transfers to and from Nusa Penida</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Snorkelling trip &amp; All snorkelling gear &amp; equipment</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Underwater documentation on our snorkelling trip</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Entry/retribution fees into Nusa Lembongan &amp; Nusa Penida</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Connections &amp; bond with like-minded girls</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Access to our Supportive Female Travel Community</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Travel planning support</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Access to our trip group chat pre &amp; post girls trip (so you can get to know each other first &amp; stay in touch after!)</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Pre &amp; post trip support</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Everything on the itinerary is included</span></div>
 </div>
 </div>
 <div class="inclusion-block reveal">
 <div class="inclusion-heading"><span>✗</span> Not Included</div>
 <div class="inclusion-list">
-<div class="inclusion-item"><span class="exclusion-x">✗</span>Flights to &amp; from Bali (DPS), Indonesia</div>
-<div class="inclusion-item"><span class="exclusion-x">✗</span>Personal expenses, beverages &amp; gratuities</div>
-<div class="inclusion-item"><span class="exclusion-x">✗</span>Travel insurance (required)</div>
+<div class="inclusion-item"><span class="exclusion-x">✗</span><span>Flights to &amp; from Bali (DPS), Indonesia</span></div>
+<div class="inclusion-item"><span class="exclusion-x">✗</span><span>Personal expenses, beverages &amp; gratuities</span></div>
+<div class="inclusion-item"><span class="exclusion-x">✗</span><span>Travel insurance (required)</span></div>
 </div>
 <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201,169,110,0.15);">
 <div class="inclusion-heading" style="font-size: 1.1rem;"><span>✈️</span> Getting There</div>
@@ -2288,6 +2301,22 @@ window.addEventListener('load', function() {
   }
 })();
 
+</script>
+<script>
+/* Fit the WeTravel reviews widget to phone width without cropping */
+(function(){
+  function fit(){
+    var box=document.querySelector('.overview-reviews'); if(!box) return;
+    var el=box.querySelector('iframe')||box.querySelector('div,a,img'); if(!el) return;
+    el.style.transform=''; box.style.height='';
+    if(window.innerWidth>640) return;
+    var w=el.scrollWidth||el.offsetWidth, h=el.offsetHeight, avail=box.clientWidth;
+    if(w>avail && w>0){ var k=avail/w; el.style.transformOrigin='left top'; el.style.transform='scale('+k+')'; box.style.height=Math.ceil(h*k)+'px'; }
+  }
+  window.addEventListener('load',function(){fit(); setTimeout(fit,800); setTimeout(fit,2500);});
+  window.addEventListener('resize',fit);
+  if(window.MutationObserver){ var b=document.querySelector('.overview-reviews'); if(b) new MutationObserver(function(){setTimeout(fit,50);}).observe(b,{childList:true,subtree:true}); }
+})();
 </script>
 </body>
 </html>
