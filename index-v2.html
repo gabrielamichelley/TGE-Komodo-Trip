@@ -881,6 +881,26 @@ img.img-missing { visibility: hidden; }
 }
 
 </style>
+<style>
+/* ---- Fixes (Nov 2026) ---- */
+/* Stop the page sliding sideways on phones (the founder swipe cards were stretching the page wider than the screen) */
+html, body { overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
+.founder-wrap > *, .trip-main, .trip-main > section { min-width: 0; max-width: 100%; }
+/* Smoother photo swipes: let the page scroll up/down, the slideshow handles left/right */
+.slideshow-wrapper, .stay-slider, .itin-photo { touch-action: pan-y; }
+.trip-mosaic, .hscroll, .stay-grid, .founder-cards, .trust-grid, .wellness-grid, .dep-tabs { -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+/* Keep hidden buttons hidden (Register Interest only shows for sold-out dates) */
+[hidden] { display: none !important; }
+/* Inclusions: keep each line's text flowing normally */
+.inclusion-item > span:last-child { flex: 1; min-width: 0; }
+/* Phones: Trip Highlights cards as a swipe row (were squashing into 2 narrow columns) */
+@media (max-width: 640px) {
+  .wellness-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 0 -1.15rem; padding: 0 1.15rem 6px; scrollbar-width: none; }
+  .wellness-card { flex: 0 0 82%; scroll-snap-align: center; }
+  .wellness-section .swipe-dots { display: flex; }
+}
+</style>
 </head>
 <body class="home">
 
