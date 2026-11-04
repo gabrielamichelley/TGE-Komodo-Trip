@@ -886,6 +886,12 @@ html, body { overflow-x: hidden; }
   .overview-reviews { transform: none !important; height: auto !important; overflow: visible !important; width: 100%; max-width: 100%; }
   .overview-reviews .tge-rev-inner { transform-origin: left top; }
 }
+
+/* ---- Centering (Nov 4) ---- */
+.overview-reviews { display: flex !important; justify-content: center; text-align: center; width: 100%; }
+.overview-reviews > * { margin-left: auto; margin-right: auto; }
+.inclusions-section > .deposit-bubble-wrap { text-align: center; }
+.inclusions-cta { justify-content: center !important; }
 </style>
 </head>
 <body class="trip">
@@ -2311,7 +2317,7 @@ window.addEventListener('load', function() {
     el.style.transform=''; box.style.height='';
     if(window.innerWidth>640) return;
     var w=el.scrollWidth||el.offsetWidth, h=el.offsetHeight, avail=box.clientWidth;
-    if(w>avail && w>0){ var k=avail/w; el.style.transformOrigin='left top'; el.style.transform='scale('+k+')'; box.style.height=Math.ceil(h*k)+'px'; }
+    if(w>avail && w>0){ var k=avail/w; el.style.transformOrigin='center top'; el.style.transform='scale('+k+')'; box.style.height=Math.ceil(h*k)+'px'; }
   }
   window.addEventListener('load',function(){fit(); setTimeout(fit,800); setTimeout(fit,2500);});
   window.addEventListener('resize',fit);
