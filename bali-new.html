@@ -854,6 +854,26 @@ img.img-missing { visibility: hidden; }
 @media (max-width: 640px) { .trip-main .moment-tile { width: calc((100vw - 2.3rem - 12px) / 2); } .trip-main .trust-grid { display: flex; } .trip-main .hscroll { margin: 0 -1.15rem; padding: 0 1.15rem 10px; scroll-padding-inline: 1.15rem; } .trip-main .ti-callout-body { padding: 1.75rem 1.35rem; } }
 
 </style>
+<style>
+/* ---- Fixes (Nov 2026) ---- */
+/* Stop the page sliding sideways on phones (the founder swipe cards were stretching the page wider than the screen) */
+html, body { overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
+.founder-wrap > *, .trip-main, .trip-main > section { min-width: 0; max-width: 100%; }
+/* Smoother photo swipes: let the page scroll up/down, the slideshow handles left/right */
+.slideshow-wrapper, .stay-slider, .itin-photo { touch-action: pan-y; }
+.trip-mosaic, .hscroll, .stay-grid, .founder-cards, .trust-grid, .wellness-grid, .dep-tabs { -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+/* Keep hidden buttons hidden (Register Interest only shows for sold-out dates) */
+[hidden] { display: none !important; }
+/* Inclusions: keep each line's text flowing normally */
+.inclusion-item > span:last-child { flex: 1; min-width: 0; }
+/* Phones: Trip Highlights cards as a swipe row (were squashing into 2 narrow columns) */
+@media (max-width: 640px) {
+  .wellness-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 0 -1.15rem; padding: 0 1.15rem 6px; scrollbar-width: none; }
+  .wellness-card { flex: 0 0 82%; scroll-snap-align: center; }
+  .wellness-section .swipe-dots { display: flex; }
+}
+</style>
 </head>
 <body class="trip">
 
@@ -2138,8 +2158,11 @@ window.addEventListener('load', function() {
     if (prevS) prevS.addEventListener('click', function () { goS(cur - 1); });
     if (nextS) nextS.addEventListener('click', function () { goS(cur + 1); });
     wrapS.addEventListener('mouseenter', function () { hover = true; }); wrapS.addEventListener('mouseleave', function () { hover = false; });
-    var x0 = null; wrapS.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-    wrapS.addEventListener('touchend', function (e) { if (x0 == null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) goS(cur + (dx < 0 ? 1 : -1)); x0 = null; });
+    var x0 = null, x1 = null, y0 = null, y1 = null;
+    wrapS.addEventListener('touchstart', function (e) { x0 = x1 = e.touches[0].clientX; y0 = y1 = e.touches[0].clientY; }, { passive: true });
+    wrapS.addEventListener('touchmove', function (e) { x1 = e.touches[0].clientX; y1 = e.touches[0].clientY; }, { passive: true });
+    wrapS.addEventListener('touchend', function () { if (x0 == null) return; var dx = x1 - x0; if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(y1 - y0)) goS(cur + (dx < 0 ? 1 : -1)); x0 = null; });
+    wrapS.addEventListener('touchcancel', function () { x0 = null; });
     if (!reduce) timer = setInterval(function () { if (!hover && !document.hidden) goS(cur + 1); }, 5000);
     goS(0);
   }
@@ -2152,8 +2175,11 @@ window.addEventListener('load', function() {
     if (dots) imgs.forEach(function (_, n) { var d = document.createElement('button'); d.type = 'button'; d.className = 'stay-slider-dot'; d.setAttribute('aria-label', 'Photo ' + (n + 1)); d.addEventListener('click', function () { go(n); }); dots.appendChild(d); });
     var p = $('.stay-slider-prev', sl), n2 = $('.stay-slider-next', sl);
     if (p) p.addEventListener('click', function () { go(i - 1); }); if (n2) n2.addEventListener('click', function () { go(i + 1); });
-    var x0 = null; sl.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-    sl.addEventListener('touchend', function (e) { if (x0 == null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 35) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
+    var x0 = null, x1 = null, y0 = null, y1 = null;
+    sl.addEventListener('touchstart', function (e) { x0 = x1 = e.touches[0].clientX; y0 = y1 = e.touches[0].clientY; }, { passive: true });
+    sl.addEventListener('touchmove', function (e) { x1 = e.touches[0].clientX; y1 = e.touches[0].clientY; }, { passive: true });
+    sl.addEventListener('touchend', function () { if (x0 == null) return; var dx = x1 - x0; if (Math.abs(dx) > 35 && Math.abs(dx) > Math.abs(y1 - y0)) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
+    sl.addEventListener('touchcancel', function () { x0 = null; });
     go(0);
   });
 
