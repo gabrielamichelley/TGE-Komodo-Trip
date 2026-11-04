@@ -857,6 +857,46 @@ img.img-missing { visibility: hidden; }
 <style>
 /* Keep hidden buttons hidden (e.g. Register Interest only shows for sold-out dates) */
 [hidden] { display: none !important; }
+/* Speedboat / arrival box */
+.boat-box { margin-top: 1rem; border-radius: 18px; overflow: hidden; border: 1.5px solid rgba(45,122,140,0.35); background: #fff; }
+.boat-alert { padding: 0.85rem 1.1rem; background: linear-gradient(135deg, var(--ocean-deep), var(--ocean)); color: #fff; font-size: 0.92rem; line-height: 1.45; }
+.boat-alert strong { color: var(--gold-light); }
+.boat-title { padding: 0.9rem 1.1rem 0.3rem; font-weight: 600; font-size: 0.88rem; }
+.boat-rows { padding: 0 1.1rem; }
+.boat-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.75rem; padding: 0.65rem 0; border-bottom: 1px solid var(--hair); font-size: 0.84rem; }
+.boat-row:last-child { border-bottom: 0; }
+.boat-route { flex: 1 1 100%; font-weight: 500; }
+.boat-pills { display: inline-flex; gap: 0.35rem; }
+.boat-pill { display: inline-block; padding: 0.2rem 0.65rem; border-radius: 50px; background: var(--teal-soft); color: var(--ocean-deep); font-weight: 600; font-size: 0.8rem; margin-right: 0.25rem; }
+.boat-sub { font-size: 0.78rem; color: var(--text-light); }
+.boat-note { padding: 0.7rem 1.1rem 0.9rem; font-size: 0.74rem; color: var(--text-light); background: var(--cream); }
+.dates-section .boat-box { margin-top: 1rem; }
+/* Inclusions: keep each line's text flowing normally */
+.inclusion-item > span:last-child { flex: 1; min-width: 0; }
+/* Where you'll stay: one wide card */
+.stay-single .stay-wide { display: grid; grid-template-columns: 1.1fr 1fr; }
+.stay-single .stay-wide .stay-photo { aspect-ratio: auto; min-height: 320px; height: 100%; }
+.stay-single .stay-wide .stay-body { padding: 1.5rem 1.6rem; justify-content: center; }
+.stay-single .stay-wide .stay-name { font-size: 1.5rem; }
+@media (max-width: 760px) { .stay-single .stay-wide { grid-template-columns: 1fr; } .stay-single .stay-wide .stay-photo { min-height: 0; aspect-ratio: 3 / 2; } }
+/* Why Dhigurah sliding cards */
+.wd-track { gap: 14px; padding: 0 0 8px !important; scroll-padding-inline: 0 !important; align-items: stretch; }
+.wd-slide { flex: 0 0 min(560px, 86%) !important; scroll-snap-align: start; margin: 0 !important; }
+.wd-slide.wd-card { display: flex; flex-direction: column; grid-template-columns: none; }
+.wd-slide .wd-photo { min-height: 200px; flex: none; }
+.wd-text .wd-body { justify-content: center; }
+.wd-slide-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; }
+.wd-solo-card { justify-content: center; }
+.wd-solo-card .wd-solo { border-top: 0; padding-top: 0; font-size: 1.05rem; }
+.wd-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0.75rem; }
+.wd-dots { display: flex !important; margin: 0; }
+@media (max-width: 640px) { .wd-track { margin: 0 -1.15rem !important; padding: 0 1.15rem 8px !important; scroll-padding-inline: 1.15rem !important; } .wd-slide { flex-basis: 86% !important; } .wd-nav .scroll-arrow { display: none; } .wd-nav { justify-content: center; } }
+/* Phones: Trip Highlights cards as a swipe row (was squashing into 2 narrow columns) */
+@media (max-width: 640px) {
+  .wellness-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 0 -1.15rem; padding: 0 1.15rem 6px; scrollbar-width: none; }
+  .wellness-card { flex: 0 0 82%; scroll-snap-align: center; }
+  .wellness-section .swipe-dots { display: flex; }
+}
 /* Why Dhigurah section (added) */
 .wd-card { display: grid; grid-template-columns: 1fr 1.25fr; gap: 0; border-radius: var(--r-card); overflow: hidden; background: var(--glass); border: 1px solid var(--hair); }
 .wd-photo { position: relative; min-height: 320px; background: linear-gradient(160deg, var(--teal-soft), var(--lagoon), var(--ocean-light)); }
@@ -950,19 +990,15 @@ img.img-missing { visibility: hidden; }
   <div class="section-tag reveal">Why Dhigurah?</div>
   <h2 class="section-title reveal">The World's <em>#7 Best Beach</em></h2>
   <p class="section-subtitle reveal">Dhigurah is a long, lush local island in South Ari Atoll, famed for its endless beach, its sandbank, and the whale sharks and manta rays that move through its turquoise lagoons. <strong>This is the Maldives without the resort price tag</strong> — real island life, warm Maldivian hospitality, and the kind of marine life most people only see in documentaries.</p>
-  <div class="wd-card reveal">
-    <div class="wd-photo"><img src="maldives/dhigurah-sandbank.webp" alt="Dhigurah sandbank, South Ari Atoll" loading="lazy"><a class="wd-badge" href="https://worlds50beaches.com/dhigurah/" target="_blank" rel="noopener"><b>#7</b><span>World's 50 Best Beaches 2026</span></a></div>
-    <div class="wd-body">
-      <p>Dhigurah's beach has just been named <a href="https://worlds50beaches.com/dhigurah/" target="_blank" rel="noopener"><strong>#7 in THE WORLD'S 50 BEST BEACHES in 2026</strong></a>.</p>
-      <p>It's no doubt Maldives has some of the most beautiful beaches in the world and has been a bucket-list destination for so many people - it's a must-visit because it does not disappoint. I fell in love with the Maldives the first time I went - its beauty, white-sand beaches, beautiful crystal-clear waters and diverse marine life truly meets your expectations. I chose Dhigurah and the South Ari Atoll because this local island offers the best that Maldives has to offer, whether you're an ocean-lover, adventurous or simply just want to experience relaxing in The Maldives: <strong>Whale Sharks, Manta Rays, Spinner Dolphins, Sea Turtles, Nurse Sharks, Reef Sharks, Tropical Marine Life and Diverse, Colourful Fish you've never seen before, White-Sand Beaches, Turquoise Waters, Coconut Trees, Magical Sunsets &amp; Tropical Vibes - all year long!</strong></p>
-      <p>Being the #7 best beach in the world and in the beautiful Maldives, Dhigurah offers unique landscapes, peaceful, untouched surroundings, pristine beaches and a tropical island-feel. Dhigurah has <strong>the longest sandbank in the Maldives</strong> with the whitest sand, bluest, clearest waters, surrounded by bucket-list marine animals like Whale Sharks all year long.</p>
-    </div>
+  <div class="wd-slider" data-scroller>
+  <div class="hscroll wd-track" data-dots="wdDots">
+    <div class="wd-card wd-slide"><div class="wd-photo"><img src="maldives/dhigurah-sandbank.webp" alt="Dhigurah sandbank, South Ari Atoll" loading="lazy"><a class="wd-badge" href="https://worlds50beaches.com/dhigurah/" target="_blank" rel="noopener"><b>#7</b><span>World's 50 Best Beaches 2026</span></a></div><div class="wd-body"><p>Dhigurah's beach has just been named <a href="https://worlds50beaches.com/dhigurah/" target="_blank" rel="noopener"><strong>#7 in THE WORLD'S 50 BEST BEACHES in 2026</strong></a>.</p><p>Being the #7 best beach in the world and in the beautiful Maldives, Dhigurah offers unique landscapes, peaceful, untouched surroundings, pristine beaches and a tropical island-feel. Dhigurah has <strong>the longest sandbank in the Maldives</strong> with the whitest sand, bluest, clearest waters, surrounded by bucket-list marine animals like Whale Sharks all year long.</p></div></div>
+    <div class="wd-card wd-slide wd-text"><div class="wd-body"><div class="wd-slide-title">💙 Why I chose Dhigurah</div><p>It's no doubt Maldives has some of the most beautiful beaches in the world and has been a bucket-list destination for so many people - it's a must-visit because it does not disappoint. I fell in love with the Maldives the first time I went - its beauty, white-sand beaches, beautiful crystal-clear waters and diverse marine life truly meets your expectations. I chose Dhigurah and the South Ari Atoll because this local island offers the best that Maldives has to offer, whether you're an ocean-lover, adventurous or simply just want to experience relaxing in The Maldives: <strong>Whale Sharks, Manta Rays, Spinner Dolphins, Sea Turtles, Nurse Sharks, Reef Sharks, Tropical Marine Life and Diverse, Colourful Fish you've never seen before, White-Sand Beaches, Turquoise Waters, Coconut Trees, Magical Sunsets &amp; Tropical Vibes - all year long!</strong></p></div></div>
+    <div class="wd-sandbar wd-slide"><div class="wd-sandbar-title">🏝️ Dhigurah's Endless Sandbar Escape</div><p>Dhigurah Beach stands out for its unusually long stretch of coastline and the sandbar that extends far into the lagoon at the top. It's easily reached from the village, yet quickly feels removed, especially as you continue toward the far end where the sandbar begins. Here, you will find a narrow ribbon of soft white sand that pushes out between shallow, crystal-clear water on both sides. The conditions are typically calm, making it ideal for long walks and amazing swims, while sections of reef nearby are teeming with healthy marine life. It's a true tropical paradise and the scale and shape of the sandbar give Dhigurah a unique element that sets it apart from other Maldivian beaches.</p></div>
+    <div class="wd-sandbar wd-slide wd-solo-card"><div class="wd-sandbar-title">👯‍♀️ The Maldives, made social</div><p class="wd-solo">It's not the easiest place for solo travellers - which is why we created these group trips: <strong>to make this dream destination more social, accessible, and affordable.</strong></p></div>
   </div>
-  <div class="wd-sandbar reveal">
-    <div class="wd-sandbar-title">🏝️ Dhigurah's Endless Sandbar Escape</div>
-    <p>Dhigurah Beach stands out for its unusually long stretch of coastline and the sandbar that extends far into the lagoon at the top. It's easily reached from the village, yet quickly feels removed, especially as you continue toward the far end where the sandbar begins. Here, you will find a narrow ribbon of soft white sand that pushes out between shallow, crystal-clear water on both sides. The conditions are typically calm, making it ideal for long walks and amazing swims, while sections of reef nearby are teeming with healthy marine life. It's a true tropical paradise and the scale and shape of the sandbar give Dhigurah a unique element that sets it apart from other Maldivian beaches.</p>
-    <p class="wd-solo">It's not the easiest place for solo travellers - which is why we created these group trips: <strong>to make this dream destination more social, accessible, and affordable.</strong></p>
-  </div>
+  <div class="wd-nav"><button class="scroll-arrow scroll-prev" type="button" aria-label="Previous card">&#8592;</button><div class="swipe-dots wd-dots" id="wdDots"></div><button class="scroll-arrow scroll-next" type="button" aria-label="Next card">&#8594;</button></div>
+</div>
 </section>
 
 <section class="itinerary-section" id="itinerary">
@@ -1138,7 +1174,7 @@ img.img-missing { visibility: hidden; }
 <p class="itin-note">Please note that our itinerary may be subject to change depending on weather, local conditions, group pace &amp; other factors.</p></section>
 <section class="inclusions-section" id="inclusions">
 <div class="deposit-bubble-wrap reveal">
-<div class="deposit-bubble">✨ NEW TRIP ✨<span class="dep-highlight"> SALE: $1,999 USD</span></div>
+<div class="deposit-bubble">✨ AFFORDABLE LUXE ✨<span class="dep-highlight"> SALE: $1,999 USD</span></div>
 </div>
 <h2 class="section-title reveal">What's <em>Included</em></h2>
 <p class="section-subtitle reveal">10 Days · Total Cost $1,999 USD · Lots of Inclusions</p>
@@ -1146,39 +1182,39 @@ img.img-missing { visibility: hidden; }
 <div class="inclusion-block reveal">
 <div class="inclusion-heading"><span>✓</span> Included</div>
 <div class="inclusion-list">
-<div class="inclusion-item"><span class="inclusion-check">✓</span>9 nights' accommodation in a <strong>Deluxe Garden Villa</strong> at Seaside Dhigurah (twin beds) — private wooden deck, outdoor shower &amp; air-con</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Return Airport Transfers &amp; Speedboat to and from Dhigurah</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Meet &amp; greet at Velana International Airport</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Whale Shark &amp; Manta Ray Snorkelling Trip</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Dolphin-watching Cruise during Golden Hour</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Daily Breakfasts included (9 x Breakfasts)</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Daily 2-course Dinners included at the rooftop restaurant (9 x Dinners, ala carte)</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Sunset Sandbank BBQ Dinner</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Special Private Gala Beach Dinner</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Rooftop Dinner Under The Stars</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Turtle Safari Excursion</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Snorkel with Reef Sharks &amp; Sea Turtles at Turtle Reef</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Luxury Resort Day Visit at another island</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Return Speedboat Transfers to the Resort &amp; Entrance Pass</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>1 x Lunch, 6 Cocktails and 4 Mocktails at the Luxury Resort (during day visit)</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Sandbank Visit &amp; Photo Session</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Underwater Photos &amp; Videos</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Snorkeling equipment included throughout the trip</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Complimentary bike hire to explore the island</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Complimentary Wi-Fi throughout</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Host and tour leader for 10 days in Maldives</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Visiting the <a href="https://worlds50beaches.com/dhigurah/" target="_blank" rel="noopener">#7 World's Best Beach</a></div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Year-round Whale Sharks, Manta Rays &amp; Dolphins</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>White-Sand Beaches, Crystal-Clear Turquoise Waters &amp; World-Class Reefs</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Access to Bikini Beach</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Island Exploration Walk</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Stargazing with the Girls</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Beach Days with the Girls</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Connections &amp; bond with like-minded girls</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Access to our Supportive Female Travel Community</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Travel planning support</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Access to our trip group chat pre &amp; post girls trip (so you can get to know each other first &amp; stay in touch after!)</div>
-<div class="inclusion-item"><span class="inclusion-check">✓</span>Pre &amp; post trip support</div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>9 nights' accommodation in a Deluxe Garden Villa</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Return Airport Transfers &amp; Speedboat to and from Dhigurah</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Meet &amp; greet at Velana International Airport</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Whale Shark &amp; Manta Ray Snorkelling Trip</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Dolphin-watching Cruise during Golden Hour</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Daily Breakfasts included (9 x Breakfasts)</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Daily 2-course Dinners included at the rooftop restaurant (9 x Dinners, ala carte)</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Sunset Sandbank BBQ Dinner</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Special Private Gala Beach Dinner</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Rooftop Dinner Under The Stars</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Turtle Safari Excursion</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Snorkel with Reef Sharks &amp; Sea Turtles at Turtle Reef</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Luxury Resort Day Visit at another island</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Return Speedboat Transfers to the Resort &amp; Entrance Pass</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>1 x Lunch, 6 Cocktails and 4 Mocktails at the Luxury Resort (during day visit)</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Sandbank Visit &amp; Photo Session</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Underwater Photos &amp; Videos</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Snorkeling equipment included throughout the trip</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Complimentary bike hire to explore the island</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Complimentary Wi-Fi throughout</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Host and tour leader for 10 days in Maldives</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Visiting the <a href="https://worlds50beaches.com/dhigurah/" target="_blank" rel="noopener">#7 World's Best Beach</a></span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Year-round Whale Sharks, Manta Rays &amp; Dolphins</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>White-Sand Beaches, Crystal-Clear Turquoise Waters &amp; World-Class Reefs</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Access to Bikini Beach</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Island Exploration Walk</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Stargazing with the Girls</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Beach Days with the Girls</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Connections &amp; bond with like-minded girls</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Access to our Supportive Female Travel Community</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Travel planning support</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Access to our trip group chat pre &amp; post girls trip (so you can get to know each other first &amp; stay in touch after!)</span></div>
+<div class="inclusion-item"><span class="inclusion-check">✓</span><span>Pre &amp; post trip support</span></div>
 <div class="inclusion-item"><span class="inclusion-check">✓</span>Everything on the itinerary is included
 </div>
 </div>
@@ -1186,17 +1222,26 @@ img.img-missing { visibility: hidden; }
 <div class="inclusion-block reveal">
 <div class="inclusion-heading"><span>✗</span> Not Included</div>
 <div class="inclusion-list">
-<div class="inclusion-item"><span class="exclusion-x">✗</span>International flights to and from Malé (MLE)</div>
-<div class="inclusion-item"><span class="exclusion-x">✗</span>Travel insurance — <strong>required</strong>, and must cover water activities</div>
-<div class="inclusion-item"><span class="exclusion-x">✗</span>Lunches on non-excursion days</div>
-<div class="inclusion-item"><span class="exclusion-x">✗</span>Alcohol beyond what's included on the resort day</div>
-<div class="inclusion-item"><span class="exclusion-x">✗</span>Optional extras: diving, fishing trips, private sandbank picnics, spa</div>
-<div class="inclusion-item"><span class="exclusion-x">✗</span>Tips and personal spending</div>
+<div class="inclusion-item"><span class="exclusion-x">✗</span><span>International flights to and from Malé (MLE)</span></div>
+<div class="inclusion-item"><span class="exclusion-x">✗</span><span>Travel insurance — <strong>required</strong>, and must cover water activities</span></div>
+<div class="inclusion-item"><span class="exclusion-x">✗</span><span>Lunches on non-excursion days</span></div>
+<div class="inclusion-item"><span class="exclusion-x">✗</span><span>Alcohol beyond what's included on the resort day</span></div>
+<div class="inclusion-item"><span class="exclusion-x">✗</span><span>Optional extras: diving, fishing trips, private sandbank picnics, spa</span></div>
+<div class="inclusion-item"><span class="exclusion-x">✗</span><span>Tips and personal spending</span></div>
 </div>
 <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(201,169,110,0.15);">
 <div class="inclusion-heading" style="font-size: 1.1rem;"><span>✈️</span> Getting There</div>
 <div class="inclusion-list">
-<div class="inclusion-item" style="flex-direction: column; gap: 0.3rem;"><span>Fly into &amp; out of <strong>Velana International Airport (MLE)</strong>, Malé — the trip starts and ends here. Return airport transfers &amp; speedboat to Dhigurah are included: we'll meet you at the terminal and the speedboat takes you to Dhigurah (~2 hours, subject to weather).<br><br><strong>Speedboat times:</strong> Malé Airport → Dhigurah at 11:00 or 16:00 (Fridays: 10:00 &amp; ~16:30). Dhigurah → Malé at 07:00 &amp; 13:00.<br><br><strong>Please land by 14:30 at the latest on Day 1</strong>, and book your departing flight after 11:30am on Day 10.</span></div>
+<div class="inclusion-item" style="flex-direction: column; gap: 0.3rem;"><span>Fly into &amp; out of <strong>Velana International Airport (MLE)</strong>, Malé — the trip starts and ends here. We'll meet you at the terminal and the speedboat takes you to Dhigurah.</span></div>
+<div class="boat-box">
+  <div class="boat-alert">⏰ Land at Malé (MLE) by <strong>14:30 at the latest</strong> (Malé time) on Day 1</div>
+  <div class="boat-title">🚤 Speedboat times · Malé ↔ Dhigurah (~2 hours)</div>
+  <div class="boat-rows">
+    <div class="boat-row"><span class="boat-route">Malé Airport → Dhigurah</span><span class="boat-pills"><span class="boat-pill">11:00</span><span class="boat-pill">16:00</span></span><span class="boat-sub">Fridays: <span class="boat-pill">10:00</span><span class="boat-pill">~16:30</span></span></div>
+    <div class="boat-row"><span class="boat-route">Dhigurah → Malé Airport</span><span class="boat-pills"><span class="boat-pill">07:00</span><span class="boat-pill">13:00</span></span><span class="boat-sub">Book your flight home departing <strong>after 11:30am</strong> on Day 10</span></div>
+  </div>
+  <div class="boat-note">Speedboats don't run after dark & times are subject to weather. Return airport transfers &amp; speedboat are included.</div>
+</div>
 <div class="inclusion-item flight-note" style="flex-direction: column; gap: 0.3rem;"><span><strong>✈️ Please read before booking flights:</strong> We advise against booking non-refundable flights until the trip minimum has been met (5 guests). If we have to cancel the trip, you will be fully refunded for all payments made to us. Please do not book your flights before booking the trip with us and before we have notified you via email to book your flights.</span></div>
 </div>
 </div>
@@ -1209,6 +1254,15 @@ img.img-missing { visibility: hidden; }
   <div class="section-tag reveal">Departures</div>
   <h2 class="section-title reveal">Pick your <em>dates</em></h2>
   <div class="tgx-deps reveal" id="tgxDeps" role="list" data-length="10 Days · 9 Nights"></div>
+<div class="boat-box">
+  <div class="boat-alert">⏰ Land at Malé (MLE) by <strong>14:30 at the latest</strong> (Malé time) on Day 1</div>
+  <div class="boat-title">🚤 Speedboat times · Malé ↔ Dhigurah (~2 hours)</div>
+  <div class="boat-rows">
+    <div class="boat-row"><span class="boat-route">Malé Airport → Dhigurah</span><span class="boat-pills"><span class="boat-pill">11:00</span><span class="boat-pill">16:00</span></span><span class="boat-sub">Fridays: <span class="boat-pill">10:00</span><span class="boat-pill">~16:30</span></span></div>
+    <div class="boat-row"><span class="boat-route">Dhigurah → Malé Airport</span><span class="boat-pills"><span class="boat-pill">07:00</span><span class="boat-pill">13:00</span></span><span class="boat-sub">Book your flight home departing <strong>after 11:30am</strong> on Day 10</span></div>
+  </div>
+  <div class="boat-note">Speedboats don't run after dark & times are subject to weather. Return airport transfers &amp; speedboat are included.</div>
+</div>
   <div class="faq-disclaimer flight-note"><strong>✈️ Please read before booking flights:</strong> We advise against booking non-refundable flights until the trip minimum has been met (5 guests). If we have to cancel the trip, you will be fully refunded for all payments made to us. Please do not book your flights before booking the trip with us and before we have notified you via email to book your flights.</div>
 </section>
 
@@ -1216,20 +1270,19 @@ img.img-missing { visibility: hidden; }
 <div class="section-tag reveal">Where You'll Stay</div>
 <h2 class="section-title reveal">Boutique, Deluxe Villas <em>in the Maldives</em></h2>
 <p class="section-subtitle reveal">Twin-share, 2 girls max per room. Deluxe Garden Villas at a 4-star Boutique Hotel in the premium island of Dhigurah.</p>
-<div aria-label="Choose your departure date" class="dep-tabs reveal" role="tablist">
+<div aria-label="Choose your departure date" class="dep-tabs" role="tablist" hidden>
 <button aria-selected="true" class="dep-tab active" data-dep="may27" role="tab" type="button">
-<span class="dep-tab-date">23 May–1 Jun 2027</span><span class="dep-tab-status">NEW TRIP</span>
+<span class="dep-tab-date">23 May–1 Jun 2027</span><span class="dep-tab-status">LIMITED SPOTS</span>
 </button>
 <button aria-selected="false" class="dep-tab" data-dep="jul27" role="tab" type="button">
-<span class="dep-tab-date">22–31 Jul 2027</span><span class="dep-tab-status">NEW TRIP</span>
+<span class="dep-tab-date">22–31 Jul 2027</span><span class="dep-tab-status">AFFORDABLE LUXE</span>
 </button>
 <button aria-selected="false" class="dep-tab" data-dep="nov27" role="tab" type="button">
-<span class="dep-tab-date">6–15 Nov 2027</span><span class="dep-tab-status">NEW TRIP</span>
+<span class="dep-tab-date">6–15 Nov 2027</span><span class="dep-tab-status">LIMITED SPOTS</span>
 </button>
 </div>
-<div class="dep-panel" data-dep="may27">
-<div class="stay-grid">
-<div class="stay-card reveal">
+<div class="stay-single">
+<div class="stay-card stay-wide reveal">
 <div class="stay-photo stay-slider">
 <div class="stay-slides">
 <img alt="Seaside Dhigurah" src="maldives/seaside-dhigurah.webp"/>
@@ -1245,51 +1298,6 @@ img.img-missing { visibility: hidden; }
 <div class="stay-name">Deluxe Garden Villas</div>
 <div class="stay-desc">Our island home base on Dhigurah - spacious deluxe garden villas, boutique accommodation on the local island of Dhigurah, breakfast &amp; dinner every day, and the whale sharks right on our doorstep. Each villa has a private wooden deck &amp; outdoor shower, air-con, free Wi-Fi &amp; a bicycle for every guest - and the villas connect via their outdoor decks, so the group stays together. Dinner is on the rooftop restaurant (authentic Maldivian, Asian &amp; Western cooking) and the sunrise beach is a short walk away.</div>
 <div class="stay-tags"><span class="stay-tag">Deluxe Garden Villa</span><span class="stay-tag">Private wooden deck</span><span class="stay-tag">Outdoor shower</span><span class="stay-tag">Air-con &amp; free Wi-Fi</span><span class="stay-tag">A bike for every guest</span><span class="stay-tag">Breakfast &amp; dinner daily</span></div>
-</div>
-</div>
-</div>
-</div>
-<div class="dep-panel" data-dep="jul27">
-<div class="stay-grid">
-<div class="stay-card reveal">
-<div class="stay-photo stay-slider">
-<div class="stay-slides">
-<img alt="Seaside Dhigurah" src="maldives/seaside-dhigurah.webp"/>
-<img alt="Deluxe Garden Villa" src="maldives/seaside-dhigurah-villa.webp"/>
-<img alt="Dhigurah sandbank" src="maldives/dhigurah-sandbank.webp"/>
-</div>
-<button aria-label="Previous" class="stay-slider-btn stay-slider-prev">‹</button>
-<button aria-label="Next" class="stay-slider-btn stay-slider-next">›</button>
-<div class="stay-slider-dots"></div>
-</div>
-<div class="stay-body">
-<div class="stay-island">Dhigurah, South Ari Atoll · 9 nights</div>
-<div class="stay-name">Deluxe Garden Villas</div>
-<div class="stay-desc">Our island home base on Dhigurah - spacious deluxe garden villas, boutique accommodation on the local island of Dhigurah, breakfast &amp; dinner every day, and the whale sharks right on our doorstep. Each villa has a private wooden deck &amp; outdoor shower, air-con, free Wi-Fi &amp; a bicycle for every guest - and the villas connect via their outdoor decks, so the group stays together. Dinner is on the rooftop restaurant (authentic Maldivian, Asian &amp; Western cooking) and the sunrise beach is a short walk away.</div>
-<div class="stay-tags"><span class="stay-tag">Deluxe Garden Villa</span><span class="stay-tag">Private wooden deck</span><span class="stay-tag">Outdoor shower</span><span class="stay-tag">Air-con &amp; free Wi-Fi</span><span class="stay-tag">A bike for every guest</span><span class="stay-tag">Breakfast &amp; dinner daily</span></div>
-</div>
-</div>
-</div>
-</div>
-<div class="dep-panel" data-dep="nov27">
-<div class="stay-grid">
-<div class="stay-card reveal">
-<div class="stay-photo stay-slider">
-<div class="stay-slides">
-<img alt="Seaside Dhigurah" src="maldives/seaside-dhigurah.webp"/>
-<img alt="Deluxe Garden Villa" src="maldives/seaside-dhigurah-villa.webp"/>
-<img alt="Dhigurah sandbank" src="maldives/dhigurah-sandbank.webp"/>
-</div>
-<button aria-label="Previous" class="stay-slider-btn stay-slider-prev">‹</button>
-<button aria-label="Next" class="stay-slider-btn stay-slider-next">›</button>
-<div class="stay-slider-dots"></div>
-</div>
-<div class="stay-body">
-<div class="stay-island">Dhigurah, South Ari Atoll · 9 nights</div>
-<div class="stay-name">Deluxe Garden Villas</div>
-<div class="stay-desc">Our island home base on Dhigurah - spacious deluxe garden villas, boutique accommodation on the local island of Dhigurah, breakfast &amp; dinner every day, and the whale sharks right on our doorstep. Each villa has a private wooden deck &amp; outdoor shower, air-con, free Wi-Fi &amp; a bicycle for every guest - and the villas connect via their outdoor decks, so the group stays together. Dinner is on the rooftop restaurant (authentic Maldivian, Asian &amp; Western cooking) and the sunrise beach is a short walk away.</div>
-<div class="stay-tags"><span class="stay-tag">Deluxe Garden Villa</span><span class="stay-tag">Private wooden deck</span><span class="stay-tag">Outdoor shower</span><span class="stay-tag">Air-con &amp; free Wi-Fi</span><span class="stay-tag">A bike for every guest</span><span class="stay-tag">Breakfast &amp; dinner daily</span></div>
-</div>
 </div>
 </div>
 </div>
@@ -1533,7 +1541,7 @@ img.img-missing { visibility: hidden; }
 </div>
 </div>
 <div class="faq-disclaimer">Wildlife sightings including whale sharks, manta rays, turtles &amp; dolphins cannot be guaranteed as they are wild animals, but we'll try our best to help you see them!</div>
-<div class="faq-cta"><span class="dep-highlight">✨ NEW TRIP ✨</span><button class="wtrvl-checkout_button hero-cta" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="MALDIVES_WETRAVEL_UUID" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=MALDIVES_WETRAVEL_UUID" id="wt-btn-faq" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button></div>
+<div class="faq-cta"><span class="dep-highlight">✨ LIMITED SPOTS ✨</span><button class="wtrvl-checkout_button hero-cta" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="MALDIVES_WETRAVEL_UUID" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=MALDIVES_WETRAVEL_UUID" id="wt-btn-faq" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button></div>
 </section>
   </main>
 
@@ -1738,7 +1746,7 @@ window.addEventListener('load', function() {
   function statusClass(s) {
     var u = (s || '').toUpperCase();
     if (u.indexOf('SOLD OUT') > -1) return 'out';
-    if (u.indexOf('LEFT') > -1 || u.indexOf('ALMOST') > -1 || u.indexOf('LAST') > -1) return 'hot';
+    if (u.indexOf('LEFT') > -1 || u.indexOf('ALMOST') > -1 || u.indexOf('LAST') > -1 || u.indexOf('LIMITED') > -1) return 'hot';
     return 'calm';
   }
   var MONTHS = { jan:0, feb:1, mar:2, apr:3, may:4, jun:5, jul:6, aug:7, sep:8, oct:9, nov:10, dec:11 };
