@@ -985,7 +985,7 @@ html, body { overflow-x: hidden; }
 .tge-pop.open { display: flex; animation: tgePopIn .35s ease; }
 @keyframes tgePopIn { from { opacity: 0; } to { opacity: 1; } }
 .tge-pop-card { position: relative; width: min(440px, 100%); max-height: calc(100vh - 2rem); overflow: auto; border-radius: 28px; background: var(--cream); box-shadow: 0 30px 80px rgba(0,0,0,0.25); }
-.tge-pop-top { padding: 1.6rem 1.6rem 1.2rem; text-align: center; color: #fff; background: linear-gradient(160deg, var(--ocean-light), var(--ocean) 55%, var(--ocean-deep)); }
+.tge-pop-top { padding: 1.6rem 3.4rem 1.2rem; text-align: center; color: #fff; background: linear-gradient(160deg, var(--ocean-light), var(--ocean) 55%, var(--ocean-deep)); }
 .tge-pop-top .bf-eyebrow { color: #fff; }
 .tge-pop-title { margin: 0.4rem 0 0.35rem; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; line-height: 1.1; }
 .tge-pop-title em { color: var(--gold-light); }
@@ -1010,6 +1010,19 @@ html, body { overflow-x: hidden; }
   .bf-unit { min-width: 0; flex: 1; }
   .bf-clock { width: 100%; }
   .vip-card { padding: 1.75rem 1.15rem; }
+}
+</style>
+
+<style id="tge-mosaic-6">
+/* Hero mosaic: 6 photos (added on top) */
+@media (min-width: 1101px) {
+  .trip-mosaic { grid-template-columns: 1.7fr 1fr 1fr 1fr; grid-template-rows: 250px 250px; }
+  .trip-mosaic .mosaic-tile:nth-child(2) { grid-row: span 2; }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .trip-mosaic { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: 220px 220px; }
+  .trip-mosaic .mosaic-tile:first-child { grid-row: auto; }
+  .trip-mosaic .mosaic-tile:first-child .mosaic-cap { font-size: 1.1rem; padding: 3rem 1rem 0.85rem; }
 }
 </style>
 </head>
@@ -2319,7 +2332,7 @@ window.addEventListener('load', function() {
   var lastFocus = null, autoShown = false;
   var joined = function () { return store.get('tgeMaldivesVipJoined') === '1'; };
   var snoozed = function () { var t = parseInt(store.get('tgeMaldivesPopSnooze') || '0', 10); return Date.now() < t; };
-  if (end > Date.now()) { document.getElementById('tgePopEyebrow').textContent = '✦ Black Friday · Maldives VIP list ✦'; }
+  if (end > Date.now()) { document.getElementById('tgePopEyebrow').textContent = '✦ Black Friday · VIP list ✦'; }
 
   function openPop(source) {
     if (!pop || pop.classList.contains('open')) return;
