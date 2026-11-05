@@ -947,6 +947,69 @@ html, body { overflow-x: hidden; }
   .wellness-section .swipe-dots { display: flex; }
 }
 </style>
+
+<style id="tge-bf-vip-css">
+/* ===== Black Friday countdown + Maldives VIP list + mailing popup (added on top) ===== */
+.bf-banner { margin: 0 0 1.4rem; padding: 1.1rem 1.25rem; border-radius: 22px; background: linear-gradient(135deg, var(--ocean-deep), var(--ocean) 60%, var(--teal)); color: #fff; box-shadow: 0 16px 48px rgba(74,155,173,0.18); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.9rem 1.25rem; }
+.bf-banner[hidden], .bf-chip[hidden] { display: none !important; }
+.bf-eyebrow { font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); }
+.bf-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.45rem, 3vw, 1.85rem); font-weight: 600; line-height: 1.15; margin-top: 0.2rem; }
+.bf-headline s { opacity: 0.75; font-weight: 500; }
+.bf-headline em { color: var(--gold-light); }
+.bf-ends { font-size: 0.74rem; opacity: 0.92; margin-top: 0.25rem; }
+.bf-clock { display: flex; gap: 0.45rem; }
+.bf-unit { min-width: 58px; padding: 0.5rem 0.4rem; border-radius: 14px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); text-align: center; }
+.bf-unit b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.bf-unit span { display: block; font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 0.25rem; opacity: 0.9; }
+.bf-chip { margin: 0.35rem 0 0.2rem; padding: 0.55rem 0.8rem; border-radius: 14px; background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft)); border: 1px solid var(--hair-2); font-size: 0.74rem; line-height: 1.45; color: var(--text-dark); }
+.bf-chip strong { color: var(--ocean-deep); }
+.bf-chip .bf-mini { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--rose-text); }
+.vip-link-sm { display: block; margin-top: 0.15rem; text-align: center; font-size: 0.76rem; color: var(--ocean-deep); text-underline-offset: 3px; background: none; border: 0; cursor: pointer; width: 100%; min-height: 40px; font-family: inherit; text-decoration: underline; }
+.vip-section { padding: 3rem 0 0.5rem; }
+.vip-card { border-radius: var(--r-big); padding: 2.25rem 2rem; background: linear-gradient(135deg, var(--cream-warm), var(--teal-soft) 55%, var(--lagoon)); border: 1px solid var(--hair); box-shadow: 0 20px 60px rgba(74,155,173,0.1); text-align: center; }
+.vip-card h2 { margin: 0.35rem 0 0.6rem; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 600; line-height: 1.12; }
+.vip-card h2 em { color: var(--ocean-deep); }
+.vip-sub { max-width: 560px; margin: 0 auto 1.25rem; line-height: 1.7; font-size: 0.95rem; }
+.vip-perks { list-style: none; padding: 0; margin: 0 auto 1.5rem; max-width: 520px; display: grid; gap: 0.55rem; text-align: left; }
+.vip-perks li { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.7rem 0.95rem; border-radius: 16px; background: var(--glass); border: 1px solid var(--hair); font-size: 0.9rem; line-height: 1.5; }
+.vip-perks li b { color: var(--ocean-deep); }
+.vip-btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+.vip-wa-btn { display: inline-flex; align-items: center; gap: 0.55rem; min-height: 52px; padding: 0 1.9rem; border-radius: 50px; background: #25D366; color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; box-shadow: 0 8px 26px rgba(37,211,102,0.3); transition: transform .3s ease; }
+.vip-wa-btn:hover { transform: translateY(-2px); }
+.vip-email-btn { min-height: 52px; padding: 0 1.7rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.5); background: rgba(255,255,255,0.9); color: var(--text-dark); font-family: 'Jost', sans-serif; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; }
+.vip-fine { margin-top: 0.9rem; font-size: 0.72rem; color: var(--text-light); }
+/* popup */
+.tge-pop { position: fixed; inset: 0; z-index: 10001; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(28,43,45,0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.tge-pop.open { display: flex; animation: tgePopIn .35s ease; }
+@keyframes tgePopIn { from { opacity: 0; } to { opacity: 1; } }
+.tge-pop-card { position: relative; width: min(440px, 100%); max-height: calc(100vh - 2rem); overflow: auto; border-radius: 28px; background: var(--cream); box-shadow: 0 30px 80px rgba(0,0,0,0.25); }
+.tge-pop-top { padding: 1.6rem 1.6rem 1.2rem; text-align: center; color: #fff; background: linear-gradient(160deg, var(--ocean-light), var(--ocean) 55%, var(--ocean-deep)); }
+.tge-pop-top .bf-eyebrow { color: #fff; }
+.tge-pop-title { margin: 0.4rem 0 0.35rem; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; line-height: 1.1; }
+.tge-pop-title em { color: var(--gold-light); }
+.tge-pop-lead { margin: 0; font-size: 0.88rem; line-height: 1.6; }
+.tge-pop-body { padding: 1.3rem 1.6rem 1.5rem; }
+.tge-pop-body ul { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: 0.35rem; font-size: 0.84rem; }
+.tge-pop-body li::before { content: '✓  '; color: var(--ocean-deep); font-weight: 600; }
+.tge-pop-field { display: block; margin-bottom: 0.7rem; }
+.tge-pop-field span { display: block; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; margin-bottom: 0.3rem; color: var(--text-light); }
+.tge-pop-field input { width: 100%; box-sizing: border-box; min-height: 46px; padding: 0 1rem; border-radius: 14px; border: 1px solid var(--hair-2); background: #fff; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: var(--text-dark); }
+.tge-pop-field input:focus { outline: 2px solid var(--ocean); outline-offset: 1px; }
+.tge-pop-submit { width: 100%; min-height: 50px; margin-top: 0.3rem; border: 0; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; box-shadow: 0 8px 30px rgba(201,169,110,0.3); }
+.tge-pop-submit[disabled] { opacity: 0.6; cursor: wait; }
+.tge-pop-fine { margin: 0.75rem 0 0; text-align: center; font-size: 0.7rem; color: var(--text-light); }
+.tge-pop-err { margin: 0.5rem 0 0; font-size: 0.8rem; color: var(--rose-text); text-align: center; }
+.tge-pop-close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; border-radius: 50px; border: 0; background: rgba(255,255,255,0.25); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.tge-pop-done { text-align: center; padding: 0.4rem 0 0.2rem; }
+.tge-pop-done h3 { margin: 0 0 0.4rem; font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; }
+.tge-pop-done p { margin: 0 0 1.1rem; font-size: 0.9rem; line-height: 1.6; }
+@media (max-width: 640px) {
+  .bf-banner { padding: 1rem; }
+  .bf-unit { min-width: 0; flex: 1; }
+  .bf-clock { width: 100%; }
+  .vip-card { padding: 1.75rem 1.15rem; }
+}
+</style>
 </head>
 <body class="trip">
 
@@ -980,6 +1043,19 @@ html, body { overflow-x: hidden; }
   <main class="trip-main">
 
 <section class="trip-overview" id="overview">
+  <div class="bf-banner" id="bfBanner" hidden>
+    <div>
+      <div class="bf-eyebrow">✦ Black Friday Sale ✦</div>
+      <div class="bf-headline"><s class="bf-full">$2,299</s> → <em>$1,999</em> total</div>
+      <div class="bf-ends">Sale ends Cyber Monday · <span class="bf-endtime"></span></div>
+    </div>
+    <div class="bf-clock" role="timer" aria-live="off" aria-label="Time left in the Black Friday sale">
+      <div class="bf-unit"><b data-u="d">0</b><span>Days</span></div>
+      <div class="bf-unit"><b data-u="h">00</b><span>Hrs</span></div>
+      <div class="bf-unit"><b data-u="m">00</b><span>Mins</span></div>
+      <div class="bf-unit"><b data-u="s">00</b><span>Secs</span></div>
+    </div>
+  </div>
   <div class="hero-tag">DHIGURAH · SOUTH ARI ATOLL · MALDIVES</div>
   <h1 class="hero-title">MALDIVES <em>Girls Retreat</em></h1>
   <p class="hero-location"><strong>Whale Sharks, Dolphins, Manta Rays, Turtles &amp; Your Maldives Dream <br/> Turquoise Waters · White-Sand Beaches · Luxury Resort Day</strong></p>
@@ -1325,6 +1401,25 @@ html, body { overflow-x: hidden; }
   <div class="faq-disclaimer flight-note"><strong>✈️ Please read before booking flights:</strong> We advise against booking non-refundable flights until the trip minimum has been met (5 guests). If we have to cancel the trip, you will be fully refunded for all payments made to us. Please do not book your flights before booking the trip with us and before we have notified you via email to book your flights.</div>
 </section>
 
+
+<section class="vip-section" id="maldives-vip">
+  <div class="vip-card reveal">
+    <div class="section-tag">Not ready to book yet?</div>
+    <h2>Join the Maldives <em>VIP list</em></h2>
+    <p class="vip-sub">Our private WhatsApp group for girls who are keen on the Maldives Girls Retreat but not quite ready to book. No commitment, just first dibs.</p>
+    <ul class="vip-perks">
+      <li>🐋 <span><b>Early access</b> to sales & new dates before they go public</span></li>
+      <li>🫶 <span><b>VIP-only deal drops</b> & special discount codes</span></li>
+      <li>📸 <span><b>VIP Photos & Trip Updates</b> - ask anything in the group chat</span></li>
+      <li>🔔 <span>First to know when <b>spots open up</b> or a new date drops</span></li>
+    </ul>
+    <div class="vip-btns">
+      <a class="vip-wa-btn" data-vip-wa href="#" target="_blank" rel="noopener">💬 Join the VIP group chat</a>
+      <button type="button" class="vip-email-btn" data-open-pop>✉️ Get updates by email</button>
+    </div>
+    <div class="vip-fine">Free to join · Leave anytime · No spam</div>
+  </div>
+</section>
 <section class="stay-section" id="where-you-stay">
 <div class="section-tag reveal">Where You'll Stay</div>
 <h2 class="section-title reveal">Boutique, Deluxe Villas <em>in the Maldives</em></h2>
@@ -1615,10 +1710,12 @@ html, body { overflow-x: hidden; }
     <div class="book-top"><span class="book-kicker">10 Days</span><span class="book-status" id="bookStatus"></span></div>
     <div class="book-price">$1,999 <span>USD total</span></div>
     <div class="book-note">Small deposit · Pay in 4, interest-free</div>
+    <div class="bf-chip" id="bfChip" hidden><strong>Black Friday price</strong> · full price <s class="bf-full">$2,299</s><br>Ends in <span class="bf-mini">—</span></div>
     <div class="book-label">Departure</div>
     <div class="book-deps" id="bookDeps" role="group" aria-label="Choose your departure date"></div>
     <button class="wtrvl-checkout_button tge-gold" id="wt-btn-card" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="MALDIVES_WETRAVEL_UUID" href="https://www.wetravel.com/checkout_embed?uuid=MALDIVES_WETRAVEL_UUID" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">✦ Book Now ✦</button>
     <button type="button" class="btn-line" id="bookInterest" hidden>Register Interest ✦</button>
+    <button type="button" class="vip-link-sm" data-open-pop>Not ready to book? Join the Maldives VIP list</button>
     <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget_card" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="MALDIVES_WETRAVEL_UUID" href="https://www.wetravel.com/embed/download_brochure?uuid=MALDIVES_WETRAVEL_UUID" onclick="if(window.fbq){fbq('track', 'Lead', { content_name: 'MALDIVES Brochure Download', value: 0.00, currency: 'AUD' });}">Download Itinerary</button>
     <ul class="book-trust"><li>✨ Affordable Luxe Maldives Retreat</li><li>🔒 Secure Payments via WeTravel</li><li>🤍 We Don't Get Paid Until After The Trip</li><li>🌟 <a href="https://thatgirlexperiences.wetravel.com/users/that-girl-experiences#reviews" target="_blank" rel="noopener">See our 5-Star Reviews</a></li><li>💬 <a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener">Ask us anything / book a call</a></li></ul>
   </div>
@@ -2129,6 +2226,155 @@ window.addEventListener('load', function() {
   }
 })();
 
+</script>
+
+<div class="tge-pop" id="tgePop" role="dialog" aria-modal="true" aria-labelledby="tgePopTitle" aria-hidden="true">
+  <div class="tge-pop-card">
+    <button type="button" class="tge-pop-close" id="tgePopClose" aria-label="Close">×</button>
+    <div class="tge-pop-top">
+      <div class="bf-eyebrow" id="tgePopEyebrow">✦ Maldives VIP List ✦</div>
+      <h2 class="tge-pop-title" id="tgePopTitle">Get <em>first dibs</em> 🐋</h2>
+      <p class="tge-pop-lead">Special discount codes, new dates & deal drops, sent to you before anyone else.</p>
+    </div>
+    <div class="tge-pop-body">
+      <form id="tgePopForm" novalidate>
+        <ul>
+          <li>VIP-only Discounts Codes & Sale Early-Access</li>
+          <li>Trip Updates, New Dates & Spots opening up</li>
+          <li>No spam, ever. Unsubscribe anytime</li>
+        </ul>
+        <label class="tge-pop-field"><span>First name</span><input name="name" type="text" autocomplete="given-name" required></label>
+        <label class="tge-pop-field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="tge-pop-field"><span>WhatsApp (optional)</span><input name="contact" type="tel" autocomplete="tel" placeholder="+1 555 000 0000"></label>
+        <input type="hidden" name="_subject" value="New Maldives VIP / Mailing List Signup — Maldives POPUP">
+        <input type="hidden" name="trip" value="Maldives — Dhigurah, South Ari Atoll">
+        <input type="hidden" name="list" value="Maldives VIP + mailing list (special discounts, new dates, deal drops)">
+        <input type="hidden" name="source" value="">
+        <button class="tge-pop-submit" type="submit">✦ Join VIP ✦</button>
+        <p class="tge-pop-err" id="tgePopErr" hidden>Something went wrong, please try again or message us on WhatsApp.</p>
+        <p class="tge-pop-fine">Women only · No commitment</p>
+      </form>
+      <div class="tge-pop-done" id="tgePopDone" hidden>
+        <h3>You're on the list 🤍</h3>
+        <p>Last step: join the Maldives VIP group chat, where photo sneakpeeks, discount codes & trip updates land first.</p>
+        <a class="vip-wa-btn" data-vip-wa href="#" target="_blank" rel="noopener">💬 Join the VIP Group Chat</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== Black Friday countdown + Maldives VIP list + mailing popup ===== */
+(function () {
+  /* ---- EDIT THESE ---- */
+  var SALE_END_UTC  = '2026-12-01T07:59:59Z';   // = Mon 30 Nov 2026, 11:59:59pm US Pacific (= Tue 1 Dec, 6:59pm Sydney)
+  var FULL_PRICE    = '$2,299';                 // the price after the sale
+  var VIP_WA_LINK   = 'https://chat.whatsapp.com/PASTE-YOUR-MALDIVES-VIP-GROUP-LINK';
+  var FORM_ENDPOINT = 'https://formspree.io/f/mkokzzow';
+  var POPUP_DELAY_S = 15;                       // auto-open after this many seconds (or 55% scroll / exit intent)
+  var POPUP_SNOOZE_DAYS = 5;                    // don't auto-open again for this long after closing
+  /* -------------------- */
+
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var end = new Date(SALE_END_UTC).getTime();
+  var banner = document.getElementById('bfBanner'), chip = document.getElementById('bfChip');
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+
+  document.querySelectorAll('.bf-full').forEach(function (el) { el.textContent = FULL_PRICE; });
+  document.querySelectorAll('[data-vip-wa]').forEach(function (a) {
+    a.href = VIP_WA_LINK;
+    a.addEventListener('click', function () { if (window.fbq) fbq('trackCustom', 'JoinMaldivesVIP'); });
+  });
+
+  try {
+    var endTxt = new Date(end).toLocaleString(undefined, { weekday: 'short', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    document.querySelectorAll('.bf-endtime').forEach(function (el) { el.textContent = '30 Nov, 11:59pm PT (Your Time: ' + endTxt + ')'; });
+  } catch (e) {}
+
+  function tick() {
+    var left = end - Date.now();
+    if (left <= 0) { if (banner) banner.hidden = true; if (chip) chip.hidden = true; return false; }
+    var d = Math.floor(left / 86400000), h = Math.floor(left / 3600000) % 24, m = Math.floor(left / 60000) % 60, s = Math.floor(left / 1000) % 60;
+    if (banner) {
+      banner.hidden = false;
+      banner.querySelector('[data-u="d"]').textContent = d;
+      banner.querySelector('[data-u="h"]').textContent = pad(h);
+      banner.querySelector('[data-u="m"]').textContent = pad(m);
+      banner.querySelector('[data-u="s"]').textContent = pad(s);
+    }
+    if (chip) { chip.hidden = false; chip.querySelector('.bf-mini').textContent = d + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(s) + 's'; }
+    return true;
+  }
+  if (tick()) { var t = setInterval(function () { if (!tick()) clearInterval(t); }, 1000); }
+
+  /* ---- popup ---- */
+  var pop = document.getElementById('tgePop'), form = document.getElementById('tgePopForm');
+  var done = document.getElementById('tgePopDone'), err = document.getElementById('tgePopErr');
+  var lastFocus = null, autoShown = false;
+  var joined = function () { return store.get('tgeMaldivesVipJoined') === '1'; };
+  var snoozed = function () { var t = parseInt(store.get('tgeMaldivesPopSnooze') || '0', 10); return Date.now() < t; };
+  if (end > Date.now()) { document.getElementById('tgePopEyebrow').textContent = '✦ Black Friday · Maldives VIP list ✦'; }
+
+  function openPop(source) {
+    if (!pop || pop.classList.contains('open')) return;
+    lastFocus = document.activeElement;
+    form.querySelector('[name="source"]').value = source || 'button';
+    pop.classList.add('open'); pop.setAttribute('aria-hidden', 'false');
+    document.documentElement.style.overflow = 'hidden';
+    setTimeout(function () { var f = joined() ? done.querySelector('a') : form.querySelector('input[name="name"]'); if (f) f.focus(); }, 60);
+    if (joined()) { form.hidden = true; done.hidden = false; }
+  }
+  function closePop() {
+    pop.classList.remove('open'); pop.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+    store.set('tgeMaldivesPopSnooze', String(Date.now() + POPUP_SNOOZE_DAYS * 86400000));
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function autoOpen(source) {
+    if (autoShown || joined() || snoozed()) return;
+    autoShown = true; openPop(source);
+  }
+
+  document.querySelectorAll('[data-open-pop]').forEach(function (b) { b.addEventListener('click', function () { openPop('vip-email-button'); }); });
+  document.getElementById('tgePopClose').addEventListener('click', closePop);
+  pop.addEventListener('click', function (e) { if (e.target === pop) closePop(); });
+  pop.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closePop(); return; }
+    if (e.key !== 'Tab') return;
+    var f = Array.prototype.filter.call(pop.querySelectorAll('button, a[href], input:not([type="hidden"])'), function (el) { return el.offsetParent !== null; });
+    if (!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+    else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+  });
+
+  setTimeout(function () { autoOpen('timer'); }, POPUP_DELAY_S * 1000);
+  window.addEventListener('scroll', function onS() {
+    var sh = document.documentElement.scrollHeight - window.innerHeight;
+    if (sh > 0 && window.scrollY / sh > 0.55) { window.removeEventListener('scroll', onS); autoOpen('scroll'); }
+  }, { passive: true });
+  document.addEventListener('mouseout', function (e) { if (!e.relatedTarget && e.clientY <= 0) autoOpen('exit-intent'); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.hidden = true;
+    var name = form.querySelector('[name="name"]'), email = form.querySelector('[name="email"]');
+    if (!name.value.trim()) { name.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.focus(); return; }
+    var btn = form.querySelector('.tge-pop-submit'); btn.disabled = true;
+    fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (r) { if (!r.ok) throw new Error('bad'); return r; })
+      .then(function () {
+        store.set('tgeMaldivesVipJoined', '1');
+        if (window.fbq) fbq('track', 'Lead', { content_name: 'Maldives VIP / mailing list' });
+        if (window.ttq && ttq.track) ttq.track('SubmitForm');
+        form.hidden = true; done.hidden = false;
+        var a = done.querySelector('a'); if (a) a.focus();
+      })
+      .catch(function () { err.hidden = false; })
+      .then(function () { btn.disabled = false; });
+  });
+})();
 </script>
 </body>
 </html>
