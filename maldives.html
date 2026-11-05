@@ -1,7 +1,7 @@
 <!--  MALDIVES PHOTOS LIST -->
 <!-- WhaleShark.webp
 dhigurah.webp
-dhigurahbeach.webp
+maldivesbeach.webp
 WSNight.webp
 MaldivesManta.webp
 turtle.webp
@@ -1025,6 +1025,19 @@ html, body { overflow-x: hidden; }
   .trip-mosaic .mosaic-tile:first-child .mosaic-cap { font-size: 1.1rem; padding: 3rem 1rem 0.85rem; }
 }
 </style>
+
+<style id="tge-fixes-nov5">
+/* Remove the gold star badge on "This trip is for" */
+.hero-for::before { content: none !important; display: none !important; }
+.hero-for { padding: 1.35rem 1.5rem !important; }
+@media (max-width: 640px) { .hero-for { padding: 1.2rem 1.15rem !important; } }
+/* WeTravel reviews widget: no cropping on phones (same fix as Bali) */
+@media (max-width: 640px) {
+  .overview-reviews { transform: none !important; height: auto !important; overflow: visible !important; width: 100%; max-width: 100%; }
+}
+.overview-reviews { display: flex !important; justify-content: center; text-align: center; width: 100%; }
+.overview-reviews > * { margin-left: auto; margin-right: auto; }
+</style>
 </head>
 <body class="trip">
 
@@ -1044,10 +1057,10 @@ html, body { overflow-x: hidden; }
 
 <div class="trip-mosaic-wrap"><div class="mosaic-wrap-rel" style="position:relative">
   <div class="trip-mosaic"><button type="button" class="mosaic-tile" data-goto="gallery" aria-label="Swim with Whale Sharks"><img src="WSNight.webp" alt="" decoding="async"><span class="mosaic-cap">Swim with Whale Sharks</span></button>
-  <button type="button" class="mosaic-tile" data-goto="gallery" aria-label="Beach"><img src="dhigurah.webp" alt="" decoding="async"><span class="mosaic-cap">Turquoise Waters</span></button>
   <button type="button" class="mosaic-tile" data-goto="gallery" aria-label="Crystal Clear Waters"><img src="dhigurahdrone.webp" alt="" decoding="async"><span class="mosaic-cap">White Sand & Crystal Clear Waters</span></button>
-  <button type="button" class="mosaic-tile" data-goto="gallery" aria-label="Beach"><img src="dhigurahbeach.webp" alt="" decoding="async"><span class="mosaic-cap">White Sand Beaches</span></button>
+  <button type="button" class="mosaic-tile" data-goto="gallery" aria-label="Beach"><img src="dhigurah.webp" alt="" decoding="async"><span class="mosaic-cap">Turquoise Waters</span></button>
   <button type="button" class="mosaic-tile" data-goto="gallery" aria-label="Dolphin Cruise"><img src="dolphinsdrone.webp" alt="" decoding="async"><span class="mosaic-cap">Dolphin Cruise</span></button>
+  <button type="button" class="mosaic-tile" data-goto="gallery" aria-label="Beach"><img src="maldivesbeach.webp" alt="" decoding="async"><span class="mosaic-cap">White Sand Beaches</span></button>
   <button type="button" class="mosaic-tile" data-goto="gallery" aria-label="Swim with Manta Rays"><img src="MaldivesManta.webp" alt="" decoding="async"><span class="mosaic-cap">Swim with Manta Rays</span></button>
   <button type="button" class="mosaic-all" data-goto="gallery"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Your Paradise Awaits</button></div>
   <span class="mosaic-count" aria-hidden="true"></span>
@@ -1059,6 +1072,17 @@ html, body { overflow-x: hidden; }
   <main class="trip-main">
 
 <section class="trip-overview" id="overview">
+  <div class="hero-tag">DHIGURAH · SOUTH ARI ATOLL · MALDIVES</div>
+  <h1 class="hero-title">MALDIVES <em>Girls Retreat</em></h1>
+  <p class="hero-location"><strong>Whale Sharks, Dolphins, Manta Rays, Turtles &amp; Your Maldives Dream <br/> Turquoise Waters · White-Sand Beaches · Luxury Resort Day</strong></p>
+  <div class="hero-details">
+<div class="hero-detail"><div class="hero-detail-value">10</div><div class="hero-detail-label">Days</div></div>
+<div class="hero-divider"></div>
+<div class="hero-detail"><div class="hero-detail-value">9</div><div class="hero-detail-label">Nights</div></div>
+</div>
+  <div class="hero-for">
+<strong>This trip is for:</strong> Island girls, Adventurers, Ocean & marine lovers, girls who love bucket-list adventures, turquoise waters, white-sand beaches, magical sunsets, female friendships & unreal experiences. <strong>If you've been dreaming of a Maldives trip, white-sand beaches, crystal-clear waters, magical sunsets, world-class reefs, and bucket-list experiences, this one's for you.</strong>
+</div> 
   <div class="bf-banner" id="bfBanner" hidden>
     <div>
       <div class="bf-eyebrow">✦ Black Friday Sale ✦</div>
@@ -1072,17 +1096,6 @@ html, body { overflow-x: hidden; }
       <div class="bf-unit"><b data-u="s">00</b><span>Secs</span></div>
     </div>
   </div>
-  <div class="hero-tag">DHIGURAH · SOUTH ARI ATOLL · MALDIVES</div>
-  <h1 class="hero-title">MALDIVES <em>Girls Retreat</em></h1>
-  <p class="hero-location"><strong>Whale Sharks, Dolphins, Manta Rays, Turtles &amp; Your Maldives Dream <br/> Turquoise Waters · White-Sand Beaches · Luxury Resort Day</strong></p>
-  <div class="hero-details">
-<div class="hero-detail"><div class="hero-detail-value">10</div><div class="hero-detail-label">Days</div></div>
-<div class="hero-divider"></div>
-<div class="hero-detail"><div class="hero-detail-value">9</div><div class="hero-detail-label">Nights</div></div>
-</div>
-  <div class="hero-for">
-<strong>This trip is for:</strong> Island girls, Adventurers, Ocean & marine lovers, girls who love bucket-list adventures, turquoise waters, white-sand beaches, magical sunsets, female friendships & unreal experiences. <strong>If you've been dreaming of a Maldives trip, white-sand beaches, crystal-clear waters, magical sunsets, world-class reefs, and bucket-list experiences, this one's for you.</strong>
-</div> 
   <div class="deposit-bubble-wrap">
 <div class="deposit-bubble"><span class="dep-highlight">✨ AFFORDABLE MALDIVES TRIP ✨</span> · 10 Days - $1,999 USD total</div>
 </div>
@@ -1098,8 +1111,10 @@ html, body { overflow-x: hidden; }
       <div class="slide"><img src="dhigurahaerial.webp" alt="Dhigurah's Sandbank" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">White Sand & Crystal Clear Waters</div></div></div>
       <div class="slide"><img src="dolphinsdrone.webp" alt="Dolphin Watching Cruise" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">Dolphin Watching Cruise</div></div></div>
       <div class="slide"><img src="turtle.webp" alt="Snorkel with Turtles" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">Snorkel with Turtles</div></div></div>
+      <div class="slide"><img src="maldivesbeach.webp" alt="Beaches" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">White-Sand Beaches</div></div></div>
       <div class="slide"><img src="WhaleShark.webp" alt="Swim with Whale Sharks" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">Whale Shark Safari - snorkel with these gentle giants</div></div></div>
       <div class="slide"><img src="MaldivesManta.webp" alt="Swim with Manta Rays" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">Manta Rays Snorkelling Excursion</div></div></div>
+      <div class="slide"><img src="dhigurah.webp" alt="Dhigurah" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">Sandbanks</div></div></div>
       <div class="slide"><img src="sky.webp" alt="Stargazing" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">Stargazing</div></div></div>
       <div class="slide"><img src="turquoise.webp" alt="Turquoise Lagoons" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">Turquoise Lagoons</div></div></div>
       <div class="slide"><img src="maldivesbeach.webp" alt="Luxury Resort Day" loading="lazy" decoding="async"><div class="slide-caption"><div class="slide-caption-title">Luxury Resort Day</div></div></div>
@@ -2390,6 +2405,22 @@ window.addEventListener('load', function() {
       .catch(function () { err.hidden = false; })
       .then(function () { btn.disabled = false; });
   });
+})();
+</script>
+<script>
+/* Fit the WeTravel reviews widget to phone width without cropping */
+(function(){
+  function fit(){
+    var box=document.querySelector('.overview-reviews'); if(!box) return;
+    var el=box.querySelector('iframe')||box.querySelector('div,a,img'); if(!el) return;
+    el.style.transform=''; box.style.height='';
+    if(window.innerWidth>640) return;
+    var w=el.scrollWidth||el.offsetWidth, h=el.offsetHeight, avail=box.clientWidth;
+    if(w>avail && w>0){ var k=avail/w; el.style.transformOrigin='center top'; el.style.transform='scale('+k+')'; box.style.height=Math.ceil(h*k)+'px'; }
+  }
+  window.addEventListener('load',function(){fit(); setTimeout(fit,800); setTimeout(fit,2500);});
+  window.addEventListener('resize',fit);
+  if(window.MutationObserver){ var b=document.querySelector('.overview-reviews'); if(b) new MutationObserver(function(){setTimeout(fit,50);}).observe(b,{childList:true,subtree:true}); }
 })();
 </script>
 </body>
