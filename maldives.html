@@ -1099,7 +1099,7 @@ html, body { overflow-x: hidden; }
     <a class="nav-brand" href="https://www.thatgirlexperiences.com">That Girl Experiences</a>
     <div class="nav-crumb"><a href="index.html">ALL TRIPS</a> / MALDIVES</div>
     <div class="nav-right">
-      <div class="tge-fx"><label class="sr-only-fx" for="tgeFx" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Show prices in</label><select id="tgeFx" title="Show prices in your currency · estimates only, subject to real-time exchange rates"><option value="USD">USD</option><option value="AUD">AUD</option><option value="NZD">NZD</option><option value="CAD">CAD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="SGD">SGD</option><option value="HKD">HKD</option></select><span class="tge-fx-tip" aria-hidden="true">≈ estimate only · subject to real-time exchange rates</span></div>
+      <div class="tge-fx"><label class="sr-only-fx" for="tgeFx" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Show prices in</label><select id="tgeFx" title="Show prices in your currency · estimates only, subject to real-time exchange rates"><option value="USD">USD</option><option value="AUD">AUD</option><option value="CAD">CAD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="SGD">SGD</option><option value="HKD">HKD</option></select><span class="tge-fx-tip" aria-hidden="true">≈ estimate only · subject to real-time exchange rates</span></div>
       <div class="nav-menu" id="navMenu">
         <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false" aria-controls="navMenuPanel" aria-label="Open menu"><span class="nav-menu-btn-lines" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
         <div class="nav-menu-panel" id="navMenuPanel" role="menu"><a href="#wellness" class="nav-menu-link" role="menuitem">Trip Highlights</a><a href="#why-dhigurah" class="nav-menu-link" role="menuitem">Why Dhigurah?</a><a href="#why" class="nav-menu-link" role="menuitem">Why Travel With Us?</a><a href="#where-you-stay" class="nav-menu-link" role="menuitem">Accommodation</a><a href="#inclusions" class="nav-menu-link" role="menuitem">Inclusions</a><a href="#itinerary" class="nav-menu-link" role="menuitem">Itinerary</a><a href="#for-you" class="nav-menu-link" role="menuitem">This Is For You</a><a href="#meet-gabs" class="nav-menu-link" role="menuitem">Your Host</a><a href="#real-moments" class="nav-menu-link" role="menuitem">Previous Trips</a></div>
@@ -2478,9 +2478,10 @@ window.addEventListener('load', function() {
 <script id="tge-fx-js">
 /* ===== Currency picker: converts every USD price on the page (approx.) ===== */
 (function () {
-  /* fallback rates (1 USD = x). Live rates load automatically when available. */
-  var RATES = { USD: 1, AUD: 1.53, NZD: 1.72, CAD: 1.40, GBP: 0.76, EUR: 0.87, SGD: 1.30, HKD: 7.78 };
-  var SYM = { USD: '$', AUD: 'A$', NZD: 'NZ$', CAD: 'C$', GBP: '£', EUR: '€', SGD: 'S$', HKD: 'HK$' };
+  /* Set standard rates, based on the Maldives price: $1,999 USD = €1,799 = £1,499 = A$2,946 = C$2,869 = S$2,596 = HK$15,499 */
+  var BASE = 1999;
+  var RATES = { USD: 1, AUD: 2946 / BASE, CAD: 2869 / BASE, GBP: 1499 / BASE, EUR: 1799 / BASE, SGD: 2596 / BASE, HKD: 15499 / BASE };
+  var SYM = { USD: '$', AUD: 'A$', CAD: 'C$', GBP: '£', EUR: '€', SGD: 'S$', HKD: 'HK$' };
   var KEY = 'tgeCurrency';
   var sel = document.getElementById('tgeFx');
   if (!sel) return;
@@ -2565,14 +2566,6 @@ window.addEventListener('load', function() {
     else wrap.classList.remove('show-tip');
   });
 
-  /* live rates (falls back silently to the rates above) */
-  try {
-    fetch('https://open.er-api.com/v6/latest/USD').then(function (r) { return r.json(); }).then(function (d) {
-      if (!d || !d.rates) return;
-      Object.keys(RATES).forEach(function (k) { if (typeof d.rates[k] === 'number') RATES[k] = d.rates[k]; });
-      apply();
-    }).catch(function () {});
-  } catch (e) {}
 })();
 </script>
 </body>
