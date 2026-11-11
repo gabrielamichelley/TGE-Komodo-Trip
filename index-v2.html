@@ -901,6 +901,37 @@ html, body { overflow-x: hidden; }
   .wellness-section .swipe-dots { display: flex; }
 }
 </style>
+<style id="tge-testimonials-css">
+/* ===== Testimonials section (added on top) ===== */
+.tge-testi { background: linear-gradient(180deg, #faf0e4 0%, #d4edef 100%); padding: 3.5rem 1.5rem; font-family: 'Jost', system-ui, sans-serif; color: #1c2b2d; }
+.tge-testi * { box-sizing: border-box; }
+.tge-testi-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
+.tge-testi-head { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+.tge-testi-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.32em; color: #c9a96e; }
+.tge-testi-title { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.15; color: #1c2b2d; }
+.tge-testi-title em { font-style: italic; color: #2d7a8c; }
+.tge-testi-sub { margin: 0; max-width: 600px; font-size: 1.1rem; line-height: 1.75; }
+.tge-testi-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+.tge-testi-pills span.pill { padding: 0.55rem 1.2rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.3); background: rgba(255,255,255,0.85); font-size: 0.85rem; }
+.tge-testi-pills .stars { color: #c9a96e; }
+.tge-testi-hero { margin: 0; width: 100%; max-width: 960px; padding: 2.5rem 2rem; border-radius: 28px; background: linear-gradient(135deg, #faf0e4 0%, #d4edef 55%, #b5dde3 100%); box-shadow: 0 20px 60px rgba(74,155,173,0.1); display: flex; flex-direction: column; align-items: center; gap: 1.25rem; text-align: center; }
+.tge-testi-hero .stars { color: #c9a96e; letter-spacing: 0.2em; }
+.tge-testi-hero blockquote { margin: 0; max-width: 760px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: clamp(1.35rem, 2.6vw, 1.7rem); line-height: 1.55; }
+.tge-testi-hero figcaption { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; color: #2d7a8c; }
+.tge-testi-grid { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 1.5rem; }
+.tge-testi-card { margin: 0; padding: 2rem; border-radius: 22px; background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.15); display: flex; flex-direction: column; gap: 1rem; }
+.tge-testi-card .stars { color: #c9a96e; letter-spacing: 0.15em; }
+.tge-testi-card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 1.35rem; line-height: 1.2; }
+.tge-testi-card blockquote { margin: 0; flex: 1; font-size: 0.97rem; line-height: 1.8; }
+.tge-testi-card figcaption { font-size: 0.68rem; letter-spacing: 0.2em; color: #4a5e61; }
+.tge-testi-all { padding: 0.95rem 2.2rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.5); background: rgba(255,255,255,0.6); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; color: #2d7a8c; text-decoration: none; transition: background .3s ease; }
+.tge-testi-all:hover { background: #fff; color: #1c2b2d; }
+@media (max-width: 640px) {
+  .tge-testi { padding: 3rem 1.15rem; }
+  .tge-testi-hero { padding: 2rem 1.25rem; }
+  .tge-testi-card { padding: 1.6rem 1.35rem; }
+}
+</style>
 </head>
 <body class="home">
 
@@ -1081,6 +1112,64 @@ html, body { overflow-x: hidden; }
 </section>
 
 
+<section class="tge-testi" id="testimonials" aria-labelledby="tgeTestiTitle">
+  <div class="tge-testi-inner">
+    <div class="tge-testi-head">
+      <div class="tge-testi-eyebrow">REAL REVIEWS FROM REAL GIRLS</div>
+      <h2 class="tge-testi-title" id="tgeTestiTitle">From Strangers to <em>Besties</em></h2>
+      <p class="tge-testi-sub">Most of our girls come solo. Here's what they said about our trips after a week together.</p>
+    </div>
+    <div class="tge-testi-pills">
+      <span class="pill"><span class="stars">★★★★★</span> on Tripadvisor</span>
+      <span class="pill">Recommended on Facebook</span>
+      <span class="pill">5-star, verified reviews on WeTravel</span>
+    </div>
+    <figure class="tge-testi-hero">
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+      <blockquote>“…what was most incredible to me was how Gaby was able to take 7 strangers and make them best friends by the end of an 8 day trip. She made everyone feel so welcome, comfortable, and most importantly, safe! …I will carry the memories of this trip forever and now I have 6 new besties to travel with 🥰”</blockquote>
+      <figcaption>MARIA M. · ISLAND LIFE GIRLS TRIP · THAT GIRL EXPERIENCES</figcaption>
+    </figure>
+    <div class="tge-testi-grid">
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“Gabs Was an Angel”</div>
+        <blockquote>It was the absolute dream. every detail of this trip was perfect, we had so much fun and we created a very special bond with all the girls, learned so much from each other and about ourselves. it was exactly what i needed and gabs was an angel.</blockquote>
+        <figcaption>LUCIE J. · THAT GIRL EXPERIENCES</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“Best Girls Trip Ever!”</div>
+        <blockquote>Came solo and left with the best group of girls ever! I never thought I would find a supportive women community and lifelong friends from a group trip I said yes to but I’m so glad I did… a super well-organized trip with lots of inclusions… with stunning luxury accommodation and villas! 10/10 would recommend ✨</blockquote>
+        <figcaption>TRIPADVISOR REVIEW</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“5 Stars Doesn't Even Feel Like Enough”</div>
+        <blockquote>She always had everyone’s back, made sure everyone was comfortable, and was constantly checking in to make sure we had everything we needed. Honestly, she was like a mom away from home. 😂🤍 …5 stars doesn’t even feel like enough.</blockquote>
+        <figcaption>SHAUNS D. · FACEBOOK REVIEW</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“I’ve Never Felt More Grounded”</div>
+        <blockquote>Saying yes, to this was probably one of the best decisions I could’ve made during my travels… I somehow even came out of the group with more confidence. After listening to everyone open up, I’ve never felt more grounded.</blockquote>
+        <figcaption>PREVIOUS GUEST · THAT GIRL EXPERIENCES</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“Genuine Feminine Energy”</div>
+        <blockquote>The trip was filled with so many unforgettable moments, laughter, adventure and genuine feminine energy. A special thank you to our wonderful host for being so passionate, caring and dedicated throughout the entire trip. 💗🌺</blockquote>
+        <figcaption>ISLAND LIFE GUEST · THAT GIRL EXPERIENCES</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“Again in a Heartbeat”</div>
+        <blockquote>Such an amazing experience from start to finish! We had the best time exploring Bali, making unforgettable memories and sharing so many special moments together as a group… Highly recommend booking this trip and I would do it again in a heartbeat. 🤍🥥🌴✨</blockquote>
+        <figcaption>FELICIA B. · THAT GIRL EXPERIENCES</figcaption>
+      </figure>
+    </div>
+    <a class="tge-testi-all" href="https://thatgirlexperiences.wetravel.com/users/that-girl-experiences#reviews" target="_blank" rel="noopener">READ ALL REVIEWS</a>
+  </div>
+</section>
 <section class="ti-callout-wrap">
   <a href="/travel-identity.html" target="_blank" rel="noopener" class="ti-callout reveal">
     <div class="ti-callout-body"><div class="ti-callout-tag">TRAVEL IDENTITY™ QUIZ</div><h2 class="ti-callout-title">Discover Your Unique <em>Travel Identity™</em></h2><p class="ti-callout-sub">Uncover your unique Travel Identity — how you travel, your travel DNA, the experiences you crave, the energy you bring, and the trip that's calling your name.</p><span class="ti-callout-cta">Discover my Travel Identity™</span></div>
