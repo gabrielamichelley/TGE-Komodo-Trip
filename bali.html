@@ -999,9 +999,16 @@ html, body { overflow-x: hidden; }
 .tge-fx select { -webkit-appearance: none; -moz-appearance: none; appearance: none; height: 34px; min-height: 34px; margin: 0; padding: 0 1.55rem 0 0.75rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.45); background: rgba(255,255,255,0.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%232D7A8C' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 0.6rem center; color: #2D7A8C; font-family: 'Jost', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; line-height: 1; cursor: pointer; }
 .tge-fx select:hover { border-color: #C9A96E; }
 .tge-fx select:focus-visible { outline: 2px solid #2D7A8C; outline-offset: 2px; }
-.tge-fx-tip { position: absolute; top: calc(100% + 6px); right: 0; z-index: 5; white-space: nowrap; padding: 0.3rem 0.6rem; border-radius: 10px; background: #2D7A8C; color: #fff; font-family: 'Jost', sans-serif; font-size: 0.62rem; letter-spacing: 0.04em; pointer-events: none; opacity: 0; transform: translateY(-3px); transition: opacity .25s ease, transform .25s ease; }
+.tge-fx-tip { position: absolute; top: calc(100% + 6px); right: 0; z-index: 5; width: max-content; max-width: min(240px, 80vw); white-space: normal; text-align: center; line-height: 1.35; padding: 0.3rem 0.6rem; border-radius: 10px; background: #2D7A8C; color: #fff; font-family: 'Jost', sans-serif; font-size: 0.62rem; letter-spacing: 0.04em; pointer-events: none; opacity: 0; transform: translateY(-3px); transition: opacity .25s ease, transform .25s ease; }
 .tge-fx.show-tip .tge-fx-tip { opacity: 1; transform: none; }
 @media (max-width: 640px) { .tge-fx select { height: 40px; min-height: 40px; } }
+@media (max-width: 420px) {
+  .nav-brand { font-size: 0.7rem !important; letter-spacing: 0.13em !important; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .nav-inner { gap: 0.4rem !important; }
+  .nav-right { gap: 0.4rem !important; }
+  .tge-fx select { padding: 0 1.35rem 0 0.6rem; background-position: right 0.5rem center; }
+  .nav-menu-btn { padding: 0 0.8rem !important; font-size: 0 !important; gap: 0 !important; min-width: 44px; justify-content: center; }
+}
 .tge-money { font: inherit !important; color: inherit !important; letter-spacing: inherit !important; text-transform: inherit !important; vertical-align: baseline !important; margin: 0 !important; }
 </style>
 </head>
@@ -1012,7 +1019,7 @@ html, body { overflow-x: hidden; }
     <a class="nav-brand" href="https://www.thatgirlexperiences.com">That Girl Experiences</a>
     <div class="nav-crumb"><a href="index.html">ALL TRIPS</a> / Indonesia / <b>ISLAND LIFE</b></div>
     <div class="nav-right">
-      <div class="tge-fx"><label class="sr-only-fx" for="tgeFx" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Show prices in</label><select id="tgeFx" title="Show prices in your currency (approx.) · trips are charged in USD"><option value="USD">USD</option><option value="AUD">AUD</option><option value="NZD">NZD</option><option value="CAD">CAD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="SGD">SGD</option><option value="HKD">HKD</option></select><span class="tge-fx-tip" aria-hidden="true">≈ approx. · you're charged in USD</span></div>
+      <div class="tge-fx"><label class="sr-only-fx" for="tgeFx" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Show prices in</label><select id="tgeFx" title="Show prices in your currency · estimates only, subject to real-time exchange rates"><option value="USD">USD</option><option value="AUD">AUD</option><option value="NZD">NZD</option><option value="CAD">CAD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="SGD">SGD</option><option value="HKD">HKD</option></select><span class="tge-fx-tip" aria-hidden="true">≈ estimate only · subject to real-time exchange rates</span></div>
       <div class="nav-menu" id="navMenu">
         <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false" aria-controls="navMenuPanel" aria-label="Open menu"><span class="nav-menu-btn-lines" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
         <div class="nav-menu-panel" id="navMenuPanel" role="menu"><a href="#wellness" class="nav-menu-link" role="menuitem">Trip Highlights</a><a href="#why" class="nav-menu-link" role="menuitem">Why Travel With Us?</a><a href="#where-you-stay" class="nav-menu-link" role="menuitem">Accommodation</a><a href="#inclusions" class="nav-menu-link" role="menuitem">Inclusions</a><a href="#itinerary" class="nav-menu-link" role="menuitem">Itinerary</a><a href="#for-you" class="nav-menu-link" role="menuitem">This Is For You</a><a href="#meet-gabs" class="nav-menu-link" role="menuitem">Your Host</a><a href="#real-moments" class="nav-menu-link" role="menuitem">Previous Trips</a></div>
@@ -1059,9 +1066,6 @@ html, body { overflow-x: hidden; }
       <div class="bf-unit"><b data-u="s">00</b><span>Secs</span></div>
     </div>
   </div>
-  <div class="deposit-bubble-wrap">
-<div class="deposit-bubble"><span class="dep-highlight">‼️ 1 SPOT LEFT ‼️</span> · 8 Days - $699 USD total</div>
-</div>
   <div class="overview-ctas"><button class="wtrvl-checkout_button hero-cta" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="6779947278" href="https://www.wetravel.com/checkout_embed?uuid=6779947278" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button><button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278" href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278" onclick="if(window.fbq){fbq('track', 'Lead', { content_name: 'ISLAND LIFE Brochure Download', value: 0.00, currency: 'AUD' });}">Download Itinerary</button></div>
   <div class="overview-reviews"><script src="https://cdn.wetravel.com/widgets/embed_reviews.js" id="wetravel_review_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-userslug="that-girl-experiences" data-uid="2374713" data-showstars="true" data-showcount="false" data-name="WeTravel Review Widget"></script></div>
 </section>
