@@ -1073,6 +1073,17 @@ html, body { overflow-x: hidden; }
 .overview-reviews { display: flex !important; justify-content: center; text-align: center; width: 100%; }
 .overview-reviews > * { margin-left: auto; margin-right: auto; }
 </style>
+<style id="tge-fx-css">
+/* ===== Currency picker (added on top) ===== */
+.tge-fx { position: relative; display: inline-flex; align-items: center; flex: 0 0 auto; }
+.tge-fx select { -webkit-appearance: none; -moz-appearance: none; appearance: none; height: 34px; min-height: 34px; margin: 0; padding: 0 1.55rem 0 0.75rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.45); background: rgba(255,255,255,0.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%232D7A8C' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 0.6rem center; color: #2D7A8C; font-family: 'Jost', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; line-height: 1; cursor: pointer; }
+.tge-fx select:hover { border-color: #C9A96E; }
+.tge-fx select:focus-visible { outline: 2px solid #2D7A8C; outline-offset: 2px; }
+.tge-fx-tip { position: absolute; top: calc(100% + 6px); right: 0; z-index: 5; white-space: nowrap; padding: 0.3rem 0.6rem; border-radius: 10px; background: #2D7A8C; color: #fff; font-family: 'Jost', sans-serif; font-size: 0.62rem; letter-spacing: 0.04em; pointer-events: none; opacity: 0; transform: translateY(-3px); transition: opacity .25s ease, transform .25s ease; }
+.tge-fx.show-tip .tge-fx-tip { opacity: 1; transform: none; }
+@media (max-width: 640px) { .tge-fx select { height: 40px; min-height: 40px; } }
+.tge-money { font: inherit !important; color: inherit !important; letter-spacing: inherit !important; text-transform: inherit !important; vertical-align: baseline !important; margin: 0 !important; }
+</style>
 </head>
 <body class="trip">
 
@@ -1081,6 +1092,7 @@ html, body { overflow-x: hidden; }
     <a class="nav-brand" href="https://www.thatgirlexperiences.com">That Girl Experiences</a>
     <div class="nav-crumb"><a href="index.html">ALL TRIPS</a> / MALDIVES</div>
     <div class="nav-right">
+      <div class="tge-fx"><label class="sr-only-fx" for="tgeFx" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Show prices in</label><select id="tgeFx" title="Show prices in your currency (approx.) · trips are charged in USD"><option value="USD">USD</option><option value="AUD">AUD</option><option value="NZD">NZD</option><option value="CAD">CAD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="SGD">SGD</option><option value="HKD">HKD</option></select><span class="tge-fx-tip" aria-hidden="true">≈ approx. · you're charged in USD</span></div>
       <div class="nav-menu" id="navMenu">
         <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false" aria-controls="navMenuPanel" aria-label="Open menu"><span class="nav-menu-btn-lines" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
         <div class="nav-menu-panel" id="navMenuPanel" role="menu"><a href="#wellness" class="nav-menu-link" role="menuitem">Trip Highlights</a><a href="#why-dhigurah" class="nav-menu-link" role="menuitem">Why Dhigurah?</a><a href="#why" class="nav-menu-link" role="menuitem">Why Travel With Us?</a><a href="#where-you-stay" class="nav-menu-link" role="menuitem">Accommodation</a><a href="#inclusions" class="nav-menu-link" role="menuitem">Inclusions</a><a href="#itinerary" class="nav-menu-link" role="menuitem">Itinerary</a><a href="#for-you" class="nav-menu-link" role="menuitem">This Is For You</a><a href="#meet-gabs" class="nav-menu-link" role="menuitem">Your Host</a><a href="#real-moments" class="nav-menu-link" role="menuitem">Previous Trips</a></div>
@@ -2454,6 +2466,106 @@ window.addEventListener('load', function() {
   window.addEventListener('load',function(){fit(); setTimeout(fit,800); setTimeout(fit,2500);});
   window.addEventListener('resize',fit);
   if(window.MutationObserver){ var b=document.querySelector('.overview-reviews'); if(b) new MutationObserver(function(){setTimeout(fit,50);}).observe(b,{childList:true,subtree:true}); }
+})();
+</script>
+<script id="tge-fx-js">
+/* ===== Currency picker: converts every USD price on the page (approx.) ===== */
+(function () {
+  /* fallback rates (1 USD = x). Live rates load automatically when available. */
+  var RATES = { USD: 1, AUD: 1.53, NZD: 1.72, CAD: 1.40, GBP: 0.76, EUR: 0.87, SGD: 1.30, HKD: 7.78 };
+  var SYM = { USD: '$', AUD: 'A$', NZD: 'NZ$', CAD: 'C$', GBP: '£', EUR: '€', SGD: 'S$', HKD: 'HK$' };
+  var KEY = 'tgeCurrency';
+  var sel = document.getElementById('tgeFx');
+  if (!sel) return;
+  var store = { get: function () { try { return localStorage.getItem(KEY); } catch (e) { return null; } },
+                set: function (v) { try { localStorage.setItem(KEY, v); } catch (e) {} } };
+  var cur = store.get() || 'USD';
+  if (!RATES[cur]) cur = 'USD';
+  sel.value = cur;
+
+  var RE = /\$(\d{1,3}(?:,\d{3})+|\d+)(?:\.\d\d)?(\s?USD\b)?/g;
+  var SKIP = /^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA|SELECT|OPTION|IFRAME|svg)$/i;
+  var UNIT_SEL = '.book-price > span, .book-bar-price > span, .combo-price-usd';
+
+  function fmt(usd, withCode) {
+    if (cur === 'USD') return null;
+    var v = Math.round(usd * RATES[cur]);
+    return '≈' + SYM[cur] + v.toLocaleString('en-US') + (withCode ? ' ' + cur : '');
+  }
+  function skipNode(n) {
+    for (var p = n.parentNode; p && p !== document.body; p = p.parentNode) {
+      if (p.nodeType !== 1) continue;
+      if (SKIP.test(p.nodeName) || p.classList.contains('tge-money') || p.classList.contains('tge-fx') || p.hasAttribute('data-no-fx')) return true;
+    }
+    return false;
+  }
+  function wrapText(t) {
+    var s = t.nodeValue;
+    if (!s || s.indexOf('$') < 0 || skipNode(t)) return;
+    RE.lastIndex = 0;
+    if (!RE.test(s)) return;
+    RE.lastIndex = 0;
+    var frag = document.createDocumentFragment(), last = 0, m;
+    while ((m = RE.exec(s))) {
+      if (m.index > last) frag.appendChild(document.createTextNode(s.slice(last, m.index)));
+      var sp = document.createElement('span');
+      sp.className = 'tge-money';
+      sp.setAttribute('data-usd', m[1].replace(/,/g, ''));
+      sp.setAttribute('data-orig', m[0]);
+      if (m[2]) sp.setAttribute('data-code', '1');
+      sp.textContent = fmt(+m[1].replace(/,/g, ''), !!m[2]) || m[0];
+      frag.appendChild(sp);
+      last = m.index + m[0].length;
+    }
+    if (last < s.length) frag.appendChild(document.createTextNode(s.slice(last)));
+    t.parentNode.replaceChild(frag, t);
+  }
+  function scan(root) {
+    if (!root) return;
+    if (root.nodeType === 3) { wrapText(root); return; }
+    if (root.nodeType !== 1 || SKIP.test(root.nodeName)) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), list = [], n;
+    while ((n = w.nextNode())) if (n.nodeValue.indexOf('$') > -1) list.push(n);
+    list.forEach(wrapText);
+    if (root.querySelectorAll) root.querySelectorAll(UNIT_SEL).forEach(unit);
+    if (root.matches && root.matches(UNIT_SEL)) unit(root);
+  }
+  function unit(el) {
+    if (!el.hasAttribute('data-orig-unit')) {
+      if (!/\bUSD\b/.test(el.textContent)) return;
+      el.setAttribute('data-orig-unit', el.textContent);
+    }
+    el.textContent = el.getAttribute('data-orig-unit').replace(/\bUSD\b/, cur);
+  }
+  function apply() {
+    document.querySelectorAll('.tge-money').forEach(function (sp) {
+      sp.textContent = fmt(+sp.getAttribute('data-usd'), sp.hasAttribute('data-code')) || sp.getAttribute('data-orig');
+    });
+    document.querySelectorAll('[data-orig-unit]').forEach(unit);
+    document.documentElement.setAttribute('data-currency', cur);
+  }
+
+  scan(document.body);
+  apply();
+  new MutationObserver(function (muts) {
+    muts.forEach(function (mu) { mu.addedNodes.forEach(function (n) { if (!skipNode(n)) scan(n); }); });
+  }).observe(document.body, { childList: true, subtree: true });
+
+  var wrap = sel.parentNode, tipT;
+  sel.addEventListener('change', function () {
+    cur = sel.value; store.set(cur); apply();
+    if (cur !== 'USD') { wrap.classList.add('show-tip'); clearTimeout(tipT); tipT = setTimeout(function () { wrap.classList.remove('show-tip'); }, 3200); }
+    else wrap.classList.remove('show-tip');
+  });
+
+  /* live rates (falls back silently to the rates above) */
+  try {
+    fetch('https://open.er-api.com/v6/latest/USD').then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || !d.rates) return;
+      Object.keys(RATES).forEach(function (k) { if (typeof d.rates[k] === 'number') RATES[k] = d.rates[k]; });
+      apply();
+    }).catch(function () {});
+  } catch (e) {}
 })();
 </script>
 </body>

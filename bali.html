@@ -962,6 +962,48 @@ html, body { overflow-x: hidden; }
   .vip-card { padding: 1.75rem 1.15rem; }
 }
 </style>
+<style id="tge-testimonials-css">
+/* ===== Testimonials section (added on top) ===== */
+.tge-testi { background: linear-gradient(180deg, #faf0e4 0%, #d4edef 100%); padding: 3.5rem 1.5rem; font-family: 'Jost', system-ui, sans-serif; color: #1c2b2d; }
+.tge-testi * { box-sizing: border-box; }
+.tge-testi-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
+.tge-testi-head { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+.tge-testi-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.32em; color: #c9a96e; }
+.tge-testi-title { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.15; color: #1c2b2d; }
+.tge-testi-title em { font-style: italic; color: #2d7a8c; }
+.tge-testi-sub { margin: 0; max-width: 600px; font-size: 1.1rem; line-height: 1.75; }
+.tge-testi-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+.tge-testi-pills span.pill { padding: 0.55rem 1.2rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.3); background: rgba(255,255,255,0.85); font-size: 0.85rem; }
+.tge-testi-pills .stars { color: #c9a96e; }
+.tge-testi-hero { margin: 0; width: 100%; max-width: 960px; padding: 2.5rem 2rem; border-radius: 28px; background: linear-gradient(135deg, #faf0e4 0%, #d4edef 55%, #b5dde3 100%); box-shadow: 0 20px 60px rgba(74,155,173,0.1); display: flex; flex-direction: column; align-items: center; gap: 1.25rem; text-align: center; }
+.tge-testi-hero .stars { color: #c9a96e; letter-spacing: 0.2em; }
+.tge-testi-hero blockquote { margin: 0; max-width: 760px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: clamp(1.35rem, 2.6vw, 1.7rem); line-height: 1.55; }
+.tge-testi-hero figcaption { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; color: #2d7a8c; }
+.tge-testi-grid { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 1.5rem; }
+.tge-testi-card { margin: 0; padding: 2rem; border-radius: 22px; background: rgba(255,255,255,0.85); border: 1px solid rgba(201,169,110,0.15); display: flex; flex-direction: column; gap: 1rem; }
+.tge-testi-card .stars { color: #c9a96e; letter-spacing: 0.15em; }
+.tge-testi-card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 1.35rem; line-height: 1.2; }
+.tge-testi-card blockquote { margin: 0; flex: 1; font-size: 0.97rem; line-height: 1.8; }
+.tge-testi-card figcaption { font-size: 0.68rem; letter-spacing: 0.2em; color: #4a5e61; }
+.tge-testi-all { padding: 0.95rem 2.2rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.5); background: rgba(255,255,255,0.6); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.25em; color: #2d7a8c; text-decoration: none; transition: background .3s ease; }
+.tge-testi-all:hover { background: #fff; color: #1c2b2d; }
+@media (max-width: 640px) {
+  .tge-testi { padding: 3rem 1.15rem; }
+  .tge-testi-hero { padding: 2rem 1.25rem; }
+  .tge-testi-card { padding: 1.6rem 1.35rem; }
+}
+</style>
+<style id="tge-fx-css">
+/* ===== Currency picker (added on top) ===== */
+.tge-fx { position: relative; display: inline-flex; align-items: center; flex: 0 0 auto; }
+.tge-fx select { -webkit-appearance: none; -moz-appearance: none; appearance: none; height: 34px; min-height: 34px; margin: 0; padding: 0 1.55rem 0 0.75rem; border-radius: 50px; border: 1px solid rgba(201,169,110,0.45); background: rgba(255,255,255,0.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%232D7A8C' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 0.6rem center; color: #2D7A8C; font-family: 'Jost', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; line-height: 1; cursor: pointer; }
+.tge-fx select:hover { border-color: #C9A96E; }
+.tge-fx select:focus-visible { outline: 2px solid #2D7A8C; outline-offset: 2px; }
+.tge-fx-tip { position: absolute; top: calc(100% + 6px); right: 0; z-index: 5; white-space: nowrap; padding: 0.3rem 0.6rem; border-radius: 10px; background: #2D7A8C; color: #fff; font-family: 'Jost', sans-serif; font-size: 0.62rem; letter-spacing: 0.04em; pointer-events: none; opacity: 0; transform: translateY(-3px); transition: opacity .25s ease, transform .25s ease; }
+.tge-fx.show-tip .tge-fx-tip { opacity: 1; transform: none; }
+@media (max-width: 640px) { .tge-fx select { height: 40px; min-height: 40px; } }
+.tge-money { font: inherit !important; color: inherit !important; letter-spacing: inherit !important; text-transform: inherit !important; vertical-align: baseline !important; margin: 0 !important; }
+</style>
 </head>
 <body class="trip">
 
@@ -970,6 +1012,7 @@ html, body { overflow-x: hidden; }
     <a class="nav-brand" href="https://www.thatgirlexperiences.com">That Girl Experiences</a>
     <div class="nav-crumb"><a href="index.html">ALL TRIPS</a> / Indonesia / <b>ISLAND LIFE</b></div>
     <div class="nav-right">
+      <div class="tge-fx"><label class="sr-only-fx" for="tgeFx" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Show prices in</label><select id="tgeFx" title="Show prices in your currency (approx.) · trips are charged in USD"><option value="USD">USD</option><option value="AUD">AUD</option><option value="NZD">NZD</option><option value="CAD">CAD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="SGD">SGD</option><option value="HKD">HKD</option></select><span class="tge-fx-tip" aria-hidden="true">≈ approx. · you're charged in USD</span></div>
       <div class="nav-menu" id="navMenu">
         <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false" aria-controls="navMenuPanel" aria-label="Open menu"><span class="nav-menu-btn-lines" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
         <div class="nav-menu-panel" id="navMenuPanel" role="menu"><a href="#wellness" class="nav-menu-link" role="menuitem">Trip Highlights</a><a href="#why" class="nav-menu-link" role="menuitem">Why Travel With Us?</a><a href="#where-you-stay" class="nav-menu-link" role="menuitem">Accommodation</a><a href="#inclusions" class="nav-menu-link" role="menuitem">Inclusions</a><a href="#itinerary" class="nav-menu-link" role="menuitem">Itinerary</a><a href="#for-you" class="nav-menu-link" role="menuitem">This Is For You</a><a href="#meet-gabs" class="nav-menu-link" role="menuitem">Your Host</a><a href="#real-moments" class="nav-menu-link" role="menuitem">Previous Trips</a></div>
@@ -1003,6 +1046,19 @@ html, body { overflow-x: hidden; }
   <div class="hero-for">
 <strong>This trip is for:</strong> Girls who love travel, bucket-list adventures, new experiences, core memories, island life, the ocean, female friendships &amp; a supportive girls community that builds you up. <strong>3 ISLANDS, ONE TRIP OF A LIFETIME.</strong>
 </div>
+  <div class="bf-banner" id="bfBanner" hidden>
+    <div>
+      <div class="bf-eyebrow">✦ Black Friday Sale ✦</div>
+      <div class="bf-headline"><s class="bf-full">$899</s> → <em>$699</em> total</div>
+      <div class="bf-ends">Sale ends Cyber Monday · <span class="bf-endtime"></span></div>
+    </div>
+    <div class="bf-clock" role="timer" aria-live="off" aria-label="Time left in the Black Friday sale">
+      <div class="bf-unit"><b data-u="d">0</b><span>Days</span></div>
+      <div class="bf-unit"><b data-u="h">00</b><span>Hrs</span></div>
+      <div class="bf-unit"><b data-u="m">00</b><span>Mins</span></div>
+      <div class="bf-unit"><b data-u="s">00</b><span>Secs</span></div>
+    </div>
+  </div>
   <div class="deposit-bubble-wrap">
 <div class="deposit-bubble"><span class="dep-highlight">‼️ 1 SPOT LEFT ‼️</span> · 8 Days - $699 USD total</div>
 </div>
@@ -1695,6 +1751,64 @@ html, body { overflow-x: hidden; }
   
   <p class="moments-footnote reveal">You, me &amp; the girls - island life in Bali?</p>
 </section>
+<section class="tge-testi" id="testimonials" aria-labelledby="tgeTestiTitle">
+  <div class="tge-testi-inner">
+    <div class="tge-testi-head">
+      <div class="tge-testi-eyebrow">REAL REVIEWS FROM REAL GIRLS</div>
+      <h2 class="tge-testi-title" id="tgeTestiTitle">From Strangers to <em>Besties</em></h2>
+      <p class="tge-testi-sub">Most of our girls come solo. Here's what they said about our trips after a week together.</p>
+    </div>
+    <div class="tge-testi-pills">
+      <span class="pill"><span class="stars">★★★★★</span> on Tripadvisor</span>
+      <span class="pill">Recommended on Facebook</span>
+      <span class="pill">5-star, verified reviews on WeTravel</span>
+    </div>
+    <figure class="tge-testi-hero">
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+      <blockquote>“…what was most incredible to me was how Gaby was able to take 7 strangers and make them best friends by the end of an 8 day trip. She made everyone feel so welcome, comfortable, and most importantly, safe! …I will carry the memories of this trip forever and now I have 6 new besties to travel with 🥰”</blockquote>
+      <figcaption>MARIA M. · ISLAND LIFE GIRLS TRIP · THAT GIRL EXPERIENCES</figcaption>
+    </figure>
+    <div class="tge-testi-grid">
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“Gabs Was an Angel”</div>
+        <blockquote>It was the absolute dream. every detail of this trip was perfect, we had so much fun and we created a very special bond with all the girls, learned so much from each other and about ourselves. it was exactly what i needed and gabs was an angel.</blockquote>
+        <figcaption>LUCIE J. · THAT GIRL EXPERIENCES</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“Best Girls Trip Ever!”</div>
+        <blockquote>Came solo and left with the best group of girls ever! I never thought I would find a supportive women community and lifelong friends from a group trip I said yes to but I’m so glad I did… a super well-organized trip with lots of inclusions… with stunning luxury accommodation and villas! 10/10 would recommend ✨</blockquote>
+        <figcaption>TRIPADVISOR REVIEW</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“5 Stars Doesn't Even Feel Like Enough”</div>
+        <blockquote>She always had everyone’s back, made sure everyone was comfortable, and was constantly checking in to make sure we had everything we needed. Honestly, she was like a mom away from home. 😂🤍 …5 stars doesn’t even feel like enough.</blockquote>
+        <figcaption>SHAUNS D. · FACEBOOK REVIEW</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“I’ve Never Felt More Grounded”</div>
+        <blockquote>Saying yes, to this was probably one of the best decisions I could’ve made during my travels… I somehow even came out of the group with more confidence. After listening to everyone open up, I’ve never felt more grounded.</blockquote>
+        <figcaption>PREVIOUS GUEST · THAT GIRL EXPERIENCES</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“Genuine Feminine Energy”</div>
+        <blockquote>The trip was filled with so many unforgettable moments, laughter, adventure and genuine feminine energy. A special thank you to our wonderful host for being so passionate, caring and dedicated throughout the entire trip. 💗🌺</blockquote>
+        <figcaption>ISLAND LIFE GUEST · THAT GIRL EXPERIENCES</figcaption>
+      </figure>
+      <figure class="tge-testi-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="tge-testi-card-title">“Again in a Heartbeat”</div>
+        <blockquote>Such an amazing experience from start to finish! We had the best time exploring Bali, making unforgettable memories and sharing so many special moments together as a group… Highly recommend booking this trip and I would do it again in a heartbeat. 🤍🥥🌴✨</blockquote>
+        <figcaption>FELICIA B. · THAT GIRL EXPERIENCES</figcaption>
+      </figure>
+    </div>
+    <a class="tge-testi-all" href="https://thatgirlexperiences.wetravel.com/users/that-girl-experiences#reviews" target="_blank" rel="noopener">READ ALL REVIEWS</a>
+  </div>
+</section>
 <section id="for-you">
 <div class="section-tag reveal">This Is For You If</div>
 <h2 class="section-title reveal">You Want To <em>Live Life To The Fullest</em></h2>
@@ -1874,6 +1988,7 @@ html, body { overflow-x: hidden; }
     <div class="book-top"><span class="book-kicker">8 Days</span><span class="book-status" id="bookStatus"></span></div>
     <div class="book-price">$699 <span>USD total</span></div>
     <div class="book-note">$50 USD Deposit · Pay in 4, interest-free</div>
+    <div class="bf-chip" id="bfChip" hidden><strong>Black Friday price</strong> · full price <s class="bf-full">$899</s><br>Ends in <span class="bf-mini">—</span></div>
     <div class="book-label">Departure</div>
     <div class="book-deps" id="bookDeps" role="group" aria-label="Choose your departure date"></div>
     <button class="wtrvl-checkout_button tge-gold" id="wt-btn-card" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="6779947278" href="https://www.wetravel.com/checkout_embed?uuid=6779947278" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">✦ Book Now ✦</button>
@@ -2447,7 +2562,7 @@ window.addEventListener('load', function() {
 (function () {
   /* ---- EDIT THESE ---- */
   var SALE_END_UTC  = '2026-12-01T07:59:59Z';   // = Mon 30 Nov 2026, 11:59:59pm US Pacific (= Tue 1 Dec, 6:59pm Sydney)
-  var FULL_PRICE    = '$2,299';                 // the price after the sale
+  var FULL_PRICE    = '$899';                   // the price after the sale
   var VIP_WA_LINK   = 'https://chat.whatsapp.com/Hr1drTOB4wj8vKOVcLDvaB';
   var FORM_ENDPOINT = 'https://formspree.io/f/mkokzzow';
   var POPUP_DELAY_S = 15;                       // auto-open after this many seconds (or 55% scroll / exit intent)
@@ -2553,6 +2668,106 @@ window.addEventListener('load', function() {
       .catch(function () { err.hidden = false; })
       .then(function () { btn.disabled = false; });
   });
+})();
+</script>
+<script id="tge-fx-js">
+/* ===== Currency picker: converts every USD price on the page (approx.) ===== */
+(function () {
+  /* fallback rates (1 USD = x). Live rates load automatically when available. */
+  var RATES = { USD: 1, AUD: 1.53, NZD: 1.72, CAD: 1.40, GBP: 0.76, EUR: 0.87, SGD: 1.30, HKD: 7.78 };
+  var SYM = { USD: '$', AUD: 'A$', NZD: 'NZ$', CAD: 'C$', GBP: '£', EUR: '€', SGD: 'S$', HKD: 'HK$' };
+  var KEY = 'tgeCurrency';
+  var sel = document.getElementById('tgeFx');
+  if (!sel) return;
+  var store = { get: function () { try { return localStorage.getItem(KEY); } catch (e) { return null; } },
+                set: function (v) { try { localStorage.setItem(KEY, v); } catch (e) {} } };
+  var cur = store.get() || 'USD';
+  if (!RATES[cur]) cur = 'USD';
+  sel.value = cur;
+
+  var RE = /\$(\d{1,3}(?:,\d{3})+|\d+)(?:\.\d\d)?(\s?USD\b)?/g;
+  var SKIP = /^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA|SELECT|OPTION|IFRAME|svg)$/i;
+  var UNIT_SEL = '.book-price > span, .book-bar-price > span, .combo-price-usd';
+
+  function fmt(usd, withCode) {
+    if (cur === 'USD') return null;
+    var v = Math.round(usd * RATES[cur]);
+    return '≈' + SYM[cur] + v.toLocaleString('en-US') + (withCode ? ' ' + cur : '');
+  }
+  function skipNode(n) {
+    for (var p = n.parentNode; p && p !== document.body; p = p.parentNode) {
+      if (p.nodeType !== 1) continue;
+      if (SKIP.test(p.nodeName) || p.classList.contains('tge-money') || p.classList.contains('tge-fx') || p.hasAttribute('data-no-fx')) return true;
+    }
+    return false;
+  }
+  function wrapText(t) {
+    var s = t.nodeValue;
+    if (!s || s.indexOf('$') < 0 || skipNode(t)) return;
+    RE.lastIndex = 0;
+    if (!RE.test(s)) return;
+    RE.lastIndex = 0;
+    var frag = document.createDocumentFragment(), last = 0, m;
+    while ((m = RE.exec(s))) {
+      if (m.index > last) frag.appendChild(document.createTextNode(s.slice(last, m.index)));
+      var sp = document.createElement('span');
+      sp.className = 'tge-money';
+      sp.setAttribute('data-usd', m[1].replace(/,/g, ''));
+      sp.setAttribute('data-orig', m[0]);
+      if (m[2]) sp.setAttribute('data-code', '1');
+      sp.textContent = fmt(+m[1].replace(/,/g, ''), !!m[2]) || m[0];
+      frag.appendChild(sp);
+      last = m.index + m[0].length;
+    }
+    if (last < s.length) frag.appendChild(document.createTextNode(s.slice(last)));
+    t.parentNode.replaceChild(frag, t);
+  }
+  function scan(root) {
+    if (!root) return;
+    if (root.nodeType === 3) { wrapText(root); return; }
+    if (root.nodeType !== 1 || SKIP.test(root.nodeName)) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), list = [], n;
+    while ((n = w.nextNode())) if (n.nodeValue.indexOf('$') > -1) list.push(n);
+    list.forEach(wrapText);
+    if (root.querySelectorAll) root.querySelectorAll(UNIT_SEL).forEach(unit);
+    if (root.matches && root.matches(UNIT_SEL)) unit(root);
+  }
+  function unit(el) {
+    if (!el.hasAttribute('data-orig-unit')) {
+      if (!/\bUSD\b/.test(el.textContent)) return;
+      el.setAttribute('data-orig-unit', el.textContent);
+    }
+    el.textContent = el.getAttribute('data-orig-unit').replace(/\bUSD\b/, cur);
+  }
+  function apply() {
+    document.querySelectorAll('.tge-money').forEach(function (sp) {
+      sp.textContent = fmt(+sp.getAttribute('data-usd'), sp.hasAttribute('data-code')) || sp.getAttribute('data-orig');
+    });
+    document.querySelectorAll('[data-orig-unit]').forEach(unit);
+    document.documentElement.setAttribute('data-currency', cur);
+  }
+
+  scan(document.body);
+  apply();
+  new MutationObserver(function (muts) {
+    muts.forEach(function (mu) { mu.addedNodes.forEach(function (n) { if (!skipNode(n)) scan(n); }); });
+  }).observe(document.body, { childList: true, subtree: true });
+
+  var wrap = sel.parentNode, tipT;
+  sel.addEventListener('change', function () {
+    cur = sel.value; store.set(cur); apply();
+    if (cur !== 'USD') { wrap.classList.add('show-tip'); clearTimeout(tipT); tipT = setTimeout(function () { wrap.classList.remove('show-tip'); }, 3200); }
+    else wrap.classList.remove('show-tip');
+  });
+
+  /* live rates (falls back silently to the rates above) */
+  try {
+    fetch('https://open.er-api.com/v6/latest/USD').then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || !d.rates) return;
+      Object.keys(RATES).forEach(function (k) { if (typeof d.rates[k] === 'number') RATES[k] = d.rates[k]; });
+      apply();
+    }).catch(function () {});
+  } catch (e) {}
 })();
 </script>
 </body>
