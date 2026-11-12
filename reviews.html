@@ -225,7 +225,7 @@ window.addEventListener('load', function(){ setTimeout(function(){
       <div class="rv-score">
         <div class="rv-score-num">5.0</div>
         <div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <div class="rv-score-meta"><strong id="rvTotal">0</strong> reviews · 100% would recommend<br>across WeTravel, Tripadvisor &amp; Facebook</div>
+        <div class="rv-score-meta">100% would recommend<br>across WeTravel, Tripadvisor &amp; Facebook</div>
       </div>
       <div class="rv-bars" id="rvBars" aria-label="Rating breakdown"></div>
       <div class="rv-loves">
@@ -352,7 +352,6 @@ var SOURCES = {
   var state = { source: 'all', trip: 'all', sort: 'recent' };
   var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-  document.getElementById('rvTotal').textContent = REVIEWS.length;
 
   /* rating bars (Facebook recommendations count as 5) */
   var bars = document.getElementById('rvBars');
