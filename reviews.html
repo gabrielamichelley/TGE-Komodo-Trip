@@ -88,10 +88,9 @@ window.addEventListener('load', function(){ setTimeout(function(){
   .rv-score .rv-stars { font-size: 1.2rem; margin: 0.35rem 0; }
   .rv-score-meta { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; }
   .rv-bars { display: flex; flex-direction: column; gap: 0.45rem; }
-  .rv-bar { display: grid; grid-template-columns: 2.4rem 1fr 1.6rem; align-items: center; gap: 0.6rem; font-size: 0.82rem; }
+  .rv-bar { display: grid; grid-template-columns: 2.4rem 1fr; align-items: center; gap: 0.6rem; font-size: 0.82rem; }
   .rv-bar-track { height: 8px; border-radius: 8px; background: rgba(201,169,110,0.15); overflow: hidden; }
   .rv-bar-fill { height: 100%; width: 0; border-radius: 8px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 1.2s cubic-bezier(.22,1,.36,1); }
-  .rv-bar span:last-child { text-align: right; color: var(--text-light); }
   .rv-loves { display: flex; flex-direction: column; gap: 0.6rem; }
   .rv-loves-label { font-size: 0.7rem; letter-spacing: 0.22em; color: var(--ocean-deep); font-weight: 500; }
   .rv-loves-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -294,6 +293,7 @@ window.addEventListener('load', function(){ setTimeout(function(){
    REVIEWS DATA — to add a new review, copy one block and edit it.
    source: "wetravel" | "tripadvisor" | "facebook" | "feedback"
    stars: 1–5 (use null for Facebook "recommends")
+   hideTrip: true = don't show the trip name next to the guest's name
    date: YYYY-MM-DD   text: use \n\n between paragraphs
    ───────────────────────────────────────────────────────────── */
 var REVIEWS = [
@@ -318,22 +318,22 @@ var REVIEWS = [
     text: "Such an amazing experience from start to finish! We had the best time exploring Bali, making unforgettable memories and sharing so many special moments together as a group. Everything about the trip was incredible, and I’m so grateful for all the beautiful memories we made with the girls. Highly recommend booking this trip and I would do it again in a heartbeat.🤍🥥🌴✨\n\nI’m so grateful for this experience and for all the beautiful connections I made with the girls. The trip was filled with so many unforgettable moments, laughter, adventure and genuine feminine energy. A special thank you to our wonderful host for being so passionate, caring and dedicated throughout the entire trip. You could truly feel how much heart and effort went into creating such a meaningful experience for everyone. I’m leaving with memories I’ll cherish forever and friendships I hope will continue long after the trip. 🩷🌺"
   },
   {
-    name: "Shauns D.", source: "feedback", trip: "Island Life · Bali", stars: 5, date: "2026-08-19",
+    name: "Previous Guest", source: "feedback", trip: "Island Life · Bali", hideTrip: true, stars: 5, date: "2026-08-19",
     title: "I’ve Never Felt More Grounded",
     text: "Saying yes, to this was probably one of the best decisions I could’ve made during my travels, gabs was amazing as well as the group even. She made something possible for all of us. I somehow even came out of the group with more confidence. After listening to everyone open up, I’ve never felt more grounded. This is a trip I highly recommend and you definitely shouldn’t skip out!\n\nThe host aka gabs genuinely put so much work and effort into this trip and it really showed before during and after about how passionate she was to make sure everyone had a great experience, no matter what. She took care of us. I honestly respect and value what she does so much. The great thing about travelling is doing things you’re unsure of always turn out amazing when you just say yes and that’s what I did because even though we took a risk, she also took a huge risk as well on us and I’m so grateful for her."
   },
   {
-    name: "Island Life Guest", source: "feedback", trip: "Island Life · Bali", stars: 5, date: "2026-08-19",
+    name: "Island Life Guest", source: "feedback", trip: "Island Life · Bali", hideTrip: true, stars: 5, date: "2026-08-19",
     title: "Ticked Bucket-List Moments",
     text: "Best way to travel, make new friends, immerse yourself in a new culture and leave with ticked bucket list moments!!"
   },
   {
-    name: "Tripadvisor Guest", source: "tripadvisor", trip: "Island Life · Bali", stars: 5, date: "2026-08-18",
+    name: "Tripadvisor Guest", source: "tripadvisor", trip: "Island Life · Bali", hideTrip: true, stars: 5, date: "2026-08-18",
     title: "Best Girls Trip Ever!",
     text: "Came solo and left with the best group of girls ever! I never thought I would find a supportive women community and lifelong friends from a group trip I said yes to but I’m so glad I did.\n\nHad so much fun doing bucket list experiences like swimming with Mantas, climbing up an active volcano, waterfall, ATV adventure, girl bonding time, amazing sunsets and massages, female friendships and so much more - a super well-organized trip with lots of inclusions and a very affordable price with stunning luxury accommodation and villas! 10/10 would recommend✨"
   },
   {
-    name: "Shauns D.", source: "facebook", trip: "Island Life · Bali", stars: null, date: "2026-08-15",
+    name: "Previous Guest", source: "facebook", trip: "Island Life · Bali", hideTrip: true, stars: null, date: "2026-08-15",
     title: "5 Stars Doesn’t Even Feel Like Enough",
     text: "genuinely don’t even know where to begin because this trip was truly such an incredible experience, and I’m so grateful that I got the opportunity to be a part of it. From the moment the trip started until the very end, it exceeded my expectations in so many ways. I know this is an experience I will look back on for years to come and always be so grateful that I said yes to.\n\nA huge part of what made this trip so special was Gabs. She went above and beyond for every single person throughout the entire trip. She always had everyone’s back, made sure everyone was comfortable, and was constantly checking in to make sure we had everything we needed. Honestly, she was like a mom away from home. 😂🤍 Anytime someone needed something, Gabs somehow already knew what to do or had a solution. Whether it was helping us figure something out, making sure everyone was okay, answering our endless questions, or simply being there when we needed someone, she was always there for us.\n\nWhat I appreciated most was how much effort she put into making sure everyone felt included. She somehow brought together a group of girls who didn’t know each other and created an environment where everyone felt comfortable enough to be themselves. She encouraged all of us to step outside of our comfort zones, come out of our shells, try new things, and really make the most of every moment. I honestly don’t think I would have opened up as much or connected with everyone the way I did without her creating that environment.\n\nBy the end of the trip, it was crazy to think that we had all started as strangers, because it genuinely felt like we had known each other for so much longer. I left the trip with memories I’ll never forget and, more importantly, a group of amazing friends that I never expected to make. There were so many little moments throughout the trip that I know I’ll look back on and smile about.\n\nEverything about the experience felt so thoughtfully put together, and you could tell how much care went into making the trip special for everyone. It wasn’t just about the destinations or the activities—it was the people, the friendships, the memories, and the feeling of being part of something.\n\nI’m genuinely so grateful to Gabs for giving us this experience and for putting so much time, energy, and heart into making sure everyone had the best possible trip. She made us feel safe, cared for, included, and supported the entire time, and I truly couldn’t have asked for a better person to experience this with.\n\nThis is definitely one of those trips that I know I will never forget. I came home with so many incredible memories, a camera roll full of photos and videos, and friendships that I hope continue long after the trip is over. 🤍\n\nIf you’re ever considering going on a That Girl Experiences trip, I honestly couldn’t recommend it enough. Sometimes you have to take a chance, step outside of your comfort zone, and say yes to something new—and I’m so glad I did.\n\n5 stars doesn’t even feel like enough. 🤍✨"
   }
@@ -358,7 +358,7 @@ var SOURCES = {
   for (var s = 5; s >= 1; s--) {
     var n = REVIEWS.filter(function (r) { return (r.stars || 5) === s; }).length;
     var row = document.createElement('div'); row.className = 'rv-bar';
-    row.innerHTML = '<span>' + s + ' ★</span><div class="rv-bar-track"><div class="rv-bar-fill" data-w="' + (n / REVIEWS.length * 100) + '"></div></div><span>' + n + '</span>';
+    row.innerHTML = '<span>' + s + ' ★</span><div class="rv-bar-track"><div class="rv-bar-fill" data-w="' + (n / REVIEWS.length * 100) + '"></div></div>';
     bars.appendChild(row);
   }
   setTimeout(function () { bars.querySelectorAll('.rv-bar-fill').forEach(function (f) { f.style.width = f.dataset.w + '%'; }); }, 250);
@@ -370,7 +370,7 @@ var SOURCES = {
     if (!count) return;
     var b = document.createElement('button'); b.type = 'button'; b.className = 'rv-chip'; b.dataset.src = c[0];
     b.setAttribute('aria-pressed', c[0] === 'all' ? 'true' : 'false');
-    b.innerHTML = c[1] + ' <small>(' + count + ')</small>';
+    b.textContent = c[1];
     b.addEventListener('click', function () {
       state.source = c[0];
       chips.querySelectorAll('.rv-chip').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
@@ -382,9 +382,8 @@ var SOURCES = {
   /* trip dropdown */
   var tripSel = document.getElementById('rvTrip');
   var trips = REVIEWS.map(function (r) { return r.trip; }).filter(function (t, i, a) { return a.indexOf(t) === i; });
-  tripSel.innerHTML = '<option value="all">All trips (' + REVIEWS.length + ')</option>' + trips.map(function (t) {
-    return '<option value="' + t + '">' + t + ' (' + REVIEWS.filter(function (r) { return r.trip === t; }).length + ')</option>';
-  }).join('');
+  tripSel.innerHTML = '<option value="all">All trips</option>' + trips.map(function (t) { return '<option value="' + t + '">' + t + '</option>'; }).join('');
+  if (trips.length < 2) tripSel.style.display = 'none';
   tripSel.addEventListener('change', function () { state.trip = tripSel.value; render(); });
   document.getElementById('rvSort').addEventListener('change', function (e) { state.sort = e.target.value; render(); });
 
@@ -400,8 +399,7 @@ var SOURCES = {
     var rate = document.createElement('div');
     if (r.stars) { rate.className = 'rv-stars'; rate.setAttribute('aria-label', r.stars + ' stars'); rate.textContent = '★★★★★'.slice(0, r.stars); }
     else { rate.className = 'rv-rec'; rate.textContent = '♥ RECOMMENDS'; }
-    var date = document.createElement('div'); date.className = 'rv-date'; date.textContent = fmtDate(r.date);
-    top.appendChild(rate); top.appendChild(date);
+    top.appendChild(rate);
 
     var title = document.createElement('div'); title.className = 'rv-card-title'; title.textContent = '“' + r.title + '”';
 
@@ -409,12 +407,8 @@ var SOURCES = {
     r.text.split(/\n\n+/).forEach(function (para) { var p = document.createElement('p'); p.textContent = para; text.appendChild(p); });
 
     var foot = document.createElement('figcaption'); foot.className = 'rv-foot';
-    var who = document.createElement('span'); who.textContent = r.name + ' · ' + r.trip;
-    var src = SOURCES[r.source]; var via;
-    if (src.link) { via = document.createElement('a'); via.href = src.link; via.target = '_blank'; via.rel = 'noopener'; }
-    else { via = document.createElement('span'); }
-    via.textContent = 'via ' + src.label;
-    foot.appendChild(who); foot.appendChild(via);
+    var who = document.createElement('span'); who.textContent = r.hideTrip ? r.name : r.name + ' · ' + r.trip;
+    foot.appendChild(who);
 
     el.appendChild(top); el.appendChild(title); el.appendChild(text);
 
