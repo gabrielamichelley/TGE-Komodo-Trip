@@ -1804,5 +1804,12 @@ window.addEventListener('load', function() {
 })();
 
 </script>
+<script>
+/* Meta: track WhatsApp chat clicks as Contact */
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+  if (a && window.fbq) fbq('track', 'Contact', { content_name: 'WhatsApp chat', content_category: location.pathname });
+}, true);
+</script>
 </body>
 </html>
