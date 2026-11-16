@@ -42,16 +42,6 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1464656837954144');
 fbq('track', 'PageView');
-window.addEventListener('message', function (e) {
-  var data = e.data;
-  if (!data || typeof data !== 'object') return;
-  if (data.type === 'bookingConfirmed') {
-    fbq('track', 'Purchase', { content_ids: [data.trip_uuid], content_name: data.trip_title, value: data.total_amount, currency: data.currency });
-  }
-  if (data.type === 'bookNowClicked') {
-    fbq('trackCustom', 'Book Now Button Click', { source: data.source, content_name: data.trip_title });
-  }
-});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
