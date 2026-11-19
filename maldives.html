@@ -38,26 +38,16 @@ turquoise.webp -->
 <title>That Girl Experiences — MALDIVES Girls Retreat - Whale Sharks, Dhigurah & South Ari Atoll</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- GOOGLE ANALYTICS 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
+
 
 <!-- MICROSOFT CLARITY -->
 <script type="text/javascript">
-window.addEventListener('load', function() {
-  setTimeout(function(){
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wk5vnqvlwl");
-  }, 2000);
-});
+/* Microsoft Clarity — loads straight away (async, doesn't slow the page) so quick visits are recorded too */
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wk5vnqvlwl");
 </script>
 
 <!-- Meta Pixel Code -->
@@ -70,30 +60,14 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1713039786496101'); /* Bali pixel reused — swap for a Maldives pixel if you make one */
+fbq('init', '1713039786496101'); /* main TGE pixel - used by the Maldives/Bali campaigns */
+fbq('init', '1464656837954144'); /* homepage pixel - kept so its audiences keep filling */
 fbq('track', 'PageView');
-window.addEventListener('message', (e) => {
-  const data = e.data;
-  if (!data || typeof data !== 'object') return;
-  if (data.type === 'bookingConfirmed') {
-    fbq('track', 'Purchase', {
-      content_ids: [data.trip_uuid],
-      content_name: data.trip_title,
-      value: data.total_amount,
-      currency: data.currency,
-    });
-  }
-  if (data.type === 'bookNowClicked') {
-    fbq('trackCustom', 'Book Now Button Click', {
-      source: data.source,
-      content_name: data.trip_title
-    });
-  }
-});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1713039786496101&ev=PageView&noscript=1"
 alt="Facebook Pixel" /></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1" alt="" /></noscript>
 
 <!-- TikTok Pixel Code -->
 <script>
@@ -1087,7 +1061,7 @@ html, body { overflow-x: hidden; }
         <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false" aria-controls="navMenuPanel" aria-label="Open menu"><span class="nav-menu-btn-lines" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
         <div class="nav-menu-panel" id="navMenuPanel" role="menu"><a href="#wellness" class="nav-menu-link" role="menuitem">Trip Highlights</a><a href="#why-dhigurah" class="nav-menu-link" role="menuitem">Why Dhigurah?</a><a href="#why" class="nav-menu-link" role="menuitem">Why Travel With Us?</a><a href="#where-you-stay" class="nav-menu-link" role="menuitem">Accommodation</a><a href="#inclusions" class="nav-menu-link" role="menuitem">Inclusions</a><a href="#itinerary" class="nav-menu-link" role="menuitem">Itinerary</a><a href="#for-you" class="nav-menu-link" role="menuitem">This Is For You</a><a href="#meet-gabs" class="nav-menu-link" role="menuitem">Your Host</a><a href="#real-moments" class="nav-menu-link" role="menuitem">Previous Trips</a></div>
       </div>
-      <button class="wtrvl-checkout_button nav-cta" id="wt-btn-nav" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button>
+      <button class="wtrvl-checkout_button nav-cta" id="wt-btn-nav" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/checkout_embed?uuid=0360814720">BOOK NOW</button>
     </div>
   </div>
 </nav>
@@ -1136,7 +1110,7 @@ html, body { overflow-x: hidden; }
   <div class="deposit-bubble-wrap">
 <div class="deposit-bubble"><span class="dep-highlight">✨ EXTRA $200 OFF + BLACK FRIDAY SALE ✨</span><br>USE CODE: BLACKFRIDAYVIP</div>
 </div>
-  <div class="overview-ctas"><button class="wtrvl-checkout_button hero-cta" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button><button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/embed/download_brochure?uuid=0360814720" onclick="if(window.fbq){fbq('track', 'Lead', { content_name: 'MALDIVES Brochure Download', value: 0.00, currency: 'AUD' });}">Download Itinerary</button></div>
+  <div class="overview-ctas"><button class="wtrvl-checkout_button hero-cta" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/checkout_embed?uuid=0360814720">BOOK NOW</button><button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/embed/download_brochure?uuid=0360814720">Download Itinerary</button></div>
   <div class="overview-reviews"><script src="https://cdn.wetravel.com/widgets/embed_reviews.js" id="wetravel_review_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-userslug="that-girl-experiences" data-uid="2374713" data-showstars="true" data-showcount="false" data-name="WeTravel Review Widget"></script></div>
 </section>
 
@@ -1165,7 +1139,7 @@ html, body { overflow-x: hidden; }
   </div>
   
   <div class="slide-dots" id="slideDots"></div>
-  <div class="slideshow-after"><button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget_2" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/embed/download_brochure?uuid=0360814720" onclick="if(window.fbq){fbq('track', 'Lead', { content_name: 'MALDIVES Brochure Download', value: 0.00, currency: 'AUD' });}">Download Brochure</button></div>
+  <div class="slideshow-after"><button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget_2" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/embed/download_brochure?uuid=0360814720">Download Brochure</button></div>
 </section>
 <section class="wellness-section" id="wellness">
 <div class="section-tag reveal">TRIP HIGHLIGHTS</div>
@@ -1452,7 +1426,7 @@ html, body { overflow-x: hidden; }
 </div>
 </div>
 </div>
-<div class="inclusions-cta"><button class="wtrvl-checkout_button hero-cta" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="0360814720" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" id="wt-btn-incl" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button></div>
+<div class="inclusions-cta"><button class="wtrvl-checkout_button hero-cta" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="0360814720" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" id="wt-btn-incl">BOOK NOW</button></div>
 </section>
 
 <section class="dates-section" id="dates">
@@ -1670,7 +1644,7 @@ html, body { overflow-x: hidden; }
 </div>
 <div class="cta-center reveal" style="margin: 0.8rem auto 0; text-align: center; justify-content: center;">
 <!-- WeTravel embed — For You Book Now -->
-<button class="wtrvl-checkout_button cta-btn" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="0360814720" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" id="wt-btn-foryou" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">✦ Book Now ✦</button>
+<button class="wtrvl-checkout_button cta-btn" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="0360814720" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" id="wt-btn-foryou">✦ Book Now ✦</button>
 </div>
 </section>
 <section class="bookflow-section" id="how-booking-works">
@@ -1772,7 +1746,7 @@ html, body { overflow-x: hidden; }
 </div>
 </div>
 <div class="faq-disclaimer">Wildlife sightings including whale sharks, manta rays, dolphins, turtles, reef sharks &amp; nurse sharks cannot be guaranteed as they are wild animals, but we'll try our best to help you see them!</div>
-<div class="faq-cta"><span class="dep-highlight">✨ LIMITED SPOTS ✨</span><button class="wtrvl-checkout_button hero-cta" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="0360814720" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" id="wt-btn-faq" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW</button></div>
+<div class="faq-cta"><span class="dep-highlight">✨ LIMITED SPOTS ✨</span><button class="wtrvl-checkout_button hero-cta" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="0360814720" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" id="wt-btn-faq">BOOK NOW</button></div>
 </section>
   </main>
 
@@ -1784,10 +1758,10 @@ html, body { overflow-x: hidden; }
     <div class="bf-chip" id="bfChip" hidden><strong>Black Friday price</strong> · full price <s class="bf-full">$2,299</s><br>Ends in <span class="bf-mini">—</span></div>
     <div class="book-label">Departure</div>
     <div class="book-deps" id="bookDeps" role="group" aria-label="Choose your departure date"></div>
-    <button class="wtrvl-checkout_button tge-gold" id="wt-btn-card" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">✦ Book Now ✦</button>
+    <button class="wtrvl-checkout_button tge-gold" id="wt-btn-card" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/checkout_embed?uuid=0360814720">✦ Book Now ✦</button>
     <button type="button" class="btn-line" id="bookInterest" hidden>Register Interest ✦</button>
     <button type="button" class="vip-link-sm" data-open-pop>Not ready to book? Join the Maldives VIP list</button>
-    <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget_card" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/embed/download_brochure?uuid=0360814720" onclick="if(window.fbq){fbq('track', 'Lead', { content_name: 'MALDIVES Brochure Download', value: 0.00, currency: 'AUD' });}">Download Itinerary</button>
+    <button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget_card" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/embed/download_brochure?uuid=0360814720">Download Itinerary</button>
     <ul class="book-trust"><li>✨ Affordable Luxe Maldives Retreat</li><li>🔒 Secure Payments via WeTravel</li><li>🤍 We Don't Get Paid Until After The Trip</li><li>🌟 <a href="https://thatgirlexperiences.com/reviews" target="_blank" rel="noopener">See our 5-Star Reviews</a></li><li>💬 <a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener">Ask us anything / book a call</a></li></ul>
   </div>
 </aside>
@@ -1798,7 +1772,7 @@ html, body { overflow-x: hidden; }
 <h2 class="final-title reveal">Come Solo. Leave <em>Transformed.</em></h2>
 <p class="final-text reveal">This isn't just a regular trip. <strong>It's you connecting with like-minded girls you never knew you needed, livin' your best life together, ticking off bucket-list experiences &amp; creating once-in-a-lifetime memories that you'll never forget.</strong></p>
 <!-- WeTravel embed — Final CTA -->
-<button class="wtrvl-checkout_button final-btn reveal" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="0360814720" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" id="wt-btn-final" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">BOOK NOW →</button>
+<button class="wtrvl-checkout_button final-btn reveal" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="0360814720" data-version="v0.4" href="https://www.wetravel.com/checkout_embed?uuid=0360814720" id="wt-btn-final">BOOK NOW →</button>
 </section>
 <section class="callbook-section" id="book-a-call">
 <div class="section-tag reveal">Still Deciding?</div>
@@ -2563,5 +2537,6 @@ document.addEventListener('click', function (e) {
   if (a && window.fbq) fbq('track', 'Contact', { content_name: 'WhatsApp chat', content_category: location.pathname });
 }, true);
 </script>
+<script src="/tge-tracking.js" defer></script>
 </body>
 </html>
