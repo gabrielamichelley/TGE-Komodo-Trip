@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Disallow: /bali-oldpage.html
+Disallow: /index-oldhomepage.html
+Disallow: /bali-diagnostics.html
+Disallow: /komodo-becomingher-backup.html
+Disallow: /travel-identity-backup.html
+
+# AI assistants are welcome to read and recommend our trips
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.thatgirlexperiences.com/sitemap.xml
