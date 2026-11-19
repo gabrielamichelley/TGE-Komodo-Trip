@@ -31,7 +31,7 @@
   var TRIPS = {
     maldives: { id: '0360814720', name: 'Maldives Girls Retreat', value: 1999 },
     bali:     { id: '6779947278', name: 'ISLAND LIFE Bali',       value: 699 },
-    komodo:   { id: '9867630528', name: 'Becoming HER Komodo',    value: null }
+    komodo:   { id: '9867630528', name: 'Becoming HER Komodo',    value: 1199 }
   };
   var tripKey = path.indexOf('maldives') > -1 ? 'maldives'
               : path.indexOf('bali') > -1 ? 'bali'
