@@ -705,6 +705,11 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <style id="tge-m-extras">
 .vip-link-sm { display: block; text-align: center; font-size: 0.8rem; color: var(--ocean-deep); text-underline-offset: 3px; background: none; border: 0; cursor: pointer; width: 100%; min-height: 44px; font-family: inherit; text-decoration: underline; }
 /* Mobile/tablet: the booking-card extras (VIP link + trust points), shown where the sidebar card is hidden */
+.m-trust-rev { display: none; }
+@media (max-width: 1099px) {
+  .m-trust-rev { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0.25rem 0.9rem; margin: 0.2rem 0 0; padding: 0; list-style: none; text-align: center; font-size: 0.76rem; line-height: 1.4; color: var(--text-light); }
+  .m-trust-rev a { color: var(--ocean-deep); text-underline-offset: 3px; }
+}
 .m-book-extras { display: none; }
 @media (max-width: 1099px) {
   .m-book-extras { display: block; margin: 1.1rem 0 0.4rem; }
@@ -754,7 +759,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 </div>
 
-<div class="m-book-extras" style="padding:0 1.15rem;"><button type="button" class="vip-link-sm" id="komodoInterestLink">Not ready to book? Register your interest</button><ul class="m-trust"><li>🔒 Secure Payments via WeTravel</li><li>🌟 <a href="https://thatgirlexperiences.com/reviews" target="_blank" rel="noopener">See our 5-Star Reviews</a></li><li>🤍 We don't get paid until after the trip</li><li>💬 <a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener">Ask us anything / book a call</a></li></ul></div>
+<div class="m-book-extras" style="padding:0 1.15rem;"><button type="button" class="vip-link-sm" id="komodoInterestLink">Not ready to book? Register your interest</button><ul class="m-trust-rev"><li>🔒 Secure Payments via WeTravel</li><li>🌟 <a href="https://thatgirlexperiences.com/reviews" target="_blank" rel="noopener">See our 5-Star Reviews</a></li></ul><ul class="m-trust"><li>🤍 We don't get paid until after the trip</li><li>💬 <a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener">Ask us anything / book a call</a></li></ul></div>
 <script>document.getElementById("komodoInterestLink").addEventListener("click",function(){var e=document.querySelector(".interest-section");if(e)e.scrollIntoView({behavior:"smooth",block:"center"});});</script>
 
 <!-- WELLNESS -->
