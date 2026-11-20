@@ -1975,8 +1975,8 @@ document.addEventListener('click', function (e) {
       </form>
       <div class="tge-pop-done" id="tgePopDone" hidden>
         <h3>You're on the VIP list 🤍</h3>
-        <p>Keep an eye on your inbox for VIP discount codes, new dates and trip updates.</p>
-        <a href="#trips" id="tgePopTrips">See Our Trips</a>
+        <p>Last step: join our WhatsApp Girls Travel Community, where photo sneak peeks, discount codes &amp; the latest trip updates land first.</p>
+        <a class="vip-wa-btn" id="tgePopWa" href="https://chat.whatsapp.com/Hr1drTOB4wj8vKOVcLDvaB" target="_blank" rel="noopener">💬 Join the VIP Group Chat</a>
       </div>
     </div>
   </div>
@@ -2018,7 +2018,7 @@ document.addEventListener('click', function (e) {
     autoShown = true; openPop(source);
   }
   document.getElementById('tgePopClose').addEventListener('click', closePop);
-  document.getElementById('tgePopTrips').addEventListener('click', closePop);
+  document.getElementById('tgePopWa').addEventListener('click', function () { if (window.fbq) fbq('trackCustom', 'JoinTGEVIP'); });
   pop.addEventListener('click', function (e) { if (e.target === pop) closePop(); });
   pop.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closePop(); return; }
