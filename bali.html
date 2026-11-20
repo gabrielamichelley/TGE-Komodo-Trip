@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- PERFORMANCE: warm up the WeTravel connections so the Book Now pop-up starts faster -->
+<link rel="preconnect" href="https://cdn.wetravel.com" crossorigin>
+<link rel="preconnect" href="https://www.wetravel.com" crossorigin>
+<link rel="preconnect" href="https://t.wetravel.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.wetravel.com">
+<link rel="dns-prefetch" href="https://www.wetravel.com">
+<link rel="dns-prefetch" href="https://t.wetravel.com">
 <title>ISLAND LIFE Bali Girls Trip 2027 | Affordable Luxe, Small Group Tour for Women | TGE</title>
 <!-- ===== TGE SEO (behind-the-scenes only - not visible on the page) ===== -->
 <meta name="description" content="8-day women-only Bali group trip: Canggu, Ubud pool villa, Nusa Penida &amp; Lembongan, manta ray snorkelling. Small groups, 2 girls per room, solo friendly.">
@@ -1443,6 +1450,17 @@ html, body { overflow-x: hidden; }
 }
 .tge-money { font: inherit !important; color: inherit !important; letter-spacing: inherit !important; text-transform: inherit !important; vertical-align: baseline !important; margin: 0 !important; }
 </style>
+<style id="tge-m-extras">
+/* Mobile/tablet: the booking-card extras (VIP link + trust points), shown where the sidebar card is hidden */
+.m-book-extras { display: none; }
+@media (max-width: 1099px) {
+  .m-book-extras { display: block; margin: 1.1rem 0 0.4rem; }
+  .m-book-extras .vip-link-sm { margin: 0 auto 0.5rem; }
+  .m-book-extras .m-trust { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem 0.9rem; margin: 0; padding: 0.9rem 0 0; border-top: 1px solid var(--hair); list-style: none; font-size: 0.76rem; line-height: 1.4; color: var(--text-light); }
+  .m-book-extras .m-trust a { color: var(--ocean-deep); text-underline-offset: 3px; display: inline-block; padding: 0.15rem 0; }
+}
+@media (max-width: 360px) { .m-book-extras .m-trust { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body class="trip">
 
@@ -1466,6 +1484,7 @@ html, body { overflow-x: hidden; }
   <span class="mosaic-count" aria-hidden="true"></span>
 </div></div>
 
+</div>
 <div class="trip-tabs"><nav class="trip-tabs-row" aria-label="On this page"><a href="#overview">Overview</a><a href="#dates">Dates</a><a href="#wellness">Trip Highlights</a><a href="#where-you-stay">Accommodation</a><a href="#itinerary">Itinerary</a><a href="#inclusions">Inclusions</a><a href="#why">Why Travel With Us?</a><a href="#for-you">This Is For You</a><a href="#meet-gabs">Your Host</a><a href="#real-moments">Previous Trips</a><a href="#faq">FAQs</a></nav></div>
 
 <div class="trip-layout">
@@ -1500,6 +1519,7 @@ html, body { overflow-x: hidden; }
     </div>
   </div>
   <div class="overview-ctas"><button class="wtrvl-checkout_button hero-cta" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="6779947278" href="https://www.wetravel.com/checkout_embed?uuid=6779947278">BOOK NOW</button><button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="6779947278" href="https://www.wetravel.com/embed/download_brochure?uuid=6779947278">Download Itinerary</button></div>
+  <div class="m-book-extras"><button type="button" class="vip-link-sm" data-open-pop>Not ready to book? Join the Island Life VIP list</button><ul class="m-trust"><li>🔒 Secure Payments via WeTravel</li><li>🤍 We Don't Get Paid Until You've Travelled</li><li>💬 <a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener">Ask us anything / book a call</a></li></ul></div>
   <div class="overview-reviews"><script src="https://cdn.wetravel.com/widgets/embed_reviews.js" id="wetravel_review_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-userslug="that-girl-experiences" data-uid="2374713" data-showstars="true" data-showcount="false" data-name="WeTravel Review Widget"></script></div>
 </section>
 

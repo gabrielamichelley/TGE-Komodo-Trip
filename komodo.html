@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- PERFORMANCE: warm up the WeTravel connections so the Book Now pop-up starts faster -->
+<link rel="preconnect" href="https://cdn.wetravel.com" crossorigin>
+<link rel="preconnect" href="https://www.wetravel.com" crossorigin>
+<link rel="preconnect" href="https://t.wetravel.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.wetravel.com">
+<link rel="dns-prefetch" href="https://www.wetravel.com">
+<link rel="dns-prefetch" href="https://t.wetravel.com">
 <title>Becoming HER - Komodo Islands Girls Trip | Private Women-only Liveaboard Sailing Komodo Islands | Growth &amp; Wellness Retreat | TGE</title>
 <!-- ===== TGE SEO (behind-the-scenes only - not visible on the page) ===== -->
 <meta name="description" content="6-day women-only Komodo trip from Labuan Bajo: private liveaboard, manta rays, Pink Beach, yoga &amp; growth workshops. small groups, 2 per room, come solo.">
@@ -695,6 +702,18 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 @media (max-width: 640px) { .tge-fx select { height: 40px; min-height: 40px; } }
 .tge-money { font: inherit !important; color: inherit !important; letter-spacing: inherit !important; text-transform: inherit !important; vertical-align: baseline !important; margin: 0 !important; }
 </style>
+<style id="tge-m-extras">
+.vip-link-sm { display: block; text-align: center; font-size: 0.8rem; color: var(--ocean-deep); text-underline-offset: 3px; background: none; border: 0; cursor: pointer; width: 100%; min-height: 44px; font-family: inherit; text-decoration: underline; }
+/* Mobile/tablet: the booking-card extras (VIP link + trust points), shown where the sidebar card is hidden */
+.m-book-extras { display: none; }
+@media (max-width: 1099px) {
+  .m-book-extras { display: block; margin: 1.1rem 0 0.4rem; }
+  .m-book-extras .vip-link-sm { margin: 0 auto 0.5rem; }
+  .m-book-extras .m-trust { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem 0.9rem; margin: 0; padding: 0.9rem 0 0; border-top: 1px solid var(--hair); list-style: none; font-size: 0.76rem; line-height: 1.4; color: var(--text-light); }
+  .m-book-extras .m-trust a { color: var(--ocean-deep); text-underline-offset: 3px; display: inline-block; padding: 0.15rem 0; }
+}
+@media (max-width: 360px) { .m-book-extras .m-trust { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
@@ -732,6 +751,11 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <a href="https://www.wetravel.com/trips/becoming-her-girls-trip-that-girl-experiences-9867630528?_wbc" target="_blank" rel="noopener" class="hero-cta">BOOK NOW</a>
   </div>
 </section>
+
+</div>
+
+<div class="m-book-extras" style="padding:0 1.15rem;"><button type="button" class="vip-link-sm" id="komodoInterestLink">Not ready to book? Register your interest</button><ul class="m-trust"><li>🔒 Secure Payments via WeTravel</li><li>🌟 <a href="https://thatgirlexperiences.com/reviews" target="_blank" rel="noopener">See our 5-Star Reviews</a></li><li>💬 <a href="https://wa.me/message/NSTR4FXYSZKTJ1" target="_blank" rel="noopener">Ask us anything / book a call</a></li></ul></div>
+<script>document.getElementById("komodoInterestLink").addEventListener("click",function(){var e=document.querySelector(".interest-section");if(e)e.scrollIntoView({behavior:"smooth",block:"center"});});</script>
 
 <!-- WELLNESS -->
 <section class="wellness-section" id="wellness">
