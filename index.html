@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- PERFORMANCE: warm up the WeTravel connections so the Book Now pop-up starts faster -->
+<link rel="preconnect" href="https://cdn.wetravel.com" crossorigin>
+<link rel="preconnect" href="https://www.wetravel.com" crossorigin>
+<link rel="preconnect" href="https://t.wetravel.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.wetravel.com">
+<link rel="dns-prefetch" href="https://www.wetravel.com">
+<link rel="dns-prefetch" href="https://t.wetravel.com">
 <title>Affordable Luxe Girls Trips &amp; Women’s Group Tours | That Girl Experiences</title>
 <!-- ===== TGE SEO (behind-the-scenes only - not visible on the page) ===== -->
 <meta name="msvalidate.01" content="0432D681CCFA86E3892561642D6A23EC" />
@@ -1069,6 +1076,35 @@ html, body { overflow-x: hidden; }
   .trips-dots { display: flex; }
 }
 </style>
+<style id="tge-pop-css">
+/* ===== VIP mailing-list popup (same look as the trip pages) ===== */
+.tge-pop { position: fixed; inset: 0; z-index: 10001; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(28,43,45,0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.tge-pop.open { display: flex; animation: tgePopIn .35s ease; }
+@keyframes tgePopIn { from { opacity: 0; } to { opacity: 1; } }
+.tge-pop-card { position: relative; width: min(440px, 100%); max-height: calc(100vh - 2rem); overflow: auto; border-radius: 28px; background: var(--cream); box-shadow: 0 30px 80px rgba(0,0,0,0.25); }
+.tge-pop-top { padding: 1.6rem 3.4rem 1.2rem; text-align: center; color: #fff; background: linear-gradient(160deg, var(--ocean-light), var(--ocean) 55%, var(--ocean-deep)); }
+.tge-pop-eyebrow { font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600; color: #fff; }
+.tge-pop-title { margin: 0.4rem 0 0.35rem; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; line-height: 1.1; }
+.tge-pop-title em { color: var(--gold-light); }
+.tge-pop-lead { margin: 0; font-size: 0.88rem; line-height: 1.6; }
+.tge-pop-body { padding: 1.3rem 1.6rem 1.5rem; }
+.tge-pop-body ul { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: 0.35rem; font-size: 0.84rem; }
+.tge-pop-body li::before { content: '✓  '; color: var(--ocean-deep); font-weight: 600; }
+.tge-pop-field { display: block; margin-bottom: 0.7rem; }
+.tge-pop-field span { display: block; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; margin-bottom: 0.3rem; color: var(--text-light); }
+.tge-pop-field input { width: 100%; box-sizing: border-box; min-height: 46px; padding: 0 1rem; border-radius: 14px; border: 1px solid var(--hair-2); background: #fff; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: var(--text-dark); }
+.tge-pop-field input:focus { outline: 2px solid var(--ocean); outline-offset: 1px; }
+.tge-pop-submit { width: 100%; min-height: 50px; margin-top: 0.3rem; border: 0; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; box-shadow: 0 8px 26px rgba(201,169,110,0.35); }
+.tge-pop-submit[disabled] { opacity: 0.6; cursor: wait; }
+.tge-pop-fine { margin: 0.75rem 0 0; text-align: center; font-size: 0.7rem; color: var(--text-light); }
+.tge-pop-err { margin: 0.5rem 0 0; font-size: 0.8rem; color: #A4505A; text-align: center; }
+.tge-pop-close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; border-radius: 50px; border: 0; background: rgba(255,255,255,0.25); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.tge-pop-done { text-align: center; padding: 0.4rem 0 0.2rem; }
+.tge-pop-done h3 { margin: 0 0 0.4rem; font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; }
+.tge-pop-done p { margin: 0 0 1.1rem; font-size: 0.9rem; line-height: 1.6; }
+.tge-pop-done a { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 1.8rem; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+@media (prefers-reduced-motion: reduce) { .tge-pop.open { animation: none; } }
+</style>
 </head>
 <body class="home">
 
@@ -1910,6 +1946,115 @@ document.addEventListener('click', function (e) {
   var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
   if (a && window.fbq) fbq('track', 'Contact', { content_name: 'WhatsApp chat', content_category: location.pathname });
 }, true);
+</script>
+<div class="tge-pop" id="tgePop" role="dialog" aria-modal="true" aria-labelledby="tgePopTitle" aria-hidden="true">
+  <div class="tge-pop-card">
+    <button type="button" class="tge-pop-close" id="tgePopClose" aria-label="Close">×</button>
+    <div class="tge-pop-top">
+      <div class="tge-pop-eyebrow">✦ TGE VIP LIST ✦</div>
+      <h2 class="tge-pop-title" id="tgePopTitle">Join the <em>VIP List</em> 🤍</h2>
+      <p class="tge-pop-lead">Special discount codes, new dates &amp; deal drops, sent to you before anyone else.</p>
+    </div>
+    <div class="tge-pop-body">
+      <form id="tgePopForm" novalidate>
+        <ul>
+          <li>VIP-only Discounts Codes &amp; Sale Early-Access</li>
+          <li>Trip Updates, New Dates &amp; Spots opening up</li>
+          <li>No spam, ever. Unsubscribe anytime</li>
+        </ul>
+        <label class="tge-pop-field"><span>First name</span><input name="name" type="text" autocomplete="given-name" required></label>
+        <label class="tge-pop-field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="tge-pop-field"><span>WhatsApp (optional)</span><input name="contact" type="tel" autocomplete="tel" placeholder="+1 555 000 0000"></label>
+        <input type="hidden" name="_subject" value="New VIP / Mailing List Signup — HOMEPAGE POPUP">
+        <input type="hidden" name="trip" value="All trips (homepage)">
+        <input type="hidden" name="list" value="TGE VIP + mailing list (special discounts, new dates, deal drops)">
+        <input type="hidden" name="source" value="">
+        <button class="tge-pop-submit" type="submit">✦ Join VIP ✦</button>
+        <p class="tge-pop-err" id="tgePopErr" hidden>Something went wrong, please try again or message us on WhatsApp.</p>
+        <p class="tge-pop-fine">Women only · No commitment</p>
+      </form>
+      <div class="tge-pop-done" id="tgePopDone" hidden>
+        <h3>You're on the VIP list 🤍</h3>
+        <p>Keep an eye on your inbox for VIP discount codes, new dates and trip updates.</p>
+        <a href="#trips" id="tgePopTrips">See Our Trips</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+/* ===== Homepage VIP mailing-list popup (same behaviour as the trip pages) ===== */
+(function () {
+  var FORM_ENDPOINT = 'https://formspree.io/f/mkokzzow';
+  var POPUP_DELAY_S = 15;      // auto-open after this many seconds (or 55% scroll / exit intent)
+  var POPUP_SNOOZE_DAYS = 5;   // don't auto-open again for this long after closing
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var pop = document.getElementById('tgePop'), form = document.getElementById('tgePopForm');
+  var done = document.getElementById('tgePopDone'), err = document.getElementById('tgePopErr');
+  if (!pop || !form) return;
+  var lastFocus = null, autoShown = false;
+  var joined = function () { return store.get('tgeHomeVipJoined') === '1' || store.get('tgeMaldivesVipJoined') === '1'; };
+  var snoozed = function () { var t = parseInt(store.get('tgeHomePopSnooze') || '0', 10); return Date.now() < t; };
+
+  function openPop(source) {
+    if (pop.classList.contains('open')) return;
+    lastFocus = document.activeElement;
+    form.querySelector('[name="source"]').value = source || 'button';
+    pop.classList.add('open'); pop.setAttribute('aria-hidden', 'false');
+    document.documentElement.style.overflow = 'hidden';
+    if (joined()) { form.hidden = true; done.hidden = false; }
+    setTimeout(function () { var f = joined() ? done.querySelector('a') : form.querySelector('input[name="name"]'); if (f) f.focus(); }, 60);
+  }
+  function closePop() {
+    pop.classList.remove('open'); pop.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+    store.set('tgeHomePopSnooze', String(Date.now() + POPUP_SNOOZE_DAYS * 86400000));
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function autoOpen(source) {
+    if (autoShown || joined() || snoozed()) return;
+    /* don't interrupt someone who has already opened the WeTravel booking pop-up */
+    if (document.querySelector('iframe.wtrvl-ifrm')) return;
+    autoShown = true; openPop(source);
+  }
+  document.getElementById('tgePopClose').addEventListener('click', closePop);
+  document.getElementById('tgePopTrips').addEventListener('click', closePop);
+  pop.addEventListener('click', function (e) { if (e.target === pop) closePop(); });
+  pop.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closePop(); return; }
+    if (e.key !== 'Tab') return;
+    var f = Array.prototype.filter.call(pop.querySelectorAll('button, a[href], input:not([type="hidden"])'), function (el) { return el.offsetParent !== null; });
+    if (!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+    else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+  });
+  setTimeout(function () { autoOpen('timer'); }, POPUP_DELAY_S * 1000);
+  window.addEventListener('scroll', function onS() {
+    var sh = document.documentElement.scrollHeight - window.innerHeight;
+    if (sh > 0 && window.scrollY / sh > 0.55) { window.removeEventListener('scroll', onS); autoOpen('scroll'); }
+  }, { passive: true });
+  document.addEventListener('mouseout', function (e) { if (!e.relatedTarget && e.clientY <= 0) autoOpen('exit-intent'); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.hidden = true;
+    var name = form.querySelector('[name="name"]'), email = form.querySelector('[name="email"]');
+    if (!name.value.trim()) { name.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.focus(); return; }
+    var btn = form.querySelector('.tge-pop-submit'); btn.disabled = true;
+    fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (r) { if (!r.ok) throw new Error('bad'); return r; })
+      .then(function () {
+        store.set('tgeHomeVipJoined', '1');
+        if (window.fbq) fbq('track', 'Lead', { content_name: 'Homepage VIP / mailing list' });
+        if (window.ttq && ttq.track) ttq.track('SubmitForm');
+        form.hidden = true; done.hidden = false;
+        var a = done.querySelector('a'); if (a) a.focus();
+      })
+      .catch(function () { err.hidden = false; })
+      .then(function () { btn.disabled = false; });
+  });
+})();
 </script>
 <script src="/tge-tracking.js" defer></script>
 </body>
