@@ -493,6 +493,31 @@ fbq('init', '1713039786496101'); /* main TGE pixel - used by the Maldives/Bali c
 fbq('init', '1464656837954144'); /* homepage pixel - kept so its audiences keep filling */
 fbq('track', 'PageView');
 </script>
+<!-- WeTravel checkout → Meta/TikTok conversion tracking (bookings made in the embedded WeTravel checkout) -->
+<script>
+window.addEventListener('message', function (e) {
+  if (!/(^|\.)wetravel\.com$/.test((e.origin || '').replace(/^https?:\/\//, ''))) return;
+  var d = e.data || {};
+  if (typeof d !== 'object') return;
+  try {
+    if (d.type === 'bookingConfirmed') {
+      var key = 'tge_purchase_' + (d.trip_uuid || '') + '_' + (d.total_amount || '');
+      try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch (x) {}
+      var val = parseFloat(d.total_amount) || 0, cur = (d.currency || 'USD').toUpperCase();
+      if (window.fbq) fbq('track', 'Purchase', { content_ids: [String(d.trip_uuid || '')], content_name: d.trip_title, content_type: 'product', value: val, currency: cur });
+      if (window.ttq) ttq.track('CompletePayment', { content_id: String(d.trip_uuid || ''), content_name: d.trip_title, value: val, currency: cur });
+    }
+    if (d.type === 'bookNowClicked') {
+      if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: d.trip_title });
+      if (window.ttq) ttq.track('InitiateCheckout', { content_name: d.trip_title });
+    }
+    if (d.type === 'inquirySent') {
+      if (window.fbq) fbq('track', 'Lead', { content_name: d.trip_name || d.trip_title, content_category: 'WeTravel inquiry' });
+    }
+  } catch (err) {}
+});
+</script>
+
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1713039786496101&ev=PageView&noscript=1"
 alt="Facebook Pixel" /></noscript>
