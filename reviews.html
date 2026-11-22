@@ -240,6 +240,7 @@ window.addEventListener('load', function(){ setTimeout(function(){
     </section>
 
     <div class="rv-pills">
+      <a class="rv-pill" href="https://www.trustpilot.com/review/thatgirlexperiences.com" target="_blank" rel="noopener">5-star reviews on Trustpilot</a>
       <a class="rv-pill" href="https://thatgirlexperiences.wetravel.com/users/that-girl-experiences#reviews" target="_blank" rel="noopener">5-star, verified reviews on WeTravel</a>
       <a class="rv-pill" href="https://www.facebook.com/profile.php?id=61577439103168&amp;sk=reviews" target="_blank" rel="noopener">Recommended on Facebook</a>
       <a class="rv-pill" href="https://www.tripadvisor.com/Attraction_Review-g255060-d34592920-Reviews-That_Girl_Experiences-Sydney_New_South_Wales.html" target="_blank" rel="noopener"><span class="rv-stars">★★★★★</span> on Tripadvisor</a>
@@ -299,6 +300,7 @@ window.addEventListener('load', function(){ setTimeout(function(){
 var REVIEWS = [
   {
     name: "Leah", source: "trustpilot", trip: "Island Life · Bali", hideTrip: true, stars: 5, date: "2026-11-21",
+    url: "https://www.trustpilot.com/reviews/6b01164bb1a2afd394786130",
     title: "Well Organised, Great Value",
     text: "Highly recommend booking a trip with That Girl Experiences!! Well organised trips with so many activities and inclusions! Such great value honestly saves me the hassle of planning a trip, I’m forever converted. Gabs is the most caring, kind & attentive host - always helping with every needs and despite my various dietary requirements it never felt like it was a problem, nothing was ever an issue! Thank you for going above and beyond Gabs!! Will definitely be going on more TGE trips🥰"
   },
@@ -415,6 +417,12 @@ var SOURCES = {
     var foot = document.createElement('figcaption'); foot.className = 'rv-foot';
     var who = document.createElement('span'); who.textContent = r.hideTrip ? r.name : r.name + ' · ' + r.trip;
     foot.appendChild(who);
+    var src = SOURCES[r.source];
+    if (src) {
+      var go = document.createElement('a'); go.href = r.url || src.link; go.target = '_blank'; go.rel = 'noopener';
+      go.textContent = 'View on ' + src.label;
+      foot.appendChild(go);
+    }
 
     el.appendChild(top); el.appendChild(title); el.appendChild(text);
 
