@@ -518,30 +518,7 @@ fbq('init', '1713039786496101'); /* main TGE pixel - used by the Maldives/Bali c
 fbq('init', '1464656837954144'); /* homepage pixel - kept so its audiences keep filling */
 fbq('track', 'PageView');
 </script>
-<!-- WeTravel checkout → Meta/TikTok conversion tracking (bookings made in the embedded WeTravel checkout) -->
-<script>
-window.addEventListener('message', function (e) {
-  if (!/(^|\.)wetravel\.com$/.test((e.origin || '').replace(/^https?:\/\//, ''))) return;
-  var d = e.data || {};
-  if (typeof d !== 'object') return;
-  try {
-    if (d.type === 'bookingConfirmed') {
-      var key = 'tge_purchase_' + (d.trip_uuid || '') + '_' + (d.total_amount || '');
-      try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch (x) {}
-      var val = parseFloat(d.total_amount) || 0, cur = (d.currency || 'USD').toUpperCase();
-      if (window.fbq) fbq('track', 'Purchase', { content_ids: [String(d.trip_uuid || '')], content_name: d.trip_title, content_type: 'product', value: val, currency: cur });
-      if (window.ttq) ttq.track('CompletePayment', { content_id: String(d.trip_uuid || ''), content_name: d.trip_title, value: val, currency: cur });
-    }
-    if (d.type === 'bookNowClicked') {
-      if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: d.trip_title });
-      if (window.ttq) ttq.track('InitiateCheckout', { content_name: d.trip_title });
-    }
-    if (d.type === 'inquirySent') {
-      if (window.fbq) fbq('track', 'Lead', { content_name: d.trip_name || d.trip_title, content_category: 'WeTravel inquiry' });
-    }
-  } catch (err) {}
-});
-</script>
+<!-- WeTravel booking/checkout events are tracked once, in /tge-tracking.js (removed duplicate inline block Nov 2026) -->
 
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1713039786496101&ev=PageView&noscript=1"
@@ -2397,7 +2374,7 @@ html, body { overflow-x: hidden; }
 </form>
 <p style="text-align:center;margin-top:1.1rem;font-size:0.74rem;color:var(--text-dark);">No spam, ever  ·  Exclusive deals &amp; first drops  ·  No commitments</p>
 <div style="text-align: center; margin-top: 0.75rem;">
-<button class="wtrvl-download_brochure_button" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="MALDIVES_WETRAVEL_UUID" data-version="v0.3" href="https://www.wetravel.com/embed/download_brochure?uuid=0360814720" id="wetravel_download_brochure_widget_3">Download Itinerary</button>
+<button class="wtrvl-download_brochure_button" data-env="https://www.wetravel.com" data-uid="2374713" data-uuid="0360814720" data-version="v0.3" href="https://www.wetravel.com/embed/download_brochure?uuid=0360814720" id="wetravel_download_brochure_widget_3">Download Itinerary</button>
 </div>
 
 
