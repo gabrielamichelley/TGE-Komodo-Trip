@@ -49,11 +49,11 @@
   }
   /* Google Ads conversion tracking — fill in once the Google Ads conversion actions exist
      (Google Ads > Goals > Conversions > Tag setup). Leave blank = nothing loads. */
-  var GADS = { id: '', purchaseLabel: '', checkoutLabel: '', leadLabel: '' };
+  var GADS = { id: 'AW-18590926472', purchaseLabel: '3800CP2I3b0dEIiN7KBF', checkoutLabel: '', leadLabel: '' };
   if (GADS.id) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date()); window.gtag('config', GADS.id);
+    window.gtag('js', new Date()); window.gtag('config', GADS.id, { allow_enhanced_conversions: true });
     var gs = document.createElement('script'); gs.async = true; gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GADS.id; document.head.appendChild(gs);
   }
   function gads(label, data) { try { if (GADS.id && label && window.gtag) window.gtag('event', 'conversion', Object.assign({ send_to: GADS.id + '/' + label }, data || {})); } catch (e) {} }
@@ -252,6 +252,7 @@
         try { if (window.ttq && window.ttq.identify) window.ttq.identify({ email: em }); } catch (x) {}
         PIXELS.forEach(function (id) { fb('init', id, { em: em }); });
         clarity('identify', em, null, null, em);
+        try { if (GADS.id && window.gtag) window.gtag('set', 'user_data', { email: em }); } catch (x) {}
       }
       cEvent('booking_completed');
       cTag('booked', 'yes');
@@ -278,6 +279,7 @@
     var phone = ph && ph.value ? ph.value.replace(/[^\d+]/g, '') : '';
     try { if (window.ttq && window.ttq.identify) window.ttq.identify(phone && phone.charAt(0) === '+' ? { email: email, phone_number: phone } : { email: email }); } catch (x) {}
     PIXELS.forEach(function (id) { fb('init', id, phone && phone.charAt(0) === '+' ? { em: email, ph: phone.replace('+', '') } : { em: email }); });
+    try { if (GADS.id && window.gtag) window.gtag('set', 'user_data', phone && phone.charAt(0) === '+' ? { email: email, phone_number: phone } : { email: email }); } catch (x) {}
     cTag('lead', 'yes');
     cTag('lead_form', f.getAttribute('action') ? f.getAttribute('action').split('/').pop() : (f.id || f.className || 'form'));
     cEvent('lead_form_submit');
