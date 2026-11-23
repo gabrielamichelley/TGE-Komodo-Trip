@@ -10,19 +10,19 @@
 <link rel="dns-prefetch" href="https://cdn.wetravel.com">
 <link rel="dns-prefetch" href="https://www.wetravel.com">
 <link rel="dns-prefetch" href="https://t.wetravel.com">
-<title>Becoming HER - Komodo Islands Girls Trip | Private Women-only Liveaboard Sailing Komodo Islands | Growth &amp; Wellness Retreat | TGE</title>
+<title>Komodo Girls Trip | Private Women-Only Liveaboard &amp; Wellness Retreat | TGE</title>
 <!-- ===== TGE SEO (behind-the-scenes only - not visible on the page) ===== -->
 <meta name="description" content="6-day women-only Komodo trip from Labuan Bajo: private liveaboard, manta rays, Pink Beach, yoga &amp; growth workshops. small groups, 2 per room, come solo.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.thatgirlexperiences.com/komodo.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="That Girl Experiences">
-<meta property="og:title" content="Becoming HER - Komodo Islands Girls Trip | Private Women-only Liveaboard Sailing Komodo Islands | Growth &amp; Wellness Retreat | TGE">
+<meta property="og:title" content="Komodo Girls Trip | Private Women-Only Liveaboard &amp; Wellness Retreat | TGE">
 <meta property="og:description" content="6-day women-only Komodo trip from Labuan Bajo: private liveaboard, manta rays, Pink Beach, yoga &amp; growth workshops. small groups, 2 per room, come solo.">
 <meta property="og:url" content="https://www.thatgirlexperiences.com/komodo.html">
 <meta property="og:image" content="https://www.thatgirlexperiences.com/komodo.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Becoming HER - Komodo Islands Girls Trip | Private Women-only Liveaboard Sailing Komodo Islands | Growth &amp; Wellness Retreat | TGE">
+<meta name="twitter:title" content="Komodo Girls Trip | Private Women-Only Liveaboard &amp; Wellness Retreat | TGE">
 <meta name="twitter:description" content="6-day women-only Komodo trip from Labuan Bajo: private liveaboard, manta rays, Pink Beach, yoga &amp; growth workshops. small groups, 2 per room, come solo.">
 <meta name="twitter:image" content="https://www.thatgirlexperiences.com/komodo.jpg">
 <script type="application/ld+json">
@@ -298,30 +298,7 @@ fbq('init', '1713039786496101'); /* main TGE pixel - used by the Maldives/Bali c
 fbq('init', '1464656837954144'); /* homepage pixel - kept so its audiences keep filling */
 fbq('track', 'PageView');
 </script>
-<!-- WeTravel checkout → Meta/TikTok conversion tracking (bookings made in the embedded WeTravel checkout) -->
-<script>
-window.addEventListener('message', function (e) {
-  if (!/(^|\.)wetravel\.com$/.test((e.origin || '').replace(/^https?:\/\//, ''))) return;
-  var d = e.data || {};
-  if (typeof d !== 'object') return;
-  try {
-    if (d.type === 'bookingConfirmed') {
-      var key = 'tge_purchase_' + (d.trip_uuid || '') + '_' + (d.total_amount || '');
-      try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch (x) {}
-      var val = parseFloat(d.total_amount) || 0, cur = (d.currency || 'USD').toUpperCase();
-      if (window.fbq) fbq('track', 'Purchase', { content_ids: [String(d.trip_uuid || '')], content_name: d.trip_title, content_type: 'product', value: val, currency: cur });
-      if (window.ttq) ttq.track('CompletePayment', { content_id: String(d.trip_uuid || ''), content_name: d.trip_title, value: val, currency: cur });
-    }
-    if (d.type === 'bookNowClicked') {
-      if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: d.trip_title });
-      if (window.ttq) ttq.track('InitiateCheckout', { content_name: d.trip_title });
-    }
-    if (d.type === 'inquirySent') {
-      if (window.fbq) fbq('track', 'Lead', { content_name: d.trip_name || d.trip_title, content_category: 'WeTravel inquiry' });
-    }
-  } catch (err) {}
-});
-</script>
+<!-- WeTravel booking/checkout events are tracked once, in /tge-tracking.js (removed duplicate inline block Nov 2026) -->
 
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1464656837954144&ev=PageView&noscript=1"
