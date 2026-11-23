@@ -474,5 +474,26 @@ var SOURCES = {
   window.addEventListener('scroll', function () { document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
 })();
 </script>
+<!-- Meta Pixel advanced matching (email) - re-inits both pixels with the visitor's email once they enter it in any form -->
+<script>
+(function () {
+  var PIXELS = ['1713039786496101', '1464656837954144'];
+  var last = '';
+  function setEm(v) {
+    v = (v || '').trim().toLowerCase();
+    if (!window.fbq || v === last || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) return;
+    last = v;
+    PIXELS.forEach(function (id) { fbq('init', id, { em: v }); });
+  }
+  document.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t && t.tagName === 'INPUT' && t.type === 'email') setEm(t.value);
+  }, true);
+  document.addEventListener('submit', function (e) {
+    var f = e.target, i = f && f.querySelector ? f.querySelector('input[type="email"]') : null;
+    if (i) setEm(i.value);
+  }, true);
+})();
+</script>
 </body>
 </html>
