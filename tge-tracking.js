@@ -32,12 +32,16 @@
   var DEBUG = /[?&]tgedebug=1/.test(location.search);
   function log() { if (DEBUG && window.console) console.log.apply(console, ['[TGE]'].concat([].slice.call(arguments))); }
 
-  /* ---------- Trip config (prices in USD, per person) ---------- */
+  /* ---------- Trip config (prices in USD, per person) ----------
+     sale = Black Friday price until SALE_ENDS, then the normal price.
+     Used for ViewContent / Book Now values. Purchases use the REAL amount WeTravel reports. */
   var path = location.pathname.toLowerCase();
+  var SALE_ENDS = Date.UTC(2026, 11, 1, 8, 0, 0);   // 30 Nov 2026 23:59 US Pacific (matches the page schema)
+  var onSale = Date.now() < SALE_ENDS;
   var TRIPS = {
-    maldives: { id: '0360814720', name: 'Maldives Girls Retreat', value: 2199 },
-    bali:     { id: '6779947278', name: 'ISLAND LIFE Bali',       value: 799 },
-    komodo:   { id: '9867630528', name: 'Becoming HER Komodo',    value: 1299 }
+    maldives: { id: '0360814720', name: 'Maldives Girls Retreat', value: onSale ? 1799 : 2199 },
+    bali:     { id: '6779947278', name: 'ISLAND LIFE Bali',       value: onSale ? 599 : 799 },
+    komodo:   { id: '9867630528', name: 'Becoming HER Komodo',    value: onSale ? 1199 : 1299 }
   };
   var tripKey = path.indexOf('maldives') > -1 ? 'maldives'
               : path.indexOf('bali') > -1 ? 'bali'
@@ -272,6 +276,9 @@
     if (!d) return;
     var type = d.type, n = norm(type);
     log('wetravel message', type, d);
+    /* Keep a short history of WeTravel message names (no personal details) so a test booking
+       can be checked afterwards: in the console (top frame) run  JSON.parse(localStorage.tge_wt_log) */
+    try { var hist = JSON.parse(ls('tge_wt_log') || '[]'); hist.push([new Date().toISOString(), type, Object.keys(d).join(',')]); ls('tge_wt_log', JSON.stringify(hist.slice(-40))); } catch (x) {}
     if (!wtSeen[type]) { wtSeen[type] = 1; cEvent('wt_' + type.replace(/[^\w]/g, '_').slice(0, 40)); }
     cTag('wt_last_message', type);
     var em = pickEmail(d);
@@ -306,9 +313,12 @@
     if (purchaseSent) return;
     purchaseSent = true;
     var tid = String(d.trip_uuid || d.trip_id || (trip && trip.id) || '');
-    var val = parseFloat(d.total_amount || d.amount || d.total || d.value) || 0;
+    var rawAmt = [d.total_amount, d.amount, d.total, d.value].filter(function (x) { return x !== undefined && x !== null && x !== ''; })[0];
+    var val = parseFloat(String(rawAmt === undefined ? '' : rawAmt).replace(/[^\d.]/g, '')) || 0;
     var cur = String(d.currency || 'USD').toUpperCase();
-    if (!val && trip) { val = trip.value; cur = 'USD'; }          // never send a $0 purchase
+    /* Only fall back to the list price when WeTravel sends no amount at all.
+       A real $0 (100%-off promo / test booking) stays $0 so it doesn't inflate revenue. */
+    if (rawAmt === undefined && trip) { val = trip.value; cur = 'USD'; }
     var oid = d.order_id || d.booking_id || d.transaction_id || d.id || '';
     var key = 'tge_purchase_' + (oid || (tid + '_' + val));
     if (ss(key) || ls(key)) { log('purchase already sent'); return; }   // never count one booking twice (even after a refresh)
@@ -324,6 +334,8 @@
     tt('CompletePayment', Object.assign(ttData(tid, tname, val, cur), { event_id: eid }));
     gads(GADS.purchaseLabel, { value: val, currency: cur, transaction_id: eid });
     gev('purchase', { transaction_id: eid, value: val, currency: cur, items: gItems(tid, tname, val) });
+    ls('tge_last_purchase', JSON.stringify({ at: new Date().toISOString(), trip: tname, value: val, currency: cur, id: eid, meta: !!window.fbq, google: !!window.gtag }));
+    if (window.console) console.info('[TGE] Purchase sent to Meta + Google Ads + TikTok:', tname, val, cur, eid);
   });
 
   /* ---------- Forms: link the recording to the person ---------- */
