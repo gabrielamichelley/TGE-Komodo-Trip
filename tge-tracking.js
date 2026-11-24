@@ -62,7 +62,7 @@
      checkoutLabel  = "Begin Checkout" action (set as SECONDARY in Google Ads) - paste label when created
      leadLabel      = "Lead" action (set as SECONDARY) - paste label when created
      The Google tag itself is loaded in each page's <head>; this only loads it if a page is missing it. */
-  var GADS = { id: 'AW-18590926472', purchaseLabel: '3800CP2I3b0dEIiN7KBF', checkoutLabel: '', leadLabel: '' };
+  var GADS = { id: 'AW-18590926472', purchaseLabel: '3800CP2I3b0dEIiN7KBF', checkoutLabel: 'a10UCIuCs74dEIiN7KBF', leadLabel: 'vmbQCMe7tL4dEIiN7KBF' };
   if (GADS.id) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
