@@ -305,8 +305,8 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1713039786496101'); /* main TGE pixel - used by the Maldives/Bali campaigns */
-fbq('init', '1464656837954144'); /* homepage pixel - kept so its audiences keep filling */
+var __tgeAM={};try{var __tgeEm=localStorage.getItem('tge_em'),__tgePh=localStorage.getItem('tge_ph');if(__tgeEm)__tgeAM.em=__tgeEm;if(__tgePh)__tgeAM.ph=__tgePh;}catch(e){} fbq('init', '1713039786496101', __tgeAM); /* main TGE pixel - used by the Maldives/Bali campaigns */
+fbq('init', '1464656837954144', __tgeAM); /* homepage pixel - kept so its audiences keep filling */
 fbq('track', 'PageView');
 </script>
 <!-- WeTravel booking/checkout events are tracked once, in /tge-tracking.js (removed duplicate inline block Nov 2026) -->
@@ -1763,7 +1763,7 @@ document.addEventListener('click', function (e) {
   function setEm(v) {
     v = (v || '').trim().toLowerCase();
     if (!window.fbq || v === last || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) return;
-    last = v;
+    last = v; try{localStorage.setItem('tge_em', v);}catch(e){}
     PIXELS.forEach(function (id) { fbq('init', id, { em: v }); });
   }
   document.addEventListener('change', function (e) {
