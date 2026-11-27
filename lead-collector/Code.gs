@@ -259,7 +259,7 @@ function upsertLead_(d) {
       var r = i + 2;
       var cell = sh.getRange(r, 12);
       var prev = String(cell.getValue() || '');
-      cell.setValue((prev ? prev + ' · ' : '') + fmt_(today) + ': signed up again via ' + source + (note ? ' (' + note + ')' : ''));
+      cell.setValue((prev ? prev + ' · ' : '') + Utilities.formatDate(today, 'Australia/Sydney', 'd MMM') + ': signed up again via ' + source + (note ? ' (' + note + ')' : ''));
       if (!sh.getRange(r, 5).getValue() && d.phone) sh.getRange(r, 5).setValue("'" + d.phone);
       return 'Existing lead – row ' + r + ' updated';
     }
