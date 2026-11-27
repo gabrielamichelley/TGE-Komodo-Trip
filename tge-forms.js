@@ -9,7 +9,7 @@
      and is re-sent automatically on her next page view if anything failed
    ===================================================================== */
 (function () {
-  var ENDPOINT = 'https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec';
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbw_VZ2f4DyQwTRKIftPpTCRq9Q7W605o4Eg9mydpDi5lpZBTZu1WtIjX2GdTOKPDB8r/exec';
   var QUEUE_KEY = 'tgeLeadQueue';
   window.TGE_LEAD_ENDPOINT = ENDPOINT;
 
