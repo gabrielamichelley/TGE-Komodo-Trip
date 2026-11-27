@@ -11,6 +11,8 @@
 (function () {
   var ENDPOINT = 'https://script.google.com/macros/s/AKfycbw_VZ2f4DyQwTRKIftPpTCRq9Q7W605o4Eg9mydpDi5lpZBTZu1WtIjX2GdTOKPDB8r/exec';
   var QUEUE_KEY = 'tgeLeadQueue';
+  var FAST_MS = 900;
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   window.TGE_LEAD_ENDPOINT = ENDPOINT;
 
   var store = {
@@ -49,8 +51,8 @@
 
   /**
    * Send a signup. `data` = a <form>, a FormData, or a plain object.
-   * Resolves { ok: true } once saved. Rejects only if it could not be sent at all
-   * (it is still kept and re-sent on the next page view).
+   * Resolves { ok: true } as soon as it's saved, or after ~1 second at most (it keeps sending in the
+   * background and is re-sent on her next page view if needed). Rejects only for an invalid email.
    */
   window.tgeSendLead = function (data, formId) {
     var f = toParams(data);
@@ -58,8 +60,13 @@
     f._sid = f._sid || sid();
     f._page = location.href;
     f._ajax = '1';
+    if (!EMAIL_RE.test(String(f.email || '').trim())) return Promise.reject(new Error('invalid email'));
     var q = store.get(); q.push({ f: f, tries: 0 }); store.set(q.slice(-20));
-    return post(f).then(function (r) { if (!r.unconfirmed) dequeue(f._sid); return r; });
+    var sending = post(f).then(function (r) { if (!r.unconfirmed) dequeue(f._sid); return r; });
+    // Don't keep her waiting: show success after at most FAST_MS. The request carries on in the
+    // background, and if it somehow fails it is re-sent on her next page view.
+    var fast = new Promise(function (res) { setTimeout(function () { res({ ok: true, background: true }); }, FAST_MS); });
+    return Promise.race([sending.catch(function () { return { ok: true, background: true }; }), fast]);
   };
 
   // re-send anything that didn't get through last time
