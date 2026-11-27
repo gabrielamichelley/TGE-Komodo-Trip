@@ -536,6 +536,11 @@ fbq('track', 'PageView');
                 <span class="radio-dot"></span>
                 <span class="radio-label"><strong>Island Life — Bali</strong><span class="radio-sub">Bali + Nusa Lembongan + Nusa Penida · 8 days</span></span>
               </label>
+              <label class="radio-option" data-value="maldives">
+                <span class="radio-emoji">🏝️</span>
+                <span class="radio-dot"></span>
+                <span class="radio-label"><strong>Maldives Girls Retreat — Dhigurah</strong><span class="radio-sub">Dhigurah, South Ari Atoll · 10 days</span></span>
+              </label>
               <label class="radio-option" data-value="becoming-her">
                 <span class="radio-emoji">🐋</span>
                 <span class="radio-dot"></span>
@@ -578,6 +583,14 @@ fbq('track', 'PageView');
       <h3 class="trip-cta-title" id="tripCtaTitle"></h3>
       <p class="trip-cta-sub" id="tripCtaSub"></p>
       <div class="trip-cta-buttons" id="tripCtaButtons"></div>
+    </div>
+
+    <!-- Second trip card (Komodo / second pick) -->
+    <div class="trip-cta-card" id="tripCtaCard2" style="display:none;">
+      <div class="trip-cta-tag" id="tripCtaTag2">Also made for you</div>
+      <h3 class="trip-cta-title" id="tripCtaTitle2"></h3>
+      <p class="trip-cta-sub" id="tripCtaSub2"></p>
+      <div class="trip-cta-buttons" id="tripCtaButtons2"></div>
     </div>
 
     <!-- Booked confirmation -->
@@ -647,6 +660,7 @@ fbq('track', 'PageView');
 
 const URL_ISLAND_LIFE    = "https://thatgirlexperiences.com/bali.html";
 const URL_BECOMING_HER   = "https://thatgirlexperiences.com/komodo.html";
+const URL_MALDIVES       = "https://thatgirlexperiences.com/maldives.html";
 const URL_TGE_HOME       = "https://thatgirlexperiences.com";
 
 /* ============ IDENTITIES (14) ============ */
@@ -660,7 +674,7 @@ const IDENTITIES = {
       "On a TGE trip, you're first off the boat, last off the trail, and the one in the photos with the wildest hair and the biggest grin. You don't travel to escape life — you travel to find out what you're really made of."
     ],
     keywords: ["Bold", "Adrenaline", "Fearless", "Edge-seeker", "Untameable", "Brave"],
-    recommendedTrip: "island-life"
+    recommendedTrip: "island-life", alsoTrip: "maldives"
   },
   culture: {
     name: "The Culture Seeker", emoji: "🏛",
@@ -701,32 +715,32 @@ const IDENTITIES = {
     desc: [
       "For you, the body is the holy place — and travel is one of the most sacred rituals. The Wellness Goddess doesn't go on holiday <em>from</em> her routine; she takes her routine <em>on</em> holiday. Yoga mat? Packed. Magnesium? Packed.",
       "You travel to <em>reset</em>, not to escape. Sunrise yoga, sound baths at sunset, breathwork on the boat, slow mornings with journals and lemon water — these aren't extras for you, they're the trip. You leave more aligned than you arrived, every single time.",
-      "On a TGE trip, you're the one stretching on the deck while everyone else is hungover. You'll find the best yoga studio in Ubud, the best smoothie bowl on Nusa, the best spa in Bali — and quietly invite the other girls. Your glow is contagious."
+      "On a TGE trip, you're the one stretching on the deck while everyone else is hungover. You'll find the best sunrise yoga spot on the sand, the best smoothie bowl on the island, the best spa moment at the luxury resort day — and quietly invite the other girls. Your glow is contagious."
     ],
     keywords: ["Mindful", "Glowy", "Aligned", "Restorative", "Embodied", "Soft"],
-    recommendedTrip: "becoming-her"
+    recommendedTrip: "maldives", alsoTrip: "becoming-her"
   },
   golden: {
     name: "The Golden Explorer", emoji: "✨",
     tagline: "Adventure meets luxury",
     desc: [
-      "You refuse to choose between the volcano hike and the boutique villa. The Golden Explorer wants the bucket-list <em>and</em> the bedding, the trekking <em>and</em> the truffle pasta after. You've decided adventure shouldn't cost you comfort — and you're not negotiating.",
-      "You're drawn to elevated experiences — private liveaboards instead of group boats, curated hikes instead of crowded tours, beautiful stays in remote places. Adventure with intention. Wildness with refinement. You don't slum it for the story.",
-      "On a TGE trip, you're the one who books the spa for after the manta ray swim. You came for the bucket-list moments — but you also brought your silk pyjamas, and you'll be drinking wine on deck while everyone else recovers. You're proof you can have it all."
+      "You refuse to choose between the whale shark swim and the luxury resort day. The Golden Explorer wants the bucket-list <em>and</em> the bedding, the snorkelling <em>and</em> the sunset dinner after. You've decided adventure shouldn't cost you comfort — and you're not negotiating.",
+      "You're drawn to elevated experiences — small-group boat trips instead of crowded tours, curated swims instead of tourist traps, beautiful stays on remote islands. Adventure with intention. Wildness with refinement. You don't slum it for the story.",
+      "On a TGE trip, you're the one who books the spa for after the manta ray swim. You came for the bucket-list moments — but you also brought your silk pyjamas, and you'll be sipping something cold on the sand while everyone else recovers. You're proof you can have it all."
     ],
     keywords: ["Refined-but-wild", "Elevated", "Boutique adventurer", "Have-it-all", "Intentional", "Iconic"],
-    recommendedTrip: "island-life"
+    recommendedTrip: "maldives"
   },
   soul: {
     name: "The Soul Wanderer", emoji: "🌙",
     tagline: "Spiritual + cultural depth",
     desc: [
-      "You travel inward as much as outward. The Soul Wanderer is here for the temples at dawn, the silent walk through the rice terraces, the ocean ceremony that broke something open and put it back together better. You don't take trips — you take <em>pilgrimages</em>.",
+      "You travel inward as much as outward. The Soul Wanderer is here for the temples at dawn, the quiet walk along an empty shoreline, the ocean swim that broke something open and put it back together better. You don't take trips — you take <em>pilgrimages</em>.",
       "You're drawn to meaning. Sacred sites, ceremonies, traditions, the kind of conversations that go from 'where are you from?' to 'what are you healing?' in 20 minutes flat. You travel to understand yourself in new ways — and you always come home different.",
-      "On a TGE trip, you're the one journalling at sunrise, lighting incense in the cabin, and finding the local healer the rest of us didn't know existed. You came to be moved. And you always are."
+      "On a TGE trip, you're the one journalling at sunrise, lighting incense in your room, and finding the local healer the rest of us didn't know existed. You came to be moved. And you always are."
     ],
     keywords: ["Reflective", "Sacred", "Searching", "Quiet", "Soulful", "Wise"],
-    recommendedTrip: "island-life"
+    recommendedTrip: "maldives", alsoTrip: "island-life"
   },
   bonvivant: {
     name: "The Bon Vivant", emoji: "🥂",
@@ -743,12 +757,12 @@ const IDENTITIES = {
     name: "The Free Spirit", emoji: "🌿",
     tagline: "Off-the-beaten-path wanderer",
     desc: [
-      "You don't do tourist traps. The Free Spirit drives the scooter to the unmarked beach, befriends the local who shows her the hidden waterfall, says yes to the boat invitation at midnight, and has the wildest stories at the end of every trip.",
+      "You don't do tourist traps. The Free Spirit wanders to the unmarked stretch of sand, befriends the local who shows her the secret snorkel spot, says yes to the boat invitation at sunset, and has the wildest stories at the end of every trip.",
       "You're allergic to itineraries that feel like itineraries. The schedule is a vague suggestion, the plan is to follow your nose, and the best moments are always unscheduled. You travel without expectations because that's where the magic lives — in the <em>unscripted</em>.",
       "On a TGE trip, you're the one who convinces the group to take the boat detour, chats up the captain and finds the hidden lagoon, and returns with stories nobody else has. You travel to be free — and you always come home wilder than you left."
     ],
     keywords: ["Spontaneous", "Wild", "Yes-girl", "Unscripted", "Curious", "Untameable"],
-    recommendedTrip: "island-life"
+    recommendedTrip: "maldives"
   },
   party: {
     name: "The Life of the Party", emoji: "💃",
@@ -778,11 +792,11 @@ const IDENTITIES = {
     tagline: "Ocean lover, marine-life obsessed",
     desc: [
       "You're not happy unless you can see the ocean. The Water Baby books trips by checking the snorkel quality, knows the tide tables, and feels physically better the longer she's in salt water. The ocean is your love language, your therapy, your <em>home</em>.",
-      "You're drawn to reefs, swims, beaches at all hours, marine life that takes your breath away. Manta rays, sea turtles, coral, sunrise dips, sunset floats. You measure a trip by water minutes. If the destination doesn't have ocean access, it doesn't have you.",
+      "You're drawn to reefs, swims, beaches at all hours, marine life that takes your breath away. Whale sharks, manta rays, sea turtles, coral, sunrise dips, sunset floats. You measure a trip by water minutes. If the destination doesn't have ocean access, it doesn't have you.",
       "On a TGE trip, you're the first in and the last out. You'll snorkel for 4 hours straight, befriend the manta ray, photograph every fish, and come home tanned, salty, and at peace."
     ],
     keywords: ["Salty", "Aquatic", "Sun-kissed", "Ocean-souled", "Tide-driven", "Free"],
-    recommendedTrip: "becoming-her"
+    recommendedTrip: "maldives"
   },
   chill: {
     name: "The Chill Babe", emoji: "🌴",
@@ -793,7 +807,7 @@ const IDENTITIES = {
       "On a TGE trip, you're the one who reminds everyone that doing nothing IS the activity. While everyone else needs a holiday from their holiday, you're glowing. That's the Chill Babe difference."
     ],
     keywords: ["Easygoing", "Present", "Unhurried", "Soft", "Grounded", "Low-pressure"],
-    recommendedTrip: "island-life"
+    recommendedTrip: "maldives"
   },
   growth: {
     name: "The Growth Girl", emoji: "🌱",
@@ -804,7 +818,7 @@ const IDENTITIES = {
       "On a TGE trip, you show up to every workshop, your notebook is full by day four, and you come home with new clarity, new boundaries, new vision. You came to step into HER — and you always do."
     ],
     keywords: ["Intentional", "Becoming", "Evolving", "Self-aware", "Ambitious", "Vision-led"],
-    recommendedTrip: "becoming-her"
+    recommendedTrip: "island-life", alsoTrip: "becoming-her"
   }
 };
 
@@ -816,6 +830,13 @@ const TRIPS = {
     url: URL_ISLAND_LIFE,
     emoji: "🌴",
     blurb: "8 days, 3 islands — Bali + Nusa Lembongan + Nusa Penida. Luxe Private Pool Villas, ocean therapy, jungle views & lush rice terraces, swimming with manta rays, massage, island life with the girls, slow brunches, beach days, sunset cliff views, dress-up dinners, beach clubs & connecting with like-minded girls who become your new lifelong friends."
+  },
+  "maldives": {
+    name: "Maldives",
+    fullName: "Maldives Girls Retreat — Dhigurah",
+    url: URL_MALDIVES,
+    emoji: "🏝️",
+    blurb: "10 days on Dhigurah in South Ari Atoll — swimming with whale sharks & manta rays, a sunset dolphin cruise, a luxury resort day, turquoise lagoons & the World's #7 Best Beach, half-board island dining & a small group of like-minded girls who become your new lifelong friends."
   },
   "becoming-her": {
     name: "Becoming HER",
@@ -832,16 +853,24 @@ const TRIP_REASONS = {
   culture:      "Bali is layered with culture — temples, ceremonies, rice terraces, ancient rituals. Island Life takes you across 3 islands so you can soak in the depth, not just the surface.",
   luxe:         "ISLAND LIFE Girls Trip was made for you. Luxe Private Pool Villas, five-star quality, bucket-list scenery, no compromise.",
   social:       "8 days, 8 girls, 3 islands. Island Life is the perfect length and pace for real friendships to form. By day 3, you'll already feel like you've known these girls forever.",
-  wellness:     "Yoga with ocean views, sound baths, growth workshops, guided wellness sessions & rituals, restorative beach days — Becoming HER weaves wellness into every single day. The mind-body-soul reset you've been craving.",
-  golden:       "Adventure with a private liveaboard. Becoming HER is YOUR trip — bucket-list moments (manta rays, volcanic hikes, pink beach) wrapped in the elevated comfort of a private boat with the girls.",
-  soul:         "Komodo holds something ancient. Becoming HER weaves ocean ceremonies, sacred reflections, sunrise journalling, and quiet boat mornings into 6 days of deep connection — to self, to ocean, to spirit.",
+  wellness:     "Slow, salty and soul-nourishing. Whale shark and manta ray snorkels, a sunset dolphin cruise, barefoot beach days and a luxury resort day — the Maldives Girls Retreat is a full-body exhale on Dhigurah, home of the World's #7 Best Beach. Your reset, minus the pressure.",
+  golden:       "Bucket-list, beautifully done. Swimming with whale sharks and manta rays, a sunset dolphin cruise and a luxury resort day in the Maldives — the Maldives Girls Retreat is the dream trip you've been saving for, with everything already planned.",
+  soul:         "Warm water, wide skies and nothing to prove. On Dhigurah you'll float alongside whale sharks and manta rays, watch the sun melt into the Indian Ocean from a dolphin cruise, and finally hear your own thoughts. The Maldives Girls Retreat is pure magic for the soul.",
   bonvivant:    "Bali's food scene was made for you — long brunches, sunset cocktails, candle-lit dinners by the ocean. Island Life is one continuous celebration with the girls who get it.",
-  freespirit:   "Komodo is genuinely off-the-beaten-path. Becoming HER takes you sailing into remote islands, swimming with dragons, hiking unmarked ridges. Pure freedom, pure wildness, pure you.",
+  freespirit:   "Barefoot, turquoise and a little bit wild. Whale sharks, manta rays, dolphins and a local island with the World's #7 Best Beach — the Maldives Girls Retreat is made for the girl who says yes to the next adventure.",
   party:        "Beach clubs in Bali at sunset, group dinners that turn into dance floors, a tight-knit crew of 8 girls who say yes to everything — Island Life is one extended highlight reel.",
   foodie:       "Bali is one of the world's great food destinations — and Island Life is a moving feast. From hidden warungs in Ubud to seaside seafood in Nusa Lembongan, this trip was made for your palate.",
-  water:        "With the ocean as your love language, Island Life is your dream — 3 islands of crystal-clear water, snorkelling trips to Nusa Penida, swimming with sea turtles, beach days sunrise to sunset.",
-  chill:        "Slow mornings, soft afternoons, no agenda — Island Life is calibrated exactly to your pace. 8 days of island time, ocean dips, jungle yoga, and exactly zero pressure. Your kind of perfect.",
-  growth:       "This trip was made for you. Vision board workshops on the boat, mindset sessions at sunrise, ocean ceremonies, journalling overlooking pink beaches — Becoming HER is where you literally become HER. Step in."
+  water:        "With the ocean as your love language, the Maldives is your dream — whale sharks, manta rays, dolphins and crystal-clear lagoons in South Ari Atoll, on the island home of the World's #7 Best Beach. You'll barely come up for air.",
+  chill:        "Slow mornings, soft afternoons, no agenda — the Maldives Girls Retreat is calibrated exactly to your pace. 10 days of turquoise water, barefoot beach days, sunset dolphin cruises and exactly zero pressure. Your kind of perfect.",
+  growth:       "You grow fastest when you say yes — and Island Life is 8 days of yeses. Manta ray swims, jungle views, ocean therapy and a group of open-hearted girls who push you gently into the next-level you."
+};
+
+/* Second-trip reasons — shown on the "Also made for" card (Komodo is always the second trip) */
+const TRIP_REASONS_ALT = {
+  adventurer: "Craving your next big one? The Maldives Girls Retreat has you swimming with whale sharks and manta rays, cruising with dolphins at sunset and snorkelling a South Ari Atoll that's pure adrenaline and blue.",
+  wellness:   "Yoga with ocean views, sound baths, growth workshops, guided wellness sessions & rituals, restorative beach days — Becoming HER weaves wellness into every single day. The mind-body-soul reset you've been craving.",
+  soul:       "Want depth too? Island Life brings jungle views, rice terraces, sunset cliff views and ocean therapy — 8 days of soul-feeding magic across 3 islands.",
+  growth:     "This trip was made for you. Vision board workshops on the boat, mindset sessions at sunrise, ocean ceremonies, journalling overlooking pink beaches — Becoming HER is where you literally become HER. Step in."
 };
 
 /* ============ QUESTIONS (12 questions, 5-7 options each) ============ */
@@ -851,6 +880,7 @@ const QUESTIONS = [
     options: [
       { emoji: "🧘‍♀️", text: "Sunrise yoga or breathwork", ids: ["wellness", "soul", "growth"], dna: ["wellness"] },
       { emoji: "🛌", text: "Sleep in, then beach time", ids: ["chill", "water"], dna: ["wellness", "adventure"] },
+      { emoji: "🏝️", text: "Sunrise swim in a turquoise lagoon", ids: ["water", "freespirit"], dna: ["adventure", "wellness"] },
       { emoji: "🥾", text: "Sunrise hike to a viewpoint", ids: ["adventurer", "freespirit"], dna: ["adventure"] },
       { emoji: "🥐", text: "Slow brunch with the girls", ids: ["foodie", "social", "bonvivant"], dna: ["social", "culture"] },
       { emoji: "🛕", text: "Local temple before the crowds", ids: ["culture", "soul"], dna: ["culture"] },
@@ -861,6 +891,7 @@ const QUESTIONS = [
     q: "Pick your <em>bucket-list</em> moment…",
     options: [
       { emoji: "🐋", text: "Swimming with manta rays & sea turtles", ids: ["water", "adventurer", "golden"], dna: ["adventure"] },
+      { emoji: "🦈", text: "Snorkelling alongside a whale shark", ids: ["water", "adventurer"], dna: ["adventure"] },
       { emoji: "🌅", text: "Sunset yoga on a clifftop", ids: ["wellness", "soul"], dna: ["wellness"] },
       { emoji: "📓", text: "Vision board workshop over the ocean", ids: ["growth", "soul"], dna: ["wellness"] },
       { emoji: "🍷", text: "Wine-soaked storytelling with the girls", ids: ["bonvivant", "social"], dna: ["social", "culture"] },
@@ -877,6 +908,7 @@ const QUESTIONS = [
       { emoji: "💞", text: "Real, deep female friendships", ids: ["social"], dna: ["social"] },
       { emoji: "🌱", text: "Becoming the next-level you", ids: ["growth"], dna: ["wellness"] },
       { emoji: "🌴", text: "Rest, restoration & beach days", ids: ["chill", "wellness", "water"], dna: ["wellness"] },
+      { emoji: "🌴", text: "Total escape somewhere surreal & turquoise", ids: ["freespirit", "golden"], dna: ["wellness", "luxury"] },
       { emoji: "🍴", text: "Incredible food & wine", ids: ["foodie", "bonvivant"], dna: ["culture", "luxury"] }
     ]
   },
@@ -887,6 +919,7 @@ const QUESTIONS = [
       { emoji: "🌊", text: "Ocean access daily", ids: ["water"], dna: ["adventure"] },
       { emoji: "🧘‍♀️", text: "A solid wellness routine", ids: ["wellness", "growth"], dna: ["wellness"] },
       { emoji: "👑", text: "Beautiful, boutique stays", ids: ["luxe", "golden"], dna: ["luxury"] },
+      { emoji: "🏝️", text: "A proper luxury resort day", ids: ["golden", "wellness"], dna: ["luxury", "wellness"] },
       { emoji: "🌬️", text: "Zero itinerary pressure", ids: ["chill", "freespirit"], dna: ["wellness"] },
       { emoji: "🏛", text: "Cultural depth & local immersion", ids: ["culture", "soul"], dna: ["culture"] }
     ]
@@ -897,6 +930,7 @@ const QUESTIONS = [
       { emoji: "📓", text: "Journal & reflect", ids: ["soul", "growth"], dna: ["wellness"] },
       { emoji: "🍸", text: "Cocktails & dancing — let's go", ids: ["party", "bonvivant"], dna: ["social"] },
       { emoji: "💆‍♀️", text: "Sound bath or spa", ids: ["wellness", "luxe"], dna: ["wellness", "luxury"] },
+      { emoji: "🌅", text: "Sunset on the sand, toes in the water", ids: ["chill", "soul"], dna: ["wellness"] },
       { emoji: "😴", text: "Long shower, in bed by 10", ids: ["chill", "wellness"], dna: ["wellness"] },
       { emoji: "🍷", text: "Long lingering dinner with the girls", ids: ["bonvivant", "foodie", "social"], dna: ["social", "culture"] }
     ]
@@ -913,15 +947,17 @@ const QUESTIONS = [
     ]
   },
   {
-    q: "Your dream <em>free-day activity</em> in Bali is…",
+    q: "Your dream <em>free-day activity</em> is…",
     options: [
       { emoji: "🐢", text: "Snorkel trip to Nusa Penida", ids: ["water", "adventurer"], dna: ["adventure"] },
+      { emoji: "🐬", text: "A sunset dolphin cruise", ids: ["water", "soul"], dna: ["adventure", "wellness"] },
       { emoji: "🍳", text: "Cooking class with a local family", ids: ["foodie", "culture"], dna: ["culture"] },
       { emoji: "💆‍♀️", text: "Spa day & sound healing", ids: ["wellness", "luxe"], dna: ["wellness", "luxury"] },
       { emoji: "🌴", text: "Beach club from sunrise to sunset", ids: ["chill", "party", "social"], dna: ["social", "wellness"] },
       { emoji: "💧", text: "Sacred waterfall ceremony", ids: ["soul", "growth", "culture"], dna: ["culture", "wellness"] },
       { emoji: "🛵", text: "Scooter ride through rice terraces", ids: ["freespirit", "adventurer", "culture"], dna: ["adventure", "culture"] },
-      { emoji: "🛥️", text: "Catamaran trip with sunset cocktails", ids: ["golden", "luxe", "bonvivant"], dna: ["luxury"] }
+      { emoji: "🛥️", text: "Catamaran trip with sunset cocktails", ids: ["golden", "luxe", "bonvivant"], dna: ["luxury"] },
+      { emoji: "🏖️", text: "A luxury resort day by the lagoon", ids: ["golden", "chill"], dna: ["luxury", "wellness"] }
     ]
   },
   {
@@ -929,6 +965,7 @@ const QUESTIONS = [
     options: [
       { emoji: "🍴", text: "Best restaurants & food scenes", ids: ["foodie", "bonvivant"], dna: ["culture"] },
       { emoji: "🐠", text: "Best snorkel & dive spots", ids: ["water", "adventurer"], dna: ["adventure"] },
+      { emoji: "🏝️", text: "The most turquoise, dreamy beaches & islands", ids: ["chill", "water"], dna: ["adventure", "wellness"] },
       { emoji: "🧘‍♀️", text: "Best pilates/yoga studios & wellness activities", ids: ["wellness", "growth"], dna: ["wellness"] },
       { emoji: "💎", text: "Best boutique hotels", ids: ["luxe", "golden"], dna: ["luxury"] },
       { emoji: "💃", text: "Best beach clubs, nightlife & music", ids: ["party", "social"], dna: ["social"] },
@@ -1237,6 +1274,7 @@ function handleNotBookedSubmit(e) {
   let tripLabel;
   if (state.followUp.trip_interested === "island-life") tripLabel = "Island Life Bali";
   else if (state.followUp.trip_interested === "becoming-her") tripLabel = "Becoming HER — Komodo";
+  else if (state.followUp.trip_interested === "maldives") tripLabel = "Maldives Girls Retreat";
   else tripLabel = "Not sure — recommended: " + TRIPS[primary.recommendedTrip].fullName;
 
   const fd = new FormData();
@@ -1278,41 +1316,39 @@ function renderReveal({ booked }) {
 
   // Trip CTA logic
   $("tripCtaCard").style.display = "none";
+  $("tripCtaCard2").style.display = "none";
   $("bookedConfirmCard").style.display = "none";
 
   if (booked) {
     $("bookedConfirmCard").style.display = "block";
   } else {
-    // Determine which trip to show
-    let tripKey, tagText;
+    // Determine which trip(s) to show
     const chosen = state.followUp.trip_interested;
-    if (chosen === "island-life") {
-      tripKey = "island-life"; tagText = "Your Trip";
-    } else if (chosen === "becoming-her") {
-      tripKey = "becoming-her"; tagText = "Your Trip";
+    const isNotSure = chosen === "not-sure";
+    let tripKeys, tagText;
+    if (chosen && !isNotSure && TRIPS[chosen]) {
+      // They picked a trip, so show just that one
+      tripKeys = [chosen];
+      tagText = "Your Trip";
     } else {
-      // Not sure — use primary's recommended trip
-      tripKey = primary.recommendedTrip;
+      // Not sure: main pick for their identity, plus a second trip if they have one
+      tripKeys = [primary.recommendedTrip];
+      if (primary.alsoTrip) tripKeys.push(primary.alsoTrip);
       tagText = "Recommended for " + primary.name;
     }
-    const trip = TRIPS[tripKey];
-
-    $("tripCtaCard").style.display = "block";
-    $("tripCtaTag").textContent = tagText;
-    $("tripCtaTitle").innerHTML = `${trip.emoji} ${trip.fullName.split(" — ")[0]} <em>${trip.fullName.includes(" — ") ? "— " + trip.fullName.split(" — ")[1] : ""}</em>`;
-
-    // For "not sure", show the personalised reason. For chosen trips, show the trip blurb.
-    if (chosen === "not-sure") {
-      $("tripCtaSub").textContent = TRIP_REASONS[state.result.primaryKey];
-    } else {
-      $("tripCtaSub").textContent = trip.blurb;
-    }
-
-    const btns = $("tripCtaButtons");
-    btns.innerHTML = `
-      <a href="${trip.url}" class="btn-primary">View ${trip.name} →</a>
-      <a href="${URL_TGE_HOME}" class="btn-secondary">Or browse all TGE trips</a>
-    `;
+    const fillTripCard = (sfx, tripKey, tag, reason, showBrowse) => {
+      const trip = TRIPS[tripKey];
+      $("tripCtaCard" + sfx).style.display = "block";
+      $("tripCtaTag" + sfx).textContent = tag;
+      $("tripCtaTitle" + sfx).innerHTML = `${trip.emoji} ${trip.fullName.split(" — ")[0]} <em>${trip.fullName.includes(" — ") ? "— " + trip.fullName.split(" — ")[1] : ""}</em>`;
+      // "Not sure" gets the personalised reason; chosen trips get the trip blurb
+      $("tripCtaSub" + sfx).textContent = reason || trip.blurb;
+      $("tripCtaButtons" + sfx).innerHTML = `
+        <a href="${trip.url}" class="btn-primary">View ${trip.name} →</a>` + (showBrowse ? `
+        <a href="${URL_TGE_HOME}" class="btn-secondary">Or browse all TGE trips</a>` : "");
+    };
+    fillTripCard("", tripKeys[0], tagText, isNotSure ? TRIP_REASONS[state.result.primaryKey] : "", true);
+    if (tripKeys[1]) fillTripCard("2", tripKeys[1], "Also made for " + primary.name, isNotSure ? TRIP_REASONS_ALT[state.result.primaryKey] : "", false);
   }
 
   // Top 5
