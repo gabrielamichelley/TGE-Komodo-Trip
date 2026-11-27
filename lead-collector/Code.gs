@@ -72,7 +72,8 @@ function doPost(e) {
     return thanksPage_(p._next || p._page || 'https://thatgirlexperiences.com');
   } catch (err) {
     console.error(err);
-    try { alert_('A website signup could not be saved', String(err) + '\n\nData received:\n' + JSON.stringify(p, null, 2)); } catch (x) {}
+    var isBadInput = /invalid email/i.test(String(err));   // visitor typo: she sees an error and can fix it, no alert needed
+    if (!isBadInput) try { alert_('A website signup could not be saved', String(err) + '\n\nData received:\n' + JSON.stringify(p, null, 2)); } catch (x) {}
     if (ajax) return json_({ ok: false, error: String(err) });
     return thanksPage_(p._next || 'https://thatgirlexperiences.com');
   }
