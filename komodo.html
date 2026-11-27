@@ -735,6 +735,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 @media (max-width: 360px) { .m-book-extras .m-trust { grid-template-columns: 1fr; } }
 </style>
 <script src="tge-forms.js?v=20261127c"></script>
+<style>
+/* WhatsApp is the main chat button now (bottom-right, where the live chat bubble used to sit) */
+@keyframes tgeWaPulse { 0% { box-shadow: 0 6px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.45); } 70% { box-shadow: 0 6px 20px rgba(37,211,102,0.45), 0 0 0 16px rgba(37,211,102,0); } 100% { box-shadow: 0 6px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0); } }
+.tge-wa-fab { animation: tgeWaPulse 3.2s ease-out infinite; }
+@media (min-width: 1100px) {
+  body .tge-wa-fab { height: 60px; max-width: 260px; padding: 0 22px; }
+  body .tge-wa-fab svg { width: 30px; height: 30px; }
+  body .tge-wa-fab .tge-wa-fab-label { max-width: 200px; opacity: 1; margin-left: 10px; font-size: 0.85rem; }
+  body .tge-wa-fab:hover { max-width: 260px; }
+  body .tge-wa-fab:hover .tge-wa-fab-label { max-width: 200px; }
+}
+@media (prefers-reduced-motion: reduce) { .tge-wa-fab { animation: none; } }
+</style>
 </head>
 <body>
 
@@ -1612,37 +1625,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   })();
 </script>
 
-<!--Start of Tawk.to LIVE CHAT Script-->
-<script type="text/javascript">
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-Tawk_API.customStyle = {
-  visibility: {
-    desktop: { position: 'br', xOffset: 15, yOffset: 15 },
-    mobile:  { position: 'br', xOffset: 10, yOffset: 100 }
-  }
-};
-(function(){
-  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-  s1.async = true;
-  s1.src = 'https://embed.tawk.to/69f404ce5ac9531c37ee0999/1jngj5hmq';
-  s1.charset = 'UTF-8';
-  s1.setAttribute('crossorigin', '*');
-  s0.parentNode.insertBefore(s1, s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+<!-- Tawk.to live chat is switched off for now (the WhatsApp button is the main chat). To bring it back, restore the Tawk script from the commit before this one (widget 69f404ce5ac9531c37ee0999/1jngj5hmq). -->
 
 <!-- ============================================ -->
 <!-- WHATSAPP DIRECT CHAT — floating button (FAB)  -->
 <!-- ============================================ -->
 <style>
-  .tge-wa-fab { position: fixed; left: 20px; bottom: 24px; z-index: 998; display: inline-flex; align-items: center; background: #25D366; color: #fff; height: 56px; border-radius: 50px; padding: 0 16px; text-decoration: none; box-shadow: 0 6px 20px rgba(37,211,102,0.45); transition: all 0.35s cubic-bezier(0.22,1,0.36,1); overflow: hidden; max-width: 56px; }
+  .tge-wa-fab { position: fixed; right: 20px; bottom: 24px; z-index: 998; display: inline-flex; align-items: center; background: #25D366; color: #fff; height: 56px; border-radius: 50px; padding: 0 16px; text-decoration: none; box-shadow: 0 6px 20px rgba(37,211,102,0.45); transition: all 0.35s cubic-bezier(0.22,1,0.36,1); overflow: hidden; max-width: 56px; }
   .tge-wa-fab svg { width: 28px; height: 28px; flex-shrink: 0; }
   .tge-wa-fab-label { font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; max-width: 0; opacity: 0; margin-left: 0; transition: all 0.35s cubic-bezier(0.22,1,0.36,1); }
   .tge-wa-fab:hover { max-width: 240px; box-shadow: 0 10px 28px rgba(37,211,102,0.6); }
   .tge-wa-fab:hover .tge-wa-fab-label { max-width: 160px; opacity: 1; margin-left: 10px; }
   @media (max-width: 540px) {
-    .tge-wa-fab { bottom: 88px; left: 16px; height: 52px; padding: 0 13px; max-width: 52px; }
+    .tge-wa-fab { bottom: 88px; right: 16px; height: 52px; padding: 0 13px; max-width: 52px; }
     .tge-wa-fab svg { width: 26px; height: 26px; }
     .tge-wa-fab:hover { max-width: 52px; }
     .tge-wa-fab:hover .tge-wa-fab-label { max-width: 0; opacity: 0; margin-left: 0; }
