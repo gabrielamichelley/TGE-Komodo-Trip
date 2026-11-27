@@ -1132,6 +1132,35 @@ html, body { overflow-x: hidden; }
 }
 @media (prefers-reduced-motion: reduce) { .tge-wa-fab { animation: none; } }
 </style>
+<style id="tge-bf-css">
+/* ===== Black Friday 24-hour popup ===== */
+.bf-pop { position: fixed; inset: 0; z-index: 10002; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(28,43,45,0.62); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); }
+.bf-pop.open { display: flex; animation: tgePopIn .35s ease; }
+.bf-card { position: relative; width: min(480px, 100%); max-height: calc(100vh - 2rem); overflow: auto; border-radius: 28px; background: var(--cream); box-shadow: 0 30px 80px rgba(0,0,0,0.3); text-align: center; }
+.bf-top { padding: 1.9rem 1.4rem 1.5rem; color: #fff; background: linear-gradient(160deg, var(--ocean-light), var(--ocean) 55%, var(--ocean-deep)); }
+.bf-eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); }
+.bf-title { margin: 0.5rem 0 0.9rem; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.3rem, 9vw, 3.1rem); font-weight: 700; line-height: 1.02; text-transform: uppercase; letter-spacing: 0.01em; }
+.bf-title em { display: block; font-style: normal; color: var(--gold-light); }
+.bf-timer { display: flex; justify-content: center; align-items: flex-start; gap: 0.5rem; }
+.bf-t { min-width: 66px; padding: 0.55rem 0.3rem 0.45rem; border-radius: 16px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); }
+.bf-t b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.bf-t span { display: block; margin-top: 0.25rem; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.bf-colon { align-self: center; font-size: 1.6rem; font-weight: 600; opacity: 0.7; padding-bottom: 0.9rem; }
+.bf-body { padding: 1.4rem 1.4rem 1.6rem; }
+.bf-offers { display: grid; gap: 0.6rem; margin-bottom: 1.1rem; }
+.bf-offer { display: block; padding: 0.85rem 1rem; border-radius: 18px; background: #fff; border: 1px solid var(--hair-2); text-decoration: none; color: var(--text-dark); }
+.bf-offer-name { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-light); }
+.bf-offer-price { display: block; margin-top: 0.15rem; font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; line-height: 1.1; }
+.bf-offer-price small { font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; }
+.bf-code-label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--text-light); margin-bottom: 0.4rem; }
+.bf-code { display: inline-flex; align-items: center; gap: 0.7rem; min-height: 52px; padding: 0 1.3rem; border-radius: 50px; border: 2px dashed var(--gold); background: #fff; font-family: 'Jost', sans-serif; font-size: 1.15rem; font-weight: 600; letter-spacing: 0.18em; color: var(--text-dark); cursor: pointer; }
+.bf-code em { font-style: normal; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ocean-deep); }
+.bf-today { margin: 1rem 0 0.9rem; font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ocean-deep); }
+.bf-cta { display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; box-shadow: 0 8px 26px rgba(201,169,110,0.35); }
+.bf-close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; border-radius: 50px; border: 0; background: rgba(255,255,255,0.25); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+@media (max-width: 420px) { .bf-t { min-width: 58px; } .bf-t b { font-size: 1.8rem; } }
+@media (prefers-reduced-motion: reduce) { .bf-pop.open { animation: none; } }
+</style>
 </head>
 <body class="home">
 
@@ -1194,7 +1223,7 @@ html, body { overflow-x: hidden; }
     <div class="tgx-vibes reveal" role="group" aria-label="Filter trips by vibe"><button class="tgx-vibe active" type="button" data-vibe="all" aria-pressed="true">All trips</button><button class="tgx-vibe" type="button" data-vibe="ocean" aria-pressed="false">🌊 Ocean</button><button class="tgx-vibe" type="button" data-vibe="adventure" aria-pressed="false">🏝️ Adventure</button><button class="tgx-vibe" type="button" data-vibe="wellness" aria-pressed="false">🧘‍♀️ Wellness &amp; Growth</button><button class="tgx-vibe" type="button" data-vibe="luxe" aria-pressed="false">✨ Luxe</button></div>
   </div>
   <div class="trips-grid" data-dots="tripDots">
-    <a class="trip-card reveal" href="bali.html" data-vibes="ocean adventure luxe" data-where="Bali + Nusa Lembongan + Nusa Penida" data-dates="2027-01 2027-04 2027-05 2027-08 2027-09">
+    <a class="trip-card reveal" href="bali.html" data-vibes="ocean adventure luxe" data-where="Bali + Nusa Lembongan + Nusa Penida" data-dates="2027-04 2027-05 2027-08 2027-09">
       <div class="trip-card-img"><img alt="Nusa Lembongan" decoding="async" height="750" loading="lazy" src="lembongan.webp" width="600"/><span class="trip-badge live">‼️ FEW SPOTS LEFT</span>
         <div class="trip-on-photo"><div class="trip-dest">Bali + Nusa Lembongan + Nusa Penida</div><div class="trip-name">Island Life</div><div class="trip-meta">
 <span class="trip-meta-item"><span class="trip-meta-icon">⏱</span> 8 Days · 7 Nights</span>
@@ -2022,6 +2051,7 @@ document.addEventListener('click', function (e) {
   }
   function autoOpen(source) {
     if (autoShown || joined() || snoozed()) return;
+    var bf = document.getElementById('bfPop'); if (bf && bf.classList.contains('open')) return;
     /* don't interrupt someone who has already opened the WeTravel booking pop-up */
     if (document.querySelector('iframe.wtrvl-ifrm')) return;
     autoShown = true; openPop(source);
@@ -2063,6 +2093,87 @@ document.addEventListener('click', function (e) {
       .catch(function () { err.hidden = false; })
       .then(function () { btn.disabled = false; });
   });
+})();
+</script>
+<div class="bf-pop" id="bfPop" role="dialog" aria-modal="true" aria-labelledby="bfTitle" aria-hidden="true">
+  <div class="bf-card">
+    <button type="button" class="bf-close" id="bfClose" aria-label="Close">×</button>
+    <div class="bf-top">
+      <div class="bf-eyebrow">Black Friday</div>
+      <h2 class="bf-title" id="bfTitle">24 Hour <em>Black Friday Special</em></h2>
+      <div class="bf-timer" id="bfTimer" role="timer" aria-label="Time left on the Black Friday special">
+        <div class="bf-t"><b id="bfH">24</b><span>Hours</span></div><div class="bf-colon">:</div>
+        <div class="bf-t"><b id="bfM">00</b><span>Mins</span></div><div class="bf-colon">:</div>
+        <div class="bf-t"><b id="bfS">00</b><span>Secs</span></div>
+      </div>
+    </div>
+    <div class="bf-body">
+      <div class="bf-offers">
+        <a class="bf-offer" href="bali.html"><span class="bf-offer-name">Island Life</span><span class="bf-offer-price">$599 <small>USD</small></span></a>
+        <a class="bf-offer" href="maldives.html"><span class="bf-offer-name">Maldives Girls Retreat</span><span class="bf-offer-price">$1799 <small>USD</small></span></a>
+        <a class="bf-offer" href="komodo.html"><span class="bf-offer-name">Komodo Islands &middot; From</span><span class="bf-offer-price">$1199 <small>USD</small></span></a>
+      </div>
+      <div class="bf-code-label">Use code</div>
+      <button type="button" class="bf-code" id="bfCode" aria-label="Copy code BFSPECIAL">BFSPECIAL <em id="bfCopied">Tap to copy</em></button>
+      <div class="bf-today">Today Only!</div>
+      <a class="bf-cta" href="#trips" id="bfCta">See The Trips</a>
+    </div>
+  </div>
+</div>
+<script>
+/* ===== Black Friday 24-hour popup + countdown =====
+   Fixed deadline (same for every visitor). To change it, edit BF_END below.
+   After the deadline the popup never opens again. */
+(function () {
+  var BF_END = new Date('2026-11-29T11:00:00+11:00').getTime();
+  var SNOOZE_HOURS = 4;
+  var pop = document.getElementById('bfPop');
+  if (!pop || Date.now() >= BF_END) return;
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var H = document.getElementById('bfH'), M = document.getElementById('bfM'), S = document.getElementById('bfS');
+  var lastFocus = null, timer = null;
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function tick() {
+    var left = Math.max(0, BF_END - Date.now()), t = Math.floor(left / 1000);
+    H.textContent = pad(Math.floor(t / 3600)); M.textContent = pad(Math.floor(t % 3600 / 60)); S.textContent = pad(t % 60);
+    if (left <= 0) { clearInterval(timer); closePop(true); }
+  }
+  function openPop() {
+    if (pop.classList.contains('open')) return;
+    var vip = document.getElementById('tgePop'); if (vip && vip.classList.contains('open')) return;
+    lastFocus = document.activeElement;
+    pop.classList.add('open'); pop.setAttribute('aria-hidden', 'false');
+    document.documentElement.style.overflow = 'hidden';
+    tick(); timer = setInterval(tick, 1000);
+    setTimeout(function () { document.getElementById('bfCta').focus(); }, 60);
+  }
+  function closePop(noSnooze) {
+    pop.classList.remove('open'); pop.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+    clearInterval(timer);
+    if (noSnooze !== true) store.set('tgeBfSnooze', String(Date.now() + SNOOZE_HOURS * 3600000));
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.getElementById('bfClose').addEventListener('click', function () { closePop(); });
+  document.getElementById('bfCta').addEventListener('click', function () { closePop(); });
+  pop.addEventListener('click', function (e) { if (e.target === pop) closePop(); });
+  pop.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closePop(); return; }
+    if (e.key !== 'Tab') return;
+    var f = Array.prototype.filter.call(pop.querySelectorAll('button, a[href]'), function (el) { return el.offsetParent !== null; });
+    if (!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+    else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+  });
+  document.getElementById('bfCode').addEventListener('click', function () {
+    var note = document.getElementById('bfCopied');
+    function ok() { note.textContent = 'Copied!'; setTimeout(function () { note.textContent = 'Tap to copy'; }, 2000); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText('BFSPECIAL').then(ok, function () {});
+    else { var t = document.createElement('textarea'); t.value = 'BFSPECIAL'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); ok(); } catch (e) {} document.body.removeChild(t); }
+  });
+  var snoozeUntil = parseInt(store.get('tgeBfSnooze') || '0', 10);
+  if (Date.now() >= snoozeUntil) setTimeout(openPop, 1500);
 })();
 </script>
 <script src="/tge-tracking.js" defer></script>
