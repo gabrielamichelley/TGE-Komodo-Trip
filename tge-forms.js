@@ -13,6 +13,22 @@
   var QUEUE_KEY = 'tgeLeadQueue';
   var FAST_MS = 900;
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Clarity: tag this visitor's recording with an anonymous lead ID so it can be found later.
+  // ID = 'lead_' + first 16 hex chars of SHA-256(lowercased email). Same formula as the 'Clarity ID'
+  // column in the TGE Lead List sheet. The raw email is never sent to Clarity.
+  function identifyInClarity(email) {
+    try {
+      var e = String(email || '').trim().toLowerCase();
+      if (typeof window.clarity !== 'function' || !EMAIL_RE.test(e)) return;
+      if (!(window.crypto && window.crypto.subtle && window.TextEncoder)) return;
+      window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(e)).then(function (buf) {
+        var hex = Array.prototype.map.call(new Uint8Array(buf), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+        window.clarity('identify', 'lead_' + hex.slice(0, 16), null, null, 'Lead');
+        window.clarity('set', 'lead', 'yes');
+        window.clarity('event', 'lead_identified');
+      }).catch(function () {});
+    } catch (err) {}
+  }
   window.TGE_LEAD_ENDPOINT = ENDPOINT;
 
   var store = {
@@ -61,6 +77,7 @@
     f._page = location.href;
     f._ajax = '1';
     if (!EMAIL_RE.test(String(f.email || '').trim())) return Promise.reject(new Error('invalid email'));
+    identifyInClarity(f.email);
     var q = store.get(); q.push({ f: f, tries: 0 }); store.set(q.slice(-20));
     var sending = post(f).then(function (r) { if (!r.unconfirmed) dequeue(f._sid); return r; });
     // Don't keep her waiting: show success after at most FAST_MS. The request carries on in the
