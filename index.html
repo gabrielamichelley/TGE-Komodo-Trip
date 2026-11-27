@@ -1118,6 +1118,7 @@ html, body { overflow-x: hidden; }
 .tge-pop-done a { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 1.8rem; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 @media (prefers-reduced-motion: reduce) { .tge-pop.open { animation: none; } }
 </style>
+<script src="tge-forms.js"></script>
 </head>
 <body class="home">
 
@@ -1508,7 +1509,8 @@ html, body { overflow-x: hidden; }
 <div class="section-tag reveal">Get In Touch</div>
 <h2 class="section-title reveal">Have a <em>Question?</em></h2>
 <p class="section-subtitle reveal">We'd love to hear from you! Fill in the form below &amp; we'll get back to you as soon as possible.</p>
-<form action="https://formspree.io/f/xeerjyzr" method="POST" onsubmit="if(window.fbq){fbq('track','Lead',{content_name:'Homepage contact form'});}" style="max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:1.35rem;">
+<form action="https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec" data-tge-form="home-contact" method="POST" onsubmit="if(window.fbq){fbq('track','Lead',{content_name:'Homepage contact form'});}" style="max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:1.35rem;">
+<input type="hidden" name="form_id" value="home-contact"/>
 <div class="contact-name-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
 <div style="display:flex;flex-direction:column;gap:0.45rem;">
 <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">First Name</label>
@@ -1998,7 +2000,7 @@ document.addEventListener('click', function (e) {
 <script>
 /* ===== Homepage VIP mailing-list popup (same behaviour as the trip pages) ===== */
 (function () {
-  var FORM_ENDPOINT = 'https://formspree.io/f/mkokzzow';
+  var FORM_ENDPOINT = window.TGE_LEAD_ENDPOINT; /* now handled by tge-forms.js */
   var POPUP_DELAY_S = 15;      // auto-open after this many seconds (or 55% scroll / exit intent)
   var POPUP_SNOOZE_DAYS = 5;   // don't auto-open again for this long after closing
   var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -2056,7 +2058,7 @@ document.addEventListener('click', function (e) {
     if (!name.value.trim()) { name.focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.focus(); return; }
     var btn = form.querySelector('.tge-pop-submit'); btn.disabled = true;
-    fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+    window.tgeSendLead(new FormData(form), 'home-popup')
       .then(function (r) { if (!r.ok) throw new Error('bad'); return r; })
       .then(function () {
         store.set('tgeHomeVipJoined', '1');
