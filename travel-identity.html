@@ -424,6 +424,7 @@ fbq('track', 'PageView');
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
 </style>
+<script src="tge-forms.js"></script>
 </head>
 <body>
 
@@ -642,8 +643,7 @@ fbq('track', 'PageView');
    Branched lead capture + trip recommendation
    =========================================================== */
 
-const FORMSPREE_BOOKED   = "https://formspree.io/f/mojbwoyj";
-const FORMSPREE_LEADS    = "https://formspree.io/f/xgoqyjra";
+/* Quiz answers now go to the TGE Lead Collector via tge-forms.js (was Formspree) */
 
 const URL_ISLAND_LIFE    = "https://thatgirlexperiences.com/bali.html";
 const URL_BECOMING_HER   = "https://thatgirlexperiences.com/komodo.html";
@@ -1219,7 +1219,7 @@ function handleBookedSubmit(e) {
   fd.append("top_5", state.result.top5.map(r => `${IDENTITIES[r.key].name} (${r.pct}%)`).join(" | "));
   fd.append("dna_breakdown", state.result.dnaBreakdown.map(d => `${d.label}: ${d.pct}%`).join(" | "));
 
-  fetch(FORMSPREE_BOOKED, { method: "POST", body: fd, headers: { Accept: "application/json" } }).catch(() => {});
+  window.tgeSendLead(fd, "quiz-booked").catch(() => {});
   renderReveal({ booked: true });
 }
 
@@ -1254,7 +1254,7 @@ function handleNotBookedSubmit(e) {
   fd.append("top_5", state.result.top5.map(r => `${IDENTITIES[r.key].name} (${r.pct}%)`).join(" | "));
   fd.append("dna_breakdown", state.result.dnaBreakdown.map(d => `${d.label}: ${d.pct}%`).join(" | "));
 
-  fetch(FORMSPREE_LEADS, { method: "POST", body: fd, headers: { Accept: "application/json" } }).catch(() => {});
+  window.tgeSendLead(fd, "quiz-lead").catch(() => {});
   renderReveal({ booked: false });
 }
 

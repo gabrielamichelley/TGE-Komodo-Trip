@@ -1579,6 +1579,7 @@ html, body { overflow-x: hidden; }
 }
 @media (max-width: 360px) { .m-book-extras .m-trust { grid-template-columns: 1fr; } }
 </style>
+<script src="tge-forms.js"></script>
 </head>
 <body class="trip">
 
@@ -2389,7 +2390,8 @@ html, body { overflow-x: hidden; }
 <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,4vw,1.9rem);font-weight:600;color:var(--text-dark);line-height:1.25;">Register Your <em>Interest</em></h3>
 <p style="font-size:0.92rem;font-weight:400;color:var(--text-dark);margin-top:0.4rem;">Be the first to know when new trips drop, for future departures or when spots open up!</p>
 </div>
-<form action="https://formspree.io/f/mkokzzow" class="interest-form" method="POST" onsubmit="if(window.fbq){fbq('track','Lead');}">
+<form action="https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec" data-tge-form="maldives-interest" class="interest-form" method="POST" onsubmit="if(window.fbq){fbq('track','Lead');}">
+<input type="hidden" name="form_id" value="maldives-interest"/>
 <div class="interest-field"><label class="interest-label">Your Full Name</label><input class="interest-input" name="name" placeholder="First &amp; Last name" required="" type="text"/></div>
 <div class="interest-field"><label class="interest-label">WhatsApp</label><input class="interest-input" name="contact" placeholder="+61 400 000 000" required="" type="text"/></div>
 <div class="interest-field"><label class="interest-label">Email</label><input class="interest-input" name="email" placeholder="Your Email" required="" type="text"/></div>
@@ -2437,7 +2439,8 @@ html, body { overflow-x: hidden; }
 <div class="section-tag reveal">Get In Touch</div>
 <h2 class="section-title reveal">Have a <em>Question?</em></h2>
 <p class="section-subtitle reveal">We'd love to hear from you! Fill in the form below &amp; we'll get back to you as soon as possible.</p>
-<form action="https://formspree.io/f/xeerjyzr" class="reveal" method="POST" style="max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:1.35rem;">
+<form action="https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec" data-tge-form="maldives-contact" class="reveal" method="POST" style="max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:1.35rem;">
+<input type="hidden" name="form_id" value="maldives-contact"/>
 <div class="contact-name-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
 <div style="display:flex;flex-direction:column;gap:0.45rem;">
 <label style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);font-weight:500;">First Name</label>
@@ -2912,7 +2915,7 @@ window.addEventListener('load', function() {
   var SALE_END_UTC  = '2026-12-01T07:59:59Z';   // = Mon 30 Nov 2026, 11:59:59pm US Pacific (= Tue 1 Dec, 6:59pm Sydney)
   var FULL_PRICE    = '$2,299';                 // the price after the sale
   var VIP_WA_LINK   = 'https://chat.whatsapp.com/EvqHylttAvQ6Jb2WCBoGRQ';
-  var FORM_ENDPOINT = 'https://formspree.io/f/mkokzzow';
+  var FORM_ENDPOINT = window.TGE_LEAD_ENDPOINT; /* now handled by tge-forms.js */
   var POPUP_DELAY_S = 15;                       // auto-open after this many seconds (or 55% scroll / exit intent)
   var POPUP_SNOOZE_DAYS = 5;                    // don't auto-open again for this long after closing
   /* -------------------- */
@@ -3004,7 +3007,7 @@ window.addEventListener('load', function() {
     if (!name.value.trim()) { name.focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.focus(); return; }
     var btn = form.querySelector('.tge-pop-submit'); btn.disabled = true;
-    fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+    window.tgeSendLead(new FormData(form), 'maldives-popup')
       .then(function (r) { if (!r.ok) throw new Error('bad'); return r; })
       .then(function () {
         store.set('tgeMaldivesVipJoined', '1');
