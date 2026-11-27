@@ -49,3 +49,14 @@ This replaces Formspree. Each website signup is:
 | Travel Identity quiz (already booked) | Booked guests (no emails triggered) |
 
 Every website lead is also added to **TGE Leads (all)**, your master list for campaigns. Booked guests are the exception.
+
+## Updating to v2 (instant forms, enquiry emails, notifications, daily summary, WeTravel)
+1. Apps Script → paste the new `lead-collector/Code.gs` over the old one, and the new `appsscript.json` (it adds Gmail access, so the script can read WeTravel emails and your Sent folder).
+2. Run **setup** once. Google will ask for permission again (Gmail) → Allow. This:
+   - adds the WeTravel rows to **Form Settings**,
+   - creates the triggers: process new signups every minute, Sender retries every 10 min, WeTravel check every 5 min, and the daily summary at ~9pm Sydney,
+   - only imports WeTravel emails that arrive **from now on**. To pull in older ones, run `backfillWeTravel` (careful: that starts Sender sequences for them).
+3. **Deploy → Manage deployments → ✏️ Edit → Version: New version → Deploy.** The URL stays the same.
+4. Optional: run `testDailySummary` to get today's summary straight away.
+
+Script properties you can add (optional): `NOTIFY_EMAIL` (default thatgirlexperiences@gmail.com), `NOTIFY_EACH` = `No` to stop the per-lead emails.
