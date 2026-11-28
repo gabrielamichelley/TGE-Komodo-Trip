@@ -1136,28 +1136,28 @@ html, body { overflow-x: hidden; }
 /* ===== Black Friday 24-hour popup ===== */
 .bf-pop { position: fixed; inset: 0; z-index: 10002; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(28,43,45,0.62); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); }
 .bf-pop.open { display: flex; animation: tgePopIn .35s ease; }
-.bf-card { position: relative; width: min(480px, 100%); max-height: calc(100vh - 2rem); overflow: auto; border-radius: 28px; background: var(--cream); box-shadow: 0 30px 80px rgba(0,0,0,0.3); text-align: center; }
-.bf-top { padding: 1.9rem 1.4rem 1.5rem; color: #fff; background: linear-gradient(160deg, var(--ocean-light), var(--ocean) 55%, var(--ocean-deep)); }
+.bf-card { position: relative; width: min(400px, 100%); max-height: calc(100vh - 2rem); overflow: auto; border-radius: 24px; background: var(--cream); box-shadow: 0 30px 80px rgba(0,0,0,0.3); text-align: center; }
+.bf-top { padding: 1.1rem 1.2rem 0.95rem; color: #fff; background: linear-gradient(160deg, var(--ocean-light), var(--ocean) 55%, var(--ocean-deep)); }
 .bf-eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); }
-.bf-title { margin: 0.5rem 0 0.9rem; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.3rem, 9vw, 3.1rem); font-weight: 700; line-height: 1.02; text-transform: uppercase; letter-spacing: 0.01em; }
+.bf-title { margin: 0 0 0.6rem; padding: 0 1.4rem; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.45rem, 6vw, 1.85rem); font-weight: 700; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.01em; }
 .bf-title em { display: block; font-style: normal; color: var(--gold-light); }
-.bf-timer { display: flex; justify-content: center; align-items: flex-start; gap: 0.5rem; }
-.bf-t { min-width: 66px; padding: 0.55rem 0.3rem 0.45rem; border-radius: 16px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); }
-.bf-t b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
-.bf-t span { display: block; margin-top: 0.25rem; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; }
-.bf-colon { align-self: center; font-size: 1.6rem; font-weight: 600; opacity: 0.7; padding-bottom: 0.9rem; }
-.bf-body { padding: 1.4rem 1.4rem 1.6rem; }
-.bf-offers { display: grid; gap: 0.6rem; margin-bottom: 1.1rem; }
-.bf-offer { display: block; padding: 0.85rem 1rem; border-radius: 18px; background: #fff; border: 1px solid var(--hair-2); text-decoration: none; color: var(--text-dark); }
-.bf-offer-name { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-light); }
-.bf-offer-price { display: block; margin-top: 0.15rem; font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; line-height: 1.1; }
-.bf-offer-price small { font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; }
-.bf-code-label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--text-light); margin-bottom: 0.4rem; }
-.bf-code { display: inline-flex; align-items: center; gap: 0.7rem; min-height: 52px; padding: 0 1.3rem; border-radius: 50px; border: 2px dashed var(--gold); background: #fff; font-family: 'Jost', sans-serif; font-size: 1.15rem; font-weight: 600; letter-spacing: 0.18em; color: var(--text-dark); cursor: pointer; }
-.bf-code em { font-style: normal; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ocean-deep); }
-.bf-today { margin: 1rem 0 0.9rem; font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ocean-deep); }
-.bf-cta { display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; box-shadow: 0 8px 26px rgba(201,169,110,0.35); }
-.bf-vip { margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--hair-2); }
+.bf-timer { display: flex; justify-content: center; align-items: flex-start; gap: 0.35rem; }
+.bf-t { min-width: 50px; padding: 0.35rem 0.25rem 0.3rem; border-radius: 12px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); }
+.bf-t b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.bf-t span { display: block; margin-top: 0.15rem; font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase; }
+.bf-colon { align-self: center; font-size: 1.1rem; font-weight: 600; opacity: 0.7; padding-bottom: 0.7rem; }
+.bf-body { padding: 0.9rem 1.1rem 1.1rem; }
+.bf-offers { display: grid; gap: 0.4rem; margin-bottom: 0.8rem; }
+.bf-offer { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; padding: 0.55rem 0.9rem; border-radius: 14px; background: #fff; border: 1px solid var(--hair-2); text-decoration: none; color: var(--text-dark); }
+.bf-offer-name { display: block; text-align: left; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); }
+.bf-offer-price { display: block; white-space: nowrap; font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; line-height: 1.1; }
+.bf-offer-price small { font-family: 'Jost', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; }
+.bf-code-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--text-light); margin-bottom: 0.3rem; }
+.bf-code { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 38px; padding: 0 1rem; border-radius: 50px; border: 2px dashed var(--gold); background: #fff; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.14em; color: var(--text-dark); cursor: pointer; }
+.bf-code em { font-style: normal; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ocean-deep); }
+.bf-today { margin: 0.6rem 0 0.6rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ocean-deep); }
+.bf-cta { display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; box-shadow: 0 8px 26px rgba(201,169,110,0.35); }
+.bf-vip { margin-top: 0.8rem; padding-top: 0.75rem; border-top: 1px solid var(--hair-2); }
 .bf-vip-label { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; color: var(--text-light); margin-bottom: 0.5rem; }
 .bf-vip-row { display: flex; gap: 0.5rem; }
 .bf-vip-row input { flex: 1; min-width: 0; box-sizing: border-box; min-height: 46px; padding: 0 1rem; border-radius: 50px; border: 1px solid var(--hair-2); background: #fff; font-family: 'Jost', sans-serif; font-size: 16px; color: var(--text-dark); }
@@ -1166,7 +1166,7 @@ html, body { overflow-x: hidden; }
 .bf-vip-msg { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--ocean-deep); }
 .bf-vip-msg.err { color: #b5523b; }
 .bf-vip-msg a { color: var(--ocean-deep); font-weight: 600; }
-.bf-close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; border-radius: 50px; border: 0; background: rgba(255,255,255,0.25); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.bf-close { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; border-radius: 50px; border: 0; background: rgba(255,255,255,0.25); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
 @media (max-width: 420px) { .bf-t { min-width: 58px; } .bf-t b { font-size: 1.8rem; } }
 @media (prefers-reduced-motion: reduce) { .bf-pop.open { animation: none; } }
 </style>
@@ -2108,7 +2108,6 @@ document.addEventListener('click', function (e) {
   <div class="bf-card">
     <button type="button" class="bf-close" id="bfClose" aria-label="Close">×</button>
     <div class="bf-top">
-      <div class="bf-eyebrow">Black Friday</div>
       <h2 class="bf-title" id="bfTitle">24 Hour <em>Black Friday Special</em></h2>
       <div class="bf-timer" id="bfTimer" role="timer" aria-label="Time left on the Black Friday special">
         <div class="bf-t"><b id="bfH">24</b><span>Hours</span></div><div class="bf-colon">:</div>
