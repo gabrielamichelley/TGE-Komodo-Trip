@@ -748,6 +748,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 }
 @media (prefers-reduced-motion: reduce) { .tge-wa-fab { animation: none; } }
 </style>
+<style id="tge-bf24-css">
+.bf24 { max-width: 620px; margin: 0 auto 1.1rem; padding: 1.1rem 1.25rem; border-radius: 22px; background: linear-gradient(135deg, var(--ocean-deep), var(--ocean) 60%, #5fb0bd); color: #fff; box-shadow: 0 16px 48px rgba(74,155,173,0.22); text-align: center; }
+.bf24[hidden] { display: none !important; }
+.bf24-eyebrow { font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); }
+.bf24-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 600; line-height: 1.15; margin-top: 0.25rem; }
+.bf24-headline em { color: var(--gold-light); }
+.bf24-ends { font-size: 0.8rem; margin-top: 0.3rem; opacity: 0.95; letter-spacing: 0.04em; }
+.bf24-clock { display: flex; gap: 0.45rem; justify-content: center; margin-top: 0.8rem; }
+.bf24-unit { min-width: 62px; padding: 0.5rem 0.4rem; border-radius: 14px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); }
+.bf24-unit b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.bf24-unit span { display: block; font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 0.25rem; opacity: 0.9; }
+@media (max-width: 640px) { .bf24 { padding: 1rem; } .bf24-unit { min-width: 0; flex: 1; } }
+</style>
 </head>
 <body>
 
@@ -779,8 +792,34 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <div class="hero-for">
       <strong>This trip is for:</strong> Women aged 21–49 who love travel, wellness, personal growth, living life to its fullest, want lifelong female friendships & a supportive girls community that builds you up - all while ticking off bucket-list experiences. Come solo or with a friend & step into your dream life.
     </div>
+    <div class="bf24" id="komodoBF24" role="timer" aria-live="off" hidden>
+      <div class="bf24-eyebrow">✦ 24 Hour Black Friday Special ✦</div>
+      <div class="bf24-headline">Komodo Islands from <em>$1,099 USD</em></div>
+      <div class="bf24-ends">Use code: <strong>BFSPECIAL</strong> · TODAY ONLY!</div>
+      <div class="bf24-clock">
+        <div class="bf24-unit"><b data-u="h">00</b><span>Hrs</span></div>
+        <div class="bf24-unit"><b data-u="m">00</b><span>Mins</span></div>
+        <div class="bf24-unit"><b data-u="s">00</b><span>Secs</span></div>
+      </div>
+    </div>
     <div class="hero-spots" id="komodoBF">✨ BLACK FRIDAY: $1,199 USD with code BLACKFRIDAY (3 left!)</div>
-    <script>(function(){if(Date.now()>Date.parse("2026-12-01T07:59:59Z")){var e=document.getElementById("komodoBF");if(e)e.hidden=true;}})();</script>
+    <script>(function(){
+      var SPECIAL_END = Date.parse("2026-11-29T11:00:00+11:00"), SALE_END = Date.parse("2026-12-01T07:59:59Z");
+      var old = document.getElementById("komodoBF"), box = document.getElementById("komodoBF24");
+      function pad(n){return (n<10?"0":"")+n;}
+      function tick(){
+        var now = Date.now(), sp = now < SPECIAL_END;
+        if (box) box.hidden = !sp;
+        if (old) old.hidden = sp || now > SALE_END;
+        if (!sp) return false;
+        var t = Math.floor((SPECIAL_END - now)/1000);
+        box.querySelector('[data-u="h"]').textContent = pad(Math.floor(t/3600));
+        box.querySelector('[data-u="m"]').textContent = pad(Math.floor(t%3600/60));
+        box.querySelector('[data-u="s"]').textContent = pad(t%60);
+        return true;
+      }
+      if (tick()) { var iv = setInterval(function(){ if(!tick()) clearInterval(iv); }, 1000); }
+    })();</script>
     <div class="hero-spots">⚡ Limited spots, Private Liveaboard</div>
     <button class="wtrvl-checkout_button hero-cta" id="wt-btn-hero" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="9867630528" href="https://www.wetravel.com/checkout_embed?uuid=9867630528">BOOK NOW</button><button class="wtrvl-download_brochure_button kmd-brochure" id="wetravel_download_brochure_widget_hero" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="9867630528" href="https://www.wetravel.com/embed/download_brochure?uuid=9867630528">Download Itinerary</button>
     <button type="button" class="vip-link-sm kmd-wait-desk" data-open-pop>Not ready to book? Join the waitlist</button>
