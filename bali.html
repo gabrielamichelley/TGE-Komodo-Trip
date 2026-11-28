@@ -1355,7 +1355,7 @@ html, body { overflow-x: hidden; }
 <style id="tge-bf-vip-css">
 /* ===== Island Life VIP list + mailing popup (added on top) ===== */
 .bf-banner { margin: 0 0 1.4rem; padding: 1.1rem 1.25rem; border-radius: 22px; background: linear-gradient(135deg, var(--ocean-deep), var(--ocean) 60%, var(--teal)); color: #fff; box-shadow: 0 16px 48px rgba(74,155,173,0.18); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.9rem 1.25rem; }
-.bf-banner[hidden], .bf-chip[hidden] { display: none !important; }
+.bf-banner[hidden], .bf-chip[hidden], [data-bfv][hidden] { display: none !important; }
 .bf-eyebrow { font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); }
 .bf-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.45rem, 3vw, 1.85rem); font-weight: 600; line-height: 1.15; margin-top: 0.2rem; }
 .bf-headline s { opacity: 0.75; font-weight: 500; }
@@ -1538,7 +1538,19 @@ html, body { overflow-x: hidden; }
   <div class="hero-for">
 <strong>This trip is for:</strong> Girls who love travel, bucket-list adventures, new experiences, core memories, island life, the ocean, female friendships &amp; a supportive girls community that builds you up. <strong>3 ISLANDS, ONE TRIP OF A LIFETIME.</strong>
 </div>
-  <div class="bf-banner" id="bfBanner" hidden>
+  <div class="bf-banner" id="bfBannerSpecial" data-bfv="special" hidden>
+    <div>
+      <div class="bf-eyebrow">✦ 24 Hour Black Friday Special ✦</div>
+      <div class="bf-headline"><s class="bf-full">$899</s> → <em>$599</em> total</div>
+      <div class="bf-ends">Use code: <strong>BFSPECIAL</strong> · TODAY ONLY!</div>
+    </div>
+    <div class="bf-clock" role="timer" aria-live="off" aria-label="Time left in the 24 hour Black Friday special">
+      <div class="bf-unit"><b data-u="h">00</b><span>Hrs</span></div>
+      <div class="bf-unit"><b data-u="m">00</b><span>Mins</span></div>
+      <div class="bf-unit"><b data-u="s">00</b><span>Secs</span></div>
+    </div>
+  </div>
+  <div class="bf-banner" id="bfBanner" data-bfv="regular" hidden>
     <div>
       <div class="bf-eyebrow">✦ Black Friday Sale ✦</div>
       <div class="bf-headline"><s class="bf-full">$899</s> → <em>$699</em> total</div>
@@ -2032,10 +2044,12 @@ html, body { overflow-x: hidden; }
 <p class="itin-note">Please note that our itinerary may be subject to change depending on weather, local conditions, group pace &amp; other factors.</p></section>
 <section class="inclusions-section" id="inclusions">
 <div class="deposit-bubble-wrap reveal">
-<div class="deposit-bubble">‼️ FEW SPOTS LEFT ‼️<span class="dep-highlight"> SALE: $699 USD</span></div>
+<div class="deposit-bubble" data-bfv="special" hidden><span class="dep-highlight">TODAY ONLY - Island Life for $599 with code: BFSPECIAL</span></div>
+<div class="deposit-bubble" data-bfv="regular">‼️ FEW SPOTS LEFT ‼️<span class="dep-highlight"> SALE: $699 USD</span></div>
 </div>
 <h2 class="section-title reveal">What's <em>Included</em></h2>
-<p class="section-subtitle reveal">8 Days · Total Cost $699 USD (BLACK FRIDAY SALE) · Lots of Inclusions</p>
+<p class="section-subtitle reveal" data-bfv="special" hidden>8 Days · Total Cost $599 USD (24 HOUR BLACK FRIDAY SPECIAL · code BFSPECIAL · TODAY ONLY!) · Lots of Inclusions</p>
+<p class="section-subtitle reveal" data-bfv="regular">8 Days · Total Cost $699 USD (BLACK FRIDAY SALE) · Lots of Inclusions</p>
 <div class="inclusions-wrapper">
 <div class="inclusion-block reveal">
 <div class="inclusion-heading"><span>✓</span> Included</div>
@@ -2423,9 +2437,12 @@ html, body { overflow-x: hidden; }
 <aside class="trip-aside" aria-label="Book ISLAND LIFE Girls Trip">
   <div class="book-card">
     <div class="book-top"><span class="book-kicker">8 Days</span><span class="book-status" id="bookStatus"></span></div>
-    <div class="book-price">$699 <span>USD total</span></div>
-    <div class="book-note">BLACK FRIDAY SALE PRICE</div>
+    <div class="book-price" data-bfv="special" hidden>$599 <span>USD total</span></div>
+    <div class="book-note" data-bfv="special" hidden><strong>24 HOUR BLACK FRIDAY SPECIAL</strong> · code <strong>BFSPECIAL</strong> (TODAY ONLY!)</div>
+    <div class="book-price" data-bfv="regular">$699 <span>USD total</span></div>
+    <div class="book-note" data-bfv="regular">BLACK FRIDAY SALE PRICE</div>
     <div class="book-note">$50 USD Deposit · Pay in 4, interest-free</div>
+    <div class="bf-chip" id="bfChipSpecial" data-bfv="special" hidden><strong>24 Hour Special</strong> · full price <s class="bf-full">$899</s><br>Ends in <span class="bf-mini">—</span></div>
     <div class="bf-chip" id="bfChip" hidden><strong>Black Friday price</strong> · full price <s class="bf-full">$899</s><br>Ends in <span class="bf-mini">—</span></div>
     <div class="book-label">Departure</div>
     <div class="book-deps" id="bookDeps" role="group" aria-label="Choose your departure date"></div>
@@ -2560,7 +2577,7 @@ html, body { overflow-x: hidden; }
 </footer>
 
 <div class="book-bar" id="bookBar">
-  <div class="book-bar-info"><span class="book-bar-top" id="bookBarTop"></span><span class="book-bar-price">$699 <span>USD total</span></span></div>
+  <div class="book-bar-info"><span class="book-bar-top" id="bookBarTop"></span><span class="book-bar-price" data-bfv="special" hidden>$599 <span>USD total</span></span><span class="book-bar-price" data-bfv="regular">$699 <span>USD total</span></span></div>
     <button class="wtrvl-checkout_button nav-cta" id="wt-btn-nav" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="6779947278" href="https://www.wetravel.com/checkout_embed?uuid=6779947278">BOOK NOW</button>
 </div>
 <div class="moments-lb" id="momentsLb" role="dialog" aria-modal="true" aria-label="Trip photo viewer">
@@ -2994,6 +3011,18 @@ window.TGE_MOMENTS = [
                 set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
   var end = new Date(SALE_END_UTC).getTime();
   var banner = document.getElementById('bfBanner'), chip = document.getElementById('bfChip');
+  /* 24-hour special: shows the BFSPECIAL price, then everything reverts to the normal Black Friday banner */
+  var SPECIAL_END = new Date('2026-11-29T11:00:00+11:00').getTime();
+  var spBanner = document.getElementById('bfBannerSpecial'), spChip = document.getElementById('bfChipSpecial');
+  function isSpecial() { return Date.now() < SPECIAL_END; }
+  function applyVariant() {
+    var sp = isSpecial();
+    document.querySelectorAll('[data-bfv]').forEach(function (el) {
+      if (el.id === 'bfBannerSpecial' || el.id === 'bfChipSpecial' || el.id === 'bfBanner') return;
+      el.hidden = (el.getAttribute('data-bfv') === 'special') !== sp;
+    });
+  }
+  applyVariant();
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
 
   document.querySelectorAll('.bf-full').forEach(function (el) { el.textContent = FULL_PRICE; });
@@ -3008,6 +3037,21 @@ window.TGE_MOMENTS = [
   } catch (e) {}
 
   function tick() {
+    applyVariant();
+    if (isSpecial()) {
+      var sl = SPECIAL_END - Date.now();
+      var sh = Math.floor(sl / 3600000), sm = Math.floor(sl / 60000) % 60, ss = Math.floor(sl / 1000) % 60;
+      if (banner) banner.hidden = true; if (chip) chip.hidden = true;
+      if (spBanner) {
+        spBanner.hidden = false;
+        spBanner.querySelector('[data-u="h"]').textContent = pad(sh);
+        spBanner.querySelector('[data-u="m"]').textContent = pad(sm);
+        spBanner.querySelector('[data-u="s"]').textContent = pad(ss);
+      }
+      if (spChip) { spChip.hidden = false; spChip.querySelector('.bf-mini').textContent = pad(sh) + 'h ' + pad(sm) + 'm ' + pad(ss) + 's'; }
+      return true;
+    }
+    if (spBanner) spBanner.hidden = true; if (spChip) spChip.hidden = true;
     var left = end - Date.now();
     if (left <= 0) { if (banner) banner.hidden = true; if (chip) chip.hidden = true; return false; }
     var d = Math.floor(left / 86400000), h = Math.floor(left / 3600000) % 24, m = Math.floor(left / 60000) % 60, s = Math.floor(left / 1000) % 60;
