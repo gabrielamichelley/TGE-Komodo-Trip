@@ -72,9 +72,9 @@
       var gs = document.createElement('script'); gs.async = true; gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GADS.id; document.head.appendChild(gs);
     }
   }
-  function gads(label, data) { try { if (GADS.id && label && window.gtag) window.gtag('event', 'conversion', Object.assign({ send_to: GADS.id + '/' + label }, data || {})); log('google ads conversion', label, data); } catch (e) {} }
+  var GA4_ID = 'G-KPQCQ89S64'; if (window.gtag && !window.__tgeGA4) { window.__tgeGA4 = 1; window.gtag('config', GA4_ID); }  function gads(label, data) { try { if (GADS.id && label && window.gtag) window.gtag('event', 'conversion', Object.assign({ send_to: GADS.id + '/' + label }, data || {})); log('google ads conversion', label, data); } catch (e) {} }
   /* GA4-style event (shows in Google tag diagnostics; also usable if GA4 is linked later) */
-  function gev(name, data) { try { if (window.gtag) window.gtag('event', name, Object.assign({ send_to: GADS.id }, data || {})); log('google event', name, data); } catch (e) {} }
+  function gev(name, data) { try { if (window.gtag) window.gtag('event', name, Object.assign({ send_to: [GADS.id, GA4_ID] }, data || {})); log('google event', name, data); } catch (e) {} }
   function gItems(id, name, value) { return [{ item_id: String(id || ''), item_name: name || '', item_category: 'Group Trip', price: Number(value) || 0, quantity: 1 }]; }
   function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   function cEvent(name) { clarity('event', name); log('clarity event', name); }
