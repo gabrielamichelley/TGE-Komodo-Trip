@@ -1426,6 +1426,7 @@ html, body { overflow-x: hidden; }
 
 <style id="tge-bf-vip-css">
 /* ===== Black Friday countdown + Maldives VIP list + mailing popup (added on top) ===== */
+[data-bfv][hidden]{display:none !important}
 .bf-banner { margin: 0 0 1.4rem; padding: 1.1rem 1.25rem; border-radius: 22px; background: linear-gradient(135deg, var(--ocean-deep), var(--ocean) 60%, var(--teal)); color: #fff; box-shadow: 0 16px 48px rgba(74,155,173,0.18); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.9rem 1.25rem; }
 .bf-banner[hidden], .bf-chip[hidden] { display: none !important; }
 .bf-eyebrow { font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); }
@@ -1640,7 +1641,19 @@ html, body { overflow-x: hidden; }
   <div class="hero-for">
 <strong>This trip is for:</strong> Girls who love bucket-list adventures, turquoise waters, white-sand beaches, magical sunsets, island life, female friendships & unreal experiences. <strong>If you've been dreaming of a Maldives trip, white-sand beaches, crystal-clear waters, magical sunsets, world-class reefs, and bucket-list experiences, this one's for you.</strong>
 </div> 
-  <div class="bf-banner" id="bfBanner" hidden>
+  <div class="bf-banner" id="bfBannerSpecial" data-bfv="special" hidden>
+    <div>
+      <div class="bf-eyebrow">✦ 24 Hour Black Friday Special ✦</div>
+      <div class="bf-headline"><s class="bf-full">$2,299</s> → <em>$1,799</em> total for 10 days</div>
+      <div class="bf-ends">Use code: <strong>BFSPECIAL</strong> · TODAY ONLY!</div>
+    </div>
+    <div class="bf-clock" role="timer" aria-live="off" aria-label="Time left in the 24 hour Black Friday special">
+      <div class="bf-unit"><b data-u="h">00</b><span>Hrs</span></div>
+      <div class="bf-unit"><b data-u="m">00</b><span>Mins</span></div>
+      <div class="bf-unit"><b data-u="s">00</b><span>Secs</span></div>
+    </div>
+  </div>
+  <div class="bf-banner" id="bfBanner" data-bfv="regular" hidden>
     <div>
       <div class="bf-eyebrow">✦ Black Friday Sale ✦</div>
       <div class="bf-headline"><s class="bf-full">$2,299</s> → <em>$1,999</em> total for 10 days</div>
@@ -1654,7 +1667,8 @@ html, body { overflow-x: hidden; }
     </div>
   </div>
   <div class="deposit-bubble-wrap">
-<div class="deposit-bubble"><span class="dep-highlight">✨ BLACK FRIDAY ENDS SOON ✨</span></div>
+<div class="deposit-bubble" data-bfv="special" hidden><span class="dep-highlight">TODAY ONLY - Maldives for $1799 with code: BFSPECIAL</span></div>
+<div class="deposit-bubble" data-bfv="regular"><span class="dep-highlight">✨ BLACK FRIDAY ENDS SOON ✨</span></div>
 </div>
   <div class="overview-ctas"><button class="wtrvl-checkout_button hero-cta" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/checkout_embed?uuid=0360814720">BOOK NOW</button><button class="wtrvl-download_brochure_button" id="wetravel_download_brochure_widget" data-env="https://www.wetravel.com" data-version="v0.3" data-uid="2374713" data-uuid="0360814720" href="https://www.wetravel.com/embed/download_brochure?uuid=0360814720">Download Itinerary</button></div>
   <div class="m-book-extras"><button type="button" class="vip-link-sm" data-open-pop>Not ready to book? Join the Maldives VIP list</button></div>
@@ -2362,9 +2376,12 @@ html, body { overflow-x: hidden; }
 <aside class="trip-aside" aria-label="Book MALDIVES Girls Retreat">
   <div class="book-card">
     <div class="book-top"><span class="book-kicker">10 Days</span><span class="book-status" id="bookStatus"></span></div>
-    <div class="book-price">$1,999 <span>USD total</span></div>
-    <div class="book-note"><strong>BLACK FRIDAY SALE</strong></div>
+    <div class="book-price" data-bfv="special" hidden>$1,799 <span>USD total</span></div>
+    <div class="book-note" data-bfv="special" hidden><strong>24 HOUR BLACK FRIDAY SPECIAL</strong> · code <strong>BFSPECIAL</strong> (TODAY ONLY!)</div>
+    <div class="book-price" data-bfv="regular">$1,999 <span>USD total</span></div>
+    <div class="book-note" data-bfv="regular"><strong>BLACK FRIDAY SALE</strong></div>
     <div class="book-note">$199 deposit · Pay in 4, interest-free</div>
+    <div class="bf-chip" id="bfChipSpecial" data-bfv="special" hidden><strong>24 Hour Special</strong> · full price <s class="bf-full">$2,299</s><br>Ends in <span class="bf-mini">—</span></div>
     <div class="bf-chip" id="bfChip" hidden><strong>Black Friday price</strong> · full price <s class="bf-full">$2,299</s><br>Ends in <span class="bf-mini">—</span></div>
     <div class="book-label">Departure</div>
     <div class="book-deps" id="bookDeps" role="group" aria-label="Choose your departure date"></div>
@@ -2917,6 +2934,18 @@ window.TGE_MOMENTS = [
                 set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
   var end = new Date(SALE_END_UTC).getTime();
   var banner = document.getElementById('bfBanner'), chip = document.getElementById('bfChip');
+  /* 24-hour special: shows the BFSPECIAL price, then everything reverts to the normal Black Friday banner */
+  var SPECIAL_END = new Date('2026-11-29T11:00:00+11:00').getTime();
+  var spBanner = document.getElementById('bfBannerSpecial'), spChip = document.getElementById('bfChipSpecial');
+  function isSpecial() { return Date.now() < SPECIAL_END; }
+  function applyVariant() {
+    var sp = isSpecial();
+    document.querySelectorAll('[data-bfv]').forEach(function (el) {
+      if (el.id === 'bfBannerSpecial' || el.id === 'bfChipSpecial' || el.id === 'bfBanner') return;
+      el.hidden = (el.getAttribute('data-bfv') === 'special') !== sp;
+    });
+  }
+  applyVariant();
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
 
   document.querySelectorAll('.bf-full').forEach(function (el) { el.textContent = FULL_PRICE; });
@@ -2931,6 +2960,22 @@ window.TGE_MOMENTS = [
   } catch (e) {}
 
   function tick() {
+    applyVariant();
+    var sp = isSpecial();
+    if (sp) {
+      var sl = SPECIAL_END - Date.now();
+      var sh = Math.floor(sl / 3600000), sm = Math.floor(sl / 60000) % 60, ss = Math.floor(sl / 1000) % 60;
+      if (banner) banner.hidden = true; if (chip) chip.hidden = true;
+      if (spBanner) {
+        spBanner.hidden = false;
+        spBanner.querySelector('[data-u="h"]').textContent = pad(sh);
+        spBanner.querySelector('[data-u="m"]').textContent = pad(sm);
+        spBanner.querySelector('[data-u="s"]').textContent = pad(ss);
+      }
+      if (spChip) { spChip.hidden = false; spChip.querySelector('.bf-mini').textContent = pad(sh) + 'h ' + pad(sm) + 'm ' + pad(ss) + 's'; }
+      return true;
+    }
+    if (spBanner) spBanner.hidden = true; if (spChip) spChip.hidden = true;
     var left = end - Date.now();
     if (left <= 0) { if (banner) banner.hidden = true; if (chip) chip.hidden = true; return false; }
     var d = Math.floor(left / 86400000), h = Math.floor(left / 3600000) % 24, m = Math.floor(left / 60000) % 60, s = Math.floor(left / 1000) % 60;
